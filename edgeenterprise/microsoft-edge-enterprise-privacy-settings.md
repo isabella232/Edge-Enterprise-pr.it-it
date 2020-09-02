@@ -1,0 +1,104 @@
+---
+title: Impostazioni della privacy di Microsoft Edge Enterprise
+ms.author: likravit
+author: dan-wesley
+manager: srugh
+ms.date: 05/26/2020
+audience: ITPro
+ms.topic: conceptual
+ms.prod: microsoft-edge
+ms.localizationpriority: high
+ms.collection: M365-modern-desktop
+description: Configurare le impostazioni della privacy di Microsoft Edge Enterprise
+ms.openlocfilehash: 2b7a33087ae5110c53d18b3192486d4ae62fa540
+ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 08/31/2020
+ms.locfileid: "10980278"
+---
+# <span data-ttu-id="a39fb-103">Configurare i criteri di Microsoft Edge per sostenere la privacy dell'organizzazione.</span><span class="sxs-lookup"><span data-stu-id="a39fb-103">Configure Microsoft Edge policies to support enterprise privacy</span></span>
+
+<span data-ttu-id="a39fb-104">Microsoft si impegna a fornire alle aziende le informazioni e i controlli necessari per scegliere le opzioni relative alla raccolta dei dati in Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="a39fb-104">Microsoft is committed to providing enterprises with the information and controls needed to make choices about data collection in Microsoft Edge.</span></span>
+
+## <span data-ttu-id="a39fb-105">Panoramica</span><span class="sxs-lookup"><span data-stu-id="a39fb-105">Overview</span></span>
+
+<span data-ttu-id="a39fb-106">Per impostazione predefinita, Microsoft Edge distribuito in piattaforme diverse da Windows non invia dati di diagnostica o informazioni sul sito a Microsoft.</span><span class="sxs-lookup"><span data-stu-id="a39fb-106">By default, Microsoft Edge deployed on non-Windows platforms doesn't send diagnostic data or site information to Microsoft.</span></span> <span data-ttu-id="a39fb-107">Quando si distribuisce Microsoft Edge in Windows 10, per impostazione predefinita vengono inviati dati di diagnostica basati sull'[impostazione dati di diagnostica di Windows](https://go.microsoft.com/fwlink/?linkid=2099569) dell’utente.</span><span class="sxs-lookup"><span data-stu-id="a39fb-107">When Microsoft Edge is deployed on Windows 10, the default is to send diagnostic data based on the users' [Windows Diagnostic data setting](https://go.microsoft.com/fwlink/?linkid=2099569).</span></span>
+
+<span data-ttu-id="a39fb-108">È anche possibile configurare il modo in cui Microsoft Edge gestisce la raccolta dei dati per l'organizzazione con i criteri di gruppo seguenti:</span><span class="sxs-lookup"><span data-stu-id="a39fb-108">You can also configure how Microsoft Edge handles data collection for your organization with the following group policies:</span></span>
+
+- <span data-ttu-id="a39fb-109">[MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) - Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali.</span><span class="sxs-lookup"><span data-stu-id="a39fb-109">[MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) - Enable usage and crash-related data reporting.</span></span>
+- <span data-ttu-id="a39fb-110">[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) - Invia informazioni sul sito per migliorare i servizi Microsoft.</span><span class="sxs-lookup"><span data-stu-id="a39fb-110">[SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) - Send site information to improve Microsoft services.</span></span>
+
+## <span data-ttu-id="a39fb-111">Configurare le impostazioni dei criteri</span><span class="sxs-lookup"><span data-stu-id="a39fb-111">Configure policy settings</span></span>
+
+<span data-ttu-id="a39fb-112">Prima di iniziare, scarica e usa il modello di criteri di Microsoft Edge più recente (per altre informazioni, vedi [Configurare Microsoft Edge](configure-microsoft-edge.md)).</span><span class="sxs-lookup"><span data-stu-id="a39fb-112">Before you begin, download and use the latest Microsoft Edge Policy Template (For more information, see [Configure Microsoft Edge](configure-microsoft-edge.md).)</span></span>
+
+### <span data-ttu-id="a39fb-113">Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali</span><span class="sxs-lookup"><span data-stu-id="a39fb-113">Enable usage and crash-related data reporting</span></span>
+
+<span data-ttu-id="a39fb-114">Questi criteri abilitano l'invio di report a Microsoft sui dati sull'uso e sull'arresto anomalo di Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="a39fb-114">This policy enables reporting of usage and crash-related data about Microsoft Edge to Microsoft.</span></span>
+
+<span data-ttu-id="a39fb-115">Microsoft Edge raccoglie una serie di dati necessari per mantenere il prodotto sicuro, aggiornato e correttamente funzionante.</span><span class="sxs-lookup"><span data-stu-id="a39fb-115">Microsoft Edge collects a set of required data that's necessary to keep the product up to date, secure, and performing properly.</span></span> <span data-ttu-id="a39fb-116">Questi dati includono informazioni di configurazione e connettività di base del dispositivo ottenute da Microsoft Edge sul consenso corrente alla raccolta dei dati, sulla versione dell'app e sullo stato di installazione per mantenere Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="a39fb-116">This data includes basic device connectivity and configuration information from Microsoft Edge about the current data collection consent, app version, and installation state about your installation of Microsoft Edge.</span></span><span data-ttu-id="a39fb-117">La raccolta dei dati può essere disattivata disabilitando i criteri.</span><span class="sxs-lookup"><span data-stu-id="a39fb-117"> This data collection can be turned off by disabling the policy.</span></span>
+
+<span data-ttu-id="a39fb-118">Abilita questo criterio per inviare a Microsoft report di dati sull'uso e sull'arresto anomalo.</span><span class="sxs-lookup"><span data-stu-id="a39fb-118">Enable this policy to send reporting of usage and crash-related data to Microsoft.</span></span> <span data-ttu-id="a39fb-119">Disabilita questi criteri se non vuoi inviare questi dati a Microsoft.</span><span class="sxs-lookup"><span data-stu-id="a39fb-119">Disable this policy to not send the data to Microsoft.</span></span> <span data-ttu-id="a39fb-120">In entrambi i casi, gli utenti non possono modificare né sovrascrivere l'impostazione.</span><span class="sxs-lookup"><span data-stu-id="a39fb-120">In both cases, users can't change or override the setting.</span></span>
+
+<span data-ttu-id="a39fb-121">Se Microsoft Edge è in esecuzione in Windows 10:</span><span class="sxs-lookup"><span data-stu-id="a39fb-121">When Microsoft Edge is running on Windows 10:</span></span>
+
+- <span data-ttu-id="a39fb-122">Se questi criteri non sono configurati, Microsoft Edge applicherà l'impostazione predefinita per i dati di diagnostica Windows.</span><span class="sxs-lookup"><span data-stu-id="a39fb-122">If this policy isn't configured, Microsoft Edge will default to the Windows diagnostic data setting.</span></span>
+- <span data-ttu-id="a39fb-123">Se questi criteri sono abilitati, Microsoft Edge invierà solo i dati sull'utilizzo se l'impostazione dati di diagnostica Windows è impostata su **Avanzato** o **Completo**.</span><span class="sxs-lookup"><span data-stu-id="a39fb-123">If this policy is enabled, Microsoft Edge will only send usage data if the Windows Diagnostic data setting is set to **Enhanced** or **Full**.</span></span>
+- <span data-ttu-id="a39fb-124">Se questi criteri sono disabilitati, Microsoft Edge non invierà i dati sull'utilizzo.</span><span class="sxs-lookup"><span data-stu-id="a39fb-124">If this policy is disabled, Microsoft Edge will not send usage data.</span></span> <span data-ttu-id="a39fb-125">I dati relativi agli arresti anomali vengono inviati in base all'impostazione dei dati di diagnostica Windows.</span><span class="sxs-lookup"><span data-stu-id="a39fb-125">Crash-related data is sent based on the Windows Diagnostic data setting.</span></span> <span data-ttu-id="a39fb-126">[Altre informazioni sulle impostazioni dei dati di diagnostica di Windows](https://go.microsoft.com/fwlink/?linkid=2099569).</span><span class="sxs-lookup"><span data-stu-id="a39fb-126">[Learn more about Windows Diagnostic data settings](https://go.microsoft.com/fwlink/?linkid=2099569).</span></span>
+
+<span data-ttu-id="a39fb-127">Se Microsoft Edge è in esecuzione in Windows 7, 8 e macOS:</span><span class="sxs-lookup"><span data-stu-id="a39fb-127">When Microsoft Edge is running on Windows 7, 8, and macOS:</span></span>
+
+- <span data-ttu-id="a39fb-128">Se questi criteri non sono configurati, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.</span><span class="sxs-lookup"><span data-stu-id="a39fb-128">If this policy isn't configured, Microsoft Edge will default to the user's preference.</span></span>
+
+### <span data-ttu-id="a39fb-129">Invia informazioni sul sito per migliorare i servizi Microsoft</span><span class="sxs-lookup"><span data-stu-id="a39fb-129">Send site information to improve Microsoft services</span></span>
+
+<span data-ttu-id="a39fb-130">Questi criteri consentono di inviare informazioni sui siti Web visitati in Microsoft Edge a Microsoft per migliorare i prodotti e i servizi Microsoft, ad esempio la ricerca.</span><span class="sxs-lookup"><span data-stu-id="a39fb-130">This policy enables sending information about websites visited in Microsoft Edge to Microsoft to improve Microsoft products and services such as search.</span></span>
+
+<span data-ttu-id="a39fb-131">Abilita questi criteri per inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="a39fb-131">Enable this policy to send information about websites visited in Microsoft Edge to Microsoft.</span></span> <span data-ttu-id="a39fb-132">Disabilita questi criteri per non inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="a39fb-132">Disable this policy to not send information about the websites that are visited in Microsoft Edge to Microsoft.</span></span> <span data-ttu-id="a39fb-133">In entrambi i casi, gli utenti non possono modificare né sovrascrivere l'impostazione.</span><span class="sxs-lookup"><span data-stu-id="a39fb-133">In both cases, users can't change or override the setting.</span></span>
+
+<span data-ttu-id="a39fb-134">Se Microsoft Edge è in esecuzione in Windows 10:</span><span class="sxs-lookup"><span data-stu-id="a39fb-134">When Microsoft Edge is running on Windows 10:</span></span>
+
+- <span data-ttu-id="a39fb-135">Se questi criteri non sono configurati, Microsoft Edge applicherà l'impostazione predefinita per i dati di diagnostica Windows.</span><span class="sxs-lookup"><span data-stu-id="a39fb-135">If this policy isn't configured, Microsoft Edge will default to the Windows diagnostic data setting.</span></span>
+- <span data-ttu-id="a39fb-136">Se questi criteri sono abilitati, Microsoft Edge invierà solo le informazioni sui siti Web visitati se l'impostazione dei dati di diagnostica Windows è impostata su **Completo**.</span><span class="sxs-lookup"><span data-stu-id="a39fb-136">If this policy is enabled, Microsoft Edge will only send information about the websites that are visited if the Windows Diagnostic data setting is set to **Full**.</span></span>
+- <span data-ttu-id="a39fb-137">Se questi criteri sono disabilitati, Microsoft Edge non invierà le informazioni sui siti Web visitati.</span><span class="sxs-lookup"><span data-stu-id="a39fb-137">If this policy is disabled, Microsoft Edge will not send info about websites visited.</span></span> <span data-ttu-id="a39fb-138">Per [ulteriori informazioni sulle impostazioni dei dati di diagnostica Windows](https://go.microsoft.com/fwlink/?linkid=2099569).</span><span class="sxs-lookup"><span data-stu-id="a39fb-138">To [learn more about Windows Diagnostic data settings](https://go.microsoft.com/fwlink/?linkid=2099569).</span></span>
+
+<span data-ttu-id="a39fb-139">Se Microsoft Edge è in esecuzione in Windows 7, 8 e macOS:</span><span class="sxs-lookup"><span data-stu-id="a39fb-139">When Microsoft Edge is running on Windows 7, 8, and macOS:</span></span>
+
+- <span data-ttu-id="a39fb-140">Se questi criteri non sono configurati, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.</span><span class="sxs-lookup"><span data-stu-id="a39fb-140">If this policy isn't configured, Microsoft Edge will default to the user's preference.</span></span>
+
+## <span data-ttu-id="a39fb-141">Dettagli sull'implementazione</span><span class="sxs-lookup"><span data-stu-id="a39fb-141">Implementation details</span></span>
+
+<span data-ttu-id="a39fb-142">Per Windows 10, per comprendere la nostra implementazione con la dipendenza dall'impostazione dei dati di diagnostica Windows, nella tabella seguente viene descritta la configurazione se **Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali** e **Invia informazioni sul sito per migliorare i servizi Microsoft** non sono state configurate.</span><span class="sxs-lookup"><span data-stu-id="a39fb-142">For Windows 10 to understand our implementation with the dependency on the Windows Diagnostic data setting, the following table describes our configuration if **Enable usage and crash-related data reporting** and **Send site information to improve Microsoft services** were not configured.</span></span>
+
+| <span data-ttu-id="a39fb-143">Impostazione dati di diagnostica Windows</span><span class="sxs-lookup"><span data-stu-id="a39fb-143">Windows Diagnostic data setting</span></span> | <span data-ttu-id="a39fb-144">Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali</span><span class="sxs-lookup"><span data-stu-id="a39fb-144">Enable usage and crash-related data reporting</span></span> | <span data-ttu-id="a39fb-145">Invia informazioni sul sito per migliorare i servizi Microsoft</span><span class="sxs-lookup"><span data-stu-id="a39fb-145">Send site information to improve Microsoft services</span></span> |
+|---------------------------------|-----------------------------------------------|-----------------------------------------------------|
+| <span data-ttu-id="a39fb-146">Sicurezza</span><span class="sxs-lookup"><span data-stu-id="a39fb-146">Security</span></span>                        | <span data-ttu-id="a39fb-147">Non inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-147">Not sent</span></span>                                      | <span data-ttu-id="a39fb-148">Non inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-148">Not sent</span></span>                                            |
+| <span data-ttu-id="a39fb-149">Di base</span><span class="sxs-lookup"><span data-stu-id="a39fb-149">Basic</span></span>                           | <span data-ttu-id="a39fb-150">Non inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-150">Not sent</span></span>                                      | <span data-ttu-id="a39fb-151">Non inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-151">Not sent</span></span>                                            |
+| <span data-ttu-id="a39fb-152">Avanzato</span><span class="sxs-lookup"><span data-stu-id="a39fb-152">Enhanced</span></span>                        | <span data-ttu-id="a39fb-153">Inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-153">Sent</span></span>                                          | <span data-ttu-id="a39fb-154">Non inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-154">Not sent</span></span>                                            |
+| <span data-ttu-id="a39fb-155">Completo</span><span class="sxs-lookup"><span data-stu-id="a39fb-155">Full</span></span>                            | <span data-ttu-id="a39fb-156">Inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-156">Sent</span></span>                                          | <span data-ttu-id="a39fb-157">Inviato</span><span class="sxs-lookup"><span data-stu-id="a39fb-157">Sent</span></span>                                                |
+
+<span data-ttu-id="a39fb-158">Se le configurazioni per Windows 10 sono state configurate in modo non conforme alla tabella precedente, verrà eseguito il fallback all'impostazione di raccolta dei dati minore.</span><span class="sxs-lookup"><span data-stu-id="a39fb-158">If your configurations for Windows 10 are misconfigured in accordance with the preceding table, we will fall back to the lesser data collection setting.</span></span>
+
+<span data-ttu-id="a39fb-159">Ad esempio:</span><span class="sxs-lookup"><span data-stu-id="a39fb-159">For example:</span></span>
+
+- <span data-ttu-id="a39fb-160">Imposti i criteri “Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali” su **Abilitato** ma la configurazione dei dati di diagnostica Windows è impostata su **Base**.</span><span class="sxs-lookup"><span data-stu-id="a39fb-160">You set the "Enable usage and crash-related data reporting" policy to **Enabled** but the Windows Diagnostic data setting is set to **Basic**.</span></span> <span data-ttu-id="a39fb-161">Non invieremo i dati correlati all'uso e agli arresti anomali.</span><span class="sxs-lookup"><span data-stu-id="a39fb-161">We won't send usage and crash-related data.</span></span>
+- <span data-ttu-id="a39fb-162">Imposti i criteri “Invia informazioni sul sito per migliorare i servizi Microsoft” su **Disabilitato** ma la configurazione dei dati di diagnostica Windows è impostata su **Completo**.</span><span class="sxs-lookup"><span data-stu-id="a39fb-162">You set the "Send site information to improve Microsoft services" policy to **Disabled** but the Windows Diagnostic data setting is set to **Full**.</span></span> <span data-ttu-id="a39fb-163">Non invieremo informazioni sui siti di visitati.</span><span class="sxs-lookup"><span data-stu-id="a39fb-163">We won't send information about the sites that are visited.</span></span>
+
+<span data-ttu-id="a39fb-164">La corretta implementazione per le configurazioni precedenti sarebbe l'impostazione dei criteri “Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali” su **Abilitato** e l’impostazione dei dati di diagnostica Windows su **Avanzato** o **Completo**.</span><span class="sxs-lookup"><span data-stu-id="a39fb-164">The correct implementation for the previous settings is to set the "Enable usage and crash-related data reporting" policy to **Enabled** and set the Windows Diagnostic data setting to **Enhanced** or **Full**.</span></span>
+
+## <span data-ttu-id="a39fb-165">Opzioni aggiuntive per l'informativa sulla privacy</span><span class="sxs-lookup"><span data-stu-id="a39fb-165">Additional privacy policy options</span></span>
+
+<span data-ttu-id="a39fb-166">Puoi prendere in esame i criteri di gruppo seguenti relativi alla privacy dei dati:</span><span class="sxs-lookup"><span data-stu-id="a39fb-166">You may want to consider the following group policies related to data privacy:</span></span>
+
+- <span data-ttu-id="a39fb-167">Blocca i cookie in siti specifici</span><span class="sxs-lookup"><span data-stu-id="a39fb-167">Block cookies on specific sites</span></span>
+- <span data-ttu-id="a39fb-168">Blocca i cookie di terze parti</span><span class="sxs-lookup"><span data-stu-id="a39fb-168">Block third-party cookies</span></span>
+- <span data-ttu-id="a39fb-169">Configura Do Not Track</span><span class="sxs-lookup"><span data-stu-id="a39fb-169">Configure Do Not Track</span></span>
+- <span data-ttu-id="a39fb-170">Disabilita la modalità InPrivate</span><span class="sxs-lookup"><span data-stu-id="a39fb-170">Disable InPrivate mode</span></span>
+
+## <span data-ttu-id="a39fb-171">Vedi anche</span><span class="sxs-lookup"><span data-stu-id="a39fb-171">See also</span></span>
+
+- [<span data-ttu-id="a39fb-172">Pagina di destinazione di Microsoft Edge in modalità Enterprise</span><span class="sxs-lookup"><span data-stu-id="a39fb-172">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
+- [<span data-ttu-id="a39fb-173">Criteri di Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="a39fb-173">Microsoft Edge policies</span></span>](microsoft-edge-policies.md)
+- [<span data-ttu-id="a39fb-174">Whitepaper sulla privacy di Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="a39fb-174">Microsoft Edge Privacy Whitepaper</span></span>](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper)
