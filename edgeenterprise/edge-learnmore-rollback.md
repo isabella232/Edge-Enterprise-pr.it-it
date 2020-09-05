@@ -3,19 +3,19 @@ title: Rollback di Microsoft Edge per le aziende
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 07/21/2020
+ms.date: 09/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Come eseguire il rollback di Microsoft Edge a una versione precedente
-ms.openlocfilehash: 9af0881a079dd3059e567eaadb912b3d929924c4
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9f659b0bcdd82f54a814c8ad4157521061cdfa7c
+ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980207"
+ms.lasthandoff: 09/02/2020
+ms.locfileid: "10993706"
 ---
 # Come eseguire il rollback di Microsoft Edge a una versione precedente
 
@@ -79,12 +79,11 @@ Seguire la procedura seguente per abilitare il rollback con Microsoft Edge Updat
 
    - Consenti sempre gli aggiornamenti
    - Solo aggiornamenti automatici
-   - Solo aggiornamenti manuali  
 
-5. Il rollback verrà eseguito la volta successiva in cui Microsoft Edge Update verificherà la presenza di un aggiornamento.
+     > [!NOTE]
+     > Per forzare un aggiornamento dei criteri di gruppo, digitare `dsregcmd /status` nel prompt dei comandi di Windows (Esegui come amministratore).
 
-   > [!NOTE]
-   > Se si vuole eseguire il rollback subito, è necessario modificare l'intervallo di polling di Microsoft Edge Update o abilitare il rollback con un MSI.
+5. Fai clic su **OK** per salvare le impostazioni dei criteri. Il rollback verrà eseguito la volta successiva in cui Microsoft Edge Update verificherà la presenza di un aggiornamento. Se si vuole eseguire prima l'aggiornamento, è necessario modificare l'intervallo di polling di Microsoft Edge Update o abilitare il rollback con un MSI.
 
 ### Errori comuni di rollback
 
@@ -109,6 +108,12 @@ Le impostazioni e i criteri di gruppo seguenti sono altamente consigliati per es
 
 - Abilitare *Invia una notifica a un utente in merito al riavvio del browser consigliato o necessario per gli aggiornamenti in sospeso*. In Opzioni selezionare **Obbligatorio**.
 - Abilitare *Imposta il periodo di tempo per le notifiche sugli aggiornamenti* e quindi impostare l'ora desiderata in millisecondi.
+
+## Snapshot
+
+Una snapshot è una copia con versione stampata della cartella dei dati dell'utente. Durante un aggiornamento della versione, una snapshot della versione precedente viene creata e salvata nella cartella della snapshot. Al termine del rollback, una snapshot con versione corrispondente sarà copiata nella nuova cartella di dati dell'utente e cancellata dalla cartella della snapshot. Se nessuna snapshot con versione corrispondente è disponibile dopo il downgrade, il rollback utilizzerà Sync per immettere i dati dell'utente nella nuova versione di Microsoft Edge.
+
+Il criterio di gruppo [UserDataSnapshotRetentionLimit] consente di definire un limite per il numero di snapshot che possono essere conservate in un determinato momento. Per impostazione predefinita, vengono conservate tre snapshot. Il criterio può essere configurato per conservare da 0 a 5 snapshot.
 
 ## Domande frequenti
 
@@ -145,7 +150,7 @@ Alcuni errori comuni che impediscono l’esecuzione del rollback sono:
   - La sostituzione della versione di destinazione è impostata su una versione di destinazione inesistente.
   - L'input della sostituzione della versione di destinazione è formattato in modo errato.
 
-- Se Sostituzione dei criteri di aggiornamento è impostato su "Aggiornamenti disabilitati", Microsoft Edge Update non accetterà alcun aggiornamento. Di conseguenza il rollback non verrà eseguito.
+- Se Sostituzione dei criteri di aggiornamento è impostato su "Aggiornamenti disabilitati", Microsoft Edge Update non accetterà alcun aggiornamento e il rollback non sarà eseguito.
 
 ### Ho impostato correttamente tutti i criteri di gruppo, ma il rollback non è stato eseguito. Cosa è successo?
 
@@ -153,19 +158,7 @@ Microsoft Edge Update non ha ancora verificato la disponibilità di aggiornament
 
 ### In quanto amministratore IT, ho eseguito correttamente i passaggi per il rollback. Il rollback è stato eseguito solo per una parte del mio gruppo di utenti. Perché per gli altri utenti non è ancora avvenuto?
 
-L'impostazione dei criteri di gruppo non è ancora stata sincronizzata con tutti i client. Quando gli amministratori configurano un criterio di gruppo, i client non ricevono le nuove impostazioni immediatamente.
-
-<!--
-You can update all users' group policy with the  
-
-When admins set all users don't get this setting instantaneously 
-
-GP Update force group policy – link to this 
-
--->
-
-
-
+L'impostazione dei criteri di gruppo non è ancora stata sincronizzata con tutti i client. Quando gli amministratori configurano un criterio di gruppo, i client non ricevono le nuove impostazioni immediatamente. È possibile [Forzare un aggiornamento remoto di Criteri di gruppo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134201(v=ws.11)).
 
 
 ## Vedere anche
