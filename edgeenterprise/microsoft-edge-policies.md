@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/01/2020
+ms.date: 09/10/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 9320d7e7b161e6d92421b05262391642b0fe1c2d
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: d19d12dbda0e4b40b4b91b94ca92c58f2a469105
+ms.sourcegitcommit: 1f9149bf2e7c751520b68ef96e18e1f959975fb9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993726"
+ms.lasthandoff: 09/10/2020
+ms.locfileid: "11005819"
 ---
 # Microsoft Edge - Criteri
 La versione più recente di Microsoft Edge include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge nell'organizzazione.
@@ -58,6 +58,8 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[CookiesBlockedForUrls](#cookiesblockedforurls)|Blocca i cookie in siti specifici|
 |[CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)|Limita i cookie da siti Web specifici alla sessione corrente|
 |[DefaultCookiesSetting](#defaultcookiessetting)|Configura i cookie|
+|[DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting)|Controlla l'uso dell'API file system per la lettura|
+|[DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting)|Controlla l'uso dell'API file system per la scrittura|
 |[DefaultGeolocationSetting](#defaultgeolocationsetting)|Impostazione predefinita di georilevazione|
 |[DefaultImagesSetting](#defaultimagessetting)|Impostazione predefinita per le immagini|
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|Controlla l'uso di eccezioni di contenuti non sicuri|
@@ -67,6 +69,10 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[DefaultPopupsSetting](#defaultpopupssetting)|Impostazione predefinita della finestra popup|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|Controlla l'uso dell'API Web Bluetooth|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|Controlla l'uso dell'API WebUSB|
+|[FileSystemReadAskForUrls](#filesystemreadaskforurls)|Consente l'accesso in lettura con l'API file system in questi siti|
+|[FileSystemReadBlockedForUrls](#filesystemreadblockedforurls)|Consente l'accesso in lettura tramite l'API file system in questi siti|
+|[FileSystemWriteAskForUrls](#filesystemwriteaskforurls)|Consente l'accesso in scrittura ai file e alle cartelle in questi siti|
+|[FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls)|Non consente l'accesso in scrittura ai file e alle cartelle in questi siti|
 |[ImagesAllowedForUrls](#imagesallowedforurls)|Consente le immagini in questi siti|
 |[ImagesBlockedForUrls](#imagesblockedforurls)|Blocca le immagini in siti specifici|
 |[InsecureContentAllowedForUrls](#insecurecontentallowedforurls)|Consente contenuti non sicuri in siti specifici|
@@ -139,6 +145,7 @@ e suggerimenti per i servizi Microsoft|
 |[PrintHeaderFooter](#printheaderfooter)|Stampa intestazioni e piè di pagina|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|Imposta la stampante predefinita del sistema come stampante predefinita|
 |[PrintingEnabled](#printingenabled)|Abilita la stampa|
+|[PrintingPaperSizeDefault](#printingpapersizedefault)|Dimensioni della pagina di stampa predefinite|
 |[UseSystemPrintDialog](#usesystemprintdialog)|Stampa usando la finestra di dialogo della stampante di sistema|
 ### [*Server proxy*](#proxy-server-policies)
 |Nome criterio|Didascalia|
@@ -163,7 +170,7 @@ e suggerimenti per i servizi Microsoft|
 |[HomepageIsNewTabPage](#homepageisnewtabpage)|Imposta la pagina Nuova scheda come home page|
 |[HomepageLocation](#homepagelocation)|Configura l'URL della home page|
 |[NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)|Configura i tipi di sfondo consentiti per il layout della pagina Nuova scheda|
-|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|Imposta il logo aziendale della pagina Nuova scheda (deprecato)|
+|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|Imposta il logo aziendale della pagina Nuova scheda|
 |[NewTabPageHideDefaultTopSites](#newtabpagehidedefaulttopsites)|Nasconde i siti principali predefiniti dalla pagina Nuova scheda|
 |[NewTabPageLocation](#newtabpagelocation)|Configura l'URL della pagina Nuova scheda|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|Imposta i collegamenti rapidi della pagina Nuova scheda|
@@ -852,6 +859,118 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### DefaultFileSystemReadGuardSetting
+  #### Controlla l'uso dell'API file system per la lettura
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Se si imposta questo criterio su 3, i siti web possono richiedere l'accesso in lettura al filesystem del sistema operativo host attraverso l'API file System. Se si imposta questo criterio su 2, l’accesso viene negato.
+
+Se non si imposta questo criteri, i siti web possono richiedere accesso. Gli utenti possono modificare questa impostazione.
+
+Mapping delle opzioni del criterio:
+
+* BlockFileSystemRead (2) = Non permette ad alcun sito di richiedere l'accesso in lettura ai file e alle directory tramite l'API file System
+
+* AskFileSystemRead (3) = Permette ai siti di chiedere all'utente di concedere l'accesso in lettura ai file e alle directory tramite l'API file System
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Numero intero
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: DefaultFileSystemReadGuardSetting
+  - Nome Criteri di gruppo: controlla l'uso dell'API file system per la lettura
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: DefaultFileSystemReadGuardSetting
+  - Tipo valore: REG_DWORD
+  ##### Valore di esempio
+```
+0x00000002
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave di preferenza: DefaultFileSystemReadGuardSetting
+  - Valore di esempio
+``` xml
+<integer>2</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### DefaultFileSystemWriteGuardSetting
+  #### Controlla l'uso dell'API file system per la scrittura
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Se si imposta questo criterio su 3, i siti web possono richiedere l'accesso in scrittura al filesystem del sistema operativo host attraverso l'API file System. Se si imposta questo criterio su 2, l’accesso viene negato.
+
+Se non si imposta questo criteri, i siti web possono richiedere accesso. Gli utenti possono modificare questa impostazione.
+
+Mapping delle opzioni del criterio:
+
+* BlockFileSystemWrite (2) = Non permette ad alcun sito di richiedere l'accesso in scrittura ai file e alle directory
+
+* AskFileSystemWrite (3) = Permette ai siti di chiedere all'utente di concedere l'accesso in scrittura ai file e alle directory
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Numero intero
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: DefaultFileSystemWriteGuardSetting
+  - Nome Criteri di gruppo: controlla l'uso dell'API file system per la scrittura
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: DefaultFileSystemWriteGuardSetting
+  - Tipo valore: REG_DWORD
+  ##### Valore di esempio
+```
+0x00000002
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: DefaultFileSystemWriteGuardSetting
+  - Valore di esempio
+``` xml
+<integer>2</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### DefaultGeolocationSetting
   #### Impostazione predefinita di georilevazione
   
@@ -1148,7 +1267,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Descrizione
   [PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
 
-                                                                                                                                                                                                                                            
+                                                                                                                                                                                                                                                    
 
 Se non si imposta questo criterio, usa BlockPlugins e gli utenti possono cambiare questa impostazione.
 
@@ -1363,6 +1482,234 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Valore di esempio
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### FileSystemReadAskForUrls
+  #### Consente l'accesso in lettura con l'API file system in questi siti
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Impostando il criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host tramite l'API file system.
+
+Se il criterio non viene disattivato, sta a significare che[DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting) verrà applicato a tutti i siti, se è impostato. In caso contrario, si applicano le impostazioni personali degli utenti.
+
+I modelli di URL non possono entrare in conflitto con [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: FileSystemReadAskForUrls
+  - Nome Criteri di gruppo: consente l'accesso in lettura con l'API file system in questi siti
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+  ##### Valore di esempio
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: FileSystemReadAskForUrls
+  - Valore di esempio
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### FileSystemReadBlockedForUrls
+  #### Consente l'accesso in lettura tramite l'API file system in questi siti
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Se viene impostato questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host tramite l'API file system.
+
+Se non viene impostato questo criterio, [DefaultFileSystemReadGuardSetting](#defaultfilesystemreadguardsetting) verrà applicato a tutti i siti, se è impostato. In caso contrario, si applicano le impostazioni personali degli utenti.
+
+I modelli di URL non possono entrare in conflitto con [FileSystemReadAskForUrls](#filesystemreadaskforurls) Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: FileSystemReadBlockedForUrls
+  - Nome Criteri di gruppo: consente l'accesso in lettura tramite l'API file system in questi siti
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+  ##### Valore di esempio
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: FileSystemReadBlockedForUrls
+  - Valore di esempio
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### FileSystemWriteAskForUrls
+  #### Consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Se si imposta questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host.
+
+Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting) verrà applicato a tutti i siti, se è impostato. In caso contrario, si applicano le impostazioni personali degli utenti.
+
+I modelli di URL non possono entrare in conflitto con [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: FileSystemWriteAskForUrls
+  - Nome Criteri di gruppo: consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+  ##### Valore di esempio
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: FileSystemWriteAskForUrls
+  - Valore di esempio
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### FileSystemWriteBlockedForUrls
+  #### Non consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Se viene impostato questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in scrittura a file o directory nel file system del sistema operativo host.
+
+Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#defaultfilesystemwriteguardsetting) verrà applicato a tutti i siti, se è impostato. In caso contrario, si applicano le impostazioni personali degli utenti.
+
+I modelli di URL non possono entrare in conflitto con [FileSystemWriteAskForUrls](#filesystemwriteaskforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: FileSystemWriteBlockedForUrls
+  - Nome Criteri di gruppo: non consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+  ##### Valore di esempio
+```
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.edu"
+
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: FileSystemWriteBlockedForUrls
+  - Valore di esempio
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
 ```
   
 
@@ -4457,6 +4804,73 @@ Se si disabilita questo criterio, gli utenti non possono stampare da Microsoft E
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### PrintingPaperSizeDefault
+  #### Dimensioni della pagina di stampa predefinite
+  
+  
+  #### Versioni supportate:
+  - In Windows e macOS dalla versione 86 o successive
+
+  #### Descrizione
+  Sostituisce le dimensioni della pagina di stampa predefinite.
+
+il nome deve contenere uno dei formati elencati o “personalizzato” se necessario, se non è presente nell'elenco. Se viene fornito il valore “personalizzato”, la proprietà custom_size deve essere specificata. Descrive l'altezza e la larghezza desiderate nei micrometri. In caso contrario, la proprietà custom_size non deve essere specificata. Il criterio che viola queste regole verrà ignorato.
+
+Se le dimensioni della pagina non sono disponibili nella stampante scelta dall'utente, questi criterio verrà ignorato.
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Dictionary
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco Criteri di gruppo: PrintingPaperSizeDefault
+  - Nome Criteri di gruppo: dimensioni della pagina di stampa predefinite
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Stampa
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: PrintingPaperSizeDefault
+  - Tipo valore: REG_SZ
+  ##### Valore di esempio
+```
+SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
+  "custom_size": {
+    "height": 297000, 
+    "width": 210000
+  }, 
+  "name": "custom"
+}
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Nome chiave preferenza: PrintingPaperSizeDefault
+  - Valore di esempio
+``` xml
+<key>PrintingPaperSizeDefault</key>
+<dict>
+  <key>custom_size</key>
+  <dict>
+    <key>height</key>
+    <integer>297000</integer>
+    <key>width</key>
+    <integer>210000</integer>
+  </dict>
+  <key>name</key>
+  <string>custom</string>
+</dict>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### UseSystemPrintDialog
   #### Stampa usando la finestra di dialogo della stampante di sistema
   
@@ -5286,11 +5700,11 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
 Se non si configura questo criterio, vengono abilitati tutti i tipi di immagine di sfondo della pagina Nuova scheda.
 
-             
+    
 
-           
+     
 
-            
+   
 
 Mapping delle opzioni del criterio:
 
@@ -5339,14 +5753,15 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   [Torna all'inizio](#microsoft-edge---policies)
 
   ### NewTabPageCompanyLogo
-  #### Imposta il logo aziendale della pagina Nuova scheda (deprecato)
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
+  #### Imposta il logo aziendale della pagina Nuova scheda
+                                                                                                                 
   
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 85.
   #### Versioni supportate:
-  - In Windows e macOS dalla versione 79 o successive
+  - In Windows e macOS dalla versione 79, fino alla versione 85
 
   #### Descrizione
-  Questo criterio è stato deprecato poiché non funziona come previsto e si consiglia di non usarlo. Non funzionerà in Microsoft Edge versione 86.
+  Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Di conseguenza, è obsoleto e non deve essere usato.
 
 Specifica il logo aziendale da usare nella pagina Nuova scheda in Microsoft Edge.
 
@@ -5373,7 +5788,7 @@ Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.mic
   #### Informazioni e impostazioni di Windows
   ##### Info su Criteri di gruppo (ADMX)
   - Nome univoco Criteri di gruppo: NewTabPageCompanyLogo
-  - Nome Criteri di gruppo: Imposta il logo aziendale della pagina Nuova scheda (deprecato)
+  - Nome Criteri di gruppo: imposta il logo aziendale della pagina Nuova scheda (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina Nuova scheda
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -6805,17 +7220,17 @@ Questo criterio è pensato per offrire alle aziende la possibilità di disabilit
 
  
 
-            
+   
 
-        
+  
 
-      
+   
 
-        
+  
 
-       
+    
 
-       
+    
 
 I dati del browser della Versione legacy di Microsoft Edge saranno sempre migrati automaticamente nella first-run experience, indipendentemente dal valore di questo criterio.
 
@@ -7099,7 +7514,7 @@ I tipi di file che un utente ha già specificato per l'apertura automatica conti
 
 Se non si imposta questo criterio, solo i tipi di file che un utente ha già specificato per l'apertura automatica verranno aperto al download.
 
-                                                     
+              
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
@@ -8163,7 +8578,7 @@ Se si abilita questo criterio, i servizi e le destinazioni di esportazione corri
 
 Se non si configura questo criterio, non vengono applicate restrizioni ai servizi e destinazioni di esportazione accettabili.
 
-              
+     
 
 Mapping delle opzioni del criterio:
 
@@ -9501,7 +9916,7 @@ Se la cartella specificata dal percorso non esiste, il download attiverà una ri
 ```
 
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-                                              
+             
 ```
 
 
@@ -9750,7 +10165,7 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### Abilita il download delle azioni di dominio da Microsoft (obsoleto)
-        
+  
   
   
   
@@ -10571,7 +10986,7 @@ Questo criterio aziendale è disabilitato per impostazione predefinita.
 
   ### ForceNetworkInProcess
   #### Forza l'esecuzione del codice di rete nel processo del browser (obsoleto)
-        
+  
   
   
   
@@ -12642,7 +13057,7 @@ In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazi
 In Windows 7, Windows 8 e macOS questo criterio controlla l'invio di dati relativi all'utilizzo e all'arresto anomalo. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
 Per abilitare questo criterio,[ SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) deve essere impostato su abilitato. Se [MetricsReportingEnabled](#metricsreportingenabled) o [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) non è configurato o disabilitato, i dati non verranno inviati a Microsoft.
-                                            
+           
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
@@ -13684,11 +14099,11 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 ```
 
 
-     
-     
+  
+  
    
  
-    
+ 
    
   
 
@@ -13736,8 +14151,8 @@ Per altre informazioni sull'uso dei profili utente mobile, vedere https://docs.m
 ```
 
 
-     
-     
+  
+  
    
  
  
@@ -14278,7 +14693,7 @@ In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazi
 In Windows 7, Windows 8 e Mac, questo criterio controlla l'invio di informazioni sui siti Web visitati. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
 Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenabled) deve essere impostato su Abilitato. Se [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) o [MetricsReportingEnabled](#metricsreportingenabled) non è configurato o disabilitato, i dati non verranno inviati a Microsoft.
-                                           
+             
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -15078,9 +15493,9 @@ Se si abilita o non si imposta questo criterio, Microsoft Edge consentirà tali 
 
 Se si disabilita questo criterio, Microsoft Edge disabiliterà queste protezioni per le connessioni autenticate con certificati di firma installati in locale. Queste protezioni sono sempre abilitate per le connessioni autenticate con certificati di firma pubblicamente attendibili.
 
-                                                               
+                                                            
 
-                                                    
+             
 
 Questo criterio può essere usato per testare l'eventuale presenza di proxy interessati e aggiornarli. I proxy interessati causeranno un esito negativo per le connessioni con un codice errore di ERR_TLS13_DOWNGRADE_DETECTED.
 
@@ -16025,7 +16440,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   ### WebComponentsV0Enabled
   #### Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)
-        
+  
   
   
   
@@ -16078,7 +16493,7 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
 
   ### WebDriverOverridesIncompatiblePolicies
   #### Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)
-        
+  
   
   
   
@@ -16356,7 +16771,7 @@ Se si disabilitano o non si configura questo criterio, verrà usato il resolver 
   [Torna all'inizio](#microsoft-edge---policies)
 
 
-## Vedere anche
+## Vedi anche
 - [Configurazione di Microsoft Edge](configure-microsoft-edge.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Blog sulle basi di riferimento della sicurezza di Microsoft](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines)
