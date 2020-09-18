@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 2bcd18cd18c9b5be1f4b3b39137aea09889bbc2f
-ms.sourcegitcommit: db44b524973df8ac811b09e6b71c25be9ba92bbc
+ms.openlocfilehash: 75ae113b7e4b39a76b70d9c0f85bc484f63e3c1a
+ms.sourcegitcommit: 468b75d86803ad1531d7bed8e6c1a562a00ebe50
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2020
-ms.locfileid: "11015362"
+ms.lasthandoff: 09/17/2020
+ms.locfileid: "11026896"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -35,7 +35,6 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 * **Modalità Internet Explorer:**
 
    * Consentire agli utenti di usare l'interfaccia utente Microsoft Edge per testare i siti in modalità Internet Explorer. A partire dalla versione 86 di Microsoft Edge, gli amministratori possono abilitare un'opzione per l'interfaccia utente in modo che gli utenti possano caricare una scheda in modalità Internet Explorer a scopo di test o come soluzione provvisoria, fin quando i siti non vengono aggiunti al file XML dell'elenco dei siti.
-   * Consentire agli utenti di inviare feedback sui siti che richiedono Internet Explorer. Gli utenti possono inviare il proprio feedback usando un'opzione dell’interfaccia utente di Microsoft Edge. È possibile configurare questa opzione dell'interfaccia utente in modo che sia visibile tramite i criteri di gruppo e scegliere come si desidera ricevere queste informazioni (tramite posta elettronica o con un modulo personalizzato).
 
 * **Eliminare i download dal disco tramite Download Manager.** Gli utenti ora potranno eliminare i file scaricati dal disco senza uscire dal browser. La nuova funzionalità Elimina download è disponibile nel menu di scelta rapida della barra dei download o nella pagina dei download.
 
