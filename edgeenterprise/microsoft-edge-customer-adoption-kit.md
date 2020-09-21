@@ -3,25 +3,25 @@ title: Materiali di adozione del cliente per Microsoft Edge
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 06/30/2020
+ms.date: 09/20/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Materiali di adozione del cliente per Microsoft Edge
-ms.openlocfilehash: ce3db319fb813e069131700b8de97c51e510333a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 219316b6c89d73b25a7d34eac3bee88b16857f2b
+ms.sourcegitcommit: 8e350aa719ccdb0a8c76c1c145875efff28a8f23
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980291"
+ms.lasthandoff: 09/21/2020
+ms.locfileid: "11030629"
 ---
 # Materiali di adozione del cliente per Microsoft Edge
 
-Per supportare la distribuzione e l'adozione del nuovo Microsoft Edge, vedere le risorse e i materiali che seguono.
+Per supportare la distribuzione e l'adozione del nuovo Microsoft Edge, vedere le risorse e i materiali che seguono. Viene fornito un file ZIP compresso per il download.
 
-Verificare la disponibilità di nuovi materiali.
+Ricontrollare in seguito la disponibilità di nuovi materiali.
 
 ## Kit di adozione del cliente
 
@@ -29,31 +29,43 @@ Il kit di adozione del cliente include quanto segue:
 
 - Guida alla distribuzione IT
 - Guida utente Come iniziare
+- Messaggi di posta elettronica per gli annunci
+- Messaggi di posta elettronica per suggerimenti e consigli
 - Insegna digitale
 
-## Guida alla distribuzione IT
+> [!NOTE]
+> I materiali del kit di adozione sono in fase di aggiornamento, e il download sarà disponibile al termine dell'aggiornamento.
+<!--
+[Download customer adoption kit](https://download.microsoft.com/download/0/4/2/0426ffdf-e33c-4177-b0f8-a13a43719c63/Commercial%Adoption%Kit%-%Microsoft%Edge.zip)-->
+
+### Guida alla distribuzione IT
 
 Usare questa guida per avviare la pianificazione della distribuzione e per scoprire come iniziare a distribuire Microsoft Edge nel proprio ambiente.
 
-[Ottieni la Guida alla distribuzione IT](media/customer-adoption-not-md/commercial-deployment-guide-microsoft-edge.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-deployment-guide-4.png" alt-text="Serie di video Microsoft Mechanics":::
 
-## Guida utente Come iniziare
+### Guida utente Come iniziare
 
 Usare questa guida per fornire informazioni ai utenti sul nuovo Microsoft Edge. La guida include una panoramica dell'interfaccia utente, dei menu e delle funzionalità. Sono stati inclusi anche suggerimenti per agevolare l'utilizzo iniziale.
 
-[Ottenere la guida utente Come iniziare](media/customer-adoption-not-md/microsoft-edge-how-to-get-started-user-guide.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-get-started-guide.png" alt-text="Guida introduttiva Guida utente Come iniziare ...":::
 
-## Insegna digitale
+### Modelli di posta elettronica
 
-Usare le indicazioni digitali seguenti per fornire informazioni agli utenti sul nuovo Microsoft Edge.
+Usare questi modelli di posta elettronica per annunciare che il nuovo Microsoft Edge è disponibile per gli utenti e fornire suggerimenti e consigli su come ottenere il massimo dal browser.
 
-[Microsoft Edge: pagina Nuova scheda per i clienti Enterprise](media/customer-adoption-not-md/microsoft-edge-digital-signage-enterprise-new-tab-page.pdf)
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-email-template.png" alt-text="Modelli di email per suggerimenti e consigli":::
 
-[Microsoft Edge: profili multipli e multipiattaforma](https://officedocs-cdn.azureedge.net/microsoft-edge-digital-signage-multiple-profiles-and-cross-platform.pdf)
+### Insegna digitale
 
-[Microsoft Edge: Microsoft Search in Bing](https://officedocs-cdn.azureedge.net/microsoft-edge-digital-signage-microsoft-search-in-bing.pdf)
+Usare le indicazioni digitali seguenti per fornire informazioni agli utenti sul nuovo Microsoft Edge:
 
-[Microsoft Edge: sicurezza](media/customer-adoption-not-md/microsoft-edge-digital-signage-security.pdf)
+- Pagina Nuova scheda per utenti Enterprise
+- Profili multipli e multipiattaforma
+- Microsoft Search in Bing
+- Sicurezza
+
+:::image type="content" source="media/customer-adoption-not-md/ms-edge-new-tab-page.png" alt-text="Pagina Nuova scheda":::
 
 ## Alte risorse di apprendimento
 
