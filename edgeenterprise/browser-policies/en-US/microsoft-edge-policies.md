@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 0561f403bb385792767c3666be18bb6cf680edaf
+ms.openlocfilehash: 146043b518f02b8581498c273db4327682993609
 ms.sourcegitcommit: d4f2b62b41f0e40ec6b22aeca436b2c261658bd8
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078124"
+ms.locfileid: "11078251"
 ---
 # Microsoft Edge - Criteri
 La versione più recente di Microsoft Edge include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge nell'organizzazione.
@@ -1268,8 +1268,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   [PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
 
 Se non si configura questo criterio, l'utente può modificare tale impostazione manualmente.
-
-                                                                                     
 
 Nota: la riproduzione automatica è solo per i domini elencati in modo esplicito nel criterio [PluginsAllowedForUrls](#pluginsallowedforurls). Per attivare la riproduzione automatica per tutti i siti, aggiungere http://* e https://* all'elenco degli URL consentiti.
 
@@ -3256,7 +3254,6 @@ Se il criterio viene abilitato e impostato su:
 - "Barra degli indirizzi" ("reindirizza"), nella casella di ricerca della nuova scheda viene usata la barra degli indirizzi per eseguire una ricerca nelle nuove schede.
 
 Mapping delle opzioni del criterio:
-  
 
 * bing (bing) = Casella di ricerca (consigliata)
 
@@ -4409,12 +4406,6 @@ Disabilitato e consigliato disabilitati: entrambe gli stati funzioneranno normal
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -5700,12 +5691,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
 Se non si configura questo criterio, vengono abilitati tutti i tipi di immagine di sfondo della pagina Nuova scheda.
 
-    
-
-     
-
-   
-
 Mapping delle opzioni del criterio:
 
 * DisableImageOfTheDay (1) = Disabilitare il tipo di immagine di sfondo giornaliero
@@ -5754,7 +5739,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   ### NewTabPageCompanyLogo
   #### Imposta il logo aziendale della pagina Nuova scheda
-                                                                                                                 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 85.
   #### Versioni supportate:
@@ -6639,8 +6623,6 @@ Se si abilita questo criterio, le pagine possono inviare richieste XHR sincrone 
 
 Se si disabilita o non si configura questo criterio, le pagine non possono inviare richieste XHR sincrone durante la chiusura della pagina.
 
-  
-
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
@@ -7218,20 +7200,6 @@ Questo criterio è pensato per offrire alle aziende la possibilità di disabilit
   #### Descrizione
   Se si abilita questo criterio, tutti i tipi di dati e le impostazioni supportati del browser specificato verranno importati automaticamente alla prima esecuzione. Durante la first-run experience, la sezione di importazione verrà ignorata.
 
- 
-
-   
-
-  
-
-   
-
-  
-
-    
-
-    
-
 I dati del browser della Versione legacy di Microsoft Edge saranno sempre migrati automaticamente nella first-run experience, indipendentemente dal valore di questo criterio.
 
 Se questo criterio è impostato su “FromDefaultBrowser”, i tipi di dati corrispondenti al browser predefinito nel dispositivo gestito verranno importati.
@@ -7262,7 +7230,6 @@ Nota: per altri dettagli su cosa viene importato da Google Chrome, vedere [https
 
 Se questo criterio è impostato sul valore di “FromSafari”, i dati degli utenti non vengono più importati in Microsoft Edge. Ciò è dovuto al modo in cui l'accesso completo al disco funziona sul Mac.
 In macOS Mojave e versioni successive, non è più possibile avere l'importazione automatica dei dati di Safari in Microsoft Edge.
- 
 
 A partire da Microsoft Edge versione 83, se questo criterio è impostato sul valore di “FromMozillaFirefox”, i seguenti tipi di dati verranno importati da Mozilla Firefox:
 1. Preferiti o segnalibri
@@ -7513,8 +7480,6 @@ I file con tipi che devono essere aperti automaticamente continueranno a essere 
 I tipi di file che un utente ha già specificato per l'apertura automatica continueranno a essere scaricati automaticamente. L'utente continuerà a essere in grado di specificare altri tipi di file da aprire automaticamente.
 
 Se non si imposta questo criterio, solo i tipi di file che un utente ha già specificato per l'apertura automatica verranno aperto al download.
-
-              
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
@@ -8200,10 +8165,6 @@ Se non si configura questo criterio, il client DNS predefinito è abilitato per 
 
   #### Descrizione
   Questo criterio è deprecato perché serve solo come meccanismo a breve termine per offrire alle aziende più tempo per aggiornare i propri ambienti e segnalare problemi se risultano incompatibili con lo strumento di verifica predefinito.
- 
-  
-
-  
 
 Non funzionerà in Microsoft Edge versione 87, quando è prevista la rimozione dello strumento di verifica del certificato legacy in Mac OS X.
 
@@ -8577,8 +8538,6 @@ Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?li
 Se si abilita questo criterio, i servizi e le destinazioni di esportazione corrispondenti all'elenco specificato vengono bloccati.
 
 Se non si configura questo criterio, non vengono applicate restrizioni ai servizi e destinazioni di esportazione accettabili.
-
-     
 
 Mapping delle opzioni del criterio:
 
@@ -9047,8 +9006,6 @@ Se si disabilita questo criterio, i controlli di intercettazione DNS non vengono
   - In Windows 7 e macOS dalla versione 77 o successive
 
   #### Descrizione
-   
-
   Se si abilita questo criterio su true, Microsoft Edge controlla sempre se si tratta del browser predefinito all’avvio e, se possibile, lo registra automaticamente.
 
 Se si imposta questo criterio su falso, Microsoft Edge non controlla se si tratta dell'impostazione predefinita e disattiva i controlli utente per questa opzione.
@@ -9914,9 +9871,7 @@ Se la cartella specificata dal percorso non esiste, il download attiverà una ri
   - Tipo valore: REG_SZ
   ##### Valore di esempio
 ```
-
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
-             
 ```
 
 
@@ -10165,9 +10120,6 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   ### EnableDomainActionsDownload
   #### Abilita il download delle azioni di dominio da Microsoft (obsoleto)
-  
-  
-  
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
   #### Versioni supportate:
@@ -10987,10 +10939,6 @@ Questo criterio aziendale è disabilitato per impostazione predefinita.
   ### ForceNetworkInProcess
   #### Forza l'esecuzione del codice di rete nel processo del browser (obsoleto)
   
-  
-  
-  
-  
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 83.
   #### Versioni supportate:
   - In Windows dalla versione 78 a 83
@@ -11002,10 +10950,6 @@ Questo criterio forza l'esecuzione del codice di rete nel processo del browser.
 
 Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli utenti sono esposti a problemi di sicurezza quando il processo di rete è in modalità sandbox.
 
-
- 
-
-  
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
@@ -12481,7 +12425,6 @@ Se si imposta questo criterio su “AllInPageNavigations”, tutti gli spostamen
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 Mapping delle opzioni del criterio:
-  
 
 * Predefinito (0) = Predefinito
 
@@ -12531,13 +12474,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Descrizione
   Questo criterio sostituisce il criterio di contrassegno del test della modalità ie. Consente agli utenti di aprire una scheda in modalità Internet Explorer dal menu dell'interfaccia utente.
 
-  Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
+       Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
 
-  Se si abilita questo criterio, gli utenti possono aprire la scheda modalità IE dall'interfaccia utente ed esplorare il sito corrente in modalità Internet Explorer.
+       Se si abilita questo criterio, gli utenti possono aprire la scheda modalità IE dall'interfaccia utente ed esplorare il sito corrente in modalità Internet Explorer.
 
-  Se si disabilita questo criterio, gli utenti non potranno vedere direttamente l'opzione dell'interfaccia utente nel menu. 
-  
-  Se non si configura questo criterio, è possibile configurare manualmente il contrassegno del test della modalità ie.
+       Se si disabilita questo criterio, gli utenti non potranno vedere direttamente l'opzione dell'interfaccia utente nel menu.
+
+       Se non si configura questo criterio, è possibile configurare manualmente il contrassegno del test della modalità ie.
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -13039,8 +12982,6 @@ Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo c
   ### MetricsReportingEnabled
   #### Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali (deprecato)
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
-   
-  
   
   #### Versioni supportate:
   - In Windows e macOS dalla versione 77 o successive
@@ -13057,11 +12998,9 @@ In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazi
 In Windows 7, Windows 8 e macOS questo criterio controlla l'invio di dati relativi all'utilizzo e all'arresto anomalo. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
 Per abilitare questo criterio,[ SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) deve essere impostato su abilitato. Se [MetricsReportingEnabled](#metricsreportingenabled) o [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) non è configurato o disabilitato, i dati non verranno inviati a Microsoft.
-           
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
@@ -13298,53 +13237,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   
 
-
- 
-   
- 
-
-   
-  
-
-   
-
-   
-
-  
- 
-  
- 
-
-  
-   
-
-   
-  
-   
-   
-  
-   
- 
-   
-   
-   
-  
- 
- 
-   
- 
-   
-
-
-  
-  
-   
- 
- 
-   
-  
-
- 
   [Torna all'inizio](#microsoft-edge---policies)
 
   ### OverrideSecurityRestrictionsOnInsecureOrigin
@@ -14100,12 +13992,6 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 
 
   
-  
-   
- 
- 
-   
-  
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -14151,12 +14037,6 @@ Per altre informazioni sull'uso dei profili utente mobile, vedere https://docs.m
 ```
 
 
-  
-  
-   
- 
- 
-   
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -14674,8 +14554,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   ### SendSiteInfoToImproveServices
   #### Invia informazioni sul sito per migliorare i servizi Microsoft (deprecato)
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
-   
-  
   
   #### Versioni supportate:
   - In Windows e macOS dalla versione 77 o successive
@@ -14685,7 +14563,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 Questo criterio consente di inviare informazioni sui siti Web visitati in Microsoft Edge a Microsoft per migliorare i servizi, ad esempio la ricerca.
 
-   
 Abilitare questo criterio per inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge. Disabilitare questo criterio per non inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge. In entrambi i casi, gli utenti non possono modificare né sovrascrivere l'impostazione.
 
 In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazione predefinita userà i dati di diagnostica Windows. Se questi criteri sono abilitati, Microsoft Edge invierà solo le informazioni sui siti Web visitati in MIcrosoft Edge se l'impostazione dei dati di diagnostica Windows è impostata su Completo. Se questi criteri sono disabilitati, Microsoft Edge non invierà le informazioni sui siti Web visitati. Per altre informazioni sulle impostazioni dei dati di diagnostica Windows, vedere [https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
@@ -14693,7 +14570,6 @@ In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazi
 In Windows 7, Windows 8 e Mac, questo criterio controlla l'invio di informazioni sui siti Web visitati. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
 Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenabled) deve essere impostato su Abilitato. Se [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) o [MetricsReportingEnabled](#metricsreportingenabled) non è configurato o disabilitato, i dati non verranno inviati a Microsoft.
-             
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -14977,10 +14853,8 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   #### Descrizione
   Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Di conseguenza, questo valore è deprecato e non deve essere usato.
 
-Specifica se includere un collegamento a Office.com nella barra Preferiti. Tramite la scelta rapida gli utenti che hanno eseguito l'accesso a Microsoft Edge possono accedere alle app e ai documenti di Microsoft Office. Se non si abilita o non si configurano i criteri, gli utenti possono scegliere se visualizzare la scelta rapida modificando l'interruttore nel menu di scelta rapida della barra Preferiti.
-Se si disabilita questo criterio, la scelta rapida da tastiera non viene mostrata.
-
-                                                       
+Specifica se includere un collegamento a Office.com nella barra Preferiti. Tramite il collegamento gli utenti che hanno eseguito l'accesso a Microsoft Edge possono accedere alle app e ai documenti di Microsoft Office. Se non si abilita o non si configurano i criteri, gli utenti possono scegliere se visualizzare il collegamento modificando l'interruttore nel menu di scelta rapida della barra Preferiti.
+Se si disabilita questo criterio, il collegamento non viene mostrato.
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -14993,7 +14867,7 @@ Se si disabilita questo criterio, la scelta rapida da tastiera non viene mostrat
   #### Informazioni e impostazioni di Windows
   ##### Info su Criteri di gruppo (ADMX)
   - Nome univoco Criteri di gruppo: ShowOfficeShortcutInFavoritesBar
-  - Nome Criteri di gruppo: mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)
+  - Nome Criteri di gruppo: mostra il collegamento a Microsoft Office nella barra dei Preferiti (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -15288,8 +15162,6 @@ Se si imposta il criterio su false, gli aggiornamenti automatici verranno disabi
 
 Questo criterio non influisce su altri tipi di contenuti misti diversi da audio, video e immagini.
 
-
-  
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
@@ -15384,8 +15256,6 @@ Se il criterio è impostato su false o non è configurato, verranno visualizzati
   #### Descrizione
   Disabilita la sincronizzazione dei dati in Microsoft Edge. Questo criterio impedisce anche che venga visualizzata la richiesta di consenso per la sincronizzazione.
 
-
- 
 Se il criterio non viene impostato o lo si applica come consigliato, gli utenti potranno attivare o disattivare la sincronizzazione. Se si applica questo criterio come obbligatorio, gli utenti non potranno attivare la sincronizzazione.
 
   #### Funzionalità supportate:
@@ -15480,7 +15350,6 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
   ### TLS13HardeningForLocalAnchorsEnabled
   #### Abilita una funzionalità di sicurezza TLS 1.3 per i trust anchor locali (obsoleto)
   
-  
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 85.
   #### Versioni supportate:
   - In Windows e macOS dalla versione 81, fino alla versione 85
@@ -15493,10 +15362,6 @@ Questo criterio controlla una funzionalità di sicurezza in TLS 1.3 che protegge
 Se si abilita o non si imposta questo criterio, Microsoft Edge consentirà tali protezioni per tutte le connessioni.
 
 Se si disabilita questo criterio, Microsoft Edge disabiliterà queste protezioni per le connessioni autenticate con certificati di firma installati in locale. Queste protezioni sono sempre abilitate per le connessioni autenticate con certificati di firma pubblicamente attendibili.
-
-                                                            
-
-             
 
 Questo criterio può essere usato per testare l'eventuale presenza di proxy interessati e aggiornarli. I proxy interessati causeranno un esito negativo per le connessioni con un codice errore di ERR_TLS13_DOWNGRADE_DETECTED.
 
@@ -15760,8 +15625,6 @@ Se non si imposta questo criterio, il browser tenterà di risparmiare memoria so
 Se si disabilita o non si configura questo criterio, gli utenti possono impostare il proprio livello di prevenzione del rilevamento.
 
 Mapping delle opzioni del criterio:
-   
- 
 
 * TrackingPreventionOff (0) = Disattivato (nessuna prevenzione del rilevamento)
 
@@ -16442,9 +16305,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ### WebComponentsV0Enabled
   #### Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)
   
-  
-  
-  
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
   #### Versioni supportate:
   - In Windows e macOS dalla versione 80, fino alla versione 84
@@ -16495,15 +16355,11 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
   ### WebDriverOverridesIncompatiblePolicies
   #### Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)
   
-  
-  
-  
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
   #### Versioni supportate:
   - In Windows e macOS dalla versione 77, fino alla versione 84
 
   #### Descrizione
-  
   
 Questo criterio non funziona perché WebDriver ora è compatibile con tutti i criteri esistenti.
 
