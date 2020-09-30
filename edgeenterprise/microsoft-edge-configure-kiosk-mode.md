@@ -3,19 +3,19 @@ title: Configurare la modalità tutto schermo di Microsoft Edge
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 09/22/2020
+ms.date: 09/24/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare la modalità tutto schermo di Microsoft Edge
-ms.openlocfilehash: d7c9df82079f8343d43ccfd312623e6e01358fa9
-ms.sourcegitcommit: 858227653fc89532d1d274735f53280e27b2a8c0
+ms.openlocfilehash: 17852cc7c7e4921a0fbef7d09a3f1c3d3cccf49f
+ms.sourcegitcommit: b1285b7745eb41b241d706b401f8ce78fa33b227
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "11072688"
+ms.lasthandoff: 09/25/2020
+ms.locfileid: "11078666"
 ---
 # Configurare la modalità tutto schermo di Microsoft Edge
 
@@ -77,7 +77,7 @@ Sono disponibili le seguenti funzionalità:
 
 ## Impostare la modalità tutto schermo con accesso assegnato
 
-La modalità tutto schermo di Microsoft Edge con accesso assegnato è attualmente disponibile per essere testata con l'ultima [build di Windows 10 Insider Preview](https://insider.windows.com/), versione 20215 o successiva, e con il [Canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), versione 87.0.644 o successiva.
+La modalità tutto schermo di Microsoft Edge con accesso assegnato è al momento disponibile per essere testata con l'ultima [build di Windows 10 Insider Preview](https://insider.windows.com/), versione 20215 o successiva, e con il [Canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), versione 87.0.644.4 o successiva.
 
 **Come ottengo l'anteprima di Windows Insiders?**
 
@@ -88,7 +88,7 @@ Per installare una build di Windows 10 Insider Preview su PC, segui le istruzion
 Il modo più semplice per configurare uno o due dispositivi in modalità tutto schermo con app singola è tramite le impostazioni di Windows. Usa i seguenti passaggi per configurare un computer in modalità tutto schermo con app singola.
 
 1. Installa l'ultima versione di Windows 10 Insider Preview, versione 20215 o successiva. Segui le istruzioni in [Introduzione alle build di Windows 10 Insider Preview](https://docs.microsoft.com/windows-insider/get-started).
-2. Installa l'ultima versione del [canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), 87.0.644 o successiva.
+2. Installa l'ultima versione del [canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), 87.0.644.4 o successiva.
 
    > [!IMPORTANT]
    > Poiché è richiesta un'installazione a livello di dispositivo, è supportato solo un canale non Canary.
@@ -99,68 +99,39 @@ Il modo più semplice per configurare uno o due dispositivi in modalità tutto s
 
 4. Nella pagina **Configura un chiosco multimediale** , fai clic su  **Inizia**.
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-2-get-started.png" alt-text="Pagina chiosco multimediale: Introduzione":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-2-get-started.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 5. Digita un nome per creare un nuovo account per chiosco multimediale o scegli un account esistente dall'elenco a discesa popolato e quindi fai clic su  **Avanti**.
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="Modalità tutto schermo: crea un account":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-3-create-account.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 6. Nella pagina **Scegli un'app chiosco multimediale** , seleziona **Microsoft Edge** e quindi fai clic su  **Avanti**.
 
    > [!NOTE]
    > Questo si applica solo ai canali Microsoft Edge Dev, Beta e Stable.
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="Modalità tutto schermo: scegli un’app":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 7. Scegli una delle seguenti opzioni per la modalità di visualizzazione di Microsoft Edge durante l'esecuzione in modalità tutto schermo:
 
    - Segnaletica digitale/interattiva - Visualizza un sito specifico in modalità a schermo intero, con Microsoft Edge.
    - Browser pubblico - Esegue una versione multi-scheda limitata di Microsoft Edge.
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Visualizzazione in modalità tutto schermo: segno digitale in modalità a schermo intero":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 8. Seleziona **Avanti**.
 9. Digita l'URL da caricare all'avvio del chiosco.
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-6-enter-url.png" alt-text="Modalità tutto schermo: immetti l'URL":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-6-enter-url.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 10. Accetta il valore predefinito di 5 minuti per il tempo di inattività o fornisci un valore personalizzato.
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-7-enter-idle-time.png" alt-text="Modalità tutto schermo: immettere il tempo di inattività":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-7-enter-idle-time.png" alt-text="Impostare un chiosco multimediale con accesso assegnato":::
 
 11. Fai clic su **Avanti**.
 12. Chiudi la finestra **Impostazioni**  per salvare e applicare le tue scelte.
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Modalità tutto schermo: completa la configurazione":::
-
-13. Disconnettiti dal chiosco multimediale ed esegui l'accesso con l'account chiosco locale per convalidare la configurazione.
-
-## Limitazioni funzionali
-
-Con il rilascio della versione di anteprima della modalità tutto schermo stiamo continuando a migliorare il prodotto e aggiungere nuove funzionalità.
-
-Sebbene la modalità tutto schermo attualmente non supporti le seguenti funzionalità, stiamo lavorando sulle seguenti funzionalità:
-
-- Raccolte
-- Extensions
-- Modalità Internet Explorer
-- Windows Defender Application Guard (WDAG)
-
-## Roadmap
-
-### Alla fine di quest'anno (2020)
-
-Verranno aggiunte le seguenti funzionalità:
-
-- Pulsante Termina sessione
-- Barra degli indirizzi URL di sola lettura  
-  - Configurabile con i criteri di gruppo
-  - Se abilitato, agli utenti verrà impedito di modificare l'URL della barra degli indirizzi per provare a spostarsi in un'altra pagina.
-
-- Altre funzioni di blocco:
-
-  - Gli acceleratori aggiuntivi verranno bloccati (ad esempio, CTRL + N)
-  - Il menu delle impostazioni "..." abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Impostare un chiosco multimediale con accesso assegnato" abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)
   - Pagine di blocco aggiuntive *edge://* (ad esempio, *edge://settings*)
   - Configurazione dell'interfaccia utente delle opzioni di stampa
   - Limitazione di esplorazione dei file solo alla cartella di download.
@@ -176,6 +147,6 @@ Verranno aggiunte le seguenti funzionalità e supporto:
 ## Vedere anche
 
 - [Configurare chioschi multimediali e firme digitali nelle edizioni desktop di Windows](https://docs.microsoft.com/windows/configuration/kiosk-methods)
-- [Distribuire la modalità tutto schermo di Microsoft Edge Legacy](https://aka.ms/edgekioskmode) 
+- [Distribuire la modalità tutto schermo di Microsoft Edge Legacy](https://aka.ms/edgekioskmode)
 - [Pianificare la distribuzione di Microsoft Edge](deploy-edge-plan-deployment.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
