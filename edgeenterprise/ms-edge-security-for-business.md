@@ -3,23 +3,23 @@ title: Sicurezza Microsoft Edge per la tua azienda
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 09/22/2020
+ms.date: 09/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Sicurezza Microsoft Edge per la tua azienda
-ms.openlocfilehash: b9ad039b699c036b16506d360f75d46c303ce301
-ms.sourcegitcommit: 7b1c5a2a768a7418f8b25128df92442d63f0f87b
+ms.openlocfilehash: 313d1837d85fe23ab910741e28f95b77ffd7029d
+ms.sourcegitcommit: fbfe796b2717573dc221b9d4509a1662d9bbb452
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/22/2020
-ms.locfileid: "11068386"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "11091685"
 ---
 # Sicurezza Microsoft Edge per la tua azienda
 
-Microsoft Edge si basa sul progetto open source Chromium, lo stesso progetto che è al centro di Google Chrome, il che significa che condivide la stessa architettura e design di sicurezza ben progettati e collaudati alla base. La storia della sicurezza di Microsoft Edge non finisce qui. **Microsoft Edge, infatti, è più sicuro di Google Chrome per le tua azienda su Windows 10**. Ha potenti difese integrate contro phishing e malware e supporta in modo nativo l'isolamento dell'hardware su Windows 10: non è richiesto alcun software aggiuntivo per raggiungere questo standard di sicurezza. Inoltre, se abbinato al supporto nativo per i servizi di sicurezza e conformità di Microsoft 365, Microsoft Edge offre funzionalità e caratteristiche di sicurezza aggiuntive e potenti che aiutano a proteggere dalla perdita di dati cosi da ottenere ulteriori vantaggi.
+Microsoft Edge si basa sul progetto open source Chromium, lo stesso progetto da cui nasce Google Chrome, il che significa che alla base condivide l’architettura e il design di sicurezza ben progettati e collaudati. La storia della sicurezza di Microsoft Edge non finisce qui. **Microsoft Edge, infatti, è più sicuro di Google Chrome per le tua azienda su Windows 10**. Ha potenti difese integrate contro phishing e malware e supporta in modo nativo l'isolamento dell'hardware su Windows 10: non è richiesto alcun software aggiuntivo per raggiungere questo standard di sicurezza. Inoltre, se abbinato al supporto nativo per i servizi di sicurezza e conformità di Microsoft 365, Microsoft Edge offre funzionalità e caratteristiche di sicurezza aggiuntive e potenti che aiutano a proteggere dalla perdita di dati cosi da ottenere ulteriori vantaggi.
 
 Entriamo nei dettagli, iniziando con le **minacce esterne** e poi esaminando i **rischi interni e la protezione delle informazioni**.
 

@@ -3,19 +3,19 @@ title: Sincronizzazione di Microsoft Edge in modalità Enterprise
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 09/15/2020
+ms.date: 09/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Sincronizzazione di Microsoft Edge in modalità Enterprise
-ms.openlocfilehash: d9cd643142d0f6744664a5071c5000b820583e41
-ms.sourcegitcommit: 06c365faeea6070f103fe867cc2da13539ae4680
+ms.openlocfilehash: d5868fb496c036d750925bb5ae6dfa3de0293fd2
+ms.sourcegitcommit: 8a4479a1b034c3c13ea03ee3a2374a1af332cb38
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/16/2020
-ms.locfileid: "11016345"
+ms.lasthandoff: 09/30/2020
+ms.locfileid: "11091948"
 ---
 # Sincronizzazione di Microsoft Edge in modalità Enterprise
 
@@ -33,8 +33,6 @@ La sincronizzazione di Microsoft Edge consente agli utenti di accedere ai dati d
 - Indirizzi e altro (riempimento di moduli)
 - Raccolte
 - Impostazioni
-- Cronologia esplorazioni
-- Aprire schede
 
 La funzionalità di sincronizzazione è abilitata tramite il consenso dell'utente e gli utenti possono attivare o disattivare la sincronizzazione per ognuno dei tipi di dati elencati in precedenza.
 
@@ -80,7 +78,7 @@ I criteri di gruppo seguenti influiscono sulla sincronizzazione di Microsoft Edg
 
 #### I dati sincronizzati sono crittografati? 
 
-I dati sono crittografati in Transport con TLS 1.2 o versione successiva. La maggior parte dei tipi di dati inattivi vengono inoltre crittografati nel servizio di Microsoft utilizzando AES256, ad eccezione della cronologia del browser e dei tipi di dati delle schede aperte. Per impedire la sincronizzazione di questi tipi di dati, è possibile applicare il criterio [SavingBrowserHistoryDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#savingbrowserhistorydisabled).
+I dati sono crittografati in Transport con TLS 1.2 o versione successiva. La maggior parte dei tipi di dati viene ulteriormente crittografata nel servizio Microsoft tramite AES256. 
 
 #### Dove vengono archiviati i dati sincronizzati di Microsoft Edge?
 
