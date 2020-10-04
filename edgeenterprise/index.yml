@@ -1,6 +1,6 @@
 ### YamlMime:Landing
-title: Documentazione di Microsoft Edge in modalità Enterprise
-summary: Microsoft Edge migliora ed estende l'esperienza del browser. Viene eseguito su dispositivi Windows, macOS, iOS e Android.
+title: Microsoft Edge Enterprise documentation
+summary: Microsoft Edge enhances and extends the browser experience. Viene eseguito su dispositivi Windows, macOS, iOS e Android.
 metadata:
   title: Microsoft Edge
   description: Microsoft Edge migliora ed estende l'esperienza del browser. Viene eseguito su dispositivi Windows, macOS, iOS e Android.
@@ -11,77 +11,77 @@ metadata:
   ms.collection: collection
   author: dan-wesley
   ms.author: kvice
-  ms.date: 09/20/2020
-  ms.openlocfilehash: 796f769ae61be5db023ebe0c9fb12ab1ac62cd42
-  ms.sourcegitcommit: 71d2e7ddcec4a34a6f052f1ccdff9431928ab4db
+  ms.date: 10/02/2020
+  ms.openlocfilehash: 16320883e56f65142a0d99e7cd62d4d7a5555b29
+  ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 09/20/2020
-  ms.locfileid: "11030537"
+  ms.lasthandoff: 10/03/2020
+  ms.locfileid: "11094460"
 landingContent:
-- title: Altre informazioni su Microsoft Edge in ambito aziendale
+- title: Learn about Microsoft Edge in the enterprise
   linkLists:
   - linkListType: overview
     links:
-    - text: Video su Microsoft Edge
+    - text: Microsoft Edge Videos
       url: microsoft-edge-videos.md
-    - text: Panoramica dei canali di Microsoft Edge
+    - text: Microsoft Edge channel overview
       url: microsoft-edge-channels.md
     - text: Scarica un canale Microsoft Edge
       url: https://aka.ms/EdgeEnterprise
-    - text: Usa funzionalità per le aziende
+    - text: Use enterprise features
       url: edge-ie-mode.md
-    - text: Video - Microsoft Edge e Microsoft Search
+    - text: Video - Microsoft Edge and Microsoft Search
       url: microsoft-edge-video-search.md
-- title: Distribuisci e aggiorna Microsoft Edge
+- title: Deploy and update Microsoft Edge
   linkLists:
   - linkListType: deploy
     links:
-    - text: Pianifica la distribuzione di Microsoft Edge
+    - text: Plan your deployment of Microsoft Edge
       url: deploy-edge-plan-deployment.md
-    - text: 'Video: Distribuire Microsoft Edge'
+    - text: Video - Deploy Microsoft Edge
       url: microsoft-edge-video-deploy.md
-    - text: Distribuisci su Windows
+    - text: Deploy to Windows
       url: https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json
     - text: Distribuisci su macOS
       url: https://docs.microsoft.com/intune/apps/apps-edge-macos/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json
-- title: Configura Microsoft Edge
+- title: Configure Microsoft Edge
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Configurare Microsoft Edge in Windows
+    - text: Configure Microsoft Edge on Windows
       url: configure-microsoft-edge.md
-    - text: Configurare Microsoft Edge in macOS
+    - text: Configure Microsoft Edge on macOS
       url: configure-microsoft-edge-on-mac.md
-    - text: Imposta Microsoft Edge come browser predefinito
+    - text: Set Microsoft Edge as the default browser
       url: edge-default-browser.md
-- title: Gestisci sicurezza e privacy
+- title: Manage security and privacy
   linkLists:
   - linkListType: concept
     links:
-    - text: Video - Sicurezza, compatibilità e gestibilità
+    - text: Video - Security, compatibility, and manageability
       url: microsoft-edge-video-security-compatibility-manageability.md
-    - text: Sicurezza
-      url: security-overview.md
+    - text: Security
+      url: ms-edge-security-for-business.md
     - text: Privacy
       url: microsoft-edge-enterprise-privacy-settings.md
-- title: Informazioni di riferimento sui criteri
+- title: Policy reference
   linkLists:
   - linkListType: reference
     links:
     - text: Informazioni di riferimento sui criteri del browser
       url: microsoft-edge-policies.md
-    - text: Informazioni di riferimento sui criteri dell'aggiornamento
+    - text: Update policy reference
       url: microsoft-edge-update-policies.md
-    - text: Panoramica sul mapping dei criteri
+    - text: Policy mapping overview
       url: microsoft-edge-policy-map-overview.md
-    - text: Blog sulle basi di riferimento della sicurezza di Microsoft
+    - text: Microsoft Security Baselines Blog
       url: https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines
-- title: Entra in contatto con la community aziendale o ricevi assistenza
+- title: Engage with enterprise community or get help
   linkLists:
   - linkListType: get-started
     links:
     - text: Community tecnica aziendale
       url: https://techcommunity.microsoft.com/t5/Enterprise/bd-p/EdgeInsiderEnterprise
-    - text: Contatta il supporto per Microsoft Edge
+    - text: Contact Microsoft Edge support
       url: https://microsoftedgesupport.microsoft.com/hc/
