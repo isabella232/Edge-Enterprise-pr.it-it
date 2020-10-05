@@ -131,7 +131,7 @@ Il modo più semplice per configurare uno o due dispositivi in modalità tutto s
 11. Fai clic su **Avanti**.
 12. Chiudi la finestra **Impostazioni**  per salvare e applicare le tue scelte.
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Impostare un chiosco multimediale con accesso assegnato" abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Impostare un chiosco multimediale con accesso assegnato" abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)":::
   - Pagine di blocco aggiuntive *edge://* (ad esempio, *edge://settings*)
   - Configurazione dell'interfaccia utente delle opzioni di stampa
   - Limitazione di esplorazione dei file solo alla cartella di download.
