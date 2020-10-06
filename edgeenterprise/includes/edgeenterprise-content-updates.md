@@ -1,14 +1,26 @@
 ---
-ms.openlocfilehash: 7f24099b63dba253aaee8edc3be58783d97178c9
-ms.sourcegitcommit: 2f17cb271cb42b944435a99670375bb645abc9bf
+ms.openlocfilehash: bd70db3a942a526267de982018c25710e436af58
+ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2020
-ms.locfileid: "11088345"
+ms.lasthandoff: 10/06/2020
+ms.locfileid: "11099817"
 ---
-<!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
+
+## Settimana del 28 settembre 2020
 
 
+| Data di pubblicazione |Titolo dell'argomento | Modifica |
+|------|------------|--------|
+| 29/9/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Correzioni per la versione minore Beta 86.0.622.28. | modificato |
+| 30/9/2020 | [Sicurezza Microsoft Edge per la tua azienda](/DeployEdge/ms-edge-security-for-business)<br>Correzione di testo minore e del collegamento. | modificato |
+| 30/9/2020 | [Sincronizzazione di Microsoft Edge in modalità Enterprise](/DeployEdge/microsoft-edge-enterprise-sync)<br>Correzione ambito dei dati sincronizzati e domande frequenti: "I dati sincronizzati sono crittografati?"  | modificato |
+| 01/10/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Correzioni per la versione minore Stable 85.0.564.68. | modificato |
+| 02/10/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Aggiornato per la versione minore Beta 86.0.622.31. | modificato |
+| 02/10/2020 | [Documentazione di Microsoft Edge in modalità Enterprise](/DeployEdge/index)<br>Aggiungere un collegamento alla documentazione sulla sicurezza, "Microsoft Edge Security per la tua azienda". | modificato |
+| 02/10/2020 | [Microsoft Edge e Microsoft Defender Application Guard](/DeployEdge/microsoft-edge-security-windows-defender-application-guard)<br>Correzione collegamento interrotto in **Vedere altro** | modificato |
+| 02/10/2020 | [Sicurezza Microsoft Edge per la tua azienda](/DeployEdge/ms-edge-security-for-business)<br>Correzione errore di digitazione. | modificato |
+| 02/10/2020 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies)<br>Aggiornamento criteri di gruppo per Microsoft Edge. | modificato |
 
 
 ## Settimana del 21 settembre 2020
@@ -16,12 +28,12 @@ ms.locfileid: "11088345"
 
 | Data di pubblicazione |Titolo dell'argomento | Modifica |
 |------|------------|--------|
-| 22/9/2020 | [Materiali di adozione del cliente per Microsoft Edge](/DeployEdge/microsoft-edge-customer-adoption-kit)<br>Aggiornare e consolidare il materiale in un pacchetto scaricabile. | modificato |
-| 22/9/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Correggere i bug e i problemi relativi alle prestazioni per la versione secondaria 86.0.622.15. | modificato |
-| 23/9/2020 | [Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge](/DeployEdge/microsoft-edge-relnotes-security)<br>Aggiornamento della sicurezza per la versione 85.0.564.63 del Canale Stable. | modificato |
-| 23/9/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Aggiornamento per la versione secondaria 85.0.564.63 per riflettere l'aggiornamento della sicurezza. | modificato |
-| 24/9/2020 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies)<br>Aggiornare i criteri di gruppo. | modificato |
-| 25/9/2020 | [Configurare la modalità tutto schermo di Microsoft Edge](/DeployEdge/microsoft-edge-configure-kiosk-mode)<br>Come configurare le opzioni della modalità tutto schermo di Microsoft Edge per un test pilota. Include la roadmap della modalità tutto schermo. | Nuova |
+| 22/9/2020 | [Materiali di adozione del cliente per Microsoft Edge](/DeployEdge/microsoft-edge-customer-adoption-kit) | modificato |
+| 22/9/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+| 23/9/2020 | [Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge](/DeployEdge/microsoft-edge-relnotes-security) | modificato |
+| 23/9/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
+| 24/9/2020 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies) | modificato |
+| 25/9/2020 | [Configurare la modalità tutto schermo di Microsoft Edge](/DeployEdge/microsoft-edge-configure-kiosk-mode) | modificato |
 
 
 ## Settimana del 07 settembre 2020
@@ -45,3 +57,4 @@ ms.locfileid: "11088345"
 |------|------------|--------|
 | 09/02/2020 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies) | modificato |
 | 09/02/2020 | [Rollback di Microsoft Edge per le aziende](/DeployEdge/edge-learnmore-rollback) | modificato |
+
