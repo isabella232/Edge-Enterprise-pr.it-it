@@ -3,19 +3,19 @@ title: Configurare la modalità tutto schermo di Microsoft Edge
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 09/24/2020
+ms.date: 10/05/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare la modalità tutto schermo di Microsoft Edge
-ms.openlocfilehash: 17852cc7c7e4921a0fbef7d09a3f1c3d3cccf49f
-ms.sourcegitcommit: b1285b7745eb41b241d706b401f8ce78fa33b227
+ms.openlocfilehash: 799b3dd4b7fc96f0b8e5cb718bca98fd4f38ec15
+ms.sourcegitcommit: 78905f66f4a6590a57c8f2bf808af92106b62996
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078666"
+ms.lasthandoff: 10/05/2020
+ms.locfileid: "11094863"
 ---
 # Configurare la modalità tutto schermo di Microsoft Edge
 
@@ -23,8 +23,6 @@ In questo articolo viene descritto come configurare le opzioni della modalità t
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 87 o successiva.
-
-Per informazioni sulla modalità tutto schermo di Microsoft Edge Legacy (versione 45 e versioni precedenti), vedi [Distribuire la modalità tutto schermo di Microsoft Edge](https://aka.ms/edgekioskmode).
 
 ## Panoramica
 
@@ -35,7 +33,7 @@ La modalità tutto schermo di Microsoft Edge offre due esperienze di blocco del 
 
 Entrambe le esperienze eseguono una sessione di Microsoft Edge in modalità InPrivate, che protegge i dati dell'utente.
 
-## Configurare la modalità tutto schermo di Microsoft Edge  
+## Configurare la modalità tutto schermo di Microsoft Edge
 
 È ora disponibile un set iniziale di funzionalità della modalità tutto schermo da testare con il Canale Microsoft Edge Canary, versione 87. È possibile scaricare Microsoft Edge Canary dalla pagina [Microsoft Edge Insider Channels](https://www.microsoftedgeinsider.com/download).
 
@@ -43,10 +41,10 @@ Entrambe le esperienze eseguono una sessione di Microsoft Edge in modalità InPr
 
 Sono disponibili le seguenti funzionalità:
 
-- Spostamento InPrivate. Protegge i dati degli utenti eliminando i dati del browser e i download al termine della sessione.
-- Criteri per configurare Elimina download all'uscita.
-- Reimpostare la sessione utente dopo un determinato periodo di inattività.
-- Set iniziale di funzionalità di blocco. Sono disponibili le seguenti funzioni:
+- La navigazione InPrivate protegge i dati degli utenti eliminando i dati del browser e i download al termine della sessione.
+- Dei criteri per configurare Elimina download all'uscita.
+- L’opzione per reimpostare la sessione utente dopo un determinato periodo di inattività.
+- Un set iniziale di funzionalità di blocco. Sono disponibili le seguenti funzioni:
 
   - Menu di scelta rapida del mouse
   - F12 Strumenti di sviluppo
@@ -56,14 +54,14 @@ Sono disponibili le seguenti funzionalità:
 > [!NOTE]
 > Man mano che la modalità tutto schermo si evolve, saranno disponibili più funzionalità.
 
-### Usare le funzionalità della modalità tutto schermo
+## Usare le funzionalità della modalità tutto schermo
 
 È possibile richiamare le funzionalità della modalità tutto schermo di Microsoft Edge con le seguenti opzioni della riga di comando per Windows 10:
 
 - Segnaletica digitale/interattiva in modalità tutto schermo: `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen`
 - Esplorazione pubblica in modalità tutto schermo: `msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing`
 
-#### Opzioni aggiuntive della riga di comando
+### Opzioni aggiuntive della riga di comando
 
 - `--no-first-run` : disabilita la prima esperienza in esecuzione di Microsoft Edge.
 - `--kiosk-idle-timeout-minutes` : modifica il tempo (in minuti) trascorso dall'ultima attività dell’utente prima che la modalità tutto schermo di Microsoft Edge reimposti la sessione dell'utente. Sono supportati i seguenti valori:
@@ -75,13 +73,23 @@ Sono disponibili le seguenti funzionalità:
     - 0: spegne il timer
     - 1: 1440 minuti per il ripristino del timer di inattività
 
-## Impostare la modalità tutto schermo con accesso assegnato
+## Microsoft Edge con accesso assegnato
 
-La modalità tutto schermo di Microsoft Edge con accesso assegnato è al momento disponibile per essere testata con l'ultima [build di Windows 10 Insider Preview](https://insider.windows.com/), versione 20215 o successiva, e con il [Canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), versione 87.0.644.4 o successiva.
+### Chiosco con una sola app
+
+Attualmente, Microsoft Edge supporta un sottogruppo delle stesse modalità tutto schermo di Microsoft Edge Legacy per accesso assegnato con sola app con le seguenti esperienze di blocco, segnaletica digitale/interattiva ed esplorazione pubblica.  
+
+La modalità tutto schermo con accesso assegnato è al momento disponibile per essere testata con l'ultima  [build di Windows 10 Insider Preview](https://insider.windows.com/), versione 20215 o successiva, e con il  [Canale Microsoft Edge Dev](https://www.microsoftedgeinsider.com/download), versione 87.0.644.4 o successiva.
 
 **Come ottengo l'anteprima di Windows Insiders?**
 
-Per installare una build di Windows 10 Insider Preview su PC, segui le istruzioni in [Introduzione alle build di Windows 10 Insider Preview](https://docs.microsoft.com/windows-insider/get-started).
+Per installare una build di Windows 10 Insider Preview su PC, seguire le istruzioni in  [Introduzione alle build di Windows 10 Insider Preview](https://docs.microsoft.com/windows-insider/get-started).
+
+### Chiosco con più app
+
+Microsoft Edge può essere eseguito con [accesso assegnato con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) su Windows 10, che è l'equivalente del tipo di modalità tutto schermo per l'esplorazione normale di Microsoft Edge Legacy. Per configurare Microsoft Edge con l'accesso assegnato con più app, segui le istruzioni su come [configurare un chiosco multimediale con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps). (L'AUMID per il canale Microsoft Edge Stable è **MSEdge.**)
+
+Configurare la modalità tutto schermo di Microsoft Edge Quando usi Microsoft Edge con accesso assegnato con più app, puoi utilizzare i [criteri del browser Microsoft Edge](https://review.docs.microsoft.com/en-us/DeployEdge/microsoft-edge-policies) per configurare l'esperienza di esplorazione per soddisfare i tuoi requisiti univoci.
 
 ### Configurare usando le impostazioni di Windows
 
@@ -131,7 +139,7 @@ Il modo più semplice per configurare uno o due dispositivi in modalità tutto s
 11. Fai clic su **Avanti**.
 12. Chiudi la finestra **Impostazioni**  per salvare e applicare le tue scelte.
 
-    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Impostare un chiosco multimediale con accesso assegnato" abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)":::
+    :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode--8-done.png" alt-text="Impostare un chiosco multimediale con accesso assegnato" abiliterà solo le opzioni richieste (ad esempio, Stampa, Guida, Feedback e Leggi ad alta voce)
   - Pagine di blocco aggiuntive *edge://* (ad esempio, *edge://settings*)
   - Configurazione dell'interfaccia utente delle opzioni di stampa
   - Limitazione di esplorazione dei file solo alla cartella di download.
