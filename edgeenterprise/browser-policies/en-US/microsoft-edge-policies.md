@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/24/2020
+ms.date: 09/28/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 146043b518f02b8581498c273db4327682993609
-ms.sourcegitcommit: d4f2b62b41f0e40ec6b22aeca436b2c261658bd8
+ms.openlocfilehash: dc780166f05afd7d667f901a1198ce125831d01b
+ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "11078251"
+ms.lasthandoff: 10/03/2020
+ms.locfileid: "11094610"
 ---
 # Microsoft Edge - Criteri
 La versione più recente di Microsoft Edge include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge nell'organizzazione.
@@ -36,10 +36,11 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[Impostazioni di Application Guard](#application-guard-settings)|[Cast](#cast)|
 |[Impostazioni contenuto](#content-settings)|[Provider di ricerca predefinito](#default-search-provider)|
 |[Extensions](#extensions)|[Autenticazione HTTP](#http-authentication)|
-|[Messaggistica nativa](#native-messaging)|[Gestione e protezione delle password](#password-manager-and-protection)|
-|[Stampa](#printing)|[Server proxy](#proxy-server)|
-|[Impostazioni di SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
-|[Ulteriori informazioni](#additional)|
+|[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Messaggistica nativa](#native-messaging)|
+|[Gestione e protezione delle password](#password-manager-and-protection)|[Stampa](#printing)|
+|[Server proxy](#proxy-server)|[Impostazioni di SmartScreen](#smartscreen-settings)|
+|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|[Ulteriori informazioni](#additional)|
+
 
 ### [*Impostazioni di Application Guard*](#application-guard-settings-policies)
 |Nome criterio|Didascalia|
@@ -117,13 +118,17 @@ e suggerimenti per i servizi Microsoft|
 ### [*Autenticazione HTTP*](#http-authentication-policies)
 |Nome criterio|Didascalia|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Consente i prompt di autenticazione di base HTTP tra le origini|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Consentire gli avvisi di autenticazione HTTP con origini multiple|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|Specifica un elenco di server ai quali Microsoft Edge può delegare le credenziali utente|
 |[AuthSchemes](#authschemes)|Schemi di autenticazione supportati|
 |[AuthServerAllowlist](#authserverallowlist)|Configura l'elenco di server di autenticazione consentiti|
 |[DisableAuthNegotiateCnameLookup](#disableauthnegotiatecnamelookup)|Disabilita la ricerca di CNAME durante la negoziazione dell'autenticazione Kerberos|
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|Include una porta non-standard nell'SPN di Kerberos|
 |[NtlmV2Enabled](#ntlmv2enabled)|Controlla se è abilitata l'autenticazione NTLMv2|
+### [*Impostazioni modalità tutto schermo*](#kiosk-mode-settings-policies)
+|Nome criterio|Didascalia|
+|-|-|
+|[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|Eliminare i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude|
 ### [*Messaggistica nativa*](#native-messaging-policies)
 |Nome criterio|Didascalia|
 |-|-|
@@ -559,11 +564,21 @@ Se è stato impostato anche il criterio [EnableMediaRouter](#enablemediarouter) 
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-  Specifica un elenco di siti, in base ai modelli URL, per i quali Microsoft Edge deve selezionare automaticamente un certificato client, se il sito ne richiede uno.
+  La configurazione del criterio consente di creare un elenco di pattern URL che specificano i siti per cui Microsoft Edge può selezionare automaticamente un certificato del client. Il valore è una matrice di dizionari JSON convertiti in stringa, ciascuno con la forma { "pattern": "$URL_PATTERN", "filter" : $FILTER }, dove $URL_PATTERN è un pattern di configurazione del contenuto. $FILTER limita i certificati del client che il browser seleziona automaticamente. Indipendentemente dal filtro, solo i certificati che corrispondono alla richiesta di certificato del server sono selezionati.
 
-Il valore deve essere una matrice di dizionari JSON convertiti in stringa. Ogni dizionario deve avere il formato { "pattern": "$URL_PATTERN", "filter" : $FILTER }, dove $URL_PATTERN è un modello di impostazione di contenuto. $FILTER restringe i certificati client che il browser può selezionare automaticamente. Indipendentemente dal filtro, verranno selezionati solo i certificati che corrispondono alla richiesta di certificato del server. Ad esempio, se $FILTER ha il formato { "ISSUER": { "CN": "$ISSUER_CN" } }, vengono selezionati anche i certificati client emessi da un certificato con CommonName $ISSUER_CN. Se $FILTER include una sezione "ISSUER" e una sezione "SUBJECT", un certificato client deve soddisfare entrambe le condizioni per essere selezionato. Se $FILTER specifica un'organizzazione ("O"), un certificato deve avere almeno un'organizzazione che corrisponde al valore specificato per essere selezionato. Se $FILTER specifica un'unità organizzativa ("OU"), un certificato deve avere almeno un'unità organizzativa che corrisponde al valore specificato per essere selezionato. Se $FILTER è il dizionario vuoto {}, la selezione dei certificati client non viene ulteriormente limitata.
+Esempi dell’uso della sezione $FILTER:
 
-Se non si configura questo criterio, la selezione automatica non viene eseguita per nessun sito.
+* Quando $FILTER è configurato su { "ISSUER": { "CN": "$ISSUER_CN" } }, solo i certificati rilasciati da certificati con il CommonName $ISSUER_CN sono selezionati.
+
+* Quando $FILTER contiene sia la sezione "ISSUER" che la sezione "SUBJECT", sono selezionati sono i certificati del client che soddisfano entrambe le condizioni.
+
+* Quando $FILTER contiene una sezione "SUBJECT" con il valore "O", il certificato deve avere almeno una organizzazione corrispondente al valore specificato per essere selezionata. 
+
+* Quando $FILTER contiene una sezione "SUBJECT" con il valore "OU", il certificato ha bisogno di almeno una unità organizzativa corrispondente al valore specificato per essere selezionata.
+
+* Quando $FILTER è configurato su {}, la selezione dei certificati del client non viene limitata automaticamente. Notare che i filtri forniti dal server web continuano ad applicarsi.
+
+Se il criterio non viene configurato, non ci sarà alcuna selezione automatica per i siti.
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -2039,9 +2054,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
   - In Windows e macOS dalla versione 80 o successive
 
   #### Descrizione
-  Consente di ripristinare il comportamento SameSite legacy per tutti i cookie. Il ripristino del comportamento legacy fa in modo che i cookie privi di un attributo SameSite vengano trattati come se fossero "SameSite=None" e rimuove il requisito per i cookie "SameSite=None" di includere l'attributo "Secure".
+  Consente di ripristinare il comportamento SameSite legacy per tutti i cookie. Se il comportamento legacy viene ripristinato, i cookie che non specificano un attributo SameSite sono trattati come se fossero "SameSite=None", il requisito per i cookie "SameSite=None" di avere l'attributo "Secure" viene rimosso, e la valutazione dello schema viene saltata quando si verifica se due siti siano uguali.
 
-Se non si imposta questo criterio, il comportamento predefinito dei cookie privi di un attributo SameSite dipenderà da altre origini di configurazione per la funzionalità SameSite per impostazione predefinita. Questa funzionalità potrebbe essere impostata da una versione di valutazione in loco o abilitando il contrassegno dei cookie SameSite per impostazione predefinita in edge://flags.
+Se il criterio non viene configurato, il comportamento SameSite predefinito dipenderà da altre origini di configurazione per la funzionalità SameSite-by-default feature, la funzionalità Cookies-without-SameSite-must-be-secure e la funzionalità Schemeful Same-Site. Queste funzionalità possono anche essere configurate con un campo di prova o con il flag same-site-by-default-cookies, il flag cookies-without-same-site-must-be-secure, o il flag cookies-without-same-site-must-be-secure in edge://flags.
 
 Mapping delle opzioni del criterio:
 
@@ -2097,7 +2112,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Descrizione
   Per i cookie impostati per i domini che corrispondono a modelli specificati verrà ripristinato il comportamento SameSite legacy.
 
-Il ripristino del comportamento legacy fa in modo che i cookie privi di un attributo SameSite vengano trattati come se fossero "SameSite=None" e rimuove il requisito per i cookie "SameSite=None" di includere l'attributo "Secure".
+Se il comportamento legacy viene ripristinato, i cookie che non specificano un attributo SameSite sono trattati come se fossero "SameSite=None", il requisito per i cookie "SameSite=None" di avere l'attributo "Secure" viene rimosso, e la valutazione dello schema viene saltata quando si verifica se due siti siano uguali.
 
 Se non si imposta questo criterio, verrà usato il valore predefinito globale. L'impostazione predefinita globale verrà usata anche per i cookie di domini non coperti dai modelli specificati dall'utente.
 
@@ -3801,16 +3816,16 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   [Torna all'inizio](#microsoft-edge---policies)
 
   ### AllowCrossOriginAuthPrompt
-  #### Consente i prompt di autenticazione di base HTTP tra le origini
+  #### Consentire gli avvisi di autenticazione HTTP con origini multiple
   
   
   #### Versioni supportate:
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-  Controlla se il contenuto secondario di terze parti in una pagina può aprire una finestra di dialogo di autenticazione di base HTTP.
+  Controlla se le immagini di terza parte di una pagina possono mostrare gli avvisi di autenticazione.
 
-In genere, questo criterio è disabilitato come protezione da phishing. Se non si configura questo criterio, è disabilitato e il contenuto secondario di terze parti non può aprire una finestra di dialogo di autenticazione di base HTTP.
+In genere, questo criterio è disabilitato come protezione da phishing. Se il criterio non viene configurato, sarà disabilitato e le immagini di terza parte non potranno mostrare gli avvisi di autenticazione.
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -3823,7 +3838,7 @@ In genere, questo criterio è disabilitato come protezione da phishing. Se non s
   #### Informazioni e impostazioni di Windows
   ##### Info su Criteri di gruppo (ADMX)
   - Nome univoco Criteri di gruppo: AllowCrossOriginAuthPrompt
-  - Nome Criteri di gruppo: Consente i prompt di autenticazione di base HTTP tra le origini
+  - Nome GP: Consentire gli avvisi di autenticazione HTTP con origine multipla
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Autenticazione HTTP
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -4128,6 +4143,56 @@ Se non si configura questo criterio, NTLMv2 è abilitato per impostazione predef
 ``` xml
 <true/>
 ```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ## Criteri delle impostazioni della modalità tutto schermo
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### KioskDeleteDownloadsOnExit
+  #### Eliminare i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude
+  
+  
+  #### Versioni supportate:
+  - In Windows dalla versione 87 o successive
+
+  #### Descrizione
+  Nota: questo criterio è supportato solo quando Edge viene eseguito con il parametro da riga di comando "--edge-kiosk-type".
+
+Se il criterio viene abilitato, i file scaricati durante le sessioni a tutto schermo sono cancellati ogni volta che Microsoft Edge viene chiuso.
+
+Se il criterio viene disabilitato o non viene configurato, i file scaricati durante le sessioni a tutto schermo non sono cancellati ogni volta che Microsoft Edge viene chiuso. 
+
+Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - Nome univoco GP: KioskDeleteDownloadsOnExit
+  - Nome GP: Eliminare i file scaricati durante le sessioni a tutto schermo quando Microsoft Edge si chiude
+  - Percorso GP (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni modalità tutto schermo
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: KioskDeleteDownloadsOnExit
+  - Tipo valore: REG_DWORD
+  ##### Valore di esempio
+```
+0x00000001
+```
+
+
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -9170,8 +9235,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - In Windows e macOS dalla versione 86 o successive
 
   #### Descrizione
-  
-Specificare se i siti Web possono accedere alle porte seriali. È possibile bloccare completamente l'accesso o chiedere conferma all'utente ogni volta che un sito Web vuole accedere a una porta seriale.
+  Specificare se i siti Web possono accedere alle porte seriali. È possibile bloccare completamente l'accesso o chiedere conferma all'utente ogni volta che un sito Web vuole accedere a una porta seriale.
 
 L'impostazione del criterio su 3 consente ai siti Web di richiedere l'accesso alle porte seriali. Impostando il criterio su 2 si nega l'accesso alle porte seriali.
 
@@ -10892,7 +10956,7 @@ Se si disabilita o non si configura questo criterio, Ricerca sicura in Google Se
   - In Windows e macOS dalla versione 81 o successive
 
   #### Descrizione
-  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con il criterio di referrer predefinito corrente. Non funzionerà in Microsoft Edge versione 86.
+  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con il criterio di referrer predefinito corrente. Non funzionerà in Microsoft Edge versione 88.
 
 Il criterio di referrer predefinito di Microsoft Edge sta per essere rafforzato dal suo valore corrente di no-referrer-when-downgrade a quello più sicuro di strict-origin-when-cross-origin attraverso un'implementazione graduale.
 
@@ -10992,7 +11056,7 @@ Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli 
 
 Se non si configura questo criterio, gli utenti potranno attivare o disattivare la sincronizzazione. Se si abilita questo criterio, gli utenti non potranno disattivare la sincronizzazione.
 
-Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#browsersignin) non deve essere configurato o deve essere impostati su abilitato. Se [ForceSync](#forcesync) è disabilitato, [BrowserSignin](#browsersignin) non avrà effetto.
+Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#browsersignin) non deve essere configurato o deve essere impostati su abilitato. Se [BrowserSignin](#browsersignin) è disabilitato, [ForceSync](#forcesync) non avrà effetto.
 
 [SyncDisabled](#syncdisabled) non deve essere configurato o deve essere impostato su False. Se è impostato su True, [ForceSync](#forcesync) non avrà effetto.
 
@@ -11365,7 +11429,7 @@ Le opzioni di configurazione predefinite mostrate nella first-run experience del
 
 - L'utente continuerà ad accedere automaticamente a Microsoft Edge se l'account Windows è del tipo MSA o Azure AD.
 
-- La sincronizzazione non sarà abilitata per impostazione predefinita e gli utenti potranno attivarla dalle impostazioni di sincronizzazione.
+- La sincronizzazione non è abilitata per impostazione predefinita, e agli utenti viene chiesto di specificare se vogliono eseguire la sincronizzazione all'avvio del browser. È possibile usare i criteri [ForceSync](#forcesync) o [SyncDisabled](#syncdisabled) per configurare la sincronizzazione e la richiesta di consenso per la sincronizzazione.
 
 Se si disabilita o non si configura questo criterio, la first-run experience e la schermata iniziale verranno mostrate.
 
@@ -11376,6 +11440,8 @@ Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-ru
 -[NewTabPageLocation](#newtabpagelocation)
 
 -[NewTabPageSetFeedType](#newtabpagesetfeedtype)
+
+-[ForceSync](#forcesync)
 
 -[SyncDisabled](#syncdisabled)
 
@@ -12474,13 +12540,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Descrizione
   Questo criterio sostituisce il criterio di contrassegno del test della modalità ie. Consente agli utenti di aprire una scheda in modalità Internet Explorer dal menu dell'interfaccia utente.
 
-       Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
+Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
 
-       Se si abilita questo criterio, gli utenti possono aprire la scheda modalità IE dall'interfaccia utente ed esplorare il sito corrente in modalità Internet Explorer.
+Se si abilita questo criterio, gli utenti possono aprire la scheda modalità IE dall'interfaccia utente ed esplorare il sito corrente in modalità Internet Explorer.
 
-       Se si disabilita questo criterio, gli utenti non potranno vedere direttamente l'opzione dell'interfaccia utente nel menu.
+Se si disabilita questo criterio, gli utenti non potranno vedere direttamente l'opzione dell'interfaccia utente nel menu.
 
-       Se non si configura questo criterio, è possibile configurare manualmente il contrassegno del test della modalità ie.
+Se non si configura questo criterio, è possibile configurare manualmente il contrassegno del test della modalità ie.
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -12521,9 +12587,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Descrizione
   Specifica le origini da eseguire in isolamento, nel relativo processo.
+
 Inoltre, questo processo isola le origini denominate dai sottodomini (ad esempio, specificando https://contoso.com/, https://foo.contoso.com/ verrà isolato come parte del sito https://contoso.com/.
+
 Se il criterio è abilitato, ognuna delle origini denominate in un elenco con valori separati da virgole verrà eseguita in un processo specifico.
+
 Se si disabilita questo criterio, vengono disabilitate entrambe le funzionalità "IsolateOrigins" e "SitePerProcess". Gli utenti possono comunque abilitare il criterio "IsolateOrigins" manualmente, tramite i contrassegni della riga di comando.
+
 Se non si configura il criterio, l'utente può modificare tale impostazione.
 
   #### Funzionalità supportate:
@@ -14149,9 +14219,9 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-  Imposta la versione minima supportata di SSL. Se non si configura questo criterio, Microsoft Edge usa la versione minima predefinita, TLS 1.0.
+  Configura la versione minima supportata del protocollo TLS. Se non si configura questo criterio, Microsoft Edge usa la versione minima predefinita, TLS 1.0.
 
-Se si abilita questo criterio, è possibile impostare la versione minima su uno dei valori seguenti: "TLSv1", "TLSv1.1" o "TLSv1.2". Se impostato, Microsoft Edge non usa versioni di SSL/TLS inferiori a quella specificata. Qualsiasi valore non riconosciuto viene ignorato.
+Se il criterio viene abilitato, Microsoft Edge non userà alcuna versione di SSL/TLS più vecchia di quella specificata. Qualsiasi valore non riconosciuto viene ignorato.
 
 Mapping delle opzioni del criterio:
 
@@ -14851,9 +14921,9 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-  Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Di conseguenza, questo valore è deprecato e non deve essere usato.
+  Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Therefore it's deprecated and should not be used.
 
-Specifica se includere un collegamento a Office.com nella barra Preferiti. Tramite il collegamento gli utenti che hanno eseguito l'accesso a Microsoft Edge possono accedere alle app e ai documenti di Microsoft Office. Se non si abilita o non si configurano i criteri, gli utenti possono scegliere se visualizzare il collegamento modificando l'interruttore nel menu di scelta rapida della barra Preferiti.
+Specifica se includere un collegamento a Office.com nella barra Preferiti. For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs. If you enable or don't configure this policy, users can choose whether to see the shortcut by changing the toggle in the favorites bar context menu.
 Se si disabilita questo criterio, il collegamento non viene mostrato.
 
   #### Funzionalità supportate:
@@ -14950,9 +15020,10 @@ Se questo criterio è disabilitato, non è possibile caricare Signed HTTP Exchan
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-  
-Il criterio "SitePerProcess" può essere usato per impedire agli utenti di rifiutare esplicitamente il comportamento predefinito dell'isolamento di tutti i siti. È anche possibile usare il criterio [IsolateOrigins](#isolateorigins) per isolare altre origini più specifiche.
+  Il criterio "SitePerProcess" può essere usato per impedire agli utenti di rifiutare esplicitamente il comportamento predefinito dell'isolamento di tutti i siti. È anche possibile usare il criterio [IsolateOrigins](#isolateorigins) per isolare altre origini più specifiche.
+
 Se si abilita questo criterio, gli utenti non possono rifiutare esplicitamente il comportamento predefinito in cui ogni sito viene eseguito nel relativo processo specifico.
+
 Se si disabilita o non si configura questo criterio, un utente può rifiutare esplicitamente l'isolamento del sito.  Ad esempio, usando la voce "Disabilitare l'isolamento del sito" entry in edge://flags. Se si disabilita o non si configura il criterio, l'isolamento del sito non viene disattivato.
 
 
@@ -16229,16 +16300,9 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
   - In Windows e macOS dalla versione 80 o successive
 
   #### Descrizione
-  Specifica un elenco di siti Web installati automaticamente, senza interazione dell'utente, e che non è possibile disinstallare o disabilitare manualmente.
+  Configurare il criterio per specificare un elenco di app web che si installano silenziosamente, senza l'intervento dell'utente, e gli utenti che possono disinstallarle o disattivarle.
 
-Ogni elemento elenco del criterio è un oggetto con i membri seguenti:
-  - "url", che è obbligatorio. "url" deve essere l'URL dell'app Web da installare.
-
-I valori per i membri facoltativi sono i seguenti:
-  - "launch_container" deve essere "window" o "tab" per indicare in che modo l'app Web verrà aperta dopo l'installazione.
-  - "create_desktop_shortcut" deve essere impostato su true se è necessario creare un collegamento del desktop in Windows.
-
-Se "default_launch_container" viene omesso, l'app si aprirà in una scheda per impostazione predefinita. Indipendentemente dal valore di "default_launch_container", gli utenti possono modificare il contenitore in cui verrà aperta l'app. Se "create_desktop_shortcuts" viene omesso, non sarà creato alcun collegamento del desktop.
+Ogni voce dell'elenco del criterio è un oggetto con un numero obbligatorio: url (l'URL dell'app web da installare) e 2 membri facoltativi: default_launch_container (specifica la modalità della finestra in cui l'app web si apre, il predefinito è una nuova scheda) e create_desktop_shortcut (true se si vuole creare dei collegamenti sul desktop per Linux e Windows).
 
   #### Funzionalità supportate:
   - Può essere obbligatorio: sì
@@ -16360,8 +16424,7 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
   - In Windows e macOS dalla versione 77, fino alla versione 84
 
   #### Descrizione
-  
-Questo criterio non funziona perché WebDriver ora è compatibile con tutti i criteri esistenti.
+  Questo criterio non funziona perché WebDriver ora è compatibile con tutti i criteri esistenti.
 
 Questo criterio consente agli utenti della funzionalità WebDriver di ignorare i criteri che possono interferire con il suo funzionamento.
 
