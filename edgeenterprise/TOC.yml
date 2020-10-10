@@ -139,6 +139,8 @@
       href: microsoft-edge-policies.md
     - name: Informazioni di riferimento sui criteri dell'aggiornamento
       href: microsoft-edge-update-policies.md
+    - name: Riferimento ai criteri di WebView2
+      href: microsoft-edge-webview-policies.md
     - name: Altre informazioni di riferimento
       items:
         - name: ClickOnce e DirectInvoke
@@ -167,9 +169,11 @@
   items:
     - name: Raccolta video Microsoft Edge
       href: microsoft-edge-videos.md
+    - name: Isolamento del browser video con Application Guard
+      href: microsoft-edge-video-security-application-guard.md
     - name: 'Video: Distribuire Microsoft Edge'
       href: microsoft-edge-video-deploy.md
-    - name: Video-Microsoft Edge e prevenzione della perdita dei dati (DLP)
+    - name: Video-prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-video-security-dlp.md
     - name: Video - Microsoft Edge e Microsoft Search
       href: microsoft-edge-video-search.md
