@@ -3,7 +3,7 @@ title: Documentazione sui criteri di Microsoft Edge Update
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 06/10/2020
+ms.date: 10/07/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,39 +11,38 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione per tutti i criteri supportati da Microsoft Edge Update
-ms.openlocfilehash: d772d8dd6f60b89e9bd12a77b740e5fad699756a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980242"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105570"
 ---
 # Microsoft Edge - Criteri di aggiornamento
 La versione più recente di Microsoft Edge include i seguenti criteri che puoi usare per controllare come e quando Microsoft Edge viene aggiornato.
 
-           
 Per informazioni su altri criteri disponibili in Microsoft Edge, vedi [Riferimento ai criteri del browser Microsoft Edge](microsoft-edge-policies.md)
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
-
 ## Criteri disponibili
 In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiornamenti disponibili in questa versione di Microsoft Edge. Usa i collegamenti nella tabella per ottenere altri dettagli su criteri specifici.
 
 |||
 |-|-|
 |[Applicazioni](#applications)|[Preferenze](#preferences)|
-|[Server proxy](#proxy-server)||
+|[Server proxy](#proxy-server)|[Microsoft Edge WebView](#microsoft-edge-webview)|
 
 ### [Applicazioni](#applications-policies)
 |Nome criterio|Didascalia|
 |-|-|
 |[InstallDefault](#installdefault)|Consenti installazione predefinita|
 |[UpdateDefault](#updatedefault)|Sostituzione dei criteri di aggiornamento predefinita|
-|[Installazione](#install)|Consenti installazione (per canale)|
+|[Install](#install)|Consenti installazione (per canale)|
 |[Update](#update)|Sostituzione dei criteri di aggiornamento (per canale)|
 |[Allowsxs](#allowsxs)|Consenti esperienza browser Microsoft Edge affiancata|
 |[CreateDesktopShortcutDefault](#createdesktopshortcutdefault)|Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione predefinita|
 |[CreateDesktopShortcut](#createdesktopshortcut)|Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione (per canale)|
+|[RollbackToTargetVersion](#rollbacktotargetversion)|Eseguire il ripristino dello stato precedente della versione di destinazione (per canale)|
 |[TargetVersionPrefix](#targetversionprefix)|Sostituzione della versione di destinazione (in base al canale)|
 
 ### [Preferenze](#preferences-policies)
@@ -59,12 +58,11 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[ProxyPacUrl](#proxypacurl)|URL di un file PAC del proxy|
 |[ProxyServer](#proxyserver)|Indirizzo o URL del server proxy|
 
-                 
-      
-  
-             
-            
-                  
+### [Microsoft Edge WebView](#microsoft-edge-webview-policies)
+|Nome criterio|Didascalia|
+|-|-|
+|[Installazione](#install-webview)|Consenti installazione|
+|[Aggiornamenti](#update-webview)|Sostituzione dei criteri di aggiornamento|
 
 ## Criteri delle applicazioni
 
@@ -74,19 +72,21 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
 #### Descrizione
-È possibile specificare il comportamento predefinito di tutti i canali per consentire o bloccare gli aggiornamenti di Microsoft Edge mentre Microsoft Edge Update è in uso.
+È possibile specificare il comportamento predefinito di tutti i canali per consentire o bloccare Microsoft Edge nei dispositivi collegati al dominio.
 
 È possibile sostituire il criterio per i singoli canali abilitando il criterio "[Consenti installazione](#install)" per i canali specifici.
 
-Disabilitando questo criterio, l'installazione di Microsoft Edge tramite Microsoft Edge Update verrà bloccata. Questa operazione interessa l'installazione del software Microsoft Edge solamente quando gli utenti eseguono Microsoft Edge Update e quando non è stato configurato il criterio "[Consenti installazione](#install)".
+Disabilitando questo criterio, l'installazione di Microsoft Edge verrà bloccata. Questo riguarda solo l'installazione del software Microsoft Edge quando il criterio "[Consenti l'installazione](#install)" è impostato su Non configurato.
 
 Questo criterio non impedisce l'esecuzione di Microsoft Edge Update, né impedisce l'installazione del software Microsoft Edge attraverso altri metodi.
+
+Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
 #### Informazioni e impostazioni di Windows
 ##### Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: InstallDefault
 - Nome Criteri di gruppo: Consenti installazione predefinita
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Applicazioni
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: InstallDefault
@@ -114,12 +114,14 @@ Consente di specificare il comportamento predefinito per tutti i canali in relaz
   Se selezioni gli aggiornamenti manuali, verifica di controllare periodicamente la disponibilità degli aggiornamenti tramite il meccanismo di aggiornamento manuale dell'app, se disponibile. Se disabiliti gli aggiornamenti, verificane periodicamente la disponibilità e distribuiscili agli utenti.
 
   Se non abiliti né configuri questo criterio, Microsoft Edge Update gestisce gli aggiornamenti disponibili, come indicato dal criterio "[Sostituzione dei criteri di aggiornamento](#update)".
+
+  Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
 #### Informazioni e impostazioni di Windows
 ##### Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: UpdateDefault
 - Nome Criteri di gruppo: Sostituzione dei criteri di aggiornamento predefinita
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Applicazioni
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: UpdateDefault
@@ -136,13 +138,15 @@ Consente di specificare il comportamento predefinito per tutti i canali in relaz
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
 #### Descrizione
-Specifica se è possibile installare un canale Microsoft Edge tramite Microsoft Edge Update.
+Specifica se è possibile installare un canale Microsoft Edge sui dispositivi collegati al dominio.
 
-  Se abiliti questo criterio per un canale, gli utenti possono installare tale canale di Microsoft Edge tramite Microsoft Edge Update.
+  Se abiliti questo criterio per un canale, Microsoft Edge non verrà bloccato dall'installazione.
 
-  Se disabiliti questo criterio per un canale, gli utenti non possono installare tale canale di Microsoft Edge tramite Microsoft Edge Update.
+  Se disabiliti questo criterio per un canale, Microsoft Edge verrà bloccato dall'installazione.
 
-  Se non configuri questo criterio per un canale, il criterio "[Consenti installazione predefinita](#installdefault)" determina se gli utenti possono installare il canale di Microsoft Edge tramite Microsoft Edge Update.
+  Se non configuri questo criterio per un canale, il criterio "[Consenti installazione predefinita](#installdefault)" determina se gli utenti possono installare il canale di Microsoft Edge.
+
+  Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
 #### Informazioni e impostazioni di Windows
 ##### Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: Install
@@ -152,7 +156,7 @@ Specifica se è possibile installare un canale Microsoft Edge tramite Microsoft 
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Beta
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Canary
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Dev
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: 
@@ -175,15 +179,19 @@ Specifica se è possibile installare un canale Microsoft Edge tramite Microsoft 
 #### Descrizione
 Specifica il modo in cui Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
 
-  Se abiliti questo criterio, Microsoft Edge Update gestisce gli aggiornamenti Microsoft Edge in base alla configurazione delle opzioni seguenti:
-   - Consenti sempre gli aggiornamenti: gli aggiornamenti vengono sempre applicati quando vengono rilevati, in seguito a un controllo periodico o manuale.
-   - Solo aggiornamenti automatici: gli aggiornamenti vengono applicati solo quando vengono rilevati in seguito al controllo periodico.
-   - Solo aggiornamenti manuali: gli aggiornamenti vengono applicati solo quando gli utenti eseguono un controllo manuale. Non tutte le app forniscono un'interfaccia per questa opzione.
-   - Aggiornamenti disabilitati: gli aggiornamenti non vengono mai applicati.
+Se abiliti questo criterio, Microsoft Edge Update gestisce gli aggiornamenti Microsoft Edge in base alla configurazione delle opzioni seguenti:
+  - Consenti sempre gli aggiornamenti: gli aggiornamenti vengono sempre applicati quando vengono rilevati, in seguito a un controllo periodico o manuale.
+  - Solo aggiornamenti automatici: gli aggiornamenti vengono applicati solo quando vengono rilevati in seguito al controllo periodico.
+  - Solo aggiornamenti manuali: gli aggiornamenti vengono applicati solo quando gli utenti eseguono un controllo manuale. Non tutte le app forniscono un'interfaccia per questa opzione.
+  - Aggiornamenti disabilitati: gli aggiornamenti non vengono mai applicati.
 
-  Se selezioni gli aggiornamenti manuali, verifica di controllare periodicamente la disponibilità degli aggiornamenti tramite il meccanismo di aggiornamento manuale dell'app, se disponibile. Se disabiliti gli aggiornamenti, verificane periodicamente la disponibilità e distribuiscili agli utenti.
+Se selezioni gli aggiornamenti manuali, verifica di controllare periodicamente la disponibilità degli aggiornamenti tramite il meccanismo di aggiornamento manuale dell'app, se disponibile. Se disabiliti gli aggiornamenti, verificane periodicamente la disponibilità e distribuiscili agli utenti.
 
-  Se non abiliti né configuri questo criterio, Microsoft Edge Update gestisce gli aggiornamenti disponibili, come indicato dal criterio "[Sostituzione dei criteri di aggiornamento predefinita](#updatedefault)".
+Se non abiliti né configuri questo criterio, Microsoft Edge Update gestisce gli aggiornamenti disponibili, come indicato dal criterio "[Sostituzione dei criteri di aggiornamento predefinita](#updatedefault)".
+
+Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2136406](https://go.microsoft.com/fwlink/?linkid=2136406).
+
+Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
 #### Informazioni e impostazioni di Windows
 ##### Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: Update
@@ -193,7 +201,7 @@ Specifica il modo in cui Microsoft Edge Update gestisce gli aggiornamenti dispon
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Beta
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Canary
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Dev
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome: 
@@ -228,7 +236,7 @@ Affinché questi criteri di gruppo abbiano effetto, è necessario configurarli p
 - Nome univoco Criteri di gruppo: Allowsxs
 - Nome Criteri di gruppo: Consenti esperienza browser Microsoft Edge affiancata
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Applicazioni
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore:Allowsxs
@@ -256,7 +264,7 @@ Nel caso in cui Microsoft Edge fosse già installato, il criterio non avrà effe
 - Nome univoco Criteri di gruppo: CreateDesktopShortcutDefault
 - Nome Criteri di gruppo: impedisce la creazione di un collegamento sul desktop a seguito dell'installazione predefinita
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Applicazioni
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: CreateDesktopShortcutDefault
@@ -288,7 +296,7 @@ Nel caso in cui Microsoft Edge fosse già installato, il criterio non avrà effe
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Beta
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Canary
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Dev
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome: 
@@ -296,6 +304,55 @@ Nel caso in cui Microsoft Edge fosse già installato, il criterio non avrà effe
   - (Beta): CreateDesktopShortcut{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary): CreateDesktopShortcut{65C35B14-6C1D-4122-AC46-7148CC9D6497}
   - (Dev): CreateDesktopShortcut{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
+- Tipo valore: REG_DWORD
+##### Valore di esempio
+```
+0x00000001
+```
+[Torna all'inizio](#microsoft-edge---update-policies)
+
+
+### RollbackToTargetVersion
+#### Esegui il ripristino dello stato precedente della versione di destinazione
+>Microsoft Edge Update 1.3.133.3 e versioni successive
+
+#### Descrizione
+Specifica che Microsoft Edge Update dovrebbe eseguire il ripristino dello stato precedente delle installazioni di Microsoft Edge alla versione indicata in "[Sostituzione della versione di destinazione](#targetversionprefix)".
+
+Questo criterio non ha alcun effetto, a meno che “[Sostituzione della versione di destinazione](#targetversionprefix)” sia impostato e “[Aggiorna criterio sostituzione](#update)” sia impostato su ATTIVO in uno dei seguenti stati (Consenti sempre gli aggiornamenti, Solo aggiornamenti automatici silenziosi, Solo aggiornamenti manuali).
+
+Se disabiliti questo criterio o non lo configuri, le installazioni con una versione superiore a quella specificata da "[Sostituzione della versione di destinazione](#targetversionprefix)" verranno lasciate così come sono.
+
+Se abiliti questi criteri, le installazioni che hanno una versione corrente superiore a quella specificata dall'override della”[Aggiorna criterio sostituzione](#targetversionprefix)" verranno declassate alla versione di destinazione.
+
+È consigliabile installare l’ultima versione del browser Microsoft Edge per sfruttare la protezione degli aggiornamenti della sicurezza più recenti. Il ripristino di una versione precedente può comportare rischi di esposizione a problemi di sicurezza noti. Questo criterio deve essere usato come correzione temporanea per risolvere i problemi di aggiornamento del browser Microsoft Edge.
+
+Prima di ripristinare temporaneamente la versione precedente del browser, è inoltre consigliabile abilitare la sincronizzazione ([https://go.microsoft.com/fwlink/?linkid=2133032](https://go.microsoft.com/fwlink/?linkid=2133032)) per tutti gli utenti dell'organizzazione. Se la sincronizzazione non viene abilitata, si rischia la perdita permanente dei dati di navigazione. Usa questo criterio a tuo rischio.
+
+Nota: è possibile visualizzare tutte le versioni disponibili per il ripristino dello stato precedente qui [https://aka.ms/EdgeEnterprise](https://aka.ms/EdgeEnterprise).
+
+Questo criteri viene applicato a Microsoft Edge versione 86 o successiva.
+
+Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2133918](https://go.microsoft.com/fwlink/?linkid=2133918).
+
+Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
+#### Informazioni e impostazioni di Windows
+##### Info su Criteri di gruppo (ADMX)
+- Nome univoco Criteri di gruppo: RollbackToTargetVersion
+- Nome Criteri di gruppo: ripristina versione di destinazione
+- Percorso Criteri di gruppo: 
+  - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge
+  - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Beta
+  - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Canary
+  - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Dev
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
+##### Impostazioni del Registro di sistema di Windows
+- Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Nome: 
+  - (Stable): RollbackToTargetVersion{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+  - (Beta): RollbackToTargetVersion{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
+  - (Canary): RollbackToTargetVersion{65C35B14-6C1D-4122-AC46-7148CC9D6497}
+  - (Dev): RollbackToTargetVersion{0D50BFEC-CD6A-4F9A-964C-C7416E3ACB10}
 - Tipo valore: REG_DWORD
 ##### Valore di esempio
 ```
@@ -316,6 +373,10 @@ Il valore del criterio deve essere una specifica versione di Microsoft Edge, ad 
 Se sul dispositivo è installata una versione più recente di Microsoft Edge del valore specificato, Edge manterrà la versione più recente e non eseguirà il downgrade alla versione specificata.
 
 In caso la versione specificata non esista o non sia formattata correttamente, Microsoft Edge manterrà la versione attuale e non verrà aggiornato automaticamente alle versioni future.
+
+Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2136707](https://go.microsoft.com/fwlink/?linkid=2136707).
+
+Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
 #### Informazioni e impostazioni di Windows
 ##### Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: TargetVersionPrefix
@@ -325,7 +386,7 @@ In caso la versione specificata non esista o non sia formattata correttamente, M
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Beta
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Canary
   - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge Dev
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome: 
@@ -357,7 +418,7 @@ Se abilitata, questo criterio consente di impostare un valore per il numero mini
 - Nome univoco Criteri di gruppo: AutoUpdateCheckPeriodMinutes
 - Nome Criteri di gruppo: Sostituzione del periodo di controllo dell'aggiornamento automatico
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Preferenze
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: AutoUpdateCheckPeriodMinutes
@@ -383,7 +444,7 @@ Se abiliti questo criterio, i controlli degli aggiornamenti vengono soppressi og
 - Nome Criteri di gruppo: Periodo di tempo in ogni giorno per eliminare il controllo dell'aggiornamento automatico
   - Opzioni { Hour, Minute, Duration }
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Preferenze
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome: 
@@ -401,8 +462,6 @@ start min  : 0x00000002
 
 
 ## Criteri server proxy
-  
-  
 
 [Torna all'inizio](#microsoft-edge---update-policies)
 ### ProxyMode
@@ -426,7 +485,7 @@ Consente di specificare le impostazioni del server proxy usate da Microsoft Edge
 - Nome univoco Criteri di gruppo: ProxyMode
 - Nome Criteri di gruppo: Scegliere come specificare le impostazioni del server proxy
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Server proxy
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: ProxyMode
@@ -455,7 +514,7 @@ Consente di specificare un URL per un file di configurazione automatica del prox
 - Nome univoco Criteri di gruppo: ProxyPacUrl
 - Nome Criteri di Gruppo: URL di un file PAC del proxy
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Server proxy
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: ProxyPacUrl
@@ -484,7 +543,7 @@ Consente di specificare l'URL del server proxy per l'uso da parte di Microsoft E
 - Nome univoco Criteri di gruppo: ProxyServer
 - Nome Criteri di gruppo: Indirizzo o URL del server proxy
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Server proxy
-- Nome file ADMX Criteri di gruppo: edgeupdate.admx
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
 - Nome valore: ProxyServer
@@ -492,6 +551,68 @@ Consente di specificare l'URL del server proxy per l'uso da parte di Microsoft E
 ##### Valore di esempio
 ```
 https://www.microsoft.com
+```
+[Torna all'inizio](#microsoft-edge---update-policies)
+
+
+## Criteri di Microsoft Edge WebView
+
+[Torna all'inizio](#microsoft-edge---update-policies)
+### Installa (WebView)
+#### Consenti installazione
+>Microsoft Edge Update 1.3.127.1 e versioni successive
+
+#### Descrizione
+Consente di specificare se è possibile installare Microsoft Edge WebView tramite Microsoft Edge Update.
+
+  - Abilitando questo criterio, gli utenti possono installare Microsoft Edge WebView tramite Microsoft Edge Update.
+  - Disabilitando questo criterio, gli utenti non possono installare Microsoft Edge WebView tramite Microsoft Edge Update.
+  - Non configurando questo criterio, la configurazione del criterio "[Consenti installazione predefinita](#installdefault)" determina se gli utenti possono installare Microsoft Edge WebView tramite Microsoft Edge Update.
+#### Informazioni e impostazioni di Windows
+##### Info su Criteri di gruppo (ADMX)
+- Nome univoco Criteri di gruppo: Install
+- Nome Criteri di gruppo: Consenti installazione
+- Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Microsoft Edge WebView
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
+##### Impostazioni del Registro di sistema di Windows
+- Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Nome: 
+  - Install{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- Tipo valore: REG_DWORD
+##### Valore di esempio
+```
+0x00000001
+```
+[Torna all'inizio](#microsoft-edge---update-policies)
+
+
+### Aggiornameto (WebView)
+#### Sostituzione dei criteri di aggiornamento
+>Microsoft Edge Update 1.3.127.1 e versioni successive
+
+#### Descrizione
+Consente di specificare se abilitare gli aggiornamenti automatici per Microsoft Edge WebView. Microsoft Edge WebView è una componente usata dalle applicazioni per visualizzare il contenuto Web.
+Gli aggiornamenti automatici sono abilitati per impostazione predefinita. Disabilitando gli aggiornamenti automatici per Microsoft Edge WebView potrebbero verificarsi problemi di compatibilità con le applicazioni che dipendono da questa componente.
+
+  Abilitando questo criterio, Microsoft Edge Update gestisce gli aggiornamenti di Microsoft Edge WebView in base alla configurazione delle seguenti opzioni:
+  - Consenti sempre gli aggiornamenti: gli aggiornamenti vengono scaricati e applicati automaticamente
+  - Aggiornamenti disabilitati: gli aggiornamenti non vengono mai scaricati o applicati
+
+  Non abilitando questo criterio, gli aggiornamenti verranno scaricati e applicati automaticamente.
+#### Informazioni e impostazioni di Windows
+##### Info su Criteri di gruppo (ADMX)
+- Nome univoco Criteri di gruppo: Update
+- Nome Criteri di gruppo: Sostituzione dei criteri di aggiornamento
+- Percorso Criteri di gruppo: Modelli amministrativi/Microsoft Edge Update/Microsoft Edge WebView
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
+##### Impostazioni del Registro di sistema di Windows
+- Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Nome: 
+  - Update{F3017226-FE2A-4295-8BDF-00C3A9A7E4C5}
+- Tipo valore: REG_DWORD
+##### Valore di esempio
+```
+0x00000001
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
 
