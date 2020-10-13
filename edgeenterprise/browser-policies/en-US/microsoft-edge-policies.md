@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: brianalt-msft
 manager: tahills
-ms.date: 09/28/2020
+ms.date: 10/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: dc780166f05afd7d667f901a1198ce125831d01b
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 9a0a9157f1176f935ba2462ee34abb3ebb708b66
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094610"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105540"
 ---
 # Microsoft Edge - Criteri
 La versione più recente di Microsoft Edge include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge nell'organizzazione.
@@ -255,7 +255,7 @@ e suggerimenti per i servizi Microsoft|
 |[DownloadRestrictions](#downloadrestrictions)|Consente le restrizioni per il download|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|Abilita la funzionalità Raccolte|
 |[EditFavoritesEnabled](#editfavoritesenabled)|Consente agli utenti di modificare i Preferiti|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|Abilita il download delle azioni di dominio da Microsoft (obsoleto)|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|Abilita i controlli OCSP/CRL online|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)|
@@ -345,6 +345,7 @@ e suggerimenti per i servizi Microsoft|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|Abilita il supporto di Signed HTTP Exchange (SXG)|
 |[SitePerProcess](#siteperprocess)|Abilita l'isolamento del sito per tutte le origini|
+|[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|Abilita il controllo ortografico|
 |[SpellcheckLanguage](#spellchecklanguage)|Abilita lingue specifiche del controllo ortografico|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|Forza la disabilitazione delle lingue del controllo ortografico|
@@ -10120,14 +10121,16 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
   [Torna all'inizio](#microsoft-edge---policies)
 
   ### EnableDeprecatedWebPlatformFeatures
-  #### Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato
+  #### Re-enable deprecated web platform features for a limited time (obsolete)
   
-  
+  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### Versioni supportate:
-  - In Windows e macOS dalla versione 77 o successive
+  - On Windows and macOS since 77, until 86
 
   #### Descrizione
-  Specifica un elenco di funzionalità della piattaforma Web deprecate da riabilitare temporaneamente.
+  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+
+Specifica un elenco di funzionalità della piattaforma Web deprecate da riabilitare temporaneamente.
 
 Questo criterio consente di riabilitare le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato. Le funzionalità sono identificate da un contrassegno stringa.
 
@@ -10154,7 +10157,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni di Windows
   ##### Info su Criteri di gruppo (ADMX)
   - Nome univoco Criteri di gruppo: EnableDeprecatedWebPlatformFeatures
-  - Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato
+  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -15055,6 +15058,58 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
 
   #### Informazioni e impostazioni Mac
   - Nome chiave di preferenza: SitePerProcess
+  - Valore di esempio
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### SpeechRecognitionEnabled
+  #### Configure Speech Recognition
+  
+  
+  #### Versioni supportate:
+  - On Windows and macOS since 87 or later
+
+  #### Descrizione
+  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+
+If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+
+If you disable this policy, Speech Recognition is not available through the Web Speech API.
+
+Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
+
+  #### Funzionalità supportate:
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+  ##### Info su Criteri di gruppo (ADMX)
+  - GP unique name: SpeechRecognitionEnabled
+  - GP name: Configure Speech Recognition
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+  ##### Impostazioni del Registro di sistema di Windows
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Value Name: SpeechRecognitionEnabled
+  - Tipo valore: REG_DWORD
+  ##### Valore di esempio
+```
+0x00000001
+```
+
+
+  #### Informazioni e impostazioni Mac
+  - Preference Key Name: SpeechRecognitionEnabled
   - Valore di esempio
 ``` xml
 <true/>
