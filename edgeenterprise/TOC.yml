@@ -1,4 +1,4 @@
-# last revised 10/08/2020
+# last revised 10/15/2020
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
@@ -159,6 +159,8 @@
           href: microsoft-edge-update-progressive-rollout.md
         - name: Effettuare il provisioning dei preferiti per Microsoft Edge
           href: edge-learnmore-provision-favorites.md
+        - name: Reindirizzamento da Internet Explorer a Microsoft Edge
+          href: edge-learnmore-neededge.md
         - name: Sintassi delle espressioni regolari 2 (RE2.h)
           href: edge-learnmore-regex.md
         - name: Variabili della directory dati utente
