@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 57cd68d9366dd80812617f98934d44918b76926c
-ms.sourcegitcommit: a54037baf06d6f2e30b9485cfd397468b3174a86
+ms.openlocfilehash: 4269214a4c6a1c0d8fd62a8fd84cd9bf4f3e2b09
+ms.sourcegitcommit: d1f56745f91f36f8cfb437cfae3aaa7f816ff61a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "11133203"
+ms.lasthandoff: 10/22/2020
+ms.locfileid: "11133294"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -29,11 +29,7 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 ### Aggiornamenti delle funzionalità
 
-- **Reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge**. Con l'aggiornamento Microsoft Edge 87 Stable, i siti Web pubblici che mostrano un messaggio di incompatibilità in Internet Explorer verranno reindirizzati automaticamente a Microsoft Edge per impostazione predefinita. È possibile disattivare questa funzionalità configurando i criteri descritti in [Reindirizzamento da Internet Explorer a Microsoft Edge per garantire la compatibilità con i siti Web moderni](https://docs.microsoft.com/deployedge/edge-learnmore-neededge).
-- **Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud**. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In tal modo, i dati degli utenti vengano cancellati dai servizi Microsoft, oltre a risolvere alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
 - **Funzionalità di privacy in modalità tutto schermo abilitate**. A partire da Microsoft Edge versione 87, saranno abilitate le funzionalità della modalità tutto schermo in grado di garantire la privacy dei dati degli utenti. Queste funzionalità consentiranno esperienze come la cancellazione dei dati utente all'uscita, l'eliminazione dei file scaricati e il ripristino dell'esperienza di avvio configurata dopo un periodo di inattività specificato. Altre informazioni su come [Configurare le opzioni della modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
-- **Single Sign-on (SSO) è ora disponibile per gli account di Azure Active Directory (Azure AD) in versioni Windows di livello inferiore.** Gli utenti che hanno eseguito l'accesso a Microsoft Edge su versioni di Microsoft Windows di livello inferiore (versioni 7 e 8,1) saranno automaticamente connessi ai siti Web configurati in modo da consentire l'accesso Single Sign-on con account aziendali o dell'Istituto di istruzione (ad es. sharepoint.com, office.com e bing.com).
-- **Accesso automatico per gli account Microsoft con Web Single Sign-on (SSO)**. Gli utenti che hanno eseguito l’accesso a Microsoft Edge su versioni di Windows di livello inferiore saranno automaticamente connessi ai siti Web configurati in modo da consentire l’accesso SSO con account Microsoft (ad es. bing.com, office.com, mns.com e outlook.com).
 - **Distribuzione ClickOnce abilitata per impostazione predefinita**. ClickOnce è abilitata per impostazione predefinita in Microsoft Edge 87, il che riduce gli ostacoli per le aziende nella distribuzione del software e meglio si allinea con il comportamento del browser Versione legacy di Microsoft Edge. A partire da Microsoft Edge 87, lo stato "Non configurato" del criterio ClickOnceEnabled rifletterà il nuovo stato di ClickOnce per impostazione predefinita di Abilitato (rispetto al precedente stato per impostazione predefinita di Disabilitato).
 - **La pagina Nuova scheda per utenti Enterprise (NTP) integra la produttività con contenuti di feed personalizzabili e rilevanti per il lavoro**. La pagina NTP Enterprise combina la pagina di produttività di Office 365, offerta agli utenti che hanno eseguito l'accesso con il proprio account aziendale o dell'Istituto di istruzione, con feed aziendali e di settore personalizzati e rilevanti per il lavoro, organizzati in una sola pagina. Gli utenti saranno in grado di riconoscere il consueto contenuto di Office 365 e Microsoft Search for Business con tecnologia Bing. Inoltre, possono facilmente passare a un “My Feed” personalizzabile con contenuti e moduli rilevanti per l'utente, la sua società o il suo settore, nonché a una selezione di altri feed resi disponibili dall'organizzazione. [Ulteriori informazioni](https://docs.microsoft.com/microsoft-365/admin/manage/manage-industry-news?view=o365-worldwide&preserve-view=true).
 
@@ -128,7 +124,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 * **Protezione:**
 
   * Supporto DNS sicuri (DNS-over-HTTPS).  A partire dalla versione 86 di Microsoft Edge, sono disponibili impostazioni per controllare i DNS sicuri nei dispositivi non gestiti. Queste impostazioni non sono accessibili agli utenti nei dispositivi gestiti, ma gli amministratori IT possono abilitare o disabilitare il DNS sicuro con i criteri di gruppo [dnsoverhttpsmode](https://docs.microsoft.com/deployedge/microsoft-edge-policies#dnsoverhttpsmode).
-  * Microsoft Edge avvisa se le password si trovano in una situazione di perdita online. Microsoft Edge controlla le tue password in un archivio di credenziali note violate e avvisa se viene trovata una corrispondenza.
+
 
 * **Aggiungere un'immagine personalizzata nella pagina nuova scheda (NTP) usando criteri di gruppo.** A partire dalla versione 86 di Microsoft Edge, NTP offre un'opzione che consente di sostituire l'immagine predefinita con un'immagine fornita dall'utente. La possibilità di gestire le proprietà di quest'immagine è supportata anche dai criteri di gruppo.
 
