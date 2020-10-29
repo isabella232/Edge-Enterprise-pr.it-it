@@ -143,6 +143,8 @@
       href: microsoft-edge-webview-policies.md
     - name: Altre informazioni di riferimento
       items:
+        - name: Compatibilità con le versioni precedenti di Enterprise New Tab
+          href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce e DirectInvoke
           href: edge-learn-more-co-di.md
         - name: Opzioni della riga di comando per configurare le impostazioni proxy
