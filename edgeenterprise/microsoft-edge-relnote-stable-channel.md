@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 10/22/2020
+ms.date: 10/27/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 1ff3ec8266cfb2f8be59fb8b39b597791bc1e2ac
-ms.sourcegitcommit: ab912e0629e3f060220f28cdecb414d292b0e37d
+ms.openlocfilehash: 804107da41182d642fd97bdca402a1f9fa1ea319
+ms.sourcegitcommit: c395380aff1e430f4437dca9d257021d00d7a484
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "11133764"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "11142975"
 ---
 # Note sulla versione del canale Stabile Microsoft Edge
 
@@ -23,6 +23,10 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
+
+## Versione 86.0.622.56: 27 ottobre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 86.0.622.51: 22 ottobre
 

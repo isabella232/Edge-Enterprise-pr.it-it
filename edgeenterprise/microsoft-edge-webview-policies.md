@@ -3,7 +3,7 @@ title: Documentazione sui criteri di Microsoft Edge WebView2
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/16/2020
+ms.date: 10/27/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 4298b25f7f158bc54f798442b4426494f046fa68
-ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
+ms.openlocfilehash: 3ca9adb18ef41581bb016451015cf0aca0aa63c9
+ms.sourcegitcommit: 91abbcdd4918065d4ec1151587fc1fa92486dbf3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "11134445"
+ms.lasthandoff: 10/27/2020
+ms.locfileid: "11136215"
 ---
 # Criteri: Microsoft Edge WebView2
 
@@ -40,8 +40,8 @@ In queste tabelle sono elencati tutti i criteri di gruppo disponibili in questa 
 
 |Nome criterio|Didascalia|
 |-|-|
-|[browserExecutableFolder](#browserexecutablefolder)|Configura il percorso della cartella eseguibile del browser|
-|[releaseChannelPreference](#releasechannelpreference)|Imposta la preferenza dell'ordine di ricerca del canale di rilascio|
+|[BrowserExecutableFolder](#browserexecutablefolder)|Configura il percorso della cartella eseguibile del browser|
+|[ReleaseChannelPreference](#releasechannelpreference)|Imposta la preferenza dell'ordine di ricerca del canale di rilascio|
 
 
 
@@ -50,7 +50,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo disponibili in questa 
 
   [Torna all'inizio](#microsoft-edge-webview2---policies)
 
-  ### browserExecutableFolder
+  ### BrowserExecutableFolder
 
   #### Configura il percorso della cartella eseguibile del browser
 
@@ -80,7 +80,7 @@ Per impostare il valore per il percorso della cartella, specifica il Nome del va
 
   ##### Info su Criteri di gruppo (ADMX)
 
-  - Nome Criteri di gruppo univoco: browserExecutableFolder
+  - Nome Criteri di gruppo univoco: BrowserExecutableFolder
   - Nome Criteri di gruppo: configura il percorso della cartella eseguibile del browser
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge WebView2/Impostazioni di override del caricatore
   - Percorso Criteri di gruppo (consigliato): N/D
@@ -96,7 +96,7 @@ Per impostare il valore per il percorso della cartella, specifica il Nome del va
   ##### Valore di esempio
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\BrowserExecutableFolder = "Name: *, Value: C:\\Program Files\\Microsoft Edge WebView2 Runtime Redistributable 85.0.541.0 x64"
 
 ```
 
@@ -104,7 +104,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebView2\browserExecutableFolder = "Name: *, Va
 
   [Torna all'inizio](#microsoft-edge-webview2---policies)
 
-  ### releaseChannelPreference
+  ### ReleaseChannelPreference
 
   #### Imposta la preferenza dell'ordine di ricerca del canale di rilascio
 
@@ -136,7 +136,7 @@ Per impostare il valore per la preferenza del canale di rilascio, specifica il N
 
   ##### Info su Criteri di gruppo (ADMX)
 
-  - Nome Criteri di gruppo univoco: releaseChannelPreference
+  - Nome Criteri di gruppo univoco: ReleaseChannelPreference
   - Nome Criteri di gruppo: imposta la preferenza dell'ordine di ricerca del canale di rilascio
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge WebView2/Impostazioni di override del caricatore
   - Percorso Criteri di gruppo (consigliato): N/D
@@ -152,7 +152,7 @@ Per impostare il valore per la preferenza del canale di rilascio, specifica il N
   ##### Valore di esempio
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\WebView2\releaseChannelPreference = "Name: *, Value: 1"
+SOFTWARE\Policies\Microsoft\Edge\WebView2\ReleaseChannelPreference = "Name: *, Value: 1"
 
 ```
 
