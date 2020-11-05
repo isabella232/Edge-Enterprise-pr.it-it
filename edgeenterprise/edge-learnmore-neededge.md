@@ -1,0 +1,117 @@
+---
+title: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
+ms.author: laannade
+author: dan-wesley
+manager: ratetali
+ms.date: 11/03/2020
+audience: ITPro
+ms.topic: conceptual
+ms.prod: microsoft-edge
+ms.localizationpriority: high
+ms.collection: M365-modern-desktop
+description: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
+ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
+ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
+ms.translationtype: HT
+ms.contentlocale: it-IT
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "11151096"
+---
+# <span data-ttu-id="dd0a1-103">Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni</span><span class="sxs-lookup"><span data-stu-id="dd0a1-103">Redirection from Internet Explorer to Microsoft Edge for compatibility with modern web sites</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dd0a1-104">Questo articolo si applica a Microsoft Edge Stable versione 87 o successiva.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-104">This article applies to Microsoft Edge Stable version 87 or later.</span></span>
+
+## <span data-ttu-id="dd0a1-105">Panoramica</span><span class="sxs-lookup"><span data-stu-id="dd0a1-105">Overview</span></span>
+
+<span data-ttu-id="dd0a1-106">Molti siti Web moderni non sono compatibili con Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-106">Many modern websites have designs that are incompatible with Internet Explorer.</span></span> <span data-ttu-id="dd0a1-107">Quando un utente di Internet Explorer visita un sito Web pubblico non compatibile, viene visualizzato un messaggio che lo informa che il sito Web non è compatibile con il browser in uso e che è necessario passare manualmente a un altro browser.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-107">Whenever an Internet Explorer user visits an incompatible public site, they get a message that tells them the site is incompatible with their browser, and they need to manually switch to a different browser.</span></span>
+
+<span data-ttu-id="dd0a1-108">La necessità di passare manualmente a un altro browser è richiesta a partire da Microsoft Edge Stable versione 87.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-108">The need to  manually switch to a different browser changes starting with Microsoft Edge Stable version 87.</span></span>
+
+<span data-ttu-id="dd0a1-109">Quando un utente accede a un sito Web non compatibile con Internet Explorer, verrà automaticamente reindirizzato a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-109">When a user goes to a site that is incompatible with Internet Explorer, they will be automatically redirected to Microsoft Edge.</span></span> <span data-ttu-id="dd0a1-110">Questo articolo descrive l'esperienza utente relativa al reindirizzamento e i criteri di gruppo utilizzati per configurare o disabilitare il reindirizzamento automatico.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-110">This article describes the user experience for redirection and the group policies that are used to configure or disable automatic redirection.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dd0a1-111">Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-111">Microsoft maintains a list of all sites that are known to be incompatible with Internet Explorer.</span></span>
+
+## <span data-ttu-id="dd0a1-112">Esperienza di reindirizzamento</span><span class="sxs-lookup"><span data-stu-id="dd0a1-112">Redirection experience</span></span>
+
+<span data-ttu-id="dd0a1-113">Durante il reindirizzamento a Microsoft Edge, viene visualizzata la finestra di dialogo una tantum illustrata nello screenshot seguente.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-113">On redirection to Microsoft Edge, users are shown the one-time dialog in the next screenshot.</span></span> <span data-ttu-id="dd0a1-114">Questa finestra di dialogo indica il motivo del reindirizzamento e richiede all’utente il consenso per copiare i dati e le preferenze di esplorazione da Internet Explorer a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-114">This dialog explains why they're getting redirected and prompts for consent to copy their browsing data and preferences from Internet Explorer to Microsoft Edge.</span></span> <span data-ttu-id="dd0a1-115">Verranno importati i dati di esplorazione seguenti: Preferiti, password, motori di ricerca, schede aperte, cronologia, impostazioni, cookie e Home page.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-115">The following browsing data will be imported: Favorites, Passwords, Search engines, open tabs, History, settings, cookies, and the Home Page.</span></span>
+
+![Notifica e prompt per l'importazione dei dati e delle preferenze.](media/edge-learnmore-neededge/neededge-dialog1.png)
+
+<span data-ttu-id="dd0a1-117">Anche se l’utente non acconsente selezionando "Importa sempre i dati e le preferenze di esplorazione da Internet Explorer", è possibile fare clic su **Continua a esplorare** per continuare la sessione.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-117">Even if they don't give their consent by checking "Always bring over my browsing data and preferences from Internet Explorer", they can click **Continue browsing** to continue their session.</span></span>
+
+<span data-ttu-id="dd0a1-118">Infine, per ogni reindirizzamento viene visualizzato un banner sul sito Web non compatibile, illustrato nello screenshot seguente, sotto la barra degli indirizzi.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-118">Finally, a website incompatibility banner, shown in the next screenshot, appears below the address bar for every redirection.</span></span>
+
+![Notifica sui siti Web moderni e prompt per configurare Microsoft Edge come browser predefinito o esplorare Microsoft Edge.](media/edge-learnmore-neededge/neededge-banner.png)
+
+<span data-ttu-id="dd0a1-120">Banner sul sito Web non compatibile:</span><span class="sxs-lookup"><span data-stu-id="dd0a1-120">The website incompatibility banner:</span></span>
+
+- <span data-ttu-id="dd0a1-121">consiglia all'utente di passare a Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="dd0a1-121">encourages the user to switch to Microsoft Edge</span></span>
+- <span data-ttu-id="dd0a1-122">consiglia di impostare Microsoft Edge come browser predefinito</span><span class="sxs-lookup"><span data-stu-id="dd0a1-122">offers to make Microsoft Edge as the default browser</span></span>
+- <span data-ttu-id="dd0a1-123">offre agli utenti la possibilità di esplorare Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="dd0a1-123">gives the user the option to explore Microsoft Edge</span></span>
+
+<span data-ttu-id="dd0a1-124">Quando un sito viene reindirizzato da Internet Explorer a Microsoft Edge, la scheda di Internet Explorer che aveva iniziato a caricare il sito Web viene chiusa se non ne aveva precedentemente caricato i contenuti.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-124">When a site is redirected from Internet Explorer to Microsoft Edge, the Internet Explorer tab that started loading the site is closed if it had no prior content.</span></span> <span data-ttu-id="dd0a1-125">In caso contrario, la visualizzazione della scheda attiva passa a una pagina Web del  [supporto](https://support.microsoft.com/office/the-website-you-were-trying-to-reach-doesn-t-work-with-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554?ui=en-US&rs=en-US&ad=US)  Microsoft che informa l’utente del motivo per cui il sito Web è stato reindirizzato a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-125">Otherwise, the active tab view goes to a  Microsoft [support](https://support.microsoft.com/office/the-website-you-were-trying-to-reach-doesn-t-work-with-internet-explorer-8f5fc675-cd47-414c-9535-12821ddfc554?ui=en-US&rs=en-US&ad=US) page that explains why the site was redirected to Microsoft Edge.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dd0a1-126">Dopo il reindirizzamento, l’utente può tornare a utilizzare Internet Explorer per i siti Web non presenti nell'elenco di incompatibilità di Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-126">After a redirection users can go back to using Internet Explorer for sites that are not on the Internet Explorer incompatibility list.</span></span>  
+
+## <span data-ttu-id="dd0a1-127">Criteri per configurare il reindirizzamento a Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="dd0a1-127">Policies to configure redirection to Microsoft Edge</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dd0a1-128">Questi criteri saranno disponibili come aggiornamenti dei file ADMX entro il 26 ottobre 2020 e su Intune entro il 9 novembre 2020.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-128">These policies will be available as ADMX file updates by October 26, 2020 and will be available in Intune by November 9, 2020.</span></span>
+
+<span data-ttu-id="dd0a1-129">È necessario configurare tre criteri di gruppo per consentire il reindirizzamento automatico a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-129">Three group policies must be configured to enable automatic redirection to Microsoft Edge.</span></span> <span data-ttu-id="dd0a1-130">Tali criteri sono:</span><span class="sxs-lookup"><span data-stu-id="dd0a1-130">These policies are:</span></span>
+
+- <span data-ttu-id="dd0a1-131">RedirectSitesFromInternetExplorerPreventBHOInstall</span><span class="sxs-lookup"><span data-stu-id="dd0a1-131">RedirectSitesFromInternetExplorerPreventBHOInstall</span></span>
+- <span data-ttu-id="dd0a1-132">RedirectSitesFromInternetExplorerRedirectMode</span><span class="sxs-lookup"><span data-stu-id="dd0a1-132">RedirectSitesFromInternetExplorerRedirectMode</span></span>
+- <span data-ttu-id="dd0a1-133">HideInternetExplorerRedirectUXForIncompatibleSitesEnabled</span><span class="sxs-lookup"><span data-stu-id="dd0a1-133">HideInternetExplorerRedirectUXForIncompatibleSitesEnabled</span></span>
+
+### <span data-ttu-id="dd0a1-134">Policy: RedirectSitesFromInternetExplorerPreventBHOInstall</span><span class="sxs-lookup"><span data-stu-id="dd0a1-134">Policy: RedirectSitesFromInternetExplorerPreventBHOInstall</span></span>
+
+<span data-ttu-id="dd0a1-135">Il reindirizzamento da Internet Explorer a Microsoft Edge richiede un oggetto browser helper (BHO) di Internet Explorer denominato "IEtoEdge BHO".</span><span class="sxs-lookup"><span data-stu-id="dd0a1-135">Redirection from Internet Explorer to Microsoft Edge requires an Internet Explorer Browser Helper Object (BHO) named "IEtoEdge BHO".</span></span> <span data-ttu-id="dd0a1-136">Il criterio **RedirectSitesFromInternetExplorerPreventBHOInstall** verifica se il BHO è installato o meno.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-136">The **RedirectSitesFromInternetExplorerPreventBHOInstall** policy controls whether or not this BHO is installed.</span></span>  
+
+- <span data-ttu-id="dd0a1-137">Se si abilita questo criterio, il BHO necessario per il reindirizzamento non verrà installato e gli utenti continueranno a visualizzare i messaggi di incompatibilità per alcuni siti Web in Internet Explorer.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-137">If you enable this policy, the BHO required for redirection will not be installed and your users will continue to see incompatibility messages for certain websites on Internet Explorer.</span></span> <span data-ttu-id="dd0a1-138">Se il BHO è già installato, verrà disinstallato all’aggiornamento successivo del canale stabile Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-138">If the BHO is already installed, it will be uninstalled the next time the Microsoft Edge Stable channel is updated.</span></span>
+- <span data-ttu-id="dd0a1-139">Se si disabilita o non si configura questo criterio, non viene installato il BHO.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-139">If you disable or don't configure this policy, the BHO will be installed.</span></span> <span data-ttu-id="dd0a1-140">Questo è il comportamento predefinito.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-140">This is the default behavior.</span></span>
+
+<span data-ttu-id="dd0a1-141">Oltre alla necessità del BHO, esiste una dipendenza da **RedirectSitesFromInternetExplorerRedirectMode**, che deve essere impostata su "Reindirizza i siti in base all'elenco dei siti incompatibili" o su "Non configurato".</span><span class="sxs-lookup"><span data-stu-id="dd0a1-141">In addition to needing the BHO, there is a dependency on the **RedirectSitesFromInternetExplorerRedirectMode**, which needs to be set to "Redirect sites based on the incompatible sites sitelist" or "Not Configured".</span></span>
+
+### <span data-ttu-id="dd0a1-142">Policy: RedirectSitesFromInternetExplorerRedirectMode</span><span class="sxs-lookup"><span data-stu-id="dd0a1-142">Policy: RedirectSitesFromInternetExplorerRedirectMode</span></span>
+
+ <span data-ttu-id="dd0a1-143">Questo criterio corrisponde all’impostazione**Browser predefinito** di Microsoft Edge "Consenti a Internet Explorer di aprire i siti Web in Microsoft Edge".</span><span class="sxs-lookup"><span data-stu-id="dd0a1-143">This policy corresponds to the Microsoft Edge **Default browser** setting "Let Internet Explorer open sites in Microsoft Edge".</span></span> <span data-ttu-id="dd0a1-144">Per accedere a questa impostazione, fare clic sull'URL seguente: *edge://settings/defaultbrowser*.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-144">You can access this setting by going to the *edge://settings/defaultbrowser* URL.</span></span>  
+
+- <span data-ttu-id="dd0a1-145">Se il criterio non viene configurato o impostato su "Sitelist", Internet Explorer reindirizza i siti Web non compatibili a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-145">If you don't configure this policy or set it to "Sitelist", Internet Explorer will redirect incompatible sites to Microsoft Edge.</span></span> <span data-ttu-id="dd0a1-146">Questo è il comportamento predefinito.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-146">This is the default behavior.</span></span>
+- <span data-ttu-id="dd0a1-147">Per disabilitare questo criterio, selezionare **Abilitato** e quindi dall'elenco a discesa in Opzioni: Reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge, selezionare **Disabilita**.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-147">To disable this policy, select **Enabled** AND then in the dropdown under Options: Redirect incompatible sites from Internet Explorer to Microsoft Edge, select **Disable**.</span></span> <span data-ttu-id="dd0a1-148">In questo stato, i siti Web non compatibili non verranno reindirizzati a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-148">In this state, incompatible sites aren't redirected to Microsoft Edge.</span></span>
+
+> [!NOTE]
+> <span data-ttu-id="dd0a1-149">Se l’utente utilizza un dispositivo personale non gestito dall'organizzazione, viene visualizzata un'altra impostazione denominata "Consenti il caricamento dei siti nella modalità di Internet Explorer" nella sezione**compatibilità di Internet Explorer**.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-149">If you're on a personal device that isn't  managed by your organization, you'll see another setting named "Allow sites to be loaded in Internet Explorer mode" under **Internet Explorer compatibility**.</span></span>
+>
+><span data-ttu-id="dd0a1-150">Questa opzione non verrà visualizzata per i dispositivi associati a dominio o registrati tramite Gestione di dispositivi mobili (MDM).</span><span class="sxs-lookup"><span data-stu-id="dd0a1-150">If you're on a domain joined or Mobile Device Management (MDM) enrolled device, you won't see this option.</span></span>
+>
+> <span data-ttu-id="dd0a1-151">In alternativa, se si desidera consentire agli utenti di caricare i siti Web nella modalità di Internet Explorer, è possibile farlo configurando il criterio [Consenti il test della modalità di Internet Explorer](https://docs.microsoft.com/deployedge/microsoft-edge-policies#allow-internet-explorer-mode-testing).</span><span class="sxs-lookup"><span data-stu-id="dd0a1-151">Instead, if you want to let your users load sites in Internet Explorer mode, you can do so by configuring the policy [Allow Internet Explorer mode testing](https://docs.microsoft.com/deployedge/microsoft-edge-policies#allow-internet-explorer-mode-testing).</span></span>
+
+### <span data-ttu-id="dd0a1-152">Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled</span><span class="sxs-lookup"><span data-stu-id="dd0a1-152">Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled</span></span>
+
+<span data-ttu-id="dd0a1-153">Questo criterio configura l'esperienza utente per il reindirizzamento del sito Web non compatibile a Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-153">This policy configures the user experience for incompatible site redirection to Microsoft Edge.</span></span>  
+
+- <span data-ttu-id="dd0a1-154">Se si abilita questo criterio, gli utenti non visualizzano la finestra di dialogo una tantum di reindirizzamento e il banner di reindirizzamento.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-154">If you enable this policy, users never see the one-time redirection dialog and the redirection banner.</span></span> <span data-ttu-id="dd0a1-155">Non vengono importati dati o preferenze utente del browser.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-155">No browser data or user preferences are imported.</span></span>
+- <span data-ttu-id="dd0a1-156">Se il criterio è disabilitato o non viene configurato, verrà visualizzata la finestra di dialogo di reindirizzamento al primo tentativo di reindirizzamento e il banner di reindirizzamento permanente per le sessioni avviate con un reindirizzamento.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-156">If you disable or don't configure this policy, the redirection dialog will be shown on the first redirection and the persistent redirection banner will be shown for sessions that start with a redirection.</span></span>
+
+  > [!NOTE]
+  > <span data-ttu-id="dd0a1-157">I dati di esplorazione dell’utente verranno importati a ogni nuovo reindirizzamento.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-157">User browsing data will be imported every time a user encounters a new redirection.</span></span> <span data-ttu-id="dd0a1-158">Tuttavia, questo si verifica solo se l'utente ha acconsentito all'importazione nella finestra di dialogo una tantum di reindirizzamento.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-158">However, this only happens if the user consented to the import on the one-time redirection dialog.</span></span>
+
+## <span data-ttu-id="dd0a1-159">Disabilitare il reindirizzamento a Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="dd0a1-159">Disable redirection to Microsoft Edge</span></span>
+
+<span data-ttu-id="dd0a1-160">Se si desidera disabilitare il reindirizzamento PRIMA di eseguire l'aggiornamento a Microsoft Edge Stable versione 87, effettuare la procedura seguente:</span><span class="sxs-lookup"><span data-stu-id="dd0a1-160">If you want to disable redirection BEFORE updating to Microsoft Edge Stable version 87, use the following step:</span></span>
+
+1. <span data-ttu-id="dd0a1-161">Impostare il criterio **RedirectSitesFromInternetExplorerPreventBHOInstall** su **Abilitato**.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-161">Set the **RedirectSitesFromInternetExplorerPreventBHOInstall** policy to **Enabled**.</span></span>
+
+<span data-ttu-id="dd0a1-162">Se si desidera disabilitare il reindirizzamento DOPO aver eseguito l'aggiornamento a Microsoft Edge Stable versione 87, effettuare la procedura seguente:</span><span class="sxs-lookup"><span data-stu-id="dd0a1-162">If you want to disable redirection AFTER updating to Microsoft Edge Stable version 87, use the following steps:</span></span>
+
+1. <span data-ttu-id="dd0a1-163">Impostare il criterio **RedirectSitesFromInternetExplorerRedirectMode** su **Abilitato** e quindi dall’elenco a discesa in Opzioni: Reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge, selezionare **Disabilita**.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-163">Set the **RedirectSitesFromInternetExplorerRedirectMode** policy to **Enabled** AND then in the dropdown under Options: Redirect incompatible sites from Internet Explorer to Microsoft Edge, select **Disable**.</span></span> <span data-ttu-id="dd0a1-164">Questa impostazione interrompe il reindirizzamento non appena il criterio avrà effetto.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-164">This setting will stop redirecting as soon as the policy takes effect.</span></span>
+2. <span data-ttu-id="dd0a1-165">Impostare il criterio **RedirectSitesFromInternetExplorerPreventBHOInstall** su **Abilitato**.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-165">Set the **RedirectSitesFromInternetExplorerPreventBHOInstall** policy to **Enabled**.</span></span> <span data-ttu-id="dd0a1-166">Il BHO verrà disinstallato dopo il successivo aggiornamento di Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="dd0a1-166">This will uninstall the BHO after the next Microsoft Edge update.</span></span>
+
+## <span data-ttu-id="dd0a1-167">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="dd0a1-167">See also</span></span>
+
+- [<span data-ttu-id="dd0a1-168">Pagina di destinazione di Microsoft Edge in modalità Enterprise</span><span class="sxs-lookup"><span data-stu-id="dd0a1-168">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
+- [<span data-ttu-id="dd0a1-169">Criteri Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="dd0a1-169">Microsoft Edge Policies</span></span>](https://docs.microsoft.com/deployedge/microsoft-edge-policies)
