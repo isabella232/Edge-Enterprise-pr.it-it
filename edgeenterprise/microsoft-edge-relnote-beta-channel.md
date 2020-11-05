@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 10/26/2020
+ms.date: 11/02/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 8cedd34ba3a2053ae7c8d098c9d5106139a8b961
-ms.sourcegitcommit: 737da8f49297a0189f533480f7bfe5989a59a8f7
+ms.openlocfilehash: b9d91413fc7971b6dafbbca22f3ff96078e745e6
+ms.sourcegitcommit: 584ee1a06f3ead1d7870a77c3b6e0c2df1823619
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "11136119"
+ms.lasthandoff: 11/03/2020
+ms.locfileid: "11151070"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -23,6 +23,10 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 > [!IMPORTANT]
 > Vedere questo [aggiornamento sugli aggiornamenti del canale di Microsoft Edge](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/).
+
+## Versione 87.0.664.24: 2 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 87.0.664.18: 26 ottobre
 
