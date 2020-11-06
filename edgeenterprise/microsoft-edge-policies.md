@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 10/22/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 982a171e1c4f55ab99db53a399c669fdf4798f53
-ms.sourcegitcommit: 7d160257010f75b86b89c8802d0dd27f1f8761ef
+ms.openlocfilehash: 0e708707ae8465aa49ee49dcec542881a5080a57
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "11134465"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155313"
 ---
 # Microsoft Edge - Criteri
 
@@ -29,6 +29,18 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
+## Criteri nuovi e deprecati
+
+Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
+
+| Nome | Stato |
+|-|-|
+| [WebWidgetAllowed](#webwidgetallowed) | Nuova |
+| [ProxyBypassList](#proxybypasslist) | Deprecata |
+| [ProxyMode](#proxymode) | Deprecata |
+| [ProxyPacUrl](#proxypacurl) | Deprecata |
+| [ProxyServer](#proxyserver) | Deprecata |
+
 ## Criteri disponibili
 
 In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser disponibili in questa versione di Microsoft Edge. Usa i collegamenti nella tabella per ottenere altri dettagli su criteri specifici.
@@ -39,10 +51,10 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[Impostazioni contenuto](#content-settings)|[Provider di ricerca predefinito](#default-search-provider)|
 |[Extensions](#extensions)|[Autenticazione HTTP](#http-authentication)|
 |[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Messaggistica nativa](#native-messaging)|
-|[Gestione e protezione delle password](#password-manager-and-protection)|[Stampa](#printing)|
-|[Server proxy](#proxy-server)|[Impostazioni di SmartScreen](#smartscreen-settings)|
-|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|[Ulteriori informazioni](#additional)|
-
+|[Gestione e protezione delle password](#password-manager-and-protection)|[Prestazioni](#performance)|
+|[Stampa](#printing)|[Server proxy](#proxy-server)|
+|[Impostazioni di SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
+|[Ulteriori informazioni](#additional)|
 
 ### [*Impostazioni di Application Guard*](#application-guard-settings-policies)
 
@@ -126,7 +138,7 @@ e suggerimenti per i servizi Microsoft|
 
 |Nome criterio|Didascalia|
 |-|-|
-|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Allow cross-origin HTTP Authentication prompts|
+|[AllowCrossOriginAuthPrompt](#allowcrossoriginauthprompt)|Consentire gli avvisi di autenticazione HTTP con origini multiple|
 |[AuthNegotiateDelegateAllowlist](#authnegotiatedelegateallowlist)|Specifica un elenco di server ai quali Microsoft Edge può delegare le credenziali utente|
 |[AuthSchemes](#authschemes)|Schemi di autenticazione supportati|
 |[AuthServerAllowlist](#authserverallowlist)|Configura l'elenco di server di autenticazione consentiti|
@@ -156,6 +168,11 @@ e suggerimenti per i servizi Microsoft|
 |[PasswordProtectionLoginURLs](#passwordprotectionloginurls)|Configura l'elenco di URL di accesso aziendale dove il servizio della password di protezione dovrebbe acquisire hash salati di una password|
 |[PasswordProtectionWarningTrigger](#passwordprotectionwarningtrigger)|Configura il trigger di avviso per la password di protezione|
 |[PasswordRevealEnabled](#passwordrevealenabled)|Abilita il pulsante per rilevare la password|
+### [*Prestazioni*](#performance-policies)
+
+|Nome criterio|Didascalia|
+|-|-|
+|[StartupBoostEnabled](#startupboostenabled)|Abilita il potenziamento di avvio|
 ### [*Stampa*](#printing-policies)
 
 |Nome criterio|Didascalia|
@@ -170,10 +187,10 @@ e suggerimenti per i servizi Microsoft|
 
 |Nome criterio|Didascalia|
 |-|-|
-|[ProxyBypassList](#proxybypasslist)|Configura le regole di esclusione di proxy|
-|[ProxyMode](#proxymode)|Configura le impostazioni del server proxy|
-|[ProxyPacUrl](#proxypacurl)|Imposta l'URL del file .pac del proxy|
-|[ProxyServer](#proxyserver)|Configura l'indirizzo o l'URL del server proxy|
+|[ProxyBypassList](#proxybypasslist)|Configura le regole di esclusione di proxy (deprecato)|
+|[ProxyMode](#proxymode)|Configura le impostazioni del server proxy (deprecato)|
+|[ProxyPacUrl](#proxypacurl)|Imposta l'URL del file .pac del proxy (deprecato)|
+|[ProxyServer](#proxyserver)|Configura l'indirizzo o l'URL del server proxy (deprecato)|
 |[ProxySettings](#proxysettings)|Impostazioni proxy|
 ### [*Impostazioni di SmartScreen*](#smartscreen-settings-policies)
 
@@ -399,6 +416,8 @@ e suggerimenti per i servizi Microsoft|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|Limita l'esposizione dell'indirizzo IP locale tramite WebRTC|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|Limita l'intervallo di porte UDP locali usate da WebRTC|
+|[WebWidgetAllowed](#webwidgetallowed)|Abilita il widget Web|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Consenti il widget Web all'avvio di Windows|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|Usa il resolver proxy di Windows (deprecato)|
 
 
@@ -546,7 +565,6 @@ Per impostazione predefinita, Google Cast è abilitato.
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableMediaRouter
@@ -608,7 +626,6 @@ Se è stato impostato anche il criterio [EnableMediaRouter](#enablemediarouter) 
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -687,7 +704,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoSelectCertificateForUrls
@@ -764,7 +780,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CookiesAllowedForUrls
@@ -839,7 +854,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\1 = "https://www.contoso.
 SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -920,7 +934,6 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CookiesSessionOnlyForUrls
@@ -996,7 +1009,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultCookiesSetting
@@ -1065,7 +1077,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultFileSystemReadGuardSetting
@@ -1133,7 +1144,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -1205,7 +1215,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultGeolocationSetting
@@ -1273,7 +1282,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -1345,7 +1353,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultInsecureContentSetting
@@ -1413,7 +1420,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -1485,7 +1491,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultNotificationsSetting
@@ -1556,7 +1561,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultPluginsSetting
@@ -1625,7 +1629,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultPopupsSetting
@@ -1693,7 +1696,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -1765,7 +1767,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultWebUsbGuardSetting
@@ -1831,7 +1832,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.examp
 SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -1902,7 +1902,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemReadBlockedForUrls
@@ -1971,7 +1970,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.exam
 SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -2042,7 +2040,6 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemWriteBlockedForUrls
@@ -2107,7 +2104,6 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -2174,7 +2170,6 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImagesBlockedForUrls
@@ -2239,7 +2234,6 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\1 = "https://www.
 SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -2306,7 +2300,6 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InsecureContentBlockedForUrls
@@ -2372,7 +2365,6 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: JavaScriptAllowedForUrls
@@ -2437,7 +2429,6 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\1 = "https://www.conto
 SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -2510,7 +2501,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: LegacySameSiteCookieBehaviorEnabled
@@ -2579,7 +2569,6 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: LegacySameSiteCookieBehaviorEnabledForDomainList
@@ -2645,7 +2634,6 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NotificationsAllowedForUrls
@@ -2710,7 +2698,6 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\1 = "https://www.co
 SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -2779,7 +2766,6 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PluginsAllowedForUrls
@@ -2847,7 +2833,6 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PluginsBlockedForUrls
@@ -2913,7 +2898,6 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PopupsAllowedForUrls
@@ -2978,7 +2962,6 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3133,7 +3116,6 @@ Se si disabilita questa impostazione, le esperienze in evidenza e i suggerimenti
 ```
 0x00000001
 ```
-
 
   
 
@@ -3294,7 +3276,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebUsbAskForUrls
@@ -3361,7 +3342,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3442,7 +3422,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderEnabled
@@ -3510,7 +3489,6 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\3 = "GB2312"
 SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3587,7 +3565,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 "https://search.contoso.com/searchbyimage/upload"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderImageURL
@@ -3654,7 +3631,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderImageURLPostParams
@@ -3718,7 +3694,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 ```
 "mis"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3785,7 +3760,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 ```
 "My Intranet Search"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3854,7 +3828,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 ```
 "https://search.contoso.com/search?q={searchTerms}"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -3925,7 +3898,6 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 ```
 "https://search.contoso.com/suggest?q={searchTerms}"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4004,7 +3976,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 "bing"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
@@ -4076,7 +4047,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionAllowedTypes
@@ -4138,7 +4108,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\1 = "extension_id1"
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4206,7 +4175,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\1 = "extension_id1"
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4291,7 +4259,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionInstallForcelist
@@ -4320,9 +4287,9 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
   Definisce gli URL che consentono di installare estensioni e temi.
 
-Per impostazione predefinita, gli utenti devono scaricare un file *.crx per ogni estensione o script che vogliono installare, per poi trascinarlo nella pagina delle impostazioni di Microsoft Edge. Questo criterio consente a URL specifici di installare l'estensione o lo script per l'utente.
+Definisci gli URL che possono installare estensioni e temi direttamente senza dover trascinare i pacchetti nella pagina edge://extensions.
 
-Ogni voce di questo elenco è uno schema di corrispondenza per lo stile dell'estensione (vedere [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)). Gli utenti possono installare facilmente gli elementi da qualsiasi URL che corrisponda a una voce di questo elenco. Il percorso del file *.crx e la pagina da cui viene avviato il download (ossia, il referrer) devono essere autorizzati da questi schemi.
+Ogni voce di questo elenco è uno schema di corrispondenza per lo stile dell'estensione (vedere [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)). Gli utenti possono installare facilmente gli elementi da qualsiasi URL che corrisponda a una voce di questo elenco. Il percorso del file *.crx e la pagina da cui viene avviato il download (ossia, il referrer) devono essere autorizzati da questi schemi. Non ospitare i file in una posizione che richiede l'autenticazione.
 
 Il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) ha la precedenza rispetto a questo criterio. Le estensioni che si trovano nell'elenco di elementi bloccati non verranno installate, anche se provengono da un sito indicato in questo elenco.
 
@@ -4359,7 +4326,6 @@ Il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) ha la preced
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.contoso.com/*"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4652,7 +4618,6 @@ In genere, questo criterio è disabilitato come protezione da phishing. Se il cr
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowCrossOriginAuthPrompt
@@ -4714,7 +4679,6 @@ Se non si configura questo criterio, Microsoft Edge non delegherà le credenzial
 ```
 "contoso.com"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4778,7 +4742,6 @@ Se non si configura questo criterio, vengono usati i quattro schemi.
 "basic,digest,ntlm,negotiate"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AuthSchemes
@@ -4840,7 +4803,6 @@ Se non si configura questo criterio, Microsoft Edge prova a rilevare se un serve
 ```
 "*contoso.com,contoso.com"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -4904,7 +4866,6 @@ Se si disabilita o non si configura questo criterio, viene usato il nome canonic
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DisableAuthNegotiateCnameLookup
@@ -4966,7 +4927,6 @@ Se si disabilita o non si configura questo criterio, il nome SPN Kerberos genera
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5099,7 +5059,6 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
   - In Windows dalla versione 87 o successive
 
   #### Descrizione
-                                                                                              
 
   Questo criterio viene applicato alla modalità tutto schermo di Microsoft Edge.
 
@@ -5141,7 +5100,6 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
 ```
 0x00000001
 ```
-
 
   
 
@@ -5201,7 +5159,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\1 = "com.native.messag
 SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messaging.host.name2"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5270,7 +5227,6 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NativeMessagingBlocklist
@@ -5335,7 +5291,6 @@ Per impostazione predefinita, se non si configura questo criterio, Microsoft Edg
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5404,7 +5359,6 @@ Se si abilita o si disabilita questo criterio, gli utenti non possono modificarl
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5484,7 +5438,6 @@ Disabilitato e consigliato disabilitati: entrambe gli stati funzioneranno normal
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -5543,7 +5496,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 "https://contoso.com/change_password.html"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5610,7 +5562,6 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\1 = "https://contos
 SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.contoso.com"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5691,7 +5642,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordProtectionWarningTrigger
@@ -5769,6 +5719,71 @@ Questo criterio influisce solo sul pulsante per rivelare la password del browser
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ## Criteri sulle prestazioni
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### StartupBoostEnabled
+
+  #### Abilita il potenziamento di avvio
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Consente l'avvio dei processi di Microsoft Edge all'accesso al sistema operativo e il riavvio in background dopo la chiusura dell'ultima finestra del browser.
+
+Se Microsoft Edge è in esecuzione in background, il browser potrebbe non terminare quando viene chiusa l'ultima finestra e quindi il browser non verrà riavviato in background quando viene chiusa la finestra. Per informazioni su cosa accade dopo aver configurato il comportamento della modalità in background di Microsoft Edge, vedere il criterio [BackgroundModeEnabled](#backgroundmodeenabled).
+
+Se si abilita questo criterio, la modalità potenziamento di avvio viene attivata.
+
+Se si disabilita questo criterio, la modalità potenziamento di avvio viene attivata.
+
+Se non si configura questo criterio, è possibile che il potenziamento di avvio potrebbe essere inizialmente disattivato o attivato. L'utente può configurare il suo comportamento in  edge://settings/system.
+
+Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: StartupBoostEnabled
+  - Nome Criteri di gruppo: abilita il potenziamento di avvio
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Prestazioni
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Prestazioni
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
+  - Nome univoco Criteri di gruppo: StartupBoostEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ## Criteri di stampa
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -5827,7 +5842,6 @@ Se si omette un campo significa che tutti i valori corrispondono; ad esempio, se
 ```
 "{ \"idPattern\": \".*public\", \"namePattern\": \".*Color\" }"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -5893,7 +5907,6 @@ Se si abilita questo criterio, gli utenti stampano sempre intestazioni e piè di
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintHeaderFooter
@@ -5956,7 +5969,6 @@ Se si abilita questo criterio, l'anteprima di stampa utilizza la stampante prede
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintPreviewUseSystemDefaultPrinter
@@ -6018,7 +6030,6 @@ Se si disabilita questo criterio, gli utenti non possono stampare da Microsoft E
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -6168,7 +6179,6 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UseSystemPrintDialog
@@ -6186,9 +6196,9 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 
   ### ProxyBypassList
 
-  #### Configura le regole di esclusione di proxy
+  #### Configura le regole di esclusione di proxy (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -6196,9 +6206,11 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 
   #### Descrizione
 
-  Definisce un elenco di host per i quali Microsoft Edge ignora qualsiasi proxy.
+  Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
-Questo criterio viene applicato solo se è stato selezionato "Usa server proxy fissi" nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
+Definisce un elenco di host per i quali Microsoft Edge ignora qualsiasi proxy.
+
+Questo criterio viene applicato solo se non è stato specificato il criterio [ProxySettings](#proxysettings) ed è stato selezionato fixed_servers nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
 
 Se si abilita questo criterio, è possibile creare un elenco di host per i quali Microsoft Edge non usa un proxy.
 
@@ -6221,7 +6233,7 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyBypassList
-  - Nome Criteri di gruppo: Configura le regole di esclusione di proxy
+  - Nome Criteri di gruppo: configura le regole di esclusione di proxy (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Server proxy
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -6239,7 +6251,6 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 "https://www.contoso.com, https://www.fabrikam.com"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyBypassList
@@ -6253,9 +6264,9 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 
   ### ProxyMode
 
-  #### Configura le impostazioni del server proxy
+  #### Configura le impostazioni del server proxy (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -6263,21 +6274,20 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 
   #### Descrizione
 
-  Specifica le impostazioni del server proxy usate da Microsoft Edge. Se si abilita questo criterio, gli utenti non possono modificare le impostazioni proxy.
+  Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
-Se si sceglie di non usare mai un server proxy e di connettersi sempre direttamente, tutte le altre opzioni vengono ignorate.
+Se il criterio è stato impostato su abilitato, è possibile specificare il server proxy usato da Microsoft Edge per impedire agli utenti di cambiare le impostazioni del proxy. Microsoft Edge ignora tutte le opzioni correlate al proxy specificate nella riga di comando. Il criterio viene applicato solo se non viene specificato il criterio [ProxySettings](#proxysettings).
 
-Se si sceglie di usare le impostazioni del proxy di sistema, tutte le altre opzioni vengono ignorate.
+Altre opzioni vengono ignorate se si sceglie una delle seguenti opzioni:
+  * direct = non usare mai un server proxy e connettersi sempre direttamente
+  * system = usare impostazioni proxy di sistema
+  * auto_detect = rilevare automaticamente le impostazioni proxy
 
-Se si sceglie di rilevare automaticamente il server proxy, tutte le altre opzioni vengono ignorate.
-
-Se si sceglie la modalità proxy server fisso, è possibile specificare altre opzioni in [ProxyServer](#proxyserver) e nell'elenco con valori delimitati da virgole di regole di esclusione di proxy.
-
-Se si sceglie di usare uno script proxy PAC, è necessario specificare l'URL per lo script in "URL di un file PAC del proxy".
+Se si sceglie di usare:
+  * fixed_servers = usare server proxy fissi È possibile specificare altre opzioni con [ProxyServer ](#proxyserver) e [ProxyBypassList](#proxybypasslist).
+  * pac_script = uno script del proxy con estensione pac Per impostare l'URL di un file proxy .pac, usare [ProxyPacUrl](#proxypacurl).
 
 Per esempi dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
-
-Se si abilita questo criterio, Microsoft Edge ignorerà tutte le opzioni correlate al proxy specificate nella riga di comando.
 
 Se non si configura questo criterio, gli utenti possono scegliere impostazioni del proxy personalizzate.
 
@@ -6310,7 +6320,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyMode
-  - Nome Criteri di gruppo: Configura le impostazioni del server proxy
+  - Nome Criteri di gruppo: configura le impostazioni del server proxy (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Server proxy
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -6328,7 +6338,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 "direct"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyMode
@@ -6342,9 +6351,9 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   ### ProxyPacUrl
 
-  #### Imposta l'URL del file .pac del proxy
+  #### Imposta l'URL del file .pac del proxy (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -6352,9 +6361,11 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Descrizione
 
-  Specifica l'URL di un file di configurazione automatica del proxy (PAC).
+  Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
-Questo criterio viene applicato solo se è stato selezionato "Usa uno script del proxy con estensione pac" nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
+Specifica l'URL di un file di configurazione automatica del proxy (PAC).
+
+Questo criterio viene applicato solo se non è stato specificato il criterio [ProxySettings](#proxysettings) ed è stato selezionato pac_script nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
 
 Se si abilita questo criterio, è possibile specificare l'URL per un file PAC, che definisce in che modo il browser sceglie automaticamente il server proxy appropriato per il recupero di un particolare sito Web.
 
@@ -6377,7 +6388,7 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyPacUrl
-  - Nome Criteri di gruppo: Imposta l'URL del file .pac del proxy
+  - Nome Criteri di gruppo: imposta l'URL del file .pac del proxy (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Server proxy
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -6395,7 +6406,6 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
 "https://internal.contoso.com/example.pac"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyPacUrl
@@ -6409,9 +6419,9 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
 
   ### ProxyServer
 
-  #### Configura l'indirizzo o l'URL del server proxy
+  #### Configura l'indirizzo o l'URL del server proxy (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -6419,9 +6429,11 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
 
   #### Descrizione
 
-  Specifica l'URL del server proxy.
+  Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
-Questo criterio viene applicato solo se è stato selezionato "Usa server proxy fissi" nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
+Specifica l'URL del server proxy.
+
+Questo criterio viene applicato solo se non è stato specificato il criterio [ProxySettings](#proxysettings) ed è stato selezionato fixed_servers nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
 
 Se si abilita questo criterio, il server proxy configurato con questo criterio verrà usato per tutti gli URL.
 
@@ -6444,7 +6456,7 @@ Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyServer
-  - Nome Criteri di gruppo: Configura l'indirizzo o l'URL del server proxy
+  - Nome Criteri di gruppo: configura l'indirizzo o l'URL del server proxy (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Server proxy
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -6461,7 +6473,6 @@ Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink
 ```
 "123.123.123.123:8080"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -6499,23 +6510,20 @@ Questo criterio sostituisce i singoli criteri seguenti:
 [ProxyServer](#proxyserver)
 [ProxyBypassList](#proxybypasslist)
 
-Il campo ProxyMode consente di specificare il server proxy utilizzato da Microsoft Edge e impedisce agli utenti di modificare le impostazioni proxy.
+L'impostazione del criterio [ProxySettings](#proxysettings) accetta i seguenti campi:
+  * ProxyMode, che consente di specificare il server proxy utilizzato da Microsoft Edge e impedisce agli utenti di modificare le impostazioni proxy
+  * ProxyPacUrl, un URL di un file PAC del proxy
+  * ProxyServer, un URL per il server proxy
+  * ProxyBypassList, un elenco di host proxy ignorati da Microsoft Edge.
 
-Il campo ProxyPacUrl è un URL a un file .pac del proxy.
+Per ProxyMode, se si sceglie il valore:
+  * direct, non viene mai usato un proxy e tutti gli altri campi vengono ignorati.
+  * direct, viene usato un proxy di sistema e tutti gli altri campi vengono ignorati.
+  * auto_detect, tutti gli altri campi vengono ignorati.
+  * fixed_server, vengono usati i campi ProxyServer e ProxyBypassList.
+  * pac_script, vengono usati i campi ProxyPacUrl e ProxyBypassList.
 
-Il campo ProxyServer è un URL per il server proxy.
-
-Il campo ProxyBypassList è un elenco di host proxy ignorati da Microsoft Edge.
-
-Se si sceglie il valore "direct" come "ProxyMode", un proxy non viene mai usato e tutti gli altri campi vengono ignorati.
-
-Se si sceglie il valore "system" come "ProxyMode", viene usato il proxy di sistema e tutti gli altri campi vengono ignorati.
-
-Se si sceglie il valore "auto_detect" come "ProxyMode", tutti gli altri campi vengono ignorati.
-
-Se si sceglie il valore "fixed_server" come "ProxyMode", vengono usati i campi "ProxyServer" e "ProxyBypassList".
-
-Se si sceglie il valore "pac_script" come "ProxyMode", vengono usati i campi "ProxyPacUrl" e "ProxyBypassList".
+Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
   #### Funzionalità supportate:
 
@@ -6640,7 +6648,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PreventSmartScreenPromptOverride
@@ -6705,7 +6712,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -6773,7 +6779,6 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\1 = "mydomain.com"
 SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -6844,7 +6849,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SmartScreenEnabled
@@ -6909,7 +6913,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -6968,7 +6971,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -7040,7 +7042,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HomepageIsNewTabPage
@@ -7108,7 +7109,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 "https://www.contoso.com"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -7179,7 +7179,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -7347,7 +7346,6 @@ Se si imposta questo criterio su false o non lo si configura, i riquadri dei sit
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageHideDefaultTopSites
@@ -7417,7 +7415,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 "https://www.fabrikam.com"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -7578,7 +7575,6 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: NewTabPagePrerenderEnabled
@@ -7661,7 +7657,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
@@ -7740,7 +7735,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000004
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RestoreOnStartup
@@ -7804,7 +7798,6 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\1 = "https://contoso.com"
 SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.com"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -7871,7 +7864,6 @@ Se non si configura il criterio, gli utenti possono scegliere se mostrare il pul
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowHomeButton
@@ -7935,7 +7927,6 @@ Se è stato abilitato il set di criteri che forza un provider di ricerca predefi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8003,7 +7994,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AdsSettingForIntrusiveAdsSites
@@ -8033,7 +8023,7 @@ Anche con questo criterio disabilitato, non è garantita la conservazione della 
 
 Se si abilita o non si configura questo criterio, gli utenti possono eliminare la cronologia di esplorazione e dei download.
 
-Se si disabilita questo criterio, gli utenti non possono eliminare la cronologia di esplorazione e dei download.
+Se si disabilita questo criterio, gli utenti non possono eliminare la cronologia di esplorazione e dei download e la sincronizzazione della cronologia verrà disabilitata
 
 Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) poiché entrambi sono associati all'eliminazione dei dati. Se si abilitano entrambi, il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) ha la precedenza ed elimina tutti i dati quando si chiude Microsoft Edge, indipendentemente da come è configurato tale criterio.
 
@@ -8069,7 +8059,6 @@ Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8132,7 +8121,6 @@ Se si disabilita questo criterio, ogni volta che l'utente esegue un'azione che a
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8198,7 +8186,6 @@ Questo criterio verrà rimosso in futuro.
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowPopupsDuringPageUnload
@@ -8258,7 +8245,6 @@ Se si abilita o non si configura questo criterio, gli utenti possono avviare il 
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8323,7 +8309,6 @@ Se si disabilita o non si configura questo criterio, le pagine non possono invia
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8394,7 +8379,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = "[*.].mydomain2.co
 
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -8451,7 +8435,6 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\1 = "https://www.contoso.c
 SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8521,7 +8504,6 @@ In particolare, è presente l'opzione **Suggerisci pagine simili quando non è p
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AlternateErrorPagesEnabled
@@ -8583,7 +8565,6 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge aprirà i fi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8669,7 +8650,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AmbientAuthenticationInPrivateModesEnabled
@@ -8729,7 +8709,6 @@ Se si imposta questo criterio su false o non lo si imposta, AppCache seguirà le
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8793,7 +8772,6 @@ Se si disabilita o non si configura questa impostazione, Microsoft Edge usa le i
 "en"
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -8850,7 +8828,6 @@ Questo criterio influisce su tutti i tipi di input audio, non solo sul microfono
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8911,7 +8888,6 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\1 = "https://www.contos
 SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -8982,7 +8958,6 @@ Questo criterio è pensato per offrire alle aziende la possibilità di disabilit
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -9096,7 +9071,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -9295,7 +9269,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: AutoOpenAllowedForURLs
@@ -9372,7 +9345,6 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoOpenFileTypes
@@ -9440,7 +9412,6 @@ Se si disabilita questo criterio, si interrompe anche tutta l'attività per tutt
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutofillAddressEnabled
@@ -9502,7 +9473,6 @@ Se si abilita o non si configura questo criterio, gli utenti possono controllare
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -9571,7 +9541,6 @@ Per applicare il criterio, è necessario chiudere e riaprire una scheda.
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoplayAllowed
@@ -9636,7 +9605,6 @@ Se non si configura questo criterio, inizialmente la modalità in background è 
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -9691,7 +9659,6 @@ Se si disabilita questa impostazione, l'elenco di modelli disponibili verrà sca
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -9765,7 +9732,6 @@ Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsof
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BingAdsSuppression
@@ -9830,7 +9796,6 @@ Se non si configura questo criterio, i cookie di terze parti sono abilitati, ma 
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BlockThirdPartyCookies
@@ -9891,7 +9856,6 @@ Se si disabilita questo criterio, gli utenti non potranno aggiungere nuovi profi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -9955,7 +9919,6 @@ Se si disabilita questo criterio, Microsoft Edge non consente agli utenti di esp
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserGuestModeEnabled
@@ -10017,7 +9980,6 @@ Se si abilita o non si configura questo criterio, Microsoft Edge invierà occasi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10095,7 +10057,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserSignin
@@ -10161,7 +10122,6 @@ Se non si configura questo criterio, il client DNS predefinito è abilitato per 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10274,7 +10234,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CertificateTransparencyEnforcementDisabledForCas
@@ -10346,7 +10305,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CertificateTransparencyEnforcementDisabledForLegacyCas
@@ -10415,7 +10373,6 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\2 = ".contoso.com"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10486,7 +10443,6 @@ Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ClearBrowsingDataOnExit
@@ -10552,7 +10508,6 @@ Se si disabilita questo criterio, non abilitare il criterio [ClearBrowsingDataOn
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10622,7 +10577,6 @@ Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?li
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -10648,6 +10602,8 @@ Se non si configura questo criterio, non vengono applicate restrizioni ai serviz
 Mapping delle opzioni del criterio:
 
 * pinterest_suggestions (pinterest_suggestions) = Suggerimenti di Pinterest
+
+* collections_share (collections_share) = condivisione di raccolte
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
@@ -10682,9 +10638,9 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "collections_share"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10693,6 +10649,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pin
 ``` xml
 <array>
   <string>pinterest_suggestions</string>
+  <string>collections_share</string>
 </array>
 ```
   
@@ -10751,7 +10708,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10814,7 +10770,6 @@ Tuttavia, alcuni componenti sono esclusi da questo criterio. Sono inclusi i comp
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -10880,7 +10835,6 @@ Se non si configura questo criterio, gli utenti possono scegliere se inviare tal
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ConfigureDoNotTrack
@@ -10901,6 +10855,7 @@ Se non si configura questo criterio, gli utenti possono scegliere se inviare tal
   #### Versioni supportate:
 
   - In Windows dalla versione 87 o successive
+  - In macOS dalla versione 88 o successive
 
   #### Descrizione
 
@@ -10963,6 +10918,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000003
 ```
 
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: ConfigureFriendlyURLFormat
+  - Valore di esempio
+``` xml
+<integer>3</integer>
+```
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -11028,7 +10990,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -11085,7 +11046,6 @@ Sono disponibili altre informazioni su questa funzionalità qui: API SpeechSynth
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -11155,7 +11115,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -11212,7 +11171,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 ```
 "https://go.microsoft.com/fwlink/?linkid=2080734"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -11278,7 +11236,6 @@ Se si disabilita questo criterio, i controlli di intercettazione DNS non vengono
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DNSInterceptionChecksEnabled
@@ -11343,7 +11300,6 @@ Nota per gli amministratori di Windows: questo criterio funziona solo per i PC c
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultBrowserSettingEnabled
@@ -11407,7 +11363,6 @@ Il valore del criterio viene applicato solo quando il criterio [DefaultSearchPro
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -11481,7 +11436,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSensorsSetting
@@ -11553,7 +11507,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -11629,7 +11582,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -11684,7 +11636,6 @@ Se si imposta questo criterio su "Disabilitato" o se il criterio non viene confi
 ```
 0x00000000
 ```
-
 
   
 
@@ -11752,7 +11703,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -11840,7 +11790,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: DiagnosticData
@@ -11907,7 +11856,6 @@ Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -11962,7 +11910,6 @@ Se il criterio [HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenable
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12028,7 +11975,6 @@ Tenere presente che questo criterio controlla gli screenshot acquisiti all'inter
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DisableScreenshots
@@ -12093,7 +12039,6 @@ Se non si configura questo criterio, viene usata la directory della cache predef
 "${user_home}/Edge_cache"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DiskCacheDir
@@ -12157,7 +12102,6 @@ Se non si configura questo criterio, vengono usate le dimensioni predefinite, ma
 ```
 0x06400000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12235,7 +12179,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 "off"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DnsOverHttpsMode
@@ -12302,7 +12245,6 @@ I modelli formattati in modo non corretto verranno ignorati.
 "https://dns.example.net/dns-query{?dns}"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DnsOverHttpsTemplates
@@ -12368,7 +12310,6 @@ Se la cartella specificata dal percorso non esiste, il download attiverà una ri
 ```
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12454,7 +12395,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DownloadRestrictions
@@ -12516,7 +12456,6 @@ Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12640,7 +12579,6 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EditFavoritesEnabled
@@ -12659,7 +12597,6 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
   
   >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
   #### Versioni supportate:
-            
 
   - On Windows and macOS since 77, until 86
 
@@ -12716,7 +12653,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "ExampleDeprecatedFeature_EffectiveUntil20080902"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12790,7 +12726,6 @@ Se non si configura questo criterio, l'elenco delle azioni del dominio continuer
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableDomainActionsDownload
@@ -12852,7 +12787,6 @@ Se si disabilita o non si configura il criterio, Microsoft Edge non eseguirà i 
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -12918,7 +12852,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableSha1ForLocalAnchors
@@ -12978,7 +12911,6 @@ Questo criterio si applica anche alle estensioni del componente.
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13041,7 +12973,6 @@ Se si disabilita o non si configura questo criterio, gli utenti non visualizzera
 ```
 0x00000000
 ```
-
 
   
 
@@ -13112,7 +13043,6 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"domains": ["*"], "file_extension": "swf"}
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13201,7 +13131,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExperimentationAndConfigurationServiceControl
@@ -13270,7 +13199,6 @@ Da Microsoft Edge versione 84, se non si configura questo criterio, quando viene
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExternalProtocolDialogShowAlwaysOpenCheckbox
@@ -13332,7 +13260,6 @@ Se si disabilita questo criterio, la pagina relativa alla protezione per la fami
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13397,7 +13324,6 @@ Se non si configura questo criterio, l'utente può decidere di usare o meno la b
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13475,7 +13401,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceBingSafeSearch
@@ -13537,7 +13462,6 @@ Se si imposta questo criterio su False o non lo si configura, Microsoft Edge sel
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13603,7 +13527,6 @@ In modalità temporanea, i dati dei profili vengono salvati nel disco solo per l
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceEphemeralProfiles
@@ -13665,7 +13588,6 @@ Se si disabilita o non si configura questo criterio, Ricerca sicura in Google Se
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13731,7 +13653,6 @@ Questo criterio aziendale è disabilitato per impostazione predefinita.
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceLegacyDefaultReferrerPolicy
@@ -13794,7 +13715,6 @@ Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli 
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -13853,7 +13773,6 @@ Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#brows
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -13929,7 +13848,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceYouTubeRestrict
@@ -13994,7 +13912,6 @@ L'apertura di Microsoft Edge in modalità tutto schermo con la riga di comando n
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -14053,7 +13970,6 @@ Questo criterio ha lo scopo di offrire alle aziende, a seconda del comportamento
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14123,7 +14039,6 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: GoToIntranetSiteForSingleWordEntryInAddressBar
@@ -14182,7 +14097,6 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
 SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14245,7 +14159,6 @@ Se si disabilita questo criterio, l'accelerazione hardware è disabilitata.
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14330,7 +14243,6 @@ Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-ru
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14457,7 +14369,6 @@ Se non si configura questo criterio, i dati di riempimento automatico vengono im
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportAutofillFormData
@@ -14526,7 +14437,6 @@ Se non si configura questo criterio, le impostazioni del browser vengono importa
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportBrowserSettings
@@ -14592,7 +14502,6 @@ Se non si configura questo criterio, i cookie vengono importati alla prima esecu
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14662,7 +14571,6 @@ Se non si configura questo criterio, le estensioni vengono importate nella first
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportExtensions
@@ -14730,7 +14638,6 @@ Se non si configura questo criterio, i preferiti vengono importati alla prima es
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14800,7 +14707,6 @@ Se non si configura questo criterio, i dati della cronologia esplorazioni vengon
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportHistory
@@ -14868,7 +14774,6 @@ Se non si configura questo criterio, l'impostazione della home page viene import
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -14938,7 +14843,6 @@ Se non si configura questo criterio, le schede aperte vengono importate nella fi
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportOpenTabs
@@ -15006,7 +14910,6 @@ Se non si configura questo criterio, le informazioni di pagamento vengono import
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -15076,7 +14979,6 @@ Se non si configura questo criterio, le password salvate vengono importate nella
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportSavedPasswords
@@ -15145,7 +15047,6 @@ Se non si configura questo criterio, le impostazioni del motore di ricerca vengo
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportSearchEngine
@@ -15211,7 +15112,6 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -15287,7 +15187,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InPrivateModeAvailability
@@ -15347,7 +15246,6 @@ Se si disabilitano i criteri, gli avvisi non verranno visualizzati per i moduli 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -15415,7 +15313,6 @@ Il criterio viene applicato per processo di rendering, con il valore più recent
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -15493,7 +15390,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -15555,7 +15451,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -15606,7 +15501,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 "https://internal.contoso.com/sitelist.xml"
 ```
-
 
   
 
@@ -15683,7 +15577,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -15700,15 +15593,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Descrizione
 
-  Questo criterio sostituisce il criterio di contrassegno del test della modalità ie. Consente agli utenti di aprire una scheda in modalità Internet Explorer dal menu dell'interfaccia utente.
+  Questo criterio consente agli utenti di testare le applicazioni in modalità Internet Explorer aprendo una scheda in modalità Internet Explorer in Microsoft Edge.
+
+Gli utenti possono farlo attraverso il menu "Altri strumenti" selezionando "Apri siti in modalità Internet Explorer".
+
+Inoltre, gli utenti possono testare le loro applicazioni in un browser moderno senza rimuoverle dall'elenco di siti tramite l'opzione "Apri siti in modalità Edge".
 
 Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
 
-Se si abilita questo criterio, gli utenti possono aprire la scheda modalità IE dall'interfaccia utente ed esplorare il sito corrente in modalità Internet Explorer.
+Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet Explorer sarà visibile in "Altri strumenti". Gli utenti possono visualizzare i propri siti in modalità Internet Explorer in questa scheda. Un'altra opzione per "Apri siti in modalità Edge" sarà visibile anche in "Altri strumenti" per consentire di testare i siti in un browser moderno senza rimuoverli dall'elenco dei siti.
 
-Se si disabilita questo criterio, gli utenti non potranno vedere direttamente l'opzione dell'interfaccia utente nel menu.
-
-Se non si configura questo criterio, è possibile configurare manualmente il contrassegno del test della modalità ie.
+Se si disabilitano o non si configurano i criteri, gli utenti non potranno vedere le opzioni "Apri in modalità Internet Explorer" e "Apri in modalità Edge" nel menu "Altri strumenti". Tuttavia, gli utenti possono configurare queste opzioni con il contrassegno --ie-mode-test.
 
   #### Funzionalità supportate:
 
@@ -15742,7 +15637,6 @@ Se non si configura questo criterio, è possibile configurare manualmente il con
 ```
 0x00000000
 ```
-
 
   
 
@@ -15802,7 +15696,6 @@ Se non si configura il criterio, l'utente può modificare tale impostazione.
 ```
 "https://contoso.com/,https://fabrikam.com/"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -15871,7 +15764,6 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -16232,7 +16124,6 @@ Se non si configura questo criterio, viene utilizzato il valore predefinito (32)
 0x00000020
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MaxConnectionsPerProxy
@@ -16296,7 +16187,6 @@ Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo c
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -16368,7 +16258,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MetricsReportingEnabled
@@ -16433,7 +16322,6 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -16492,7 +16380,6 @@ Se non si configura questo criterio, viene usato il timeout predefinito di 2 sec
 ```
 0x0000000a
 ```
-
 
   
 
@@ -16558,7 +16445,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 0x00000002
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -16626,7 +16512,6 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -16685,7 +16570,6 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\1 
 SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 = "*.contoso.com"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -16752,7 +16636,6 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PaymentMethodQueryEnabled
@@ -16814,7 +16697,6 @@ Se si disabilita questo criterio, gli utenti non possono modificare o sostituire
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -16880,7 +16762,6 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -16937,7 +16818,6 @@ Se non si configura questo criterio, l'autenticazione proattiva è attivata.
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17001,7 +16881,6 @@ Se si disabilita (impostato su false) questo criterio, Microsoft Edge non può m
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PromotionalTabsEnabled
@@ -17063,7 +16942,6 @@ Se non si configura questo criterio, l'utente può modificare tale impostazione.
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17128,7 +17006,6 @@ QUIC è un protocollo di rete a livello trasporto che può migliorare le prestaz
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17215,8 +17092,6 @@ Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwli
   Questa impostazione consente di specificare se Internet Explorer reindirizza le esplorazioni ai siti che richiedono un browser moderno a Microsoft Edge.
 
 Se il criterio non viene configurato o viene impostato su "Sitelist" che comincia con M87,, Internet Explorer reindirizza i siti Web che richiedono un browser moderno a Microsoft Edge.
-
-Microsoft include un elenco di siti pubblici che richiedono tale reindirizzamento, come https://mail.yahoo.com.
 
 Quando un sito viene reindirizzato da Internet Explorer a Microsoft Edge, la scheda di Internet Explorer che aveva iniziato a caricare il sito Web viene chiusa se non ne aveva precedentemente caricato i contenuti. In caso contrario, si accede a una pagina della Guida Microsoft che spiega perché il sito è stato reindirizzato a Microsoft Edge.
 
@@ -17334,7 +17209,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RelaunchNotification
@@ -17397,7 +17271,6 @@ Se non impostato, viene usato il periodo predefinito di 604800000 millisecondi (
 0x240c8400
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RelaunchNotificationPeriod
@@ -17458,7 +17331,6 @@ La disabilitazione di questo criterio ha un effetto dannoso sulla stabilità e s
 0x00000000
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -17513,7 +17385,6 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge usa le impos
 ```
 0x00000000
 ```
-
 
   
 
@@ -17574,7 +17445,6 @@ In particolare, è presente un'opzione **Usare un servizio Web per consentire di
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17637,7 +17507,6 @@ Se non si configura o si lascia vuoto questo criterio, gli utenti possono impost
 ```
 ".*@contoso.com"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17703,7 +17572,6 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 "${roaming_app_data}\\edge-profile"
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -17761,7 +17629,6 @@ Per altre informazioni sull'uso dei profili utente mobile, vedere https://docs.m
 0x00000001
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -17816,7 +17683,6 @@ Se si disabilita o non si configura questo criterio, i contenuti di Adobe Flash 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -17880,7 +17746,6 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SSLErrorOverrideAllowed
@@ -17904,7 +17769,7 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
 
   #### Descrizione
 
-  Sets the minimum supported version of TLS. Se non si configura questo criterio, Microsoft Edge usa la versione minima predefinita, TLS 1.0.
+  Sets the minimum supported version of TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
 
 Se il criterio viene abilitato, Microsoft Edge non userà alcuna versione di SSL/TLS più vecchia di quella specificata. Qualsiasi valore non riconosciuto viene ignorato.
 
@@ -17950,7 +17815,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 "tls1"
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18023,7 +17887,6 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: SaveCookiesOnExit
@@ -18089,7 +17952,6 @@ Se si disabilita o non si configura questo criterio, la cronologia esplorazioni 
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SavingBrowserHistoryDisabled
@@ -18148,7 +18010,6 @@ Se si disabilita questo criterio, le chiamate alle API di condivisione dello sch
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18211,7 +18072,6 @@ Se si disabilita questo criterio, non verranno visualizzati specifici frammenti 
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18277,7 +18137,6 @@ Se il criterio non è impostato, i suggerimenti per la ricerca sono abilitati, m
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SearchSuggestEnabled
@@ -18339,7 +18198,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SecurityKeyPermitAttestation
@@ -18399,7 +18257,6 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 ```
 0x00000001
 ```
-
 
   
 
@@ -18461,7 +18318,6 @@ Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenable
 ```
 0x00000000
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18530,7 +18386,6 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\1 = "https://www.contoso.
 SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18603,7 +18458,6 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SensorsBlockedForUrls
@@ -18674,7 +18528,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\1 = "https://www.contoso.com"
 SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18747,7 +18600,6 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SerialBlockedForUrls
@@ -18812,7 +18664,6 @@ Se si disabilita questo criterio, il collegamento non viene mostrato.
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowOfficeShortcutInFavoritesBar
@@ -18874,7 +18725,6 @@ Se questo criterio è disabilitato, non è possibile caricare Signed HTTP Exchan
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -18938,7 +18788,6 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19064,7 +18913,6 @@ Se si disabilita questo criterio, l'utente non può usare il controllo ortografi
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SpellcheckEnabled
@@ -19135,7 +18983,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
 
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -19199,7 +19046,6 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -19258,7 +19104,6 @@ Questo criterio non influisce su altri tipi di contenuti misti diversi da audio,
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19320,7 +19165,6 @@ Se il criterio è impostato su false o non è configurato, verranno visualizzati
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SuppressUnsupportedOSWarning
@@ -19380,7 +19224,6 @@ Se il criterio non viene impostato o lo si applica come consigliato, gli utenti 
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19444,7 +19287,6 @@ Gli utenti non potranno eseguire l'override dei tipi di dati disabilitati.
 SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19513,7 +19355,6 @@ Questo criterio può essere usato per testare l'eventuale presenza di proxy inte
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19586,7 +19427,6 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: TLSCipherSuiteDenyList
@@ -19655,7 +19495,6 @@ Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TabFreezingEnabled
@@ -19713,7 +19552,6 @@ Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19776,7 +19614,6 @@ Se non si imposta questo criterio, il browser tenterà di risparmiare memoria so
 ```
 0x00000800
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -19850,7 +19687,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 0x00000002
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TrackingPrevention
@@ -19915,7 +19751,6 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TranslateEnabled
@@ -19938,7 +19773,6 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
   - In Windows e macOS dalla versione 77 o successive
 
   #### Descrizione
-                    
 
   L'impostazione dei criteri consente l'accesso agli URL elencati, come eccezioni a [di URLBlocklist](#urlblocklist).
 
@@ -19991,7 +19825,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\4 = "https://server:8080/path"
 SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20075,7 +19908,6 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: URLBlocklist
@@ -20149,7 +19981,6 @@ Se si abilita o non si configura questo criterio, la funzionalità User-Agent Cl
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserAgentClientHintsEnabled
@@ -20216,7 +20047,6 @@ Per un elenco delle variabili che è possibile usare, vedere [https://go.microso
 "${users}/${user_name}/Edge"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserDataDir
@@ -20279,7 +20109,6 @@ Se si imposta questo criterio, i vecchi snapshot vengono eliminati in base alle 
 0x00000003
 ```
 
-
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -20334,7 +20163,6 @@ Se si disabilita questo criterio, gli utenti non possono richiamare la funzional
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20400,7 +20228,6 @@ Questo criterio influisce su tutti i tipi di input video, non solo sulla fotocam
 0x00000000
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: VideoCaptureAllowed
@@ -20460,7 +20287,6 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\1 = "https://www.contos
 SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contoso.edu/"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20528,7 +20354,6 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20745,7 +20570,6 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
 0x00000001
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebComponentsV0Enabled
@@ -20763,7 +20587,6 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-                     
   #### Versioni supportate:
 
   - In Windows e macOS dalla versione 77, fino alla versione 84
@@ -20811,7 +20634,6 @@ Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado d
 ```
 0x00000001
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20880,7 +20702,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\1 = "https://www.cont
 SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
 ```
-
 
   #### Informazioni e impostazioni Mac
   
@@ -20961,7 +20782,6 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 "default"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcLocalhostIpHandling
@@ -21024,7 +20844,6 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
 "10000-11999"
 ```
 
-
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcUdpPortRange
@@ -21032,6 +20851,130 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
 ``` xml
 <string>10000-11999</string>
 ```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### WebWidgetAllowed
+
+  #### Abilita il widget Web
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Abilita il widget Web. Se abilitato, gli utenti possono utilizzare il widget per eseguire ricerche sul Web dal proprio desktop o da un'applicazione. Il widget fornisce una casella di ricerca che mostra i suggerimenti Web e apre tutte le ricerche Web in Microsoft Edge. La casella di ricerca fornisce suggerimenti di ricerca (forniti da Bing) e URL. Il widget include anche riquadri di feed su cui gli utenti possono fare clic per visualizzare ulteriori informazioni su msn.com in una nuova scheda o finestra del browser Microsoft Edge. I riquadri di feed possono includere annunci. Il widget può essere avviato dalle impostazioni Microsoft Edge o dal menu "Altri strumenti" in Microsoft Edge.
+
+Se si abilita o non si configura questo criterio: il widget Web sarà abilitato automaticamente per tutti i profili.
+Nelle impostazioni Microsoft Edge, gli utenti vedranno l'opzione per avviare il widget.
+Nelle impostazioni di Microsoft Edge, gli utenti vedranno la voce di menu per eseguire il widget all'avvio di Windows (avvio automatico).
+L'opzione per abilitare il widget all'avvio viene attivata se il criterio[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) è abilitato.
+Se [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) è disabilitato o non è configurato, l'opzione per abilitare il widget all'avvio sarà disattivata.
+Gli utenti vedranno la voce di menu per avviare il widget dal menu Microsoft Edge "Altri strumenti". Gli utenti possono avviare il widget da "Altri strumenti".
+Il widget può essere disattivato dall'opzione "Esci" nella barra delle applicazioni o chiudendo il widget dalla barra delle applicazioni. Il widget verrà riavviato al riavvio del sistema se l'avvio automatico è abilitato.
+
+Se si disabilita questo criterio: il widget Web verrà disabilitato per tutti i profili.
+L'opzione per avviare il widget dalle impostazioni Microsoft Edge verrà disabilitata.
+L'opzione per avviare l'avvio del widget all'avvio di Windows (avvio automatico) verrà disabilitata.
+L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge verrà disabilitata.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: WebWidgetAllowed
+  - Nome Criteri di gruppo: abilita il widget Web
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: WebWidgetAllowed
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### WebWidgetIsEnabledOnStartup
+
+  #### Consenti il widget Web all'avvio di Windows
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Consente l'esecuzione del widget Web all'avvio di Windows.
+
+Se si abilita: il widget Web verrà eseguito all'avvio di Windows per impostazione predefinita.
+Se il widget è disabilitato tramite il criterio [WebWidgetAllowed](#webwidgetallowed), questo criterio non avvierà il widget all'avvio di Windows.
+
+Se si disabilita questo criterio: il widget Web non verrà avviato all'avvio di Windows per tutti i profili.
+L'opzione per avviare il widget all'avvio di Windows verrà disabilitata e disattivata nelle impostazioni Microsoft Edge.
+
+Se si configura il criterio: il widget Web non verrà avviato all'avvio di Windows per tutti i profili.
+L'opzione per avviare il widget all'avvio di Windows verrà disattivata nelle impostazioni Microsoft Edge.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: WebWidgetIsEnabledOnStartup
+  - Nome Criteri di gruppo: consenti il widget Web all'avvio di Windows
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: WebWidgetIsEnabledOnStartup
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -21090,7 +21033,6 @@ Se si disabilitano o non si configura questo criterio, verrà usato il resolver 
 ```
 0x00000001
 ```
-
 
   
 
