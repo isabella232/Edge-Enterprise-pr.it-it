@@ -111,6 +111,10 @@
           href: edge-ie-mode-site-discovery.md
         - name: Domande frequenti sulla modalità IE
           href: edge-ie-mode-faq.md
+        - name: Istruzioni aggiuntive
+          items:
+            - name: Condivisione di cookie da Microsoft Edge a Internet Explorer
+              href: edge-ie-mode-add-guidance-cookieshare.md
 - name: Sicurezza di Microsoft Edge
   items:
     - name: Sicurezza per la tua azienda
