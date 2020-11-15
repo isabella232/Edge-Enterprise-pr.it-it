@@ -3,19 +3,19 @@ title: Pianifica la distribuzione di Microsoft Edge
 ms.author: cjacks
 author: appcompatguy
 manager: saudm
-ms.date: 04/23/2020
+ms.date: 11/04/2020
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Pianifica la distribuzione di Microsoft Edge
-ms.openlocfilehash: 3ac3d050578ca4f230ed7e775aefb73f11abb3c0
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
+ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980192"
+ms.lasthandoff: 11/05/2020
+ms.locfileid: "11155253"
 ---
 # Pianifica la distribuzione di Microsoft Edge
 
@@ -23,6 +23,19 @@ In questo articolo vengono descritte le procedure consigliate per la distribuzio
 
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge versione 77 o successiva.
+
+Le sezioni seguenti forniscono indicazioni specifiche per la pianificazione della distribuzione di Microsoft Edge.
+
+- [Valutare l'ambiente e i requisiti del browser](#evaluate-your-existing-browser-environment-and-browser-needs)
+- [Assicurare che i dispositivi Windows 10 siano pronti](#make-sure-your-windows-10-devices-are-ready)
+- [Scegliere il metodo di distribuzione](#determine-your-deployment-methodology)
+- [Esegui l'individuazione dei siti](#do-site-discovery)
+- [Scegliere la strategia di canale](#determine-your-channel-strategy)
+- [Definire e configurare i criteri](#define-and-configure-policies)
+- [Verificare la compatibilità delle app](#do-app-compatibility-testing)
+- [Distribuzione pilota di Microsoft Edge](#deploy-microsoft-edge-to-a-pilot-group)
+- [Valutare la distribuzione pilota](#validate-your-deployment)
+- [Distribuire Microsoft Edge nella grande impresa](#broad-deployment-of-microsoft-edge)
 
 ## Valuta l'ambiente e le esigenze del browser esistenti
 
@@ -157,9 +170,11 @@ La compatibilità delle applicazioni per Microsoft Edge è estremamente elevata,
 2. Se funziona su Internet Explorer, funzionerà su Microsoft Edge in modalità Internet Explorer.
 3. Se funziona su Google Chrome, funzionerà su Microsoft Edge.
 
-Se disponi di un'applicazione in cui non soddisfiamo questa promessa, manterremo la promessa per risolvere il problema tramite [App Assure di Microsoft](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure).
+Se disponi di un'applicazione in cui non soddisfiamo questa promessa di compatibilità, manterremo la promessa per risolvere il problema tramite [App Assure di Microsoft](https://www.microsoft.com/fasttrack/microsoft-365/desktop-app-assure).
 
-Nonostante questa promessa, sappiamo che molte organizzazioni devono convalidare alcune applicazioni per motivi di conformità o gestione dei rischi. Anche se ci aspettiamo che sia molto semplice, è importante essere organizzati e rigorosi nei test delle app.
+### Collaudo delle app interne della divisione aziendale
+
+Nonostante la nostra promessa per la compatibilità, sappiamo che molte organizzazioni devono convalidare alcune applicazioni per motivi di conformità o gestione dei rischi. Anche se ci aspettiamo che sia molto semplice, è importante essere organizzati e rigorosi nei test delle app.
 
 Esistono 2 modi per eseguire i test di compatibilità delle app:
 
@@ -167,6 +182,10 @@ Esistono 2 modi per eseguire i test di compatibilità delle app:
 2. Test pilota. Le applicazioni vengono convalidate da un numero limitato di utenti nell'ambiente di lavoro giornaliero usando i propri dispositivi.
 
 Scegli il metodo più appropriato per ogni app, per gestire i rischi senza investire eccessivamente nei test di compatibilità.
+
+### Supporto per app di terze parti
+
+Oltre alle app interne delle proprie divisioni, molte organizzazioni usano app fornite da soggetti esterni. L'articolo [Pronto per Microsoft Edge](deploy-edge-ready-for-edge.md) contiene un elenco di applicazioni web che potrebbero essere in uso nella tua organizzazione. L'elenco contiene i collegamenti alle dichiarazioni dei produttori relative al supporto dei propri prodotti durante l'uso di Microsoft Edge. 
 
 ## Distribuire Microsoft Edge a un gruppo pilota
 
