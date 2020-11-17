@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/04/2020
+ms.date: 11/13/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 0e708707ae8465aa49ee49dcec542881a5080a57
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
+ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155313"
+ms.lasthandoff: 11/13/2020
+ms.locfileid: "11168801"
 ---
 # Microsoft Edge - Criteri
 
@@ -28,18 +28,6 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
-
-## Criteri nuovi e deprecati
-
-Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
-
-| Nome | Stato |
-|-|-|
-| [WebWidgetAllowed](#webwidgetallowed) | Nuova |
-| [ProxyBypassList](#proxybypasslist) | Deprecata |
-| [ProxyMode](#proxymode) | Deprecata |
-| [ProxyPacUrl](#proxypacurl) | Deprecata |
-| [ProxyServer](#proxyserver) | Deprecata |
 
 ## Criteri disponibili
 
@@ -4003,15 +3991,23 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Descrizione
 
-  Controlla i tipi di estensioni che è possibile installare e limita l'accesso al runtime.
+  L'impostazione dei criteri controlla quali app ed estensioni possono essere installate in Microsoft Edge, con quali host possono interagire e limita l'accesso durante il runtime.
 
-Questa impostazione definisce i tipi di estensioni consentiti e gli host con cui possono interagire. Il valore è un elenco di stringhe, ognuna delle quali deve essere una delle seguenti: "extension", "theme", "user_script" e "hosted_app". Per altre informazioni su questi tipi, vedere la documentazione sulle estensioni di Microsoft Edge.
+Se non si impostano questo criterio, non ci sono restrizioni sull'estensione e i tipi di app accettabili.
 
-Tenere presente che questo criterio influisce anche sulle estensioni di cui forzare l'installazione usando il criterio [ExtensionInstallForcelist](#extensioninstallforcelist).
+Le estensioni e le app che hanno un tipo non presente nell'elenco non verranno installate. Ogni valore deve essere una di queste stringhe:
 
-Se si abilita questo criterio, vengono installate solo le estensioni che corrispondono a un tipo indicato nell'elenco.
+* "extension"
 
-Se non si configura questo criterio, non vengono applicate restrizioni ai tipi di estensioni accettabili.
+* "theme"
+
+* "user_script"
+
+* "hosted_app"
+
+Per altre informazioni su questi tipi, vedere la documentazione sulle estensioni di Microsoft Edge.
+
+Tenere presente che questo criterio influisce anche sulle estensioni e le app installate in maniera forzata usando[ExtensionInstallForcelist](#extensioninstallforcelist).
 
   #### Funzionalità supportate:
 
@@ -4202,27 +4198,21 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
   #### Descrizione
 
-  Specifica le estensioni che sono state installate automaticamente, senza l'interazione dell'utente, e che gli utenti non possono disinstallare o disabilitare ("installazione forzata"). Tutte le autorizzazioni richieste dalle estensioni sono concesse in modo implicito, senza l'interazione dell'utente, comprese eventuali autorizzazioni aggiuntive richieste da versioni future delle estensioni. Inoltre, sono concesse le autorizzazioni per le API enterprise.deviceAttributes ed enterprise.platformKeys extension. Queste due API sono disponibili solo per le estensioni installate in modo forzato.
+  Impostare questo criterio per specificare un elenco di app ed estensioni che vengono installate in modo invisibile all'utente, senza interazione. Gli utenti non possono disinstallare o disattivare questa impostazione. Le autorizzazioni vengono concesse in modo implicito, incluse le API di estensione enterprise.deviceAttributes ed enterprise.platformKeys. Nota: queste 2 API non sono disponibili per le app e le estensioni che non sono installate in maniera forzata.
 
-Questo criterio ha la precedenza rispetto a un criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) potenzialmente in conflitto. Quando si rimuove un'estensione dall'elenco di quelle con installazione forzata, l'estensione viene automaticamente disinstallata da Microsoft Edge.
+Se non si imposta tale criterio, nessuna app o estensione viene installata automaticamente e gli utenti possono disinstallare qualsiasi app in Microsoft Edge.
 
-L'installazione forzata si limita alle app e alle estensioni elencate nel sito Web dei componenti aggiuntivi di Microsoft Edge per le istanze diverse da quelle seguenti: istanze di Windows collegate a un dominio di Microsoft Active Directory o istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi e istanze di macOS gestite tramite MDM o collegate a un dominio tramite MCX.
+Questo criterio sostituisce il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist). Se un'app o un'estensione installata in maniera forzata precedenza viene rimossa dall’elenco, Microsoft Edge la disinstalla automaticamente.
 
-Tenere presente che gli utenti possono modificare il codice sorgente di qualsiasi estensione usando gli Strumenti di sviluppo, rendendo l'estensione potenzialmente disfunzionale. Se è un problema, impostare il criterio [DeveloperToolsAvailability](#developertoolsavailability).
+Nelle istanze di Microsoft Windows, le app e le estensioni esterne al sito Web dei componenti aggiuntivi di Microsoft Edge possono essere installate in maniera forzata solo se l'istanza fa parte di un dominio Microsoft Active Directory ed esegue Windows 10 Pro.
 
-Per aggiungere un'estensione all'elenco, usare il formato seguente:
+Nelle istanze macOS, le app e le estensioni esterne al sito Web dei componenti aggiuntivi di Microsoft Edge possono essere installate in maniera forzata solo se l'istanza viene gestita tramite MDM o unita a un dominio tramite MCX.
 
-[extensionID];[updateURL]
+Il codice sorgente di qualsiasi estensione può essere modificato dagli utenti con strumenti di sviluppo, rendendo potenzialmente non funzionale l'estensione. Se questo è un problema, configurare i criteri DeveloperToolsDisabled.
 
-- extensionID: la stringa di 32 lettere disponibile in edge://extensions in modalità sviluppatore.
+Ogni elemento elenco del criterio è una stringa che contiene un ID di estensione e, facoltativamente, un URL di "aggiornamento" separato da un punto e virgola (;). L'ID dell'estensione è la stringa di 32 lettere che si trova, ad esempio, in edge://extensions in modalità sviluppatore. Se specificato, l'URL di "aggiornamento" dovrebbe indicare un documento XML di un manifesto di aggiornamento ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ). Per impostazione predefinita, viene utilizzato l'URL di aggiornamento del sito Web dei componenti aggiuntivi di Microsoft Edge. L'URL di "aggiornamento" impostato in questo criterio viene usato solo per l'installazione iniziale. Gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento nel manifesto dell'estensione.
 
-- updateURL (facoltativo): l'indirizzo del documento XML del manifesto di aggiornamento per l'app o l'estensione, come descritto in [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043). Se si vuole installare un'estensione da Chrome Web Store, specificare l'URL di aggiornamento di Chrome Web Store, https://clients2.google.com/service/update2/crx. Tenere presente che l'URL di aggiornamento impostato in questo criterio viene usato solo per l'installazione iniziale; gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento indicato nel manifesto dell'estensione. Se non si imposta updateURL, l'estensione verrà considerata ospitata in Microsoft Store e verrà usato l'URL di aggiornamento seguente (https://edge.microsoft.com/extensionwebstorebase/v1/crx).
-
-Ad esempio, gggmmkjegpiggikcnhidnjjhmicpibll;https://edge.microsoft.com/extensionwebstorebase/v1/crx installa l'app di Microsoft Online dall'URL di aggiornamento di Microsoft Store. Per altre informazioni sull'hosting delle estensioni, vedere: [https://go.microsoft.com/fwlink/?linkid=2095044](https://go.microsoft.com/fwlink/?linkid=2095044).
-
-Se non si configura questo criterio, le estensioni non vengono installate automaticamente e gli utenti possono disinstallare qualsiasi estensione in Microsoft Edge.
-
-Tenere presente che questo criterio non si applica alla modalità InPrivate.
+Nota: questo criterio non si applica alla modalità InPrivate. Leggere informazioni sulle estensioni di hosting ( https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
 
   #### Funzionalità supportate:
 
