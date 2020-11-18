@@ -1,4 +1,4 @@
-# last revised 11/06/2020
+# last revised 11/16/2020
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
@@ -113,7 +113,7 @@
           href: edge-ie-mode-faq.md
         - name: Istruzioni aggiuntive
           items:
-            - name: Aggiungere la modalità IE al menu di scelta rapida "Apri con"
+            - name: Associare le estensioni di file alla modalità Internet Explorer
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: Condivisione cookie da Microsoft Edge a Internet Explorer
               href: edge-ie-mode-add-guidance-cookieshare.md
