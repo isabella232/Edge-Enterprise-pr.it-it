@@ -3,19 +3,19 @@ title: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibili
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 11/03/2020
+ms.date: 11/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
-ms.openlocfilehash: d822bf4cef76fe4c0298133b47ed80f5d1242b3d
-ms.sourcegitcommit: 73fec3998f26d110252ace621be01f1c1142cf57
+ms.openlocfilehash: c9c64a55df3aeecaebaab3675296c5594612b94f
+ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "11151096"
+ms.lasthandoff: 11/17/2020
+ms.locfileid: "11175199"
 ---
 # Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
 
@@ -31,7 +31,7 @@ La necessità di passare manualmente a un altro browser è richiesta a partire d
 Quando un utente accede a un sito Web non compatibile con Internet Explorer, verrà automaticamente reindirizzato a Microsoft Edge. Questo articolo descrive l'esperienza utente relativa al reindirizzamento e i criteri di gruppo utilizzati per configurare o disabilitare il reindirizzamento automatico.
 
 > [!NOTE]
-> Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer.
+> Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer. Per altre informazioni, vedere [Richiedere aggiornamenti per l’elenco siti non compatibili](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 
 ## Esperienza di reindirizzamento
 
@@ -113,5 +113,6 @@ Se si desidera disabilitare il reindirizzamento DOPO aver eseguito l'aggiornamen
 
 ## Vedere anche
 
+- [Richiedere aggiornamenti per l’elenco siti non compatibili](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Criteri Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-policies)

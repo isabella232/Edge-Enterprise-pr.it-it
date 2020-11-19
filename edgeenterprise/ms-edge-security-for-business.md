@@ -3,19 +3,19 @@ title: Sicurezza Microsoft Edge per la tua azienda
 ms.author: seanlynd
 author: seanongit
 manager: chuckf
-ms.date: 11/11/2020
+ms.date: 11/18/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Sicurezza Microsoft Edge per la tua azienda
-ms.openlocfilehash: e2f45d49d8f4960f3f2263098ff2eb7d0103b6ea
-ms.sourcegitcommit: 5efa7f6196804da205c3deff4ba7917a94ffcf4f
+ms.openlocfilehash: 52e55c64aad193072c44f6bc76e5c66808a5439d
+ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "11165936"
+ms.lasthandoff: 11/18/2020
+ms.locfileid: "11176953"
 ---
 # Sicurezza Microsoft Edge per la tua azienda
 
@@ -56,11 +56,13 @@ Oltre a proteggere dalle minacce esterne, gli amministratori IT devono anche pro
 > [!NOTE]
 > La configurazione di Windows Information Protection (WIP) richiede una licenza di Microsoft Intune o Microsoft Endpoint Configuration Manager o l'utilizzo di una soluzione di gestione dei dispositivi mobili (MDM) di terze parti, che potrebbe avere requisiti di licenza aggiuntivi.
 
-**Microsoft Endpoint DLP è supportato solo in modo nativo in Microsoft Edge**. La prevenzione della perdita di dati degli endpoint di Microsoft (DLP) si integra con Microsoft Security Center ed estende la protezione delle informazioni a Microsoft Edge per avvisare gli utenti di attività non conformi e prevenire la perdita di dati mentre gli utenti lavorano online. Rileva ed etichetta i dati sensibili all'interno dell'azienda che corrispondono ai criteri definiti dall'amministratore, come file contenenti numeri di carta di credito o ID governativi (ad esempio, numeri di previdenza sociale), informazioni finanziarie, ecc. È possibile distribuire i criteri di Microsoft Information Protection su Microsoft Endpoint DLP senza riconfigurazione aggiuntiva, includendo identificatori di contenuti sensibili e criteri che gli amministratori IT hanno già personalizzato. Si tratta di una distribuzione senza interruzioni della protezione delle informazioni per gli amministratori IT.
+**La prevenzione delle perdita dei dati di Microsoft Endpoint (Endpoint DLP) è supportata solo in modo nativo in Microsoft Edge**. Endpoint DLP si integra con Microsoft Security Center ed estende la protezione delle informazioni a Microsoft Edge per avvisare gli utenti di attività non conformi e prevenire la perdita di dati mentre gli utenti lavorano online. Rileva ed etichetta i dati sensibili all'interno dell'azienda che corrispondono ai criteri definiti dall'amministratore, come file contenenti numeri di carta di credito o ID governativi (ad esempio, numeri di previdenza sociale), informazioni finanziarie, ecc. È possibile distribuire i criteri di Microsoft Information Protection su Microsoft Endpoint DLP senza riconfigurazione aggiuntiva, includendo identificatori di contenuti sensibili e criteri che gli amministratori IT hanno già personalizzato. Si tratta di una distribuzione senza interruzioni della protezione delle informazioni per gli amministratori IT.
+
+Per altre informazioni sui prerequisiti di Endpoint DLP e su come configurarlo, vai a [Introduzione a la prevenzione della perdita di dati di Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide).
 
 > [!NOTE]
-> È richiesto un abbonamento a Microsoft 365 E5 o Microsoft 365 E5 Compliance per la prevenzione della perdita di dati degli endpoint di Microsoft.
+> È richiesto un abbonamento a Microsoft 365 E5 o Microsoft 365 E5 Compliance per la prevenzione della perdita di dati di Microsoft Endpoint.
 
-## Vedere anche
+## Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
