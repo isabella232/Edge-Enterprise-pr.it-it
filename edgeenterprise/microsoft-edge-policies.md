@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/13/2020
+ms.date: 11/19/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: e191d9487a0e6c0d72f2f4b47d6b6c413449cb71
-ms.sourcegitcommit: 2b6808a4d1878fd2da886f9c6c56f592c6b200e1
+ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
+ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "11168801"
+ms.lasthandoff: 11/19/2020
+ms.locfileid: "11181987"
 ---
 # Microsoft Edge - Criteri
 
@@ -28,6 +28,17 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
+
+## Criteri nuovi e deprecati
+
+Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
+
+| Nome | Stato |
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| Nuovo |
+|[BlockExternalExtensions](#blockexternalextensions) | Nuovo |
+|[ShowMicrosoftRewards](#showmicrosoftrewards) | Nuovo |
+|[ProactiveAuthEnabled](#proactiveauthenabled) | Deprecato |
 
 ## Criteri disponibili
 
@@ -41,8 +52,9 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Messaggistica nativa](#native-messaging)|
 |[Gestione e protezione delle password](#password-manager-and-protection)|[Prestazioni](#performance)|
 |[Stampa](#printing)|[Server proxy](#proxy-server)|
-|[Impostazioni di SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
-|[Ulteriori informazioni](#additional)|
+|[Impostazioni schede di sospensione](#sleeping-tabs-settings)|[Impostazioni SmartScreen](#smartscreen-settings)|
+|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|[Ulteriori informazioni](#additional)|
+
 
 ### [*Impostazioni di Application Guard*](#application-guard-settings-policies)
 
@@ -116,6 +128,7 @@ e suggerimenti per i servizi Microsoft|
 
 |Nome criterio|Didascalia|
 |-|-|
+|[BlockExternalExtensions](#blockexternalextensions)|Blocca le estensioni esterne dall'installazione|
 |[ExtensionAllowedTypes](#extensionallowedtypes)|Configura i tipi di estensioni consentiti|
 |[ExtensionInstallAllowlist](#extensioninstallallowlist)|Consente l'installazione di estensioni specifiche|
 |[ExtensionInstallBlocklist](#extensioninstallblocklist)|Controlla le estensioni che non è possibile installare|
@@ -180,7 +193,14 @@ e suggerimenti per i servizi Microsoft|
 |[ProxyPacUrl](#proxypacurl)|Imposta l'URL del file .pac del proxy (deprecato)|
 |[ProxyServer](#proxyserver)|Configura l'indirizzo o l'URL del server proxy (deprecato)|
 |[ProxySettings](#proxysettings)|Impostazioni proxy|
-### [*Impostazioni di SmartScreen*](#smartscreen-settings-policies)
+### [*Impostazioni schede di sospensione*](#sleeping-tabs-settings-policies)
+
+|Nome criterio|Didascalia|
+|-|-|
+|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)|Blocca le schede di sospensione in siti specifici|
+|[SleepingTabsEnabled](#sleepingtabsenabled)|Configurare le schede di sospensione|
+|[SleepingTabsTimeout](#sleepingtabstimeout)|Imposta il timeout di inattività della scheda in background per le schede di sospensione|
+### [*Impostazioni SmartScreen*](#smartscreen-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -341,7 +361,7 @@ e suggerimenti per i servizi Microsoft|
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|Consente ai siti Web di eseguire query per i metodi di pagamento disponibili|
 |[PersonalizationReportingEnabled](#personalizationreportingenabled)|Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft|
 |[PinningWizardAllowed](#pinningwizardallowed)|Consente la procedura guidata per Aggiungi alla barra delle applicazioni|
-|[ProactiveAuthEnabled](#proactiveauthenabled)|Abilita l'autenticazione proattiva|
+|[ProactiveAuthEnabled](#proactiveauthenabled)|Abilitare l'autenticazione proattiva|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|Abilita il contenuto promozionale di una scheda completa|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|Chiede dove salvare i file scaricati|
 |[QuicAllowed](#quicallowed)|Consente il protocollo QUIC|
@@ -370,6 +390,7 @@ e suggerimenti per i servizi Microsoft|
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|Blocca l'accesso ai sensori in siti specifici|
 |[SerialAskForUrls](#serialaskforurls)|Consenti API Serial in siti specifici|
 |[SerialBlockedForUrls](#serialblockedforurls)|Blocca Serial API in siti specifici|
+|[ShowMicrosoftRewards](#showmicrosoftrewards)|Mostra le esperienze di Microsoft Rewards|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|Abilita il supporto di Signed HTTP Exchange (SXG)|
 |[SitePerProcess](#siteperprocess)|Abilita l'isolamento del sito per tutte le origini|
@@ -3979,6 +4000,71 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### BlockExternalExtensions
+
+  #### Blocca le estensioni esterne dall'installazione
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Controlla l'installazione di estensioni esterne.
+
+Se si abilita questa impostazione, le estensioni esterne vengono bloccate dall'installazione.
+
+Se si disattiva questa impostazione o non la si annulla, le estensioni esterne possono essere installate.
+
+Le estensioni esterne e la relativa installazione vengono documentate in https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options.
+
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: BlockExternalExtensions
+  - Nome Criteri di gruppo: blocca le estensioni esterne dall'installazione
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Estensioni
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: BlockExternalExtensions
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio:
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: BlockExternalExtensions
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### ExtensionAllowedTypes
 
   #### Configura i tipi di estensioni consentiti
@@ -6581,6 +6667,225 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ## Criteri impostazioni delle schede di sospensione
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### SleepingTabsBlockedForUrls
+
+  #### Blocca le schede di sospensione in siti specifici
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Definire un elenco di siti, in base ai modelli di URL, che non possono essere messi in stato di sospensione tramite le schede di sospensione.
+
+Se il criterio [SleepingTabsEnabled](#sleepingtabsenabled) è disabilitato, questo elenco non viene usato e nessun sito verrà messo automaticamente in stato di sospensione.
+
+Se non si configura questo criterio, tutti i siti potranno essere messi in stato di sospensione, a meno che la configurazione personale dell'utente non li blocchi.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SleepingTabsBlockedForUrls
+  - Nome Criteri di gruppo: blocca le schede di sospensione in siti specifici
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni schede di sospensione
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SleepingTabsBlockedForUrls
+  - Percorso (scelta consigliata): SOFTWARE\Criteri\Microsoft\Edge\Recommended\SleepingTabsBlockedForUrls
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\1 = "https://www.contoso.com"
+SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu"
+
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: SleepingTabsBlockedForUrls
+  - Valore di esempio:
+``` xml
+<array>
+  <string>https://www.contoso.com</string>
+  <string>[*.]contoso.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### SleepingTabsEnabled
+
+  #### Configurare le schede di sospensione
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Questa impostazione dei criteri consente di configurare se attivare le schede di sospensione. Le schede di sospensione consentono di ridurre la CPU, la batteria e l'utilizzo della memoria sospendendo le schede inattive in background. Microsoft Edge usa funzionalità euristiche per evitare di sospendere le schede utili in background, come la visualizzazione delle notifiche, la riproduzione di contenuti audio e lo streaming di contenuti video. Per impostazione predefinita, le schede di sospensione sono attivate.
+
+I singoli siti possono essere bloccati dall'essere messi in stato di sospensione configurando il criterio [SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls).
+
+Se si abilita questa impostazione, le schede di sospensione sono attivate.
+
+Se si disattiva questa impostazione, le schede di sospensione sono disattivate.
+
+Se non si configura questa impostazione, gli utenti possono scegliere se usare le schede di sospensione.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SleepingTabsEnabled
+  - Nome Criteri di gruppo: configura le schede di sospensione
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni schede di sospensione
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: SleepingTabsEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: SleepingTabsEnabled
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### SleepingTabsTimeout
+
+  #### Imposta il timeout di inattività della scheda in background per le schede di sospensione
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Questa impostazione consente di configurare il timeout, in secondi, dopo il quale le schede di sfondo inattive verranno messe automaticamente sospese se sono abilitate le schede di sospensione. Per impostazione predefinita, questo timeout è di 7.200 secondi (2 ore).
+
+Le schede vengono messe automaticamente in stato di sospensione quando il criterio [SleepingTabsEnabled](#sleepingtabsenabled) è abilitato o non è configurato e l'utente ha abilitato l'impostazione delle schede di sospensione.
+
+Se non si configura questo criterio, gli utenti possono scegliere il valore di timeout.
+
+Mapping delle opzioni del criterio:
+
+* 5Minutes (300) = 5 minuti di inattività
+
+* 15Minutes (900) = 15 minuti di inattività
+
+* 30Minutes (1800) = 30 minuti di inattività
+
+* 1 ora (3600) = 1 ora di inattività
+
+* 2Hours (7200) = 2 ore di inattività
+
+* 3 ore (10800) = 3 ore di inattività
+
+* 6Hours (21600) = 6 ore di inattività
+
+* 12Hours (43200) = 12 ore di inattività
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Numero intero
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SleepingTabsTimeout
+  - Nome Criteri di gruppo: impostare il timeout della scheda sfondo per le schede di sospensione
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni schede di sospensione
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: SleepingTabsTimeout
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000384
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: SleepingTabsTimeout
+  - Valore di esempio:
+``` xml
+<integer>900</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ## Criteri di impostazioni di SmartScreen
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -7361,6 +7666,8 @@ Se si imposta questo criterio su false o non lo si configura, i riquadri dei sit
 
   Configura l'URL predefinito della pagina Nuova scheda.
 
+La versione consigliata di questo criterio attualmente non funziona e funziona esattamente come la versione obbligatoria.
+
 Questo criterio determina la pagina che viene aperta quando vengono create nuove schede (incluso quando vengono aperte nuove finestre). Influisce anche sulla pagina di avvio se è impostata per aprire la pagina Nuova scheda.
 
 Questo criterio non determina quale pagina viene aperta all'avvio; ciò è controllato dal criterio [RestoreOnStartup](#restoreonstartup). Inoltre, non influisce sulla home page se è impostata per aprire la pagina Nuova scheda.
@@ -7889,7 +8196,7 @@ Se è stato abilitato il set di criteri che forza un provider di ricerca predefi
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
-  - Aggiornamento dei criteri dinamici: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
   #### Tipo:
 
@@ -16758,9 +17065,9 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
 
   ### ProactiveAuthEnabled
 
-  #### Abilita l'autenticazione proattiva
+  #### Abilitare l'autenticazione proattiva
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -16768,11 +17075,13 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
 
   #### Descrizione
 
-  Consente di configurare se attivare l'autenticazione proattiva.
+  Questo criterio è deprecato perché non funziona indipendentemente dall'accesso del browser. Non funzionerà in Microsoft Edge versione 91. Se si desidera configurare l'accesso al browser, usare il criterio [BrowserSignin](#browsersignin).
 
-Se si abilita questo criterio, Microsoft Edge tenta di autenticare in modo proattivo l'utente connesso con i servizi Microsoft. A intervalli regolari, Microsoft Edge verifica con un servizio online la disponibilità di un manifesto aggiornato che contiene la configurazione che determina come eseguire questa operazione.
+Consente di configurare se attivare l'autenticazione proattiva in Microsoft Edge.
 
-Se si disabilita questo criterio, Microsoft Edge non tenta di autenticare in modo proattivo l'utente connesso con i servizi Microsoft. Microsoft Edge non verifica più con un servizio online la disponibilità di un manifesto aggiornato che contiene la configurazione che determina come eseguire questa operazione.
+Se si abilita questo criterio, Microsoft Edge tenta di autenticarsi a siti Web e servizi utilizzando l'account con il quale si è eseguito l'accesso al browser.
+
+Se si disabilita questo criterio, Microsoft Edge non tenta di eseguire l'autenticazione con siti Web o servizi usando Single Sign-on (SSO). Le esperienze autenticate come la pagina nuova scheda Enterprise non funzioneranno (ad esempio, i documenti di Office recenti e consigliati non saranno disponibili).
 
 Se non si configura questo criterio, l'autenticazione proattiva è attivata.
 
@@ -16791,7 +17100,7 @@ Se non si configura questo criterio, l'autenticazione proattiva è attivata.
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProactiveAuthEnabled
-  - Nome Criteri di gruppo: Abilita l'autenticazione proattiva
+  - Nome Criteri di gruppo: abilita l'autenticazione proattiva (deprecata)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -18599,6 +18908,77 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
   <string>https://www.contoso.com</string>
   <string>[*.]contoso.edu</string>
 </array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### ShowMicrosoftRewards
+
+  #### Mostra le esperienze di Microsoft Rewards
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Mostra l'esperienza e le notifiche di Microsoft Rewards.
+Se il criterio viene abilitato:
+   - Gli utenti degli account Microsoft (esclusi gli account di Azure AD) in mercati con ricompense per ricerca vedranno l'esperienza Microsoft Rewards nel profilo utente Microsoft Edge.
+   - L'impostazione per abilitare Microsoft Rewards nelle impostazioni Microsoft Edge verrà abilitata e attivata.
+   - L'impostazione per abilitare la modalità Give verrà abilitata e rispetta l'impostazione dell'utente.
+
+Se si disabilita questo criterio:
+   - Gli utenti degli account Microsoft (esclusi gli account di Azure AD) in mercati con ricompense per ricerca non vedranno l'esperienza Microsoft Rewards nel profilo utente Microsoft Edge.
+   - L'impostazione per abilitare Microsoft Rewards nelle impostazioni Microsoft Edge verrà disabilitata e disattivata.
+
+Se non si configurano i criteri seguenti:
+   - Gli utenti degli account Microsoft (esclusi gli account di Azure AD) in mercati con ricompense per ricerca vedranno l'esperienza Microsoft Rewards nel profilo utente Microsoft Edge.
+   - L'impostazione per abilitare Microsoft Rewards nelle impostazioni Microsoft Edge verrà abilitata e attivata.
+   - L'impostazione per abilitare la modalità Give verrà abilitata e rispetta l'impostazione dell'utente.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
+  - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: ShowMicrosoftRewards
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000000
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: ShowMicrosoftRewards
+  - Valore di esempio:
+``` xml
+<false/>
 ```
   
 
