@@ -3,19 +3,19 @@ title: Rollback di Microsoft Edge per le aziende
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 09/02/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Come eseguire il rollback di Microsoft Edge a una versione precedente
-ms.openlocfilehash: 9f659b0bcdd82f54a814c8ad4157521061cdfa7c
-ms.sourcegitcommit: 827a47d641c7ddc1d89be5d5fc0615373dec18b0
+ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
+ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2020
-ms.locfileid: "10993706"
+ms.lasthandoff: 11/30/2020
+ms.locfileid: "11192426"
 ---
 # Come eseguire il rollback di Microsoft Edge a una versione precedente
 
@@ -81,7 +81,7 @@ Seguire la procedura seguente per abilitare il rollback con Microsoft Edge Updat
    - Solo aggiornamenti automatici
 
      > [!NOTE]
-     > Per forzare un aggiornamento dei criteri di gruppo, digitare `dsregcmd /status` nel prompt dei comandi di Windows (Esegui come amministratore).
+     > Per forzare un aggiornamento dei criteri di gruppo, digitare `gpupdate /force` nel prompt dei comandi di Windows (Esegui come amministratore).
 
 5. Fai clic su **OK** per salvare le impostazioni dei criteri. Il rollback verrà eseguito la volta successiva in cui Microsoft Edge Update verificherà la presenza di un aggiornamento. Se si vuole eseguire prima l'aggiornamento, è necessario modificare l'intervallo di polling di Microsoft Edge Update o abilitare il rollback con un MSI.
 
@@ -113,7 +113,7 @@ Le impostazioni e i criteri di gruppo seguenti sono altamente consigliati per es
 
 Una snapshot è una copia con versione stampata della cartella dei dati dell'utente. Durante un aggiornamento della versione, una snapshot della versione precedente viene creata e salvata nella cartella della snapshot. Al termine del rollback, una snapshot con versione corrispondente sarà copiata nella nuova cartella di dati dell'utente e cancellata dalla cartella della snapshot. Se nessuna snapshot con versione corrispondente è disponibile dopo il downgrade, il rollback utilizzerà Sync per immettere i dati dell'utente nella nuova versione di Microsoft Edge.
 
-Il criterio di gruppo [UserDataSnapshotRetentionLimit] consente di definire un limite per il numero di snapshot che possono essere conservate in un determinato momento. Per impostazione predefinita, vengono conservate tre snapshot. Il criterio può essere configurato per conservare da 0 a 5 snapshot.
+I criteri di gruppo di [UserDataSnapshotRetentionLimit](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userdatasnapshotretentionlimit) consentono di impostare un limite per il numero di snapshot che possono essere conservati in un determinato momento. Per impostazione predefinita, vengono conservate tre snapshot. Il criterio può essere configurato per conservare da 0 a 5 snapshot.
 
 ## Domande frequenti
 
@@ -159,7 +159,6 @@ Microsoft Edge Update non ha ancora verificato la disponibilità di aggiornament
 ### In quanto amministratore IT, ho eseguito correttamente i passaggi per il rollback. Il rollback è stato eseguito solo per una parte del mio gruppo di utenti. Perché per gli altri utenti non è ancora avvenuto?
 
 L'impostazione dei criteri di gruppo non è ancora stata sincronizzata con tutti i client. Quando gli amministratori configurano un criterio di gruppo, i client non ricevono le nuove impostazioni immediatamente. È possibile [Forzare un aggiornamento remoto di Criteri di gruppo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/jj134201(v=ws.11)).
-
 
 ## Vedere anche
 
