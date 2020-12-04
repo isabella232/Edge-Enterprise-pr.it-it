@@ -3,19 +3,19 @@ title: Configurare Microsoft Edge in macOS con Jamf
 ms.author: brianalt
 author: dan-wesley
 manager: laurawi
-ms.date: 02/20/2020
+ms.date: 11/30/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare le impostazioni dei criteri di Microsoft Edge nei dispositivi Mac con Jamf
-ms.openlocfilehash: 336bdfed2c53811615b0183dc5ca7db916cd7428
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1859d9fb1fd3ea8ff6908c41f75df21a8b338769
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980128"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194714"
 ---
 # Configurare le impostazioni dei criteri di Microsoft Edge in macOS con Jamf
 
@@ -45,8 +45,8 @@ Per altre informazioni, consultare [Profili di configurazione del computer](http
 Per ottenere il manifesto del criterio:
 
 - Passare alla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise).
-- Nell'elenco a discesa Canale/Versione, selezionare **qualsiasi canale con la versione 81 o successiva.***.
-- Nell'elenco a discesa Build selezionare qualsiasi **Build 81 o versione successiva.***.
+- Nell'elenco a discesa Canale/versione selezionare **un canale qualsiasi con la versione 81 o successiva.**_.
+- Nell'elenco a discesa Build, selezionare qualsiasi _ *build 81 o successiva.**_
 - Fare clic su OTTIENI FILE DEI CRITERI per scaricare il pacchetto dei modelli di criteri.
 
   > [!NOTE]
@@ -61,7 +61,7 @@ Questo manifesto verrà pubblicato in ogni pacchetto di criteri a partire dalla 
 Seguire la procedura seguente per caricare il manifesto dei criteri in Jamf Pro e poi creare un profilo dei criteri per macOS.
 
 1. Accedere a Jamf.
-2. Selezionare la scheda **Computer**.
+2. Selezionare la scheda _*Computer**.
 3. In **Gestione dei contenuti** selezionare **Profili di configurazione**.
 4. Nella pagina **Profili di configurazione** fare clic su **+ Nuovo**.
 
@@ -115,22 +115,7 @@ Dopo aver creato il nuovo profilo di configurazione, è necessario configurare l
 2. Per **Limitazioni** mantenere l'impostazione predefinita: Nessuna. Fare clic su **Annulla**.
 3. Per **Esclusioni** mantenere l'impostazione predefinita: Nessuna. Fare clic su **Annulla**.
 
-## Domande frequenti
-
-### Microsoft Edge può essere configurato per l'uso delle preferenze master?
-
-Sì, Microsoft Edge può essere configurato per l'uso di un file delle preferenze master.
-
-Un file delle preferenze master consente di configurare le impostazioni predefinite per un profilo utente del browser quando Microsoft Edge viene distribuito. Puoi anche usare un file delle preferenze master per applicare le impostazioni nei computer che non sono gestiti da un sistema di gestione dei dispositivi. Queste impostazioni vengono applicate al profilo dell'utente la prima volta che l'utente usa il browser. Dopo che l'utente ha usato il browser, le modifiche apportate al file delle preferenze master non vengono applicate. Un utente può modificare le impostazioni delle preferenze master nel browser. Se desideri impostare un valore obbligatorio o modificare un'impostazione dopo la prima esecuzione del browser, devi usare un criterio.
-
-Un file delle preferenze master ti permette di personalizzare molte impostazioni e preferenze diverse per il browser, incluse quelle condivise con altri browser basati su Chromium e specifici per Microsoft Edge.  Le preferenze relative ai criteri possono essere configurate usando il file delle preferenze master. Nei casi in cui è stato impostato un criterio ed è presente un set di preferenze master corrispondente, l'impostazione dei criteri ha la precedenza.
-
-> [!IMPORTANT]
-> Tutte le preferenze disponibili potrebbero non essere coerenti con la terminologia e le convenzioni di denominazione di Microsoft Edge.  Non c'è alcuna garanzia che queste preferenze continueranno a funzionare come previsto nelle versioni future. Le preferenze potrebbero essere modificate o ignorate nelle versioni successive.
-
-Un file delle preferenze master è un file di testo formattato con il markup JSON. Questo file deve essere aggiunto alla stessa directory dell'eseguibile msedge.exe. Per distribuzioni aziendali a livello di sistema in macOS si tratta in genere di "*~/Library/Application Support/Microsoft/Microsoft Edge Master Preferences*" o "*/Library/Microsoft/Microsoft Edge Master Preferences*".
-
-## Vedi anche
+## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Configurare per macOS con Intune](configure-microsoft-edge-on-mac.md)

@@ -3,19 +3,19 @@ title: Configurare Microsoft Edge per Windows
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 10/09/2019
+ms.date: 11/30/2019
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare le impostazioni dei criteri di Microsoft Edge nei dispositivi Windows
-ms.openlocfilehash: 99aaf002f868ce29e81aa40024fa1de2e83d76e1
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 14ba2845e95394fe1f992c8b6446c975a8b4fb00
+ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980123"
+ms.lasthandoff: 12/02/2020
+ms.locfileid: "11194704"
 ---
 # Configurare le impostazioni dei criteri di Microsoft Edge in Windows
 
@@ -53,12 +53,12 @@ Vai alla [pagina di destinazione di Microsoft Edge in modalità Enterprise](http
 #### Aggiungere il modello amministrativo ad Active Directory
 
 1. In un controller di dominio o in una workstation con Strumenti di amministrazione remota del server, vai alla cartella **PolicyDefinition** (nota anche come _archivio centrale_) in un qualsiasi controller di dominio del tuo dominio. Per le versioni precedenti di Windows Server, potrebbe essere necessario creare la cartella PolicyDefinition. Per altre informazioni, vedi [Come creare e gestire l'archivio centrale per i modelli amministrativi di Criteri di gruppo in Windows](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
-1. Apri *MicrosoftEdgePolicyTemplates* e vai a **windows** > **admx**.
-1. Copia il file *msedge.admx* nella cartella PolicyDefinition. (Esempio: %systemroot%\sysvol\domain\policies\PolicyDefinitions)
-1. Nella cartella *admx* apri la cartella della lingua appropriata. Ad esempio, se sei in Italia, apri la cartella **it-it**.
-1. Copia il file *msedge.adml* nella cartella della lingua corrispondente nella cartella PolicyDefinition. Crea la cartella se non esiste già. (Esempio: %systemroot%\sysvol\domain\policies\PolicyDefinitions\IT-IT)
-1. Se il dominio dispone di più di un controller di dominio, i nuovi file ADMX verranno replicati al successivo intervallo di replica del dominio.
-1. Per verificare che i file siano stati caricati in modo corretto, apri **Editor gestione Criteri di gruppo** in Strumenti di amministrazione Windows ed espandi **Configurazione computer** > **Criteri** > **Modelli amministrativi** > **Microsoft Edge**. Dovrebbero essere visualizzati uno o più nodi Microsoft Edge, come illustrato di seguito.
+2. Apri *MicrosoftEdgePolicyTemplates* e vai a **windows** > **admx**.
+3. Copia il file *msedge.admx* nella cartella PolicyDefinition. (Esempio: %systemroot%\sysvol\domain\policies\PolicyDefinitions)
+4. Nella cartella *admx* apri la cartella della lingua appropriata. Ad esempio, se sei in Italia, apri la cartella **it-it**.
+5. Copia il file *msedge.adml* nella cartella della lingua corrispondente nella cartella PolicyDefinition. Crea la cartella se non esiste già. (Esempio: %systemroot%\sysvol\domain\policies\PolicyDefinitions\IT-IT)
+6. Se il dominio dispone di più di un controller di dominio, i nuovi file ADMX verranno replicati al successivo intervallo di replica del dominio.
+7. Per verificare che i file siano stati caricati in modo corretto, apri **Editor gestione Criteri di gruppo** in Strumenti di amministrazione Windows ed espandi **Configurazione computer** > **Criteri** > **Modelli amministrativi** > **Microsoft Edge**. Dovrebbero essere visualizzati uno o più nodi Microsoft Edge, come illustrato di seguito.
 
     ![Criteri di Microsoft Edge](./media/configure-microsoft-edge/edge-gpo-policies.png)
 
@@ -69,19 +69,6 @@ Vai alla [pagina di destinazione di Microsoft Edge in modalità Enterprise](http
 3. Nella cartella *admx* apri la cartella della lingua appropriata. Ad esempio, se sei in Italia, apri la cartella **it-it**.
 4. Copia il file *msedge.adml* nella cartella della lingua corrispondente nella tua cartella PolicyDefinition. (Esempio: C:\Windows\PolicyDefinitions\IT-IT)
 5. Per verificare che i file siano stati caricati in modo corretto, apri direttamente Editor Criteri di gruppo locali (tasto Windows + R e immetti gpedit.msc) oppure apri MMC e carica Editor Criteri di gruppo locali. In genere, se si verifica un errore, i file si trovano in un percorso non corretto.
-
-<!--
-To add the administrative template to manage Microsoft Edge updates:
-
-1. Open the *MicrosoftEdgePolicyTemplates* file and go to **windows** > **admx**.
-2. Copy the *msedgeupdate.admx* file to your Policy Definition template folder. (Example: C:\Windows\PolicyDefinitions)
-3. In the *updatepolicies* folder, open the appropriate language folder. For example, if you’re in Germany, open the **de-DE** folder.
-4. Copy the *msedgeupdate.adml* file to the matching language folder in your Policy Definition folder. (Example: C:\Windows\PolicyDefinitions\de-DE)
-5. Open MMC and load the Local Group Policy Editor snap-in to confirm the files loaded correctly. If an error occurs, it’s usually because the files are in an incorrect location.
-
-> [!NOTE]
-> Currently the Microsoft Edge update policies are only localized in en-US. Additional language support will be added in a future release.
--->
 
 ### 2. Impostare criteri obbligatori o consigliati
 
@@ -108,22 +95,7 @@ Potrebbe essere necessario chiudere e riaprire Microsoft Edge prima che i nuovi 
 
 Puoi anche usare REGEDIT.exe in un computer di destinazione per visualizzare le impostazioni del Registro di sistema che archiviano le impostazioni dei criteri di gruppo. Tali impostazioni si trovano nel percorso del Registro di sistema **HKLM\SOFTWARE\Policies\Microsoft\Edge**.
 
-## Domande frequenti
-
-### Microsoft Edge può essere configurato per l'uso delle preferenze master?
-
-Sì, Microsoft Edge può essere configurato per l'uso di un file delle preferenze master.
-
- Un file delle preferenze master consente di configurare le impostazioni predefinite quando Microsoft Edge viene distribuito. Puoi anche usare un file delle preferenze master per applicare le impostazioni nei computer che non sono gestiti da un sistema di gestione dei dispositivi. Queste impostazioni vengono applicate al profilo dell'utente la prima volta che l'utente usa il browser. Dopo che l'utente ha usato il browser, le modifiche apportate al file delle preferenze master non vengono applicate. Un utente può modificare le impostazioni delle preferenze master nel browser. Se desideri impostare un valore obbligatorio o modificare un'impostazione dopo la prima esecuzione del browser, devi usare un criterio.
-
-Un file delle preferenze master ti permette di personalizzare molte impostazioni e preferenze diverse per il browser, incluse quelle condivise con altri browser basati su Chromium e specifici per Microsoft Edge.  Le preferenze relative ai criteri possono essere configurate usando il file delle preferenze master. Nei casi in cui è stato impostato un criterio ed è presente un set di preferenze master corrispondente, l'impostazione dei criteri ha la precedenza.
-
-> [!IMPORTANT]
-> Tutte le preferenze disponibili potrebbero non essere coerenti con la terminologia e le convenzioni di denominazione di Microsoft Edge.  Non c'è alcuna garanzia che queste preferenze continueranno a funzionare come previsto nelle versioni future. Le preferenze potrebbero essere modificate o ignorate nelle versioni successive.
-
-Un file delle preferenze master è un file di testo formattato con il markup JSON. Questo file deve essere aggiunto alla stessa directory dell'eseguibile msedge.exe. Per le distribuzioni di sistema a livello aziendale in Windows, si tratta in genere di *Windows: C:\Programmi\Microsoft\Edge\Application\master_preferences*.
-
-## Vedi anche
+## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Configurare per Windows con Intune](configure-edge-with-intune.md)
