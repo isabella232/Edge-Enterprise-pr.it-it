@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 12/03/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: f674c39506736dfc5b5706e902970e0e4ce84fd8
-ms.sourcegitcommit: 2a53bdd2510770c0b7580f912864337c6ef617fd
+ms.openlocfilehash: cb4a7de72582ff16a528cbaca04bb39364f6d93f
+ms.sourcegitcommit: 91821fa6a962ea9e88ffeff94dff94fcd1245df5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "11192537"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195262"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -24,11 +24,17 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 > [!IMPORTANT]
 > Vedere questo [aggiornamento sugli aggiornamenti del canale di Microsoft Edge](https://blogs.windows.com/msedgedev/2020/03/20/update-stable-channel-releases/).
 
-## Versione 87.0.664.52:30 novembre
+## Versione 87.0.664.55: 3 dicembre
+
+Risolti diversi bug e problemi relativi alle prestazioni. La nuova funzionalità seguente è supportata in questa versione.
+
+- **Gli avvisi vengono generati se la password di un utente viene trovata in una fuga di notizie online**. Le password dell'utente vengono verificate in un archivio di credenziali violate note, e l'utente riceve un avviso se viene trovato un riscontro. (Questa funzionalità sarà disponibile in Microsoft Edge Stable 88).
+
+## Versione 87.0.664.52: 30 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.40:18 novembre
+## Versione 87.0.664.40: 18 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
