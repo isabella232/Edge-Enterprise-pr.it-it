@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 12/03/2020
+ms.date: 12/04/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: cb4a7de72582ff16a528cbaca04bb39364f6d93f
-ms.sourcegitcommit: 91821fa6a962ea9e88ffeff94dff94fcd1245df5
+ms.openlocfilehash: 39e6062d8cf7ce0e5f03ecf26daaae4cc06bd4cf
+ms.sourcegitcommit: 46d42a284e54574811a7c934a36d85a3526fc8ea
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "11195262"
+ms.lasthandoff: 12/05/2020
+ms.locfileid: "11196537"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -26,15 +26,15 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 ## Versione 87.0.664.55: 3 dicembre
 
-Risolti diversi bug e problemi relativi alle prestazioni. La nuova funzionalità seguente è supportata in questa versione.
+Risolti diversi bug e problemi relativi alle prestazioni. La seguente nuova funzionalità è supportata in questa versione.
 
-- **Gli avvisi vengono generati se la password di un utente viene trovata in una fuga di notizie online**. Le password dell'utente vengono verificate in un archivio di credenziali violate note, e l'utente riceve un avviso se viene trovato un riscontro. (Questa funzionalità sarà disponibile in Microsoft Edge Stable 88).
+- **Vengono generati degli avvisi se la password di un utente viene trovata in una falla online**. Le password degli utenti vengono confrontate con un repository di credenziali violate note ed invia all'utente un avviso se viene trovata una corrispondenza. Per garantire la sicurezza e la privacy, le password degli utenti vengono sottoposte ad hash e crittografate quando vengono confrontate col il database delle credenziali trapelate.
 
 ## Versione 87.0.664.52: 30 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.40: 18 novembre
+## Versione 87.0.664.40:18 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
