@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 11/19/2020
+ms.date: 12/02/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 77d79f36ba91c5966ffb8dde66ba7ec14934f39e
-ms.sourcegitcommit: fc6f86f92f2fecac89028d77524d123bfaf2111d
+ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
+ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "11181987"
+ms.lasthandoff: 12/03/2020
+ms.locfileid: "11195137"
 ---
 # Microsoft Edge - Criteri
 
@@ -33,12 +33,18 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
 
-| Nome | Stato |
+| Nome | Didascalia |
 |-|-|
-|[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)| Nuovo |
-|[BlockExternalExtensions](#blockexternalextensions) | Nuovo |
-|[ShowMicrosoftRewards](#showmicrosoftrewards) | Nuovo |
-|[ProactiveAuthEnabled](#proactiveauthenabled) | Deprecato |
+|[PrinterTypeDenyList](#printertypedenylist)|Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|Consentire l'avvio di file locali in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|Comportamento del reindirizzamento delle Intranet|
+|[UpdatePolicyOverride](#updatepolicyoverride)|Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge|
+|[VerticalTabsAllowed](#verticaltabsallowed)|Configura la disponibilità di un layout verticale per le schede sul lato del browser|
+| [WEBRTCALLOWLEGACYTLSPROTOCOLS](#webrtcallowlegacytlsprotocols) deprecato|Consenti downgrade TLS/DTLS legacy in WebRTC|
+
+
 
 ## Criteri disponibili
 
@@ -83,7 +89,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[DefaultInsecureContentSetting](#defaultinsecurecontentsetting)|Controlla l'uso di eccezioni di contenuti non sicuri|
 |[DefaultJavaScriptSetting](#defaultjavascriptsetting)|Impostazione predefinita di JavaScript|
 |[DefaultNotificationsSetting](#defaultnotificationssetting)|Impostazione predefinita per le notifiche|
-|[DefaultPluginsSetting](#defaultpluginssetting)|Impostazione predefinita di Adobe Flash|
+|[DefaultPluginsSetting](#defaultpluginssetting)|Impostazione predefinita di Adobe Flash (obsoleto)|
 |[DefaultPopupsSetting](#defaultpopupssetting)|Impostazione predefinita della finestra popup|
 |[DefaultWebBluetoothGuardSetting](#defaultwebbluetoothguardsetting)|Controlla l'uso dell'API Web Bluetooth|
 |[DefaultWebUsbGuardSetting](#defaultwebusbguardsetting)|Controlla l'uso dell'API WebUSB|
@@ -101,8 +107,8 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|Ripristina il comportamento SameSite legacy dei cookie in siti specifici|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|Consente le notifiche in siti specifici|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|Blocca le notifiche in siti specifici|
-|[PluginsAllowedForUrls](#pluginsallowedforurls)|Consente il plug-in di Adobe Flash in siti specifici|
-|[PluginsBlockedForUrls](#pluginsblockedforurls)|Blocca il plug-in di Adobe Flash in siti specifici|
+|[PluginsAllowedForUrls](#pluginsallowedforurls)|Consentire il plug-in Adobe Flash in siti specifici (obsoleti)|
+|[PluginsBlockedForUrls](#pluginsblockedforurls)|Bloccare il plug-in Adobe Flash in siti specifici (obsoleti)|
 |[PopupsAllowedForUrls](#popupsallowedforurls)|Consente le finestre popup in siti specifici|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|Blocca le finestre popup in siti specifici|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|Registra i gestori di protocollo|
@@ -181,6 +187,7 @@ e suggerimenti per i servizi Microsoft|
 |[DefaultPrinterSelection](#defaultprinterselection)|Regole di selezione della stampante predefinita|
 |[PrintHeaderFooter](#printheaderfooter)|Stampa intestazioni e piè di pagina|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|Imposta la stampante predefinita del sistema come stampante predefinita|
+|[PrinterTypeDenyList](#printertypedenylist)|Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti|
 |[PrintingEnabled](#printingenabled)|Abilita la stampa|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|Dimensioni della pagina di stampa predefinite|
 |[UseSystemPrintDialog](#usesystemprintdialog)|Stampa usando la finestra di dialogo della stampante di sistema|
@@ -300,7 +307,7 @@ e suggerimenti per i servizi Microsoft|
 |[EdgeCollectionsEnabled](#edgecollectionsenabled)|Abilita la funzionalità Raccolte|
 |[EdgeShoppingAssistantEnabled](#edgeshoppingassistantenabled)|Shopping in Microsoft Edge abilitato|
 |[EditFavoritesEnabled](#editfavoritesenabled)|Consente agli utenti di modificare i Preferiti|
-|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Re-enable deprecated web platform features for a limited time (obsolete)|
+|[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Nome Criteri di gruppo: Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|Abilita il download delle azioni di dominio da Microsoft (obsoleto)|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|Abilita i controlli OCSP/CRL online|
 |[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)|
@@ -343,9 +350,13 @@ e suggerimenti per i servizi Microsoft|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|Controlla la funzionalità IntensiveWakeUpThrottling|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|Configura il rilevamento di blocchi avanzati per la modalità di Internet Explorer|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|Configurare l'integrazione Internet Explorer|
+|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|Consentire l'avvio di file locali in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|Configurare l'elenco siti modalità Enterprise|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|Specifica il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer|
 |[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|Consenti il test della modalità di Internet Explorer|
+|[IntranetRedirectBehavior](#intranetredirectbehavior)|Comportamento del reindirizzamento delle Intranet|
 |[IsolateOrigins](#isolateorigins)|Abilita l'isolamento del sito per origini specifiche|
 |[LocalProvidersEnabled](#localprovidersenabled)|Consente suggerimenti dai provider locali|
 |[ManagedFavorites](#managedfavorites)|Configura i Preferiti|
@@ -375,7 +386,7 @@ e suggerimenti per i servizi Microsoft|
 |[RestrictSigninToPattern](#restrictsignintopattern)|Limita gli account che è possibile utilizzare come account principali di Microsoft Edge|
 |[RoamingProfileLocation](#roamingprofilelocation)|Imposta la directory del profilo mobile|
 |[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)|Abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge|
-|[RunAllFlashInAllowMode](#runallflashinallowmode)|Estende l'impostazione dei contenuti di Adobe Flash a tutti i contenuti|
+|[RunAllFlashInAllowMode](#runallflashinallowmode)|Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|Consente agli utenti di procedere nella pagina di avviso HTTPS|
 |[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata|
 |[SaveCookiesOnExit](#savecookiesonexit)|Salva i cookie quando Microsoft Edge si chiude|
@@ -411,10 +422,12 @@ e suggerimenti per i servizi Microsoft|
 |[TranslateEnabled](#translateenabled)|Abilita Traduci|
 |[URLAllowlist](#urlallowlist)|Definisce un elenco di URL consentiti|
 |[URLBlocklist](#urlblocklist)|Blocca l'accesso a un elenco di URL|
+|[UpdatePolicyOverride](#updatepolicyoverride)|Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge|
 |[UserAgentClientHintsEnabled](#useragentclienthintsenabled)|Abilita la funzionalità User-Agent Client Hints (deprecato)|
 |[UserDataDir](#userdatadir)|Imposta la directory dei dati dell'utente|
 |[UserDataSnapshotRetentionLimit](#userdatasnapshotretentionlimit)|Limita il numero di snapshot dei dati utente conservati per l'uso in caso di ripristino di emergenza|
 |[UserFeedbackAllowed](#userfeedbackallowed)|Consente il feedback degli utenti|
+|[VerticalTabsAllowed](#verticaltabsallowed)|Configura la disponibilità di un layout verticale per le schede sul lato del browser|
 |[VideoCaptureAllowed](#videocaptureallowed)|Consente o blocca l'acquisizione video|
 |[VideoCaptureAllowedUrls](#videocaptureallowedurls)|Siti che possono accedere ai dispositivi di acquisizione video senza richiedere l'autorizzazione|
 |[WPADQuickCheckEnabled](#wpadquickcheckenabled)|Imposta l'ottimizzazione WPAD|
@@ -422,6 +435,7 @@ e suggerimenti per i servizi Microsoft|
 |[WebCaptureEnabled](#webcaptureenabled)|Abilita la funzionalità di acquisizione web in Microsoft Edge|
 |[WebComponentsV0Enabled](#webcomponentsv0enabled)|Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)|
 |[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|Consente a WebDriver di ignorare i criteri non compatibili (deprecato)|
+|[WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|Limita l'esposizione dell'indirizzo IP locale tramite WebRTC|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|Limita l'intervallo di porte UDP locali usate da WebRTC|
@@ -1513,17 +1527,19 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   ### DefaultPluginsSetting
 
-  #### Impostazione predefinita di Adobe Flash
+  #### Impostazione predefinita di Adobe Flash (obsoleto)
 
   
-  
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
   #### Versioni supportate:
 
-  - In Windows e macOS dalla versione 77 o successive
+  - In Windows e macOS da 77 a 87
 
   #### Descrizione
 
-  [PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
+  Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
+
+[PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
 
 Se non si configura questo criterio, l'utente può modificare tale impostazione manualmente.
 
@@ -1552,7 +1568,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultPluginsSetting
-  - Nome Criteri di gruppo: Impostazione predefinita di Adobe Flash
+  - Nome GP: impostazione predefinita di Adobe Flash (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -2724,21 +2740,23 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
   ### PluginsAllowedForUrls
 
-  #### Consente il plug-in di Adobe Flash in siti specifici
+  #### Consentire il plug-in Adobe Flash in siti specifici (obsoleti)
 
   
-  
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
   #### Versioni supportate:
 
-  - In Windows e macOS dalla versione 77 o successive
+  - In Windows e macOS da 77 a 87
 
   #### Descrizione
 
-  Definisce un elenco di siti, in base ai modelli URL, che possono eseguire il plug-in di Adobe Flash.
+  Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
+
+Definisce un elenco di siti, in base ai modelli URL, che possono eseguire il plug-in di Adobe Flash.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i modelli con i caratteri jolly "*" e "[*.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
   #### Funzionalità supportate:
 
@@ -2755,7 +2773,7 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PluginsAllowedForUrls
-  - Nome Criteri di gruppo: Consente il plug-in di Adobe Flash in siti specifici
+  - Nome GP: consentire il plug-in Adobe Flash in siti specifici (obsoleti)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -2791,21 +2809,23 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
   ### PluginsBlockedForUrls
 
-  #### Blocca il plug-in di Adobe Flash in siti specifici
+  #### Bloccare il plug-in Adobe Flash in siti specifici (obsoleti)
 
   
-  
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
   #### Versioni supportate:
 
-  - In Windows e macOS dalla versione 77 o successive
+  - In Windows e macOS da 77 a 87
 
   #### Descrizione
 
-  Definisce un elenco di siti, in base ai modelli URL, che non possono eseguire Adobe Flash.
+  Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
+
+Definisce un elenco di siti, in base ai modelli URL, che non possono eseguire Adobe Flash.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i modelli con i caratteri jolly "*" e "[*.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
   #### Funzionalità supportate:
 
@@ -2822,7 +2842,7 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PluginsBlockedForUrls
-  - Nome Criteri di gruppo: Blocca il plug-in di Adobe Flash in siti specifici
+  - Nome GP: bloccare il plug-in Adobe Flash in siti specifici (obsoleti)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -4048,7 +4068,7 @@ Le estensioni esterne e la relativa installazione vengono documentate in https:/
   - Nome valore: BlockExternalExtensions
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio:
+  ##### Valore di esempio
 
 ```
 0x00000001
@@ -6056,6 +6076,88 @@ Se si abilita questo criterio, l'anteprima di stampa utilizza la stampante prede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### PrinterTypeDenyList
+
+  #### Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  I tipi di stampante nell'elenco degli indirizzi non consentiti non verranno individuati o le relative funzionalità vengono recuperate.
+
+L'inserimento di tutti i tipi di stampante nell'elenco degli indirizzi non consentiti disabilita efficacemente la stampa, perché non è disponibile alcuna destinazione di stampa per i documenti.
+
+Se non si configura questo criterio o se l'elenco della stampante è vuoto, tutti i tipi di stampante saranno individuabili.
+
+Le destinazioni della stampante includono stampanti di estensione e stampanti locali. Le stampanti di estensione sono note anche come destinazioni del provider di stampa e includono qualsiasi destinazione che appartiene a un'estensione Microsoft Edge.
+Le stampanti locali sono anche note come destinazioni di stampa native e includono le destinazioni disponibili per il computer locale e le stampanti di rete condivise.
+
+Mapping delle opzioni del criterio:
+
+* privt (privt) = destinazioni di protocollo basate su ZeroConf (MDN + DNS-SD)
+
+* Extension (Extension) = destinazioni basate su estensioni
+
+* PDF (PDF) = la destinazione "Salva come PDF"
+
+* local (local) = destinazioni della stampante locale
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: PrinterTypeDenyList
+  - Nome GP: disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Stampa
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\1 = "local"
+SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
+
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: PrinterTypeDenyList
+  - Valore di esempio
+``` xml
+<array>
+  <string>local</string>
+  <string>privet</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### PrintingEnabled
 
   #### Abilita la stampa
@@ -7529,7 +7631,7 @@ Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.mic
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageCompanyLogo
-  - Nome Criteri di gruppo: imposta il logo aziendale della pagina Nuova scheda (deprecato)
+  - Nome Criteri di gruppo: imposta il logo aziendale della pagina Nuova scheda (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina Nuova scheda
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -12889,17 +12991,17 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
 
   ### EnableDeprecatedWebPlatformFeatures
 
-  #### Re-enable deprecated web platform features for a limited time (obsolete)
+  #### Nome Criteri di gruppo: Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)
 
   
-  >OBSOLETE: This policy is obsolete and doesn't work after Microsoft Edge 86.
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 86.
   #### Versioni supportate:
 
   - On Windows and macOS since 77, until 86
 
   #### Descrizione
 
-  This policy is obsolete because dedicated web platform policies are now used to manage individual web platform feature deprecations.
+  Questi criteri sono obsoleti, perché i criteri dedicati per la piattaforma Web sono ora usati per gestire la deprecazione delle singole caratteristiche della piattaforma Web.
 
 Specifica un elenco di funzionalità della piattaforma Web deprecate da riabilitare temporaneamente.
 
@@ -12932,7 +13034,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableDeprecatedWebPlatformFeatures
-  - GP name: Re-enable deprecated web platform features for a limited time (obsolete)
+  - Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -15752,6 +15854,186 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### InternetExplorerIntegrationLocalFileAllowed
+
+  #### Consentire l'avvio di file locali in modalità Internet Explorer
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Questo criterio Controlla la disponibilità dell'argomento della riga di comando--IE-mode-file-URL usato per avviare Microsoft Edge con un file locale specificato nella riga di comando in modalità Internet Explorer.
+
+Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) è impostato su' IEMode '.
+
+Se si imposta questo criterio su true o non lo si configura, l'utente può usare l'argomento della riga di comando--IE-mode-file-URL per l'avvio di file locali in modalità Internet Explorer.
+
+Se si imposta questo criterio su false, l'utente non è autorizzato a usare l'argomento della riga di comando--IE-mode-file-URL per l'avvio di file locali in modalità Internet Explorer.
+
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: InternetExplorerIntegrationLocalFileAllowed
+  - Nome GP: consentire l'avvio di file locali in modalità Internet Explorer
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: InternetExplorerIntegrationLocalFileAllowed
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileExtensionAllowList
+
+  #### Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Questo criterio limita gli URL file://autorizzati a essere avviati in modalità Internet Explorer in base all'estensione di file.
+
+Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) è impostato su' IEMode '.
+
+Quando si richiede l'avvio di un URL file://in modalità Internet Explorer, l'estensione di file dell'URL deve essere presente in questo elenco in modo che l'URL possa essere consentito per l'avvio in modalità Internet Explorer. Un URL bloccato dall'apertura in modalità Internet Explorer verrà invece aperto in modalità Edge.
+
+Se si imposta questo criterio sul valore speciale "*" o non lo si configura, tutte le estensioni di file sono consentite.
+
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: InternetExplorerIntegrationLocalFileExtensionAllowList
+  - Nome GP: aprire i file locali nell'elenco Consenti estensione file in modalità Internet Explorer
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\1 = ".mht"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\2 = ".pdf"
+SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\3 = ".vsdx"
+
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### InternetExplorerIntegrationLocalFileShowContextMenu
+
+  #### Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 88 o successive
+
+  #### Descrizione
+
+  Questo criterio Controlla la visibilità dell'opzione "Apri collegamento in nuova modalità Internet Explorer" nel menu di scelta rapida per i collegamenti a file://.
+
+Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) è impostato su' IEMode '.
+
+Se si imposta questo criterio su true, la voce di menu di scelta rapida "Apri collegamento nella nuova modalità Internet Explorer" sarà disponibile per i collegamenti a file://.
+
+Se si imposta questo criterio su false o non lo si configura, la voce di menu di scelta rapida non verrà aggiunta.
+
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: InternetExplorerIntegrationLocalFileShowContextMenu
+  - GP Name: Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: InternetExplorerIntegrationLocalFileShowContextMenu
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### InternetExplorerIntegrationSiteList
 
   #### Configurare l'elenco siti modalità Enterprise
@@ -15935,6 +16217,82 @@ Se si disabilitano o non si configurano i criteri, gli utenti non potranno veder
 0x00000000
 ```
 
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### IntranetRedirectBehavior
+
+  #### Comportamento del reindirizzamento delle Intranet
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Questo criterio configura il comportamento per il reindirizzamento della Intranet tramite controlli di intercettazione DNS. I controlli provano a scoprire se il browser è dietro un proxy che reindirizza i nomi host sconosciuti.
+
+Se questo criterio non è configurato, il browser utilizzerà il comportamento predefinito dei controlli di intercettazione DNS e suggerimenti per il reindirizzamento dell'Intranet. In M88 sono abilitati per impostazione predefinita, ma verranno disabilitati per impostazione predefinita nella versione futura.
+
+[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) è un criterio correlato che potrebbe anche disabilitare i controlli di intercettazione DNS. Tuttavia, questo criterio è una versione più flessibile che potrebbe controllare separatamente il reindirizzamento infobars della rete Intranet e potrebbe essere espansa in futuro.
+Se [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) o questo criterio effettuano una richiesta di disabilitazione dei controlli di intercettazione, i controlli verranno disabilitati.
+Se i controlli di intercettazione DNS sono disabilitati da questo criterio, ma [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar) è abilitato, le singole query di Word continueranno a essere eseguite per gli spostamenti Intranet.
+
+Mapping delle opzioni del criterio:
+
+* Default (0) = usa il comportamento predefinito del browser.
+
+* DisableInterceptionChecksDisableInfobar (1) = disattiva i controlli di intercettazione DNS e l'opzione forse intendevi " http://intranetsite/ ".
+
+* DisableInterceptionChecksEnableInfobar (2) = Disabilita i controlli di intercettazione DNS; Consenti l’opzione forse intendevi " http://intranetsite/ ".
+
+* EnableInterceptionChecksEnableInfobar (3) = Consenti controlli di intercettazione DNS e l’opzione forse intendevi" http://intranetsite/ ".
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Numero intero
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: IntranetRedirectBehavior
+  - Nome GP: comportamento di reindirizzamento Intranet
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: IntranetRedirectBehavior
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: IntranetRedirectBehavior
+  - Valore di esempio
+``` xml
+<integer>1</integer>
+```
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -17934,17 +18292,19 @@ Per altre informazioni sull'uso dei profili utente mobile, vedere https://docs.m
 
   ### RunAllFlashInAllowMode
 
-  #### Estende l'impostazione dei contenuti di Adobe Flash a tutti i contenuti
+  #### Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
 
   
-  
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
   #### Versioni supportate:
 
-  - In Windows e macOS dalla versione 77 o successive
+  - In Windows e macOS da 77 a 87
 
   #### Descrizione
 
-  Se si abilita questo criterio, tutti i contenuti di Adobe Flash incorporati nei siti Web che sono impostati per consentire Adobe Flash nelle impostazioni relative ai contenuti (configurate dall'utente o da criteri aziendali) verranno eseguiti. Sono inclusi i contenuti provenienti da origini e/o contenuti di piccole dimensioni.
+  Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
+
+Se si abilita questo criterio, tutti i contenuti di Adobe Flash incorporati nei siti Web che sono impostati per consentire Adobe Flash nelle impostazioni relative ai contenuti (configurate dall'utente o da criteri aziendali) verranno eseguiti. Sono inclusi i contenuti provenienti da origini e/o contenuti di piccole dimensioni.
 
 Per controllare quali siti Web possono eseguire Adobe Flash, vedere le specifiche nei criteri [DefaultPluginsSetting](#defaultpluginssetting), [PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls).
 
@@ -17965,7 +18325,7 @@ Se si disabilita o non si configura questo criterio, i contenuti di Adobe Flash 
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RunAllFlashInAllowMode
-  - Nome Criteri di gruppo: Estende l'impostazione dei contenuti di Adobe Flash a tutti i contenuti
+  - Nome GP: estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -18068,7 +18428,7 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
 
   #### Descrizione
 
-  Sets the minimum supported version of TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
+  Imposta la versione minima supportata di TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
 
 Se il criterio viene abilitato, Microsoft Edge non userà alcuna versione di SSL/TLS più vecchia di quella specificata. Qualsiasi valore non riconosciuto viene ignorato.
 
@@ -18998,7 +19358,7 @@ Se non si configurano i criteri seguenti:
 
   Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Therefore it's deprecated and should not be used.
 
-Specifica se includere un collegamento a Office.com nella barra Preferiti. For users signed into Microsoft Edge the shortcut takes users to their Microsoft Office apps and docs. If you enable or don't configure this policy, users can choose whether to see the shortcut by changing the toggle in the favorites bar context menu.
+Specifica se includere un collegamento a Office.com nella barra Preferiti. Per gli utenti che hanno eseguito l'accesso a Microsoft Edge, il collegamento reindirizza gli utenti alle app e ai documenti di Microsoft Office. Se si abilita o non si configura questo criterio, gli utenti possono scegliere se visualizzare o meno il collegamento modificando l'interruttore nel menu a comparsa della barra Preferiti.
 Se si disabilita questo criterio, il collegamento non viene mostrato.
 
   #### Funzionalità supportate:
@@ -19182,11 +19542,11 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
 
   #### Descrizione
 
-  Set whether websites can use the W3C Web Speech API to recognize speech from the user. The Microsoft Edge implementation of the Web Speech API uses Azure Cognitive Services, so voice data will leave the machine.
+  Specificare se i siti Web possono usare l'API per la sintesi vocale W3C per riconoscere il discorso dall'utente. L'implementazione Microsoft Edge dell'API per la sintesi vocale usa i servizi conoscitivi di Azure, in modo che data Voice lascerà il computer.
 
-If you enable or don't configure this policy, web-based applications that use the Web Speech API can use Speech Recognition.
+Se si Abilita o non si configura questo criterio, le applicazioni basate sul Web che usano l'API per la sintesi vocale possono usare il riconoscimento vocale.
 
-If you disable this policy, Speech Recognition is not available through the Web Speech API.
+Se si disabilita questa impostazione, il riconoscimento vocale non sarà disponibile con l'API per la sintesi vocale Web.
 
 Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
 
@@ -20298,6 +20658,60 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### UpdatePolicyOverride
+
+  #### Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge
+
+  
+  
+  #### Versioni supportate:
+
+  - In macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Se abiliti questo criterio, Microsoft Edge Update gestisce gli aggiornamenti Microsoft Edge in base alla configurazione delle opzioni seguenti:
+
+- Solo aggiornamenti automatici: gli aggiornamenti vengono applicati solo quando vengono rilevati in seguito al controllo periodico.
+
+- Solo aggiornamenti manuali: gli aggiornamenti vengono applicati solo quando gli utenti eseguono un controllo manuale. Non tutte le app forniscono un'interfaccia per questa opzione.
+
+Se si selezionano gli aggiornamenti manuali, verificare periodicamente la disponibilità di aggiornamenti tramite Microsoft AutoUpdate.
+
+Se non si abilita e si configura questo criterio, Microsoft Edge Update verifica automaticamente la disponibilità di aggiornamenti.
+
+
+Mapping delle opzioni del criterio:
+
+* automatic-Silent-Only (automatic-Silent-only) = gli aggiornamenti vengono applicati solo quando vengono trovati tramite il controllo di aggiornamento periodico.
+
+* solo manuale (solo manuale) = gli aggiornamenti vengono applicati solo quando l'utente esegue un controllo di aggiornamento manuale. Non tutte le app forniscono un'interfaccia per questa opzione.
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Stringa
+
+  
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: UpdatePolicyOverride
+  - Valore di esempio
+``` xml
+<string>automatic-silent-only</string>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### UserAgentClientHintsEnabled
 
   #### Abilita la funzionalità User-Agent Client Hints (deprecato)
@@ -20537,6 +20951,70 @@ Se si disabilita questo criterio, gli utenti non possono richiamare la funzional
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserFeedbackAllowed
+  - Valore di esempio
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### VerticalTabsAllowed
+
+  #### Configura la disponibilità di un layout verticale per le schede sul lato del browser
+
+  
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Configura se un utente può accedere a un layout alternativo in cui le schede sono allineate verticalmente sul lato del browser anziché nella parte superiore.
+Quando sono aperte diverse schede, questo layout offre una migliore visualizzazione e gestione della scheda. C'è una migliore visibilità dei titoli del sito, è più facile analizzare le icone allineate e c'è più spazio per gestire e chiudere le schede.
+
+Se si disabilita questo criterio, il layout di tabulazione verticale non sarà disponibile come opzione per gli utenti.
+
+Se si abilita o non si configura questo criterio, il layout di tabulazione sarà ancora in alto, ma un utente ha la possibilità di attivare le schede verticali sul lato.
+
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: VerticalTabsAllowed
+  - Nome GP: configura la disponibilità di un layout verticale per le schede sul lato del browser
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: VerticalTabsAllowed
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: VerticalTabsAllowed
   - Valore di esempio
 ``` xml
 <true/>
@@ -21011,6 +21489,67 @@ Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado d
   - Valore di esempio
 ``` xml
 <true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### WebRtcAllowLegacyTLSProtocols
+
+  #### Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)
+
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
+  
+  #### Versioni supportate:
+
+  - su Windows e macOS da 88 o versioni successive
+
+  #### Descrizione
+
+  Se si abilita questo criterio, le connessioni peer di WebRTC possono eseguire il downgrade alle versioni obsolete dei protocolli TLS/DTLS (DTLS 1,0, TLS 1,0 e TLS 1,1).
+Se si disabilita o non si imposta questo criterio, queste versioni di TLS/DTLS sono disabilitate.
+
+Questo criterio è temporaneo e verrà rimosso in una versione futura di Microsoft Edge.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: WebRtcAllowLegacyTLSProtocols
+  - Nome GP: Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: WebRtcAllowLegacyTLSProtocols
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000000
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: WebRtcAllowLegacyTLSProtocols
+  - Valore di esempio
+``` xml
+<false/>
 ```
   
 
