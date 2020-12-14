@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 12/02/2020
+ms.date: 12/11/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 94e16c202ce45332975c89ef354402a5b3edcc6e
-ms.sourcegitcommit: 0ab6e25fd045dec2ec23f9dd7b2d2adb6fde3ef2
+ms.openlocfilehash: d2261f327022ea2d4d57e91748de46173d72dfa4
+ms.sourcegitcommit: 12c803b07a1dbced5f2360f5745186e33adcc41a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "11195137"
+ms.lasthandoff: 12/11/2020
+ms.locfileid: "11218735"
 ---
 # Microsoft Edge - Criteri
 
@@ -29,22 +29,14 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Criteri nuovi e deprecati
+## Nuovi criteri
 
-Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
+Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 | Nome | Didascalia |
-|-|-|
-|[PrinterTypeDenyList](#printertypedenylist)|Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti|
-|[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|Consentire l'avvio di file locali in modalità Internet Explorer|
-|[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer|
-|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer|
-|[IntranetRedirectBehavior](#intranetredirectbehavior)|Comportamento del reindirizzamento delle Intranet|
-|[UpdatePolicyOverride](#updatepolicyoverride)|Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge|
-|[VerticalTabsAllowed](#verticaltabsallowed)|Configura la disponibilità di un layout verticale per le schede sul lato del browser|
-| [WEBRTCALLOWLEGACYTLSPROTOCOLS](#webrtcallowlegacytlsprotocols) deprecato|Consenti downgrade TLS/DTLS legacy in WebRTC|
-
-
+|--|--|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)| Limitare la modalità di stampa grafica in background|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)| Modalità di stampa grafica in background predefinita|
 
 ## Criteri disponibili
 
@@ -188,6 +180,8 @@ e suggerimenti per i servizi Microsoft|
 |[PrintHeaderFooter](#printheaderfooter)|Stampa intestazioni e piè di pagina|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|Imposta la stampante predefinita del sistema come stampante predefinita|
 |[PrinterTypeDenyList](#printertypedenylist)|Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti|
+|[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|Limitare la modalità di stampa grafica in background|
+|[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|Modalità di stampa grafica in background predefinita|
 |[PrintingEnabled](#printingenabled)|Abilita la stampa|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|Dimensioni della pagina di stampa predefinite|
 |[UseSystemPrintDialog](#usesystemprintdialog)|Stampa usando la finestra di dialogo della stampante di sistema|
@@ -439,8 +433,6 @@ e suggerimenti per i servizi Microsoft|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|Limita l'esposizione dell'indirizzo IP locale tramite WebRTC|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|Limita l'intervallo di porte UDP locali usate da WebRTC|
-|[WebWidgetAllowed](#webwidgetallowed)|Abilita il widget Web|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Consenti il widget Web all'avvio di Windows|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|Usa il resolver proxy di Windows (deprecato)|
 
 
@@ -2756,7 +2748,7 @@ Definisce un elenco di siti, in base ai modelli URL, che possono eseguire il plu
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i modelli con i caratteri jolly "*" e "[*.]" nell'host non sono più supportati per questo criterio.
 
   #### Funzionalità supportate:
 
@@ -2825,7 +2817,7 @@ Definisce un elenco di siti, in base ai modelli URL, che non possono eseguire Ad
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i modelli con i caratteri jolly "*" e "[*.]" nell'host non sono più supportati per questo criterio.
 
   #### Funzionalità supportate:
 
@@ -4174,7 +4166,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
   #### Descrizione
 
-  Per impostazione predefinita, tutte le estensioni sono consentite. Tuttavia, se si bloccano tutte le estensioni impostando il criterio "ExtensionInstallBlockList" su "*", gli utenti possono installare solo le estensioni definite in tale criterio.
+  L'impostazione di questo criterio specifica quali estensioni non sono soggette al blocco.
+
+Un valore di blocco * indica che tutte le estensioni sono bloccate e gli utenti possono installare solo le estensioni elencate nell'elenco Consenti.
+
+Per impostazione predefinita, tutte le estensioni sono consentite. Tuttavia, se hai vietato le estensioni per criterio, puoi usare l'elenco delle estensioni consentite per cambiare il criterio.
 
   #### Funzionalità supportate:
 
@@ -4237,11 +4233,11 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
   #### Descrizione
 
-  Elenca estensioni specifiche che gli utenti NON possono installare in Microsoft Edge. Quando si distribuisce questo criterio, le estensioni indicate nell'elenco che sono state precedentemente installate vengono disabilitate e l'utente non può abilitarle. Se si rimuove un elemento dall'elenco di estensioni bloccate, tale estensione viene automaticamente riabilitata ovunque fosse stata già installata.
+  Consente di specificare le estensioni che gli utenti non possono installare. Le estensioni già installate verranno disabilitate se bloccate, senza un modo per consentire all'utente di abilitarle. Dopo che un'estensione disabilitata viene rimossa dal blocco, verrà automaticamente riattivata.
 
-Utilizzare "*" per bloccare tutte le estensioni che non sono indicate in modo esplicito nell'elenco di estensioni consentite.
+Un valore di blocco "*" indica che tutte le estensioni sono bloccate, a meno che non siano elencate esplicitamente nell'elenco consentiti.
 
-Se non si configura questo criterio, gli utenti possono installare qualsiasi estensione in Microsoft Edge.
+Se questo criterio non è impostato, l'utente può installare qualsiasi estensione in Microsoft Edge.
 
   #### Funzionalità supportate:
 
@@ -4448,11 +4444,12 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   #### Descrizione
 
-  Configura le impostazioni di gestione delle estensioni per Microsoft Edge.
+  L'impostazione di questo criterio controlla le impostazioni di gestione delle estensioni per Microsoft Edge, incluse quelle controllate da criteri correlati all'estensione esistenti. Questo criterio sostituisce tutti i criteri legacy che potrebbero essere impostati.
 
-Questo criterio controlla più impostazioni, incluse quelle controllate dai criteri correlati all'estensione esistenti. Questo criterio sostituisce i criteri legacy se sono entrambi impostati.
+Questo criterio esegue il mapping di un ID di estensione o di un URL di aggiornamento solo alle impostazioni specifiche. È possibile impostare una configurazione predefinita per l'ID speciale "*", che si applica a tutte le estensioni senza una configurazione personalizzata in questo criterio. Con un URL di aggiornamento, la configurazione si applica alle estensioni con l'URL di aggiornamento esatto indicato nel manifesto dell'estensione ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ).
 
-Questo criterio esegue il mapping di un ID estensione o di un URL di aggiornamento alla relativa configurazione. Con un ID estensione, la configurazione viene applicata solo all'estensione specificata. Impostare una configurazione predefinita per l'ID speciale "*", da applicare a tutte le estensioni non indicate specificamente in questo criterio. Con un URL di aggiornamento, la configurazione viene applicata a tutte le estensioni con l'esatto URL di aggiornamento indicato nel manifesto di questa estensione, come descritto in [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043).
+Nota: per le istanze di Windows non collegate a un dominio Microsoft Active Directory, l'installazione forzata è limitata alle app e alle estensioni elencate nel sito Web dei componenti aggiuntivi Microsoft Edge.
+
 
   #### Funzionalità supportate:
 
@@ -5217,9 +5214,9 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
 
   #### Descrizione
 
-  Elenca host di messaggistica nativa specifici che gli utenti possono usare in Microsoft Edge.
+  L'impostazione del criterio specifica gli host di messaggistica nativi non soggetti all'elenco degli indirizzi non consentiti Un valore di elenco di negazione * indica che tutti gli host di messaggistica nativi vengono rifiutati, a meno che non siano esplicitamente consentiti.
 
-Per impostazione predefinita, tutti gli host di messaggistica nativa sono consentiti. Se si imposta il criterio [NativeMessagingBlocklist](#nativemessagingblocklist) su *, tutti gli host di messaggistica nativa vengono bloccati e solo quelli elencati in tale criterio vengono caricati.
+Tutti gli host di messaggistica nativi sono consentiti per impostazione predefinita. Tuttavia, se un host di messaggistica nativo viene negato dai criteri, l'amministratore può usare l'elenco Consenti per modificare il criterio.
 
   #### Funzionalità supportate:
 
@@ -5282,11 +5279,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
 
   #### Descrizione
 
-  Specifica gli host di messaggistica nativa che non devono essere usati.
+  L'impostazione di questo criterio specifica gli host di messaggistica nativi che non devono essere caricati. Un valore di elenco di negazione * indica che tutti gli host di messaggistica nativi vengono rifiutati, a meno che non siano esplicitamente consentiti.
 
-Utilizzare "*" per bloccare tutti gli host di messaggistica nativa se non sono indicati esplicitamente nell'elenco di quelli consentiti.
-
-Se non si configura questo criterio, Microsoft Edge caricherà tutti gli host di messaggistica nativa installati.
+Se si lascia questo criterio non impostato, Microsoft Edge carica tutti gli host di messaggistica nativa installati.
 
   #### Funzionalità supportate:
 
@@ -5349,11 +5344,9 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   #### Descrizione
 
-  Consente l'installazione a livello di utente degli host di messaggistica nativa.
+  Se si imposta questo criterio su abilitato o non si annulla, Microsoft Edge può usare gli host di messaggistica nativi installati a livello di utente.
 
-Se si disabilita questo criterio, Microsoft Edge userà solo gli host di messaggistica nativa installati a livello di sistema.
-
-Per impostazione predefinita, se non si configura questo criterio, Microsoft Edge consentirà l'utilizzo degli host di messaggistica nativa a livello di utente.
+Se si imposta questo criterio su disattivato, Microsoft Edge può usare questi host solo se installati a livello di sistema.
 
   #### Funzionalità supportate:
 
@@ -6153,6 +6146,140 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
   <string>local</string>
   <string>privet</string>
 </array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### PrintingAllowedBackgroundGraphicsModes
+
+  #### Limitare la modalità di stampa grafica in background
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Limita la modalità di stampa della grafica in background. Se questo criterio non è impostato, non è disponibile alcuna restrizione per la stampa della grafica di sfondo.
+
+Mapping delle opzioni del criterio:
+
+* Qualsiasi (qualsiasi) = Consenti la stampa con e senza elementi grafici di sfondo
+
+* Abilitato (abilitato) = Consenti la stampa solo con la grafica di sfondo
+
+* Disattivato (disattivato) = Consenti la stampa solo senza elementi grafici di sfondo
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Stringa
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: PrintingAllowedBackgroundGraphicsModes
+  - Nome GP: limitare la modalità di stampa grafica in background
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Stampa
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: PrintingAllowedBackgroundGraphicsModes
+  - Tipo valore: REG_SZ
+
+  ##### Valore di esempio
+
+```
+"enabled"
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: PrintingAllowedBackgroundGraphicsModes
+  - Valore di esempio:
+``` xml
+<string>enabled</string>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### PrintingBackgroundGraphicsDefault
+
+  #### Modalità di stampa grafica in background predefinita
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Esegue l'override della modalità di stampa grafica in background predefinita.
+
+Mapping delle opzioni del criterio:
+
+* Abilitato (abilitato) = Abilita la modalità di stampa grafica in background per impostazione predefinita
+
+* Disattivato(disattivato) = Disabilita la modalità di stampa della grafica di sfondo per impostazione predefinita
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Stringa
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco GP: PrintingBackgroundGraphicsDefault
+  - Nome GP: modalità di stampa grafica in background predefinita
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Stampa
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: PrintingBackgroundGraphicsDefault
+  - Tipo valore: REG_SZ
+
+  ##### Valore di esempio
+
+```
+"enabled"
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: PrintingBackgroundGraphicsDefault
+  - Valore di esempio:
+``` xml
+<string>enabled</string>
 ```
   
 
@@ -8292,7 +8419,7 @@ Se non si configura il criterio, gli utenti possono scegliere se mostrare il pul
 
   Consente la visualizzazione dei suggerimenti rilevanti di Bing per Microsoft Search nell'elenco di suggerimenti della barra degli indirizzi quando l'utente digita una stringa di ricerca nella barra degli indirizzi. Se si abilita o non si configura questo criterio, gli utenti possono visualizzare i risultati interni forniti da Microsoft Search in Bing nell'elenco di suggerimenti della barra degli indirizzi di Microsoft Edge. Per vedere i risultati di Microsoft Search in Bing, l'utente deve accedere a Microsoft Edge con il proprio account di Azure AD per l'organizzazione.
 Se si disabilita questo criterio, gli utenti non possono visualizzare i risultati interni nell'elenco di suggerimenti della barra degli indirizzi di Microsoft Edge.
-Se è stato abilitato il set di criteri che forza un provider di ricerca predefinito ([DefaultSearchProviderEnabled](#defaultsearchproviderenabled), [DefaultSearchProviderName](#defaultsearchprovidername) e [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)) e il provider di ricerca specificato non è Bing, questo criterio non è applicabile e non saranno disponibili suggerimenti di Microsoft Search in Bing nell'elenco di suggerimenti della barra degli indirizzi.
+A partire da Microsoft Edge versione 89, Microsoft Search in Bing suggerimenti sarà disponibile anche se Bing non è il provider di ricerca predefinito dell'utente.
 
   #### Funzionalità supportate:
 
@@ -17951,9 +18078,8 @@ Se non impostato, viene usato il periodo predefinito di 604800000 millisecondi (
 
   #### Descrizione
 
-  Se si abilita o non si configura questo criterio, l'integrità del codice del renderer è abilitata. Questo criterio deve essere disabilitato solo se si verificano problemi di compatibilità con software di terze parti che devono essere eseguiti all'interno dei processi del renderer di Microsoft Edge.
-
-La disabilitazione di questo criterio ha un effetto dannoso sulla stabilità e sulla sicurezza di Microsoft Edge perché il codice sconosciuto e potenzialmente ostile potrà essere caricato all'interno dei processi del renderer di Microsoft Edge.
+  Impostando il criterio su Abilitato o lasciandolo disattivato si attiva l'integrità del codice del rendering.
+L'impostazione del criterio su Disattivatoha un effetto negativo sulla sicurezza e la stabilità di Microsoft Edge, poiché il codice sconosciuto e potenzialmente ostile può essere caricato all'interno dei processi di rendering di Microsoft Edge. Disattivare i criteri solo se sono presenti problemi di compatibilità con il software di terze parti che deve essere eseguito all'interno dei processi di rendering di Microsoft Edge.
 
   #### Funzionalità supportate:
 
@@ -21760,131 +21886,7 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
 ``` xml
 <string>10000-11999</string>
 ```
-  
-
-  [Torna all'inizio](#microsoft-edge---policies)
-
-  ### WebWidgetAllowed
-
-  #### Abilita il widget Web
-
-  
-  
-  #### Versioni supportate:
-
-  - In Windows dalla versione 88 o successive
-
-  #### Descrizione
-
-  Abilita il widget Web. Se abilitato, gli utenti possono utilizzare il widget per eseguire ricerche sul Web dal proprio desktop o da un'applicazione. Il widget fornisce una casella di ricerca che mostra i suggerimenti Web e apre tutte le ricerche Web in Microsoft Edge. La casella di ricerca fornisce suggerimenti di ricerca (forniti da Bing) e URL. Il widget include anche riquadri di feed su cui gli utenti possono fare clic per visualizzare ulteriori informazioni su msn.com in una nuova scheda o finestra del browser Microsoft Edge. I riquadri di feed possono includere annunci. Il widget può essere avviato dalle impostazioni Microsoft Edge o dal menu "Altri strumenti" in Microsoft Edge.
-
-Se si abilita o non si configura questo criterio: il widget Web sarà abilitato automaticamente per tutti i profili.
-Nelle impostazioni Microsoft Edge, gli utenti vedranno l'opzione per avviare il widget.
-Nelle impostazioni di Microsoft Edge, gli utenti vedranno la voce di menu per eseguire il widget all'avvio di Windows (avvio automatico).
-L'opzione per abilitare il widget all'avvio viene attivata se il criterio[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) è abilitato.
-Se [WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup) è disabilitato o non è configurato, l'opzione per abilitare il widget all'avvio sarà disattivata.
-Gli utenti vedranno la voce di menu per avviare il widget dal menu Microsoft Edge "Altri strumenti". Gli utenti possono avviare il widget da "Altri strumenti".
-Il widget può essere disattivato dall'opzione "Esci" nella barra delle applicazioni o chiudendo il widget dalla barra delle applicazioni. Il widget verrà riavviato al riavvio del sistema se l'avvio automatico è abilitato.
-
-Se si disabilita questo criterio: il widget Web verrà disabilitato per tutti i profili.
-L'opzione per avviare il widget dalle impostazioni Microsoft Edge verrà disabilitata.
-L'opzione per avviare l'avvio del widget all'avvio di Windows (avvio automatico) verrà disabilitata.
-L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge verrà disabilitata.
-
-  #### Funzionalità supportate:
-
-  - Può essere obbligatorio: sì
-  - Può essere consigliato: no
-  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
-
-  #### Tipo:
-
-  - Booleano
-
-  #### Informazioni e impostazioni di Windows
-
-  ##### Info su Criteri di gruppo (ADMX)
-
-  - Nome univoco Criteri di gruppo: WebWidgetAllowed
-  - Nome Criteri di gruppo: abilita il widget Web
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
-  - Percorso Criteri di gruppo (consigliato): N/D
-  - Nome file ADMX Criteri di gruppo: MSEdge.admx
-
-  ##### Impostazioni del Registro di sistema di Windows
-
-  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
-  - Percorso (consigliato): N/D
-  - Nome valore: WebWidgetAllowed
-  - Tipo valore: REG_DWORD
-
-  ##### Valore di esempio
-
-```
-0x00000001
-```
-
-  
-
-  [Torna all'inizio](#microsoft-edge---policies)
-
-  ### WebWidgetIsEnabledOnStartup
-
-  #### Consenti il widget Web all'avvio di Windows
-
-  
-  
-  #### Versioni supportate:
-
-  - In Windows dalla versione 88 o successive
-
-  #### Descrizione
-
-  Consente l'esecuzione del widget Web all'avvio di Windows.
-
-Se si abilita: il widget Web verrà eseguito all'avvio di Windows per impostazione predefinita.
-Se il widget è disabilitato tramite il criterio [WebWidgetAllowed](#webwidgetallowed), questo criterio non avvierà il widget all'avvio di Windows.
-
-Se si disabilita questo criterio: il widget Web non verrà avviato all'avvio di Windows per tutti i profili.
-L'opzione per avviare il widget all'avvio di Windows verrà disabilitata e disattivata nelle impostazioni Microsoft Edge.
-
-Se si configura il criterio: il widget Web non verrà avviato all'avvio di Windows per tutti i profili.
-L'opzione per avviare il widget all'avvio di Windows verrà disattivata nelle impostazioni Microsoft Edge.
-
-  #### Funzionalità supportate:
-
-  - Può essere obbligatorio: sì
-  - Può essere consigliato: no
-  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
-
-  #### Tipo:
-
-  - Booleano
-
-  #### Informazioni e impostazioni di Windows
-
-  ##### Info su Criteri di gruppo (ADMX)
-
-  - Nome univoco Criteri di gruppo: WebWidgetIsEnabledOnStartup
-  - Nome Criteri di gruppo: consenti il widget Web all'avvio di Windows
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
-  - Percorso Criteri di gruppo (consigliato): N/D
-  - Nome file ADMX Criteri di gruppo: MSEdge.admx
-
-  ##### Impostazioni del Registro di sistema di Windows
-
-  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
-  - Percorso (consigliato): N/D
-  - Nome valore: WebWidgetIsEnabledOnStartup
-  - Tipo valore: REG_DWORD
-
-  ##### Valore di esempio
-
-```
-0x00000001
-```
-
-  
+ 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
