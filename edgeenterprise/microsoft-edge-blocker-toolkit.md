@@ -3,41 +3,47 @@ title: Blocker Toolkit per disabilitare la distribuzione automatica di Microsoft
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 06/30/2020
+ms.date: 12/16/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Blocker Toolkit per disabilitare la distribuzione automatica di Microsoft Edge
-ms.openlocfilehash: 7563d2c94cf91a8434328699e46c75dbcfb77561
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 9fb97d2dfec4822f8ce76dc3e37b85118c6572ad
+ms.sourcegitcommit: 606282995b466a968bab40c16005a6653323c763
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980285"
+ms.lasthandoff: 12/16/2020
+ms.locfileid: "11229617"
 ---
 # Blocker Toolkit per disabilitare la distribuzione automatica di Microsoft Edge (basata su Chromium)
 
-In questo articolo viene descritto Blocker Toolkit per disabilitare la distribuzione e l'installazione automatica di Microsoft Edge. Questo articolo è stato aggiornato il **09/01/2020** con altre informazioni sui dispositivi che potrebbero richiedere l'uso del toolkit Blocker, il **28/02/2020** per rimuovere la dicitura "Gestiti da MDM" dai criteri dei dispositivi da escludere da questo aggiornamento automatico e il **30/06/2020** per indicare che tutti i dispositivi connessi a Windows Update possono ricevere questo aggiornamento (a partire dal 30/07/2020).
+In questo articolo viene descritto Blocker Toolkit per disabilitare la distribuzione e l'installazione automatica di Microsoft Edge.
+
+Gli aggiornamenti seguenti sono stati apportati a questo articolo:
+
+- **09/01/2020** con ulteriori informazioni sui dispositivi che potrebbero richiedere l'uso di Blocker Toolkit
+- **28/02/2020** per rimuovere "MDM Managed" dai criteri dei dispositivi da escludere da questo aggiornamento automatico
+- **30/06/2020** per garantire che tutti i dispositivi connessi a Windows Update possano ricevere questo aggiornamento (effettivo a partire dal 30/07/2020)
+- **10/12/2020** per spiegare le situazioni pre 20H2 in cui le impostazioni di Blocker Toolkit verranno ignorate
 
 > [!NOTE]
-> Questo articolo si applica al canale Microsoft Edge Stable.
+> Questo articolo si applica al canale stabile di Microsoft Edge.
 
 ## Panoramica
 
 Per consentire ai clienti di restare sempre protetti e aggiornati, Microsoft distribuirà Microsoft Edge (basato su Chromium) a tutti i dispositivi connessi a Windows Update con la versione 1803 di Windows 10 e versioni successive. Questo processo verrà avviato dopo il 15 gennaio 2020 e ulteriori informazioni saranno disponibili a partire da tale data.
 
-Blocker Toolkit è progettato per le organizzazioni che desiderano bloccare la distribuzione automatica di Microsoft Edge (basato su Chromium) nei dispositivi connessi a Windows Update con la versione 1803 di Windows 10 e versioni successive.
-I dispositivi gestiti da Windows Server Update Services (WSUS) o Windows Update per le aziende (WUfB) verranno esclusi dall'aggiornamento automatico.
+Blocker Toolkit è progettato per le organizzazioni che desiderano bloccare la distribuzione automatica di Microsoft Edge (basato su Chromium) nei dispositivi connessi a Windows Update con la versione 1803 di Windows 10 e versioni successive. I dispositivi Windows Server Update Services (WSUS) o Windows Update per le aziende gestiti verranno esclusi da questo aggiornamento automatico di Windows, ma potrebbero ricevere il nuovo Microsoft Edge (basato su Chromium) tramite la propria organizzazione.
 
 **È importante notare che:**
 
 - Blocker Toolkit non impedisce agli utenti di installare manualmente Microsoft Edge (basato su Chromium) tramite download da Internet o supporti esterni.
 - Le organizzazioni con gli aggiornamenti gestiti tramite Windows Update per le aziende (WUfB) non riceveranno automaticamente questo aggiornamento e non devono distribuire Blocker Toolkit.
-- Le organizzazioni con ambienti gestiti con una soluzione per la gestione degli aggiornamenti come Windows Server Update Services (WSUS) o System Center Configuration Manager (SCCM) non devono distribuire Blocker Toolkit. Possono usare questi prodotti per gestire completamente la distribuzione degli aggiornamenti rilasciati tramite Windows Update e Microsoft Update, tra cui Microsoft Edge (basato su Chromium), all'interno del loro ambiente.
+- Le organizzazioni con ambienti gestiti con una soluzione per la gestione degli aggiornamenti come Windows Server Update Services (WSUS) o System Center Configuration Manager (SCCM) non devono distribuire Blocker Toolkit. Possono usare questi prodotti per gestire in modo completo la distribuzione degli aggiornamenti rilasciati tramite Windows Update e Microsoft Update, incluso l'[aggiornamento in WSUS per il nuovo Microsoft Edge](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge), all'interno del loro ambiente.
 - Questo aggiornamento è un aggiornamento indipendente (non incluso nell'aggiornamento cumulativo mensile) per offrire ai clienti aziendali la flessibilità e il massimo controllo sulla distribuzione di questo aggiornamento.
-- Il nuovo Microsoft Edge (basato su Chromium) verrà incluso nell'aggiornamento delle funzionalità di Windows 10, versione 20H2, nella seconda metà del 2020. Il toolkit Blocker non influisce i comportamenti e la distribuzione della versione 20H2. Vedere ulteriori informazioni sulla versione 20H2 di Windows 10 [qui](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/).
+- Il nuovo Microsoft Edge (basato su Chromium) è incluso nell'aggiornamento delle funzionalità di Windows 10, versione 20H2 nella seconda metà di 2020. Il toolkit Blocker non influisce sui comportamenti e sulla distribuzione della versione 20H2. Vedere ulteriori informazioni sulla versione 20H2 di Windows 10 [qui](https://blogs.windows.com/windowsexperience/2020/06/16/whats-next-for-windows-10-updates/).
 
 Puoi scaricare il file eseguibile di Blocker Toolkit all'indirizzo [https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe](https://msedgeblockertoolkit.blob.core.windows.net/blockertoolkit/MicrosoftEdgeChromiumBlockerToolkit.exe).
 
