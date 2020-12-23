@@ -1,21 +1,21 @@
 ---
 title: Domande frequenti sulla modalità IE
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 05/27/2020
+ms.author: shisub
+author: dan-wesley
+manager: srugh
+ms.date: 12/21/2020
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Domande frequenti e risoluzione dei problemi per Microsoft Edge in modalità IE
-ms.openlocfilehash: fcceb9eab19d667f772c593fe4f362606c1623ff
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
+ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980177"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "11238173"
 ---
 # Domande frequenti sulla modalità IE
 
@@ -81,6 +81,20 @@ In Microsoft Edge non è presente una riga di comando esplicita che riflette l'o
 2. Usare la riga di comando `--user-data-dir=<path>`, ma con un percorso diverso per ogni sessione. Se necessario, è possibile creare un'utilità per l'esecuzione dell'utente che avvia Microsoft Edge e modifica il percorso per la sessione.
 
 Se nessuna delle opzioni descritte sopra funziona per un determinato scenario, usare uno dei canali di feedback disponibili: supporto Microsoft, [Forum TechCommunity](https://techcommunity.microsoft.com/t5/enterprise/bd-p/EdgeInsiderEnterprise)o [Microsoft Edge UserVoice](https://microsoftedge.uservoice.com/forums/928825-enterprise).
+
+### È possibile salvare I collegamenti come pagine Web in modalità Internet Explorer?
+ 
+Sì, è possibile abilitare l'opzione Salva destinazione come nel menu di scelta rapida per la modalità Internet Explorer in Microsoft Edge. A questo scopo, configurare i criteri di gruppo *"Consenti Salva destinazione come in modalità Internet Explorer"* disponibile in *Configurazione computer > modelli amministrativi > componenti di Windows > Internet Explorer*.
+Il meccanismo di salvataggio funziona allo stesso modo in Internet Explorer e se la destinazione viene salvata come file HTML, riaprendo il file verrà eseguito il rendering della pagina in Microsoft Edge.
+ 
+Tieni presente che questa funzionalità richiede gli aggiornamenti minimi del sistema operativo seguenti:
+- Windows 10, versione 2004, Windows Server versione 2004, Windows 10, versione 20H2: [KB4580364](https://support.microsoft.com/help/4580364/windows-10-update-kb4580364)
+- Windows 10, versione 1903, Windows 10, versione 1909, Windows Server versione 1903: [KB4580386](https://support.microsoft.com/help/4580386/windows-10-update-kb4580386)
+- Windows 10, versione 1809, Windows Server versione 1809, Windows Server 2019: [KB4580390](https://support.microsoft.com/help/4580390/windows-10-update-kb4580390)
+- Windows 10, versione 1803: [KB4586785](https://support.microsoft.com/help/4586785/windows-10-update-kb4586785)
+- Windows 10, versione 1607: [KB4586830](https://support.microsoft.com/help/4586830/windows-10-update-kb4586830)
+- Windows 10, versione 1507: [KB4586787](https://support.microsoft.com/help/4586787/windows-10-update-kb4586787)
+
 
 ## Vedere anche
 
