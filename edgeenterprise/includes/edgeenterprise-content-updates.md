@@ -1,21 +1,33 @@
 ---
-ms.openlocfilehash: d326cb3c1bb4d7ce792577c025da9a73e985649f
-ms.sourcegitcommit: ae6e603c7b528822d8992909939435b3130604bd
+ms.openlocfilehash: 2c36ef7a9228e189cc68d73636f2ded88063df5f
+ms.sourcegitcommit: 2f36780e8184e77be90b6acce84f245db0cdd5b6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "11250402"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "11255569"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
 
-## Settimana del 21 dicembre 2020
+## Settimana del 4 gennaio 2021
+
 
 | Data di pubblicazione |Titolo dell'argomento | Modifica |
 |------|------------|--------|
-| 21/12/2020 | [Condivisione cookie da Microsoft Edge a Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-cookieshare)<br>Aggiorna, modifiche secondarie. | modificato |
-| 21/12/2020 | [Associare le estensioni dei file alla modalità Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations)<br>Aggiorna, modifiche secondarie. | modificato |
-| 21/12/2020 | [Domande frequenti sulla modalità IE](/DeployEdge/edge-ie-mode-faq)<br>Aggiungere una domanda sul salvataggio dei collegamenti come pagine web. | modificato |
-| 21/12/2020 | [Note sulla versione di Microsoft Edge per il Canale beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Aggiornamento con correzioni per la versione secondaria 88.0.705.29. | modificato |
+| 7/1/2021 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies)<br>Aggiornata con 4 nuovi criteri. | modificato |
+| 7/1/2021 | [Documentazione sui criteri di Microsoft Edge WebView2 ](/DeployEdge/microsoft-edge-webview-policies)<br>Aggiornamento, nessuna modifica. | modificato |
+| 8/1/2021 | [Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge](/DeployEdge/microsoft-edge-relnotes-security)<br>Rilascio di sicurezza per la versione secondaria 87.0.664.75 del canale Stabile. | modificato |
+| 8/1/2021 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Aggiornamento di sicurezza per la versione secondaria 87.0.664.75 del canale Stabile. | modificato |
+
+
+## Settimana del 21 dicembre 2020
+
+
+| Data di pubblicazione |Titolo dell'argomento | Modifica |
+|------|------------|--------|
+| 21/12/2020 | [Condivisione cookie da Microsoft Edge a Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-cookieshare) | modificato |
+| 21/12/2020 | [Associare le estensioni dei file alla modalità Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | modificato |
+| 21/12/2020 | [Domande frequenti sulla modalità IE](/DeployEdge/edge-ie-mode-faq) | modificato |
+| 21/12/2020 | [Note sulla versione di Microsoft Edge per il Canale beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
 
 
 ## Settimana del 14 dicembre 2020
@@ -30,31 +42,3 @@ ms.locfileid: "11250402"
 | 17/12/2020 | [Domande frequenti su Microsoft Edge nell'azienda](/DeployEdge/faqs-edge-in-the-enterprise) | modificato |
 | 17/12/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
 | 17/12/2020 | [Sistemi operativi supportati per Microsoft Edge](/DeployEdge/microsoft-edge-supported-operating-systems) | modificato |
-
-
-## Settimana del 30 novembre 2020
-
-
-| Data di pubblicazione |Titolo dell'argomento | Modifica |
-|------|------------|--------|
-| 30/11/2020 | [Rollback di Microsoft Edge per le aziende](/DeployEdge/edge-learnmore-rollback) | modificato |
-| 30/11/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
-| 30/11/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
-| 1/12/2020 | [Configurare Microsoft Edge in macOS con Jamf](/DeployEdge/configure-microsoft-edge-on-mac-jamf) | modificato |
-| 1/12/2020 | [Configurare Microsoft Edge per macOS con un file plist](/DeployEdge/configure-microsoft-edge-on-mac) | modificato |
-| 1/12/2020 | [Configurare Microsoft Edge per Windows](/DeployEdge/configure-microsoft-edge) | modificato |
-| 1/12/2020 | [Automatizzare la distribuzione di Microsoft Edge per macOS con Jamf](/DeployEdge/deploy-edge-mac-jamf) | modificato |
-| 1/12/2020 | [Elenco Consenti per gli endpoint Microsoft Edge](/DeployEdge/microsoft-edge-security-endpoints) | modificato |
-| 02/12/2020 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies) | modificato |
-| 02/12/2020 | [Documentazione sui criteri di Microsoft Edge WebView2](/DeployEdge/microsoft-edge-webview-policies) | modificato |
-| 03/12/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
-| 03/12/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
-| 04/12/2020 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
-
-
-## Settimana del 23 novembre 2020
-
-
-| Data di pubblicazione |Titolo dell'argomento | Modifica |
-|------|------------|--------|
-| 24/11/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
