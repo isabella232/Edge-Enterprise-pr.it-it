@@ -1,4 +1,4 @@
-# last revised 12/21/2020
+# last revised 01/13/2021
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
@@ -27,16 +27,18 @@
       href: deploy-edge-plan-deployment.md
     - name: Pronti per Microsoft Edge
       href: deploy-edge-ready-for-edge.md
-    - name: Informazioni sulla versione
-      items:
-        - name: Pianificazione delle versioni
-          href: microsoft-edge-release-schedule.md
-        - name: Note sulla versione del Canale Beta
-          href: microsoft-edge-relnote-beta-channel.md
-        - name: Note sulla versione del Canale Stable
-          href: microsoft-edge-relnote-stable-channel.md
-        - name: Aggiornamenti della sicurezza
-          href: microsoft-edge-relnotes-security.md
+    - name: Note sulla versione del Canale Stable
+      href: microsoft-edge-relnote-stable-channel.md
+    - name: Note sulla versione archiviate del canale stabile
+      href: microsoft-edge-relnote-archive-stable-channel.md
+    - name: Note sulla versione del Canale Beta
+      href: microsoft-edge-relnote-beta-channel.md
+    - name: Note sulla versione del canale Beta archiviate
+      href: microsoft-edge-relnote-archive-beta-channel.md
+    - name: Pianificazione delle versioni
+      href: microsoft-edge-release-schedule.md
+    - name: Aggiornamenti della sicurezza
+      href: microsoft-edge-relnotes-security.md
     - name: Mapping dei criteri di Microsoft Edge
       items:
         - name: Panoramica sul mapping dei criteri
@@ -113,7 +115,7 @@
           href: edge-ie-mode-faq.md
         - name: Istruzioni aggiuntive
           items:
-            - name: Associare le estensioni file alla modalità Internet Explorer
+            - name: Associare le estensioni dei file alla modalità Internet Explorer
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: Condivisione cookie da Microsoft Edge a Internet Explorer
               href: edge-ie-mode-add-guidance-cookieshare.md
