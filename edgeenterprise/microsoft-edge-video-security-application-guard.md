@@ -3,31 +3,29 @@ title: Isolamento del browser per Microsoft Edge tramite Application Guard
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 10/08/2020
+ms.date: 01/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Isolamento del browser per Microsoft Edge tramite Application Guard
-ms.openlocfilehash: 260a661dc6361854f5a8b3766c8e3c80c393ce39
-ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
+ms.openlocfilehash: abbe1994f811a4e779104a4c358915bf2b41ef55
+ms.sourcegitcommit: 42af8123dc86c2a1d07de0080a6c878c151f354f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "11105755"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "11269332"
 ---
 # Video: isolamento del browser per Microsoft Edge tramite Application Guard
 
-Questo video mostra il modo in cui Microsoft Edge supporta l'isolamento del browser tramite Application Guard.
+Questo video mostra il modo in cui Microsoft Edge supporta l'isolamento del browser tramite Application Guard. Fai clic sullo screenshot successivo per guardare il video di Arunesh Chandra, Senior Program Manager di Microsoft Edge Security.
+
+[![Isolamento del browser con Application Guard]( media/microsoft-edge-video-security-application-guard/0.png)](http://www.youtube.com/watch?v=zQjaRqNXMqw "Browser isolation using Application Guard")
 
 ## Informazioni sul video
 
 Microsoft Edge consente di ridurre l’esposizione della tua azienda agli attacchi web. Scopri come Microsoft Edge supporta Microsoft Defender Application Guard per usare l'isolamento del browser contro le minacce esterne.
-
-Fai clic sullo screenshot successivo per guardare il video di Arunesh Chandra, Senior Program Manager di Microsoft Edge Security.
-
-[![Microsoft Edge: isolamento del browser tramite Application Guard](https://res.cloudinary.com/marcomontalbano/image/upload/v1602180267/video_to_markdown/images/youtube--zQjaRqNXMqw-c05b58ac6eb4c4700831b2b3070cd403.jpg)](https://www.youtube.com/watch?v=zQjaRqNXMqw&t=3s "Microsoft Edge - Browser isolation using Application Guard")
 
 ## Vedere anche
 
