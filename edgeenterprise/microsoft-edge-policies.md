@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/07/2021
+ms.date: 01/15/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: b422361809b0a2acaa392729025a95aef7ac8f83
-ms.sourcegitcommit: 4dc45cde7cfd29cd24a03f6e830502e95c43d82e
+ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
+ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "11254974"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "11270842"
 ---
 # Microsoft Edge - Criteri
 
@@ -29,17 +29,14 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-
 ## Nuovi criteri
 
 Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 | Nome | Didascalia |
-|-|-|
-|[BasicAuthOverHttpEnabled](#basicauthoverhttpenabled)|Consenti autenticazione di base per HTTP|
-|[TargetBlankImpliesNoOpener](#targetblankimpliesnoopener)|Non impostare window.opener per i collegamenti con destinazione \_blank|
-|[WebWidgetAllowed](#webwidgetallowed)|Consenti il widget Web|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Abilita il widget Web all'avvio di Windows|
+|--|--|
+|[BrowsingDataLifetime](#browsingdatalifetime)|Impostazioni vita utile dati di esplorazione|
+|[DefinePreferredLanguages](#definepreferredlanguages)|Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti|
 
 
 ## Criteri disponibili
@@ -268,6 +265,7 @@ e suggerimenti per i servizi Microsoft|
 |[BrowserGuestModeEnabled](#browserguestmodeenabled)|Abilita la modalità Guest|
 |[BrowserNetworkTimeQueriesEnabled](#browsernetworktimequeriesenabled)|Consente le query a un servizio Browser Network Time|
 |[BrowserSignin](#browsersignin)|Impostazioni di accesso al browser|
+|[BrowsingDataLifetime](#browsingdatalifetime)|Impostazioni vita utile dati di esplorazione|
 |[BuiltInDnsClientEnabled](#builtindnsclientenabled)|Usa il client DNS predefinito|
 |[BuiltinCertificateVerifierEnabled](#builtincertificateverifierenabled)|Determina se lo strumento di verifica del certificato predefinito verrà usato per la verifica dei certificati server (deprecato)|
 |[CertificateTransparencyEnforcementDisabledForCas](#certificatetransparencyenforcementdisabledforcas)|Disabilita l'applicazione della trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo|
@@ -290,6 +288,7 @@ e suggerimenti per i servizi Microsoft|
 |[DefaultSearchProviderContextMenuAccessAllowed](#defaultsearchprovidercontextmenuaccessallowed)|Consente l’accesso al menu di scelta rapida del provider di ricerca predefinito |
 |[DefaultSensorsSetting](#defaultsensorssetting)|Impostazione predefinita per i sensori|
 |[DefaultSerialGuardSetting](#defaultserialguardsetting)|Controlla l'uso di Serial API|
+|[DefinePreferredLanguages](#definepreferredlanguages)|Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti|
 |[DelayNavigationsForInitialSiteListDownload](#delaynavigationsforinitialsitelistdownload)|Richiede che l'elenco siti in modalità Enterprise sia disponibile prima dello spostamento tramite schede.|
 |[DeleteDataOnMigration](#deletedataonmigration)|Elimina i dati del browser obsoleti alla migrazione|
 |[DeveloperToolsAvailability](#developertoolsavailability)|Controlla dove si possono usare gli strumenti di sviluppo|
@@ -439,8 +438,8 @@ e suggerimenti per i servizi Microsoft|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|Limita l'esposizione dell'indirizzo IP locale tramite WebRTC|
 |[WebRtcUdpPortRange](#webrtcudpportrange)|Limita l'intervallo di porte UDP locali usate da WebRTC|
-|[WebWidgetAllowed](#webwidgetallowed)|Consenti il widget Web|
-|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Abilita il widget Web all'avvio di Windows|
+|[WebWidgetAllowed](#webwidgetallowed)|Abilita il widget Web|
+|[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Consenti il widget Web all'avvio di Windows|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|Usa il resolver proxy di Windows (deprecato)|
 
 
@@ -6311,9 +6310,11 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Descrizione
 
-  Esegue l'override della modalità di stampa grafica in background predefinita.
+  Sovrascrive l'ultima impostazione usata per la stampa di elementi grafici in background.
+Se si abilita questa impostazione, la stampa grafica in background è abilitata.
+Se si disattiva questa impostazione, la stampa grafica in background è disabilitata.
 
-Mapping delle opzioni del criterio:
+Mappatura delle opzioni del criterio:
 
 * Abilitato (abilitato) = Abilita la modalità di stampa grafica in background per impostazione predefinita
 
@@ -10674,6 +10675,108 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### BrowsingDataLifetime
+
+  #### Impostazioni vita utile dati di esplorazione
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Configura le impostazioni della vita utile dei dati di esplorazione per Microsoft Edge.
+Questo criterio Controlla la vita utile dei dati di esplorazione selezionati. Questo criterio non ha alcun effetto se la sincronizzazione è abilitata.
+I tipi di dati disponibili sono "browsing_history", "download_history", "cookies_and_other_site_data", "cached_images_and_files", "password_signin", "riempimento automatico", "site_settings" e "hosted_app_data".
+Microsoft Edge rimuoverà periodicamente i dati dei tipi selezionati meno recenti di "time_to_live_in_hours". Dato che l'eliminazione dei dati avviene solo a determinati intervalli, alcuni dati potrebbero essere mantenuti leggermente più a lungo, ma mai più del doppio del tempo "time_to_live_in_hours" previsto.
+
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Dictionary
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: BrowsingDataLifetime
+  - Nome Criteri di gruppo: impostazioni della vita utile dei dati di esplorazione
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: BrowsingDataLifetime
+  - Tipo valore: REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
+  {
+    "data_types": [
+      "browsing_history"
+    ], 
+    "time_to_live_in_hours": 24
+  }, 
+  {
+    "data_types": [
+      "password_signin", 
+      "autofill"
+    ], 
+    "time_to_live_in_hours": 12
+  }
+]
+```
+
+  ##### Valore di esempio compatto:
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [{"data_types": ["browsing_history"], "time_to_live_in_hours": 24}, {"data_types": ["password_signin", "autofill"], "time_to_live_in_hours": 12}]
+  ```
+  
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: BrowsingDataLifetime
+  - Valore di esempio:
+``` xml
+<key>BrowsingDataLifetime</key>
+<array>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>browsing_history</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>24</integer>
+  </dict>
+  <dict>
+    <key>data_types</key>
+    <array>
+      <string>password_signin</string>
+      <string>autofill</string>
+    </array>
+    <key>time_to_live_in_hours</key>
+    <integer>12</integer>
+  </dict>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### BuiltInDnsClientEnabled
 
   #### Usa il client DNS predefinito
@@ -10688,13 +10791,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   Controlla se usare il client DNS predefinito.
 
-Ciò non influisce su quali server DNS vengono usati, ma solo sullo stack del software utilizzato per comunicare con essi. Ad esempio, se il sistema operativo è configurato per usare un server DNS aziendale, tale server verrà usato dal client DNS predefinito. Tuttavia, è possibile che il client DNS predefinito gestisca i server in modi diversi tramite protocolli correlati al DNS più moderni, come DNS-over-TLS.
+Questo criterio Controlla lo stack software usato per comunicare con il server DNS: il client DNS del sistema operativo o il client DNS integrato in Microsoft Edge. Questo criterio non interessa i server DNS usati: ad esempio, se il sistema operativo è configurato per l'uso di un server DNS aziendale, lo stesso server verrebbe usato dal client DNS integrato. Inoltre, non controlla se viene usato DNS-over-HTTPS; Microsoft Edge usa sempre il resolver predefinito per le richieste DNS-over-HTTPS. Vedere il criterio [DnsOverHttpsMode](#dnsoverhttpsmode) per informazioni sul controllo di DNS-over-HTTPS.
 
 Se si abilita questo criterio, viene usato il client DNS predefinito, se disponibile.
 
-Se si disabilita questo criterio, il client non viene mai usato.
+Se si disabilita questo criterio, il client DNS incorporato viene usato solo quando è in uso DNS-over-HTTPS.
 
-Se non si configura questo criterio, il client DNS predefinito è abilitato per impostazione predefinita su MacOS e gli utenti possono decidere se usare il client DNS predefinito modificando edge://flags o specificando un contrassegno della riga di comando.
+Se non si configura questo criterio, il client DNS predefinito è abilitato per impostazione predefinita.
 
   #### Funzionalità supportate:
 
@@ -12129,6 +12232,70 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### DefinePreferredLanguages
+
+  #### Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Configura le varianti della lingua inviate da Microsoft Edge ai siti internet nell'intestazione HTTP di Accept-Language Request, e impedisce agli utenti di aggiungere, rimuovere o modificare l'ordine delle lingue preferite nelle impostazioni di Microsoft Edge. Gli utenti che vogliono cambiare le lingue in cui Microsof Edge mostra le pagine o offre di tradurle saranno limitati alle lingue configurate in questo criterio.
+
+Se si abilita questo criterio, i siti internet verranno visualizzati nella prima lingua dell'elenco supportato, a meno che non venga usata un'altra logica specifica del sito per determinare la lingua di visualizzazione. Le varianti della lingua definite in questo criterio eseguono la sovrascrittura delle lingue configurate nel criterio [SpellcheckLanguage](#spellchecklanguage) .
+
+Se il criterio non viene configurato o disabilitato, Microsoft Edge invia ai siti le lingue preferite specificate dall'utente nell'intestazione HTTP della richiesta Accept-Language.
+
+Per informazioni dettagliate sulle varianti della lingua valide, vedere [https://go.microsoft.com/fwlink/?linkid=2148854](https://go.microsoft.com/fwlink/?linkid=2148854) .
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Stringa
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Info su Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: DefinePreferredLanguages
+  - Nome Criteri di gruppo: definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: DefinePreferredLanguages
+  - Tipo valore: REG_SZ
+
+  ##### Valore di esempio
+
+```
+"en-US,fr,es"
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: DefinePreferredLanguages
+  - Valore di esempio:
+``` xml
+<string>en-US,fr,es</string>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### DelayNavigationsForInitialSiteListDownload
 
   #### Richiede che l'elenco siti in modalità Enterprise sia disponibile prima dello spostamento tramite schede.
@@ -13090,11 +13257,11 @@ Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in 
 
   #### Descrizione
 
-  Questo criterio consente agli utenti di confrontare i prezzi di un prodotto che stanno esaminando, di ottenere i coupon dal sito Web in cui si trovano o di applicarli automaticamente durante il checkout.
+  Questo criterio consente agli utenti di confrontare i prezzi di un prodotto che stanno esaminando, ottenere tagliandi o buoni sconto dal sito in cui si trovano, oppure riscattare automaticamente i tagliandi durante l'estrazione.
 
-Se questo criterio non viene abilitato o configurato, verranno applicate automaticamente le caratteristiche di shopping, come il confronto dei prezzi e i coupon, per i domini commerciali. I coupon per il rivenditore corrente e i prezzi di altri rivenditori verranno recuperati da un server.
+Se il criterio non viene abilitato o configurato le caratteristiche di shopping, come il confronto dei prezzi, i tagliandi e i buoni sconto, saranno applicati automaticamente ai domini commerciali. I coupon per il rivenditore corrente e i prezzi di altri rivenditori verranno recuperati da un server.
 
-Se questo criterio viene disabilitato, non verranno applicate automaticamente le caratteristiche di shopping, come il confronto dei prezzi e i coupon, per i domini commerciali.
+Se questo criterio viene disabilitato le funzionalità di shopping, come il confronto dei prezzi, i tagliandi e i buoni sconto, non saranno disponibili automaticamente per i domini di rivendita. 
 
   #### Funzionalità supportate:
 
@@ -18459,11 +18626,11 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 
   Abilita questo criterio per usare i profili mobile in Windows. Le impostazioni archiviate nei profili Microsoft Edge (preferite e preferenze) vengono salvate anche in un file archiviato nella cartella del profilo utente mobile (o nel percorso specificato dall'amministratore tramite il criterio [RoamingProfileLocation](#roamingprofilelocation)).
 
-Se si disabilita questo criterio o non lo si configura, vengono usati solo i normali profili locali.
+Se si disabilita questo criterio o non lo si configura, verranno usati solo i normali profili locali.
 
-Il criterio [SyncDisabled](#syncdisabled) disabilita tutta la sincronizzazione dati, eseguendo l’override del criterio.
+[SyncDisabled](#syncdisabled) disabilita solo la sincronizzazione nel cloud e non ha alcun impatto su questo criterio.
 
-Per altre informazioni sull'uso dei profili utente mobile, vedere https://docs.microsoft.com/windows-server/storage/folder-redirection/deploy-roaming-user-profiles.
+Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058) per altre informazioni sull'uso dei profili utente.
 
   #### Funzionalità supportate:
 
@@ -19403,7 +19570,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SerialAskForUrls
-  - Valore di esempio
+  - Valore di esempio:
 ``` xml
 <array>
   <string>https://www.contoso.com</string>
@@ -20128,7 +20295,9 @@ Se il criterio è impostato su false o non è configurato, verranno visualizzati
 
   #### Descrizione
 
-  Disabilita la sincronizzazione dei dati in Microsoft Edge. Questo criterio impedisce anche che venga visualizzata la richiesta di consenso per la sincronizzazione.
+  Disabilita la sincronizzazione dei dati in Microsoft Edge. Questo criterio impedisce anche la visualizzazione della richiesta di consenso per la sincronizzazione.
+
+Questo criterio disabilita solo la sincronizzazione nel cloud e non ha alcun impatto sul criterio [RoamingProfileSupportEnabled](#roamingprofilesupportenabled).
 
 Se il criterio non viene impostato o lo si applica come consigliato, gli utenti potranno attivare o disattivare la sincronizzazione. Se si applica questo criterio come obbligatorio, gli utenti non potranno attivare la sincronizzazione.
 
@@ -22058,7 +22227,7 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
 
   ### WebWidgetAllowed
 
-  #### Consenti il widget Web
+  #### Abilita il widget Web
 
   
   
@@ -22122,7 +22291,7 @@ L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge ver
 
   ### WebWidgetIsEnabledOnStartup
 
-  #### Abilita il widget Web all'avvio di Windows
+  #### Consenti il widget Web all'avvio di Windows
 
   
   
