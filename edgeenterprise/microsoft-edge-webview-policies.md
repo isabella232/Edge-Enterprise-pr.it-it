@@ -3,7 +3,7 @@ title: Documentazione sui criteri di Microsoft Edge WebView2
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/07/2021
+ms.date: 01/15/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,18 +11,19 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 0be51f193d12c14d1bb40439d7ec6ca9e59effae
-ms.sourcegitcommit: 4dc45cde7cfd29cd24a03f6e830502e95c43d82e
+ms.openlocfilehash: edc942eb2f8238433ded0e94cbb6a5af8cd7293c
+ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "11254954"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "11270822"
 ---
 # Criteri: Microsoft Edge WebView2
 
 La versione più recente di Microsoft Edge WebView2 include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge WebView2 nell'organizzazione.
 
 Sono disponibili informazioni su un set aggiuntivo di criteri usati per controllare come e quando viene aggiornato Microsoft Edge WebView2 nell'articolo [Informazioni di riferimento sui criteri dell'aggiornamento di Microsoft Edge](microsoft-edge-update-policies.md).
+
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 87 o successiva.
