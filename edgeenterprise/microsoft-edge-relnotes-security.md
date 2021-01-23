@@ -3,24 +3,28 @@ title: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
-ms.openlocfilehash: 9644f981f8a94d0c6bd7a4c9070fb53668e7d4ab
-ms.sourcegitcommit: f3b422cba2810c973682437ff46a652fc5429f7c
+ms.openlocfilehash: 2ea1a9e79fba3cba83fead9fe05d691ad54ddc1e
+ms.sourcegitcommit: e5980a7a36c252e8a04315b3d4c64a161027324e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "11255242"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "11297029"
 ---
 # Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 
 Queste note sulla versione forniscono informazioni sulle correzioni per la sicurezza incluse negli aggiornamenti del canale Stable di Microsoft Edge.
 
+## 21 gennaio 2021
+
+Microsoft ha rilasciato la versione più recente del **Canale Stable di Microsoft Edge (versione 88.0.705.50)**, il quale incorpora gli ultimi aggiornamenti per la sicurezza del progetto Chromium. Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002).
+<!--- https://msrc.microsoft.com/update-guide/ -->
 ## 7 gennaio 2021
 
 Microsoft ha rilasciato la versione più recente del **Canale Stable di Microsoft Edge (versione 87.0.664.75)**, che incorpora gli ultimi aggiornamenti per la sicurezza del progetto Chromium. Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/ADV200002).

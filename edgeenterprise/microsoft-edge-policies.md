@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/15/2021
+ms.date: 01/20/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 92b89087cd7082844e36660ffdc7ff217cd92ff2
-ms.sourcegitcommit: 63c53d1eaa3ad70acd405379bd3af57275a0b24f
+ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
+ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270842"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "11281025"
 ---
 # Microsoft Edge - Criteri
 
@@ -35,8 +35,10 @@ Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 | Nome | Didascalia |
 |--|--|
-|[BrowsingDataLifetime](#browsingdatalifetime)|Impostazioni vita utile dati di esplorazione|
-|[DefinePreferredLanguages](#definepreferredlanguages)|Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti|
+|[MAMAbilitato](#mamenabled)|Gestione delle app per dispositivi mobili abilitata|
+|[MostraRaccomandazioniAbilitato](#showrecommendationsenabled)|Consenti suggerimenti e notifiche promozionali da Microsoft Edge|
+
+
 
 
 ## Criteri disponibili
@@ -48,12 +50,12 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[Impostazioni di Application Guard](#application-guard-settings)|[Cast](#cast)|
 |[Impostazioni contenuto](#content-settings)|[Provider di ricerca predefinito](#default-search-provider)|
 |[Extensions](#extensions)|[Autenticazione HTTP](#http-authentication)|
-|[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Messaggistica nativa](#native-messaging)|
-|[Gestione e protezione delle password](#password-manager-and-protection)|[Prestazioni](#performance)|
-|[Stampa](#printing)|[Server proxy](#proxy-server)|
-|[Impostazioni schede di sospensione](#sleeping-tabs-settings)|[Impostazioni SmartScreen](#smartscreen-settings)|
-|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|[Ulteriori informazioni](#additional)|
-
+|[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Gestibilità](#manageability)|
+|[Messaggistica nativa](#native-messaging)|[Gestione e protezione delle password](#password-manager-and-protection)|
+|[Prestazioni](#performance)|[Stampa](#printing)|
+|[Server proxy](#proxy-server)|[Impostazioni schede di sospensione](#sleeping-tabs-settings)|
+|[Impostazioni SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
+|[Ulteriori informazioni](#additional)|
 
 ### [*Impostazioni di Application Guard*](#application-guard-settings-policies)
 
@@ -152,6 +154,11 @@ e suggerimenti per i servizi Microsoft|
 |-|-|
 |[KioskAddressBarEditingEnabled](#kioskaddressbareditingenabled)|Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.|
 |[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|Elimina i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude|
+### [*Gestibilità*](#manageability-policies)
+
+|Nome criterio|Didascalia|
+|-|-|
+|[MAMAbilitato](#mamenabled)|Gestione delle app per dispositivi mobili abilitata|
 ### [*Messaggistica nativa*](#native-messaging-policies)
 
 |Nome criterio|Didascalia|
@@ -401,6 +408,7 @@ e suggerimenti per i servizi Microsoft|
 |[SerialBlockedForUrls](#serialblockedforurls)|Blocca Serial API in siti specifici|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|Mostra le esperienze di Microsoft Rewards|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)|
+|[MostraRaccomandazioniAbilitato](#showrecommendationsenabled)|Consenti suggerimenti e notifiche promozionali da Microsoft Edge|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|Abilita il supporto di Signed HTTP Exchange (SXG)|
 |[SitePerProcess](#siteperprocess)|Abilita l'isolamento del sito per tutte le origini|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
@@ -5277,6 +5285,72 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ## Criteri di gestibilità
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### MAMAbilitato
+
+  #### Gestione delle app per dispositivi mobili abilitata
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Consente al browser Microsoft Edge di recuperare i criteri dai servizi di gestione delle applicazioni di Intune e applicarli ai profili degli utenti.
+
+Se abiliti questa criterio o non li configuri, potrebbero essere applicati i criteri di gestione di app per dispositivi mobili (MAM).
+
+Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per richiedere i criteri di gestione di app per dispositivi mobili.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome unico di Criteri di gruppo: MAMEnabled
+  - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Gestabilità
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: MAMEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000000
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: MAMEnabled
+  - Valore di esempio:
+``` xml
+<false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ## Criteri di messaggistica nativa
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -9137,6 +9211,8 @@ In particolare, è presente l'opzione **Suggerisci pagine simili quando non è p
   Disabilita il visualizzatore PDF interno in Microsoft Edge.
 
 Se si abilita questo criterio, Microsoft Edge considera i file PDF come download e consente agli utenti di aprirli con l'applicazione predefinita.
+
+Se Microsoft Edge è il lettore PDF predefinito, i file PDF non vengono scaricati e continueranno ad aprirsi in Microsoft Edge.
 
 Se si disabilita o non si configura questo criterio, Microsoft Edge aprirà i file PDF (a meno che l'utente non lo impedisca).
 
@@ -19570,7 +19646,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SerialAskForUrls
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <array>
   <string>https://www.contoso.com</string>
@@ -19777,6 +19853,68 @@ Se si disabilita questo criterio, il collegamento non viene mostrato.
   - Valore di esempio
 ``` xml
 <false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### MostraRaccomandazioniAbilitato
+
+  #### Consenti suggerimenti e notifiche promozionali da Microsoft Edge
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Questa impostazione dei criteri consente di decidere se i dipendenti devono ricevere suggerimenti e notifiche di assistenza all'interno del prodotto da Microsoft Edge.
+
+Se si abilita o non si configura questa impostazione, i dipendenti ricevono suggerimenti e notifiche da Microsoft Edge.
+
+Se si disabilita questa impostazione, i dipendenti non riceveranno consigli e notifiche da Microsoft Edge.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome unico dei Criteri di gruppo: MostraRaccomandazioniAbilitato
+  - Nome dei Criteri di gruppo: consentire suggerimenti e notifiche promozionali da Microsoft Edge
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: ShowRecommendationsEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: ShowRecommendationsEnabled
+  - Valore di esempio:
+``` xml
+<true/>
 ```
   
 
