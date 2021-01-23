@@ -3,19 +3,19 @@ title: Configurare e risolvere i problemi relativi a Microsoft Edge Sync
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 01/14/2021
+ms.date: 01/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare e risolvere i problemi relativi a Microsoft Edge Sync
-ms.openlocfilehash: fa9b9ead6319bceeb95066003a77be7ecf84db46
-ms.sourcegitcommit: 68b50c45b2b78acec5a0776ce4ddd11410a4e382
+ms.openlocfilehash: 36912d2fd1c33a227ce1d4b7c912f6ef1dfdcc00
+ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "11270770"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "11297457"
 ---
 # Configurare e risolvere i problemi relativi a Microsoft Edge Sync
 
@@ -74,7 +74,7 @@ Per limitare la sincronizzazione a determinati gruppi di utenti, è possibile ab
 
 ## Microsoft Edge e Enterprise state roaming (ESR)
 
-Microsoft Edge è un'applicazione multipiattaforma con un ambito esteso per sincronizzare i dati degli utenti in tutti i loro dispositivi e non fa più parte del roaming dello stato di Azure AD Enterprise. Tuttavia, Microsoft Edge soddisfa le promesse per la protezione dei dati di ESR, come la possibilità di creare una chiave personalizzata. Per ulteriori informazioni, vedi [Microsoft Edge e Enterprise State Roaming](microsoft-edge-enterprise-state-roaming.md).
+Microsoft Edge è un'applicazione multipiattaforma con un ambito esteso per la sincronizzazione dei dati degli utenti in tutti i loro dispositivi e non è una parte di longaer di Azure AD Enterprise State Roaming. Tuttavia, Microsoft Edge soddisfa le promesse per la protezione dei dati di ESR, come la possibilità di creare una chiave personalizzata. Per ulteriori informazioni, vedi [Microsoft Edge e Enterprise State Roaming](microsoft-edge-enterprise-state-roaming.md).
 
 ## Risolvere i problemi di sincronizzazione
 
@@ -86,9 +86,9 @@ Uno dei casi di utilizzo più diffusi per gestire l'identità degli utenti nel b
 
 Prima di considerare un problema di sincronizzazione, verificare se l'utente ha eseguito l'accesso al browser con un account valido.
 
-Lo screenshot successivo mostra un esempio di errore di identità trovato in *edge://sync-internals* in **Info di accesso**:
+Nella schermata successiva viene illustrato un esempio di errore di identità. L'errore è "**errore token ultimo, EDGE_AUTH_ERROR: 3, 54, 3ea**", disponibile in *Edge://Sync-internals* in **Credenziali**:
 
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="Errore di identità":::
+:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-identity-issue.png" alt-text="Errore ultimo token EDGE_AUTH_ERROR: 3, 54, 3ea":::
 
 ### Problemi comuni di sincronizzazione
 
@@ -160,9 +160,8 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
 
 ### Problema: Errore di Cryptographer rilevato
 
-Questo errore è visibile in **Digita informazione** in *edge://sync-internals* e può significare che i dati sul lato del servizio dell'utente devono essere reimpostati. Lo screenshot successivo mostra un esempio dei dettagli di un errore di crittografia.
-
-:::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-crypto-error-new.png" alt-text="Errore di crittografia.":::
+Questo errore è visibile in **Digita informazione** in *edge://sync-internals* e può significare che i dati sul lato del servizio dell'utente devono essere reimpostati. L'esempio seguente mostra un messaggio di errore di crittografia:
+<br>"Errore: GenerateCryptoErrorsForTypes@.. /.. /Components/Sync/driver/data_type_manager_impl. cc: 42, si è verificato un errore di crittografia".
 
 1. Riavvia Microsoft Edge e passa alla *edge://sync-internals* e controlla la sezione "**Stato della chiave dell'account AAD**"
    - "Success" in "Last MIP Result": l'errore del crittografo indica che i dati del server potrebbero essere stati crittografati con una chiave persa. La reimpostazione dei dati è necessaria per riprendere la sincronizzazione.
@@ -210,7 +209,7 @@ Al momento no. Per i clienti nel cloud GCC High, la sincronizzazione di Microsof
 
 #### Perché la sincronizzazione di Microsoft Edge non è supportata in tutti gli abbonamenti a Microsoft 365?
 
-La sincronizzazione aziendale dipende da [Azure Information Protection](https://azure.microsoft.com/services/information-protection/), che non è disponibile in tutti gli abbonamenti a Microsoft 365.
+La sincronizzazione aziendale dipende dalla [Azure Information Protection](https://azure.microsoft.com/services/information-protection/), che non è disponibile in tutti gli abbonamenti a M365.
 
 #### La sincronizzazione di Microsoft Edge si basa sul servizio Enterprise State Roaming?
 

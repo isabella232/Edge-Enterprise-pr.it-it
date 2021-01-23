@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: cb30da25581653b33c9529178b40a8de7161a7d1
-ms.sourcegitcommit: e5980a7a36c252e8a04315b3d4c64a161027324e
+ms.openlocfilehash: b7a875c7a3688d1839be9c3fdc835f77e14f3bae
+ms.sourcegitcommit: f0f250190fc09964175778338a177f1240946b98
 ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297049"
+ms.locfileid: "11297190"
 ---
 # Note sulla versione del canale Stabile Microsoft Edge
 
@@ -72,7 +72,7 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
   - Miglioramenti alla sezione Chiuse di recente della cronologia. La sezione Chiuse di recente ora conserva le ultime 25 schede e finestre di qualsiasi sessione di esplorazione passata, piuttosto che limitarsi alla sessione precedente. Gli utenti possono selezionare Chiuse di recente dalla nuova esperienza di Cronologia, in modo da visualizzare tutte le schede aperte.
   - La funzionalità “La tua giornata in breve” è stata abilitata per impostazione predefinita. A partire dalla versione 88 di Microsoft Edge, gli operatori dell’informazione possono trarre vantaggio dalle funzionalità di produttività intelligenti nella pagina Nuova scheda (NTP). Anche gli utenti di Microsoft Edge 87 avranno accesso a queste caratteristiche entro 2 settimane dal rilascio di Microsoft Edge 88. Offriamo agli utenti che effettuano l’accesso con il loro account di lavoro o dell'istituto di istruzione contenuto personalizzato e pertinente con tecnologia M365 Graph. Gli utenti possono analizzare rapidamente i moduli di "La tua giornata in breve", in modo da tenere facilmente traccia delle riunioni e del lavoro recente, nonché per avviare rapidamente le applicazioni che desiderano usare.
 
-- **Sincronizzazione di cronologia e schede aperte**. I criteri di sincronizzazione e cronologia dei browser esistenti sono stati aggiornati e gli utenti possono configurarlo per abilitare la sincronizzazione per la cronologia dei browser e aprire le schede.
+- **Sincronizzazione cronologia e apertura delle schede**. La sincronizzazione della cronologia di navigazione e di apertura delle schede è ora disponibile per tutti gli utenti. L'attivazione di queste funzionalità consentirà agli utenti di riprendere da dove hanno interrotto rendendo disponibile la cronologia di navigazione e di apertura delle schede in tutti i dispositivi di sincronizzazione. I criteri di sincronizzazione e cronologia dei browser sono stati aggiornati, quindi ora gli utenti sono connessi e produttivi in tutti i dispositivi usando Microsoft Edge. [Ulteriori informazioni](https://blogs.windows.com/windowsexperience/2021/01/21/this-year-lets-resolve-to-make-the-most-of-our-time-online-and-better-protect-ourselves-from-online-threats/).
 
 - **PDF:**
 
@@ -98,7 +98,7 @@ Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [IntranetRedirectBehavior](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
 - [PrinterTypeDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
 - [ShowMicrosoftRewards](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
-- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/.microsoft-edge-policies#sleepingtabsenabled): configura le schede di sospensione.
+- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsenabled): configura le schede di sospensione.
 - [SleepingTabsTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
 - [SleepingTabsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
 - [StartupBoostEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#startupboostenabled) attiva il potenziamento di avvio.
@@ -326,7 +326,6 @@ Sono stati aggiunti 23 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 
 [TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled): abilitare una funzionalità di sicurezza TLS 1.3 per trust anchor locali.
 
-<!-- end 86 -->
 ## Versione 85.0.564.70: 6 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
@@ -345,93 +344,9 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
 
 ## Versione 85.0.564.44: 31 agosto
 
-Risolti diversi bug e problemi relativi alle prestazioni.
-<!-- begin 85 -->
-## Versione 85.0.564.41: 27 agosto
+Sono stati risolti diversi bug e problemi di prestazioni.
 
-Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-27-2020).
-
-### Aggiornamenti delle funzionalità
-
-- **Sincronizzazione locale di preferiti e impostazioni**. Ora è possibile sincronizzare i preferiti e le impostazioni del browser tra i profili di Active Directory del proprio ambiente, senza eseguire la sincronizzazione nel cloud.
-
-- **Supporto dei criteri di gruppo di Microsoft Edge per l'avvio di combinazioni di siti e app attendibili senza una richiesta di conferma**. È stato aggiunto il supporto dei criteri di gruppo, che consente agli amministratori di aggiungere combinazioni di siti e app attendibili per l'avvio senza la richiesta di conferma. Questo consente agli amministratori di configurare combinazioni di protocolli/origini attendibili (come le app di Microsoft 365) in modo che gli utenti finali possano eliminare il messaggio di conferma quando si visita un URL che contiene un protocollo dell'app.
-
-- **Strumento di evidenziazione per PDF**. Questo strumento può essere aggiunto alla barra degli strumenti per i file PDF per evidenziare facilmente il testo importante.
-
-- **L'API Storage Access è disponibile**. L'API Storage Access consente l'accesso a uno spazio di archiviazione di prima parte in un contesto di terza parte quando un utente mostra l'intento diretto di consentire lo spazio di archiviazione che altrimenti verrebbe bloccato dalla configurazione corrente del browser. Per altre informazioni, vedere [API Storage Access](https://www.chromestatus.com/feature/5612590694662144).
-
-- **La funzione di invio a OneNote è disponibile per le Raccolte di Microsoft Edge**. Tutti sono entusiasti di poter inviare le informazioni delle Raccolte a OneNote, dopo possono essere incluse in progetti più grandi e usate per collaborare con altri utenti! Cosa più importante, in Microsoft Edge 85 sarà possibile inviare contenuti ai prodotti *Office per Mac* (Word, Excel e OneNote) sia per l'account Microsoft che per Azure Active Directory.
-
-- **Aggiornamenti di DevTools**. Per i dettagli di questi aggiornamenti, vedere [Novità di DevTools (Microsoft Edge 85)](https://docs.microsoft.com/microsoft-edge/devtools-guide-chromium/whats-new/2020/06/devtools).
-
-   - Microsoft Edge DevTools supporta l'emulazione Surface Duo. Microsoft Edge DevTools può emulare Surface Duo in modo da poter verificare l'aspetto dei contenuti web sui dispositivi con due schermi. Per effettuare questo esperimento in DevTools, aprire la modalità Dispositivo premendo CTRL+MAIUSC+M su Windows o COMANDO+MAIUSC+M su macOS, e selezionare Surface Duo dall'elenco a discesa.
-   - Microsoft Edge DevTools consente di abbinare le scelte rapide da tastiera con VS Code. Microsoft Edge DevTools supporta la personalizzazione delle scelte rapide da tastiera in DevTools in base all'editor/IDE. Microsoft Edge 85 introduce la possibilità di abbinare le scelte rapide da tastiera di DevTools con VS Code. Questo cambiamento contribuirà ad aumentare la produttività in VS Code e DevTools.
-
-### Aggiornamenti dei criteri
-
-#### Nuovi criteri
-
-Sono stati aggiunti 13 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise). Sono stati aggiunti i nuovi criteri seguenti.
-
-- [AutoLaunchProtocolsFromOrigins](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autolaunchprotocolsfromorigins) - Definisce un elenco di protocolli che possono avviare un'applicazione esterna da origini elencate senza richiedere la conferma dell'utente.
-- [AutoOpenAllowedForURLs](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autoopenallowedforurls) - URL in cui è possibile applicare AutoOpenFileTypes.
-- [AutoOpenFileTypes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#autoopenfiletypes) - Elenco dei tipi di file che devono essere aperti automaticamente allo scaricamento.
-- [DefaultSearchProviderContextMenuAccessAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultsearchprovidercontextmenuaccessallowed) - Consente l'accesso al menu di scelta rapida del provider di servizi predefinito.
-- [EnableSha1ForLocalAnchors](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) - Consente i certificati firmati con l'algoritmo SHA-1 quando sono emessi da ancoraggi di attendibilità locali.
-- [ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#exemptdomainfiletypepairsfromfiletypedownloadwarnings) - Disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini.
-- [IntensiveWakeUpThrottlingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intensivewakeupthrottlingenabled) - Controlla la funzionalità IntensiveWakeUpThrottling.
-- [NewTabPagePrerenderEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpageprerenderenabled) - Attiva il precaricamento della nuova scheda per il rendering più rapido.
-- [NewTabPageSearchBox](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesearchbox) - Configura l’esperienza della casella di ricerca della nuova scheda.
-- [PasswordMonitorAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#passwordmonitorallowed) - Consenti agli utenti di ricevere avvisi se le loro password non sono sicure.
-- [RoamingProfileSupportEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilesupportenabled) - Abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge.
-- [RoamingProfileLocation](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#roamingprofilelocation) - Imposta la directory del profilo mobile.
-- [TLSCsipherSuiteDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tlsciphersuitedenylist) - Specifica i pacchetti di crittografia TLS da disabilitare.
-
-#### Criteri obsoleti
-
-- [EnableDomainActionsDownload](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledomainactionsdownload) - Abilita il download delle azioni di dominio da Microsoft.
-- [WebComponentsV0Enabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcomponentsv0enabled) - Riattiva l'API dei componenti Web v0 fino a M84.
-- [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies)- Consente a WebDriver di eseguire la sostituzione dei criteri incompatibili.
-
-<!--- END 85 ---->
-
-## Versione 84.0.522.63: 20 agosto
-
-Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-20-2020).
-
-## Versione 84.0.522.61: 17 agosto
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 84.0.522.59: 11 agosto
-
-Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#august-11-2020).
-
-## Versione 84.0.522.58: 10 agosto
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 84.0.522.52: 1 agosto
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 84.0.522.50: 31 luglio
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 84.0.522.49: 29 luglio
-
-Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#july-29-2020).
-
-## Versione 84.0.522.48: 28 luglio
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 84.0.522.44: 23 luglio
-
-Sono stati risolti diversi bug e problemi relativi alle prestazioni.
-
+<!-- 85.0.564.41: August 27 -->
 <!-- Archived to version 84.0.522.40: July 16 -->
 
 ## Vedere anche
