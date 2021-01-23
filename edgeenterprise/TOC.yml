@@ -1,4 +1,4 @@
-# last revised 01/20/2021
+# last revised 01/21/2021
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
@@ -29,11 +29,11 @@
       href: deploy-edge-ready-for-edge.md
     - name: Note sulla versione del Canale Stable
       href: microsoft-edge-relnote-stable-channel.md
-    - name: Note sulla versione archiviate del Canale Stable
+    - name: Note sulla versione archiviate del canale stabile
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Note sulla versione del Canale Beta
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Note sulla versione archiviate del Canale Beta
+    - name: Note sulla versione del canale Beta archiviate
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: Pianificazione delle versioni
       href: microsoft-edge-release-schedule.md
@@ -119,16 +119,18 @@
               href: edge-ie-mode-add-guidance-filetype-associations.md
             - name: Condivisione cookie da Microsoft Edge a Internet Explorer
               href: edge-ie-mode-add-guidance-cookieshare.md
-            - name: Enterprise Site List Manager in Microsoft Edge
+            - name: Gestione elenco siti organizzazione in Microsoft Edge
               href: edge-ie-mode-site-list-manager.md
 - name: Sicurezza di Microsoft Edge
   items:
-    - name: Sicurezza per l'azienda
+    - name: Sicurezza per la tua azienda
       href: ms-edge-security-for-business.md
     - name: Elenco Consenti per gli endpoint Microsoft Edge
       href: microsoft-edge-security-endpoints.md
     - name: Prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-security-dlp.md
+    - name: Abilitazione automatica di monitoraggio password per gli utenti
+      href: microsoft-edge-security-password-monitor.md
     - name: Proteggersi da applicazioni potenzialmente indesiderate
       href: microsoft-edge-potentially-unwanted-apps.md
     - name: Supporto per l'accesso condizionale di Azure AD
@@ -151,11 +153,11 @@
       href: microsoft-edge-policies.md
     - name: Informazioni di riferimento sui criteri dell'aggiornamento
       href: microsoft-edge-update-policies.md
-    - name: Informazioni di riferimento sul criterio WebView2
+    - name: Riferimento ai criteri di WebView2
       href: microsoft-edge-webview-policies.md
     - name: Altre informazioni di riferimento
       items:
-        - name: Compatibilità con le versioni precedenti per la scheda Nuova organizzazione
+        - name: Compatibilità con le versioni precedenti di Enterprise New Tab
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce e DirectInvoke
           href: edge-learn-more-co-di.md
@@ -181,27 +183,27 @@
           href: edge-learnmore-reset-data-in-cloud.md
         - name: Variabili della directory dati utente
           href: edge-learnmore-create-user-directory-vars.md
-        - name: Uso del rollback di Microsoft Edge per le aziende
+        - name: Uso del rollback Microsoft Edge per le aziende
           href: edge-learnmore-rollback.md
-- name: Video di Microsoft Edge
+- name: Video su Microsoft Edge
   items:
-    - name: Raccolta video di Microsoft Edge
+    - name: Raccolta video Microsoft Edge
       href: microsoft-edge-videos.md
-    - name: Video - Microsoft Edge - Stato del browser 2020
+    - name: Video-Microsoft Edge-stato del browser 2020
       href: microsoft-edge-video-state-of-browser.md
-    - name: Video - Isolamento del browser con Application Guard
+    - name: Isolamento del browser video con Application Guard
       href: microsoft-edge-video-security-application-guard.md
     - name: 'Video: Distribuire Microsoft Edge'
       href: microsoft-edge-video-deploy.md
-    - name: Video - Prevenzione della perdita di dati (DLP)
+    - name: Video-prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-video-security-dlp.md
-    - name: Video - Identità in Microsoft Edge
+    - name: Video-identità in Microsoft Edge
       href: microsoft-edge-video-identity.md
-    - name: Video - Ripristino dello stato precedente della versione di Microsoft Edge
+    - name: Video-rollback della versione Microsoft Edge
       href: microsoft-edge-video-version-rollback.md
-    - name: Video - Lettore PDF in Microsoft Edge
+    - name: Video-lettore PDF in Microsoft Edge
       href: microsoft-edge-video-pdf-reader.md
-    - name: Video - Esplorazione sicura in Microsoft Edge
+    - name: Video-esplorazione sicura in Microsoft Edge
       href: microsoft-edge-video-security-smartscreen.md
     - name: 'Video - Sicurezza, compatibilità e gestibilità'
       href: microsoft-edge-video-security-compatibility-manageability.md
