@@ -1,42 +1,41 @@
 ---
-ms.openlocfilehash: 8b37ee168077ba7ba9194e742fa323369b8ba089
-ms.sourcegitcommit: 1d7cb96226925b7a53d0da636c009bab31291884
+ms.openlocfilehash: fee3153f7884bd3c36328d88e433d3ca1b13d0e4
+ms.sourcegitcommit: 23277e25061c75da033ed042e25c33acff3ac0bd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "11280879"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "11297854"
 ---
 <!-- This file is generated automatically each week. Changes made to this file will be overwritten.-->
 
-
-
-
-## Settimana dell'11 gennaio 2021
+## Settimana del 18 gennaio 2021
 
 
 | Data di pubblicazione |Titolo dell'argomento | Modifica |
 |------|------------|--------|
-| 11/01/2021 | [Aggiornamenti del contenuto di Microsoft Edge](/DeployEdge/microsoft-edge-content-updates)<br>Annotare il contenuto pubblicato nella settimana precedente. | modificato |
-| 11/01/2021 | [Note sulla versione di Microsoft Edge per il Canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Aggiornato archiviando le note sulla versione meno recenti. | modificato |
-| 13/01/2021 | [Note sulla versione archiviate del Canale Beta di Microsoft Edge](/DeployEdge/microsoft-edge-relnote-archive-beta-channel)<br>Articolo che elenca le note sulla versione archiviate per il Canale Beta. | aggiunto |
-| 13/01/2021 | [Note sulla versione archiviate del Canale Stabile di Microsoft Edge](/DeployEdge/microsoft-edge-relnote-archive-stable-channel)<br>Articolo che elenca le note sulla versione archiviate per il Canale Stabile. | aggiunto |
-| 13/01/2021 | [Note sulla versione di Microsoft Edge per il Canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Aggiornato archiviando le note sulla versione meno recenti. | modificato |
-| 13/01/2021 | [Note sulla versione di Microsoft Edge per il Canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Aggiornato archiviando le note sulla versione meno recenti. | modificato |
-| 13/01/2021 | [Microsoft Edge: stato del browser 2020](/DeployEdge/microsoft-edge-video-state-of-browser)<br>Aggiungere la pagina di destinazione per il video. | aggiunto |
-| 13/01/2021 | [Documentazione di Microsoft Edge in modalità Enterprise](/DeployEdge/index)<br>Aggiornare la pagina di destinazione e aggiungere la sezione video alla scheda. | modificato |
-| 13/01/2021 | [Distribuire Microsoft Edge su centinaia o migliaia di dispositivi](/DeployEdge/microsoft-edge-video-deploy)<br>Ricreare il contenuto. | modificato |
-| 13/01/2021 | [Microsoft Edge e Microsoft Search](/DeployEdge/microsoft-edge-video-search)<br>Ricreare il contenuto. | modificato |
-| 13/01/2021 | [Isolamento del browser per Microsoft Edge tramite Application Guard](/DeployEdge/microsoft-edge-video-security-application-guard)<br>Ricreare il contenuto. | modificato |
-| 13/01/2021 | [Sicurezza, compatibilità e gestibilità di Microsoft Edge](/DeployEdge/microsoft-edge-video-security-compatibility-manageability)<br>Ricreare il contenuto.  | modificato |
-| 13/01/2021 | [Microsoft Edge e prevenzione della perdita di dati](/DeployEdge/microsoft-edge-video-security-dlp)<br>Ricreare il contenuto.  | modificato |
-| 14/01/2021 | [Microsoft Edge e identità](/DeployEdge/microsoft-edge-video-identity)<br>Aggiungere la pagina di destinazione per il video. | aggiunto |
-| 14/01/2021 | [Lettore PDF professionale di Microsoft Edge](/DeployEdge/microsoft-edge-video-pdf-reader)<br>Aggiungere la pagina di destinazione per il video. | aggiunto |
-| 14/01/2021 | [Navigazione sicura in Microsoft Edge](/DeployEdge/microsoft-edge-video-security-smartscreen)<br>Aggiungere la pagina di destinazione per il video. | aggiunto |
-| 14/01/2021 | [Ripristino della versione precedente di Microsoft Edge](/DeployEdge/microsoft-edge-video-version-rollback)<br>Aggiungere la pagina di destinazione per il video. | aggiunto |
-| 14/01/2021 | [Configurare e risolvere i problemi relativi alla sincronizzazione di Microsoft Edge](/DeployEdge/microsoft-edge-enterprise-sync)<br>Ripubblicare il documento di sincronizzazione e incorporare la risoluzione dei problemi. | modificato |
-| 15/01/2021 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies)<br>Aggiornato con due nuovi criteri. | modificato |
-| 15/01/2021 | [Documentazione sui criteri di Microsoft Edge WebView2 ](/DeployEdge/microsoft-edge-webview-policies)<br>Aggiornare i criteri, nessuna modifica. | modificato |
-| 15/01/2021 | [Note sulla versione di Microsoft Edge per il Canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Correzioni per la versione secondaria 88.0.705.45. | modificato |
+| 22 gennaio 2021 | [Lettore PDF in Microsoft Edge](/DeployEdge/microsoft-edge-pdf)<br>Aggiornamento con nuove funzionalità supportate. | modificato |
+| 22 gennaio 2021 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Elenco delle funzionalità aggiornate della versione principale 88.0.705.50. | modificato |
+| 21 gennaio 2021 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel)<br>Correzioni per la versione secondaria 88.0.705.49.| modificato |
+| 21 gennaio 2021 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel)<br>Aggiornamento della versione principale 88.0.705.50, che introduce funzionalità e criteri di gruppo nuovi.| modificato |
+| 21 gennaio 2021 | [Note sulla versione degli aggiornamenti di sicurezza di Microsoft Edge](/DeployEdge/microsoft-edge-relnotes-security)<br>Aggiornamento di sicurezza per la versione stabile 88.0.705.50.  | modificato |
+| 21 gennaio 2021 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies)<br>Aggiornamento e introduzione di nuovi criteri.| modificato |
+| 21 gennaio 2021 | [Documentazione sui criteri WebView2 di Microsoft Edge](/DeployEdge/microsoft-edge-webview-policies)<br>Aggiornamento automatico, nessuna modifica. | modificato |
+| 22 gennaio 2021 | [Monitoraggio password abilitato automaticamente per gli utenti](/DeployEdge/microsoft-edge-security-password-monitor)<br>Nuovo articolo che descrive il monitoraggio delle password e come viene abilitato automaticamente per gli utenti. | aggiunto |
+| 21 gennaio 2021 | [Gestione elenco siti dell’organizzazione in Microsoft Edge ](/DeployEdge/edge-ie-mode-site-list-manager)<br>Nuovo articolo che descrive la funzionalità Gestione elenco siti integrata in Microsoft Edge. | aggiunto |
+| 19 gennaio 2021 | [Aggiornamenti dei contenuti di Microsoft Edge](/DeployEdge/microsoft-edge-content-updates)<br>Annotare il contenuto pubblicato nella settimana precedente. | modificato |
+| 22 gennaio 2021 | [Configurazione della modalità tutto schermo di Microsoft Edge](/DeployEdge/microsoft-edge-configure-kiosk-mode)<br>Aggiornamento supporto e roadmap funzionalità. | modificato |
+| 22 gennaio 2021 | [Configurazione e risoluzione dei problemi della sincronizzazione di Microsoft Edge](/DeployEdge/microsoft-edge-enterprise-sync)<br>Articolo aggiornato per riflettere le correzioni. | modificato |
+
+
+## Settimana del 21 dicembre 2020
+
+
+| Data di pubblicazione |Titolo dell'argomento | Modifica |
+|------|------------|--------|
+| 21/12/2020 | [Condivisione cookie da Microsoft Edge a Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-cookieshare) | modificato |
+| 21/12/2020 | [Associare le estensioni dei file alla modalità Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | modificato |
+| 21/12/2020 | [Domande frequenti sulla modalità IE](/DeployEdge/edge-ie-mode-faq) | modificato |
+| 21/12/2020 | [Note sulla versione di Microsoft Edge per il Canale beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
 
 
 ## Settimana del 4 gennaio 2021
@@ -50,13 +49,37 @@ ms.locfileid: "11280879"
 | 8/1/2021 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
 
 
-## Settimana del 21 dicembre 2020
+## Settimana dell'11 gennaio 2021
 
 
 | Data di pubblicazione |Titolo dell'argomento | Modifica |
 |------|------------|--------|
-| 21/12/2020 | [Reimpostare i dati di Microsoft Edge](/DeployEdge/edge-learnmore-reset-data-in-cloud) | aggiunto |
-| 21/12/2020 | [Condivisione cookie da Microsoft Edge a Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-cookieshare) | modificato |
-| 21/12/2020 | [Associare le estensioni dei file alla modalità Internet Explorer](/DeployEdge/edge-ie-mode-add-guidance-filetype-associations) | modificato |
-| 21/12/2020 | [Domande frequenti sulla modalità IE](/DeployEdge/edge-ie-mode-faq) | modificato |
-| 21/12/2020 | [Note sulla versione di Microsoft Edge per il Canale beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+| 11/01/2021 | [Aggiornamenti del contenuto di Microsoft Edge](/DeployEdge/microsoft-edge-content-updates) | modificato |
+| 11/01/2021 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+| 13 gennaio 2021 | [Piano di rilascio di Microsoft Edge](/DeployEdge/microsoft-edge-release-schedule) | modificato |
+| 13/01/2021 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+| 13/01/2021 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
+| 13/01/2021 | [Documentazione di Microsoft Edge in modalità Enterprise](/DeployEdge/index) | modificato |
+| 13/01/2021 | [Distribuzione di Microsoft Edge in centinaia o migliaia di dispositivi](/DeployEdge/microsoft-edge-video-deploy) | modificato |
+| 13/01/2021 | [Microsoft Edge e Microsoft Search](/DeployEdge/microsoft-edge-video-search) | modificato |
+| 13/01/2021 | [Isolamento del browser Microsoft Edge tramite Application Guard](/DeployEdge/microsoft-edge-video-security-application-guard) | modificato |
+| 13/01/2021 | [Sicurezza, compatibilità e gestibilità di Microsoft Edge](/DeployEdge/microsoft-edge-video-security-compatibility-manageability) | modificato |
+| 13/01/2021 | [Microsoft Edge e prevenzione della perdita di dati](/DeployEdge/microsoft-edge-video-security-dlp) | modificato |
+| 14/01/2021 | [Configurazione e risoluzione dei problemi della sincronizzazione di Microsoft Edge](/DeployEdge/microsoft-edge-enterprise-sync) | modificato |
+| 15/01/2021 | [Documentazione sui criteri del browser Microsoft Edge](/DeployEdge/microsoft-edge-policies) | modificato |
+| 15/01/2021 | [Documentazione sui criteri di Microsoft Edge WebView2 ](/DeployEdge/microsoft-edge-webview-policies) | modificato |
+| 15/01/2021 | [Note sulla versione di Microsoft Edge per il canale Beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+
+
+## Settimana del 14 dicembre 2020
+
+
+| Data di pubblicazione |Titolo dell'argomento | Modifica |
+|------|------------|--------|
+| 15/12/2020 | Domande frequenti su Microsoft Edge nell'azienda | rimosso |
+| 16/12/2020 | [Blocker Toolkit per disabilitare la distribuzione automatica di Microsoft Edge](/DeployEdge/microsoft-edge-blocker-toolkit) | modificato |
+| 16/12/2020 | [Note sulla versione di Microsoft Edge per il Canale beta](/DeployEdge/microsoft-edge-relnote-beta-channel) | modificato |
+| 16/12/2020 | Modalità tutto schermo di Microsoft Edge | rimosso |
+| 17/12/2020 | [Domande frequenti su Microsoft Edge nell'azienda](/DeployEdge/faqs-edge-in-the-enterprise) | modificato |
+| 17/12/2020 | [Note sulla versione di Microsoft Edge per il canale Stabile](/DeployEdge/microsoft-edge-relnote-stable-channel) | modificato |
+| 17/12/2020 | [Sistemi operativi supportati per Microsoft Edge](/DeployEdge/microsoft-edge-supported-operating-systems) | modificato |
