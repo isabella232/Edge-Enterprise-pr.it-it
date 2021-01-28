@@ -3,19 +3,19 @@ title: Monitoraggio password con abilitazione automatica per gli utenti
 ms.author: supalsul
 author: dan-wesley
 manager: tulasim
-ms.date: 01/21/2021
+ms.date: 01/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Monitoraggio password con abilitazione automatica per gli utenti
-ms.openlocfilehash: 8ea96522fe99082579e88b2eab330fb265d02b12
-ms.sourcegitcommit: 8a88fd38bdb5e132e89bf17dd2b5fb72f5d1b4b9
+ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
+ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "11297508"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "11304536"
 ---
 # Monitoraggio password con abilitazione automatica per gli utenti
 
@@ -26,7 +26,7 @@ Questo articolo descrive come verrà attivato Monitoraggio password in Microsoft
 
 ## Introduzione, vantaggi e disponibilità
 
-Monitoraggio password consente agli utenti di Microsoft Edge di proteggere i propri account online informandoli se una delle loro password è stata trovata in una fuga di dati online. Le fughe di dati online o le violazioni dei dati si verificano quando gli utenti malintenzionati rubano dati da app o siti Web di terze parti.
+Monitoraggio password consente agli utenti di Microsoft Edge di proteggere i propri account online informandoli se una delle loro password è stata trovata in una fuga di dati online. Le fughe di dati online o le violazioni dei dati si verificano quando gli utenti malintenzionati rubano dati da app o siti Web di terze parti. Per altre informazioni, vedere [Monitoraggio password: protezione delle password in Microsoft Edge](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/) nel blog di Microsoft Research.
 
 ### Vantaggi
 
@@ -34,7 +34,7 @@ Considerando la frequenza e l'ambito di questi attacchi online, è diventato nec
 
 ### Disponibilità
 
-Monitoraggio password era presente nei primi canali di anteprima (Canary/Dev) e verrà assegnato a Stable Channel versione 88 a partire da gennaio 2021. L'implementazione sarà graduale e potrebbero essere necessarie alcune settimane prima che vengano visualizzati il messaggio e il controllo seguenti nella pagina **Impostazioni** > **Profilo** > **Password**.
+Monitoraggio password è disponibile nel Canale Stabile, versione 88 a partire dal 21/1. L'implementazione sarà graduale e potrebbero essere necessarie alcune settimane prima che vengano visualizzati il messaggio e il controllo seguenti nella pagina **Impostazioni** > **Profilo** > **Password**.
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="Opzione per abilitare Monitoraggio password":::
 
