@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/20/2021
+ms.date: 01/27/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 6df9ad9a1b3912387180aa249e220fbfe70e99b7
-ms.sourcegitcommit: a6c58b19976c194299be217c58b9a99b48756fd0
+ms.openlocfilehash: 59c3c3426e3e7db2c5a115b15ae5e9b9e7628f9e
+ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "11281025"
+ms.lasthandoff: 01/28/2021
+ms.locfileid: "11304729"
 ---
 # Microsoft Edge - Criteri
 
@@ -35,11 +35,7 @@ Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 | Nome | Didascalia |
 |--|--|
-|[MAMAbilitato](#mamenabled)|Gestione delle app per dispositivi mobili abilitata|
-|[MostraRaccomandazioniAbilitato](#showrecommendationsenabled)|Consenti suggerimenti e notifiche promozionali da Microsoft Edge|
-
-
-
+|[SmartActionsBlockList](#smartactionsblocklist)|Blocca le azioni intelligenti per un elenco di servizi|
 
 ## Criteri disponibili
 
@@ -411,6 +407,7 @@ e suggerimenti per i servizi Microsoft|
 |[MostraRaccomandazioniAbilitato](#showrecommendationsenabled)|Consenti suggerimenti e notifiche promozionali da Microsoft Edge|
 |[SignedHTTPExchangeEnabled](#signedhttpexchangeenabled)|Abilita il supporto di Signed HTTP Exchange (SXG)|
 |[SitePerProcess](#siteperprocess)|Abilita l'isolamento del sito per tutte le origini|
+|[SmartActionsBlockList](#smartactionsblocklist)|Blocca le azioni intelligenti per un elenco di servizi|
 |[SpeechRecognitionEnabled](#speechrecognitionenabled)|Configure Speech Recognition|
 |[SpellcheckEnabled](#spellcheckenabled)|Abilita il controllo ortografico|
 |[SpellcheckLanguage](#spellchecklanguage)|Abilita lingue specifiche del controllo ortografico|
@@ -2901,7 +2898,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
   #### Descrizione
 
-  Definisce un elenco di siti, in base ai modelli URL, che possono aprire finestre popup.
+  Definisce un elenco di siti, in base ai modelli URL, che possono aprire finestre popup. * non è un valore accettato per questo criterio.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPopupsSetting](#defaultpopupssetting) (se impostato) o la configurazione personale dell'utente.
 
@@ -2966,7 +2963,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
   #### Descrizione
 
-  Definisce un elenco di siti, in base ai modelli URL, che non possono aprire finestre popup.
+  Definisce un elenco di siti, in base ai modelli URL, che non possono aprire finestre popup. * non è un valore accettato per questo criterio.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPopupsSetting](#defaultpopupssetting) (se impostato) o la configurazione personale dell'utente.
 
@@ -6980,7 +6977,7 @@ Per ProxyMode, se si sceglie il valore:
   * direct, non viene mai usato un proxy e tutti gli altri campi vengono ignorati.
   * direct, viene usato un proxy di sistema e tutti gli altri campi vengono ignorati.
   * auto_detect, tutti gli altri campi vengono ignorati.
-  * fixed_server, vengono usati i campi ProxyServer e ProxyBypassList.
+  * fixed_servers, vengono usati i campi ProxyServer e ProxyBypassList.
   * pac_script, vengono usati i campi ProxyPacUrl e ProxyBypassList.
 
 Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
@@ -7017,7 +7014,7 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", 
-  "ProxyMode": "direct", 
+  "ProxyMode": "pac_script", 
   "ProxyPacUrl": "https://internal.site/example.pac", 
   "ProxyServer": "123.123.123.123:8080"
 }
@@ -7026,7 +7023,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   ##### Valore di esempio compatto:
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
+  SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "pac_script", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
 
@@ -7040,7 +7037,7 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
   <key>ProxyBypassList</key>
   <string>https://www.example1.com,https://www.example2.com,https://internalsite/</string>
   <key>ProxyMode</key>
-  <string>direct</string>
+  <string>pac_script</string>
   <key>ProxyPacUrl</key>
   <string>https://internal.site/example.pac</string>
   <key>ProxyServer</key>
@@ -20045,6 +20042,83 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### SmartActionsBlockList
+
+  #### Blocca le azioni intelligenti per un elenco di servizi
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 89 o versioni successive
+
+  #### Descrizione
+
+  Elenca servizi specifici, ad esempio i file PDF, che non mostrano azioni intelligenti. Le azioni intelligenti sono azioni come "Definisci" disponibili nei menu di scelta rapida completi e ridotti in Microsoft Edge.
+
+Se si abilita il criterio:
+   - L'azione intelligente nei menu di scelta rapida completo e ridotto verrà disabilitata in tutti i profili per i servizi corrispondenti all'elenco specificato.
+   - Gli utenti non visualizzeranno l'azione intelligente nel menu di scelta rapida completo e nel menu ridotto nella selezione di testo per i servizi corrispondenti all'elenco specificato.
+   - Nelle impostazioni di Microsoft Edge, l'azione intelligente nel menu di scelta rapida completo e nel menu ridotto verrà disabilitata per i servizi corrispondenti all'elenco specificato.
+
+Se si disabilita o non si configura questo criterio:
+   - L'azione intelligente nel menu di scelta rapida completo e nel menu ridotto verrà abilitata per tutti i profili.
+   - Gli utenti visualizzano l'azione intelligente nei menu di scelta rapida completo e ridotto nella selezione di testo.
+   - Nelle impostazioni di Microsoft Edge, l'azione intelligente nel menu di scelta rapida completo e nel menu ridotto verrà abilitata.
+
+Mappatura delle opzioni del criterio:
+
+* smart_actions_pdf (smart_actions_pdf) = Azioni intelligenti nei file PDF
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SmartActionsBlockList
+  - Nome Criteri di gruppo: Blocca le azioni intelligenti per un elenco di servizi
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SmartActionsBlockList
+  - Percorso (scelta consigliata): SOFTWARE\Policies\Microsoft\Edge\Recommended\SmartActionsBlockList
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
+
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave preferenza: SmartActionsBlockList
+  - Valore di esempio:
+``` xml
+<array>
+  <string>smart_actions_pdf</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### SpeechRecognitionEnabled
 
   #### Configure Speech Recognition
@@ -21807,14 +21881,7 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
 
   Configurare il criterio per specificare un elenco di app web che si installano silenziosamente, senza l'intervento dell'utente, e gli utenti che possono disinstallarle o disattivarle.
 
-Ogni voce di elenco dei criteri è un oggetto con un membro obbligatorio: URL (l'URL dell'app Web da installare)
-
-e 3 membri facoltativi:
-- default_launch_container (specifica la modalità della finestra aperta dall'app Web - una nuova scheda è l'impostazione predefinita).
-
-- create_desktop_shortcut (True se desideri creare scelte rapide da tastiera desktop di Linux e Windows).
-
-- override_app_name (a partire da Microsoft Edge 89, consente di ignorare il nome dell'app se non si tratta di un'app Web progressiva (PWA) oppure il nome dell'app temporaneamente installata se si tratta di una PWA, tuttavia è necessaria l'autenticazione prima di completare l'installazione.)
+Ogni voce dell'elenco del criterio è un oggetto con un numero obbligatorio: url (l'URL dell'app web da installare) e 2 membri facoltativi: default_launch_container (specifica la modalità della finestra in cui l'app web si apre, il predefinito è una nuova scheda) e create_desktop_shortcut (true se si vuole creare dei collegamenti sul desktop per Linux e Windows).
 
   #### Funzionalità supportate:
 
@@ -21855,11 +21922,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "tab", 
     "url": "https://app.contoso.edu"
-  }, 
-  {
-    "default_launch_container": "window", 
-    "override_app_name": "Editor", 
-    "url": "https://app.contoso.com/editor"
   }
 ]
 ```
@@ -21867,7 +21929,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### Valore di esempio compatto:
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}]
   ```
   
 
@@ -21891,14 +21953,6 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <string>tab</string>
     <key>url</key>
     <string>https://app.contoso.edu</string>
-  </dict>
-  <dict>
-    <key>default_launch_container</key>
-    <string>window</string>
-    <key>override_app_name</key>
-    <string>Editor</string>
-    <key>url</key>
-    <string>https://app.contoso.com/editor</string>
   </dict>
 </array>
 ```
