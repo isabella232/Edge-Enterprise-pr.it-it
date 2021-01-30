@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/26/2021
+ms.date: 01/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: fd5336a57ad3f6706a2a61a2781c772f12e8b795
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
+ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304546"
+ms.lasthandoff: 01/29/2021
+ms.locfileid: "11306066"
 ---
 # Note sulla versione del canale Stabile Microsoft Edge
 
@@ -28,6 +28,10 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
+
+## Versione 88.0.705.56: 28 gennaio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## Versione 88.0.705.53: 26 gennaio
 
@@ -48,6 +52,11 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
 - **Autenticazione:**
 
   - Single Sign-on (SSO) ora disponibile per gli account di Azure Active Directory (Azure AD) e per l'account Microsoft (MSA) in Windows legacy. Un utente che ha eseguito l'accesso a Microsoft Edge su Microsoft Windows di livello inferiore (7, 8.1) eseguirà automaticamente l'accesso su siti Web configurati per consentire l'accesso singolo con gli account di lavoro e Microsoft (ad esempio, bing.com, office.com, msn.com, outlook.com).<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
+  
+  - Single Sign-On (SSO) per siti di lavoro che usano qualsiasi account Microsoft Azure Active Directory (Azure AD) nel sistema nei profili Microsoft Edge non Azure AD. Questa funzionalità può essere abilitata per qualsiasi profilo che non è connesso con un account aziendale o dell'istituto di istruzione e non è guest o privato e consente l'uso di qualsiasi account aziendale o dell'istituto di istruzione nel sistema operativo con tale profilo. Questa caratteristica può essere configurata in **Impostazioni**  >  **Profili** >  **Preferenze profilo** >  **Consenti l'accesso Single Sign-on per i siti aziendali o dell'Istituto di istruzione usando questo profilo**.
+  
+    > [!NOTE]
+    > "Single Sign-on (SSO) per tutti gli account di Windows che usano il profilo Microsoft Edge" è un aggiornamento delle note sulla versione del 21 gennaio.
 
 - **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode).
 
@@ -336,7 +345,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 85.0.564.68: 1 ottobre
 
-Risolti diversi bug e problemi relativi alle prestazioni.
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## Versione 85.0.564.63: 23 settembre
 
