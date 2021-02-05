@@ -3,23 +3,23 @@ title: Domande frequenti sulla modalità IE
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 02/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Domande frequenti e risoluzione dei problemi per Microsoft Edge in modalità IE
-ms.openlocfilehash: 62bf8afc5ac908e18d2f503fa9248a19f78fd6f6
-ms.sourcegitcommit: 306582403d4272831bcac390154c7cc7041a9b7e
+ms.openlocfilehash: aeae79dfd1745c754fb5ab690338f87fd25c080b
+ms.sourcegitcommit: ff67ccc93d07588a9128e9b1fe007d5393a9d6af
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "11238173"
+ms.lasthandoff: 02/03/2021
+ms.locfileid: "11312592"
 ---
 # Domande frequenti sulla modalità IE
 
-Questo articolo fornisce suggerimenti per la risoluzione dei problemi e domande frequenti per Microsoft Edge (versione 77 o successiva).
+Questo articolo fornisce suggerimenti per la risoluzione dei problemi, oltre alle domande frequenti per Microsoft Edge (versione 77 o successiva).
 
 > [!NOTE]
 > Questo articolo si applica ai canali Microsoft Edge **Stable**, **Beta** e **Dev**, versione 77 o successiva.
@@ -62,6 +62,10 @@ Per verificare se Microsoft Edge è installato a livello di sistema, digitare "e
 ### Messaggio di errore: "Disattiva debug remoto per aprire il sito in modalità Internet Explorer altrimenti potrebbe non funzionare come previsto".
 
 È possibile che venga visualizzato questo errore se si esegue il debug remoto e si accede a una pagina Web configurata per essere eseguita in modalità IE. Puoi continuare, ma verrà eseguito il rendering della pagina usando Microsoft Edge.
+
+### Messaggio di errore: "Errore: Impossibile recuperare l'elenco dei siti EMIE".
+
+Questo errore potrebbe essere visualizzato nella pagina del sito *edge://compat/enterprise*, indicando che il download dell'elenco dei siti non è riuscito. A partire da Microsoft Edge versione 87, quando i cookie vengono bloccati per le richieste di terze parti tramite il criterio [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies), non è consentita nemmeno l'autenticazione HTTP. È possibile consentire i cookie per il dominio specifico che ospita l'elenco di siti in modalità Enterprise usando i criteri di [CookieAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls), per avere la garanzia che i download degli elenchi di siti siano eseguiti correttamente.
 
 ## Domande frequenti
 
