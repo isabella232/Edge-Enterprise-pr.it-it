@@ -3,19 +3,19 @@ title: Piano di rilascio di Microsoft Edge
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/22/2021
+ms.date: 02/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Piano di rilascio di Microsoft Edge
-ms.openlocfilehash: 3b9c257123f2d1eeda1484e761963b6d0106c7c0
-ms.sourcegitcommit: d8d0b0fcb787fe90fa20426ef5e6dc194e935808
+ms.openlocfilehash: ad02c2775b836fe1a829945c205f2f52208065f1
+ms.sourcegitcommit: 90f33698262b255a63d6ba6ec854a12c1091a630
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "11297701"
+ms.lasthandoff: 02/02/2021
+ms.locfileid: "11311523"
 ---
 # Piano di rilascio di Microsoft Edge
 
@@ -33,6 +33,8 @@ La tabella seguente mostra la date pianificate per i rilasci dei canali Beta e S
 > Le date di rilascio sono approssimative e possono variare in base allo stato della build.
 
 ### Rilasci di Microsoft Edge
+
+La tabella seguente visualizza solo le informazioni relative ai rilasci principali effettuati in entrambi i canali.
 
 | Versione | Stato rilascio | Canale Beta<br>Settimana di rilascio | Canale Stable<br>Settimana di rilascio |
 |---------|-----|------|--------|
