@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 01/27/2021
+ms.date: 02/03/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 59c3c3426e3e7db2c5a115b15ae5e9b9e7628f9e
-ms.sourcegitcommit: e9433045503c2614386ee4948cda0a9c9701bac5
+ms.openlocfilehash: e57c840931e2c0e73eb720179fc780182d433831
+ms.sourcegitcommit: 5cdcf44324e35c3ac71d7ca78e512f64d4dcbfea
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/28/2021
-ms.locfileid: "11304729"
+ms.lasthandoff: 02/04/2021
+ms.locfileid: "11313424"
 ---
 # Microsoft Edge - Criteri
 
@@ -33,9 +33,11 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
-| Nome | Didascalia |
+| Nome| Didascalia |
 |--|--|
-|[SmartActionsBlockList](#smartactionsblocklist)|Blocca le azioni intelligenti per un elenco di servizi|
+|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|Windows Hello per autenticazione HTTP abilitato|
+|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|Imposta su origini specifiche i valori della configurazione gestita per i siti Web|
+
 
 ## Criteri disponibili
 
@@ -144,6 +146,7 @@ e suggerimenti per i servizi Microsoft|
 |[DisableAuthNegotiateCnameLookup](#disableauthnegotiatecnamelookup)|Disabilita la ricerca di CNAME durante la negoziazione dell'autenticazione Kerberos|
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|Include una porta non-standard nell'SPN di Kerberos|
 |[NtlmV2Enabled](#ntlmv2enabled)|Controlla se è abilitata l'autenticazione NTLMv2|
+|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|Windows Hello per autenticazione HTTP abilitato|
 ### [*Impostazioni modalità tutto schermo*](#kiosk-mode-settings-policies)
 
 |Nome criterio|Didascalia|
@@ -360,6 +363,7 @@ e suggerimenti per i servizi Microsoft|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Comportamento del reindirizzamento delle Intranet|
 |[IsolateOrigins](#isolateorigins)|Abilita l'isolamento del sito per origini specifiche|
 |[LocalProvidersEnabled](#localprovidersenabled)|Consente suggerimenti dai provider locali|
+|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|Imposta su origini specifiche i valori della configurazione gestita per i siti Web|
 |[ManagedFavorites](#managedfavorites)|Configura i Preferiti|
 |[ManagedSearchEngines](#managedsearchengines)|Gestisce i motori di ricerca|
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|Numero massimo di connessioni simultanee al server proxy|
@@ -412,7 +416,7 @@ e suggerimenti per i servizi Microsoft|
 |[SpellcheckEnabled](#spellcheckenabled)|Abilita il controllo ortografico|
 |[SpellcheckLanguage](#spellchecklanguage)|Abilita lingue specifiche del controllo ortografico|
 |[SpellcheckLanguageBlocklist](#spellchecklanguageblocklist)|Forza la disabilitazione delle lingue del controllo ortografico|
-|[StricterMixedContentTreatmentEnabled](#strictermixedcontenttreatmentenabled)|Abilita un trattamento più rigoroso per contenuti misti (deprecato)|
+|[StricterMixedContentTreatmentEnabled](#strictermixedcontenttreatmentenabled)|Abilita un trattamento più rigoroso per contenuti misti (obsoleto)|
 |[SuppressUnsupportedOSWarning](#suppressunsupportedoswarning)|Elimina l'avviso del sistema operativo non supportato|
 |[SyncDisabled](#syncdisabled)|Disabilita la sincronizzazione dei dati con i servizi di sincronizzazione di Microsoft|
 |[SyncTypesListDisabled](#synctypeslistdisabled)|Configura l'elenco dei tipi esclusi dalla sincronizzazione|
@@ -770,7 +774,7 @@ Nota: non è possibile impostare modelli URL in conflitto tra questi tre criteri
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
 Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](#savecookiesonexit).
 
@@ -5157,6 +5161,59 @@ Se non si configura questo criterio, NTLMv2 è abilitato per impostazione predef
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### WindowsHelloForHTTPAuthEnabled
+
+  #### Windows Hello per autenticazione HTTP abilitato
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 90 o successive
+
+  #### Descrizione
+
+  Indica se è necessario usare l'interfaccia utente di Windows Credential per rispondere ai problemi di autenticazione di NTLM e Negotiate.
+
+Se disabiliti questo criterio, per rispondere alle sfide di NTLM e Negotiate verrà usata una richiesta di base di nome utente e password. Se abiliti o non configuri questo criterio, verrà usata l'interfaccia utente di Windows Credential.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: WindowsHelloForHTTPAuthEnabled
+  - Nome Criteri di gruppo: Windows Hello per autenticazione HTTP abilitato
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Autenticazione HTTP
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Autenticazione HTTP
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: WindowsHelloForHTTPAuthEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ## Criteri delle impostazioni della modalità tutto schermo
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -5316,7 +5373,7 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### Info su Criteri di gruppo (ADMX)
 
   - Nome unico di Criteri di gruppo: MAMEnabled
   - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
@@ -5340,7 +5397,7 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MAMEnabled
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <false/>
 ```
@@ -6429,7 +6486,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintingBackgroundGraphicsDefault
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <string>enabled</string>
 ```
@@ -7259,7 +7316,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SleepingTabsTimeout
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <integer>900</integer>
 ```
@@ -10716,7 +10773,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -12297,7 +12354,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSerialGuardSetting
-  - Valore di esempio
+  - Valore di esempio:
 ``` xml
 <integer>2</integer>
 ```
@@ -16882,6 +16939,103 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### ManagedConfigurationPerOrigin
+
+  #### Imposta su origini specifiche i valori della configurazione gestita per i siti Web
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 90 o versioni successive
+
+  #### Descrizione
+
+  L'impostazione di questo criterio definisce il valore restituito dell'API di configurazione gestita per l'origine data.
+
+ L'API di configurazione gestita è una configurazione chiave-valore a cui è possibile accedere tramite una chiamata javascript navigator.device.getManagedConfiguration(). Questa API è disponibile solo per le origini che corrispondono ad applicazioni Web con installazione forzata tramite [WebAppInstallForceList](#webappinstallforcelist).
+
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Dictionary
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: ManagedConfigurationPerOrigin
+  - Nome Criteri di gruppo: imposta su origini specifiche i valori della configurazione gestita per i siti Web
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: ManagedConfigurationPerOrigin
+  - Tipo valore: REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
+  {
+    "managed_configuration_hash": "asd891jedasd12ue9h", 
+    "managed_configuration_url": "https://static.contoso.com/configuration.json", 
+    "origin": "https://www.contoso.com"
+  }, 
+  {
+    "managed_configuration_hash": "djio12easd89u12aws", 
+    "managed_configuration_url": "https://static.contoso.com/configuration2.json", 
+    "origin": "https://www.example.com"
+  }
+]
+```
+
+  ##### Valore di esempio compatto:
+
+  ```
+  SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [{"managed_configuration_hash": "asd891jedasd12ue9h", "managed_configuration_url": "https://static.contoso.com/configuration.json", "origin": "https://www.contoso.com"}, {"managed_configuration_hash": "djio12easd89u12aws", "managed_configuration_url": "https://static.contoso.com/configuration2.json", "origin": "https://www.example.com"}]
+  ```
+  
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave preferenza: ManagedConfigurationPerOrigin
+  - Valore di esempio:
+``` xml
+<key>ManagedConfigurationPerOrigin</key>
+<array>
+  <dict>
+    <key>managed_configuration_hash</key>
+    <string>asd891jedasd12ue9h</string>
+    <key>managed_configuration_url</key>
+    <string>https://static.contoso.com/configuration.json</string>
+    <key>origin</key>
+    <string>https://www.contoso.com</string>
+  </dict>
+  <dict>
+    <key>managed_configuration_hash</key>
+    <string>djio12easd89u12aws</string>
+    <key>managed_configuration_url</key>
+    <string>https://static.contoso.com/configuration2.json</string>
+    <key>origin</key>
+    <string>https://www.example.com</string>
+  </dict>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### ManagedFavorites
 
   #### Configura i Preferiti
@@ -19762,7 +19916,7 @@ Se non si configurano i criteri seguenti:
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -20371,17 +20525,17 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
   ### StricterMixedContentTreatmentEnabled
 
-  #### Abilita un trattamento più rigoroso per contenuti misti (deprecato)
+  #### Abilita un trattamento più rigoroso per contenuti misti (obsoleto)
 
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
   #### Versioni supportate:
 
-  - In Windows e macOS dalla versione 81 o successive
+  - In Windows e macOS da 81 a 84
 
   #### Descrizione
 
-  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con un trattamento più rigoroso dei contenuti misti. Non funzionerà in Microsoft Edge versione 85.
+  Questo criterio non funziona perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se viene rilevata incompatibilità con il trattamento più rigoroso per contenuti misti.
 
 Questo criterio controlla il trattamento per i contenuti misti (contenuti HTTP in siti HTTPS) nel browser.
 
@@ -20406,7 +20560,7 @@ Questo criterio non influisce su altri tipi di contenuti misti diversi da audio,
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: StricterMixedContentTreatmentEnabled
-  - Nome Criteri di gruppo: Abilita un trattamento più rigoroso per contenuti misti (deprecato)
+  - Nome Criteri di gruppo: Abilita un trattamento più rigoroso per contenuti misti (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -20724,7 +20878,7 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -20751,7 +20905,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: TLSCipherSuiteDenyList
-  - Valore di esempio
+  - Valore di esempio:
 ``` xml
 <array>
   <string>0x1303</string>
@@ -20857,7 +21011,7 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TargetBlankImpliesNoOpener
   - Nome Criteri di gruppo: non impostare window.opener per i collegamenti con destinazione _blank
@@ -20881,7 +21035,7 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TargetBlankImpliesNoOpener
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <false/>
 ```
@@ -21881,7 +22035,14 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
 
   Configurare il criterio per specificare un elenco di app web che si installano silenziosamente, senza l'intervento dell'utente, e gli utenti che possono disinstallarle o disattivarle.
 
-Ogni voce dell'elenco del criterio è un oggetto con un numero obbligatorio: url (l'URL dell'app web da installare) e 2 membri facoltativi: default_launch_container (specifica la modalità della finestra in cui l'app web si apre, il predefinito è una nuova scheda) e create_desktop_shortcut (true se si vuole creare dei collegamenti sul desktop per Linux e Windows).
+Ogni voce di elenco dei criteri è un oggetto con un membro obbligatorio: URL (l'URL dell'app Web da installare)
+
+e 3 membri facoltativi:
+- default_launch_container (specifica la modalità della finestra aperta dall'app Web - una nuova scheda è l'impostazione predefinita).
+
+- create_desktop_shortcut (True se desideri creare scelte rapide da tastiera desktop di Linux e Windows).
+
+- override_app_name (a partire da Microsoft Edge 89, consente di ignorare il nome dell'app se non si tratta di un'app Web progressiva (PWA) oppure il nome dell'app temporaneamente installata se si tratta di una PWA, tuttavia è necessaria l'autenticazione prima di completare l'installazione.)
 
   #### Funzionalità supportate:
 
@@ -21922,6 +22083,11 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
     "default_launch_container": "tab", 
     "url": "https://app.contoso.edu"
+  }, 
+  {
+    "default_launch_container": "window", 
+    "override_app_name": "Editor", 
+    "url": "https://app.contoso.com/editor"
   }
 ]
 ```
@@ -21929,7 +22095,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### Valore di esempio compatto:
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
   ```
   
 
@@ -21953,6 +22119,14 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
     <string>tab</string>
     <key>url</key>
     <string>https://app.contoso.edu</string>
+  </dict>
+  <dict>
+    <key>default_launch_container</key>
+    <string>window</string>
+    <key>override_app_name</key>
+    <string>Editor</string>
+    <key>url</key>
+    <string>https://app.contoso.com/editor</string>
   </dict>
 </array>
 ```
