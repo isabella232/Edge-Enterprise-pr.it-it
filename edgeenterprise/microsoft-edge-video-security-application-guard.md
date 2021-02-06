@@ -3,19 +3,19 @@ title: Isolamento del browser per Microsoft Edge tramite Application Guard
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 01/12/2021
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Isolamento del browser per Microsoft Edge tramite Application Guard
-ms.openlocfilehash: abbe1994f811a4e779104a4c358915bf2b41ef55
-ms.sourcegitcommit: 42af8123dc86c2a1d07de0080a6c878c151f354f
+ms.openlocfilehash: e3e4d21669055ddd36a08d307083d43be6f943b4
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "11269332"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314749"
 ---
 # Video: isolamento del browser per Microsoft Edge tramite Application Guard
 
@@ -30,4 +30,5 @@ Microsoft Edge consente di ridurre l’esposizione della tua azienda agli attacc
 ## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
+- [Supporto di Microsoft Edge per Microsoft Defender Application Guard](microsoft-edge-security-windows-defender-application-guard.md)
 - [Playlist di YouTube su Microsoft Edge](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

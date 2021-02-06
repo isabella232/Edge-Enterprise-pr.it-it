@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 01/28/2021
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 6adba3b373f5989362594d0ff84a2932a661550a
-ms.sourcegitcommit: 6109055bfd0e2deba7f0cc75b27f6a805b16a0b9
+ms.openlocfilehash: 6175f1a4156af697e121ebe7230b5b86d347e825
+ms.sourcegitcommit: b1d49b229c47dc1d99e1b677d75aad38b3334ed6
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/29/2021
-ms.locfileid: "11306066"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11314226"
 ---
 # Note sulla versione del canale Stabile Microsoft Edge
 
@@ -28,6 +28,16 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
+
+## Versione 88.0.705.63: 5 febbraio
+
+Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021).
+
+## Versione 88.0.705.62: 4 febbraio
+
+Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021).
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 88.0.705.56: 28 gennaio
 
@@ -73,10 +83,7 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
   - Monitoraggio password. Quando una delle password salvate nel browser corrisponde a quelle visualizzate nell'elenco di credenziali perse, Microsoft Edge invierà una notifica e chiederà di aggiornare la password. Password Monitor cerca le corrispondenze per vostro conto ed è attivo per impostazione predefinita.
   - Modifica password. Ora è possibile modificare le password salvate direttamente nelle Impostazioni di Microsoft Edge. Ogni volta che una password viene aggiornata all'esterno di Microsoft Edge, è facile sostituire la password salvata in precedenza con quella nuova modificando la voce salvata in Impostazioni. 
 
-- **Prestazioni:**
-
-  - Migliorare le prestazioni del browser con le schede di sospensione. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare il periodo di tempo che intercorre prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso, esistono anche sistemi euristici per evitare che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità è limitata a un gruppo di utenti selezionati casualmente che hanno abilitato la sperimentazione. Stiamo programmando di implementare per impostazione predefinita la funzionalità delle schede di sospensione con Microsoft Edge versione 89. Questa funzionalità può essere gestita tramite i criteri di gruppo.
-  - Migliorare la velocità di avvio di Microsoft Edge con il potenziamento di avvio. Per migliorare la velocità di avvio di Microsoft Edge, abbiamo sviluppato una caratteristica denominata potenziamento di avvio. Il potenziamento di avvio rende Microsoft Edge più veloce, poiché ne permette l'esecuzione in background. Nota: questa funzionalità è limitata a un gruppo di utenti selezionato in modo casuale, i quali hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
+- Migliorare la velocità di avvio di Microsoft Edge con il potenziamento di avvio. Per migliorare la velocità di avvio di Microsoft Edge, abbiamo sviluppato una caratteristica denominata potenziamento di avvio. Il potenziamento di avvio rende Microsoft Edge più veloce, poiché ne permette l'esecuzione in background. Nota: questa funzionalità è limitata a un gruppo di utenti selezionato in modo casuale, i quali hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
 
 - **Produttività:**
 

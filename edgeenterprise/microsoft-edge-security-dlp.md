@@ -3,19 +3,19 @@ title: Prevenzione della perdita di dati in Microsoft Edge
 ms.author: archandr
 author: dan-wesley
 manager: seanlynd
-ms.date: 11/18/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Prevenzione della perdita di dati (DPL) in Microsoft Edge
-ms.openlocfilehash: 72f670caf34a09cdfc7f47575f688c2a39d3c221
-ms.sourcegitcommit: 5a5be508c3c9c57187aca821b4a16f639abdd7e2
+ms.openlocfilehash: 8c7906f69f8d1161b47aa381bc04bcdaa70fe6cd
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "11176943"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314559"
 ---
 # Prevenzione della perdita di dati (DPL) in Microsoft Edge
 
@@ -34,21 +34,22 @@ Microsoft Endpoint DLP fa parte della nuova generazione di prevenzione della per
 > [!NOTE]
 > Si applica a Microsoft Edge versione 85 o successiva.
 
-Per altre informazioni su Endpoint DLP:
+Per altre informazioni sulla prevenzione della perdita dei dati degli endpoint, usare le risorse seguenti:
 
-- [Scopri di più sulla prevenzione della perdita dei dati di Microsoft 365 Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide)
-- [Introduzione sulla prevenzione della perdita dei dati di Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide)
+- [Video: Microsoft Edge e prevenzione della perdita dei dati (DLP)](microsoft-edge-video-security-dlp.md)
+- [Informazioni sulla prevenzione della perdita dei dati di Microsoft 365 Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide&preserve-view=true)
+- [Introduzione sulla prevenzione della perdita dei dati di Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)
 
 Microsoft Edge applica i criteri configurati dall'amministratore per i file sensibili e registra gli eventi di controllo per le attività non conformi.
 
 Alcune delle attività utente che è possibile controllare e gestire nei dispositivi che eseguono Windows 10 includono le seguenti:
 
-- Caricamento file: protegge il caricamento di file sensibili in posizioni cloud non autorizzate. I prossimi 3 screenshot mostrano una sequenza in cui un utente tenta di trascinare un file di dati sensibili nella propria archiviazione locale.
+- Caricamento file: protegge il caricamento di file sensibili in posizioni cloud non autorizzate. <!-- The next 3 screenshots show a sequence where a user tries to drop a sensitive data file on to their local storage.-->
 - Protezione Appunti: protegge i dati sensibili dalla copia dal file.
 - Protezione stampa: proteggere il file riservato dalla stampa.
 - Salva su USB / rete: protegge i file sensibili dal salvataggio in un’unità di archiviazione USB rimovibile o in posizioni di rete non autorizzate.
 
-Per informazioni più dettagliate sulle attività degli utenti che è possibile controllare e gestire, vedi [Attività endpoint che è possibile monitorare e su cui si può intervenire](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on).
+Per informazioni più dettagliate sulle attività degli utenti che è possibile controllare e gestire, vedi [Attività endpoint che è possibile monitorare e su cui si può intervenire](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true).
 
 ## Windows Information Protection
 
@@ -62,5 +63,5 @@ Per informazioni su come Microsoft Edge supporta Windows Information Protection 
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Video: Prevenzione della perdita di dati - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [Panoramica della prevenzione della perdita di dati](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide)
+- [Panoramica della prevenzione della perdita di dati](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide&preserve-view=true)
 - [Proteggere i dati aziendali con Windows Information Protection](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

@@ -3,23 +3,23 @@ title: Rollback di Microsoft Edge per le aziende
 ms.author: v-danwes
 author: dan-wesley
 manager: srugh
-ms.date: 11/30/2020
+ms.date: 02/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Come eseguire il rollback di Microsoft Edge a una versione precedente
-ms.openlocfilehash: 69fdfd29572dd6eda9f7eb7cbd4c2500851dcafc
-ms.sourcegitcommit: 63a094a5268bb3b4819269438357095acd79abac
+ms.openlocfilehash: 2059ea04bf8ec3a03266fe95599ea3b515b78c12
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "11192426"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314569"
 ---
 # Come eseguire il rollback di Microsoft Edge a una versione precedente
 
-Questo articolo descrive come eseguire il rollback a una versione precedente di Microsoft Edge usando la funzionalità di rollback.
+Questo articolo descrive come eseguire il rollback a una versione precedente di Microsoft Edge usando la funzionalità di rollback. Per altre informazioni su questa funzionalità, vedere il [video: rollback della versione Microsoft Edge](microsoft-edge-video-version-rollback.md).
 
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge versione 86 o successiva.
@@ -163,3 +163,4 @@ L'impostazione dei criteri di gruppo non è ancora stata sincronizzata con tutti
 ## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
+- [Video: Ripristino della versione precedente di Microsoft Edge](microsoft-edge-video-version-rollback.md)

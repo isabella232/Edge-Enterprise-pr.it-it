@@ -3,23 +3,23 @@ title: Supporto e configurazione delle identità in Microsoft Edge
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 12/08/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto e configurazione delle identità in Microsoft Edge
-ms.openlocfilehash: e553174fa40cb60046e5a46af4d81a0787957a93
-ms.sourcegitcommit: b3f8ef9e4944efa3be15c7bfc0cd13360a350c1c
+ms.openlocfilehash: 05dc0fabe212f31fe9207c72d097913d5765915f
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "11201293"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314609"
 ---
 # Supporto e configurazione delle identità in Microsoft Edge
 
-In questo articolo viene descritto in che modo Microsoft Edge usa l'identità per supportare funzionalità come la sincronizzazione e l'accesso Single Sign-On (SSO). Microsoft Edge supporta l'accesso con Active Directory Domain Services (AD DS), Azure Active Directory (Azure AD) e gli account Microsoft (MSA). Attualmente Microsoft Edge supporta solo gli account di Azure Active Directory (Azure AD) che appartengono al cloud globale o al cloud sovrano GCC. Stiamo lavorando per aggiungere il supporto per altri cloud sovrani. 
+In questo articolo viene descritto in che modo Microsoft Edge usa l'identità per supportare funzionalità come la sincronizzazione e l'accesso Single Sign-On (SSO). Microsoft Edge supporta l'accesso con Active Directory Domain Services (AD DS), Azure Active Directory (Azure AD) e gli account Microsoft (MSA). Attualmente Microsoft Edge supporta solo gli account di Azure Active Directory (Azure AD) che appartengono al cloud globale o al cloud sovrano GCC. Stiamo lavorando per aggiungere il supporto per altri cloud sovrani.
 
 > [!NOTE]
 > Si applica a Microsoft Edge versione 77 o successiva.
@@ -28,7 +28,7 @@ In questo articolo viene descritto in che modo Microsoft Edge usa l'identità pe
 
 Microsoft Edge supporta l'accesso al profilo del browser con un account Azure AD, MSA o di dominio. Il tipo di account usato per l'accesso determina quali funzionalità autenticate sono disponibili per l'utente in Microsoft Edge. Nella tabella seguente è riepilogato il supporto delle funzionalità per ogni tipo di account.
 
-|    | Azure AD Premium | Azure AD Free | AD DS locale | MSA     |
+| Funzionalità   | Azure AD Premium | Azure AD Free | AD DS locale | MSA     |
 |----|------------------|---------------|----------------|---------|
 | Sincronizzazione | Sì | No | No | Sì |
 | SSO con token di aggiornamento primario | Sì | Sì | No | Sì |
@@ -51,7 +51,7 @@ Per impostazione predefinita, l'utente non si connetterà in modo automatico. Se
 
 ### Accesso manuale
 
-Se l'utente non si connette in modo automatico a Microsoft Edge, può accedere manualmente a Microsoft Edge durante la prima esperienza di esecuzione, tramite le impostazioni del browser o aprendo il riquadro a comparsa di identità. 
+Se l'utente non si connette in modo automatico a Microsoft Edge, può accedere manualmente a Microsoft Edge durante la prima esperienza di esecuzione, tramite le impostazioni del browser o aprendo il riquadro a comparsa di identità.
 
 ### Gestione dell'accesso al browser
 
@@ -104,7 +104,7 @@ Se un utente salva le password in Microsoft Edge, può abilitare una funzionalit
 ## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Pagina di destinazione della documentazione di Microsoft Edge](https://docs.microsoft.com/DeployEdge/)
-- [Gestione delle identità e dell'accesso](https://www.microsoft.com/security/technology/identity-access-management)
+- [Video: Microsoft Edge e identità](microsoft-edge-video-identity.md)
+- [Gestione delle identità e degli accessi](https://www.microsoft.com/security/technology/identity-access-management)
 - [Piattaforma di identità](https://developer.microsoft.com/identity)
 - [Quattro passaggi per una solida base di identità con Azure Active Directory](https://docs.microsoft.com/azure/active-directory/hybrid/four-steps)

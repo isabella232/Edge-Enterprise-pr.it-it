@@ -3,19 +3,19 @@ title: Microsoft Edge e Microsoft Defender Application Guard
 ms.author: srugh
 author: dan-wesley
 manager: seanlyn
-ms.date: 10/12/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto di Microsoft Edge per Microsoft Defender Application Guard
-ms.openlocfilehash: fcf9bb6e36ddd5e014bd8176643554bfe3ff8fd4
-ms.sourcegitcommit: b813f91803b8f0f27489634f49e7e0585b746d48
+ms.openlocfilehash: 751201192c3b4e69cc866f35e51a6db23b9972f9
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "11114364"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314589"
 ---
 # Supporto di Microsoft Edge per Microsoft Defender Application Guard
 
@@ -38,7 +38,10 @@ Progettato per Windows 10 e Microsoft Edge, Application Guard usa un approccio d
 
 L'amministratore dell'organizzazione definisce quali sono i siti, le risorse del cloud e le reti interne attendibili. Tutto ciò che non è incluso nell'elenco dei siti attendibili viene considerato non attendibile. Questi siti sono isolati dalla rete e dai dati aziendali nel dispositivo dell'utente.
 
-Per altre informazioni, vedere [Che cos'è Application Guard e come funziona?](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work).
+Per ulteriori informazioni:
+
+- guardare il video sull' [isolamento del browser Microsoft Edge con Application Guard](microsoft-edge-video-security-application-guard.md)
+- leggere [cos'è Application Guard e come funziona?](https://docs.microsoft.com/windows/security/threat-protection/microsoft-defender-application-guard/md-app-guard-overview#what-is-application-guard-and-how-does-it-work)
 
 Lo screenshot seguente mostra un esempio di messaggio di Application Guard che indica che l'utente sta navigando in uno spazio sicuro.
 
