@@ -3,19 +3,19 @@ title: Supporto di Microsoft Edge per Microsoft Defender SmartScreen
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 04/23/2020
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto di Microsoft Edge per Microsoft Defender SmartScreen
-ms.openlocfilehash: d27366409d7792784c360cfee10f96ab174aa375
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 2de93b4ebe26b4a90592f7ee9143f6f775b682ce
+ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980314"
+ms.lasthandoff: 02/06/2021
+ms.locfileid: "11314689"
 ---
 # Supporto di Microsoft Edge per Microsoft Defender SmartScreen
 
@@ -24,7 +24,7 @@ Questo articolo illustra i vantaggi dell'uso di Microsoft Defender SmartScreen, 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-Microsoft Defender SmartScreen è un servizio usato da Microsoft Edge per garantire la sicurezza mentre navighi sul Web. Microsoft Defender SmartScreen offre un sistema di avviso precoce che informa gli utenti della presenza di siti Web sospetti che potrebbero commettere attacchi di phishing o provare a distribuire malware attraverso un attacco mirato.
+Microsoft Defender SmartScreen è un servizio usato da Microsoft Edge per garantire la sicurezza mentre navighi sul Web. Microsoft Defender SmartScreen offre un sistema di avviso precoce che informa gli utenti della presenza di siti Web sospetti che potrebbero commettere attacchi di phishing o provare a distribuire malware attraverso un attacco mirato. Per altre informazioni, guardare [il video: navigazione sicura in Microsoft Edge](microsoft-edge-video-security-smartscreen.md).
 
 > [!NOTE]
 > Prima di Windows 10, versione 1703 questa funzionalità si chiamava filtro SmartScreen se usata all'interno del browser e Microsoft SmartScreen se usata al di fuori del browser.
@@ -64,11 +64,11 @@ Microsoft Defender SmartScreen determina se un'app o un programma di installazio
 - I file con una reputazione attendibile nota verranno scaricati senza alcun avviso.  
 - I file con una reputazione dannosa nota mostrano un avviso che informa l'utente che il file è pericoloso ed è stato segnalato come dannoso. Lo screenshot successivo è un esempio di avviso per un file dannoso.
 
-  ![Pagina di blocco di Microsoft Defender SmartScreen per un file con reputazione dannosa](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-known-malicious.png)
+  ![Notifica di blocco di Microsoft Defender SmartScreen per un file con una cattiva reputazione](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-known-malicious.png)
 
 - I file sconosciuti mostrano un avviso che informa l'utente che il download non ha un impatto noto e consiglia di prestare attenzione. Lo screenshot successivo è un esempio di avviso per un file sconosciuto.
 
-  ![Pagina di blocco di Microsoft Defender SmartScreen per un file con reputazione dannosa](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-unknown-malicious.png)
+  ![Notifica di blocco di Microsoft Defender SmartScreen per file con reputazione sconosciuta](media/microsoft-edge-security-smartscreen/ms-edge-smartscreen-unknown-malicious.png)
 
 Non tutti i programmi sconosciuti sono dannosi e lo scopo dell'avviso di file sconosciuto è quello di fornire contesto e indicazioni agli utenti che ne hanno bisogno, soprattutto se l'avviso non è previsto.
 
@@ -120,6 +120,7 @@ Mentre navighi sul Web, Microsoft Defender SmartScreen classifica i siti Web e i
 ## Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
+- [Video: esplorazione sicura in Microsoft Edge](microsoft-edge-video-security-smartscreen.md)
 - [Panoramica di Microsoft Defender SmartScreen](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-smartscreen/windows-defender-smartscreen-overview)
 - [Protezione dalle minacce](https://docs.microsoft.com/windows/security/threat-protection/index)
 - [Proteggersi da applicazioni potenzialmente indesiderate](https://docs.microsoft.com/DeployEdge/microsoft-edge-potentially-unwanted-apps)

@@ -1,21 +1,21 @@
 ---
 title: Pianifica la distribuzione di Microsoft Edge
-ms.author: cjacks
+ms.author: collw
 author: appcompatguy
-manager: saudm
-ms.date: 11/04/2020
+manager: srugh
+ms.date: 02/05/2021
 audience: ITPro
 ms.topic: procedural
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Pianifica la distribuzione di Microsoft Edge
-ms.openlocfilehash: a6c24dcc8c2f53bd6813a0dea9584cd6b5df8285
-ms.sourcegitcommit: a5b13de18c5f9006c92a7c8deba1e1645601ad5c
+ms.openlocfilehash: 1b56d9874550c2002cec0577a53a3bf5766e2805
+ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "11155253"
+ms.lasthandoff: 02/05/2021
+ms.locfileid: "11313876"
 ---
 # Pianifica la distribuzione di Microsoft Edge
 
@@ -55,7 +55,6 @@ Inizia definendo lo stato corrente:
 Dopo aver compreso lo stato corrente, puoi determinare gli obiettivi desiderati per la distribuzione del browser, tenendo in considerazione quanto segue:
 
 - Desideri [impostare Microsoft Edge come browser predefinito](https://docs.microsoft.com/DeployEdge/edge-default-browser)?
-- Desideri nascondere la versione legacy di Microsoft Edge o [lasciarla disponibile per gli utenti](https://docs.microsoft.com/DeployEdge/microsoft-edge-sysupdate-access-old-edge)?
 - Come [configurerai Microsoft Edge](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge)?
 - La configurazione di quali funzionalità è di fondamentale importanza nella distribuzione iniziale?
 - Qual è il processo per la risoluzione dei problemi di compatibilità o configurazione identificati?
@@ -211,4 +210,3 @@ Dopo aver terminato il progetto pilota e aver aggiornato il piano di distribuzio
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Video: Distribuire Microsoft Edge](microsoft-edge-video-deploy.md)
-
