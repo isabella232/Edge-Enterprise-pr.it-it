@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/08/2021
+ms.date: 02/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 1738114b34625d8c4b2e96536c6e91dccd9fafa6
-ms.sourcegitcommit: 5d9ca85738c9dd8581738674e0459a549b6381c8
+ms.openlocfilehash: 822c6cf40cc046d1fe38301fb89cf2a8fe67c04e
+ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/08/2021
-ms.locfileid: "11319070"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "11325866"
 ---
 # Note sulla versione per il canale Microsoft Edge Beta
 
@@ -29,26 +29,31 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 ### Aggiornamenti delle funzionalità
 
-- La modalità tutto schermo offre altre funzionalità di blocco. A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Ulteriori informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
+- **La modalità tutto schermo offre altre funzionalità di blocco.** A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Altre informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
 
-- Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat*. È possibile usare questo strumento per creare, modificare ed esportare il file XML dell'elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Ulteriori informazioni](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager).
+- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager).
 
-- Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In tal modo, i dati degli utenti vengano cancellati dai servizi Microsoft, oltre a risolvere alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
+- **Miglioramento delle prestazioni del browser con le schede di sospensione**. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare l’intervallo di tempo prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso di lavoro, sono anche disponibili sistemi [euristici](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) che evitano che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità può essere gestita tramite i criteri di gruppo.
 
-- Miglioramenti all'esperienza di selezione del testo nei documenti PDF. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
+  > [!NOTE]
+  > "Miglioramento delle prestazioni del browser con le schede di sospensione" è un aggiornamento delle note sulla versione del 3 febbraio per la versione principale 89.0.774.18.
 
-- L'avviso "Disabilitare le estensioni per la modalità sviluppatore" può essere ignorato definitivamente. A partire da Microsoft Edge versione 89, è possibile disattivare l'avviso "Disabilitare le estensioni per la modalità sviluppatore" selezionando l'opzione "Non visualizzare più questo messaggio".
+- **Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud**. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In questo modo i dati degli utenti vengano cancellati dai servizi Microsoft, oltre a risolvere alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
 
-- Gestire le estensioni dalla barra degli strumenti. Il menu delle nuove estensioni sulla barra degli strumenti consente di nascondere/aggiungere facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
+- **Miglioramenti all'esperienza di selezione del testo nei documenti in formato PDF**. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
 
-- Supporto per la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina di ricerca nella cronologia e nell'hub della cronologia. A partire da Microsoft Edge versione 89, trovare un articolo/sito Web sarà più facile con la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina della cronologia e nell'hub della cronologia. Gli utenti possono cercare contenuti/descrizioni/intervalli di tempo (ad esempio"ricetta per torta della settimana scorsa") oltre a titoli/corrispondenze con parole chiave dell'URL.
+- **L'avviso "Disabilitare le estensioni per la modalità sviluppatore" può essere ignorato definitivamente**. A partire da Microsoft Edge versione 89, è possibile disattivare l'avviso "Disabilitare le estensioni per la modalità sviluppatore" selezionando l'opzione "Non visualizzare più questo messaggio".
+
+- **Gestione delle estensioni dalla barra degli strumenti**. Il menu delle nuove estensioni sulla barra degli strumenti consente di nascondere o bloccare facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
+
+- **Supporto per la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina di ricerca nella cronologia e nell'hub della cronologia**. A partire da Microsoft Edge versione 89, trovare un articolo/sito Web sarà più facile con la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina della cronologia e nell'hub della cronologia. Gli utenti possono cercare contenuti/descrizioni/intervalli di tempo (ad esempio"ricetta per torta della settimana scorsa") oltre a titoli/corrispondenze con parole chiave dell'URL.
 
 - **Produttività:**
 
   - Il campo Data di nascita ora è supportato nel riempimento automatico. Oggi Microsoft Edge permette di risparmiare tempo e fatica nella compilazione di moduli e nella creazione di account online compilando automaticamente i dati, come indirizzi, nomi, numeri di telefono e così via. A partire da Microsoft Edge versione 89, viene aggiunto il supporto per un altro campo che può essere salvato e compilato automaticamente: la data di nascita. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
   - Estendere i suggerimenti di riempimento automatico per includere il contenuto degli Appunti. Il contenuto degli Appunti viene analizzato quando si seleziona un campo di profilo/indirizzo (ad esempio telefono, posta elettronica, CAP, città, stato e così via), in modo da mostrare i suggerimenti per il riempimento automatico.
 
-- Supporto del blocco della riproduzione automatica dei video. A partire da Microsoft Edge versione 89, gli utenti potranno impedire la riproduzione automatica degli elementi multimediali.
+- **Supporto per il blocco della riproduzione automatica dei video**. A partire da Microsoft Edge versione 89, gli utenti potranno impedire la riproduzione automatica degli elementi multimediali.
 
 ### Aggiornamenti dei criteri
 
@@ -104,7 +109,7 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
   - Single Sign-on (SSO) ora disponibile per gli account di Azure Active Directory (Azure AD) e per l'account Microsoft (MSA) in macOS e Windows legacy. Un utente che ha eseguito l'accesso a Microsoft Edge su macOS o su Microsoft Windows (7, 8.1) eseguirà automaticamente l'accesso su siti Web configurati per consentire l'accesso Single Sign-On con gli account lavoro e Microsoft (ad esempio, bing.com, office.com, msn.com, outlook.com).<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
   - Passare automaticamente gli utenti di macOS al profilo di lavoro per i siti che eseguono l'autenticazione con l'account di lavoro. A partire da Microsoft Edge versione 88, su macOS offriamo la possibilità di passare ai siti che eseguono l'autenticazione con il profilo di lavoro di un utente.<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
 
-- Opzione modalità tutto schermo per terminare la sessione. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode).
+- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode).
 
 - **Sicurezza e privacy:**
 
@@ -259,7 +264,7 @@ Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggi
 
 ## Versione 86.0.622.43: 16 ottobre
 
-Risolti diversi bug e problemi relativi alle prestazioni.
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## Versione 86.0.622.36: 7 ottobre
 
@@ -271,7 +276,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 86.0.622.28: 28 settembre
 
-Sono stati risolti diversi bug e problemi di prestazioni.
+Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## Versione 86.0.622.15: 14 settembre
 

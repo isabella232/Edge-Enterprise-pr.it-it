@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/03/2021
+ms.date: 02/09/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: e57c840931e2c0e73eb720179fc780182d433831
-ms.sourcegitcommit: 5cdcf44324e35c3ac71d7ca78e512f64d4dcbfea
+ms.openlocfilehash: fb1ae6bb0933767a2c5cbcc59212602aed068b9e
+ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/04/2021
-ms.locfileid: "11313424"
+ms.lasthandoff: 02/10/2021
+ms.locfileid: "11325896"
 ---
 # Microsoft Edge - Criteri
 
@@ -33,10 +33,11 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
-| Nome| Didascalia |
+| Nome | Didascalia |
 |--|--|
-|[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|Windows Hello per autenticazione HTTP abilitato|
-|[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|Imposta su origini specifiche i valori della configurazione gestita per i siti Web|
+|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|Sincronizzazione Preferiti di Application Guard abilitata|
+|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge|
+
 
 
 ## Criteri disponibili
@@ -60,6 +61,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |Nome criterio|Didascalia|
 |-|-|
 |[ApplicationGuardContainerProxy](#applicationguardcontainerproxy)|Proxy contenitore di Application Guard|
+|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|Sincronizzazione Preferiti di Application Guard abilitata|
 ### [*Cast*](#cast-policies)
 
 |Nome criterio|Didascalia|
@@ -380,7 +382,8 @@ e suggerimenti per i servizi Microsoft|
 |[ProactiveAuthEnabled](#proactiveauthenabled)|Abilitare l'autenticazione proattiva|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|Abilita il contenuto promozionale di una scheda completa|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|Chiede dove salvare i file scaricati|
-|[QuicAllowed](#quicallowed)|Consente il protocollo QUIC|
+|[QuicAllowed](#quicallowed)|Consenti il protocollo QUIC|
+|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge|
 |[RedirectSitesFromInternetExplorerPreventBHOInstall](#redirectsitesfrominternetexplorerpreventbhoinstall)|Impedisci l’installazione di BHO per reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge.|
 |[RedirectSitesFromInternetExplorerRedirectMode](#redirectsitesfrominternetexplorerredirectmode)|Reindirizzar i siti incompatibili da Internet Explorer a Microsoft Edge.|
 |[RelaunchNotification](#relaunchnotification)|Inviare una notifica a un utente in merito al riavvio del browser consigliato o necessario per gli aggiornamenti in sospeso|
@@ -536,6 +539,63 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
   SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {"ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### ApplicationGuardFavoritesSyncEnabled
+
+  #### Sincronizzazione Preferiti di Application Guard abilitata
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 90 o successive
+
+  #### Descrizione
+
+  Questo norma consente ai computer e ai dispositivi Microsoft Edge con protezione dell'applicazione abilitata di sincronizzare i Preferiti dall'host al contenitore in modo che corrispondano ai Preferiti.
+
+Se [ManagedFavorites](#managedfavorites) vengono impostati, anche questi preferiti verranno sincronizzati al contenitore.
+
+Se abiliti questa norma, la modifica dei Preferiti nel contenitore è disabilitata. Quindi, i pulsanti Aggiungi preferiti e Aggiungi cartella preferiti vengono sfocati nell'interfaccia utente del browser del contenitore.
+
+Se disabiliti o non configuri questa norma, i Preferiti nell'host non verranno condivisi con il contenitore.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome unico dei Criteri di gruppo: ApplicationGuardFavoritesSyncEnabled
+  - Nome dei criteri di gruppo: Sincronizzazione dei Preferiti di Application Guard abilitata
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni Application Guard
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: ApplicationGuardFavoritesSyncEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
 
   
 
@@ -4022,7 +4082,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
-  - Valore di esempio
+  - Valore di esempio:
 ``` xml
 <string>bing</string>
 ```
@@ -5232,9 +5292,9 @@ Se disabiliti questo criterio, per rispondere alle sfide di NTLM e Negotiate ver
 
   Questo criterio si applica solo alla modalità tutto schermo di Microsoft Edge quando si utilizza l'esperienza di navigazione pubblica.
 
-Se il criterio viene abilitato, gli utenti non possono modificare l'URL nella barra degli indirizzi.
+Se la norma viene abilitata o non viene configurata, gli utenti possono cambiare l'URL nella barra degli indirizzi.
 
-Se il criterio viene disabilitato o non viene configurato, gli utenti possono cambiare l'URL nella barra degli indirizzi.
+Se il criterio viene disabilitato, gli utenti non potranno modificare l'URL nella barra degli indirizzi.
 
 Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
 
@@ -8114,7 +8174,7 @@ Se non si configura questo criterio, viene utilizzata la pagina Nuova scheda pre
 
 Se si configura questo criterio *e* il criterio [NewTabPageSetFeedType](#newtabpagesetfeedtype), questo criterio ha la precedenza.
 
-Se viene fornito un URL non valido, verranno aperte nuove schede del tipo about://blank.
+Se si preferisce una scheda vuota, "about:blank" è l'URL corretto da usare, non "about://blank".
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
@@ -10432,7 +10492,7 @@ Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsof
 
 * Si dispone di un tenant EDU, ma il criterio non funziona.
 
-* L'IP è stato inserito nell'elenco elementi consentiti per avere un'esperienza di ricerca senza pubblicità.
+* Il tuo IP è stato inserito nella lista dei permessi per avere un'esperienza di ricerca senza pubblicità.
 
 * Si è verificata un'esperienza di ricerca senza pubblicità nella Versione legacy di Microsoft Edge e si desidera eseguire l'aggiornamento alla nuova versione di Microsoft Edge.
 
@@ -18282,6 +18342,68 @@ QUIC è un protocollo di rete a livello trasporto che può migliorare le prestaz
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### QuickViewOfficeFilesEnabled
+
+  #### Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 90 o versioni successive
+
+  #### Descrizione
+
+  Consente di specificare se gli utenti possono visualizzare sul Web i file di Office non disponibili su OneDrive o SharePoint. (Ad esempio: documenti di Word, presentazioni di PowerPoint e fogli di calcolo di Excel)
+
+Se si abilita o non si configura questo criterio, questi file possono essere visualizzati in Microsoft Edge usando il visualizzatore di Office invece di scaricare i file.
+
+Se si disabilita questo criterio, questi file verranno scaricati per la visualizzazione.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome unico dei Criteri di gruppo: QuickViewOfficeFilesEnabled
+  - Nome dei Criteri di gruppo: Gestire la funzionalità QuickView dei file di Office su Microsoft Edge
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: QuickViewOfficeFilesEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave preferenza: QuickViewOfficeFilesEnabled
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### RedirectSitesFromInternetExplorerPreventBHOInstall
 
   #### Impedisci l’installazione di BHO per reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge.
@@ -20042,7 +20164,7 @@ Se si disabilita questa impostazione, i dipendenti non riceveranno consigli e no
   ##### Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico dei Criteri di gruppo: MostraRaccomandazioniAbilitato
-  - Nome dei Criteri di gruppo: consentire suggerimenti e notifiche promozionali da Microsoft Edge
+  - Nome dei Criteri di gruppo: Consenti suggerimenti e notifiche promozionali da Microsoft Edge
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -20878,7 +21000,7 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -20905,7 +21027,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
   #### Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: TLSCipherSuiteDenyList
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <array>
   <string>0x1303</string>
