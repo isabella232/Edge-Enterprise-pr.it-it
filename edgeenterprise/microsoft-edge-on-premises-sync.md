@@ -3,19 +3,19 @@ title: Sincronizzazione locale per gli utenti di Active Directory (AD)
 ms.author: scottbo
 author: dan-wesley
 manager: silvanam
-ms.date: 10/05/2020
+ms.date: 02/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Sincronizzazione locale per gli utenti di Active Directory (AD)
-ms.openlocfilehash: ce7fd912bc8cbd71e12444d58073e43df6b138db
-ms.sourcegitcommit: bd68077356a944b99a424d03b444b04aa60272dd
+ms.openlocfilehash: adf0adc8370aa1e18d07d0d2e91727d1ac607bf1
+ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/06/2020
-ms.locfileid: "11099745"
+ms.lasthandoff: 02/14/2021
+ms.locfileid: "11328048"
 ---
 # Sincronizzazione locale per gli utenti di Active Directory (AD)
 
@@ -30,7 +30,7 @@ In genere la sincronizzazione dei dati utente in Microsoft Edge richiede un acco
 
 ## Come funziona
 
-Microsoft Edge consente l'associazione dei profili agli account di Active Directory (AD), che non possono essere usati con la sincronizzazione cloud. Una volta abilitata la sincronizzazione locale, i dati del profilo AD vengono salvati in un file denominato profile.pb. Per impostazione predefinita, il file viene archiviato in *%APPDATA%/Microsoft/Edge*. Una volta scritto, il file potrà essere spostato tra diversi computer e i dati utente verranno letti e scritti in ogni computer.
+Microsoft Edge consente l'associazione dei profili agli account di Active Directory (AD), che non possono essere usati con la sincronizzazione cloud. Una volta abilitata la sincronizzazione locale, i dati del profilo AD vengono salvati in un file denominato profile.pb. Per impostazione predefinita, il file viene archiviato in *%APPDATA%/Microsoft/Edge*. Una volta scritto, il file potrà essere spostato tra diversi computer e i dati utente verranno letti e scritti in ogni computer. Microsoft Edge legge e scrive solo da questo file; è responsabilità dell'amministratore assicurarsi che il file sia stato spostato in base alle esigenze.
 
 ## Utilizzare la sincronizzazione locale
 
@@ -42,7 +42,7 @@ Per abilitare la sincronizzazione locale in Microsoft Edge, configurare il crite
 
 ### Verificare che un profilo sia associato a un account di Active Directory
 
-La sincronizzazione locale funziona solo se il profilo è associato a un account di Active Directory (AD). Se non esistono profili di questo tipo, la sincronizzazione locale non funzionerà. Per assicurarsi che gli utenti accedano con un account di Active Directory, configurare il criterio [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin).
+La sincronizzazione locale funziona solo se il profilo è associato a un account di Active Directory (AD). Se non esistono profili di questo tipo, la sincronizzazione locale non funzionerà. Per assicurarsi che gli utenti accedano con un account di Active Directory, configurare il criterio [ConfigureOnPremisesAccountAutoSignIn](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configureonpremisesaccountautosignin). Per la sincronizzazione locale, Microsoft Edge si basa solo su AD per stabilire un'identità per i dati utente e non esiste alcuna relazione diretta tra il modo in cui Microsoft Edge legge e scrive i dati locali in modo che l'amministratore abbia configurato il roaming per un utente AD.
 
 ### Cambiare il percorso dei dati utente (facoltativo)
 
@@ -67,7 +67,7 @@ Poiché la sincronizzazione locale funziona spostando un file di dati utente da 
 
 ### Utilizzare altri criteri di sincronizzazione con la sincronizzazione locale
 
-È possibile utilizzare il criterio [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) per disabilitare in modo selettivo i preferiti o le impostazioni di sincronizzazione, se necessario. Se il criterio [SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) è attivo, anche la sincronizzazione locale viene disabilitata.  
+È possibile utilizzare il criterio [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled) per disabilitare in modo selettivo i preferiti o le impostazioni di sincronizzazione, se necessario. Il [criterio SyncDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#syncdisabled) non ha alcun impatto sulla sincronizzazione locale.
 
 ## Vedere anche
 
