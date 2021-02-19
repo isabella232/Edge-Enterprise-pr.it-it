@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/09/2021
+ms.date: 02/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: fb1ae6bb0933767a2c5cbcc59212602aed068b9e
-ms.sourcegitcommit: b9061bdf8c2fa04ea2958fba614476542ad4b932
+ms.openlocfilehash: e293fc948625f2a36a94184f1e0502bb5e73f65a
+ms.sourcegitcommit: b85a216c616e055448028754971cd6dc4c308e81
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/10/2021
-ms.locfileid: "11325896"
+ms.lasthandoff: 02/17/2021
+ms.locfileid: "11340606"
 ---
 # Microsoft Edge - Criteri
 
@@ -29,16 +29,15 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Nuovi criteri
+## Criteri nuovi e deprecati
 
-Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
+Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
 
 | Nome | Didascalia |
 |--|--|
-|[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|Sincronizzazione Preferiti di Application Guard abilitata|
-|[QuickViewOfficeFilesEnabled](#quickviewofficefilesenabled)|Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge|
-
-
+|[SSLErrorOverrideAllowedForOrigins](#sslerroroverrideallowedfororigins)|Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche|
+|[WindowOcclusionEnabled](#windowocclusionenabled)|Abilita l'occlusione della finestra|
+|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|Abilita l'occlusione della finestra nativa (deprecato)|
 
 ## Criteri disponibili
 
@@ -371,7 +370,7 @@ e suggerimenti per i servizi Microsoft|
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|Numero massimo di connessioni simultanee al server proxy|
 |[MediaRouterCastAllowAllIPs](#mediaroutercastallowallips)|Consente a Google Cast di connettersi ai dispositivi Cast su tutti gli indirizzi IP|
 |[MetricsReportingEnabled](#metricsreportingenabled)|Abilita l'utilizzo e la creazione di report sui dati correlati all'arresto anomalo (obsoleto)|
-|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|Abilita l'occlusione della finestra nativa|
+|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|Abilita l'occlusione della finestra nativa (deprecato)|
 |[NavigationDelayForInitialSiteListDownloadTimeout](#navigationdelayforinitialsitelistdownloadtimeout)|Imposta un timeout per i ritardi nello spostamento tramite schede per l'elenco siti in modalità Enterprise|
 |[NetworkPredictionOptions](#networkpredictionoptions)|Abilita la previsione di rete|
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione|
@@ -396,6 +395,7 @@ e suggerimenti per i servizi Microsoft|
 |[RoamingProfileSupportEnabled](#roamingprofilesupportenabled)|Abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge|
 |[RunAllFlashInAllowMode](#runallflashinallowmode)|Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|Consente agli utenti di procedere nella pagina di avviso HTTPS|
+|[SSLErrorOverrideAllowedForOrigins](#sslerroroverrideallowedfororigins)|Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche|
 |[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata|
 |[SaveCookiesOnExit](#savecookiesonexit)|Salva i cookie quando Microsoft Edge si chiude|
 |[SavingBrowserHistoryDisabled](#savingbrowserhistorydisabled)|Disattiva il salvataggio della cronologia del browser|
@@ -453,6 +453,7 @@ e suggerimenti per i servizi Microsoft|
 |[WebWidgetAllowed](#webwidgetallowed)|Abilita il widget Web|
 |[WebWidgetIsEnabledOnStartup](#webwidgetisenabledonstartup)|Consenti il widget Web all'avvio di Windows|
 |[WinHttpProxyResolverEnabled](#winhttpproxyresolverenabled)|Usa il resolver proxy di Windows (deprecato)|
+|[WindowOcclusionEnabled](#windowocclusionenabled)|Abilita l'occlusione della finestra|
 
 
 
@@ -4082,7 +4083,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <string>bing</string>
 ```
@@ -10833,7 +10834,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -12414,7 +12415,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   #### Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSerialGuardSetting
-  - Valore di esempio:
+  - Valore di esempio
 ``` xml
 <integer>2</integer>
 ```
@@ -17591,9 +17592,9 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   ### NativeWindowOcclusionEnabled
 
-  #### Abilita l'occlusione della finestra nativa
+  #### Abilita l'occlusione della finestra nativa (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### Versioni supportate:
 
@@ -17601,13 +17602,15 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   #### Descrizione
 
-  Abilita l'occlusione della finestra nativa in Microsoft Edge.
+  Questo criterio è deprecato, usa invece il criterio '[WindowOcclusionEnabled'.](#windowocclusionenabled) Non funzionerà in Microsoft Edge versione 92.
+
+Abilita l'occlusione della finestra nativa in Microsoft Edge.
 
 Se si abilita questa impostazione, per ridurre il consumo di energia e CPU, Microsoft Edge rileverà quando una finestra è coperta da altre finestre e sospenderà i pixel di disegno.
 
 Se si disabilita questa impostazione, Microsoft Edge non rileverà quando una finestra è coperta da altre finestre.
 
-Se non viene impostato questo criterio, il rilevamento delle finestre nascoste sarà abilitato.
+Se non viene impostato questo criterio, il rilevamento dell'occlusione sarà abilitato.
 
   #### Funzionalità supportate:
 
@@ -17624,7 +17627,7 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
   ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NativeWindowOcclusionEnabled
-  - Nome Criteri di gruppo: Abilita l'occlusione della finestra nativa
+  - Nome criteri di gruppo: Abilita l'occlusione della finestra nativa (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -19144,6 +19147,77 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### SSLErrorOverrideAllowedForOrigins
+
+  #### Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows e macOS da 90 o versioni successive
+
+  #### Descrizione
+
+  Microsoft Edge mostra una pagina di avviso quando gli utenti visitano siti con errori SSL.
+
+Se si abilita o non si configura il [criterio SSLErrorOverrideAllowed,](#sslerroroverrideallowed) questo criterio non esegue alcuna operazione.
+
+Se si disabilita il [criterio SSLErrorOverrideAllowed,](#sslerroroverrideallowed) la configurazione di questo criterio consente di impostare un elenco di modelli di origine per i siti in cui gli utenti possono continuare a fare clic sulle pagine di errore SSL. Gli utenti non possono fare clic tra le pagine di errore SSL nelle origini non presenti in questo elenco.
+
+Se non si configura questo criterio, il [criterio SSLErrorOverrideAllowed](#sslerroroverrideallowed) si applica a tutti i siti.
+
+Per informazioni dettagliate sui modelli di origine validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio. Questo criterio corrisponde solo in base all'origine, quindi qualsiasi percorso o query presente nel modello di URL viene ignorato.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Elenco di stringhe
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SSLErrorOverrideAllowedForOrigins
+  - Nome criteri di gruppo: Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\1 = "https://www.example.com"
+SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]example.edu"
+
+```
+
+  #### Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: SSLErrorOverrideAllowedForOrigins
+  - Valore di esempio:
+``` xml
+<array>
+  <string>https://www.example.com</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### SSLVersionMin
 
   #### Versione TLS minima abilitata
@@ -20038,7 +20112,7 @@ Se non si configurano i criteri seguenti:
 
   #### Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -22162,9 +22236,9 @@ Ogni voce di elenco dei criteri è un oggetto con un membro obbligatorio: URL (l
 e 3 membri facoltativi:
 - default_launch_container (specifica la modalità della finestra aperta dall'app Web - una nuova scheda è l'impostazione predefinita).
 
-- create_desktop_shortcut (True se desideri creare scelte rapide da tastiera desktop di Linux e Windows).
+- create_desktop_shortcut (True se si desidera creare collegamenti desktop Linux e Microsoft Windows).
 
-- override_app_name (a partire da Microsoft Edge 89, consente di ignorare il nome dell'app se non si tratta di un'app Web progressiva (PWA) oppure il nome dell'app temporaneamente installata se si tratta di una PWA, tuttavia è necessaria l'autenticazione prima di completare l'installazione.)
+- fallback_app_name (a partire da Microsoft Edge 90, consente di eseguire l'override del nome dell'app se non si tratta di un'app Web progressiva (PWA) o del nome dell'app che viene installato temporaneamente se si tratta di una PWA, ma è necessaria l'autenticazione prima che l'installazione possa essere completata).
 
   #### Funzionalità supportate:
 
@@ -22208,7 +22282,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   }, 
   {
     "default_launch_container": "window", 
-    "override_app_name": "Editor", 
+    "fallback_app_name": "Editor", 
     "url": "https://app.contoso.com/editor"
   }
 ]
@@ -22217,7 +22291,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   ##### Valore di esempio compatto:
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "override_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
+  SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
   ```
   
 
@@ -22245,7 +22319,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   <dict>
     <key>default_launch_container</key>
     <string>window</string>
-    <key>override_app_name</key>
+    <key>fallback_app_name</key>
     <string>Editor</string>
     <key>url</key>
     <string>https://app.contoso.com/editor</string>
@@ -22884,6 +22958,63 @@ Se si disabilitano o non si configura questo criterio, verrà usato il resolver 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WinHttpProxyResolverEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### WindowOcclusionEnabled
+
+  #### Abilita l'occlusione della finestra
+
+  
+  
+  #### Versioni supportate:
+
+  - In Windows dalla versione 89 o successiva
+
+  #### Descrizione
+
+  Abilita l'occlusione della finestra in Microsoft Edge.
+
+Se si abilita questa impostazione, per ridurre il consumo di energia e CPU, Microsoft Edge rileverà quando una finestra è coperta da altre finestre e sospenderà i pixel di disegno.
+
+Se si disabilita questa impostazione, Microsoft Edge non rileverà quando una finestra è coperta da altre finestre.
+
+Se non viene impostato questo criterio, il rilevamento delle finestre nascoste sarà abilitato.
+
+  #### Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### Tipo:
+
+  - Booleano
+
+  #### Informazioni e impostazioni di Windows
+
+  ##### Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: WindowOcclusionEnabled
+  - Nome Criteri di gruppo: Abilita occlusione finestra
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: WindowOcclusionEnabled
   - Tipo valore: REG_DWORD
 
   ##### Valore di esempio
