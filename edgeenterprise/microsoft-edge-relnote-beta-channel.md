@@ -3,35 +3,47 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/12/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 0baad5271af16e84b224a92f14ec02c83194c102
-ms.sourcegitcommit: 90b8eab62edbed0e0a84780abd7d3854bf95c130
+ms.openlocfilehash: e2a2933e7edf3456bcb33e70d6db7a36ab72aa07
+ms.sourcegitcommit: 6603dc23d8e7ff46df76bc6aa48b93a0b435fe7d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/14/2021
-ms.locfileid: "11328068"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "11385626"
 ---
-# Note sulla versione per il canale Microsoft Edge Beta
+# <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
 Queste note sulla versione contengono informazioni sulle nuove funzionalità e gli aggiornamenti non relativi alla sicurezza inclusi nel canale Microsoft Edge Beta. Le versioni precedenti di queste note sulla versione sono archiviate [qui](microsoft-edge-relnote-archive-beta-channel.md).
 
-## Versione 89.0.774.27: 12 febbraio
+## <a name="version-89077445-march-3"></a>Versione 89.0.774.45: 3 marzo
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-89077439-february-26"></a>Versione 89.0.774.39: 26 febbraio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-89077434-february-22"></a>Versione 89.0.774.34: 22 febbraio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-89077427-february-12"></a>Versione 89.0.774.27: 12 febbraio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 89.0.774.23: 8 febbraio
+## <a name="version-89077423-february-8"></a>Versione 89.0.774.23: 8 febbraio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 <!-- begin major 89 -->
-## Versione 89.0.774.18: 3 febbraio
+## <a name="version-89077418-february-3"></a>Versione 89.0.774.18: 3 febbraio
 
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **La modalità tutto schermo offre altre funzionalità di blocco.** A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Altre informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
 
@@ -59,9 +71,9 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 - **Supporto per il blocco della riproduzione automatica dei video**. A partire da Microsoft Edge versione 89, gli utenti potranno impedire la riproduzione automatica degli elementi multimediali.
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 - [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime): impostazioni vita utile dati di esplorazione
 - [maMEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#mamenabled): gestione delle app per dispositivi mobili abilitata
@@ -71,37 +83,37 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 - [printingBackgroundGraphicsDefault](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingbackgroundgraphicsdefault): modalità di stampa grafica in background predefinita
 - [elenco SmartActionsBlockList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#smartactionsblocklist): blocca le azioni intelligenti per un elenco di servizi
 
-#### Criteri obsoleti
+#### <a name="obsoleted-policies"></a>Criteri obsoleti
 
 - [ForceLegacyDefaultReferrerPolicy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcelegacydefaultreferrerpolicy): usa un criterio di referrer predefinito di no-referrer-when-downgrade
 - [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled): abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
 - [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices): invia informazioni sul sito per migliorare i servizi Microsoft
 <!-- end major 89 -->
 
-## Versione 88.0.705.56: 29 gennaio
+## <a name="version-88070556-january-29"></a>Versione 88.0.705.56: 29 gennaio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 88.0.705.49: 20 gennaio
+## <a name="version-88070549-january-20"></a>Versione 88.0.705.49: 20 gennaio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 88.0.705.45: 15 gennaio
+## <a name="version-88070545-january-15"></a>Versione 88.0.705.45: 15 gennaio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 88.0.705.41: 11 gennaio
+## <a name="version-88070541-january-11"></a>Versione 88.0.705.41: 11 gennaio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 88.0.705.29: 21 dicembre
+## <a name="version-88070529-december-21"></a>Versione 88.0.705.29: 21 dicembre
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 <!-- begin major 88 -->
-## Versione 88.0.705.18: 9 dicembre
+## <a name="version-88070518-december-9"></a>Versione 88.0.705.18: 9 dicembre
 
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **Elementi deprecati:**
 
@@ -146,9 +158,9 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
   - Le icone del browser vengono aggiornate nel sistema di progettazione Office Fluent. Come parte del nostro lavoro continuo relativo a Fluent Design nel browser, abbiamo apportato modifiche alle icone di allineamento più ravvicinate nel nuovo sistema di icone Microsoft. Queste modifiche avranno un impatto su diverse delle nostre interfacce utente high touch, incluse le schede, la barra degli indirizzi, nonché le icone di spostamento e di interazione presenti nei vari menu.
   - Rendering migliorato del tipo di carattere. Il rendering del testo è migliorato per aumentare la chiarezza e ridurre la sfocatura.
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 Sono stati aggiunti sedici nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
@@ -167,7 +179,7 @@ Sono stati aggiunti sedici nuovi criteri. Scaricare i modelli amministrativi agg
 - [VerticalTabsAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
 - [WebRtcAllowLegacyTLSProtocols](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
 
-#### Criteri deprecati
+#### <a name="deprecated-policies"></a>Criteri deprecati
 
 I criteri seguenti sono deprecati.
 
@@ -178,7 +190,7 @@ I criteri seguenti sono deprecati.
 - [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver): configura l'indirizzo o l'URL del server proxy.
 - [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
 
-#### Criteri obsoleti
+#### <a name="obsoleted-policies"></a>Criteri obsoleti
 
 I criteri seguenti sono obsoleti.
 
@@ -189,40 +201,40 @@ I criteri seguenti sono obsoleti.
 
 <!-- end major 88 -->
 
-## Versione 87.0.664.55: 3 dicembre
+## <a name="version-87066455-december-3"></a>Versione 87.0.664.55: 3 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni. La seguente nuova funzionalità è supportata in questa versione.
 
 - **Vengono generati degli avvisi se la password di un utente viene trovata in una falla online**. Le password degli utenti vengono confrontate con un repository di credenziali violate note ed invia all'utente un avviso se viene trovata una corrispondenza. Per garantire la sicurezza e la privacy, le password degli utenti vengono sottoposte ad hash e crittografate quando vengono confrontate col il database delle credenziali trapelate.
 
-## Versione 87.0.664.52: 30 novembre
+## <a name="version-87066452-november-30"></a>Versione 87.0.664.52: 30 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.40:18 novembre
+## <a name="version-87066440-november-18"></a>Versione 87.0.664.40:18 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.36:16 novembre
+## <a name="version-87066436-november-16"></a>Versione 87.0.664.36:16 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.30: 9 novembre
+## <a name="version-87066430-november-9"></a>Versione 87.0.664.30: 9 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.24: 2 novembre
+## <a name="version-87066424-november-2"></a>Versione 87.0.664.24: 2 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.18: 26 ottobre
+## <a name="version-87066418-october-26"></a>Versione 87.0.664.18: 26 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
 <!-- begin major 87 -->
-## Versione 87.0.664.12: 20 ottobre
+## <a name="version-87066412-october-20"></a>Versione 87.0.664.12: 20 ottobre
 
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **Funzionalità di privacy in modalità tutto schermo abilitate**. A partire da Microsoft Edge versione 87, saranno abilitate le funzionalità della modalità tutto schermo in grado di garantire la privacy dei dati degli utenti. Queste funzionalità consentiranno esperienze come la cancellazione dei dati utente all'uscita, l'eliminazione dei file scaricati e il ripristino dell'esperienza di avvio configurata dopo un periodo di inattività specificato. Altre informazioni su come [Configurare le opzioni della modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
 - **Distribuzione ClickOnce abilitata per impostazione predefinita**. ClickOnce è abilitata per impostazione predefinita in Microsoft Edge 87, il che riduce gli ostacoli per le aziende nella distribuzione del software e meglio si allinea con il comportamento del browser Versione legacy di Microsoft Edge. A partire da Microsoft Edge 87, lo stato "Non configurato" del criterio ClickOnceEnabled rifletterà il nuovo stato di ClickOnce per impostazione predefinita di Abilitato (rispetto al precedente stato per impostazione predefinita di Disabilitato).
@@ -239,9 +251,9 @@ Risolti diversi bug e problemi relativi alle prestazioni.
   - Scegliere il lato da capovolgere quando si stampa su entrambi i lati. Gli utenti possono scegliere di capovolgere il lato lungo o il lato corto di un foglio quando si stampa su entrambi i lati.
   - Scegliere la modalità di rasterizzazione della stampa per l'azienda. Controllare il modo in cui Microsoft Edge stampa su una stampante non-PostScript in Windows. A volte i processi di stampa su stampanti non-PostScript devono essere rasterizzati per essere stampati correttamente. Le opzioni di stampa sono "Completa" e "Rapida".
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
@@ -256,39 +268,39 @@ Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggi
 - [SpeechRecognitionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#speechrecognitionenabled) - Configura il riconoscimento vocale.
 - [WebCaptureEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcaptureenabled) - Abilita la funzionalità di acquisizione web in Microsoft Edge.
 
-#### Criteri deprecati
+#### <a name="deprecated-policy"></a>Criteri deprecati
 
 [NewTabPageSetFeedType](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) - Configura l’esperienza della pagina Nuova scheda di Microsoft Edge.
 
-#### Criteri obsoleti
+#### <a name="obsoleted-policy"></a>Criteri obsoleti
 
 [EnableDeprecatedWebPlatformFeatures](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures) - Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato.
 
 <!-- end major 87 -->
 
-## Versione 86.0.622.43: 16 ottobre
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 86.0.622.36: 7 ottobre
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 86.0.622.31: 1 ottobre
-
-Risolti diversi bug e problemi relativi alle prestazioni.
-
-## Versione 86.0.622.28: 28 settembre
+## <a name="version-86062243-october-16"></a>Versione 86.0.622.43: 16 ottobre
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 86.0.622.15: 14 settembre
+## <a name="version-86062236-october-7"></a>Versione 86.0.622.36: 7 ottobre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-86062231-october-1"></a>Versione 86.0.622.31: 1 ottobre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-86062228-september-28"></a>Versione 86.0.622.28: 28 settembre
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-86062215-september-14"></a>Versione 86.0.622.15: 14 settembre
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
 <!--- Archived to version 86.0.622.11: September 9 ---->
 <!--- Archived to version 85.0.564.18: July 28 ---->
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

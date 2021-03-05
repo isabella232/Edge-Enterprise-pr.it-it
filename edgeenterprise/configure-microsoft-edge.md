@@ -3,34 +3,34 @@ title: Configurare Microsoft Edge per Windows
 ms.author: brianalt
 author: kelleyvice-msft
 manager: laurawi
-ms.date: 11/30/2019
+ms.date: 03/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare le impostazioni dei criteri di Microsoft Edge nei dispositivi Windows
-ms.openlocfilehash: 14ba2845e95394fe1f992c8b6446c975a8b4fb00
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
+ms.openlocfilehash: 27e94a609bb8b01c90e1080c6e8cd521facc8d70
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194704"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11385024"
 ---
-# Configurare le impostazioni dei criteri di Microsoft Edge in Windows
+# <a name="configure-microsoft-edge-policy-settings-on-windows"></a>Configurare le impostazioni dei criteri di Microsoft Edge in Windows
 
 Usa le informazioni seguenti per configurare le impostazioni dei criteri di Microsoft Edge nei dispositivi Windows.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Configurare le impostazioni dei criteri in Windows
+## <a name="configure-policy-settings-on-windows"></a>Configurare le impostazioni dei criteri in Windows
 
 Puoi usare gli _oggetti Criteri di gruppo_ per configurare le impostazioni dei criteri per Microsoft Edge e per gli aggiornamenti gestiti di Microsoft Edge in tutte le versioni di Windows. Puoi anche effettuare il provisioning dei criteri tramite il Registro di sistema per i dispositivi Windows aggiunti a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi in Microsoft Intune. Per configurare Microsoft Edge con gli oggetti Criteri di gruppo, puoi installare _modelli amministrativi_ che aggiungono regole e impostazioni per Microsoft Edge all'archivio centrale dei criteri di gruppo nel dominio di Active Directory o nella cartella dei modelli di definizione dei criteri nei singoli computer e quindi configurare i criteri specifici desiderati.
 
 Puoi usare Criteri di gruppo di Active Directory per configurare le impostazioni dei criteri di Microsoft Edge se preferisci gestire i criteri a livello di dominio. In questo modo è possibile gestire le impostazioni dei criteri globalmente, scegliere impostazioni di criteri diverse per unità organizzative specifiche o usare filtri WMI per applicare le impostazioni solo agli utenti o ai computer restituiti da una particolare query. Se desideri configurare i criteri nei singoli computer, puoi applicare le impostazioni dei criteri che influiscono solo sul dispositivo locale usando Editor Criteri di gruppo locali nel computer di destinazione.
 
-Microsoft Edge supporta sia i criteri _obbligatori_ sia quelli _consigliati_. I criteri obbligatori sostituiscono le preferenze dell'utente e impediscono all'utente di modificarle, mentre i criteri consigliati forniscono un'impostazione predefinita che potrebbe essere sostituita dall'utente. La maggior parte dei criteri è solo obbligatoria, mentre un sottoinsieme di criteri è obbligatorio e consigliato. Se entrambe le versioni di un criterio sono impostate, l'impostazione obbligatoria ha la precedenza.
+Microsoft Edge supporta sia i criteri _obbligatori_ sia quelli _consigliati_. I criteri obbligatori sostituiscono le preferenze dell'utente e impediscono all'utente di modificarle, mentre i criteri consigliati forniscono un'impostazione predefinita che potrebbe essere sostituita dall'utente. La maggior parte dei criteri è solo obbligatoria, mentre un sottoinsieme di criteri è obbligatorio e consigliato. Se entrambe le versioni di un criterio sono impostate, l'impostazione obbligatoria ha la precedenza. I criteri consigliati hanno effetto solo quando l'utente non ha modificato l'impostazione.
 
 >[!TIP]
 > Per configurare le impostazioni dei criteri di Microsoft Edge, puoi usare Microsoft Intune. Per altre informazioni, vedi [Configurare Microsoft Edge con Microsoft Intune](configure-edge-with-intune.md).
@@ -42,7 +42,7 @@ Esistono due modelli amministrativi per Microsoft Edge ed entrambi possono esser
 
 Per iniziare, scarica e installa il modello amministrativo di Microsoft Edge.
 
-### 1. Scaricare e installare il modello amministrativo di Microsoft Edge
+### <a name="1-download-and-install-the-microsoft-edge-administrative-template"></a>1. Scaricare e installare il modello amministrativo di Microsoft Edge
 
 Se desideri configurare le impostazioni dei criteri di Microsoft Edge in Active Directory, scarica i file in un percorso di rete a cui è possibile accedere da un controller di dominio o da una workstation con la funzionalità Strumenti di amministrazione remota del server installata. Per eseguire la configurazione in un singolo computer, è sufficiente scaricare i file in tale computer.
 
@@ -50,7 +50,7 @@ Quando aggiungi i file dei modelli amministrativi nel percorso appropriato, le i
 
 Vai alla [pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise) per scaricare il file dei modelli dei criteri di Microsoft Edge (*MicrosoftEdgePolicyTemplates.cab*) ed estrai il contenuto.
 
-#### Aggiungere il modello amministrativo ad Active Directory
+#### <a name="add-the-administrative-template-to-active-directory"></a>Aggiungere il modello amministrativo ad Active Directory
 
 1. In un controller di dominio o in una workstation con Strumenti di amministrazione remota del server, vai alla cartella **PolicyDefinition** (nota anche come _archivio centrale_) in un qualsiasi controller di dominio del tuo dominio. Per le versioni precedenti di Windows Server, potrebbe essere necessario creare la cartella PolicyDefinition. Per altre informazioni, vedi [Come creare e gestire l'archivio centrale per i modelli amministrativi di Criteri di gruppo in Windows](https://support.microsoft.com/help/3087759/how-to-create-and-manage-the-central-store-for-group-policy-administra).
 2. Apri *MicrosoftEdgePolicyTemplates* e vai a **windows** > **admx**.
@@ -62,7 +62,7 @@ Vai alla [pagina di destinazione di Microsoft Edge in modalità Enterprise](http
 
     ![Criteri di Microsoft Edge](./media/configure-microsoft-edge/edge-gpo-policies.png)
 
-#### Aggiungere il modello amministrativo a un singolo computer
+#### <a name="add-the-administrative-template-to-an-individual-computer"></a>Aggiungere il modello amministrativo a un singolo computer
 
 1. Nel computer di destinazione, apri *MicrosoftEdgePolicyTemplates* e vai a **windows** > **admx**.
 2. Copia il file *msedge.admx* nella tua cartella dei modelli PolicyDefinition. (Esempio: C:\Windows\PolicyDefinitions)
@@ -70,7 +70,7 @@ Vai alla [pagina di destinazione di Microsoft Edge in modalità Enterprise](http
 4. Copia il file *msedge.adml* nella cartella della lingua corrispondente nella tua cartella PolicyDefinition. (Esempio: C:\Windows\PolicyDefinitions\IT-IT)
 5. Per verificare che i file siano stati caricati in modo corretto, apri direttamente Editor Criteri di gruppo locali (tasto Windows + R e immetti gpedit.msc) oppure apri MMC e carica Editor Criteri di gruppo locali. In genere, se si verifica un errore, i file si trovano in un percorso non corretto.
 
-### 2. Impostare criteri obbligatori o consigliati
+### <a name="2-set-mandatory-or-recommended-policies"></a>2. Impostare criteri obbligatori o consigliati
 
 Puoi impostare criteri obbligatori o consigliati per configurare Microsoft Edge con Editor Criteri di gruppo sia per Active Directory sia per singoli computer. Puoi impostare l'ambito delle impostazioni dei criteri sia su **Configurazione computer** sia su **Configurazione utente** selezionando il nodo appropriato come descritto di seguito.
 
@@ -79,7 +79,7 @@ Puoi impostare criteri obbligatori o consigliati per configurare Microsoft Edge 
 
   ![Apri Editor Criteri di gruppo](./media/configure-microsoft-edge/edge-ad-policy.png)
 
-### 3. Testare i criteri
+### <a name="3-test-your-policies"></a>3. Testare i criteri
 
 In un dispositivo client di destinazione, apri Microsoft Edge e passa a **edge://policy** per visualizzare tutti i criteri applicati. Se le impostazioni dei criteri sono state applicate nel computer locale, i criteri devono essere visualizzati immediatamente. Potrebbe essere necessario chiudere e riaprire Microsoft Edge se era aperto durante la configurazione delle impostazioni dei criteri.
 
@@ -95,7 +95,7 @@ Potrebbe essere necessario chiudere e riaprire Microsoft Edge prima che i nuovi 
 
 Puoi anche usare REGEDIT.exe in un computer di destinazione per visualizzare le impostazioni del Registro di sistema che archiviano le impostazioni dei criteri di gruppo. Tali impostazioni si trovano nel percorso del Registro di sistema **HKLM\SOFTWARE\Policies\Microsoft\Edge**.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Configurare per Windows con Intune](configure-edge-with-intune.md)

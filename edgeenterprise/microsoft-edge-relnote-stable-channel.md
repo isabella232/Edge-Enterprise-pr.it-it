@@ -3,21 +3,21 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 02/17/2021
+ms.date: 03/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: ff4364d48518b73c04d010a8a2c7e18abd10ba2e
-ms.sourcegitcommit: 8589a07ebd936070edb2eafa43b83cc6ef283a6e
+ms.openlocfilehash: 3eab05fcb88bcde38de8eb02b50796fcdda12866
+ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/18/2021
-ms.locfileid: "11343839"
+ms.lasthandoff: 03/03/2021
+ms.locfileid: "11385004"
 ---
-# Note sulla versione del canale Stabile Microsoft Edge
+# <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
 Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugli aggiornamenti non di sicurezza inclusi nel canale Stabile Microsoft Edge.
 
@@ -29,38 +29,43 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
 
-## Versione 88.0.705.74: 17 febbraio
+
+## <a name="version-88070581-february-25"></a>Versione 88.0.705.81: 25 febbraio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-88070574-february-17"></a>Versione 88.0.705.74: 17 febbraio
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-17-2021).
 
-## Versione 88.0.705.68: 11 febbraio
+## <a name="version-88070568-february-11"></a>Versione 88.0.705.68: 11 febbraio
 
 Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 88.0.705.63: 5 febbraio
+## <a name="version-88070563-february-5"></a>Versione 88.0.705.63: 5 febbraio
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021). Questo aggiornamento contiene [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148), che è stato segnalato al team di Chromium come un exploit in condizioni normali.
 
-## Versione 88.0.705.62: 4 febbraio
+## <a name="version-88070562-february-4"></a>Versione 88.0.705.62: 4 febbraio
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021).
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 88.0.705.56: 28 gennaio
+## <a name="version-88070556-january-28"></a>Versione 88.0.705.56: 28 gennaio
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 88.0.705.53: 26 gennaio
+## <a name="version-88070553-january-26"></a>Versione 88.0.705.53: 26 gennaio
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 88.0.705.50: 21 gennaio
+## <a name="version-88070550-january-21"></a>Versione 88.0.705.50: 21 gennaio
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-21-2021).
 
 <!--- begin major 88  --->
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **Elementi deprecati:**
 
@@ -112,9 +117,9 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
   - Le icone del browser vengono aggiornate nel sistema di progettazione Office Fluent. Come parte del nostro lavoro continuo relativo a Fluent Design nel browser, abbiamo apportato modifiche alle icone di allineamento più ravvicinate nel nuovo sistema di icone Microsoft. Queste modifiche avranno un impatto su diverse delle nostre interfacce utente high touch, incluse le schede, la barra degli indirizzi, nonché le icone di spostamento e di interazione presenti nei vari menu.
   - Rendering migliorato del tipo di carattere. Il rendering del testo è migliorato per aumentare la chiarezza e ridurre la sfocatura.
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
@@ -137,7 +142,7 @@ Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [WebWidgetAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetallowed): abilita il widget Web.
 - [WebWidgetIsEnabledOnStartup](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetisenabledonstartup) : consente il widget Web all'avvio di Windows.
 
-#### Criteri deprecati
+#### <a name="deprecated-policies"></a>Criteri deprecati
 
 - [ProactiveAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proactiveauthenabled): abilita l'autenticazione proattiva.
 - [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist): configura le regole di esclusione di proxy.
@@ -146,7 +151,7 @@ Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver): configura l'indirizzo o l'URL del server proxy.
 - [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
 
-### Criteri obsoleti
+### <a name="obsoleted-policies"></a>Criteri obsoleti
 
 - [di spostamento a pagina](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowpopupsduringpageunload) A una pagina di mostrare i popup durante lo scaricamento.
 - [DefaultPluginsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultpluginssetting): impostazione predefinita di Adobe Flash.
@@ -154,42 +159,42 @@ Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [PluginsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
 - [RunAllFlashInAllowMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
 <!--- end major 88  --->
-## Versione 87.0.664.75: 7 gennaio
+## <a name="version-87066475-january-7"></a>Versione 87.0.664.75: 7 gennaio
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-7-2021).
 
-## Versione 87.0.664.66: 17 dicembre
+## <a name="version-87066466-december-17"></a>Versione 87.0.664.66: 17 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.60: 10 dicembre
+## <a name="version-87066460-december-10"></a>Versione 87.0.664.60: 10 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.57: 7 dicembre
+## <a name="version-87066457-december-7"></a>Versione 87.0.664.57: 7 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni. Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#december-7-2020).
 
-## Versione 87.0.664.55: 3 dicembre
+## <a name="version-87066455-december-3"></a>Versione 87.0.664.55: 3 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni. La funzionalità seguente è stata aggiornata per questa versione.
 
 - **Shopping è abilitato per impostazione predefinita**. A partire da Microsoft Edge versione 87, gli utenti aziendali possono trarre vantaggio dallo shopping in Microsoft Edge. Grazie alla funzionalità Shopping, Microsoft Edge consente agli utenti di trovare buoni sconto e prezzi migliori durante lo shopping online. (L'esperienza dei buoni sconto è stata rilasciata con la versione stabile 87.0.664.41). L'esperienza di confronto dei prezzi è ora disponibile con questo aggiornamento. Questa funzionalità può essere configurata usando il criterio [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled). Vedere il [Blog](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) e [Altre informazioni](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping) su Microsoft Shopping.
 
-## Versione 87.0.664.52: 30 novembre
+## <a name="version-87066452-november-30"></a>Versione 87.0.664.52: 30 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 87.0.664.47: 23 novembre
+## <a name="version-87066447-november-23"></a>Versione 87.0.664.47: 23 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
 <!-- begin major 87 --->
-## Versione 87.0.664.41: 19 novembre
+## <a name="version-87066441-november-19"></a>Versione 87.0.664.41: 19 novembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-19-2020).
 
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **Reindirizzamento automatico per siti incompatibili da Internet Explorer a Microsoft Edge**. A partire dall’aggiornamento di Microsoft Edge 87 Stable, i siti Web pubblici che mostrano un messaggio di incompatibilità in Internet Explorer verranno reindirizzati automaticamente a Microsoft Edge. Per altre informazioni e per configurare questa esperienza, vedere [Reindirizzamento dei siti incompatibili](https://docs.microsoft.com/deployedge/edge-learnmore-neededge).
 
@@ -212,9 +217,9 @@ Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com
   - Scegliere il lato da capovolgere quando si stampa su entrambi i lati. Gli utenti possono scegliere di capovolgere il lato lungo o il lato corto di un foglio quando si stampa su entrambi i lati.
   - Scegliere la modalità di rasterizzazione della stampa per l'azienda. Controllare il modo in cui Microsoft Edge stampa su una stampante non-PostScript in Windows. A volte i processi di stampa su stampanti non-PostScript devono essere rasterizzati per essere stampati correttamente. Le opzioni di stampa sono "Completa" e "Rapida".
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
@@ -229,58 +234,58 @@ Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggi
 - [SpeechRecognitionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#speechrecognitionenabled) - Configura il riconoscimento vocale.
 - [WebCaptureEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcaptureenabled) - Abilita la funzionalità di acquisizione web in Microsoft Edge.
 
-#### Criteri deprecati
+#### <a name="deprecated-policy"></a>Criteri deprecati
 
 [NewTabPageSetFeedType](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) - Configura l’esperienza della pagina Nuova scheda di Microsoft Edge.
 
-#### Criteri obsoleti
+#### <a name="obsoleted-policy"></a>Criteri obsoleti
 
 [EnableDeprecatedWebPlatformFeatures](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures) - Riabilita le funzionalità deprecate della piattaforma Web per un periodo di tempo limitato.
 
 <!-- end major 87 -->
 
-## Versione 86.0.622.69: 13 novembre
+## <a name="version-86062269-november-13"></a>Versione 86.0.622.69: 13 novembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-13-2020). Questo aggiornamento contiene [CVE-2020-16013](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16013) e [CVE-2020-16017](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16017), che sono stati segnalati al team di Chromium come un exploit in condizioni normali.
 
-## Versione 86.0.622.68: 11 novembre
+## <a name="version-86062268-november-11"></a>Versione 86.0.622.68: 11 novembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-11-2020).
 
-## Versione 86.0.622.63: 4 novembre
+## <a name="version-86062263-november-4"></a>Versione 86.0.622.63: 4 novembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-4-2020). Questo aggiornamento contiene [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009), che è stato segnalato al team di Chromium come un exploit in condizioni normali.
 
-## Versione 86.0.622.61: 2 novembre
+## <a name="version-86062261-november-2"></a>Versione 86.0.622.61: 2 novembre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 86.0.622.58: 29 ottobre
+## <a name="version-86062258-october-29"></a>Versione 86.0.622.58: 29 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 86.0.622.56: 27 ottobre
+## <a name="version-86062256-october-27"></a>Versione 86.0.622.56: 27 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 86.0.622.51: 22 ottobre
+## <a name="version-86062251-october-22"></a>Versione 86.0.622.51: 22 ottobre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-22-2020).
 
-## Versione 86.0.622.48: 20 ottobre
+## <a name="version-86062248-october-20"></a>Versione 86.0.622.48: 20 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
-## Versione 86.0.622.43: 15 ottobre
+## <a name="version-86062243-october-15"></a>Versione 86.0.622.43: 15 ottobre
 
 Risolti diversi bug e problemi relativi alle prestazioni.
 
 <!-- begin major 86 -->
-## Versione 86.0.622.38 : 9 ottobre
+## <a name="version-86062238-october-9"></a>Versione 86.0.622.38 : 9 ottobre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-9-2020).
 
-### Aggiornamenti delle funzionalità
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 * **Eseguire il rollback a una versione precedente di Microsoft Edge.** La funzionalità di rollback consente agli amministratori di ripristinare una nota versione valida di Microsoft Edge, in caso di un problema con la versione più recente di Microsoft Edge. **Nota:** La versione Stabile 86.0.622.38 è la prima versione in cui è possibile eseguire il rollback, il che significa che la versione Stabile 87 è la prima versione dalla quale eseguire il rollback. [Ulteriori informazioni](edge-learnmore-rollback.md).
 
@@ -315,9 +320,9 @@ Tali criteri sono sostituiti da [Consenti telemetria](https://go.microsoft.com/f
 
 * **Eliminare i download dal disco tramite Download Manager.** Gli utenti ora potranno eliminare i file scaricati dal disco senza uscire dal browser. La nuova funzionalità Elimina download è disponibile nel menu di scelta rapida della barra dei download o nella pagina dei download.
 
-### Aggiornamenti dei criteri
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
-#### Nuovi criteri
+#### <a name="new-policies"></a>Nuovi criteri
 
 Sono stati aggiunti 23 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise). Sono stati aggiunti i nuovi criteri seguenti.
 
@@ -345,38 +350,38 @@ Sono stati aggiunti 23 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [UserAgentClientHintsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled): abilita la funzionalità User-Agent Client Hints.
 - [UserDataSnapshotRetentionLimit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#userdatasnapshotretentionlimit): limita il numero di snapshot dei dati utente conservati per l'uso, in caso di ripristino di emergenza dello stato precedente.
 
-#### Criteri deprecati
+#### <a name="deprecated-policies"></a>Criteri deprecati
 
 - [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled): abilita la segnalazione dei dati correlati all'uso e agli arresti anomali.
 - [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices): invia informazioni sul sito per migliorare i servizi Microsoft.
 
-#### Criteri obsoleti
+#### <a name="obsoleted-policy"></a>Criteri obsoleti
 
 [TLS13HardeningForLocalAnchorsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#tls13hardeningforlocalanchorsenabled): abilitare una funzionalità di sicurezza TLS 1.3 per trust anchor locali.
 
-## Versione 85.0.564.70: 6 ottobre
+## <a name="version-85056470-october-6"></a>Versione 85.0.564.70: 6 ottobre
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 85.0.564.68: 1 ottobre
+## <a name="version-85056468-october-1"></a>Versione 85.0.564.68: 1 ottobre
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
-## Versione 85.0.564.63: 23 settembre
+## <a name="version-85056463-september-23"></a>Versione 85.0.564.63: 23 settembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-23-2020).
 
-## Versione 85.0.564.51: 9 settembre
+## <a name="version-85056451-september-9"></a>Versione 85.0.564.51: 9 settembre
 
 Gli aggiornamenti della sicurezza sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#september-9-2020).
 
-## Versione 85.0.564.44: 31 agosto
+## <a name="version-85056444-august-31"></a>Versione 85.0.564.44: 31 agosto
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
 <!-- 85.0.564.41: August 27 -->
 <!-- Archived to version 84.0.522.40: July 16 -->
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
