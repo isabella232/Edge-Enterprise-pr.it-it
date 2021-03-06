@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 02/17/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,14 +11,14 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: e293fc948625f2a36a94184f1e0502bb5e73f65a
-ms.sourcegitcommit: b85a216c616e055448028754971cd6dc4c308e81
+ms.openlocfilehash: 130ed008a190edb92649beb658084c157ebade50
+ms.sourcegitcommit: bd83f2fbc4d7943e8f19c24414b65ed9d9009f2d
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/17/2021
-ms.locfileid: "11340606"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "11388726"
 ---
-# Microsoft Edge - Criteri
+# <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
 La versione più recente di Microsoft Edge include i criteri riportati di seguito. È possibile usare questi criteri per configurare la modalità di esecuzione di Microsoft Edge nell'organizzazione.
 
@@ -29,17 +29,15 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Criteri nuovi e deprecati
+## <a name="new-policies"></a>Nuovi criteri
 
-Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
+Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 | Nome | Didascalia |
 |--|--|
-|[SSLErrorOverrideAllowedForOrigins](#sslerroroverrideallowedfororigins)|Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche|
-|[WindowOcclusionEnabled](#windowocclusionenabled)|Abilita l'occlusione della finestra|
-|[NativeWindowOcclusionEnabled](#nativewindowocclusionenabled)|Abilita l'occlusione della finestra nativa (deprecato)|
+|[PrintRasterizationMode](#printrasterizationmode)|Modalità di rasterizzazione di stampa|
 
-## Criteri disponibili
+## <a name="available-policies"></a>Criteri disponibili
 
 In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser disponibili in questa versione di Microsoft Edge. Usa i collegamenti nella tabella per ottenere altri dettagli su criteri specifici.
 
@@ -55,19 +53,19 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[Impostazioni SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
 |[Ulteriori informazioni](#additional)|
 
-### [*Impostazioni di Application Guard*](#application-guard-settings-policies)
+### [*<a name="application-guard-settings"></a>Impostazioni di Application Guard*](#application-guard-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[ApplicationGuardContainerProxy](#applicationguardcontainerproxy)|Proxy contenitore di Application Guard|
 |[ApplicationGuardFavoritesSyncEnabled](#applicationguardfavoritessyncenabled)|Sincronizzazione Preferiti di Application Guard abilitata|
-### [*Cast*](#cast-policies)
+### [*<a name="cast"></a>Cast*](#cast-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[EnableMediaRouter](#enablemediarouter)|Abilita Google Cast|
 |[ShowCastIconInToolbar](#showcasticonintoolbar)|Mostra l'icona di cast nella barra degli strumenti|
-### [*Impostazioni contenuto*](#content-settings-policies)
+### [*<a name="content-settings"></a>Impostazioni contenuto*](#content-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -111,7 +109,7 @@ e suggerimenti per i servizi Microsoft|
 |[WebUsbAllowDevicesForUrls](#webusballowdevicesforurls)|Concede l'accesso a siti specifici per connettersi a dispositivi USB specifici|
 |[WebUsbAskForUrls](#webusbaskforurls)|Consente WebUSB in siti specifici|
 |[WebUsbBlockedForUrls](#webusbblockedforurls)|Blocca WebUSB in siti specifici|
-### [*Provider di ricerca predefinito*](#default-search-provider-policies)
+### [*<a name="default-search-provider"></a>Provider di ricerca predefinito*](#default-search-provider-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -124,7 +122,7 @@ e suggerimenti per i servizi Microsoft|
 |[DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)|URL del servizio di ricerca del provider di ricerca predefinito|
 |[DefaultSearchProviderSuggestURL](#defaultsearchprovidersuggesturl)|URL del provider di ricerca predefinito per i suggerimenti|
 |[NewTabPageSearchBox](#newtabpagesearchbox)|Configura l’esperienza della nuova scheda di casella di ricerca|
-### [*Extensions*](#extensions-policies)
+### [*<a name="extensions"></a>Extensions*](#extensions-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -135,7 +133,7 @@ e suggerimenti per i servizi Microsoft|
 |[ExtensionInstallForcelist](#extensioninstallforcelist)|Controlla le estensioni installate automaticamente|
 |[ExtensionInstallSources](#extensioninstallsources)|Configura le origini di installazione di script utente ed estensione|
 |[ExtensionSettings](#extensionsettings)|Configura le impostazioni di gestione delle estensioni|
-### [*Autenticazione HTTP*](#http-authentication-policies)
+### [*<a name="http-authentication"></a>Autenticazione HTTP*](#http-authentication-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -148,25 +146,25 @@ e suggerimenti per i servizi Microsoft|
 |[EnableAuthNegotiatePort](#enableauthnegotiateport)|Include una porta non-standard nell'SPN di Kerberos|
 |[NtlmV2Enabled](#ntlmv2enabled)|Controlla se è abilitata l'autenticazione NTLMv2|
 |[WindowsHelloForHTTPAuthEnabled](#windowshelloforhttpauthenabled)|Windows Hello per autenticazione HTTP abilitato|
-### [*Impostazioni modalità tutto schermo*](#kiosk-mode-settings-policies)
+### [*<a name="kiosk-mode-settings"></a>Impostazioni modalità tutto schermo*](#kiosk-mode-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[KioskAddressBarEditingEnabled](#kioskaddressbareditingenabled)|Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.|
 |[KioskDeleteDownloadsOnExit](#kioskdeletedownloadsonexit)|Elimina i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude|
-### [*Gestibilità*](#manageability-policies)
+### [*<a name="manageability"></a>Gestibilità*](#manageability-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[MAMAbilitato](#mamenabled)|Gestione delle app per dispositivi mobili abilitata|
-### [*Messaggistica nativa*](#native-messaging-policies)
+### [*<a name="native-messaging"></a>Messaggistica nativa*](#native-messaging-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[NativeMessagingAllowlist](#nativemessagingallowlist)|Controlla quali host di messaggistica nativa possono usare gli utenti|
 |[NativeMessagingBlocklist](#nativemessagingblocklist)|Configura l'elenco di indirizzi bloccati per la messaggistica nativa|
 |[NativeMessagingUserLevelHosts](#nativemessaginguserlevelhosts)|Consente gli host di messaggistica nativa a livello di utente (installati senza autorizzazioni di amministrazione)|
-### [*Gestione e protezione delle password*](#password-manager-and-protection-policies)
+### [*<a name="password-manager-and-protection"></a>Gestione e protezione delle password*](#password-manager-and-protection-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -176,25 +174,26 @@ e suggerimenti per i servizi Microsoft|
 |[PasswordProtectionLoginURLs](#passwordprotectionloginurls)|Configura l'elenco di URL di accesso aziendale dove il servizio della password di protezione dovrebbe acquisire hash salati di una password|
 |[PasswordProtectionWarningTrigger](#passwordprotectionwarningtrigger)|Configura il trigger di avviso per la password di protezione|
 |[PasswordRevealEnabled](#passwordrevealenabled)|Abilita il pulsante per rilevare la password|
-### [*Prestazioni*](#performance-policies)
+### [*<a name="performance"></a>Prestazioni*](#performance-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[StartupBoostEnabled](#startupboostenabled)|Abilita il potenziamento di avvio|
-### [*Stampa*](#printing-policies)
+### [*<a name="printing"></a>Stampa*](#printing-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[DefaultPrinterSelection](#defaultprinterselection)|Regole di selezione della stampante predefinita|
 |[PrintHeaderFooter](#printheaderfooter)|Stampa intestazioni e piè di pagina|
 |[PrintPreviewUseSystemDefaultPrinter](#printpreviewusesystemdefaultprinter)|Imposta la stampante predefinita del sistema come stampante predefinita|
+|[PrintRasterizationMode](#printrasterizationmode)|Modalità di rasterizzazione di stampa|
 |[PrinterTypeDenyList](#printertypedenylist)|Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti|
 |[PrintingAllowedBackgroundGraphicsModes](#printingallowedbackgroundgraphicsmodes)|Limitare la modalità di stampa grafica in background|
 |[PrintingBackgroundGraphicsDefault](#printingbackgroundgraphicsdefault)|Modalità di stampa grafica in background predefinita|
 |[PrintingEnabled](#printingenabled)|Abilita la stampa|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|Dimensioni della pagina di stampa predefinite|
 |[UseSystemPrintDialog](#usesystemprintdialog)|Stampa usando la finestra di dialogo della stampante di sistema|
-### [*Server proxy*](#proxy-server-policies)
+### [*<a name="proxy-server"></a>Server proxy*](#proxy-server-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -203,14 +202,14 @@ e suggerimenti per i servizi Microsoft|
 |[ProxyPacUrl](#proxypacurl)|Imposta l'URL del file .pac del proxy (deprecato)|
 |[ProxyServer](#proxyserver)|Configura l'indirizzo o l'URL del server proxy (deprecato)|
 |[ProxySettings](#proxysettings)|Impostazioni proxy|
-### [*Impostazioni schede di sospensione*](#sleeping-tabs-settings-policies)
+### [*<a name="sleeping-tabs-settings"></a>Impostazioni schede di sospensione*](#sleeping-tabs-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
 |[SleepingTabsBlockedForUrls](#sleepingtabsblockedforurls)|Blocca le schede di sospensione nei siti specifici|
 |[SleepingTabsEnabled](#sleepingtabsenabled)|Configura le schede di sospensione|
 |[SleepingTabsTimeout](#sleepingtabstimeout)|Imposta il timeout di inattività della scheda in background per le schede di sospensione|
-### [*Impostazioni SmartScreen*](#smartscreen-settings-policies)
+### [*<a name="smartscreen-settings"></a>Impostazioni SmartScreen*](#smartscreen-settings-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -220,7 +219,7 @@ e suggerimenti per i servizi Microsoft|
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -236,7 +235,7 @@ e suggerimenti per i servizi Microsoft|
 |[RestoreOnStartup](#restoreonstartup)|Azione da eseguire all'avvio|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|Siti da aprire all'avvio del browser|
 |[ShowHomeButton](#showhomebutton)|Mostra il pulsante Home nella barra degli strumenti|
-### [*Ulteriori informazioni*](#additional-policies)
+### [*<a name="additional"></a>Ulteriori informazioni*](#additional-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -321,7 +320,7 @@ e suggerimenti per i servizi Microsoft|
 |[ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](#exemptdomainfiletypepairsfromfiletypedownloadwarnings)|Disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini|
 |[ExperimentationAndConfigurationServiceControl](#experimentationandconfigurationservicecontrol)|Controlla le comunicazioni con il servizio di sperimentazione e configurazione|
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno|
-|[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|Consente agli utenti di configurare la protezione per la famiglia|
+|[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|Consentire agli utenti di configurare Family safety e la modalità bambini|
 |[FavoritesBarEnabled](#favoritesbarenabled)|Abilita la barra Preferiti|
 |[ForceBingSafeSearch](#forcebingsafesearch)|Applica Ricerca sicura di Bing|
 |[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"|
@@ -458,21 +457,21 @@ e suggerimenti per i servizi Microsoft|
 
 
 
-  ## Impostazioni dei criteri di Application Guard
+  ## <a name="application-guard-settings-policies"></a>Impostazioni dei criteri di Application Guard
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ApplicationGuardContainerProxy
+  ### <a name="applicationguardcontainerproxy"></a>ApplicationGuardContainerProxy
 
-  #### Proxy contenitore di Application Guard
+  #### <a name="application-guard-container-proxy"></a>Proxy contenitore di Application Guard
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le impostazioni del proxy per Application Guard di Microsoft Edge.
 Se si abilita questo criterio, Application Guard di Microsoft Edge ignora altre fonti di configurazioni proxy.
@@ -497,19 +496,19 @@ Se si sceglie il valore "pac_script" come "ProxyMode", viene usato il campo "Pro
 
 Per altre informazioni su come identificare il traffico di Application Guard tramite proxy doppio, visitare [https://go.microsoft.com/fwlink/?linkid=2134653](https://go.microsoft.com/fwlink/?linkid=2134653).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ApplicationGuardContainerProxy
   - Nome Criteri di gruppo: Proxy contenitore di Application Guard
@@ -517,14 +516,14 @@ Per altre informazioni su come identificare il traffico di Application Guard tra
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ApplicationGuardContainerProxy
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
@@ -534,7 +533,7 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
 }
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {"ProxyMode": "direct", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
@@ -545,17 +544,17 @@ SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ApplicationGuardFavoritesSyncEnabled
+  ### <a name="applicationguardfavoritessyncenabled"></a>ApplicationGuardFavoritesSyncEnabled
 
-  #### Sincronizzazione Preferiti di Application Guard abilitata
+  #### <a name="application-guard-favorites-sync-enabled"></a>Sincronizzazione Preferiti di Application Guard abilitata
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 90 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo norma consente ai computer e ai dispositivi Microsoft Edge con protezione dell'applicazione abilitata di sincronizzare i Preferiti dall'host al contenitore in modo che corrispondano ai Preferiti.
 
@@ -565,19 +564,19 @@ Se abiliti questa norma, la modifica dei Preferiti nel contenitore è disabilita
 
 Se disabiliti o non configuri questa norma, i Preferiti nell'host non verranno condivisi con il contenitore.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico dei Criteri di gruppo: ApplicationGuardFavoritesSyncEnabled
   - Nome dei criteri di gruppo: Sincronizzazione dei Preferiti di Application Guard abilitata
@@ -585,14 +584,14 @@ Se disabiliti o non configuri questa norma, i Preferiti nell'host non verranno c
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ApplicationGuardFavoritesSyncEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -602,21 +601,21 @@ Se disabiliti o non configuri questa norma, i Preferiti nell'host non verranno c
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di cast
+  ## <a name="cast-policies"></a>Criteri di cast
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableMediaRouter
+  ### <a name="enablemediarouter"></a>EnableMediaRouter
 
-  #### Abilita Google Cast
+  #### <a name="enable-google-cast"></a>Abilita Google Cast
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilitare questo criterio per abilitare Google Cast. Gli utenti potranno avviarlo dal menu delle app, dai menu contestuali delle pagine, dai controlli multimediali nei siti Web abilitati a Cast e (se visualizzata) dall'icona della barra degli strumenti di Cast.
 
@@ -624,19 +623,19 @@ Disabilitare questo criterio per disabilitare Google Cast.
 
 Per impostazione predefinita, Google Cast è abilitato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableMediaRouter
   - Nome Criteri di gruppo: Abilita Google Cast
@@ -644,20 +643,20 @@ Per impostazione predefinita, Google Cast è abilitato.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnableMediaRouter
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableMediaRouter
   - Valore di esempio
@@ -668,17 +667,17 @@ Per impostazione predefinita, Google Cast è abilitato.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ShowCastIconInToolbar
+  ### <a name="showcasticonintoolbar"></a>ShowCastIconInToolbar
 
-  #### Mostra l'icona di cast nella barra degli strumenti
+  #### <a name="show-the-cast-icon-in-the-toolbar"></a>Mostra l'icona di cast nella barra degli strumenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impostare questo criterio su true per mostrare l'icona della barra degli strumenti di Cast nella barra degli strumenti o nel menu sulla barra di navigazione. Gli utenti non potranno rimuoverlo.
 
@@ -686,19 +685,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono aggiunge
 
 Se è stato impostato anche il criterio [EnableMediaRouter](#enablemediarouter) su false, questo criterio viene ignorato e l'icona della barra degli strumenti non viene mostrata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowCastIconInToolbar
   - Nome Criteri di gruppo: Mostra l'icona di cast nella barra degli strumenti
@@ -706,20 +705,20 @@ Se è stato impostato anche il criterio [EnableMediaRouter](#enablemediarouter) 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ShowCastIconInToolbar
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowCastIconInToolbar
   - Valore di esempio
@@ -730,21 +729,21 @@ Se è stato impostato anche il criterio [EnableMediaRouter](#enablemediarouter) 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di impostazioni di contenuto
+  ## <a name="content-settings-policies"></a>Criteri di impostazioni di contenuto
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoSelectCertificateForUrls
+  ### <a name="autoselectcertificateforurls"></a>AutoSelectCertificateForUrls
 
-  #### Seleziona automaticamente i certificati client per questi siti
+  #### <a name="automatically-select-client-certificates-for-these-sites"></a>Seleziona automaticamente i certificati client per questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   La configurazione del criterio consente di creare un elenco di pattern URL che specificano i siti per cui Microsoft Edge può selezionare automaticamente un certificato del client. Il valore è una matrice di dizionari JSON convertiti in stringa, ciascuno con la forma { "pattern": "$URL_PATTERN", "filter" : $FILTER }, dove $URL_PATTERN è un pattern di configurazione del contenuto. $FILTER limita i certificati del client che il browser seleziona automaticamente. Indipendentemente dal filtro, solo i certificati che corrispondono alla richiesta di certificato del server sono selezionati.
 
@@ -762,19 +761,19 @@ Esempi dell’uso della sezione $FILTER:
 
 Se il criterio non viene configurato, non ci sarà alcuna selezione automatica per i siti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutoSelectCertificateForUrls
   - Nome Criteri di gruppo: Seleziona automaticamente i certificati client per questi siti
@@ -782,21 +781,21 @@ Se il criterio non viene configurato, non ci sarà alcuna selezione automatica p
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AutoSelectCertificateForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":\"https://www.contoso.com\",\"filter\":{\"ISSUER\":{\"CN\":\"certificate issuer name\", \"L\": \"certificate issuer location\", \"O\": \"certificate issuer org\", \"OU\": \"certificate issuer org unit\"}, \"SUBJECT\":{\"CN\":\"certificate subject name\", \"L\": \"certificate subject location\", \"O\": \"certificate subject org\", \"OU\": \"certificate subject org unit\"}}}"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoSelectCertificateForUrls
   - Valore di esempio
@@ -809,17 +808,17 @@ SOFTWARE\Policies\Microsoft\Edge\AutoSelectCertificateForUrls\1 = "{\"pattern\":
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CookiesAllowedForUrls
+  ### <a name="cookiesallowedforurls"></a>CookiesAllowedForUrls
 
-  #### Consenti i cookie in siti specifici
+  #### <a name="allow-cookies-on-specific-sites"></a>Consenti i cookie in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che sono consentiti per impostare i cookie.
 
@@ -839,19 +838,19 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
 
 Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](#savecookiesonexit).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CookiesAllowedForUrls
   - Nome Criteri di gruppo: Consenti i cookie in siti specifici
@@ -859,14 +858,14 @@ Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CookiesAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\1 = "https://www.contoso.com"
@@ -874,7 +873,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CookiesAllowedForUrls
   - Valore di esempio
@@ -888,17 +887,17 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesAllowedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CookiesBlockedForUrls
+  ### <a name="cookiesblockedforurls"></a>CookiesBlockedForUrls
 
-  #### Blocca i cookie in siti specifici
+  #### <a name="block-cookies-on-specific-sites"></a>Blocca i cookie in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non sono consentiti per impostare i cookie.
 
@@ -916,19 +915,19 @@ Nota: non è possibile impostare modelli URL in conflitto tra questi tre criteri
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CookiesBlockedForUrls
   - Nome Criteri di gruppo: Blocca i cookie in siti specifici
@@ -936,14 +935,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CookiesBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\1 = "https://www.contoso.com"
@@ -951,7 +950,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CookiesBlockedForUrls
   - Valore di esempio
@@ -965,17 +964,17 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CookiesSessionOnlyForUrls
+  ### <a name="cookiessessiononlyforurls"></a>CookiesSessionOnlyForUrls
 
-  #### Limita i cookie da siti Web specifici alla sessione corrente
+  #### <a name="limit-cookies-from-specific-websites-to-the-current-session"></a>Limita i cookie da siti Web specifici alla sessione corrente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I cookie creati dai siti Web che corrispondono a un modello URL definito dall'utente vengono eliminati al termine della sessione (quando viene chiusa la finestra).
 
@@ -997,19 +996,19 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
 
 Se si imposta il criterio [RestoreOnStartup](#restoreonstartup) per ripristinare gli URL di sessioni precedenti, questo criterio viene ignorato e i cookie vengono archiviati definitivamente per tali siti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CookiesSessionOnlyForUrls
   - Nome Criteri di gruppo: Limita i cookie da siti Web specifici alla sessione corrente
@@ -1017,14 +1016,14 @@ Se si imposta il criterio [RestoreOnStartup](#restoreonstartup) per ripristinare
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CookiesSessionOnlyForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\1 = "https://www.contoso.com"
@@ -1032,7 +1031,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CookiesSessionOnlyForUrls
   - Valore di esempio
@@ -1046,17 +1045,17 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultCookiesSetting
+  ### <a name="defaultcookiessetting"></a>DefaultCookiesSetting
 
-  #### Configura i cookie
+  #### <a name="configure-cookies"></a>Configura i cookie
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se i siti Web possono creare cookie nel dispositivo dell'utente. Questo criterio è di tipo tutto o niente: consente di creare cookie a tutti i siti Web o a nessuno. Non è possibile utilizzare questo criterio per abilitare i cookie di siti Web specifici.
 
@@ -1074,19 +1073,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultCookiesSetting
   - Nome Criteri di gruppo: Configura i cookie
@@ -1094,20 +1093,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultCookiesSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultCookiesSetting
   - Valore di esempio
@@ -1118,17 +1117,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultFileSystemReadGuardSetting
+  ### <a name="defaultfilesystemreadguardsetting"></a>DefaultFileSystemReadGuardSetting
 
-  #### Controlla l'uso dell'API file system per la lettura
+  #### <a name="control-use-of-the-file-system-api-for-reading"></a>Controlla l'uso dell'API file system per la lettura
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio su 3, i siti web possono richiedere l'accesso in lettura al filesystem del sistema operativo host attraverso l'API file System. Se si imposta questo criterio su 2, l’accesso viene negato.
 
@@ -1142,19 +1141,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultFileSystemReadGuardSetting
   - Nome Criteri di gruppo: controlla l'uso dell'API file system per la lettura
@@ -1162,20 +1161,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultFileSystemReadGuardSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultFileSystemReadGuardSetting
   - Valore di esempio
@@ -1186,17 +1185,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultFileSystemWriteGuardSetting
+  ### <a name="defaultfilesystemwriteguardsetting"></a>DefaultFileSystemWriteGuardSetting
 
-  #### Controlla l'uso dell'API file system per la scrittura
+  #### <a name="control-use-of-the-file-system-api-for-writing"></a>Controlla l'uso dell'API file system per la scrittura
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio su 3, i siti web possono richiedere l'accesso in scrittura al filesystem del sistema operativo host attraverso l'API file System. Se si imposta questo criterio su 2, l’accesso viene negato.
 
@@ -1210,19 +1209,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultFileSystemWriteGuardSetting
   - Nome Criteri di gruppo: controlla l'uso dell'API file system per la scrittura
@@ -1230,20 +1229,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultFileSystemWriteGuardSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: DefaultFileSystemWriteGuardSetting
   - Valore di esempio
@@ -1254,17 +1253,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultGeolocationSetting
+  ### <a name="defaultgeolocationsetting"></a>DefaultGeolocationSetting
 
-  #### Impostazione predefinita di georilevazione
+  #### <a name="default-geolocation-setting"></a>Impostazione predefinita di georilevazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Stabilisce se i siti Web possono tenere traccia delle posizioni fisiche degli utenti. È possibile consentire il tracciamento per impostazione predefinita (“AllowGeolocation”), negarlo per impostazione predefinita (“BlockGeolocation”) o chiedere conferma all'utente ogni volta che un sito Web richiede la posizione (“AskGeolocation”).
 
@@ -1280,19 +1279,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultGeolocationSetting
   - Nome Criteri di gruppo: Impostazione predefinita di georilevazione
@@ -1300,20 +1299,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultGeolocationSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultGeolocationSetting
   - Valore di esempio
@@ -1324,17 +1323,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultImagesSetting
+  ### <a name="defaultimagessetting"></a>DefaultImagesSetting
 
-  #### Impostazione predefinita per le immagini
+  #### <a name="default-images-setting"></a>Impostazione predefinita per le immagini
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Stabilisce se i siti Web possono mostrare immagini. È possibile consentire (“AllowImages”) o bloccare (“BlockImages”) le immagini in tutti i siti.
 
@@ -1348,19 +1347,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultImagesSetting
   - Nome Criteri di gruppo: Impostazione predefinita per le immagini
@@ -1368,20 +1367,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultImagesSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultImagesSetting
   - Valore di esempio
@@ -1392,17 +1391,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultInsecureContentSetting
+  ### <a name="defaultinsecurecontentsetting"></a>DefaultInsecureContentSetting
 
-  #### Controlla l'uso di eccezioni di contenuti non sicuri
+  #### <a name="control-use-of-insecure-content-exceptions"></a>Controlla l'uso di eccezioni di contenuti non sicuri
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Permette di specificare se gli utenti possono aggiungere eccezioni per consentire contenuti misti per siti specifici.
 
@@ -1418,19 +1417,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultInsecureContentSetting
   - Nome Criteri di gruppo: Controlla l'uso di eccezioni di contenuti non sicuri
@@ -1438,20 +1437,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultInsecureContentSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultInsecureContentSetting
   - Valore di esempio
@@ -1462,17 +1461,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultJavaScriptSetting
+  ### <a name="defaultjavascriptsetting"></a>DefaultJavaScriptSetting
 
-  #### Impostazione predefinita di JavaScript
+  #### <a name="default-javascript-setting"></a>Impostazione predefinita di JavaScript
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Stabilisce se i siti Web possono eseguire JavaScript. È possibile consentirlo (“AllowJavaScript”) o bloccarlo (“BlockJavaScript”) per tutti i siti.
 
@@ -1486,19 +1485,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultJavaScriptSetting
   - Nome Criteri di gruppo: Impostazione predefinita di JavaScript
@@ -1506,20 +1505,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultJavaScriptSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultJavaScriptSetting
   - Valore di esempio
@@ -1530,17 +1529,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultNotificationsSetting
+  ### <a name="defaultnotificationssetting"></a>DefaultNotificationsSetting
 
-  #### Impostazione predefinita per le notifiche
+  #### <a name="default-notification-setting"></a>Impostazione predefinita per le notifiche
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Stabilisce se i siti Web possono mostrare le notifiche sul desktop. È possibile consentirle per impostazione predefinita (“AllowNotifications”), negarle per impostazione predefinita (“BlockNotifications”) o fare in modo che venga chiesta conferma all'utente ogni volta che un sito Web vuole mostrare una notifica (“AskNotifications”).
 
@@ -1556,19 +1555,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultNotificationsSetting
   - Nome Criteri di gruppo: Impostazione predefinita per le notifiche
@@ -1576,20 +1575,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultNotificationsSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultNotificationsSetting
   - Valore di esempio
@@ -1600,17 +1599,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultPluginsSetting
+  ### <a name="defaultpluginssetting"></a>DefaultPluginsSetting
 
-  #### Impostazione predefinita di Adobe Flash (obsoleto)
+  #### <a name="default-adobe-flash-setting-obsolete"></a>Impostazione predefinita di Adobe Flash (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 87
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
 
@@ -1628,19 +1627,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultPluginsSetting
   - Nome GP: impostazione predefinita di Adobe Flash (obsoleto)
@@ -1648,20 +1647,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultPluginsSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultPluginsSetting
   - Valore di esempio
@@ -1672,17 +1671,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultPopupsSetting
+  ### <a name="defaultpopupssetting"></a>DefaultPopupsSetting
 
-  #### Impostazione predefinita della finestra popup
+  #### <a name="default-pop-up-window-setting"></a>Impostazione predefinita della finestra popup
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se i siti Web possono mostrare finestre popup. È possibile consentirle (“AllowPopups”) o bloccarle (“BlockPopups”) in tutti i siti.
 
@@ -1696,19 +1695,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultPopupsSetting
   - Nome Criteri di gruppo: Impostazione predefinita della finestra popup
@@ -1716,20 +1715,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultPopupsSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultPopupsSetting
   - Valore di esempio
@@ -1740,17 +1739,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultWebBluetoothGuardSetting
+  ### <a name="defaultwebbluetoothguardsetting"></a>DefaultWebBluetoothGuardSetting
 
-  #### Controlla l'uso dell'API Web Bluetooth
+  #### <a name="control-use-of-the-web-bluetooth-api"></a>Controlla l'uso dell'API Web Bluetooth
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se i siti Web possono accedere a dispositivi Bluetooth nelle vicinanze. È possibile bloccare completamente l'accesso o fare in modo che il sito chieda conferma all'utente ogni volta che vuole accedere a un dispositivo Bluetooth.
 
@@ -1764,19 +1763,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultWebBluetoothGuardSetting
   - Nome Criteri di gruppo : Controlla l'uso dell'API Web Bluetooth
@@ -1784,20 +1783,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultWebBluetoothGuardSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultWebBluetoothGuardSetting
   - Valore di esempio
@@ -1808,17 +1807,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultWebUsbGuardSetting
+  ### <a name="defaultwebusbguardsetting"></a>DefaultWebUsbGuardSetting
 
-  #### Controlla l'uso dell'API WebUSB
+  #### <a name="control-use-of-the-webusb-api"></a>Controlla l'uso dell'API WebUSB
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se i siti Web possono accedere ai dispositivi USB connessi. È possibile bloccare completamente l'accesso o chiedere conferma all'utente ogni volta che un sito Web vuole accedere a dispositivi USB connessi.
 
@@ -1834,19 +1833,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultWebUsbGuardSetting
   - Nome Criteri di gruppo: Controlla l'uso dell'API WebUSB
@@ -1854,20 +1853,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultWebUsbGuardSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultWebUsbGuardSetting
   - Valore di esempio
@@ -1878,17 +1877,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FileSystemReadAskForUrls
+  ### <a name="filesystemreadaskforurls"></a>FileSystemReadAskForUrls
 
-  #### Consente l'accesso in lettura con l'API file system in questi siti
+  #### <a name="allow-read-access-via-the-file-system-api-on-these-sites"></a>Consente l'accesso in lettura con l'API file system in questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impostando il criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host tramite l'API file system.
 
@@ -1898,19 +1897,19 @@ I modelli di URL non possono entrare in conflitto con [FileSystemReadBlockedForU
 
 Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FileSystemReadAskForUrls
   - Nome Criteri di gruppo: consente l'accesso in lettura con l'API file system in questi siti
@@ -1918,14 +1917,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.goo
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\1 = "https://www.example.com"
@@ -1933,7 +1932,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemReadAskForUrls
   - Valore di esempio
@@ -1947,17 +1946,17 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadAskForUrls\2 = "[*.]example.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FileSystemReadBlockedForUrls
+  ### <a name="filesystemreadblockedforurls"></a>FileSystemReadBlockedForUrls
 
-  #### Consente l'accesso in lettura tramite l'API file system in questi siti
+  #### <a name="block-read-access-via-the-file-system-api-on-these-sites"></a>Consente l'accesso in lettura tramite l'API file system in questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se viene impostato questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host tramite l'API file system.
 
@@ -1967,19 +1966,19 @@ I modelli di URL non possono entrare in conflitto con [FileSystemReadAskForUrls]
 
 Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FileSystemReadBlockedForUrls
   - Nome Criteri di gruppo: consente l'accesso in lettura tramite l'API file system in questi siti
@@ -1987,14 +1986,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.goo
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\1 = "https://www.example.com"
@@ -2002,7 +2001,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemReadBlockedForUrls
   - Valore di esempio
@@ -2016,17 +2015,17 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemReadBlockedForUrls\2 = "[*.]example.e
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FileSystemWriteAskForUrls
+  ### <a name="filesystemwriteaskforurls"></a>FileSystemWriteAskForUrls
 
-  #### Consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  #### <a name="allow-write-access-to-files-and-directories-on-these-sites"></a>Consente l'accesso in scrittura ai file e alle cartelle in questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in lettura a file o directory nel file system del sistema operativo host.
 
@@ -2036,19 +2035,19 @@ I modelli di URL non possono entrare in conflitto con [FileSystemWriteBlockedFor
 
 Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FileSystemWriteAskForUrls
   - Nome Criteri di gruppo: consente l'accesso in scrittura ai file e alle cartelle in questi siti
@@ -2056,14 +2055,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.goo
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\1 = "https://www.example.com"
@@ -2071,7 +2070,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemWriteAskForUrls
   - Valore di esempio
@@ -2085,17 +2084,17 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteAskForUrls\2 = "[*.]example.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FileSystemWriteBlockedForUrls
+  ### <a name="filesystemwriteblockedforurls"></a>FileSystemWriteBlockedForUrls
 
-  #### Non consente l'accesso in scrittura ai file e alle cartelle in questi siti
+  #### <a name="block-write-access-to-files-and-directories-on-these-sites"></a>Non consente l'accesso in scrittura ai file e alle cartelle in questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se viene impostato questo criterio, è possibile elencare i modelli di URL che specificano i siti in cui è possibile chiedere agli utenti di concedere l'accesso in scrittura a file o directory nel file system del sistema operativo host.
 
@@ -2105,19 +2104,19 @@ I modelli di URL non possono entrare in conflitto con [FileSystemWriteAskForUrls
 
 Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FileSystemWriteBlockedForUrls
   - Nome Criteri di gruppo: non consente l'accesso in scrittura ai file e alle cartelle in questi siti
@@ -2125,14 +2124,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.goo
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\1 = "https://www.example.com"
@@ -2140,7 +2139,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: FileSystemWriteBlockedForUrls
   - Valore di esempio
@@ -2154,35 +2153,35 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImagesAllowedForUrls
+  ### <a name="imagesallowedforurls"></a>ImagesAllowedForUrls
 
-  #### Consente le immagini in questi siti
+  #### <a name="allow-images-on-these-sites"></a>Consente le immagini in questi siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che possono mostrare immagini.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImagesAllowedForUrls
   - Nome Criteri di gruppo: Consente le immagini in questi siti
@@ -2190,14 +2189,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ImagesAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\1 = "https://www.contoso.com"
@@ -2205,7 +2204,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImagesAllowedForUrls
   - Valore di esempio
@@ -2219,35 +2218,35 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImagesBlockedForUrls
+  ### <a name="imagesblockedforurls"></a>ImagesBlockedForUrls
 
-  #### Blocca le immagini in siti specifici
+  #### <a name="block-images-on-specific-sites"></a>Blocca le immagini in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non possono mostrare immagini.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImagesBlockedForUrls
   - Nome Criteri di gruppo: Blocca le immagini in siti specifici
@@ -2255,14 +2254,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ImagesBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\1 = "https://www.contoso.com"
@@ -2270,7 +2269,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImagesBlockedForUrls
   - Valore di esempio
@@ -2284,35 +2283,35 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InsecureContentAllowedForUrls
+  ### <a name="insecurecontentallowedforurls"></a>InsecureContentAllowedForUrls
 
-  #### Consente contenuti non sicuri in siti specifici
+  #### <a name="allow-insecure-content-on-specified-sites"></a>Consente contenuti non sicuri in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Crea un elenco di modelli URL per specificare i siti che possono mostrare contenuti misti non sicuri (ovvero contenuti HTTP nei siti HTTPS).
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InsecureContentAllowedForUrls
   - Nome Criteri di gruppo: Consente contenuti non sicuri in siti specifici
@@ -2320,14 +2319,14 @@ Se non si configura questo criterio, i contenuti misti bloccabili verranno blocc
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\InsecureContentAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\1 = "https://www.example.com"
@@ -2335,7 +2334,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InsecureContentAllowedForUrls
   - Valore di esempio
@@ -2349,35 +2348,35 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InsecureContentBlockedForUrls
+  ### <a name="insecurecontentblockedforurls"></a>InsecureContentBlockedForUrls
 
-  #### Blocca contenuti non sicuri in siti specifici
+  #### <a name="block-insecure-content-on-specified-sites"></a>Blocca contenuti non sicuri in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Crea un elenco di modelli URL per specificare i siti che non possono mostrare contenuti misti (ovvero contenuti HTTP nei siti HTTPS) bloccabili (ossia attivi) e per quali contenuti misti eventualmente bloccabili verranno disabilitati gli aggiornamenti.
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InsecureContentBlockedForUrls
   - Nome Criteri di gruppo: Blocca contenuti non sicuri in siti specifici
@@ -2385,14 +2384,14 @@ Se non si configura questo criterio, i contenuti misti bloccabili verranno blocc
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\InsecureContentBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\1 = "https://www.example.com"
@@ -2400,7 +2399,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InsecureContentBlockedForUrls
   - Valore di esempio
@@ -2414,35 +2413,35 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### JavaScriptAllowedForUrls
+  ### <a name="javascriptallowedforurls"></a>JavaScriptAllowedForUrls
 
-  #### Consente JavaScript in siti specifici
+  #### <a name="allow-javascript-on-specific-sites"></a>Consente JavaScript in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che sono autorizzati a eseguire JavaScript.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultJavaScriptSetting](#defaultjavascriptsetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: JavaScriptAllowedForUrls
   - Nome Criteri di gruppo: Consente JavaScript in siti specifici
@@ -2450,14 +2449,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\JavaScriptAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\1 = "https://www.contoso.com"
@@ -2465,7 +2464,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: JavaScriptAllowedForUrls
   - Valore di esempio
@@ -2479,35 +2478,35 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### JavaScriptBlockedForUrls
+  ### <a name="javascriptblockedforurls"></a>JavaScriptBlockedForUrls
 
-  #### Blocca JavaScript in siti specifici
+  #### <a name="block-javascript-on-specific-sites"></a>Blocca JavaScript in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non sono autorizzati a eseguire JavaScript.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultJavaScriptSetting](#defaultjavascriptsetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: JavaScriptBlockedForUrls
   - Nome Criteri di gruppo: Blocca JavaScript in siti specifici
@@ -2515,14 +2514,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\JavaScriptBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\1 = "https://www.contoso.com"
@@ -2530,7 +2529,7 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: JavaScriptBlockedForUrls
   - Valore di esempio
@@ -2544,17 +2543,17 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### LegacySameSiteCookieBehaviorEnabled
+  ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
-  #### Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita
+  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting"></a>Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di ripristinare il comportamento SameSite legacy per tutti i cookie. Se il comportamento legacy viene ripristinato, i cookie che non specificano un attributo SameSite sono trattati come se fossero "SameSite=None", il requisito per i cookie "SameSite=None" di avere l'attributo "Secure" viene rimosso, e la valutazione dello schema viene saltata quando si verifica se due siti siano uguali.
 
@@ -2568,19 +2567,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: LegacySameSiteCookieBehaviorEnabled
   - Nome Criteri di gruppo: Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita
@@ -2588,20 +2587,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: LegacySameSiteCookieBehaviorEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: LegacySameSiteCookieBehaviorEnabled
   - Valore di esempio
@@ -2612,17 +2611,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### LegacySameSiteCookieBehaviorEnabledForDomainList
+  ### <a name="legacysamesitecookiebehaviorenabledfordomainlist"></a>LegacySameSiteCookieBehaviorEnabledForDomainList
 
-  #### Ripristina il comportamento SameSite legacy dei cookie in siti specifici
+  #### <a name="revert-to-legacy-samesite-behavior-for-cookies-on-specified-sites"></a>Ripristina il comportamento SameSite legacy dei cookie in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Per i cookie impostati per i domini che corrispondono a modelli specificati verrà ripristinato il comportamento SameSite legacy.
 
@@ -2634,19 +2633,19 @@ Il valore predefinito globale può essere configurato usando il criterio [Legacy
 
 I modelli elencati in questo criterio vengono trattati come domini, non URL, quindi non è necessario specificare uno schema o una porta.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: LegacySameSiteCookieBehaviorEnabledForDomainList
   - Nome Criteri di gruppo: Ripristina il comportamento SameSite legacy dei cookie in siti specifici
@@ -2654,14 +2653,14 @@ I modelli elencati in questo criterio vengono trattati come domini, non URL, qui
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainList\1 = "www.example.com"
@@ -2669,7 +2668,7 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: LegacySameSiteCookieBehaviorEnabledForDomainList
   - Valore di esempio
@@ -2683,35 +2682,35 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NotificationsAllowedForUrls
+  ### <a name="notificationsallowedforurls"></a>NotificationsAllowedForUrls
 
-  #### Consente le notifiche in siti specifici
+  #### <a name="allow-notifications-on-specific-sites"></a>Consente le notifiche in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di creare un elenco di modelli di URL per specificare i siti autorizzati a visualizzare le notifiche.
 
 Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NotificationsAllowedForUrls
   - Nome Criteri di gruppo: Consente le notifiche in siti specifici
@@ -2719,14 +2718,14 @@ Se non si imposta questo criterio, verrà usato il valore predefinito globale pe
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\NotificationsAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\1 = "https://www.contoso.com"
@@ -2734,7 +2733,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NotificationsAllowedForUrls
   - Valore di esempio
@@ -2748,35 +2747,35 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NotificationsBlockedForUrls
+  ### <a name="notificationsblockedforurls"></a>NotificationsBlockedForUrls
 
-  #### Blocca le notifiche in siti specifici
+  #### <a name="block-notifications-on-specific-sites"></a>Blocca le notifiche in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di creare un elenco di modelli di URL per specificare i siti non autorizzati a visualizzare le notifiche.
 
 Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NotificationsBlockedForUrls
   - Nome Criteri di gruppo: Blocca le notifiche in siti specifici
@@ -2784,14 +2783,14 @@ Se non si imposta questo criterio, verrà usato il valore predefinito globale pe
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\NotificationsBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\1 = "https://www.contoso.com"
@@ -2799,7 +2798,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NotificationsBlockedForUrls
   - Valore di esempio
@@ -2813,17 +2812,17 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsBlockedForUrls\2 = "[*.]contoso.ed
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PluginsAllowedForUrls
+  ### <a name="pluginsallowedforurls"></a>PluginsAllowedForUrls
 
-  #### Consentire il plug-in Adobe Flash in siti specifici (obsoleti)
+  #### <a name="allow-the-adobe-flash-plug-in-on-specific-sites-obsolete"></a>Consentire il plug-in Adobe Flash in siti specifici (obsoleti)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 87
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
 
@@ -2833,19 +2832,19 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PluginsAllowedForUrls
   - Nome GP: consentire il plug-in Adobe Flash in siti specifici (obsoleti)
@@ -2853,14 +2852,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\PluginsAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\1 = "https://www.contoso.com"
@@ -2868,7 +2867,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PluginsAllowedForUrls
   - Valore di esempio
@@ -2882,17 +2881,17 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsAllowedForUrls\2 = "http://contoso.edu:8
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PluginsBlockedForUrls
+  ### <a name="pluginsblockedforurls"></a>PluginsBlockedForUrls
 
-  #### Bloccare il plug-in Adobe Flash in siti specifici (obsoleti)
+  #### <a name="block-the-adobe-flash-plug-in-on-specific-sites-obsolete"></a>Bloccare il plug-in Adobe Flash in siti specifici (obsoleti)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 87
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
 
@@ -2902,19 +2901,19 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PluginsBlockedForUrls
   - Nome GP: bloccare il plug-in Adobe Flash in siti specifici (obsoleti)
@@ -2922,14 +2921,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\PluginsBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\1 = "https://www.contoso.com"
@@ -2937,7 +2936,7 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PluginsBlockedForUrls
   - Valore di esempio
@@ -2951,35 +2950,35 @@ SOFTWARE\Policies\Microsoft\Edge\PluginsBlockedForUrls\2 = "http://contoso.edu:8
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PopupsAllowedForUrls
+  ### <a name="popupsallowedforurls"></a>PopupsAllowedForUrls
 
-  #### Consente le finestre popup in siti specifici
+  #### <a name="allow-pop-up-windows-on-specific-sites"></a>Consente le finestre popup in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che possono aprire finestre popup. * non è un valore accettato per questo criterio.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPopupsSetting](#defaultpopupssetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PopupsAllowedForUrls
   - Nome Criteri di gruppo: Consente le finestre popup in siti specifici
@@ -2987,14 +2986,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\PopupsAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\1 = "https://www.contoso.com"
@@ -3002,7 +3001,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PopupsAllowedForUrls
   - Valore di esempio
@@ -3016,35 +3015,35 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsAllowedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PopupsBlockedForUrls
+  ### <a name="popupsblockedforurls"></a>PopupsBlockedForUrls
 
-  #### Blocca le finestre popup in siti specifici
+  #### <a name="block-pop-up-windows-on-specific-sites"></a>Blocca le finestre popup in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non possono aprire finestre popup. * non è un valore accettato per questo criterio.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPopupsSetting](#defaultpopupssetting) (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PopupsBlockedForUrls
   - Nome Criteri di gruppo: Blocca le finestre popup in siti specifici
@@ -3052,14 +3051,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\PopupsBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\1 = "https://www.contoso.com"
@@ -3067,7 +3066,7 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PopupsBlockedForUrls
   - Valore di esempio
@@ -3081,17 +3080,17 @@ SOFTWARE\Policies\Microsoft\Edge\PopupsBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RegisteredProtocolHandlers
+  ### <a name="registeredprotocolhandlers"></a>RegisteredProtocolHandlers
 
-  #### Registra i gestori di protocollo
+  #### <a name="register-protocol-handlers"></a>Registra i gestori di protocollo
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impostare questo criterio (solo consigliato) per registrare un elenco di gestori di protocollo. Questo elenco viene unito a quelli registrati dall'utente ed entrambi sono disponibili per l'uso.
 
@@ -3102,19 +3101,19 @@ Per registrare un gestore di protocollo:
 
 Gli utenti non possono rimuovere un gestore di protocollo registrato tramite questo criterio. Tuttavia, è possibile installare un nuovo gestore di protocollo predefinito per eseguire l'override dei gestori di protocollo esistenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: no
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RegisteredProtocolHandlers
   - Nome Criteri di gruppo: Registra i gestori di protocollo
@@ -3122,14 +3121,14 @@ Gli utenti non possono rimuovere un gestore di protocollo registrato tramite que
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni contenuto
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): N/D
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: RegisteredProtocolHandlers
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
@@ -3141,14 +3140,14 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [{"default": true, "protocol": "mailto", "url": "https://mail.contoso.com/mail/?extsrc=mailto&url=%s"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RegisteredProtocolHandlers
   - Valore di esempio
@@ -3169,18 +3168,18 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SpotlightExperiencesAndRecommendationsEnabled
+  ### <a name="spotlightexperiencesandrecommendationsenabled"></a>SpotlightExperiencesAndRecommendationsEnabled
 
-  #### Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche,
+  #### <a name="choose-whether-users-can-receive-customized-background-images-and-text-suggestions-notifications"></a>Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche,
 e suggerimenti per i servizi Microsoft
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche e consigli per i servizi Microsoft.
 
@@ -3188,19 +3187,19 @@ Se si abilita o non si configura questa impostazione, le esperienze in evidenza 
 
 Se si disabilita questa impostazione, le esperienze in evidenza e i suggerimenti vengono disattivati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: SpotlightExperiencesAndRecommendationsEnabled
   - Nome GP: scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche e consigli per i servizi Microsoft.
@@ -3208,14 +3207,14 @@ Se si disabilita questa impostazione, le esperienze in evidenza e i suggerimenti
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SpotlightExperiencesAndRecommendationsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -3225,17 +3224,17 @@ Se si disabilita questa impostazione, le esperienze in evidenza e i suggerimenti
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebUsbAllowDevicesForUrls
+  ### <a name="webusballowdevicesforurls"></a>WebUsbAllowDevicesForUrls
 
-  #### Concede l'accesso a siti specifici per connettersi a dispositivi USB specifici
+  #### <a name="grant-access-to-specific-sites-to-connect-to-specific-usb-devices"></a>Concede l'accesso a siti specifici per connettersi a dispositivi USB specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di impostare un elenco di URL che specificano quali siti verranno automaticamente autorizzati ad accedere a un dispositivo USB con gli ID prodotto e fornitore specificati. Ogni voce dell'elenco deve contenere sia i dispositivi sia gli URL affinché il criterio sia valido. Ogni elemento nei dispositivi può contenere un campo per ID prodotto e ID fornitore. Gli ID che vengono omessi vengono trattati come caratteri jolly con un'eccezione, e tale eccezione è che un ID prodotto non può essere specificato senza indicare anche un ID fornitore. In caso contrario, il criterio non sarà valido e verrà ignorato.
 
@@ -3245,19 +3244,19 @@ Se questo criterio non viene impostato, per tutti i siti verrà usato il valore 
 
 I modelli URL in questo criterio non devono essere in conflitto con quelli configurati tramite [WebUsbBlockedForUrls](#webusbblockedforurls). In caso di conflitto, questo criterio avrà la precedenza rispetto a [WebUsbBlockedForUrls](#webusbblockedforurls) e [WebUsbAskForUrls](#webusbaskforurls).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebUsbAllowDevicesForUrls
   - Nome Criteri di gruppo: Concede l'accesso a siti specifici per connettersi a dispositivi USB specifici
@@ -3265,14 +3264,14 @@ I modelli URL in questo criterio non devono essere in conflitto con quelli confi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebUsbAllowDevicesForUrls
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
@@ -3291,14 +3290,14 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [{"devices": [{"product_id": 5678, "vendor_id": 1234}], "urls": ["https://contoso.com", "https://fabrikam.com"]}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebUsbAllowDevicesForUrls
   - Valore di esempio
@@ -3327,17 +3326,17 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebUsbAskForUrls
+  ### <a name="webusbaskforurls"></a>WebUsbAskForUrls
 
-  #### Consente WebUSB in siti specifici
+  #### <a name="allow-webusb-on-specific-sites"></a>Consente WebUSB in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che possono chiedere all'utente di accedere a un dispositivo USB.
 
@@ -3345,19 +3344,19 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
 
 I modelli URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbBlockedForUrls](#webusbblockedforurls): non è possibile consentire e bloccare contemporaneamente un URL. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebUsbAskForUrls
   - Nome Criteri di gruppo: Consente WebUSB in siti specifici
@@ -3365,14 +3364,14 @@ I modelli URL definiti in questo criterio non possono essere in conflitto con qu
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\WebUsbAskForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\1 = "https://www.contoso.com"
@@ -3380,7 +3379,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebUsbAskForUrls
   - Valore di esempio
@@ -3394,17 +3393,17 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebUsbBlockedForUrls
+  ### <a name="webusbblockedforurls"></a>WebUsbBlockedForUrls
 
-  #### Blocca WebUSB in siti specifici
+  #### <a name="block-webusb-on-specific-sites"></a>Blocca WebUSB in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non possono chiedere all'utente di autorizzarli ad accedere a un dispositivo USB.
 
@@ -3412,19 +3411,19 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
 
 I modelli URL in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbAskForUrls](#webusbaskforurls). Non è possibile consentire e bloccare contemporaneamente un URL.  Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebUsbBlockedForUrls
   - Nome Criteri di gruppo: Blocca WebUSB in siti specifici
@@ -3432,14 +3431,14 @@ I modelli URL in questo criterio non possono essere in conflitto con quelli conf
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\WebUsbBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\1 = "https://www.contoso.com"
@@ -3447,7 +3446,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebUsbBlockedForUrls
   - Valore di esempio
@@ -3461,21 +3460,21 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri del provider di ricerca predefinito
+  ## <a name="default-search-provider-policies"></a>Criteri del provider di ricerca predefinito
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderEnabled
+  ### <a name="defaultsearchproviderenabled"></a>DefaultSearchProviderEnabled
 
-  #### Abilita il provider di ricerca predefinito
+  #### <a name="enable-the-default-search-provider"></a>Abilita il provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di usare un provider di ricerca predefinito.
 
@@ -3493,19 +3492,19 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderEnabled
   - Nome Criteri di gruppo: Abilita il provider di ricerca predefinito
@@ -3513,20 +3512,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderEnabled
   - Valore di esempio
@@ -3537,17 +3536,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderEncodings
+  ### <a name="defaultsearchproviderencodings"></a>DefaultSearchProviderEncodings
 
-  #### Codifiche del provider di ricerca predefinito
+  #### <a name="default-search-provider-encodings"></a>Codifiche del provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica le codifiche di caratteri supportate dal provider di ricerca. Le codifiche sono nomi di tabelle codici come UTF-8, GB2312 e ISO-8859-1. Vengono provate nell'ordine indicato.
 
@@ -3557,19 +3556,19 @@ Questo criterio viene applicato solo se si abilitano i criteri [DefaultSearchPro
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderEncodings
   - Nome Criteri di gruppo: Codifiche del provider di ricerca predefinito
@@ -3577,14 +3576,14 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\DefaultSearchProviderEncodings
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended\DefaultSearchProviderEncodings
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\1 = "UTF-8"
@@ -3594,7 +3593,7 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderEncodings
   - Valore di esempio
@@ -3610,17 +3609,17 @@ SOFTWARE\Policies\Microsoft\Edge\DefaultSearchProviderEncodings\4 = "ISO-8859-1"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderImageURL
+  ### <a name="defaultsearchproviderimageurl"></a>DefaultSearchProviderImageURL
 
-  #### Specifica la funzionalità di ricerca per immagini per il provider di ricerca predefinito
+  #### <a name="specifies-the-search-by-image-feature-for-the-default-search-provider"></a>Specifica la funzionalità di ricerca per immagini per il provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica l'URL per il motore di ricerca utilizzato per la ricerca delle immagini. Le richieste di ricerca vengono inviate tramite il metodo GET.
 
@@ -3636,19 +3635,19 @@ Questo criterio viene applicato solo se si abilitano i criteri [DefaultSearchPro
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderImageURL
   - Nome Criteri di gruppo: Specifica la funzionalità di ricerca per immagini per il provider di ricerca predefinito
@@ -3656,20 +3655,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderImageURL
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://search.contoso.com/searchbyimage/upload"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderImageURL
   - Valore di esempio
@@ -3680,17 +3679,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderImageURLPostParams
+  ### <a name="defaultsearchproviderimageurlpostparams"></a>DefaultSearchProviderImageURLPostParams
 
-  #### Parametri per un URL immagine che usa POST
+  #### <a name="parameters-for-an-image-url-that-uses-post"></a>Parametri per un URL immagine che usa POST
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita, questo criterio specifica i parametri utilizzati durante l'esecuzione di una ricerca di immagini che usa POST. Il criterio è costituito da coppie di valori/nomi separate da virgole. Se un valore è un parametro del modello, come {imageThumbnail} nell'esempio precedente, viene sostituito con i dati dell'anteprima dell'immagine reale. Questo criterio viene applicato solo se si abilitano i criteri [DefaultSearchProviderEnabled](#defaultsearchproviderenabled) e [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl).
 
@@ -3702,19 +3701,19 @@ Se non si imposta questo criterio, le richieste di ricerca delle immagini vengon
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderImageURLPostParams
   - Nome Criteri di gruppo: Parametri per un URL immagine che usa POST
@@ -3722,20 +3721,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderImageURLPostParams
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderImageURLPostParams
   - Valore di esempio
@@ -3746,17 +3745,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderKeyword
+  ### <a name="defaultsearchproviderkeyword"></a>DefaultSearchProviderKeyword
 
-  #### Parola chiave del provider di ricerca predefinito
+  #### <a name="default-search-provider-keyword"></a>Parola chiave del provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica la parola chiave, che è la scelta rapida da tastiera utilizzata nella barra degli indirizzi per attivare la ricerca per questo provider.
 
@@ -3766,19 +3765,19 @@ Questo criterio viene applicato solo se si abilitano i criteri [DefaultSearchPro
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderKeyword
   - Nome Criteri di gruppo: Parola chiave del provider di ricerca predefinito
@@ -3786,20 +3785,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderKeyword
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "mis"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderKeyword
   - Valore di esempio
@@ -3810,17 +3809,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderName
+  ### <a name="defaultsearchprovidername"></a>DefaultSearchProviderName
 
-  #### Nome del provider di ricerca predefinito
+  #### <a name="default-search-provider-name"></a>Nome del provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica il nome del provider di ricerca predefinito.
 
@@ -3832,19 +3831,19 @@ Il criterio "DefaultSearchProviderName" deve essere impostato su un provider di 
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderName
   - Nome Criteri di gruppo: Nome del provider di ricerca predefinito
@@ -3852,20 +3851,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderName
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "My Intranet Search"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderName
   - Valore di esempio
@@ -3876,17 +3875,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderSearchURL
+  ### <a name="defaultsearchprovidersearchurl"></a>DefaultSearchProviderSearchURL
 
-  #### URL del servizio di ricerca del provider di ricerca predefinito
+  #### <a name="default-search-provider-search-url"></a>URL del servizio di ricerca del provider di ricerca predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica l'URL per il motore di ricerca utilizzato per una ricerca predefinita. L'URL contiene la stringa "{searchTerms}", che in fase di query viene sostituita dai termini di ricerca dell'utente.
 
@@ -3900,19 +3899,19 @@ Questo criterio è necessario quando si abilita il criterio [DefaultSearchProvid
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderSearchURL
   - Nome Criteri di gruppo: URL del servizio di ricerca del provider di ricerca predefinito
@@ -3920,20 +3919,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderSearchURL
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://search.contoso.com/search?q={searchTerms}"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderSearchURL
   - Valore di esempio
@@ -3944,17 +3943,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderSuggestURL
+  ### <a name="defaultsearchprovidersuggesturl"></a>DefaultSearchProviderSuggestURL
 
-  #### URL del provider di ricerca predefinito per i suggerimenti
+  #### <a name="default-search-provider-url-for-suggestions"></a>URL del provider di ricerca predefinito per i suggerimenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica l'URL per il motore di ricerca utilizzato per fornire suggerimenti di ricerca. L'URL contiene la stringa "{searchTerms}", che in fase di query viene sostituita dal testo immesso dall'utente fino a quel momento.
 
@@ -3970,19 +3969,19 @@ Questo criterio viene applicato solo se si abilitano i criteri [DefaultSearchPro
 
 A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo criterio come consigliato. Se l'utente ha già impostato un provider di ricerca predefinito, non verrà aggiunto all'elenco dei provider di ricerca che l'utente può scegliere. Se si tratta del comportamento desiderato, usare il criterio [ManagedSearchEngines](#managedsearchengines).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderSuggestURL
   - Nome Criteri di gruppo: URL del provider di ricerca predefinito per i suggerimenti
@@ -3990,20 +3989,20 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DefaultSearchProviderSuggestURL
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://search.contoso.com/suggest?q={searchTerms}"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderSuggestURL
   - Valore di esempio
@@ -4014,17 +4013,17 @@ A partire dalla versione 84 di Microsoft Edge, è possibile impostare questo cri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageSearchBox
+  ### <a name="newtabpagesearchbox"></a>NewTabPageSearchBox
 
-  #### Configura l’esperienza della nuova scheda di casella di ricerca
+  #### <a name="configure-the-new-tab-page-search-box-experience"></a>Configura l’esperienza della nuova scheda di casella di ricerca
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   È possibile configurare la nuova scheda della casella di ricerca per utilizzare "Casella di ricerca (consigliata)" o "Barra degli indirizzi" per cercare su nuove schede. Questo criterio funziona solo se si imposta il motore di ricerca su un valore diverso da Bing configurando i due criteri seguenti: [DefaultSearchProviderEnabled](#defaultsearchproviderenabled) e [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl).
 
@@ -4047,19 +4046,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageSearchBox
   - Nome Criteri di gruppo: Configura l’esperienza della nuova scheda di casella di ricerca
@@ -4067,20 +4066,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Provider di ricerca predefinito
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NewTabPageSearchBox
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "bing"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
   - Valore di esempio
@@ -4091,21 +4090,21 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri per estensioni
+  ## <a name="extensions-policies"></a>Criteri per estensioni
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BlockExternalExtensions
+  ### <a name="blockexternalextensions"></a>BlockExternalExtensions
 
-  #### Blocca le estensioni esterne dall'installazione
+  #### <a name="blocks-external-extensions-from-being-installed"></a>Blocca le estensioni esterne dall'installazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla l'installazione di estensioni esterne.
 
@@ -4116,19 +4115,19 @@ Se si disattiva questa impostazione o non la si annulla, le estensioni esterne p
 Le estensioni esterne e la relativa installazione vengono documentate in https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BlockExternalExtensions
   - Nome Criteri di gruppo: blocca le estensioni esterne dall'installazione
@@ -4136,20 +4135,20 @@ Le estensioni esterne e la relativa installazione vengono documentate in https:/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BlockExternalExtensions
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BlockExternalExtensions
   - Valore di esempio:
@@ -4160,17 +4159,17 @@ Le estensioni esterne e la relativa installazione vengono documentate in https:/
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionAllowedTypes
+  ### <a name="extensionallowedtypes"></a>ExtensionAllowedTypes
 
-  #### Configura i tipi di estensioni consentiti
+  #### <a name="configure-allowed-extension-types"></a>Configura i tipi di estensioni consentiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione dei criteri controlla quali app ed estensioni possono essere installate in Microsoft Edge, con quali host possono interagire e limita l'accesso durante il runtime.
 
@@ -4190,19 +4189,19 @@ Per altre informazioni su questi tipi, vedere la documentazione sulle estensioni
 
 Tenere presente che questo criterio influisce anche sulle estensioni e le app installate in maniera forzata usando[ExtensionInstallForcelist](#extensioninstallforcelist).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionAllowedTypes
   - Nome Criteri di gruppo: Configura i tipi di estensioni consentiti
@@ -4210,21 +4209,21 @@ Tenere presente che questo criterio influisce anche sulle estensioni e le app in
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExtensionAllowedTypes
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionAllowedTypes
   - Valore di esempio
@@ -4237,17 +4236,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionAllowedTypes\1 = "hosted_app"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionInstallAllowlist
+  ### <a name="extensioninstallallowlist"></a>ExtensionInstallAllowlist
 
-  #### Consente l'installazione di estensioni specifiche
+  #### <a name="allow-specific-extensions-to-be-installed"></a>Consente l'installazione di estensioni specifiche
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio specifica quali estensioni non sono soggette al blocco.
 
@@ -4255,19 +4254,19 @@ Un valore di blocco * indica che tutte le estensioni sono bloccate e gli utenti 
 
 Per impostazione predefinita, tutte le estensioni sono consentite. Tuttavia, se hai vietato le estensioni per criterio, puoi usare l'elenco delle estensioni consentite per cambiare il criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionInstallAllowlist
   - Nome Criteri di gruppo: Consente l'installazione di estensioni specifiche
@@ -4275,14 +4274,14 @@ Per impostazione predefinita, tutte le estensioni sono consentite. Tuttavia, se 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExtensionInstallAllowlist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\1 = "extension_id1"
@@ -4290,7 +4289,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionInstallAllowlist
   - Valore di esempio
@@ -4304,17 +4303,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallAllowlist\2 = "extension_id2"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionInstallBlocklist
+  ### <a name="extensioninstallblocklist"></a>ExtensionInstallBlocklist
 
-  #### Controlla le estensioni che non è possibile installare
+  #### <a name="control-which-extensions-cannot-be-installed"></a>Controlla le estensioni che non è possibile installare
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare le estensioni che gli utenti non possono installare. Le estensioni già installate verranno disabilitate se bloccate, senza un modo per consentire all'utente di abilitarle. Dopo che un'estensione disabilitata viene rimossa dall’elenco di blocco, verrà automaticamente riattivata.
 
@@ -4322,19 +4321,19 @@ Un valore di blocco "\*" indica che tutte le estensioni sono bloccate, a meno ch
 
 Se questo criterio non è impostato, l'utente può installare qualsiasi estensione in Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionInstallBlocklist
   - Nome Criteri di gruppo: Controlla le estensioni che non è possibile installare
@@ -4342,14 +4341,14 @@ Se questo criterio non è impostato, l'utente può installare qualsiasi estensio
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExtensionInstallBlocklist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\1 = "extension_id1"
@@ -4357,7 +4356,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionInstallBlocklist
   - Valore di esempio
@@ -4371,17 +4370,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallBlocklist\2 = "extension_id2"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionInstallForcelist
+  ### <a name="extensioninstallforcelist"></a>ExtensionInstallForcelist
 
-  #### Controlla le estensioni installate automaticamente
+  #### <a name="control-which-extensions-are-installed-silently"></a>Controlla le estensioni installate automaticamente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impostare questo criterio per specificare un elenco di app ed estensioni che vengono installate in modo invisibile all'utente, senza interazione. Gli utenti non possono disinstallare o disattivare questa impostazione. Le autorizzazioni vengono concesse in modo implicito, incluse le API di estensione enterprise.deviceAttributes ed enterprise.platformKeys. Nota: queste 2 API non sono disponibili per le app e le estensioni che non sono installate in maniera forzata.
 
@@ -4399,19 +4398,19 @@ Ogni elemento elenco del criterio è una stringa che contiene un ID di estension
 
 Nota: questo criterio non si applica alla modalità InPrivate. Leggere informazioni sulle estensioni di hosting ( https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionInstallForcelist
   - Nome Criteri di gruppo: Controlla le estensioni installate automaticamente
@@ -4419,14 +4418,14 @@ Nota: questo criterio non si applica alla modalità InPrivate. Leggere informazi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExtensionInstallForcelist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\1 = "gbchcmhmhahfdphkhkmpfmihenigjmpp;https://edge.microsoft.com/extensionwebstorebase/v1/crx"
@@ -4434,7 +4433,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionInstallForcelist
   - Valore di esempio
@@ -4448,17 +4447,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionInstallSources
+  ### <a name="extensioninstallsources"></a>ExtensionInstallSources
 
-  #### Configura le origini di installazione di script utente ed estensione
+  #### <a name="configure-extension-and-user-script-install-sources"></a>Configura le origini di installazione di script utente ed estensione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce gli URL che consentono di installare estensioni e temi.
 
@@ -4468,19 +4467,19 @@ Ogni voce di questo elenco è uno schema di corrispondenza per lo stile dell'est
 
 Il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) ha la precedenza rispetto a questo criterio. Le estensioni che si trovano nell'elenco di elementi bloccati non verranno installate, anche se provengono da un sito indicato in questo elenco.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionInstallSources
   - Nome Criteri di gruppo: Configura le origini di installazione di script utente ed estensione
@@ -4488,21 +4487,21 @@ Il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) ha la preced
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExtensionInstallSources
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.contoso.com/*"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionInstallSources
   - Valore di esempio
@@ -4515,17 +4514,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExtensionSettings
+  ### <a name="extensionsettings"></a>ExtensionSettings
 
-  #### Configura le impostazioni di gestione delle estensioni
+  #### <a name="configure-extension-management-settings"></a>Configura le impostazioni di gestione delle estensioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio controlla le impostazioni di gestione delle estensioni per Microsoft Edge, incluse quelle controllate da criteri correlati all'estensione esistenti. Questo criterio sostituisce tutti i criteri legacy che potrebbero essere impostati.
 
@@ -4540,19 +4539,19 @@ Tieni presente che è ancora possibile usare [ ExtensionInstallForcelist](#exten
 Nota: per le istanze di Windows non collegate a un dominio Microsoft Active Directory, l'installazione forzata è limitata alle app e alle estensioni elencate nel sito Web dei componenti aggiuntivi Microsoft Edge.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExtensionSettings
   - Nome Criteri di gruppo: Configura le impostazioni di gestione delle estensioni
@@ -4560,14 +4559,14 @@ Nota: per le istanze di Windows non collegate a un dominio Microsoft Active Dire
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ExtensionSettings
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
@@ -4635,14 +4634,14 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 }
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {"*": {"allowed_types": ["hosted_app"], "blocked_install_message": "Custom error message.", "blocked_permissions": ["downloads", "bookmarks"], "install_sources": ["https://company-intranet/apps"], "installation_mode": "blocked", "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"]}, "abcdefghijklmnopabcdefghijklmnop": {"blocked_permissions": ["history"], "installation_mode": "allowed", "minimum_version_required": "1.0.1"}, "bcdefghijklmnopabcdefghijklmnopa": {"allowed_permissions": ["downloads"], "installation_mode": "force_installed", "runtime_allowed_hosts": ["*://good.contoso.com"], "runtime_blocked_hosts": ["*://*.contoso.com"], "update_url": "https://contoso.com/update_url"}, "cdefghijklmnopabcdefghijklmnopab": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {"blocked_install_message": "Custom error message.", "installation_mode": "blocked"}, "fghijklmnopabcdefghijklmnopabcde": {"blocked_install_message": "Custom removal message.", "installation_mode": "removed"}, "update_url:https://www.contoso.com/update.xml": {"allowed_permissions": ["downloads"], "blocked_permissions": ["wallpaper"], "installation_mode": "allowed"}}
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExtensionSettings
   - Valore di esempio
@@ -4747,39 +4746,39 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di autenticazione HTTP
+  ## <a name="http-authentication-policies"></a>Criteri di autenticazione HTTP
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowCrossOriginAuthPrompt
+  ### <a name="allowcrossoriginauthprompt"></a>AllowCrossOriginAuthPrompt
 
-  #### Consentire gli avvisi di autenticazione HTTP con origini multiple
+  #### <a name="allow-cross-origin-http-authentication-prompts"></a>Consentire gli avvisi di autenticazione HTTP con origini multiple
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controls whether third-party images on a page can show an authentication prompt.
 
 In genere, questo criterio è disabilitato come protezione da phishing. Se il criterio non viene configurato, sarà disabilitato e le immagini di terza parte non potranno mostrare gli avvisi di autenticazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowCrossOriginAuthPrompt
   - Nome GP: Consentire gli avvisi di autenticazione HTTP con origine multipla
@@ -4787,20 +4786,20 @@ In genere, questo criterio è disabilitato come protezione da phishing. Se il cr
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowCrossOriginAuthPrompt
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowCrossOriginAuthPrompt
   - Valore di esempio
@@ -4811,17 +4810,17 @@ In genere, questo criterio è disabilitato come protezione da phishing. Se il cr
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AuthNegotiateDelegateAllowlist
+  ### <a name="authnegotiatedelegateallowlist"></a>AuthNegotiateDelegateAllowlist
 
-  #### Specifica un elenco di server ai quali Microsoft Edge può delegare le credenziali utente
+  #### <a name="specifies-a-list-of-servers-that-microsoft-edge-can-delegate-user-credentials-to"></a>Specifica un elenco di server ai quali Microsoft Edge può delegare le credenziali utente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco di server ai quali Microsoft Edge può delegare.
 
@@ -4829,19 +4828,19 @@ Separare più nomi di server con virgole. I caratteri jolly (*) sono consentiti.
 
 Se non si configura questo criterio, Microsoft Edge non delegherà le credenziali utente anche se un server viene rilevato come Intranet.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AuthNegotiateDelegateAllowlist
   - Nome Criteri di gruppo: Specifica un elenco di server ai quali Microsoft Edge può delegare le credenziali utente
@@ -4849,20 +4848,20 @@ Se non si configura questo criterio, Microsoft Edge non delegherà le credenzial
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AuthNegotiateDelegateAllowlist
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "contoso.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AuthNegotiateDelegateAllowlist
   - Valore di esempio
@@ -4873,17 +4872,17 @@ Se non si configura questo criterio, Microsoft Edge non delegherà le credenzial
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AuthSchemes
+  ### <a name="authschemes"></a>AuthSchemes
 
-  #### Schemi di autenticazione supportati
+  #### <a name="supported-authentication-schemes"></a>Schemi di autenticazione supportati
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica gli schemi di autenticazione HTTP supportati.
 
@@ -4891,19 +4890,19 @@ Se non si configura questo criterio, Microsoft Edge non delegherà le credenzial
 
 Se non si configura questo criterio, vengono usati i quattro schemi.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AuthSchemes
   - Nome Criteri di gruppo: Schemi di autenticazione supportati
@@ -4911,20 +4910,20 @@ Se non si configura questo criterio, vengono usati i quattro schemi.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AuthSchemes
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "basic,digest,ntlm,negotiate"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AuthSchemes
   - Valore di esempio
@@ -4935,17 +4934,17 @@ Se non si configura questo criterio, vengono usati i quattro schemi.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AuthServerAllowlist
+  ### <a name="authserverallowlist"></a>AuthServerAllowlist
 
-  #### Configura l'elenco di server di autenticazione consentiti
+  #### <a name="configure-list-of-allowed-authentication-servers"></a>Configura l'elenco di server di autenticazione consentiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica i server da abilitare per l'autenticazione integrata. L'autenticazione integrata è abilitata solo quando Microsoft Edge riceve un test di autenticazione da un proxy o da un server in questo elenco.
 
@@ -4953,19 +4952,19 @@ Separare più nomi di server con virgole. I caratteri jolly (*) sono consentiti.
 
 Se non si configura questo criterio, Microsoft Edge prova a rilevare se un server si trova nella Intranet: solo dopo risponderà alle richieste IWA. Se il server si trova su Internet, le richieste IWA da tale server vengono ignorate da Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AuthServerAllowlist
   - Nome Criteri di gruppo: Configura l'elenco di server di autenticazione consentiti
@@ -4973,20 +4972,20 @@ Se non si configura questo criterio, Microsoft Edge prova a rilevare se un serve
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AuthServerAllowlist
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "*contoso.com,contoso.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AuthServerAllowlist
   - Valore di esempio
@@ -4997,35 +4996,35 @@ Se non si configura questo criterio, Microsoft Edge prova a rilevare se un serve
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BasicAuthOverHttpEnabled
+  ### <a name="basicauthoverhttpenabled"></a>BasicAuthOverHttpEnabled
 
-  #### Consenti autenticazione di base per HTTP
+  #### <a name="allow-basic-authentication-for-http"></a>Consenti autenticazione di base per HTTP
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se abiliti questo criterio o non lo configuri, saranno consentite le richieste di autenticazione di base per HTTP non protetto.
 
 Se disabiliti i criteri, le richieste HTTP non protette dallo schema di autenticazione di base vengono bloccate e sono consentite solo le richieste HTTPS protette.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BasicAuthOverHttpEnabled
   - Nome Criteri di gruppo: consente l'autenticazione di base per HTTP
@@ -5033,20 +5032,20 @@ Se disabiliti i criteri, le richieste HTTP non protette dallo schema di autentic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BasicAuthOverHttpEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BasicAuthOverHttpEnabled
   - Valore di esempio:
@@ -5057,17 +5056,17 @@ Se disabiliti i criteri, le richieste HTTP non protette dallo schema di autentic
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DisableAuthNegotiateCnameLookup
+  ### <a name="disableauthnegotiatecnamelookup"></a>DisableAuthNegotiateCnameLookup
 
-  #### Disabilita la ricerca di CNAME durante la negoziazione dell'autenticazione Kerberos
+  #### <a name="disable-cname-lookup-when-negotiating-kerberos-authentication"></a>Disabilita la ricerca di CNAME durante la negoziazione dell'autenticazione Kerberos
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Determina se il nome SPN Kerberos generato è basato sul nome DNS canonico (CNAME) o sul nome originale immesso.
 
@@ -5075,19 +5074,19 @@ Se si abilita questo criterio, la ricerca di CNAME viene ignorata e viene usato 
 
 Se si disabilita o non si configura questo criterio, viene usato il nome canonico del server.  Ciò viene determinato attraverso la ricerca di CNAME.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DisableAuthNegotiateCnameLookup
   - Nome Criteri di gruppo: Disabilita la ricerca di CNAME durante la negoziazione dell'autenticazione Kerberos
@@ -5095,20 +5094,20 @@ Se si disabilita o non si configura questo criterio, viene usato il nome canonic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DisableAuthNegotiateCnameLookup
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DisableAuthNegotiateCnameLookup
   - Valore di esempio
@@ -5119,17 +5118,17 @@ Se si disabilita o non si configura questo criterio, viene usato il nome canonic
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableAuthNegotiatePort
+  ### <a name="enableauthnegotiateport"></a>EnableAuthNegotiatePort
 
-  #### Include una porta non-standard nell'SPN di Kerberos
+  #### <a name="include-non-standard-port-in-kerberos-spn"></a>Include una porta non-standard nell'SPN di Kerberos
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se il nome SPN Kerberos generato deve includere una porta non standard.
 
@@ -5137,19 +5136,19 @@ Se si abilita questo criterio e un utente include una porta non standard (una po
 
 Se si disabilita o non si configura questo criterio, il nome SPN Kerberos generato non includerà una porta in nessun caso.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableAuthNegotiatePort
   - Nome Criteri di gruppo: Include una porta non-standard nell'SPN di Kerberos
@@ -5157,20 +5156,20 @@ Se si disabilita o non si configura questo criterio, il nome SPN Kerberos genera
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnableAuthNegotiatePort
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableAuthNegotiatePort
   - Valore di esempio
@@ -5181,17 +5180,17 @@ Se si disabilita o non si configura questo criterio, il nome SPN Kerberos genera
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NtlmV2Enabled
+  ### <a name="ntlmv2enabled"></a>NtlmV2Enabled
 
-  #### Controlla se è abilitata l'autenticazione NTLMv2
+  #### <a name="control-whether-ntlmv2-authentication-is-enabled"></a>Controlla se è abilitata l'autenticazione NTLMv2
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se NTLMv2 è abilitato.
 
@@ -5199,19 +5198,19 @@ Tutte le versioni recenti di server Samba e Windows supportano NTLMv2. È consig
 
 Se non si configura questo criterio, NTLMv2 è abilitato per impostazione predefinita.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NtlmV2Enabled
   - Valore di esempio
@@ -5222,35 +5221,35 @@ Se non si configura questo criterio, NTLMv2 è abilitato per impostazione predef
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WindowsHelloForHTTPAuthEnabled
+  ### <a name="windowshelloforhttpauthenabled"></a>WindowsHelloForHTTPAuthEnabled
 
-  #### Windows Hello per autenticazione HTTP abilitato
+  #### <a name="windows-hello-for-http-auth-enabled"></a>Windows Hello per autenticazione HTTP abilitato
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 90 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Indica se è necessario usare l'interfaccia utente di Windows Credential per rispondere ai problemi di autenticazione di NTLM e Negotiate.
 
 Se disabiliti questo criterio, per rispondere alle sfide di NTLM e Negotiate verrà usata una richiesta di base di nome utente e password. Se abiliti o non configuri questo criterio, verrà usata l'interfaccia utente di Windows Credential.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WindowsHelloForHTTPAuthEnabled
   - Nome Criteri di gruppo: Windows Hello per autenticazione HTTP abilitato
@@ -5258,14 +5257,14 @@ Se disabiliti questo criterio, per rispondere alle sfide di NTLM e Negotiate ver
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Autenticazione HTTP
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
   - Nome valore: WindowsHelloForHTTPAuthEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -5275,21 +5274,21 @@ Se disabiliti questo criterio, per rispondere alle sfide di NTLM e Negotiate ver
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri delle impostazioni della modalità tutto schermo
+  ## <a name="kiosk-mode-settings-policies"></a>Criteri delle impostazioni della modalità tutto schermo
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### KioskAddressBarEditingEnabled
+  ### <a name="kioskaddressbareditingenabled"></a>KioskAddressBarEditingEnabled
 
-  #### Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.
+  #### <a name="configure-address-bar-editing-for-kiosk-mode-public-browsing-experience"></a>Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 87 or later
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio si applica solo alla modalità tutto schermo di Microsoft Edge quando si utilizza l'esperienza di navigazione pubblica.
 
@@ -5299,19 +5298,19 @@ Se il criterio viene disabilitato, gli utenti non potranno modificare l'URL nell
 
 Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: KioskAddressBarEditingEnabled
   - Nome GP: configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo
@@ -5319,20 +5318,20 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: KioskAddressBarEditingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: KioskAddressBarEditingEnabled
   - Valore di esempio
@@ -5343,17 +5342,17 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### KioskDeleteDownloadsOnExit
+  ### <a name="kioskdeletedownloadsonexit"></a>KioskDeleteDownloadsOnExit
 
-  #### Elimina i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude
+  #### <a name="delete-files-downloaded-as-part-of-kiosk-session-when-microsoft-edge-closes"></a>Elimina i file scaricati durante la sessione a tutto schermo quando Microsoft Edge si chiude
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 87 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio viene applicato alla modalità tutto schermo di Microsoft Edge.
 
@@ -5363,19 +5362,19 @@ Se il criterio viene disabilitato o non viene configurato, i file scaricati dura
 
 Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: KioskDeleteDownloadsOnExit
   - Nome GP: Eliminare i file scaricati durante le sessioni a tutto schermo quando Microsoft Edge si chiude
@@ -5383,14 +5382,14 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: KioskDeleteDownloadsOnExit
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -5400,21 +5399,21 @@ Per i dettagli della configurazione della modalità tutto schermo, vedere [https
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di gestibilità
+  ## <a name="manageability-policies"></a>Criteri di gestibilità
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### MAMAbilitato
+  ### <a name="mamenabled"></a>MAMAbilitato
 
-  #### Gestione delle app per dispositivi mobili abilitata
+  #### <a name="mobile-app-management-enabled"></a>Gestione delle app per dispositivi mobili abilitata
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente al browser Microsoft Edge di recuperare i criteri dai servizi di gestione delle applicazioni di Intune e applicarli ai profili degli utenti.
 
@@ -5422,19 +5421,19 @@ Se abiliti questa criterio o non li configuri, potrebbero essere applicati i cri
 
 Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per richiedere i criteri di gestione di app per dispositivi mobili.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico di Criteri di gruppo: MAMEnabled
   - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
@@ -5442,20 +5441,20 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: MAMEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MAMEnabled
   - Valore di esempio
@@ -5466,39 +5465,39 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di messaggistica nativa
+  ## <a name="native-messaging-policies"></a>Criteri di messaggistica nativa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NativeMessagingAllowlist
+  ### <a name="nativemessagingallowlist"></a>NativeMessagingAllowlist
 
-  #### Controlla quali host di messaggistica nativa possono usare gli utenti
+  #### <a name="control-which-native-messaging-hosts-users-can-use"></a>Controlla quali host di messaggistica nativa possono usare gli utenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione del criterio specifica gli host di messaggistica nativi non soggetti all'elenco degli indirizzi non consentiti Un valore di elenco di negazione * indica che tutti gli host di messaggistica nativi vengono rifiutati, a meno che non siano esplicitamente consentiti.
 
 Tutti gli host di messaggistica nativi sono consentiti per impostazione predefinita. Tuttavia, se un host di messaggistica nativo viene negato dai criteri, l'amministratore può usare l'elenco Consenti per modificare il criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NativeMessagingAllowlist
   - Nome Criteri di gruppo: Controlla quali host di messaggistica nativa possono usare gli utenti
@@ -5506,14 +5505,14 @@ Tutti gli host di messaggistica nativi sono consentiti per impostazione predefin
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\NativeMessagingAllowlist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\1 = "com.native.messaging.host.name1"
@@ -5521,7 +5520,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NativeMessagingAllowlist
   - Valore di esempio
@@ -5535,35 +5534,35 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingAllowlist\2 = "com.native.messag
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NativeMessagingBlocklist
+  ### <a name="nativemessagingblocklist"></a>NativeMessagingBlocklist
 
-  #### Configura l'elenco di indirizzi bloccati per la messaggistica nativa
+  #### <a name="configure-native-messaging-block-list"></a>Configura l'elenco di indirizzi bloccati per la messaggistica nativa
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio specifica gli host di messaggistica nativi che non devono essere caricati. Un valore di elenco di negazione * indica che tutti gli host di messaggistica nativi vengono rifiutati, a meno che non siano esplicitamente consentiti.
 
 Se si lascia questo criterio non impostato, Microsoft Edge carica tutti gli host di messaggistica nativa installati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NativeMessagingBlocklist
   - Nome Criteri di gruppo: Configura l'elenco di indirizzi bloccati per la messaggistica nativa
@@ -5571,14 +5570,14 @@ Se si lascia questo criterio non impostato, Microsoft Edge carica tutti gli host
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\NativeMessagingBlocklist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\1 = "com.native.messaging.host.name1"
@@ -5586,7 +5585,7 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NativeMessagingBlocklist
   - Valore di esempio
@@ -5600,35 +5599,35 @@ SOFTWARE\Policies\Microsoft\Edge\NativeMessagingBlocklist\2 = "com.native.messag
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NativeMessagingUserLevelHosts
+  ### <a name="nativemessaginguserlevelhosts"></a>NativeMessagingUserLevelHosts
 
-  #### Consente gli host di messaggistica nativa a livello di utente (installati senza autorizzazioni di amministrazione)
+  #### <a name="allow-user-level-native-messaging-hosts-installed-without-admin-permissions"></a>Consente gli host di messaggistica nativa a livello di utente (installati senza autorizzazioni di amministrazione)
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio su abilitato o non si annulla, Microsoft Edge può usare gli host di messaggistica nativi installati a livello di utente.
 
 Se si imposta questo criterio su disattivato, Microsoft Edge può usare questi host solo se installati a livello di sistema.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NativeMessagingUserLevelHosts
   - Nome Criteri di gruppo: Consente gli host di messaggistica nativa a livello di utente (installati senza autorizzazioni di amministrazione)
@@ -5636,20 +5635,20 @@ Se si imposta questo criterio su disattivato, Microsoft Edge può usare questi h
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NativeMessagingUserLevelHosts
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NativeMessagingUserLevelHosts
   - Valore di esempio
@@ -5660,21 +5659,21 @@ Se si imposta questo criterio su disattivato, Microsoft Edge può usare questi h
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di gestione e protezione delle password
+  ## <a name="password-manager-and-protection-policies"></a>Criteri di gestione e protezione delle password
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordManagerEnabled
+  ### <a name="passwordmanagerenabled"></a>PasswordManagerEnabled
 
-  #### Abilita il salvataggio delle password con lo strumento di gestione delle password
+  #### <a name="enable-saving-passwords-to-the-password-manager"></a>Abilita il salvataggio delle password con lo strumento di gestione delle password
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente a Microsoft Edge di salvare le password utente.
 
@@ -5684,19 +5683,19 @@ Se si disabilita questo criterio, gli utenti non possono salvare le nuove passwo
 
 Se si abilita o si disabilita questo criterio, gli utenti non possono modificarlo o sostituirlo in Microsoft Edge. Se non si configura questo criterio, gli utenti possono salvare le password, oltre a disattivare questa funzionalità.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PasswordManagerEnabled
   - Nome Criteri di gruppo: Abilita il salvataggio delle password con lo strumento di gestione delle password
@@ -5704,20 +5703,20 @@ Se si abilita o si disabilita questo criterio, gli utenti non possono modificarl
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Gestione e protezione delle password
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: PasswordManagerEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordManagerEnabled
   - Valore di esempio
@@ -5728,17 +5727,17 @@ Se si abilita o si disabilita questo criterio, gli utenti non possono modificarl
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordMonitorAllowed
+  ### <a name="passwordmonitorallowed"></a>PasswordMonitorAllowed
 
-  #### Consenti agli utenti di ricevere avvisi se le loro password non sono sicure
+  #### <a name="allow-users-to-be-alerted-if-their-passwords-are-found-to-be-unsafe"></a>Consenti agli utenti di ricevere avvisi se le loro password non sono sicure
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consenti a Microsoft Edge di monitorare le password utente.
 
@@ -5762,19 +5761,19 @@ Consigliato abilitato: se il criterio è impostato su consigliato abilitato, l'i
 
 Disabilitato e consigliato disabilitati: entrambe gli stati funzioneranno normalmente, con la consueta didascalia mostrata agli utenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PasswordMonitorAllowed
   - Nome Criteri di gruppo: consenti agli utenti di ricevere avvisi se le loro password non sono sicure
@@ -5782,14 +5781,14 @@ Disabilitato e consigliato disabilitati: entrambe gli stati funzioneranno normal
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Gestione e protezione delle password
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: PasswordMonitorAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -5799,17 +5798,17 @@ Disabilitato e consigliato disabilitati: entrambe gli stati funzioneranno normal
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordProtectionChangePasswordURL
+  ### <a name="passwordprotectionchangepasswordurl"></a>PasswordProtectionChangePasswordURL
 
-  #### Configura l'URL di modifica della password
+  #### <a name="configure-the-change-password-url"></a>Configura l'URL di modifica della password
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'URL di modifica della password (solo schemi HTTP e HTTPS).
 
@@ -5821,19 +5820,19 @@ Se si disabilita o non si configura questo criterio, il servizio della password 
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PasswordProtectionChangePasswordURL
   - Nome Criteri di gruppo: Configura l'URL di modifica della password
@@ -5841,20 +5840,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PasswordProtectionChangePasswordURL
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://contoso.com/change_password.html"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordProtectionChangePasswordURL
   - Valore di esempio
@@ -5865,17 +5864,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordProtectionLoginURLs
+  ### <a name="passwordprotectionloginurls"></a>PasswordProtectionLoginURLs
 
-  #### Configura l'elenco di URL di accesso aziendale dove il servizio della password di protezione dovrebbe acquisire hash salati di una password
+  #### <a name="configure-the-list-of-enterprise-login-urls-where-the-password-protection-service-should-capture-salted-hashes-of-a-password"></a>Configura l'elenco di URL di accesso aziendale dove il servizio della password di protezione dovrebbe acquisire hash salati di una password
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco di URL di accesso aziendali (solo schemi HTTP e HTTPS) dove Microsoft Edge deve acquisire gli hash salati delle password e usarli per il rilevamento del riutilizzo delle password.
 
@@ -5885,19 +5884,19 @@ Se si disabilita o non si configura questo criterio, non vengono acquisite le im
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PasswordProtectionLoginURLs
   - Nome Criteri di gruppo: Configura l'elenco di URL di accesso aziendale dove il servizio della password di protezione dovrebbe acquisire gli hash salati di una password
@@ -5905,14 +5904,14 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\PasswordProtectionLoginURLs
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\1 = "https://contoso.com/login.html"
@@ -5920,7 +5919,7 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordProtectionLoginURLs
   - Valore di esempio
@@ -5934,17 +5933,17 @@ SOFTWARE\Policies\Microsoft\Edge\PasswordProtectionLoginURLs\2 = "https://login.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordProtectionWarningTrigger
+  ### <a name="passwordprotectionwarningtrigger"></a>PasswordProtectionWarningTrigger
 
-  #### Configura il trigger di avviso per la password di protezione
+  #### <a name="configure-password-protection-warning-trigger"></a>Configura il trigger di avviso per la password di protezione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di controllare quando attivare l'avviso della password di protezione. La password di protezione avvisa gli utenti quando riutilizzano la password protetta in siti potenzialmente sospetti.
 
@@ -5966,19 +5965,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PasswordProtectionWarningTrigger
   - Nome Criteri di gruppo: Configura il trigger di avviso per la password di protezione
@@ -5986,20 +5985,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PasswordProtectionWarningTrigger
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordProtectionWarningTrigger
   - Valore di esempio
@@ -6010,17 +6009,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PasswordRevealEnabled
+  ### <a name="passwordrevealenabled"></a>PasswordRevealEnabled
 
-  #### Abilita il pulsante per rilevare la password
+  #### <a name="enable-password-reveal-button"></a>Abilita il pulsante per rilevare la password
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 87 or later
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di configurare la visualizzazione predefinita del pulsante per rivelare la password del browser per i campi di immissione delle password nei siti Web.
 
@@ -6032,19 +6031,19 @@ Per l'accessibilità, gli utenti possono cambiare l'impostazione del browser dai
 
 Questo criterio influisce solo sul pulsante per rivelare la password del browser, non influisce sui pulsanti di rivelazione personalizzati dei siti Web.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: no
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: PasswordRevealEnabled
   - Nome GP: abilita il pulsante per rilevare la password
@@ -6052,20 +6051,20 @@ Questo criterio influisce solo sul pulsante per rivelare la password del browser
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Gestione e protezione delle password
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): N/D
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: PasswordRevealEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PasswordRevealEnabled
   - Valore di esempio
@@ -6076,21 +6075,21 @@ Questo criterio influisce solo sul pulsante per rivelare la password del browser
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri sulle prestazioni
+  ## <a name="performance-policies"></a>Criteri sulle prestazioni
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### StartupBoostEnabled
+  ### <a name="startupboostenabled"></a>StartupBoostEnabled
 
-  #### Abilita il potenziamento di avvio
+  #### <a name="enable-startup-boost"></a>Abilita il potenziamento di avvio
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente l'avvio dei processi di Microsoft Edge all'accesso al sistema operativo e il riavvio in background dopo la chiusura dell'ultima finestra del browser.
 
@@ -6104,19 +6103,19 @@ Se non si configura questo criterio, è possibile che il potenziamento di avvio 
 
 Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: StartupBoostEnabled
   - Nome Criteri di gruppo: abilita il potenziamento di avvio
@@ -6124,14 +6123,14 @@ Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwl
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Prestazioni
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome univoco Criteri di gruppo: StartupBoostEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -6141,21 +6140,21 @@ Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwl
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di stampa
+  ## <a name="printing-policies"></a>Criteri di stampa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultPrinterSelection
+  ### <a name="defaultprinterselection"></a>DefaultPrinterSelection
 
-  #### Regole di selezione della stampante predefinita
+  #### <a name="default-printer-selection-rules"></a>Regole di selezione della stampante predefinita
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Sostituisce le regole di selezione della stampare predefinita di Microsoft Edge. Questo criterio determina le regole di selezione della stampante predefinita in Microsoft Edge, che si verifica la prima volta che un utente prova a stampare una pagina.
 
@@ -6167,19 +6166,19 @@ Il valore viene analizzato come oggetto JSON, conforme allo schema seguente: { "
 
 Se si omette un campo significa che tutti i valori corrispondono; ad esempio, se non si specifica la connettività, l'anteprima di stampa inizia a individuare tutti i tipi di stampanti locali. Gli schemi di espressioni regolari devono seguire la sintassi JavaScript RegExp e per le corrispondenze viene fatta distinzione tra maiuscole e minuscole.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultPrinterSelection
   - Nome Criteri di gruppo: Regole di selezione della stampante predefinita
@@ -6187,20 +6186,20 @@ Se si omette un campo significa che tutti i valori corrispondono; ad esempio, se
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultPrinterSelection
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "{ \"idPattern\": \".*public\", \"namePattern\": \".*Color\" }"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultPrinterSelection
   - Valore di esempio
@@ -6211,17 +6210,17 @@ Se si omette un campo significa che tutti i valori corrispondono; ad esempio, se
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintHeaderFooter
+  ### <a name="printheaderfooter"></a>PrintHeaderFooter
 
-  #### Stampa intestazioni e piè di pagina
+  #### <a name="print-headers-and-footers"></a>Stampa intestazioni e piè di pagina
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Forza l'attivazione o la disattivazione di "intestazioni e piè di pagina" nella finestra di dialogo di stampa.
 
@@ -6231,19 +6230,19 @@ Se si disabilita questo criterio, gli utenti non possono stampare intestazioni e
 
 Se si abilita questo criterio, gli utenti stampano sempre intestazioni e piè di pagina.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PrintHeaderFooter
   - Nome Criteri di gruppo: Stampa intestazioni e piè di pagina
@@ -6251,20 +6250,20 @@ Se si abilita questo criterio, gli utenti stampano sempre intestazioni e piè di
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Stampa
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: PrintHeaderFooter
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintHeaderFooter
   - Valore di esempio
@@ -6275,17 +6274,17 @@ Se si abilita questo criterio, gli utenti stampano sempre intestazioni e piè di
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintPreviewUseSystemDefaultPrinter
+  ### <a name="printpreviewusesystemdefaultprinter"></a>PrintPreviewUseSystemDefaultPrinter
 
-  #### Imposta la stampante predefinita del sistema come stampante predefinita
+  #### <a name="set-the-system-default-printer-as-the-default-printer"></a>Imposta la stampante predefinita del sistema come stampante predefinita
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Indica a Microsoft Edge di usare la stampante predefinita di sistema come scelta predefinita nell'anteprima di stampa, anziché la stampante usata di recente.
 
@@ -6293,19 +6292,19 @@ Se si disabilita o non si configura questo criterio, l'anteprima di stampa utili
 
 Se si abilita questo criterio, l'anteprima di stampa utilizza la stampante predefinita del sistema operativo come scelta di destinazione predefinita.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PrintPreviewUseSystemDefaultPrinter
   - Nome Criteri di gruppo: Imposta la stampante predefinita del sistema come stampante predefinita
@@ -6313,20 +6312,20 @@ Se si abilita questo criterio, l'anteprima di stampa utilizza la stampante prede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Stampa
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: PrintPreviewUseSystemDefaultPrinter
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintPreviewUseSystemDefaultPrinter
   - Valore di esempio
@@ -6337,17 +6336,82 @@ Se si abilita questo criterio, l'anteprima di stampa utilizza la stampante prede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrinterTypeDenyList
+  ### <a name="printrasterizationmode"></a>PrintRasterizationMode
 
-  #### Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti
+  #### <a name="print-rasterization-mode"></a>Modalità di rasterizzazione di stampa
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows dalla versione 90 o successive
+
+  #### <a name="description"></a>Descrizione
+
+  Controlla la modalità di stampa di Microsoft Edge in Windows.
+
+A volte i processi di stampa devono essere rasterizzati per la stampa corretta.
+
+Se si imposta questo criterio su "Completo" o non lo si configura, Microsoft Edge farà la rasterizzazione a pagina intera, se necessario.
+
+Se si imposta questo criterio su "Veloce", Microsoft Edge ridurrà la quantità di rasterizzazione che può contribuire a ridurre le dimensioni dei processi di stampa e ad aumentare la velocità di stampa.
+
+Mappatura delle opzioni del criterio:
+
+* Full (0) = Rasterizzazione a pagina intera
+
+* Veloce (1) = Evitare la rasterizzazione, se possibile
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Numero intero
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: PrintRasterizationMode
+  - Nome Criteri di gruppo: Print Rasterization Mode
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Stampa
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: PrintRasterizationMode
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="printertypedenylist"></a>PrinterTypeDenyList
+
+  #### <a name="disable-printer-types-on-the-deny-list"></a>Disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I tipi di stampante nell'elenco degli indirizzi non consentiti non verranno individuati o le relative funzionalità vengono recuperate.
 
@@ -6370,19 +6434,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: PrinterTypeDenyList
   - Nome GP: disabilitare i tipi di stampante nell'elenco degli indirizzi non consentiti
@@ -6390,14 +6454,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\1 = "local"
@@ -6405,7 +6469,7 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrinterTypeDenyList
   - Valore di esempio
@@ -6419,17 +6483,17 @@ SOFTWARE\Policies\Microsoft\Edge\PrinterTypeDenyList\2 = "privet"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintingAllowedBackgroundGraphicsModes
+  ### <a name="printingallowedbackgroundgraphicsmodes"></a>PrintingAllowedBackgroundGraphicsModes
 
-  #### Limitare la modalità di stampa grafica in background
+  #### <a name="restrict-background-graphics-printing-mode"></a>Limitare la modalità di stampa grafica in background
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Limita la modalità di stampa della grafica in background. Se questo criterio non è impostato, non è disponibile alcuna restrizione per la stampa della grafica di sfondo.
 
@@ -6443,19 +6507,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: PrintingAllowedBackgroundGraphicsModes
   - Nome GP: limitare la modalità di stampa grafica in background
@@ -6463,20 +6527,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PrintingAllowedBackgroundGraphicsModes
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "enabled"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintingAllowedBackgroundGraphicsModes
   - Valore di esempio:
@@ -6487,17 +6551,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintingBackgroundGraphicsDefault
+  ### <a name="printingbackgroundgraphicsdefault"></a>PrintingBackgroundGraphicsDefault
 
-  #### Modalità di stampa grafica in background predefinita
+  #### <a name="default-background-graphics-printing-mode"></a>Modalità di stampa grafica in background predefinita
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Sovrascrive l'ultima impostazione usata per la stampa di elementi grafici in background.
 Se si abilita questa impostazione, la stampa grafica in background è abilitata.
@@ -6511,19 +6575,19 @@ Mappatura delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: PrintingBackgroundGraphicsDefault
   - Nome GP: modalità di stampa grafica in background predefinita
@@ -6531,20 +6595,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PrintingBackgroundGraphicsDefault
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "enabled"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintingBackgroundGraphicsDefault
   - Valore di esempio
@@ -6555,17 +6619,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintingEnabled
+  ### <a name="printingenabled"></a>PrintingEnabled
 
-  #### Abilita la stampa
+  #### <a name="enable-printing"></a>Abilita la stampa
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente la stampa in Microsoft Edge e impedisce agli utenti di modificare questa impostazione.
 
@@ -6573,19 +6637,19 @@ Se si abilita o non si configura questo criterio, gli utenti possono stampare.
 
 Se si disabilita questo criterio, gli utenti non possono stampare da Microsoft Edge. La stampa viene disabilitata nel menu con la chiave inglese, nelle estensioni, nelle applicazioni JavaScript e così via. Gli utenti possono comunque stampare dai plug-in che ignorano Microsoft Edge durante la stampa. Ad esempio, alcune applicazioni di Adobe Flash hanno l'opzione di stampa nel menu di scelta rapida, che non è interessato da questo criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PrintingEnabled
   - Nome Criteri di gruppo: Abilita la stampa
@@ -6593,20 +6657,20 @@ Se si disabilita questo criterio, gli utenti non possono stampare da Microsoft E
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PrintingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PrintingEnabled
   - Valore di esempio
@@ -6617,17 +6681,17 @@ Se si disabilita questo criterio, gli utenti non possono stampare da Microsoft E
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PrintingPaperSizeDefault
+  ### <a name="printingpapersizedefault"></a>PrintingPaperSizeDefault
 
-  #### Dimensioni della pagina di stampa predefinite
+  #### <a name="default-printing-page-size"></a>Dimensioni della pagina di stampa predefinite
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Sostituisce le dimensioni della pagina di stampa predefinite.
 
@@ -6635,19 +6699,19 @@ il nome deve contenere uno dei formati elencati o “personalizzato” se necess
 
 Se le dimensioni della pagina non sono disponibili nella stampante scelta dall'utente, questi criterio verrà ignorato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PrintingPaperSizeDefault
   - Nome Criteri di gruppo: dimensioni della pagina di stampa predefinite
@@ -6655,14 +6719,14 @@ Se le dimensioni della pagina non sono disponibili nella stampante scelta dall'u
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PrintingPaperSizeDefault
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
@@ -6674,14 +6738,14 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 }
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {"custom_size": {"height": 297000, "width": 210000}, "name": "custom"}
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: PrintingPaperSizeDefault
   - Valore di esempio
@@ -6703,17 +6767,17 @@ SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UseSystemPrintDialog
+  ### <a name="usesystemprintdialog"></a>UseSystemPrintDialog
 
-  #### Stampa usando la finestra di dialogo della stampante di sistema
+  #### <a name="print-using-system-print-dialog"></a>Stampa usando la finestra di dialogo della stampante di sistema
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Mostra la finestra di dialogo di stampa del sistema, anziché l'anteprima di stampa.
 
@@ -6721,19 +6785,19 @@ Se si abilita questo criterio, Microsoft Edge apre la finestra di dialogo di sta
 
 Se si disabilita o non si configura questo criterio, i comandi di stampa attivano la schermata dell'anteprima di stampa di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: UseSystemPrintDialog
   - Nome Criteri di gruppo: Stampa usando la finestra di dialogo della stampante di sistema
@@ -6741,20 +6805,20 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: UseSystemPrintDialog
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UseSystemPrintDialog
   - Valore di esempio
@@ -6765,21 +6829,21 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri dei server proxy
+  ## <a name="proxy-server-policies"></a>Criteri dei server proxy
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProxyBypassList
+  ### <a name="proxybypasslist"></a>ProxyBypassList
 
-  #### Configura le regole di esclusione di proxy (deprecato)
+  #### <a name="configure-proxy-bypass-rules-deprecated"></a>Configura le regole di esclusione di proxy (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
@@ -6793,19 +6857,19 @@ Se non si configura questo criterio, non viene creato alcun elenco di host per i
 
 Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyBypassList
   - Nome Criteri di gruppo: configura le regole di esclusione di proxy (deprecato)
@@ -6813,20 +6877,20 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProxyBypassList
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://www.contoso.com, https://www.fabrikam.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyBypassList
   - Valore di esempio
@@ -6837,17 +6901,17 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProxyMode
+  ### <a name="proxymode"></a>ProxyMode
 
-  #### Configura le impostazioni del server proxy (deprecato)
+  #### <a name="configure-proxy-server-settings-deprecated"></a>Configura le impostazioni del server proxy (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
@@ -6880,19 +6944,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyMode
   - Nome Criteri di gruppo: configura le impostazioni del server proxy (deprecato)
@@ -6900,20 +6964,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProxyMode
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "direct"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyMode
   - Valore di esempio
@@ -6924,17 +6988,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProxyPacUrl
+  ### <a name="proxypacurl"></a>ProxyPacUrl
 
-  #### Imposta l'URL del file .pac del proxy (deprecato)
+  #### <a name="set-the-proxy-pac-file-url-deprecated"></a>Imposta l'URL del file .pac del proxy (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
@@ -6948,19 +7012,19 @@ Se si disabilita o non si configura questo criterio, non viene specificato alcun
 
 Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyPacUrl
   - Nome Criteri di gruppo: imposta l'URL del file .pac del proxy (deprecato)
@@ -6968,20 +7032,20 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProxyPacUrl
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://internal.contoso.com/example.pac"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyPacUrl
   - Valore di esempio
@@ -6992,17 +7056,17 @@ Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936]
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProxyServer
+  ### <a name="proxyserver"></a>ProxyServer
 
-  #### Configura l'indirizzo o l'URL del server proxy (deprecato)
+  #### <a name="configure-address-or-url-of-proxy-server-deprecated"></a>Configura l'indirizzo o l'URL del server proxy (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato, è possibile usare [ProxySettings](#proxysettings). Non funzionerà in Microsoft Edge versione 91.
 
@@ -7016,19 +7080,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono sceglier
 
 Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxyServer
   - Nome Criteri di gruppo: configura l'indirizzo o l'URL del server proxy (deprecato)
@@ -7036,20 +7100,20 @@ Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProxyServer
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "123.123.123.123:8080"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxyServer
   - Valore di esempio
@@ -7060,17 +7124,17 @@ Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProxySettings
+  ### <a name="proxysettings"></a>ProxySettings
 
-  #### Impostazioni proxy
+  #### <a name="proxy-settings"></a>Impostazioni proxy
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le impostazioni del proxy per Microsoft Edge.
 
@@ -7100,19 +7164,19 @@ Per ProxyMode, se si sceglie il valore:
 
 Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProxySettings
   - Nome Criteri di gruppo: Configurare Impostazioni proxy
@@ -7120,14 +7184,14 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProxySettings
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
@@ -7138,14 +7202,14 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 }
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {"ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", "ProxyMode": "pac_script", "ProxyPacUrl": "https://internal.site/example.pac", "ProxyServer": "123.123.123.123:8080"}
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProxySettings
   - Valore di esempio
@@ -7166,21 +7230,21 @@ SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri impostazioni delle schede di sospensione
+  ## <a name="sleeping-tabs-settings-policies"></a>Criteri impostazioni delle schede di sospensione
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SleepingTabsBlockedForUrls
+  ### <a name="sleepingtabsblockedforurls"></a>SleepingTabsBlockedForUrls
 
-  #### Blocca le schede di sospensione nei siti specifici
+  #### <a name="block-sleeping-tabs-on-specific-sites"></a>Blocca le schede di sospensione nei siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisci un elenco di siti, in base ai modelli di URL, che non possono essere messi in stato di sospensione tramite le schede di sospensione.
 
@@ -7188,19 +7252,19 @@ Se il criterio [SleepingTabsEnabled](#sleepingtabsenabled) è disabilitato, ques
 
 Se non si configura questo criterio, tutti i siti potranno essere messi in stato di sospensione, a meno che la configurazione personale dell'utente non li blocchi.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SleepingTabsBlockedForUrls
   - Nome Criteri di gruppo: blocca le schede di sospensione in siti specifici
@@ -7208,14 +7272,14 @@ Se non si configura questo criterio, tutti i siti potranno essere messi in stato
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SleepingTabsBlockedForUrls
   - Percorso (scelta consigliata): SOFTWARE\Criteri\Microsoft\Edge\Recommended\SleepingTabsBlockedForUrls
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\1 = "https://www.contoso.com"
@@ -7223,7 +7287,7 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SleepingTabsBlockedForUrls
   - Valore di esempio:
@@ -7237,17 +7301,17 @@ SOFTWARE\Policies\Microsoft\Edge\SleepingTabsBlockedForUrls\2 = "[*.]contoso.edu
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SleepingTabsEnabled
+  ### <a name="sleepingtabsenabled"></a>SleepingTabsEnabled
 
-  #### Configura le schede di sospensione
+  #### <a name="configure-sleeping-tabs"></a>Configura le schede di sospensione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa impostazione dei criteri consente di scegliere se attivare le schede di sospensione. Le schede di sospensione consentono di ridurre la CPU, la batteria e l'utilizzo della memoria sospendendo le schede inattive in background. Microsoft Edge usa funzionalità euristiche per evitare di sospendere le schede utili in background, come la visualizzazione delle notifiche, la riproduzione di contenuti audio e lo streaming di contenuti video. Per impostazione predefinita, le schede di sospensione sono attivate.
 
@@ -7259,19 +7323,19 @@ Se disabiliti questa impostazione, le schede di sospensione sono disattivate.
 
 Se non configuri questa impostazione, gli utenti possono scegliere se usare le schede di sospensione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SleepingTabsEnabled
   - Nome Criteri di gruppo: configura le schede di sospensione
@@ -7279,20 +7343,20 @@ Se non configuri questa impostazione, gli utenti possono scegliere se usare le s
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
   - Nome valore: SleepingTabsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SleepingTabsEnabled
   - Valore di esempio:
@@ -7303,17 +7367,17 @@ Se non configuri questa impostazione, gli utenti possono scegliere se usare le s
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SleepingTabsTimeout
+  ### <a name="sleepingtabstimeout"></a>SleepingTabsTimeout
 
-  #### Imposta il timeout di inattività della scheda in background per le schede di sospensione
+  #### <a name="set-the-background-tab-inactivity-timeout-for-sleeping-tabs"></a>Imposta il timeout di inattività della scheda in background per le schede di sospensione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa impostazione consente di configurare il timeout, calcolato in secondi, dopo il quale le schede in background inattive verranno automaticamente sospese se sono abilitate le schede di sospensione. Per impostazione predefinita, questo timeout è pari a 7.200 secondi (2 ore).
 
@@ -7341,19 +7405,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SleepingTabsTimeout
   - Nome Criteri di gruppo: imposta il timeout della scheda in background per le schede di sospensione
@@ -7361,20 +7425,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni schede di sospensione
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
   - Nome valore: SleepingTabsTimeout
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000384
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SleepingTabsTimeout
   - Valore di esempio
@@ -7385,21 +7449,21 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri di impostazioni di SmartScreen
+  ## <a name="smartscreen-settings-policies"></a>Criteri di impostazioni di SmartScreen
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PreventSmartScreenPromptOverride
+  ### <a name="preventsmartscreenpromptoverride"></a>PreventSmartScreenPromptOverride
 
-  #### Impedisce di ignorare i prompt di Microsoft Defender SmartScreen per i siti
+  #### <a name="prevent-bypassing-microsoft-defender-smartscreen-prompts-for-sites"></a>Impedisce di ignorare i prompt di Microsoft Defender SmartScreen per i siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio consente di decidere se gli utenti possono ignorare gli avvisi di Microsoft Defender SmartScreen sui siti Web potenzialmente dannosi.
 
@@ -7409,19 +7473,19 @@ Se si disabilita o non si configura questa impostazione, gli utenti possono igno
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PreventSmartScreenPromptOverride
   - Nome Criteri di gruppo: Impedisce di ignorare i prompt di Microsoft Defender SmartScreen per i siti
@@ -7429,20 +7493,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PreventSmartScreenPromptOverride
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PreventSmartScreenPromptOverride
   - Valore di esempio
@@ -7453,18 +7517,18 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PreventSmartScreenPromptOverrideForFiles
+  ### <a name="preventsmartscreenpromptoverrideforfiles"></a>PreventSmartScreenPromptOverrideForFiles
 
-  #### Impedisce di ignorare gli avvisi di Microsoft Defender SmartScreen sui download
+  #### <a name="prevent-bypassing-of-microsoft-defender-smartscreen-warnings-about-downloads"></a>Impedisce di ignorare gli avvisi di Microsoft Defender SmartScreen sui download
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
   - In macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio consente di determinare se gli utenti possono ignorare gli avvisi di Microsoft Defender SmartScreen relativi ai download non verificati.
 
@@ -7474,19 +7538,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono ignorare
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PreventSmartScreenPromptOverrideForFiles
   - Nome Criteri di gruppo: Impedisce di ignorare gli avvisi di Microsoft Defender SmartScreen sui download
@@ -7494,20 +7558,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PreventSmartScreenPromptOverrideForFiles
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PreventSmartScreenPromptOverrideForFiles
   - Valore di esempio
@@ -7518,17 +7582,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SmartScreenAllowListDomains
+  ### <a name="smartscreenallowlistdomains"></a>SmartScreenAllowListDomains
 
-  #### Configura l'elenco di domini per i quali Microsoft Defender SmartScreen non attiva gli avvisi
+  #### <a name="configure-the-list-of-domains-for-which-microsoft-defender-smartscreen-wont-trigger-warnings"></a>Configura l'elenco di domini per i quali Microsoft Defender SmartScreen non attiva gli avvisi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco di domini attendibili di Microsoft Defender SmartScreen. Ciò significa che Microsoft Defender SmartScreen non controlla l'eventuale presenza di risorse potenzialmente dannose, come software di phishing e altri malware, se gli URL di origine corrispondono a questi domini.
 Il servizio di protezione di download Microsoft Defender SmartScreen non controllerà i download ospitati in questi domini.
@@ -7539,19 +7603,19 @@ Se si disabilita o non si imposta questo criterio, la protezione di Microsoft De
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 Si noti inoltre che questo criterio non viene applicato se l'organizzazione ha abilitato Microsoft Defender Advanced Threat Protection. È necessario configurare gli elenchi di indirizzi consentiti e bloccati in Microsoft Defender Security Center.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SmartScreenAllowListDomains
   - Nome Criteri di gruppo: Configura l'elenco di domini per i quali Microsoft Defender SmartScreen non attiva gli avvisi
@@ -7559,14 +7623,14 @@ Si noti inoltre che questo criterio non viene applicato se l'organizzazione ha a
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SmartScreenAllowListDomains
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\1 = "mydomain.com"
@@ -7574,7 +7638,7 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SmartScreenAllowListDomains
   - Valore di esempio
@@ -7588,17 +7652,17 @@ SOFTWARE\Policies\Microsoft\Edge\SmartScreenAllowListDomains\2 = "myuniversity.e
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SmartScreenEnabled
+  ### <a name="smartscreenenabled"></a>SmartScreenEnabled
 
-  #### Configura Microsoft Defender SmartScreen
+  #### <a name="configure-microsoft-defender-smartscreen"></a>Configura Microsoft Defender SmartScreen
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio consente di configurare se attivare Microsoft Defender SmartScreen. Microsoft Defender SmartScreen genera messaggi di avviso per proteggere gli utenti da potenziali tentativi di phishing e software dannoso. Per impostazione predefinita, Microsoft Defender SmartScreen è attivato.
 
@@ -7610,19 +7674,19 @@ Se non si configura questa impostazione, gli utenti possono scegliere se usare M
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SmartScreenEnabled
   - Nome Criteri di gruppo: Configura Microsoft Defender SmartScreen
@@ -7630,20 +7694,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni SmartScreen
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: SmartScreenEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SmartScreenEnabled
   - Valore di esempio
@@ -7654,17 +7718,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SmartScreenForTrustedDownloadsEnabled
+  ### <a name="smartscreenfortrusteddownloadsenabled"></a>SmartScreenForTrustedDownloadsEnabled
 
-  #### Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili
+  #### <a name="force-microsoft-defender-smartscreen-checks-on-downloads-from-trusted-sources"></a>Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio consente di configurare se Microsoft Defender SmartScreen controlla la reputazione dei download da un'origine attendibile.
 
@@ -7674,19 +7738,19 @@ Se si disabilita questa impostazione, Microsoft Defender SmartScreen non control
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft, alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SmartScreenForTrustedDownloadsEnabled
   - Nome Criteri di gruppo: Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili
@@ -7694,14 +7758,14 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni SmartScreen
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: SmartScreenForTrustedDownloadsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -7711,17 +7775,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SmartScreenPuaEnabled
+  ### <a name="smartscreenpuaenabled"></a>SmartScreenPuaEnabled
 
-  #### Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate
+  #### <a name="configure-microsoft-defender-smartscreen-to-block-potentially-unwanted-apps"></a>Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio consente di configurare se attivare il blocco di app potenzialmente indesiderate con Microsoft Defender SmartScreen. Il blocco di app potenzialmente indesiderate con Microsoft Defender SmartScreen fornisce messaggi di avviso per proteggere gli utenti da adware, coin miner, bundleware e altre app di scarsa reputazione ospitate dai siti Web. Il blocco di app potenzialmente indesiderate con Microsoft Defender SmartScreen è disattivato per impostazione predefinita.
 
@@ -7733,19 +7797,19 @@ Se non si configura questa impostazione, gli utenti possono scegliere se usare i
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SmartScreenPuaEnabled
   - Nome Criteri di gruppo: Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate
@@ -7753,20 +7817,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Impostazioni SmartScreen
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: SmartScreenPuaEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SmartScreenPuaEnabled
   - Valore di esempio
@@ -7777,21 +7841,21 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HomepageIsNewTabPage
+  ### <a name="homepageisnewtabpage"></a>HomepageIsNewTabPage
 
-  #### Imposta la pagina Nuova scheda come home page
+  #### <a name="set-the-new-tab-page-as-the-home-page"></a>Imposta la pagina Nuova scheda come home page
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura la home page predefinita in Microsoft Edge. È possibile impostare la home page su un URL specificato dall'utente o sulla pagina Nuova scheda.
 
@@ -7803,19 +7867,19 @@ Se non si configura questo criterio, gli utenti possono scegliere se la pagina N
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: HomepageIsNewTabPage
   - Nome Criteri di gruppo: Imposta la pagina Nuova scheda come home page
@@ -7823,20 +7887,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: HomepageIsNewTabPage
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HomepageIsNewTabPage
   - Valore di esempio
@@ -7847,17 +7911,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HomepageLocation
+  ### <a name="homepagelocation"></a>HomepageLocation
 
-  #### Configura l'URL della home page
+  #### <a name="configure-the-home-page-url"></a>Configura l'URL della home page
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'URL della home page predefinita in Microsoft Edge.
 
@@ -7871,19 +7935,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono sceglier
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: HomepageLocation
   - Nome Criteri di gruppo: Configura l'URL della home page
@@ -7891,20 +7955,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: HomepageLocation
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://www.contoso.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HomepageLocation
   - Valore di esempio
@@ -7915,17 +7979,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageAllowedBackgroundTypes
+  ### <a name="newtabpageallowedbackgroundtypes"></a>NewTabPageAllowedBackgroundTypes
 
-  #### Configura i tipi di sfondo consentiti per il layout della pagina Nuova scheda
+  #### <a name="configure-the-background-types-allowed-for-the-new-tab-page-layout"></a>Configura i tipi di sfondo consentiti per il layout della pagina Nuova scheda
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   È possibile configurare i tipi di immagine di sfondo consentiti per il layout della pagina Nuova scheda in Microsoft Edge.
 
@@ -7941,19 +8005,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageAllowedBackgroundTypes
   - Nome Criteri di gruppo: Configura i tipi di sfondo consentiti per il layout della pagina Nuova scheda
@@ -7961,20 +8025,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NewTabPageAllowedBackgroundTypes
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageAllowedBackgroundTypes
   - Valore di esempio
@@ -7985,17 +8049,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageCompanyLogo
+  ### <a name="newtabpagecompanylogo"></a>NewTabPageCompanyLogo
 
-  #### Imposta il logo aziendale della pagina Nuova scheda
+  #### <a name="set-new-tab-page-company-logo-obsolete"></a>Imposta il logo aziendale della pagina Nuova scheda
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 85.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79, fino alla versione 85
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Di conseguenza, è obsoleto e non deve essere usato.
 
@@ -8013,19 +8077,19 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge non mostrer�
 
 Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageCompanyLogo
   - Nome Criteri di gruppo: imposta il logo aziendale della pagina Nuova scheda (obsoleto)
@@ -8033,14 +8097,14 @@ Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.mic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NewTabPageCompanyLogo
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
@@ -8055,14 +8119,14 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 }
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {"default_logo": {"hash": "cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29", "url": "https://www.contoso.com/logo.png"}, "light_logo": {"hash": "517d286edb416bb2625ccfcba9de78296e90da8e32330d4c9c8275c4c1c33737", "url": "https://www.contoso.com/light_logo.png"}}
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageCompanyLogo
   - Valore di esempio
@@ -8089,17 +8153,17 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageHideDefaultTopSites
+  ### <a name="newtabpagehidedefaulttopsites"></a>NewTabPageHideDefaultTopSites
 
-  #### Nasconde i siti principali predefiniti dalla pagina Nuova scheda
+  #### <a name="hide-the-default-top-sites-from-the-new-tab-page"></a>Nasconde i siti principali predefiniti dalla pagina Nuova scheda
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Nasconde i siti principali predefiniti dalla pagina Nuova scheda in Microsoft Edge.
 
@@ -8107,19 +8171,19 @@ Se si imposta questo criterio su true, i riquadri dei siti principali predefinit
 
 Se si imposta questo criterio su false o non lo si configura, i riquadri dei siti principali predefiniti rimangono visibili.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageHideDefaultTopSites
   - Nome Criteri di gruppo: Nasconde i siti principali predefiniti dalla pagina Nuova scheda
@@ -8127,20 +8191,20 @@ Se si imposta questo criterio su false o non lo si configura, i riquadri dei sit
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NewTabPageHideDefaultTopSites
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageHideDefaultTopSites
   - Valore di esempio
@@ -8151,17 +8215,17 @@ Se si imposta questo criterio su false o non lo si configura, i riquadri dei sit
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageLocation
+  ### <a name="newtabpagelocation"></a>NewTabPageLocation
 
-  #### Configura l'URL della pagina Nuova scheda
+  #### <a name="configure-the-new-tab-page-url"></a>Configura l'URL della pagina Nuova scheda
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'URL predefinito della pagina Nuova scheda.
 
@@ -8179,19 +8243,19 @@ Se si preferisce una scheda vuota, "about:blank" è l'URL corretto da usare, non
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageLocation
   - Nome Criteri di gruppo: Configura l'URL della pagina Nuova scheda
@@ -8199,20 +8263,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NewTabPageLocation
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://www.fabrikam.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageLocation
   - Valore di esempio
@@ -8223,17 +8287,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageManagedQuickLinks
+  ### <a name="newtabpagemanagedquicklinks"></a>NewTabPageManagedQuickLinks
 
-  #### Imposta i collegamenti rapidi della pagina Nuova scheda
+  #### <a name="set-new-tab-page-quick-links"></a>Imposta i collegamenti rapidi della pagina Nuova scheda
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Per impostazione predefinita, Microsoft Edge mostra collegamenti rapidi nella pagina Nuova scheda dalle scelte rapide da tastiera aggiunte dall'utente e i siti principali in base alla cronologia esplorazioni. Con questo criterio, è possibile configurare fino a tre riquadri per collegamenti rapidi nella pagina Nuova scheda, espressi come oggetto JSON:
 
@@ -8247,19 +8311,19 @@ Se il criterio è impostato come obbligatorio, il campo "pinned" verrà ignorato
 
 Se il criterio è impostato come consigliato, i riquadri aggiunti rimarranno nell'elenco, ma l'utente può modificarli ed eliminarli. I riquadri dei collegamenti rapidi non aggiunti si comportano come i siti principali predefiniti e vengono rimossi dall'elenco se altri siti Web vengono visitati più di frequente. Quando si applicano collegamenti non aggiunti a un profilo di browser esistente tramite questo criterio, i collegamenti potrebbero non essere visualizzati, a seconda di come sono classificati rispetto alla cronologia esplorazioni dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageManagedQuickLinks
   - Nome Criteri di gruppo: Imposta i collegamenti rapidi della pagina Nuova scheda
@@ -8267,14 +8331,14 @@ Se il criterio è impostato come consigliato, i riquadri aggiunti rimarranno nel
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NewTabPageManagedQuickLinks
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
@@ -8290,14 +8354,14 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [{"pinned": true, "title": "Contoso Portal", "url": "https://contoso.com"}, {"title": "Fabrikam", "url": "https://fabrikam.com"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageManagedQuickLinks
   - Valore di esempio
@@ -8324,33 +8388,33 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPagePrerenderEnabled
+  ### <a name="newtabpageprerenderenabled"></a>NewTabPagePrerenderEnabled
 
-  #### Attiva il precaricamento della nuova scheda per il rendering più rapido
+  #### <a name="enable-preload-of-the-new-tab-page-for-faster-rendering"></a>Attiva il precaricamento della nuova scheda per il rendering più rapido
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si configurano questi criteri, è possibile precaricare la pagina Nuova scheda e per gli utenti non sarà possibile cambiare questa impostazione. Se non si configura questo criterio, il precaricamento è abilitato e l'utente sarà in grado di modificare tale impostazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPagePrerenderEnabled
   - Nome Criteri di gruppo: attiva il precaricamento della nuova scheda per il rendering più rapido
@@ -8358,20 +8422,20 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NewTabPagePrerenderEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: NewTabPagePrerenderEnabled
   - Valore di esempio
@@ -8382,17 +8446,17 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NewTabPageSetFeedType
+  ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
-  #### Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
+  #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Il criterio è deprecato perché la nuova versione della pagina Nuova scheda Enterprise non richiede più la scelta tra diversi tipi di contenuto. Al contrario, il contenuto presentato all'utente può essere controllato tramite l'interfaccia di amministrazione di Microsoft 365. Per accedere all'interfaccia di amministrazione di Microsoft 365, esegui l'accesso a https://admin.microsoft.com con l'account di amministratore. Questo criterio diventerà obsoleto dopo la versione 90 di Microsoft Edge.
 
@@ -8420,19 +8484,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageSetFeedType
   - Nome GP: configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
@@ -8440,20 +8504,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NewTabPageSetFeedType
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NewTabPageSetFeedType
   - Valore di esempio
@@ -8464,17 +8528,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RestoreOnStartup
+  ### <a name="restoreonstartup"></a>RestoreOnStartup
 
-  #### Azione da eseguire all'avvio
+  #### <a name="action-to-take-on-startup"></a>Azione da eseguire all'avvio
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica il comportamento di Microsoft Edge all'avvio.
 
@@ -8498,19 +8562,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RestoreOnStartup
   - Nome Criteri di gruppo: Azione da eseguire all'avvio
@@ -8518,20 +8582,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: RestoreOnStartup
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000004
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RestoreOnStartup
   - Valore di esempio
@@ -8542,17 +8606,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RestoreOnStartupURLs
+  ### <a name="restoreonstartupurls"></a>RestoreOnStartupURLs
 
-  #### Siti da aprire all'avvio del browser
+  #### <a name="sites-to-open-when-the-browser-starts"></a>Siti da aprire all'avvio del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica un elenco di siti Web da aprire automaticamente all'avvio del browser. Se non si configura questo criterio, non viene aperto alcun sito all'avvio.
 
@@ -8560,19 +8624,19 @@ Questo criterio funziona solo se si imposta anche il criterio [RestoreOnStartup]
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RestoreOnStartupURLs
   - Nome Criteri di gruppo: Siti da aprire all'avvio del browser
@@ -8580,14 +8644,14 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\RestoreOnStartupURLs
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliato\RestoreOnStartupURLs
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\1 = "https://contoso.com"
@@ -8595,7 +8659,7 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RestoreOnStartupURLs
   - Valore di esempio
@@ -8609,17 +8673,17 @@ SOFTWARE\Policies\Microsoft\Edge\RestoreOnStartupURLs\2 = "https://www.fabrikam.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ShowHomeButton
+  ### <a name="showhomebutton"></a>ShowHomeButton
 
-  #### Mostra il pulsante Home nella barra degli strumenti
+  #### <a name="show-home-button-on-toolbar"></a>Mostra il pulsante Home nella barra degli strumenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Mostra il pulsante Home nella barra degli strumenti di Microsoft Edge.
 
@@ -8627,19 +8691,19 @@ Abilitare questo criterio per mostrare sempre il pulsante Home. Disabilitarlo pe
 
 Se non si configura il criterio, gli utenti possono scegliere se mostrare il pulsante Home.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowHomeButton
   - Nome Criteri di gruppo: Mostra il pulsante Home nella barra degli strumenti
@@ -8647,20 +8711,20 @@ Se non si configura il criterio, gli utenti possono scegliere se mostrare il pul
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ShowHomeButton
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowHomeButton
   - Valore di esempio
@@ -8671,39 +8735,39 @@ Se non si configura il criterio, gli utenti possono scegliere se mostrare il pul
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## Altri criteri
+  ## <a name="additional-policies"></a>Altri criteri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AddressBarMicrosoftSearchInBingProviderEnabled
+  ### <a name="addressbarmicrosoftsearchinbingproviderenabled"></a>AddressBarMicrosoftSearchInBingProviderEnabled
 
-  #### Abilita Microsoft Search nei suggerimenti di Bing nella barra degli indirizzi
+  #### <a name="enable-microsoft-search-in-bing-suggestions-in-the-address-bar"></a>Abilita Microsoft Search nei suggerimenti di Bing nella barra degli indirizzi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente la visualizzazione dei suggerimenti rilevanti di Bing per Microsoft Search nell'elenco di suggerimenti della barra degli indirizzi quando l'utente digita una stringa di ricerca nella barra degli indirizzi. Se si abilita o non si configura questo criterio, gli utenti possono visualizzare i risultati interni forniti da Microsoft Search in Bing nell'elenco di suggerimenti della barra degli indirizzi di Microsoft Edge. Per vedere i risultati di Microsoft Search in Bing, l'utente deve accedere a Microsoft Edge con il proprio account di Azure AD per l'organizzazione.
 Se si disabilita questo criterio, gli utenti non possono visualizzare i risultati interni nell'elenco di suggerimenti della barra degli indirizzi di Microsoft Edge.
 A partire da Microsoft Edge versione 89, Microsoft Search in Bing suggerimenti sarà disponibile anche se Bing non è il provider di ricerca predefinito dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AddressBarMicrosoftSearchInBingProviderEnabled
   - Nome Criteri di gruppo: Abilita Microsoft Search nei suggerimenti di Bing nella barra degli indirizzi
@@ -8711,20 +8775,20 @@ A partire da Microsoft Edge versione 89, Microsoft Search in Bing suggerimenti s
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AddressBarMicrosoftSearchInBingProviderEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AddressBarMicrosoftSearchInBingProviderEnabled
   - Valore di esempio
@@ -8735,17 +8799,17 @@ A partire da Microsoft Edge versione 89, Microsoft Search in Bing suggerimenti s
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AdsSettingForIntrusiveAdsSites
+  ### <a name="adssettingforintrusiveadssites"></a>AdsSettingForIntrusiveAdsSites
 
-  #### Impostazione degli annunci per i siti con annunci intrusivi
+  #### <a name="ads-setting-for-sites-with-intrusive-ads"></a>Impostazione degli annunci per i siti con annunci intrusivi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se gli annunci sono bloccati nei siti con annunci intrusivi.
 
@@ -8757,19 +8821,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AdsSettingForIntrusiveAdsSites
   - Nome Criteri di gruppo: Impostazione degli annunci per i siti con annunci intrusivi
@@ -8777,20 +8841,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AdsSettingForIntrusiveAdsSites
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AdsSettingForIntrusiveAdsSites
   - Valore di esempio
@@ -8801,17 +8865,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowDeletingBrowserHistory
+  ### <a name="allowdeletingbrowserhistory"></a>AllowDeletingBrowserHistory
 
-  #### Abilita l'eliminazione della cronologia di download e browser
+  #### <a name="enable-deleting-browser-and-download-history"></a>Abilita l'eliminazione della cronologia di download e browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di eliminare la cronologia del browser e la cronologia dei download, oltre a impedire agli utenti di modificare questa impostazione.
 
@@ -8823,19 +8887,19 @@ Se si disabilita questo criterio, gli utenti non possono eliminare la cronologia
 
 Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) poiché entrambi sono associati all'eliminazione dei dati. Se si abilitano entrambi, il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) ha la precedenza ed elimina tutti i dati quando si chiude Microsoft Edge, indipendentemente da come è configurato tale criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowDeletingBrowserHistory
   - Nome Criteri di gruppo: Abilita l'eliminazione della cronologia di download e browser
@@ -8843,20 +8907,20 @@ Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowDeletingBrowserHistory
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowDeletingBrowserHistory
   - Valore di esempio
@@ -8867,17 +8931,17 @@ Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowFileSelectionDialogs
+  ### <a name="allowfileselectiondialogs"></a>AllowFileSelectionDialogs
 
-  #### Consente le finestre di dialogo per la selezione dei file
+  #### <a name="allow-file-selection-dialogs"></a>Consente le finestre di dialogo per la selezione dei file
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente l'accesso ai file locali facendo in modo che Microsoft Edge mostri finestre di dialogo per la selezione dei file.
 
@@ -8885,19 +8949,19 @@ Se si abilita o non si configura questo criterio, gli utenti possono aprire le f
 
 Se si disabilita questo criterio, ogni volta che l'utente esegue un'azione che attiva una finestra di dialogo per la selezione dei file (come l'importazione dei preferiti, il caricamento dei file o il salvataggio dei collegamenti), viene invece visualizzato un messaggio e si presume che l'utente abbia selezionato Annulla nella finestra di dialogo per la selezione dei file.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowFileSelectionDialogs
   - Nome Criteri di gruppo: Consente le finestre di dialogo per la selezione dei file
@@ -8905,20 +8969,20 @@ Se si disabilita questo criterio, ogni volta che l'utente esegue un'azione che a
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowFileSelectionDialogs
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowFileSelectionDialogs
   - Valore di esempio
@@ -8929,17 +8993,17 @@ Se si disabilita questo criterio, ogni volta che l'utente esegue un'azione che a
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowPopupsDuringPageUnload
+  ### <a name="allowpopupsduringpageunload"></a>AllowPopupsDuringPageUnload
 
-  #### Consente la visualizzazione di popup durante il caricamento di una pagina (obsoleto)
+  #### <a name="allows-a-page-to-show-popups-during-its-unloading-obsolete"></a>Consente la visualizzazione di popup durante il caricamento di una pagina (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 78 a 87
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio consente a un amministratore di specificare che una pagina può mostrare popup durante il suo scaricamento.
 
@@ -8949,19 +9013,19 @@ Se il criterio è disabilitato o non configurato, le pagine non possono mostrare
 
 Questo criterio è stato rimosso in Microsoft Edge 88 e viene ignorato se impostato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowPopupsDuringPageUnload
   - Nome Criteri di gruppo: Consente la visualizzazione di popup durante il caricamento di una pagina (obsoleto)
@@ -8969,20 +9033,20 @@ Questo criterio è stato rimosso in Microsoft Edge 88 e viene ignorato se impost
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowPopupsDuringPageUnload
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowPopupsDuringPageUnload
   - Valore di esempio
@@ -8993,35 +9057,35 @@ Questo criterio è stato rimosso in Microsoft Edge 88 e viene ignorato se impost
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowSurfGame
+  ### <a name="allowsurfgame"></a>AllowSurfGame
 
-  #### Consente il gioco Surf
+  #### <a name="allow-surf-game"></a>Consente il gioco Surf
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si disabilita questo criterio, gli utenti non saranno in grado di avviare il gioco Surf quando il dispositivo è offline o se l'utente accede a edge://surf.
 
 Se si abilita o non si configura questo criterio, gli utenti possono avviare il gioco Surf.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowSurfGame
   - Nome Criteri di gruppo: Consente il gioco Surf
@@ -9029,20 +9093,20 @@ Se si abilita o non si configura questo criterio, gli utenti possono avviare il 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowSurfGame
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowSurfGame
   - Valore di esempio
@@ -9053,17 +9117,17 @@ Se si abilita o non si configura questo criterio, gli utenti possono avviare il 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowSyncXHRInPageDismissal
+  ### <a name="allowsyncxhrinpagedismissal"></a>AllowSyncXHRInPageDismissal
 
-  #### Consente alle pagine di inviare richieste XHR sincrone durante la chiusura della pagina (deprecato)
+  #### <a name="allow-pages-to-send-synchronous-xhr-requests-during-page-dismissal-deprecated"></a>Consente alle pagine di inviare richieste XHR sincrone durante la chiusura della pagina (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la modifica per impedire le richieste XHR sincrone durante la chiusura della pagina. Non funzionerà in Microsoft Edge versione 88.
 
@@ -9073,19 +9137,19 @@ Se si abilita questo criterio, le pagine possono inviare richieste XHR sincrone 
 
 Se si disabilita o non si configura questo criterio, le pagine non possono inviare richieste XHR sincrone durante la chiusura della pagina.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowSyncXHRInPageDismissal
   - Nome Criteri di gruppo: Consente alle pagine di inviare richieste XHR sincrone durante la chiusura della pagina (deprecato)
@@ -9093,20 +9157,20 @@ Se si disabilita o non si configura questo criterio, le pagine non possono invia
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AllowSyncXHRInPageDismissal
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowSyncXHRInPageDismissal
   - Valore di esempio
@@ -9117,17 +9181,17 @@ Se si disabilita o non si configura questo criterio, le pagine non possono invia
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowTokenBindingForUrls
+  ### <a name="allowtokenbindingforurls"></a>AllowTokenBindingForUrls
 
-  #### Configura l'elenco dei siti con cui Microsoft Edge proverà a stabilire un binding di token
+  #### <a name="configure-the-list-of-sites-for-which-microsoft-edge-will-attempt-to-establish-a-token-binding-with"></a>Configura l'elenco dei siti con cui Microsoft Edge proverà a stabilire un binding di token
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco di modelli URL per i siti in cui il browser tenterà di eseguire il protocollo di binding di token.
 Per i domini in questo elenco, il browser invierà il messaggio ClientHello di binding di token nell'handshake TLS (vedere https://tools.ietf.org/html/rfc8472).
@@ -9139,19 +9203,19 @@ Questo criterio è disponibile solo nei dispositivi Windows 10 con la funzionali
 
 A partire da Microsoft Edge 86, questo criterio non supporta più l'aggiornamento dinamico.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowTokenBindingForUrls
   - Nome Criteri di gruppo: Configura l'elenco dei siti con cui Microsoft Edge proverà a stabilire un binding di token.
@@ -9159,14 +9223,14 @@ A partire da Microsoft Edge 86, questo criterio non supporta più l'aggiornament
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AllowTokenBindingForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\1 = "mydomain.com"
@@ -9179,17 +9243,17 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTokenBindingForUrls\3 = "[*.].mydomain2.co
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AllowTrackingForUrls
+  ### <a name="allowtrackingforurls"></a>AllowTrackingForUrls
 
-  #### Configura il monitoraggio delle eccezioni di protezione per siti specifici
+  #### <a name="configure-tracking-prevention-exceptions-for-specific-sites"></a>Configura il monitoraggio delle eccezioni di protezione per siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco di modelli URL esclusi dalla prevenzione del rilevamento.
 
@@ -9197,19 +9261,19 @@ Se si configura questo criterio, l'elenco dei modelli URL configurati è escluso
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio "Blocca il monitoraggio dell'attività di esplorazione sul Web degli utenti" (se impostato) o la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AllowTrackingForUrls
   - Nome Criteri di gruppo: Configura il monitoraggio delle eccezioni di protezione per siti specifici
@@ -9217,14 +9281,14 @@ Se non si configura questo criterio, per tutti i siti si usa il valore predefini
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AllowTrackingForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\1 = "https://www.contoso.com"
@@ -9232,7 +9296,7 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AllowTrackingForUrls
   - Valore di esempio
@@ -9246,17 +9310,17 @@ SOFTWARE\Policies\Microsoft\Edge\AllowTrackingForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AlternateErrorPagesEnabled
+  ### <a name="alternateerrorpagesenabled"></a>AlternateErrorPagesEnabled
 
-  #### Suggerisce pagine simili quando non è possibile trovare una pagina web
+  #### <a name="suggest-similar-pages-when-a-webpage-cant-be-found"></a>Suggerisce pagine simili quando non è possibile trovare una pagina web
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente a Microsoft Edge di rilasciare una connessione a un servizio Web per generare suggerimenti di ricerca e URL per problemi di connettività come gli errori DNS.
 
@@ -9267,19 +9331,19 @@ Se si disabilita questo criterio, non vengono effettuate chiamate al servizio We
 Se non si configura questo criterio, Microsoft Edge rispetta le preferenze degli utenti impostate in Servizi in edge://settings/privacy.
 In particolare, è presente l'opzione **Suggerisci pagine simili quando non è possibile trovare una pagina Web**, che può essere attivata o disattivata dall'utente. Se viene abilitato questo criterio (AlternateErrorPagesEnabled), l'impostazione Suggerisci pagine simili quando non è possibile trovare una pagina Web è attivata, ma l'utente non potrà modificarla tramite l’interruttore. Se si disabilita questo criterio, l'impostazione Suggerisci pagine simili quando non è possibile trovare una pagina Web è disattivata e l'utente non potrà modificarla tramite l’interruttore.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AlternateErrorPagesEnabled
   - Nome Criteri di gruppo: Suggerisce pagine simili quando non è possibile trovare una pagina Web
@@ -9287,20 +9351,20 @@ In particolare, è presente l'opzione **Suggerisci pagine simili quando non è p
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: AlternateErrorPagesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AlternateErrorPagesEnabled
   - Valore di esempio
@@ -9311,17 +9375,17 @@ In particolare, è presente l'opzione **Suggerisci pagine simili quando non è p
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AlwaysOpenPdfExternally
+  ### <a name="alwaysopenpdfexternally"></a>AlwaysOpenPdfExternally
 
-  #### Apre sempre i file PDF esternamente
+  #### <a name="always-open-pdf-files-externally"></a>Apre sempre i file PDF esternamente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita il visualizzatore PDF interno in Microsoft Edge.
 
@@ -9331,19 +9395,19 @@ Se Microsoft Edge è il lettore PDF predefinito, i file PDF non vengono scaricat
 
 Se si disabilita o non si configura questo criterio, Microsoft Edge aprirà i file PDF (a meno che l'utente non lo impedisca).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AlwaysOpenPdfExternally
   - Nome Criteri di gruppo: Apre sempre i file PDF esternamente
@@ -9351,20 +9415,20 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge aprirà i fi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AlwaysOpenPdfExternally
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AlwaysOpenPdfExternally
   - Valore di esempio
@@ -9375,17 +9439,17 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge aprirà i fi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AmbientAuthenticationInPrivateModesEnabled
+  ### <a name="ambientauthenticationinprivatemodesenabled"></a>AmbientAuthenticationInPrivateModesEnabled
 
-  #### Abilita l'autenticazione ambientale per i profili InPrivate e Guest
+  #### <a name="enable-ambient-authentication-for-inprivate-and-guest-profiles"></a>Abilita l'autenticazione ambientale per i profili InPrivate e Guest
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configurare questo criterio per consentire/impedire l'autenticazione ambientale per i profili InPrivate e Guest in Microsoft Edge.
 
@@ -9415,19 +9479,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AmbientAuthenticationInPrivateModesEnabled
   - Nome Criteri di gruppo: Abilita l'autenticazione ambientale per i profili InPrivate e Guest
@@ -9435,20 +9499,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AmbientAuthenticationInPrivateModesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AmbientAuthenticationInPrivateModesEnabled
   - Valore di esempio
@@ -9459,35 +9523,35 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AppCacheForceEnabled
+  ### <a name="appcacheforceenabled"></a>AppCacheForceEnabled
 
-  #### Consente la riabilitazione della funzionalità AppCache, anche se disabilitata per impostazione predefinita.
+  #### <a name="allows-the-appcache-feature-to-be-re-enabled-even-if-its-turned-off-by-default"></a>Consente la riabilitazione della funzionalità AppCache, anche se disabilitata per impostazione predefinita.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio su true, AppCache è abilitato, anche se AppCache in Microsoft Edge non è disponibile per impostazione predefinita.
 
 Se si imposta questo criterio su false o non lo si imposta, AppCache seguirà le impostazioni predefinite di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AppCacheForceEnabled
   - Nome Criteri di gruppo: consente la riabilitazione della funzionalità AppCache, anche se disabilitata per impostazione predefinita
@@ -9495,20 +9559,20 @@ Se si imposta questo criterio su false o non lo si imposta, AppCache seguirà le
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AppCacheForceEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: AppCacheForceEnabled
   - Valore di esempio
@@ -9519,17 +9583,17 @@ Se si imposta questo criterio su false o non lo si imposta, AppCache seguirà le
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ApplicationLocaleValue
+  ### <a name="applicationlocalevalue"></a>ApplicationLocaleValue
 
-  #### Configura le impostazioni locali delle applicazioni
+  #### <a name="set-application-locale"></a>Configura le impostazioni locali delle applicazioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le impostazioni locali delle applicazioni in Microsoft Edge e impedisce agli utenti di modificarle.
 
@@ -9537,19 +9601,19 @@ Se si abilita questo criterio, Microsoft Edge usa le impostazioni locali specifi
 
 Se si disabilita o non si configura questa impostazione, Microsoft Edge usa le impostazioni locali preferite specificate dall'utente (se configurate) o le impostazioni locali di fallback "en-US".
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ApplicationLocaleValue
   - Nome Criteri di gruppo: Configura le impostazioni locali delle applicazioni
@@ -9557,14 +9621,14 @@ Se si disabilita o non si configura questa impostazione, Microsoft Edge usa le i
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ApplicationLocaleValue
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "en"
@@ -9574,17 +9638,17 @@ Se si disabilita o non si configura questa impostazione, Microsoft Edge usa le i
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AudioCaptureAllowed
+  ### <a name="audiocaptureallowed"></a>AudioCaptureAllowed
 
-  #### Consente o blocca l'acquisizione audio
+  #### <a name="allow-or-block-audio-capture"></a>Consente o blocca l'acquisizione audio
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare se un utente deve concedere l'accesso a un sito Web al proprio dispositivo di acquisizione audio. Questo criterio si applica a tutti gli URL, ad eccezione di quelli configurati nell'elenco [AudioCaptureAllowedUrls](#audiocaptureallowedurls).
 
@@ -9594,19 +9658,19 @@ Se si disabilita questo criterio, all'utente non viene inviata alcuna richiesta 
 
 Questo criterio influisce su tutti i tipi di input audio, non solo sul microfono predefinito.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AudioCaptureAllowed
   - Nome Criteri di gruppo: Consente o blocca l'acquisizione audio
@@ -9614,20 +9678,20 @@ Questo criterio influisce su tutti i tipi di input audio, non solo sul microfono
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AudioCaptureAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AudioCaptureAllowed
   - Valore di esempio
@@ -9638,33 +9702,33 @@ Questo criterio influisce su tutti i tipi di input audio, non solo sul microfono
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AudioCaptureAllowedUrls
+  ### <a name="audiocaptureallowedurls"></a>AudioCaptureAllowedUrls
 
-  #### Siti che possono accedere ai dispositivi di acquisizione audio senza richiedere l'autorizzazione
+  #### <a name="sites-that-can-access-audio-capture-devices-without-requesting-permission"></a>Siti che possono accedere ai dispositivi di acquisizione audio senza richiedere l'autorizzazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica i siti Web, in base ai modelli URL, che possono usare i dispositivi di acquisizione audio senza chiedere l'autorizzazione all'utente. I modelli in questo elenco vengono confrontati con l'origine di sicurezza dell'URL di richiesta. In caso di corrispondenza, al sito viene automaticamente concesso l'accesso ai dispositivi di acquisizione audio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AudioCaptureAllowedUrls
   - Nome Criteri di gruppo: Siti che possono accedere ai dispositivi di acquisizione audio senza richiedere l'autorizzazione
@@ -9672,14 +9736,14 @@ Questo criterio influisce su tutti i tipi di input audio, non solo sul microfono
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AudioCaptureAllowedUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\1 = "https://www.contoso.com/"
@@ -9687,7 +9751,7 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AudioCaptureAllowedUrls
   - Valore di esempio
@@ -9701,17 +9765,17 @@ SOFTWARE\Policies\Microsoft\Edge\AudioCaptureAllowedUrls\2 = "https://[*.]contos
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AudioSandboxEnabled
+  ### <a name="audiosandboxenabled"></a>AudioSandboxEnabled
 
-  #### Consente l'esecuzione della sandbox audio
+  #### <a name="allow-the-audio-sandbox-to-run"></a>Consente l'esecuzione della sandbox audio
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio controlla la sandbox del processo audio.
 
@@ -9724,19 +9788,19 @@ Se non si configura questo criterio, per la sandbox audio verrà usata la config
 
 Questo criterio è pensato per offrire alle aziende la possibilità di disabilitare la sandbox audio se usano configurazioni di software per la sicurezza che interferiscono con la sandbox.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AudioSandboxEnabled
   - Nome Criteri di gruppo: Consente l'esecuzione della sandbox audio
@@ -9744,20 +9808,20 @@ Questo criterio è pensato per offrire alle aziende la possibilità di disabilit
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AudioSandboxEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AudioSandboxEnabled
   - Valore di esempio
@@ -9768,17 +9832,17 @@ Questo criterio è pensato per offrire alle aziende la possibilità di disabilit
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoImportAtFirstRun
+  ### <a name="autoimportatfirstrun"></a>AutoImportAtFirstRun
 
-  #### Importa automaticamente le impostazioni e i dati di un altro browser alla prima esecuzione
+  #### <a name="automatically-import-another-browsers-data-and-settings-at-first-run"></a>Importa automaticamente le impostazioni e i dati di un altro browser alla prima esecuzione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio, tutti i tipi di dati e le impostazioni supportati del browser specificato verranno importati automaticamente alla prima esecuzione. Durante la first-run experience, la sezione di importazione verrà ignorata.
 
@@ -9837,19 +9901,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutoImportAtFirstRun
   - Nome Criteri di gruppo: Importa automaticamente le impostazioni e i dati di un altro browser alla prima esecuzione
@@ -9857,20 +9921,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AutoImportAtFirstRun
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoImportAtFirstRun
   - Valore di esempio
@@ -9881,17 +9945,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoLaunchProtocolsFromOrigins
+  ### <a name="autolaunchprotocolsfromorigins"></a>AutoLaunchProtocolsFromOrigins
 
-  #### Definisci un elenco di protocolli che possono avviare un'applicazione esterna da origini elencate senza chiedere conferma all'utente
+  #### <a name="define-a-list-of-protocols-that-can-launch-an-external-application-from-listed-origins-without-prompting-the-user"></a>Definisci un elenco di protocolli che possono avviare un'applicazione esterna da origini elencate senza chiedere conferma all'utente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di impostare un elenco di protocolli e, per ciascun protocollo, un elenco associato di modelli di origine consentiti, che può avviare un'applicazione esterna senza richiedere all'utente. Il separatore finale non deve essere incluso nell'elenco del protocollo. Ad esempio, inserisci “skype” invece di “skype:” o “skype://”.
 
@@ -9909,19 +9973,19 @@ I modelli di corrispondenza di origine usano un formato simile a quelli per il c
 
 Tuttavia, i modelli di corrispondenza di origine per questo criterio non possono contenere elementi come “/path” o “@query”. Qualsiasi modello che contiene un elemento “/path” o “@query” verrà ignorato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutoLaunchProtocolsFromOrigins
   - Nome Criteri di gruppo: definisci un elenco di protocolli che possono avviare un'applicazione esterna da origini elencate senza chiedere conferma all'utente
@@ -9929,14 +9993,14 @@ Tuttavia, i modelli di corrispondenza di origine per questo criterio non possono
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AutoLaunchProtocolsFromOrigins
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
@@ -9963,14 +10027,14 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [{"allowed_origins": ["example.com", "http://www.example.com:8080"], "protocol": "spotify"}, {"allowed_origins": ["https://example.com", "https://.mail.example.com"], "protocol": "teams"}, {"allowed_origins": ["*"], "protocol": "outlook"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: AutoLaunchProtocolsFromOrigins
   - Valore di esempio
@@ -10009,17 +10073,17 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoOpenAllowedForURLs
+  ### <a name="autoopenallowedforurls"></a>AutoOpenAllowedForURLs
 
-  #### URL in cui è possibile applicare AutoOpenFileTypes
+  #### <a name="urls-where-autoopenfiletypes-can-apply"></a>URL in cui è possibile applicare AutoOpenFileTypes
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Un elenco di URL a cui [AutoOpenFileTypes](#autoopenfiletypes) verrà applicato. Questo criterio non ha alcun effetto sul modo in cui i valori aperti automaticamente impostati dagli utenti tramite la barra di download ... > Voce del menu “Apri sempre file di questo tipo”.
 
@@ -10029,19 +10093,19 @@ Se non si impostano questo criterio, tutti i download in cui il tipo di file è 
 
 Un modello di URL deve essere formattato in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutoOpenAllowedForURLs
   - Nome Criteri di gruppo: URL in cui è possibile applicare AutoOpenFileTypes
@@ -10049,14 +10113,14 @@ Un modello di URL deve essere formattato in base a [https://go.microsoft.com/fwl
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AutoOpenAllowedForURLs
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\1 = "example.com"
@@ -10067,7 +10131,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: AutoOpenAllowedForURLs
   - Valore di esempio
@@ -10084,17 +10148,17 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenAllowedForURLs\5 = ".exact.hostname.com
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoOpenFileTypes
+  ### <a name="autoopenfiletypes"></a>AutoOpenFileTypes
 
-  #### Elenco dei tipi di file che devono essere aperti automaticamente al download
+  #### <a name="list-of-file-types-that-should-be-automatically-opened-on-download"></a>Elenco dei tipi di file che devono essere aperti automaticamente al download
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio imposta un elenco dei tipi di file che devono essere aperti automaticamente al download. Nota: quando si elenca il tipo di file, non è necessario includere il separatore iniziale, quindi inserisci “txt” al posto di “.txt”.
 
@@ -10108,19 +10172,19 @@ Se non si imposta questo criterio, solo i tipi di file che un utente ha già spe
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri del gruppo: AutoOpenFileTypes
   - Nome Criteri di gruppo: elenco dei tipi di file che devono essere aperti automaticamente al download
@@ -10128,14 +10192,14 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\AutoOpenFileTypes
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\1 = "exe"
@@ -10143,7 +10207,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoOpenFileTypes
   - Valore di esempio
@@ -10157,17 +10221,17 @@ SOFTWARE\Policies\Microsoft\Edge\AutoOpenFileTypes\2 = "txt"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutofillAddressEnabled
+  ### <a name="autofilladdressenabled"></a>AutofillAddressEnabled
 
-  #### Abilita il riempimento automatico per gli indirizzi
+  #### <a name="enable-autofill-for-addresses"></a>Abilita il riempimento automatico per gli indirizzi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita la funzionalità di riempimento automatico e consente agli utenti di completare automaticamente le informazioni relative all'indirizzo nei moduli Web usando le informazioni archiviate in precedenza.
 
@@ -10177,19 +10241,19 @@ Se si abilita o non si configura questo criterio, gli utenti possono controllare
 
 Se si disabilita questo criterio, si interrompe anche tutta l'attività per tutti i moduli Web, ad eccezione dei moduli relativi a password e pagamenti. Non vengono salvate altre voci e Microsoft Edge non suggerisce o compila automaticamente eventuali voci precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutofillAddressEnabled
   - Nome Criteri di gruppo: Abilita il riempimento automatico per gli indirizzi
@@ -10197,20 +10261,20 @@ Se si disabilita questo criterio, si interrompe anche tutta l'attività per tutt
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: AutofillAddressEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutofillAddressEnabled
   - Valore di esempio
@@ -10221,17 +10285,17 @@ Se si disabilita questo criterio, si interrompe anche tutta l'attività per tutt
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutofillCreditCardEnabled
+  ### <a name="autofillcreditcardenabled"></a>AutofillCreditCardEnabled
 
-  #### Abilita il riempimento automatico per le carte di credito
+  #### <a name="enable-autofill-for-credit-cards"></a>Abilita il riempimento automatico per le carte di credito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita la funzionalità di riempimento automatico di Microsoft Edge e consente agli utenti di completare automaticamente le informazioni relative alla carta di credito nei moduli Web usando le informazioni archiviate in precedenza.
 
@@ -10239,19 +10303,19 @@ Se si disabilita questo criterio, la funzionalità di riempimento automatico non
 
 Se si abilita o non si configura questo criterio, gli utenti possono controllare la funzionalità di riempimento automatico per le carte di credito.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome Criteri di gruppo: AutofillCreditCardEnabled
   - Nome Criteri di gruppo: Abilita il riempimento automatico per le carte di credito
@@ -10259,20 +10323,20 @@ Se si abilita o non si configura questo criterio, gli utenti possono controllare
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: AutofillCreditCardEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutofillCreditCardEnabled
   - Valore di esempio
@@ -10283,17 +10347,17 @@ Se si abilita o non si configura questo criterio, gli utenti possono controllare
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### AutoplayAllowed
+  ### <a name="autoplayallowed"></a>AutoplayAllowed
 
-  #### Consente la riproduzione automatica dei contenuti multimediali per i siti Web
+  #### <a name="allow-media-autoplay-for-websites"></a>Consente la riproduzione automatica dei contenuti multimediali per i siti Web
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio imposta i criteri di riproduzione automatica di contenuti multimediali per i siti Web.
 
@@ -10306,19 +10370,19 @@ Se si disabilita questo criterio, la riproduzione automatica di contenuti multim
 Per applicare il criterio, è necessario chiudere e riaprire una scheda.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: AutoplayAllowed
   - Nome Criteri di gruppo: Consente la riproduzione automatica dei contenuti multimediali per i siti Web
@@ -10326,20 +10390,20 @@ Per applicare il criterio, è necessario chiudere e riaprire una scheda.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: AutoplayAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: AutoplayAllowed
   - Valore di esempio
@@ -10350,17 +10414,17 @@ Per applicare il criterio, è necessario chiudere e riaprire una scheda.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BackgroundModeEnabled
+  ### <a name="backgroundmodeenabled"></a>BackgroundModeEnabled
 
-  #### App in esecuzione in background dopo la chiusura di Microsoft Edge
+  #### <a name="continue-running-background-apps-after-microsoft-edge-closes"></a>App in esecuzione in background dopo la chiusura di Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente l'avvio dei processi di Microsoft Edge all'accesso al sistema operativo e li mantiene in esecuzione dopo la chiusura dell'ultima finestra del browser. In questo scenario, le app in background e la sessione di esplorazione corrente rimangono attive, inclusi i cookie di sessione. Un processo in background aperto visualizza un'icona nell'area di notifica e può sempre essere chiuso da lì.
 
@@ -10370,19 +10434,19 @@ Se si disabilita questo criterio, la modalità in background è disattivata.
 
 Se non si configura questo criterio, inizialmente la modalità in background è disattivata, ma può essere configurata dall'utente in edge://settings/system.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BackgroundModeEnabled
   - Nome Criteri di gruppo: App in esecuzione in background dopo la chiusura di Microsoft Edge
@@ -10390,14 +10454,14 @@ Se non si configura questo criterio, inizialmente la modalità in background è 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: BackgroundModeEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -10407,17 +10471,17 @@ Se non si configura questo criterio, inizialmente la modalità in background è 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BackgroundTemplateListUpdatesEnabled
+  ### <a name="backgroundtemplatelistupdatesenabled"></a>BackgroundTemplateListUpdatesEnabled
 
-  #### Abilita gli aggiornamenti in background all'elenco di modelli disponibili per Raccolte e altre funzionalità che sfruttano i modelli
+  #### <a name="enables-background-updates-to-the-list-of-available-templates-for-collections-and-other-features-that-use-templates"></a>Abilita gli aggiornamenti in background all'elenco di modelli disponibili per Raccolte e altre funzionalità che sfruttano i modelli
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di abilitare o disabilitare gli aggiornamenti in background all'elenco di modelli disponibili per Raccolte e altre funzionalità che sfruttano i modelli.  I modelli vengono usati per estrarre metadati complessi da una pagina Web quando la pagina viene salvata come raccolta.
 
@@ -10425,19 +10489,19 @@ Se si abilita o non si configura questa impostazione, l'elenco di modelli dispon
 
 Se si disabilita questa impostazione, l'elenco di modelli disponibili verrà scaricato su richiesta. Questo tipo di download può influire leggermente sulle prestazioni di Raccolte e altre funzionalità.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BackgroundTemplateListUpdatesEnabled
   - Nome Criteri di gruppo: Abilita gli aggiornamenti in background all'elenco di modelli disponibili per Raccolte e altre funzionalità che sfruttano i modelli
@@ -10445,20 +10509,20 @@ Se si disabilita questa impostazione, l'elenco di modelli disponibili verrà sca
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BackgroundTemplateListUpdatesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BackgroundTemplateListUpdatesEnabled
   - Valore di esempio
@@ -10469,17 +10533,17 @@ Se si disabilita questa impostazione, l'elenco di modelli disponibili verrà sca
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BingAdsSuppression
+  ### <a name="bingadssuppression"></a>BingAdsSuppression
 
-  #### Blocca tutti gli annunci sui risultati della ricerca di Bing
+  #### <a name="block-all-ads-on-bing-search-results"></a>Blocca tutti gli annunci sui risultati della ricerca di Bing
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Fornisce un'esperienza di ricerca senza pubblicità su Bing.com
 
@@ -10497,19 +10561,19 @@ Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsof
 
 * Si è verificata un'esperienza di ricerca senza pubblicità nella Versione legacy di Microsoft Edge e si desidera eseguire l'aggiornamento alla nuova versione di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BingAdsSuppression
   - Nome Criteri di gruppo: Blocca tutti gli annunci sui risultati della ricerca di Bing
@@ -10517,20 +10581,20 @@ Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsof
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BingAdsSuppression
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BingAdsSuppression
   - Valore di esempio
@@ -10541,17 +10605,17 @@ Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsof
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BlockThirdPartyCookies
+  ### <a name="blockthirdpartycookies"></a>BlockThirdPartyCookies
 
-  #### Blocca i cookie di terze parti
+  #### <a name="block-third-party-cookies"></a>Blocca i cookie di terze parti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impedisce agli elementi di una pagina Web che non fanno parte del dominio che si trova nella barra degli indirizzi di impostare i cookie.
 
@@ -10561,19 +10625,19 @@ Se si disabilita questo criterio, gli elementi della pagina Web di un dominio di
 
 Se non si configura questo criterio, i cookie di terze parti sono abilitati, ma gli utenti possono modificare questa impostazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BlockThirdPartyCookies
   - Nome Criteri di gruppo: Blocca i cookie di terze parti
@@ -10581,20 +10645,20 @@ Se non si configura questo criterio, i cookie di terze parti sono abilitati, ma 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: BlockThirdPartyCookies
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BlockThirdPartyCookies
   - Valore di esempio
@@ -10605,36 +10669,36 @@ Se non si configura questo criterio, i cookie di terze parti sono abilitati, ma 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BrowserAddProfileEnabled
+  ### <a name="browseraddprofileenabled"></a>BrowserAddProfileEnabled
 
-  #### Abilita la creazione del profilo dal menu a comparsa Identità o dalla pagina Impostazioni
+  #### <a name="enable-profile-creation-from-the-identity-flyout-menu-or-the-settings-page"></a>Abilita la creazione del profilo dal menu a comparsa Identità o dalla pagina Impostazioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di creare nuovi profili, usando l'opzione **Aggiungi profilo**.
 Se si abilita o non si configura questo criterio, Microsoft Edge consente agli utenti di usare **Aggiungi profilo** nel menu a comparsa Identità o nella pagina Impostazioni per creare nuovi profili.
 
 Se si disabilita questo criterio, gli utenti non potranno aggiungere nuovi profili dal menu a comparsa Identità o dalla pagina Impostazioni.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserAddProfileEnabled
   - Nome Criteri di gruppo: Abilita la creazione del profilo dal menu a comparsa Identità o dalla pagina Impostazioni
@@ -10642,20 +10706,20 @@ Se si disabilita questo criterio, gli utenti non potranno aggiungere nuovi profi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BrowserAddProfileEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserAddProfileEnabled
   - Valore di esempio
@@ -10666,17 +10730,17 @@ Se si disabilita questo criterio, gli utenti non potranno aggiungere nuovi profi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BrowserGuestModeEnabled
+  ### <a name="browserguestmodeenabled"></a>BrowserGuestModeEnabled
 
-  #### Abilita la modalità Guest
+  #### <a name="enable-guest-mode"></a>Abilita la modalità Guest
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita l'opzione per consentire l'utilizzo di profili guest in Microsoft Edge. In un profilo guest, il browser non importa i dati di esplorazione da profili esistenti ed elimina i dati di esplorazione quando tutti i profili guest sono chiusi.
 
@@ -10684,19 +10748,19 @@ Se si abilita o non si configura questo criterio, Microsoft Edge consente agli u
 
 Se si disabilita questo criterio, Microsoft Edge non consente agli utenti di esplorare nei profili guest.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserGuestModeEnabled
   - Nome Criteri di gruppo: Abilita la modalità Guest
@@ -10704,20 +10768,20 @@ Se si disabilita questo criterio, Microsoft Edge non consente agli utenti di esp
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BrowserGuestModeEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserGuestModeEnabled
   - Valore di esempio
@@ -10728,17 +10792,17 @@ Se si disabilita questo criterio, Microsoft Edge non consente agli utenti di esp
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BrowserNetworkTimeQueriesEnabled
+  ### <a name="browsernetworktimequeriesenabled"></a>BrowserNetworkTimeQueriesEnabled
 
-  #### Consente le query a un servizio Browser Network Time
+  #### <a name="allow-queries-to-a-browser-network-time-service"></a>Consente le query a un servizio Browser Network Time
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impedisce a Microsoft Edge di inviare occasionalmente query a un servizio Browser Network Time per recuperare un timestamp preciso.
 
@@ -10746,19 +10810,19 @@ Se si disabilita questo criterio, Microsoft Edge interromperà l'invio di query 
 
 Se si abilita o non si configura questo criterio, Microsoft Edge invierà occasionalmente query a un servizio Browser Network Time.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserNetworkTimeQueriesEnabled
   - Nome Criteri di gruppo: Consente le query a un servizio Browser Network Time
@@ -10766,20 +10830,20 @@ Se si abilita o non si configura questo criterio, Microsoft Edge invierà occasi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BrowserNetworkTimeQueriesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserNetworkTimeQueriesEnabled
   - Valore di esempio
@@ -10790,17 +10854,17 @@ Se si abilita o non si configura questo criterio, Microsoft Edge invierà occasi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BrowserSignin
+  ### <a name="browsersignin"></a>BrowserSignin
 
-  #### Impostazioni di accesso al browser
+  #### <a name="browser-sign-in-settings"></a>Impostazioni di accesso al browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se un utente può accedere a Microsoft Edge con il proprio account e usare i servizi correlati all'account come la sincronizzazione e Single Sign-On. Per controllare la disponibilità della sincronizzazione, usare invece il criterio [SyncDisabled](#syncdisabled).
 
@@ -10822,19 +10886,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -10842,20 +10906,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BrowserSignin
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowserSignin
   - Valore di esempio
@@ -10866,17 +10930,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BrowsingDataLifetime
+  ### <a name="browsingdatalifetime"></a>BrowsingDataLifetime
 
-  #### Impostazioni vita utile dati di esplorazione
+  #### <a name="browsing-data-lifetime-settings"></a>Impostazioni vita utile dati di esplorazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le impostazioni della vita utile dei dati di esplorazione per Microsoft Edge.
 Questo criterio Controlla la vita utile dei dati di esplorazione selezionati. Questo criterio non ha alcun effetto se la sincronizzazione è abilitata.
@@ -10884,19 +10948,19 @@ I tipi di dati disponibili sono "browsing_history", "download_history", "cookies
 Microsoft Edge rimuoverà periodicamente i dati dei tipi selezionati meno recenti di "time_to_live_in_hours". Dato che l'eliminazione dei dati avviene solo a determinati intervalli, alcuni dati potrebbero essere mantenuti leggermente più a lungo, ma mai più del doppio del tempo "time_to_live_in_hours" previsto.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowsingDataLifetime
   - Nome Criteri di gruppo: impostazioni della vita utile dei dati di esplorazione
@@ -10904,14 +10968,14 @@ Microsoft Edge rimuoverà periodicamente i dati dei tipi selezionati meno recent
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BrowsingDataLifetime
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
@@ -10931,14 +10995,14 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [{"data_types": ["browsing_history"], "time_to_live_in_hours": 24}, {"data_types": ["password_signin", "autofill"], "time_to_live_in_hours": 12}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BrowsingDataLifetime
   - Valore di esempio:
@@ -10968,17 +11032,17 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BuiltInDnsClientEnabled
+  ### <a name="builtindnsclientenabled"></a>BuiltInDnsClientEnabled
 
-  #### Usa il client DNS predefinito
+  #### <a name="use-built-in-dns-client"></a>Usa il client DNS predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se usare il client DNS predefinito.
 
@@ -10990,19 +11054,19 @@ Se si disabilita questo criterio, il client DNS incorporato viene usato solo qua
 
 Se non si configura questo criterio, il client DNS predefinito è abilitato per impostazione predefinita.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BuiltInDnsClientEnabled
   - Nome Criteri di gruppo: Usa il client DNS predefinito
@@ -11010,20 +11074,20 @@ Se non si configura questo criterio, il client DNS predefinito è abilitato per 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: BuiltInDnsClientEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BuiltInDnsClientEnabled
   - Valore di esempio
@@ -11034,36 +11098,36 @@ Se non si configura questo criterio, il client DNS predefinito è abilitato per 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### BuiltinCertificateVerifierEnabled
+  ### <a name="builtincertificateverifierenabled"></a>BuiltinCertificateVerifierEnabled
 
-  #### Determina se lo strumento di verifica del certificato predefinito verrà usato per la verifica dei certificati server (deprecato)
+  #### <a name="determines-whether-the-built-in-certificate-verifier-will-be-used-to-verify-server-certificates-deprecated"></a>Determina se lo strumento di verifica del certificato predefinito verrà usato per la verifica dei certificati server (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato perché serve solo come meccanismo a breve termine per offrire alle aziende più tempo per aggiornare i propri ambienti e segnalare problemi se risultano incompatibili con lo strumento di verifica predefinito.
 
 Non funzionerà in Microsoft Edge versione 87, quando è prevista la rimozione dello strumento di verifica del certificato legacy in Mac OS X.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: BuiltinCertificateVerifierEnabled
   - Valore di esempio
@@ -11074,17 +11138,17 @@ Non funzionerà in Microsoft Edge versione 87, quando è prevista la rimozione d
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CertificateTransparencyEnforcementDisabledForCas
+  ### <a name="certificatetransparencyenforcementdisabledforcas"></a>CertificateTransparencyEnforcementDisabledForCas
 
-  #### Disabilita l'applicazione della trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo
+  #### <a name="disable-certificate-transparency-enforcement-for-a-list-of-subjectpublickeyinfo-hashes"></a>Disabilita l'applicazione della trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita l'applicazione dei requisiti di trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo.
 
@@ -11099,19 +11163,19 @@ Un hash subjectPublicKeyInfo viene specificato concatenando il nome dell'algorit
 
 Se si disabilita o non si configura questo criterio, i certificati che devono essere divulgati con la trasparenza dei certificati verranno considerati non attendibili se la loro divulgazione non è conforme al criterio di trasparenza dei certificati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CertificateTransparencyEnforcementDisabledForCas
   - Nome Criteri di gruppo: Disabilita l'applicazione della trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo
@@ -11119,14 +11183,14 @@ Se si disabilita o non si configura questo criterio, i certificati che devono es
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCas\1 = "sha256/AAAAAAAAAAAAAAAAAAAAAA=="
@@ -11134,7 +11198,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CertificateTransparencyEnforcementDisabledForCas
   - Valore di esempio
@@ -11148,17 +11212,17 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForCa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CertificateTransparencyEnforcementDisabledForLegacyCas
+  ### <a name="certificatetransparencyenforcementdisabledforlegacycas"></a>CertificateTransparencyEnforcementDisabledForLegacyCas
 
-  #### Disabilita l'applicazione della trasparenza dei certificati per un elenco di autorità di certificazione legacy
+  #### <a name="disable-certificate-transparency-enforcement-for-a-list-of-legacy-certificate-authorities"></a>Disabilita l'applicazione della trasparenza dei certificati per un elenco di autorità di certificazione legacy
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita l'applicazione dei requisiti di trasparenza dei certificati per un elenco di autorità di certificazione legacy.
 
@@ -11170,19 +11234,19 @@ Un hash subjectPublicKeyInfo viene specificato concatenando il nome dell'algorit
 
 Se non si configura questo criterio, i certificati che devono essere divulgati con la trasparenza dei certificati verranno considerati non attendibili se la loro divulgazione non è conforme al criterio di trasparenza dei certificati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CertificateTransparencyEnforcementDisabledForLegacyCas
   - Nome Criteri di gruppo: Disabilita l'applicazione della trasparenza dei certificati per un elenco di autorità di certificazione legacy
@@ -11190,14 +11254,14 @@ Se non si configura questo criterio, i certificati che devono essere divulgati c
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLegacyCas\1 = "sha256/AAAAAAAAAAAAAAAAAAAAAA=="
@@ -11205,7 +11269,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CertificateTransparencyEnforcementDisabledForLegacyCas
   - Valore di esempio
@@ -11219,17 +11283,17 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CertificateTransparencyEnforcementDisabledForUrls
+  ### <a name="certificatetransparencyenforcementdisabledforurls"></a>CertificateTransparencyEnforcementDisabledForUrls
 
-  #### Disabilita l'applicazione della trasparenza dei certificati per URL specifici
+  #### <a name="disable-certificate-transparency-enforcement-for-specific-urls"></a>Disabilita l'applicazione della trasparenza dei certificati per URL specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita l'applicazione dei requisiti di trasparenza dei certificati per gli URL elencati.
 
@@ -11239,19 +11303,19 @@ Creare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322
 
 Se non si configura questo criterio, i certificati che dovrebbero essere divulgati con la trasparenza dei certificati vengono considerati non attendibili se non vengono divulgati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CertificateTransparencyEnforcementDisabledForUrls
   - Nome Criteri di gruppo: Disabilita l'applicazione della trasparenza dei certificati per URL specifici
@@ -11259,14 +11323,14 @@ Se non si configura questo criterio, i certificati che dovrebbero essere divulga
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUrls\1 = "contoso.com"
@@ -11274,7 +11338,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CertificateTransparencyEnforcementDisabledForUrls
   - Valore di esempio
@@ -11288,17 +11352,17 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForUr
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ClearBrowsingDataOnExit
+  ### <a name="clearbrowsingdataonexit"></a>ClearBrowsingDataOnExit
 
-  #### Cancella i dati di esplorazione alla chiusura di Microsoft Edge
+  #### <a name="clear-browsing-data-when-microsoft-edge-closes"></a>Cancella i dati di esplorazione alla chiusura di Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge non cancella i dati di esplorazione per impostazione predefinita quando viene chiuso. I dati di esplorazione includono le informazioni inserite nei moduli, le password e persino i siti Web visitati.
 
@@ -11310,19 +11374,19 @@ Se si abilita questo criterio, non configurare il criterio [AllowDeletingBrowser
 
 Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](#savecookiesonexit).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ClearBrowsingDataOnExit
   - Nome Criteri di gruppo: Cancella i dati di esplorazione alla chiusura di Microsoft Edge
@@ -11330,20 +11394,20 @@ Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ClearBrowsingDataOnExit
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ClearBrowsingDataOnExit
   - Valore di esempio
@@ -11354,17 +11418,17 @@ Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ClearCachedImagesAndFilesOnExit
+  ### <a name="clearcachedimagesandfilesonexit"></a>ClearCachedImagesAndFilesOnExit
 
-  #### Cancella le immagini e i file memorizzati nella cache alla chiusura di Microsoft Edge
+  #### <a name="clear-cached-images-and-files-when-microsoft-edge-closes"></a>Cancella le immagini e i file memorizzati nella cache alla chiusura di Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge non cancella i file e le immagini memorizzati nella cache per impostazione predefinita quando viene chiuso.
 
@@ -11376,19 +11440,19 @@ Se non si configura questo criterio, gli utenti possono scegliere se cancellare 
 
 Se si disabilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) poiché entrambi sono associati all'eliminazione dei dati. Se si configurano entrambi, il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) ha la precedenza ed elimina tutti i dati quando si chiude Microsoft Edge, indipendentemente da come è configurato [ClearCachedImagesAndFilesOnExit](#clearcachedimagesandfilesonexit).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ClearCachedImagesAndFilesOnExit
   - Nome Criteri di gruppo: Cancella le immagini e i file memorizzati nella cache alla chiusura di Microsoft Edge
@@ -11396,20 +11460,20 @@ Se si disabilita questo criterio, non abilitare il criterio [ClearBrowsingDataOn
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ClearCachedImagesAndFilesOnExit
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ClearCachedImagesAndFilesOnExit
   - Valore di esempio
@@ -11420,17 +11484,17 @@ Se si disabilita questo criterio, non abilitare il criterio [ClearBrowsingDataOn
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ClickOnceEnabled
+  ### <a name="clickonceenabled"></a>ClickOnceEnabled
 
-  #### Consente agli utenti di aprire i file con il protocollo ClickOnce
+  #### <a name="allow-users-to-open-files-using-the-clickonce-protocol"></a>Consente agli utenti di aprire i file con il protocollo ClickOnce
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di aprire i file con il protocollo ClickOnce. Il protocollo ClickOnce consente ai siti Web di richiedere che il browser apra i file da un URL specifico usando il gestore di file ClickOnce nel dispositivo o nel computer dell'utente.
 
@@ -11444,19 +11508,19 @@ La disabilitazione di ClickOnce potrebbe impedire l'avvio corretto delle applica
 
 Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) e [https://go.microsoft.com/fwlink/?linkid=2099880](https://go.microsoft.com/fwlink/?linkid=2099880).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ClickOnceEnabled
   - Nome Criteri di gruppo: Consente agli utenti di aprire i file con il protocollo ClickOnce
@@ -11464,14 +11528,14 @@ Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?li
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ClickOnceEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -11481,17 +11545,17 @@ Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?li
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CollectionsServicesAndExportsBlockList
+  ### <a name="collectionsservicesandexportsblocklist"></a>CollectionsServicesAndExportsBlockList
 
-  #### Blocca l'accesso a un elenco specificato di servizi e di destinazioni di esportazione in Raccolte
+  #### <a name="block-access-to-a-specified-list-of-services-and-export-targets-in-collections"></a>Blocca l'accesso a un elenco specificato di servizi e di destinazioni di esportazione in Raccolte
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Elenca servizi specifici e destinazioni di esportazione a cui gli utenti non possono accedere nella funzionalità Raccolte in Microsoft Edge. Include anche la visualizzazione di dati aggiuntivi da Bing e l’esportazione di raccolte verso prodotti Microsoft o partner esterni.
 
@@ -11507,19 +11571,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CollectionsServicesAndExportsBlockList
   - Nome Criteri di gruppo: Blocca l'accesso a un elenco specificato di servizi e destinazioni di esportazione in Raccolte
@@ -11527,14 +11591,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft Edge\CollectionsServicesAndExportsBlockList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
@@ -11542,7 +11606,7 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CollectionsServicesAndExportsBlockList
   - Valore di esempio
@@ -11556,17 +11620,17 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CommandLineFlagSecurityWarningsEnabled
+  ### <a name="commandlineflagsecuritywarningsenabled"></a>CommandLineFlagSecurityWarningsEnabled
 
-  #### Abilita gli avvisi di sicurezza per i contrassegni della riga di comando
+  #### <a name="enable-security-warnings-for-command-line-flags"></a>Abilita gli avvisi di sicurezza per i contrassegni della riga di comando
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se disabilitato, questo criterio impedisce la visualizzazione degli avvisi di sicurezza all'avvio di Microsoft Edge con contrassegni della riga di comando potenzialmente pericolosi.
 
@@ -11576,19 +11640,19 @@ Ad esempio, il contrassegno --disable-gpu-sandbox genera un avviso che informa c
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CommandLineFlagSecurityWarningsEnabled
   - Nome Criteri di gruppo: Abilita gli avvisi di sicurezza per i contrassegni della riga di comando
@@ -11596,20 +11660,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: CommandLineFlagSecurityWarningsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CommandLineFlagSecurityWarningsEnabled
   - Valore di esempio
@@ -11620,17 +11684,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ComponentUpdatesEnabled
+  ### <a name="componentupdatesenabled"></a>ComponentUpdatesEnabled
 
-  #### Abilita gli aggiornamenti dei componenti in Microsoft Edge
+  #### <a name="enable-component-updates-in-microsoft-edge"></a>Abilita gli aggiornamenti dei componenti in Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita o non si configura questo criterio, gli aggiornamenti dei componenti sono abilitati in Microsoft Edge.
 
@@ -11638,19 +11702,19 @@ Se si disabilita o si imposta su false questo criterio, gli aggiornamenti dei co
 
 Tuttavia, alcuni componenti sono esclusi da questo criterio. Sono inclusi i componenti che non contengono codice eseguibile, che non alterano in modo significativo il comportamento del browser o che sono fondamentali per la sicurezza. In altri termini, gli aggiornamenti che sono considerati "critici per la sicurezza" vengono comunque applicati anche se si disabilita questo criterio.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ComponentUpdatesEnabled
   - Nome Criteri di gruppo: Abilita gli aggiornamenti dei componenti in Microsoft Edge
@@ -11658,20 +11722,20 @@ Tuttavia, alcuni componenti sono esclusi da questo criterio. Sono inclusi i comp
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ComponentUpdatesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ComponentUpdatesEnabled
   - Valore di esempio
@@ -11682,17 +11746,17 @@ Tuttavia, alcuni componenti sono esclusi da questo criterio. Sono inclusi i comp
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ConfigureDoNotTrack
+  ### <a name="configuredonottrack"></a>ConfigureDoNotTrack
 
-  #### Configura Do Not Track
+  #### <a name="configure-do-not-track"></a>Configura Do Not Track
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se inviare richieste Do Not Track ai siti Web che richiedono informazioni di monitoraggio. Le richieste Do Not Track consentono ai siti Web visitati di sapere che l'utente non vuole tenere traccia dell'attività di esplorazione. Per impostazione predefinita, Microsoft Edge non invia richieste Do Not Track, ma gli utenti possono attivare questa funzionalità per inviarle.
 
@@ -11702,19 +11766,19 @@ Se si disabilita questo criterio, le richieste non vengono mai inviate.
 
 Se non si configura questo criterio, gli utenti possono scegliere se inviare tali richieste.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ConfigureDoNotTrack
   - Nome Criteri di gruppo: Configura Do Not Track
@@ -11722,20 +11786,20 @@ Se non si configura questo criterio, gli utenti possono scegliere se inviare tal
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ConfigureDoNotTrack
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ConfigureDoNotTrack
   - Valore di esempio
@@ -11746,18 +11810,18 @@ Se non si configura questo criterio, gli utenti possono scegliere se inviare tal
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ConfigureFriendlyURLFormat
+  ### <a name="configurefriendlyurlformat"></a>ConfigureFriendlyURLFormat
 
-  #### Configura il formato incolla predefinito degli URL copiati da Microsoft Edge e determina se saranno disponibili formati aggiuntivi per gli utenti.
+  #### <a name="configure-the-default-paste-format-of-urls-copied-from-microsoft-edge-and-determine-if-additional-formats-will-be-available-to-users"></a>Configura il formato incolla predefinito degli URL copiati da Microsoft Edge e determina se saranno disponibili formati aggiuntivi per gli utenti.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 87 o successive
   - In macOS dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se i Friendly URL sono abilitati, Microsoft Edge calcolerà altre rappresentazioni dell'URL e le inserirà negli Appunti.
 
@@ -11785,19 +11849,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: ConfigureFriendlyURLFormat
   - Nome GP: Configura il formato incolla predefinito degli URL copiati da Microsoft Edge e determina se saranno disponibili formati aggiuntivi per gli utenti.
@@ -11805,20 +11869,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ConfigureFriendlyURLFormat
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000003
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ConfigureFriendlyURLFormat
   - Valore di esempio
@@ -11829,17 +11893,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ConfigureOnPremisesAccountAutoSignIn
+  ### <a name="configureonpremisesaccountautosignin"></a>ConfigureOnPremisesAccountAutoSignIn
 
-  #### Configura l'accesso automatico con un account di dominio Active Directory quando non esiste un account di dominio Azure AD
+  #### <a name="configure-automatic-sign-in-with-an-active-directory-domain-account-when-there-is-no-azure-ad-domain-account"></a>Configura l'accesso automatico con un account di dominio Active Directory quando non esiste un account di dominio Azure AD
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita l'uso degli account Active Directory per l'accesso automatico se i computer degli utenti sono aggiunti a un dominio e se l'ambiente non è aggiunto ad Azure AD ibrido. Se invece si desidera che gli utenti accedano automaticamente con l'account Azure Active Directory, aggiungere l'ambiente ad Azure AD (vedere [https://go.microsoft.com/fwlink/?linkid=2118197](https://go.microsoft.com/fwlink/?linkid=2118197) per altre informazioni) o ad Azure AD ibrido (vedere [https://go.microsoft.com/fwlink/?linkid=2118365](https://go.microsoft.com/fwlink/?linkid=2118365) per altre informazioni).
 
@@ -11861,19 +11925,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ConfigureOnPremisesAccountAutoSignIn
   - Nome Criteri di gruppo: Configura l'accesso automatico con un account di dominio Active Directory quando non esiste un account di dominio Azure AD
@@ -11881,14 +11945,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ConfigureOnPremisesAccountAutoSignIn
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -11898,17 +11962,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ConfigureOnlineTextToSpeech
+  ### <a name="configureonlinetexttospeech"></a>ConfigureOnlineTextToSpeech
 
-  #### Configura la sintesi vocale online
+  #### <a name="configure-online-text-to-speech"></a>Configura la sintesi vocale online
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Indica se il browser può sfruttare i caratteri voce della sintesi vocale online, parte dei Servizi cognitivi Azure. Questi caratteri voce sono di qualità superiore rispetto ai caratteri voce di sistema predefiniti.
 
@@ -11918,19 +11982,19 @@ Se si disabilita questo criterio, i caratteri voce non sono disponibili.
 
 Sono disponibili altre informazioni su questa funzionalità qui: API SpeechSynthesis: [https://go.microsoft.com/fwlink/?linkid=2110038](https://go.microsoft.com/fwlink/?linkid=2110038) Servizi cognitivi: [https://go.microsoft.com/fwlink/?linkid=2110141](https://go.microsoft.com/fwlink/?linkid=2110141)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ConfigureOnlineTextToSpeech
   - Nome Criteri di gruppo: Configura la sintesi vocale online
@@ -11938,20 +12002,20 @@ Sono disponibili altre informazioni su questa funzionalità qui: API SpeechSynth
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ConfigureOnlineTextToSpeech
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ConfigureOnlineTextToSpeech
   - Valore di esempio
@@ -11962,17 +12026,17 @@ Sono disponibili altre informazioni su questa funzionalità qui: API SpeechSynth
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ConfigureShare
+  ### <a name="configureshare"></a>ConfigureShare
 
-  #### Configura l'esperienza di condivisione
+  #### <a name="configure-the-share-experience"></a>Configura l'esperienza di condivisione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si imposta questo criterio su "ShareAllowed" (impostazione predefinita), gli utenti potranno accedere all'esperienza di condivisione di Windows 10 da Impostazioni e dal menu Altro in Microsoft Edge per condividere contenuti con altre app nel sistema.
 
@@ -11986,19 +12050,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ConfigureShare
   - Nome Criteri di gruppo: Configura l'esperienza di condivisione
@@ -12006,14 +12070,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ConfigureShare
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -12023,17 +12087,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### CustomHelpLink
+  ### <a name="customhelplink"></a>CustomHelpLink
 
-  #### Specifica il collegamento alla guida personalizzato
+  #### <a name="specify-custom-help-link"></a>Specifica il collegamento alla guida personalizzato
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica un collegamento per il menu ? o il tasto F1.
 
@@ -12043,19 +12107,19 @@ Se si disabilita o non si configura questo criterio, viene usato il collegamento
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: CustomHelpLink
   - Nome Criteri di gruppo: Specifica il collegamento alla guida personalizzato
@@ -12063,20 +12127,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: CustomHelpLink
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://go.microsoft.com/fwlink/?linkid=2080734"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: CustomHelpLink
   - Valore di esempio
@@ -12087,17 +12151,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DNSInterceptionChecksEnabled
+  ### <a name="dnsinterceptionchecksenabled"></a>DNSInterceptionChecksEnabled
 
-  #### Controlli dell'intercettazione DNS abilitati
+  #### <a name="dns-interception-checks-enabled"></a>Controlli dell'intercettazione DNS abilitati
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio configura un interruttore locale che consente di disabilitare i controlli di intercettazione DNS. Questi controlli tentano di individuare se il browser si trova dietro un proxy che reindirizza nomi host sconosciuti.
 
@@ -12107,19 +12171,19 @@ Se si abilita o non si imposta questo criterio, i controlli di intercettazione D
 
 Se si disabilita questo criterio, i controlli di intercettazione DNS non vengono eseguiti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DNSInterceptionChecksEnabled
   - Nome Criteri di gruppo: Controlli dell'intercettazione DNS abilitati
@@ -12127,20 +12191,20 @@ Se si disabilita questo criterio, i controlli di intercettazione DNS non vengono
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DNSInterceptionChecksEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DNSInterceptionChecksEnabled
   - Valore di esempio
@@ -12151,17 +12215,17 @@ Se si disabilita questo criterio, i controlli di intercettazione DNS non vengono
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultBrowserSettingEnabled
+  ### <a name="defaultbrowsersettingenabled"></a>DefaultBrowserSettingEnabled
 
-  #### Imposta Microsoft Edge come browser predefinito
+  #### <a name="set-microsoft-edge-as-default-browser"></a>Imposta Microsoft Edge come browser predefinito
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows 7 e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio su true, Microsoft Edge controlla sempre se si tratta del browser predefinito all’avvio e, se possibile, lo registra automaticamente.
 
@@ -12171,19 +12235,19 @@ Se non si imposta questo criterio, Microsoft Edge consente agli utenti di contro
 
 Nota per gli amministratori di Windows: questo criterio funziona solo per i PC che eseguono Windows 7. Per le versioni più recenti di Windows, è necessario distribuire un file di "associazioni delle applicazioni predefinite" che rende Microsoft Edge il gestore per i protocolli HTTPS e HTTP (e, facoltativamente, il protocollo ftp e i formati di file come .html, .htm, .pdf, .svg, .webp). Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2094932](https://go.microsoft.com/fwlink/?linkid=2094932).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultBrowserSettingEnabled
   - Nome Criteri di gruppo: Imposta Microsoft Edge come browser predefinito
@@ -12191,20 +12255,20 @@ Nota per gli amministratori di Windows: questo criterio funziona solo per i PC c
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultBrowserSettingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultBrowserSettingEnabled
   - Valore di esempio
@@ -12215,17 +12279,17 @@ Nota per gli amministratori di Windows: questo criterio funziona solo per i PC c
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSearchProviderContextMenuAccessAllowed
+  ### <a name="defaultsearchprovidercontextmenuaccessallowed"></a>DefaultSearchProviderContextMenuAccessAllowed
 
-  #### Consente l’accesso al menu di scelta rapida del provider di ricerca predefinito 
+  #### <a name="allow-default-search-provider-context-menu-search-access"></a>Consente l’accesso al menu di scelta rapida del provider di ricerca predefinito 
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di usare un provider di ricerca predefinito nel menu di scelta rapida.
 
@@ -12235,19 +12299,19 @@ Se questo criterio è impostato su abilitato o non impostato, la voce del menu d
 
 Il valore del criterio viene applicato solo quando il criterio [DefaultSearchProviderEnabled](#defaultsearchproviderenabled) è abilitato; in caso contrario, non è applicabile.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSearchProviderContextMenuAccessAllowed
   - Nome Criteri di gruppo: consente l’accesso al menu di scelta rapida del provider di ricerca predefinito
@@ -12255,20 +12319,20 @@ Il valore del criterio viene applicato solo quando il criterio [DefaultSearchPro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultSearchProviderContextMenuAccessAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSearchProviderContextMenuAccessAllowed
   - Valore di esempio
@@ -12279,17 +12343,17 @@ Il valore del criterio viene applicato solo quando il criterio [DefaultSearchPro
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSensorsSetting
+  ### <a name="defaultsensorssetting"></a>DefaultSensorsSetting
 
-  #### Impostazione predefinita per i sensori
+  #### <a name="default-sensors-setting"></a>Impostazione predefinita per i sensori
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specificare se i siti Web possono accedere e usare sensori come i sensori di movimento e di luce. È possibile bloccare o consentire completamente l'accesso dei siti Web ai sensori.
 
@@ -12307,19 +12371,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultPopupsSetting
   - Nome Criteri di gruppo: Impostazione predefinita per i sensori
@@ -12327,20 +12391,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultSensorsSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSensorsSetting
   - Valore di esempio
@@ -12351,17 +12415,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefaultSerialGuardSetting
+  ### <a name="defaultserialguardsetting"></a>DefaultSerialGuardSetting
 
-  #### Controlla l'uso di Serial API
+  #### <a name="control-use-of-the-serial-api"></a>Controlla l'uso di Serial API
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specificare se i siti Web possono accedere alle porte seriali. È possibile bloccare completamente l'accesso o chiedere conferma all'utente ogni volta che un sito Web vuole accedere a una porta seriale.
 
@@ -12379,19 +12443,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefaultSerialGuardSetting
   - Nome Criteri di gruppo: controlla l'uso di Serial API
@@ -12399,20 +12463,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefaultSerialGuardSetting
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefaultSerialGuardSetting
   - Valore di esempio
@@ -12423,17 +12487,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DefinePreferredLanguages
+  ### <a name="definepreferredlanguages"></a>DefinePreferredLanguages
 
-  #### Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti
+  #### <a name="define-an-ordered-list-of-preferred-languages-that-websites-should-display-in-if-the-site-supports-the-language"></a>Definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se supportate dai siti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le varianti della lingua inviate da Microsoft Edge ai siti internet nell'intestazione HTTP di Accept-Language Request, e impedisce agli utenti di aggiungere, rimuovere o modificare l'ordine delle lingue preferite nelle impostazioni di Microsoft Edge. Gli utenti che vogliono cambiare le lingue in cui Microsof Edge mostra le pagine o offre di tradurle saranno limitati alle lingue configurate in questo criterio.
 
@@ -12443,19 +12507,19 @@ Se il criterio non viene configurato o disabilitato, Microsoft Edge invia ai sit
 
 Per informazioni dettagliate sulle varianti della lingua valide, vedere [https://go.microsoft.com/fwlink/?linkid=2148854](https://go.microsoft.com/fwlink/?linkid=2148854) .
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DefinePreferredLanguages
   - Nome Criteri di gruppo: definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
@@ -12463,20 +12527,20 @@ Per informazioni dettagliate sulle varianti della lingua valide, vedere [https:/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DefinePreferredLanguages
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "en-US,fr,es"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DefinePreferredLanguages
   - Valore di esempio:
@@ -12487,17 +12551,17 @@ Per informazioni dettagliate sulle varianti della lingua valide, vedere [https:/
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DelayNavigationsForInitialSiteListDownload
+  ### <a name="delaynavigationsforinitialsitelistdownload"></a>DelayNavigationsForInitialSiteListDownload
 
-  #### Richiede che l'elenco siti in modalità Enterprise sia disponibile prima dello spostamento tramite schede.
+  #### <a name="require-that-the-enterprise-mode-site-list-is-available-before-tab-navigation"></a>Richiede che l'elenco siti in modalità Enterprise sia disponibile prima dello spostamento tramite schede.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare se le schede Microsoft Edge attendono lo spostamento finché il browser non avrà scaricato l'elenco iniziale dei siti in modalità Enterprise. Questa opzione viene usata in scenari in cui la Home page del browser deve essere caricata in modalità Internet Explorer ed è importante che venga prima eseguita nel browser dopo l'abilitazione della modalità Internet Explorer. Se questo scenario non esiste, è consigliabile non abilitare questa opzione perché può influire negativamente sulle prestazioni del caricamento della Home page. L'impostazione viene applicata solo se Microsoft Edge non dispone di un elenco dei siti in modalità aziendale memorizzato nella cache, ad esempio quando si esegue il primo browser dopo l'abilitazione della modalità Internet Explorer.
 
@@ -12517,19 +12581,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DelayNavigationsForInitialSiteListDownload
   - Nome Criteri di gruppo: richiede che l'elenco siti in modalità Enterprise sia disponibile prima dello spostamento tramite schede.
@@ -12537,14 +12601,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DelayNavigationsForInitialSiteListDownload
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -12554,17 +12618,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DeleteDataOnMigration
+  ### <a name="deletedataonmigration"></a>DeleteDataOnMigration
 
-  #### Elimina i dati del browser obsoleti alla migrazione
+  #### <a name="delete-old-browser-data-on-migration"></a>Elimina i dati del browser obsoleti alla migrazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio determina se i dati di esplorazione dell'utente della Versione legacy di Microsoft Edge verranno eliminati dopo la migrazione a Microsoft Edge versione 81 o successiva.
 
@@ -12572,19 +12636,19 @@ Se si imposta questo criterio su "Abilitato", tutti i dati di esplorazione della
 
 Se si imposta questo criterio su "Disabilitato" o se il criterio non viene configurato, i dati di esplorazione dell'utente non vengono eliminati dopo la migrazione a Microsoft Edge versione 83 o successiva.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DeleteDataOnMigration
   - Nome Criteri di gruppo: Elimina i dati del browser obsoleti alla migrazione
@@ -12592,14 +12656,14 @@ Se si imposta questo criterio su "Disabilitato" o se il criterio non viene confi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DeleteDataOnMigration
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -12609,17 +12673,17 @@ Se si imposta questo criterio su "Disabilitato" o se il criterio non viene confi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DeveloperToolsAvailability
+  ### <a name="developertoolsavailability"></a>DeveloperToolsAvailability
 
-  #### Controlla dove si possono usare gli strumenti di sviluppo
+  #### <a name="control-where-developer-tools-can-be-used"></a>Controlla dove si possono usare gli strumenti di sviluppo
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla dove si possono usare gli strumenti di sviluppo.
 
@@ -12639,19 +12703,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DeveloperToolsAvailability
   - Nome Criteri di gruppo: Controlla dove si possono usare gli strumenti di sviluppo
@@ -12659,20 +12723,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DeveloperToolsAvailability
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DeveloperToolsAvailability
   - Valore di esempio
@@ -12683,17 +12747,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DiagnosticData
+  ### <a name="diagnosticdata"></a>DiagnosticData
 
-  #### Invia dati di diagnostica necessari e facoltativi sull'uso del browser
+  #### <a name="send-required-and-optional-diagnostic-data-about-browser-usage"></a>Invia dati di diagnostica necessari e facoltativi sull'uso del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows 7 e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio controlla l'invio a Microsoft dei dati di diagnostica necessari e facoltativi relativi all'utilizzo del browser.
 
@@ -12725,19 +12789,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: DiagnosticData
   - Nome criteri di gruppo: Invia dati di diagnostica necessari e facoltativi sull'uso del browser
@@ -12745,20 +12809,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DiagnosticData
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: DiagnosticData
   - Valore di esempio
@@ -12769,17 +12833,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DirectInvokeEnabled
+  ### <a name="directinvokeenabled"></a>DirectInvokeEnabled
 
-  #### Consente agli utenti di aprire i file con il protocollo DirectInvoke
+  #### <a name="allow-users-to-open-files-using-the-directinvoke-protocol"></a>Consente agli utenti di aprire i file con il protocollo DirectInvoke
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di aprire i file con il protocollo DirectInvoke. Il protocollo DirectInvoke consente ai siti Web di richiedere che il browser apra i file da un URL specifico usando un gestore di file specifico nel dispositivo o nel computer dell'utente.
 
@@ -12791,19 +12855,19 @@ Nota: la disabilitazione di DirectInvoke potrebbe impedire il corretto funzionam
 
 Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) e [https://go.microsoft.com/fwlink/?linkid=2099871](https://go.microsoft.com/fwlink/?linkid=2099871).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DirectInvokeEnabled
   - Nome Criteri di gruppo: Consente agli utenti di aprire i file con il protocollo DirectInvoke
@@ -12811,14 +12875,14 @@ Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DirectInvokeEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -12828,17 +12892,17 @@ Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### Disable3DAPIs
+  ### <a name="disable3dapis"></a>Disable3DAPIs
 
-  #### Disabilita il supporto per le API di grafica 3D
+  #### <a name="disable-support-for-3d-graphics-apis"></a>Disabilita il supporto per le API di grafica 3D
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impedisce alle pagine Web di accedere all'unità di elaborazione grafica (GPU). In particolare, le pagine Web non possono accedere all'API WebGL e i plug-in non possono usare l'API Pepper 3D.
 
@@ -12846,19 +12910,19 @@ Se si disabilita o non si configura questo criterio, è possibile che le pagine 
 
 Se il criterio [HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenabled) è impostato su false, l'impostazione per il criterio "Disable3DAPIs" viene ignorata (equivale all'impostazione del criterio "Disable3DAPIs" su true).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: Disable3DAPIs
   - Nome Criteri di gruppo: Disabilita il supporto per le API di grafica 3D
@@ -12866,20 +12930,20 @@ Se il criterio [HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenable
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: Disable3DAPIs
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: Disable3DAPIs
   - Valore di esempio
@@ -12890,17 +12954,17 @@ Se il criterio [HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenable
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DisableScreenshots
+  ### <a name="disablescreenshots"></a>DisableScreenshots
 
-  #### Disabilita l'acquisizione di screenshot
+  #### <a name="disable-taking-screenshots"></a>Disabilita l'acquisizione di screenshot
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se l'utente può acquisire screenshot della pagina del browser.
 
@@ -12910,19 +12974,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono acquisir
 
 Tenere presente che questo criterio controlla gli screenshot acquisiti all'interno del browser. Anche se si abilita questo criterio, gli utenti potrebbero comunque acquisire screenshot attraverso dei metodi esterni al browser (come l'uso di una funzionalità del sistema operativo o di un'altra applicazione).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DisableScreenshots
   - Nome Criteri di gruppo: Disabilita l'acquisizione di screenshot
@@ -12930,20 +12994,20 @@ Tenere presente che questo criterio controlla gli screenshot acquisiti all'inter
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DisableScreenshots
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DisableScreenshots
   - Valore di esempio
@@ -12954,17 +13018,17 @@ Tenere presente che questo criterio controlla gli screenshot acquisiti all'inter
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DiskCacheDir
+  ### <a name="diskcachedir"></a>DiskCacheDir
 
-  #### Imposta la directory della cache del disco
+  #### <a name="set-disk-cache-directory"></a>Imposta la directory della cache del disco
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura la directory da usare per archiviare i file memorizzati nella cache.
 
@@ -12974,19 +13038,19 @@ Per un elenco delle variabili che è possibile usare quando si specificano direc
 
 Se non si configura questo criterio, viene usata la directory della cache predefinita e gli utenti possono ignorare tale impostazione predefinita con il contrassegno della riga di comando "--disk-cache-dir".
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DiskCacheDir
   - Nome Criteri di gruppo: Imposta la directory della cache del disco
@@ -12994,20 +13058,20 @@ Se non si configura questo criterio, viene usata la directory della cache predef
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DiskCacheDir
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "${user_home}/Edge_cache"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DiskCacheDir
   - Valore di esempio
@@ -13018,17 +13082,17 @@ Se non si configura questo criterio, viene usata la directory della cache predef
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DiskCacheSize
+  ### <a name="diskcachesize"></a>DiskCacheSize
 
-  #### Imposta le dimensioni della cache del disco, in byte
+  #### <a name="set-disk-cache-size-in-bytes"></a>Imposta le dimensioni della cache del disco, in byte
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura le dimensioni della cache, in byte, utilizzata per archiviare i file nel disco.
 
@@ -13038,19 +13102,19 @@ Se si imposta il valore di questo criterio su 0, vengono usate le dimensioni del
 
 Se non si configura questo criterio, vengono usate le dimensioni predefinite, ma gli utenti possono ignorarle con il contrassegno "--disk-cache-size".
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DiskCacheSize
   - Nome Criteri di gruppo: Imposta le dimensioni della cache del disco, in byte
@@ -13058,20 +13122,20 @@ Se non si configura questo criterio, vengono usate le dimensioni predefinite, ma
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DiskCacheSize
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x06400000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DiskCacheSize
   - Valore di esempio
@@ -13082,17 +13146,17 @@ Se non si configura questo criterio, vengono usate le dimensioni predefinite, ma
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DnsOverHttpsMode
+  ### <a name="dnsoverhttpsmode"></a>DnsOverHttpsMode
 
-  #### Controlla la modalità del protocollo DNS-over-HTTPS
+  #### <a name="control-the-mode-of-dns-over-https"></a>Controlla la modalità del protocollo DNS-over-HTTPS
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla la modalità del resolver DNS-over-HTTPS. Questo criterio imposta la modalità predefinita solo per ogni query. La modalità può essere ignorata per tipi di query speciali, ad esempio richieste di risolvere un nome host del server DNS-over-HTTPS.
 
@@ -13114,19 +13178,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DnsOverHttpsMode
   - Nome Criteri di gruppo: Controlla la modalità del protocollo DNS-over-HTTPS
@@ -13134,20 +13198,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DnsOverHttpsMode
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "off"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DnsOverHttpsMode
   - Valore di esempio
@@ -13158,17 +13222,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DnsOverHttpsTemplates
+  ### <a name="dnsoverhttpstemplates"></a>DnsOverHttpsTemplates
 
-  #### Specifica il modello URI del resolver DNS-over-HTTPS desiderato
+  #### <a name="specify-uri-template-of-desired-dns-over-https-resolver"></a>Specifica il modello URI del resolver DNS-over-HTTPS desiderato
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica il modello URI del resolver DNS-over-HTTPS desiderato. Per specificare più resolver DNS-over-HTTPS, separare i modelli URI corrispondenti con spazi.
 
@@ -13180,19 +13244,19 @@ Se il modello URI contiene una variabile dns, le richieste al resolver useranno 
 
 I modelli formattati in modo non corretto verranno ignorati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DnsOverHttpsTemplates
   - Nome Criteri di gruppo: Specifica il modello URI del resolver DNS-over-HTTPS desiderato
@@ -13200,20 +13264,20 @@ I modelli formattati in modo non corretto verranno ignorati.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: DnsOverHttpsTemplates
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://dns.example.net/dns-query{?dns}"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DnsOverHttpsTemplates
   - Valore di esempio
@@ -13224,17 +13288,17 @@ I modelli formattati in modo non corretto verranno ignorati.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DownloadDirectory
+  ### <a name="downloaddirectory"></a>DownloadDirectory
 
-  #### Imposta la directory di download
+  #### <a name="set-download-directory"></a>Imposta la directory di download
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura la directory da usare quando si scaricano i file.
 
@@ -13246,19 +13310,19 @@ Se si imposta un percorso non valido, per impostazione predefinita Microsoft Edg
 
 Se la cartella specificata dal percorso non esiste, il download attiverà una richiesta che chiede all'utente dove desidera salvare il download.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DownloadDirectory
   - Nome Criteri di gruppo: Imposta la directory di download
@@ -13266,20 +13330,20 @@ Se la cartella specificata dal percorso non esiste, il download attiverà una ri
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DownloadDirectory
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "\n      Linux-based OSes (including Mac): /home/${user_name}/Downloads\n      Windows: C:\\Users\\${user_name}\\Downloads"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DownloadDirectory
   - Valore di esempio
@@ -13292,17 +13356,17 @@ Se la cartella specificata dal percorso non esiste, il download attiverà una ri
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### DownloadRestrictions
+  ### <a name="downloadrestrictions"></a>DownloadRestrictions
 
-  #### Consente le restrizioni per il download
+  #### <a name="allow-download-restrictions"></a>Consente le restrizioni per il download
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura il tipo di download che Microsoft Edge blocca completamente, senza consentire agli utenti di ignorare la decisione relativa alla sicurezza.
 
@@ -13330,19 +13394,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: DownloadRestrictions
   - Nome Criteri di gruppo: Consente le restrizioni per il download
@@ -13350,20 +13414,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: DownloadRestrictions
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: DownloadRestrictions
   - Valore di esempio
@@ -13374,17 +13438,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EdgeCollectionsEnabled
+  ### <a name="edgecollectionsenabled"></a>EdgeCollectionsEnabled
 
-  #### Abilita la funzionalità Raccolte
+  #### <a name="enable-the-collections-feature"></a>Abilita la funzionalità Raccolte
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Permette di consentire agli utenti di accedere alla funzionalità Raccolte, dove è possibile raccogliere, organizzare, condividere ed esportare contenuti in modo più efficiente e con l'integrazione di Office.
 
@@ -13392,19 +13456,19 @@ Se si abilita o non si configura questo criterio, gli utenti possono accedere al
 
 Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EdgeCollectionsEnabled
   - Nome Criteri di gruppo: Abilita la funzionalità Raccolte
@@ -13412,20 +13476,20 @@ Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EdgeCollectionsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EdgeCollectionsEnabled
   - Valore di esempio
@@ -13436,17 +13500,17 @@ Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EdgeShoppingAssistantEnabled
+  ### <a name="edgeshoppingassistantenabled"></a>EdgeShoppingAssistantEnabled
 
-  #### Shopping in Microsoft Edge abilitato
+  #### <a name="shopping-in-microsoft-edge-enabled"></a>Shopping in Microsoft Edge abilitato
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 87 or later
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio consente agli utenti di confrontare i prezzi di un prodotto che stanno esaminando, ottenere tagliandi o buoni sconto dal sito in cui si trovano, oppure riscattare automaticamente i tagliandi durante l'estrazione.
 
@@ -13454,19 +13518,19 @@ Se il criterio non viene abilitato o configurato le caratteristiche di shopping,
 
 Se questo criterio viene disabilitato le funzionalità di shopping, come il confronto dei prezzi, i tagliandi e i buoni sconto, non saranno disponibili automaticamente per i domini di rivendita. 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: EdgeShoppingAssistantEnabled
   - Nome GP: shopping in Microsoft Edge abilitato
@@ -13474,20 +13538,20 @@ Se questo criterio viene disabilitato le funzionalità di shopping, come il conf
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: EdgeShoppingAssistantEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: EdgeShoppingAssistantEnabled
   - Valore di esempio
@@ -13498,35 +13562,35 @@ Se questo criterio viene disabilitato le funzionalità di shopping, come il conf
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EditFavoritesEnabled
+  ### <a name="editfavoritesenabled"></a>EditFavoritesEnabled
 
-  #### Consente agli utenti di modificare i Preferiti
+  #### <a name="allows-users-to-edit-favorites"></a>Consente agli utenti di modificare i Preferiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilitare questo criterio per consentire agli utenti di aggiungere, rimuovere e modificare i Preferiti. Questo è il comportamento predefinito se non si configura questo criterio.
 
 Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o modificare i Preferiti. Possono continuare a usare i Preferiti esistenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EditFavoritesEnabled
   - Nome Criteri di gruppo: Consente agli utenti di modificare i Preferiti
@@ -13534,20 +13598,20 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EditFavoritesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EditFavoritesEnabled
   - Valore di esempio
@@ -13558,17 +13622,17 @@ Disabilitare questo criterio per impedire agli utenti di aggiungere, rimuovere o
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableDeprecatedWebPlatformFeatures
+  ### <a name="enabledeprecatedwebplatformfeatures"></a>EnableDeprecatedWebPlatformFeatures
 
-  #### Nome Criteri di gruppo: Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)
+  #### <a name="re-enable-deprecated-web-platform-features-for-a-limited-time-obsolete"></a>Nome Criteri di gruppo: Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 86.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 77, until 86
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questi criteri sono obsoleti, perché i criteri dedicati per la piattaforma Web sono ora usati per gestire la deprecazione delle singole caratteristiche della piattaforma Web.
 
@@ -13588,19 +13652,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableDeprecatedWebPlatformFeatures
   - Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)
@@ -13608,21 +13672,21 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "ExampleDeprecatedFeature_EffectiveUntil20080902"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableDeprecatedWebPlatformFeatures
   - Valore di esempio
@@ -13635,17 +13699,17 @@ SOFTWARE\Policies\Microsoft\Edge\EnableDeprecatedWebPlatformFeatures\1 = "Exampl
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableDomainActionsDownload
+  ### <a name="enabledomainactionsdownload"></a>EnableDomainActionsDownload
 
-  #### Abilita il download delle azioni di dominio da Microsoft (obsoleto)
+  #### <a name="enable-domain-actions-download-from-microsoft-obsolete"></a>Abilita il download delle azioni di dominio da Microsoft (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77, fino alla versione 84
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché è consigliabile evitare stati conflittuali. Questo criterio è usato per abilitare/disabilitare il download dell'elenco di azioni del dominio, ma non sempre consentiva di ottenere lo stato desiderato. Il servizio di sperimentazione e configurazione, che gestisce il download, ha il proprio criterio per configurare cosa viene scaricato dal servizio. Usare invece il criterio [ExperimentationAndConfigurationServiceControl](#experimentationandconfigurationservicecontrol).
 
@@ -13661,19 +13725,19 @@ Se si disabilita questo criterio, l'elenco delle azioni del dominio non verrà p
 
 Se non si configura questo criterio, l'elenco delle azioni del dominio continuerà a essere scaricato dal servizio di sperimentazione e configurazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableDomainActionsDownload
   - Nome Criteri di gruppo: Abilita il download delle azioni di dominio da Microsoft (obsoleto)
@@ -13681,20 +13745,20 @@ Se non si configura questo criterio, l'elenco delle azioni del dominio continuer
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnableDomainActionsDownload
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableDomainActionsDownload
   - Valore di esempio
@@ -13705,17 +13769,17 @@ Se non si configura questo criterio, l'elenco delle azioni del dominio continuer
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableOnlineRevocationChecks
+  ### <a name="enableonlinerevocationchecks"></a>EnableOnlineRevocationChecks
 
-  #### Abilita i controlli OCSP/CRL online
+  #### <a name="enable-online-ocspcrl-checks"></a>Abilita i controlli OCSP/CRL online
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I controlli di revoca online non forniscono vantaggi significativi per la sicurezza e sono disabilitati per impostazione predefinita.
 
@@ -13723,19 +13787,19 @@ Se si abilita questo criterio, Microsoft Edge eseguirà controlli online OCSP/CR
 
 Se si disabilita o non si configura il criterio, Microsoft Edge non eseguirà i controlli di revoca online.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableOnlineRevocationChecks
   - Nome Criteri di gruppo: Abilita i controlli OCSP/CRL online
@@ -13743,20 +13807,20 @@ Se si disabilita o non si configura il criterio, Microsoft Edge non eseguirà i 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnableOnlineRevocationChecks
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableOnlineRevocationChecks
   - Valore di esempio
@@ -13767,17 +13831,17 @@ Se si disabilita o non si configura il criterio, Microsoft Edge non eseguirà i 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnableSha1ForLocalAnchors
+  ### <a name="enablesha1forlocalanchors"></a>EnableSha1ForLocalAnchors
 
-  #### Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)
+  #### <a name="allow-certificates-signed-using-sha-1-when-issued-by-local-trust-anchors-deprecated"></a>Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se questa impostazione è abilitata, Microsoft Edge consente le connessioni protette da certificati firmati SHA-1, purché il certificato sia concatenato a un certificato radice installato localmente e sia altrimenti valido. 
 
@@ -13787,19 +13851,19 @@ Se non si imposta questo criterio o lo si imposta su falso, oppure se il certifi
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableSha1ForLocalAnchors
   - Nome Criteri di gruppo: Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato) 
@@ -13807,20 +13871,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnableSha1ForLocalAnchors
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnableSha1ForLocalAnchors
   - Valore di esempio
@@ -13831,35 +13895,35 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnterpriseHardwarePlatformAPIEnabled
+  ### <a name="enterprisehardwareplatformapienabled"></a>EnterpriseHardwarePlatformAPIEnabled
 
-  #### Consente alle estensioni gestite di usare l'API Enterprise Hardware Platform
+  #### <a name="allow-managed-extensions-to-use-the-enterprise-hardware-platform-api"></a>Consente alle estensioni gestite di usare l'API Enterprise Hardware Platform
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Quando questo criterio è abilitato, le estensioni installate dai criteri aziendali possono utilizzare l'API Enterprise Hardware Platform.
 Quando questo criterio è disabilitato o non impostato, nessuna estensione potrà usare l'API Enterprise Hardware Platform.
 Questo criterio si applica anche alle estensioni del componente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnterpriseHardwarePlatformAPIEnabled
   - Nome Criteri di gruppo: Consente alle estensioni gestite di usare l'API Enterprise Hardware Platform
@@ -13867,20 +13931,20 @@ Questo criterio si applica anche alle estensioni del componente.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnterpriseHardwarePlatformAPIEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: EnterpriseHardwarePlatformAPIEnabled
   - Valore di esempio
@@ -13891,17 +13955,17 @@ Questo criterio si applica anche alle estensioni del componente.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### EnterpriseModeSiteListManagerAllowed
+  ### <a name="enterprisemodesitelistmanagerallowed"></a>EnterpriseModeSiteListManagerAllowed
 
-  #### Consente l’accesso allo strumento Enterprise Mode Site List Manager
+  #### <a name="allow-access-to-the-enterprise-mode-site-list-manager-tool"></a>Consente l’accesso allo strumento Enterprise Mode Site List Manager
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di impostare se Enterprise Mode Site List Manager è disponibile per gli utenti.
 
@@ -13909,19 +13973,19 @@ Se si abilita questo criterio, gli utenti possono visualizzare il pulsante di sp
 
 Se si disabilita o non si configura questo criterio, gli utenti non visualizzeranno il pulsante di spostamento di Enterprise Mode Site List Manager e non saranno in grado di usarlo.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnterpriseModeSiteListManagerAllowed
   - Nome Criteri di gruppo: Consente l’accesso allo strumento Enterprise Mode Site List Manager
@@ -13929,14 +13993,14 @@ Se si disabilita o non si configura questo criterio, gli utenti non visualizzera
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: EnterpriseModeSiteListManagerAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -13946,17 +14010,17 @@ Se si disabilita o non si configura questo criterio, gli utenti non visualizzera
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
+  ### <a name="exemptdomainfiletypepairsfromfiletypedownloadwarnings"></a>ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
 
-  #### Disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini
+  #### <a name="disable-download-file-type-extension-based-warnings-for-specified-file-types-on-domains"></a>Disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   È possibile abilitare questo criterio per creare un dizionario di estensioni di file con un elenco di domini corrispondente che verrà escluso dagli avvisi di download basati sull'estensione del tipo di file. In questo modo gli amministratori dell'organizzazione possono bloccare gli avvisi di download basati sulle estensioni dei file associati a un dominio elencato. Ad esempio, se l'estensione “jnlp” è associata a "website1.com", gli utenti non vedranno un avviso durante il download di file “jnlp” da “website1.com”, ma l'avviso di download viene visualizzato quando si scaricano i file “jnlp” da “website2.com”.
 
@@ -13977,19 +14041,19 @@ Il valore di esempio seguente impedirebbe il download di avvisi basati su estens
 
 Si noti che mentre nell'esempio precedente viene mostrata la soppressione degli avvisi di download basati sulle estensioni di file per i file "swf" per tutti i domini, l'applicazione della soppressione di tali avvisi per tutti i domini per qualsiasi estensione di file pericoloso non è consigliata a causa di problemi di sicurezza. Nell'esempio è indicato solo per dimostrare la possibilità di eseguire questa operazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
   - Nome Criteri di gruppo: disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini
@@ -13997,14 +14061,14 @@ Si noti che mentre nell'esempio precedente viene mostrata la soppressione degli 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"domains": ["https://contoso.com", "contoso2.com"], "file_extension": "jnlp"}
@@ -14012,7 +14076,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: ExemptDomainFileTypePairsFromFileTypeDownloadWarnings
   - Valore di esempio
@@ -14026,17 +14090,17 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExperimentationAndConfigurationServiceControl
+  ### <a name="experimentationandconfigurationservicecontrol"></a>ExperimentationAndConfigurationServiceControl
 
-  #### Controlla le comunicazioni con il servizio di sperimentazione e configurazione
+  #### <a name="control-communication-with-the-experimentation-and-configuration-service"></a>Controlla le comunicazioni con il servizio di sperimentazione e configurazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   In Microsoft Edge, il servizio di sperimentazione e configurazione viene usato per distribuire il payload di sperimentazione e configurazione.
 
@@ -14066,19 +14130,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExperimentationAndConfigurationServiceControl
   - Nome Criteri di gruppo: Controlla le comunicazioni con il servizio di sperimentazione e configurazione
@@ -14086,20 +14150,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ExperimentationAndConfigurationServiceControl
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExperimentationAndConfigurationServiceControl
   - Valore di esempio
@@ -14110,17 +14174,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ExternalProtocolDialogShowAlwaysOpenCheckbox
+  ### <a name="externalprotocoldialogshowalwaysopencheckbox"></a>ExternalProtocolDialogShowAlwaysOpenCheckbox
 
-  #### Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno
+  #### <a name="show-an-always-open-checkbox-in-external-protocol-dialog"></a>Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio controlla se la casella di controllo "Consenti sempre a questo sito di aprire collegamenti di questo tipo" viene visualizzata nelle richieste di conferma per l'avvio del protocollo esterno. Questo criterio si applica solo ai collegamenti https://.
 
@@ -14134,19 +14198,19 @@ In Microsoft Edge 83, se non si configura questo criterio la visibilità della c
 
 Da Microsoft Edge versione 84, se non si configura questo criterio, quando viene visualizzata una richiesta di conferma del protocollo esterno, l'utente può selezionare "Consenti sempre" per ignorare tutte le richieste di conferma future per il protocollo in tale sito.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ExternalProtocolDialogShowAlwaysOpenCheckbox
   - Nome Criteri di gruppo: Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno
@@ -14154,20 +14218,20 @@ Da Microsoft Edge versione 84, se non si configura questo criterio, quando viene
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ExternalProtocolDialogShowAlwaysOpenCheckbox
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ExternalProtocolDialogShowAlwaysOpenCheckbox
   - Valore di esempio
@@ -14178,58 +14242,58 @@ Da Microsoft Edge versione 84, se non si configura questo criterio, quando viene
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FamilySafetySettingsEnabled
+  ### <a name="familysafetysettingsenabled"></a>FamilySafetySettingsEnabled
 
-  #### Consente agli utenti di configurare la protezione per la famiglia
+  #### <a name="allow-users-to-configure-family-safety-and-kids-mode"></a>Consentire agli utenti di configurare Family safety e la modalità bambini
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
-  Questo criterio disabilita e nasconde completamente la pagina relativa alla protezione per la famiglia in Impostazioni. Non sarà possibile accedere nemmeno a edge://settings/familysafety. La pagina relativa alla protezione per la famiglia descrive le funzionalità disponibili per i gruppi familiari e come iscriversi a un gruppo familiare. Altre informazioni sulla protezione per la famiglia sono disponibili qui: ([https://go.microsoft.com/fwlink/?linkid=2098432](https://go.microsoft.com/fwlink/?linkid=2098432)).
+  Questo criterio disabilita due funzionalità correlate alla sicurezza della famiglia nel browser. Questa operazione nasconderà la pagina Famiglia all'interno di Impostazioni e lo spostamento a edge://settings/family verrà bloccato. La pagina delle impostazioni della famiglia descrive le funzionalità disponibili con i gruppi familiari con Microsoft Family Safety. Per altre informazioni su Family Safety, vedere qui: ( [https://go.microsoft.com/fwlink/?linkid=2098432](https://go.microsoft.com/fwlink/?linkid=2098432) ). A partire da Microsoft Edge 90, questo criterio disabilita anche la modalità bambini, una modalità di esplorazione per bambini con temi personalizzati e la ricerca degli elenchi consentiti che richiede la password del dispositivo per uscire. Per altre informazioni sulla modalità Bambini vedere qui: ( [https://go.microsoft.com/fwlink/?linkid=2146910](https://go.microsoft.com/fwlink/?linkid=2146910) )
 
-Se si abilita o non si configura questo criterio, la pagina relativa alla protezione per la famiglia viene visualizzata.
+Se si abilita o non si configura questo criterio, verrà visualizzata la pagina della famiglia in Impostazioni e sarà disponibile la modalità Bambini.
 
-Se si disabilita questo criterio, la pagina relativa alla protezione per la famiglia non verrà visualizzata.
+Se si disabilita questo criterio, la pagina della famiglia non verrà visualizzata e la modalità Bambini verrà nascosta.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FamilySafetySettingsEnabled
-  - Nome Criteri di gruppo: Consente agli utenti di configurare la protezione per la famiglia
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: consente agli utenti di configurare Family safety e la modalità bambini
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: FamilySafetySettingsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: FamilySafetySettingsEnabled
   - Valore di esempio
@@ -14240,17 +14304,17 @@ Se si disabilita questo criterio, la pagina relativa alla protezione per la fami
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FavoritesBarEnabled
+  ### <a name="favoritesbarenabled"></a>FavoritesBarEnabled
 
-  #### Abilita la barra Preferiti
+  #### <a name="enable-favorites-bar"></a>Abilita la barra Preferiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita o disabilita la barra dei Preferiti.
 
@@ -14260,19 +14324,19 @@ Se si disabilita questo criterio, gli utenti non vedranno la barra dei Preferiti
 
 Se non si configura questo criterio, l'utente può decidere di usare o meno la barra dei Preferiti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FavoritesBarEnabled
   - Nome Criteri di gruppo: Abilita la barra Preferiti
@@ -14280,20 +14344,20 @@ Se non si configura questo criterio, l'utente può decidere di usare o meno la b
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: FavoritesBarEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: FavoritesBarEnabled
   - Valore di esempio
@@ -14304,17 +14368,17 @@ Se non si configura questo criterio, l'utente può decidere di usare o meno la b
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceBingSafeSearch
+  ### <a name="forcebingsafesearch"></a>ForceBingSafeSearch
 
-  #### Applica Ricerca sicura di Bing
+  #### <a name="enforce-bing-safesearch"></a>Applica Ricerca sicura di Bing
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Garantisce che le query nella ricerca Web di Bing vengano effettuate con Ricerca sicura impostata sul valore specificato. Questa impostazione non può essere modificata dagli utenti.
 
@@ -14336,19 +14400,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceBingSafeSearch
   - Nome Criteri di gruppo: Applica Ricerca sicura di Bing
@@ -14356,20 +14420,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceBingSafeSearch
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceBingSafeSearch
   - Valore di esempio
@@ -14380,17 +14444,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceCertificatePromptsOnMultipleMatches
+  ### <a name="forcecertificatepromptsonmultiplematches"></a>ForceCertificatePromptsOnMultipleMatches
 
-  #### Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"
+  #### <a name="configure-whether-microsoft-edge-should-automatically-select-a-certificate-when-there-are-multiple-certificate-matches-for-a-site-configured-with-autoselectcertificateforurls"></a>Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Determina se agli utenti viene richiesto di selezionare un certificato se sono presenti più certificati disponibili e un sito è configurato con [AutoSelectCertificateForUrls](#autoselectcertificateforurls). Se non si configura [AutoSelectCertificateForUrls](#autoselectcertificateforurls) per un sito, all'utente verrà sempre chiesto di selezionare un certificato.
 
@@ -14398,19 +14462,19 @@ Se si imposta questo criterio su True, Microsoft Edge richiederà a un utente di
 
 Se si imposta questo criterio su False o non lo si configura, Microsoft Edge selezionerà automaticamente un certificato anche se sono presenti più corrispondenze per un certificato. All'utente non verrà richiesto di selezionare un certificato per i siti nell'elenco definito in [AutoSelectCertificateForUrls](#autoselectcertificateforurls).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceCertificatePromptsOnMultipleMatches
   - Nome Criteri di gruppo: Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"
@@ -14418,20 +14482,20 @@ Se si imposta questo criterio su False o non lo si configura, Microsoft Edge sel
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceCertificatePromptsOnMultipleMatches
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceCertificatePromptsOnMultipleMatches
   - Valore di esempio
@@ -14442,17 +14506,17 @@ Se si imposta questo criterio su False o non lo si configura, Microsoft Edge sel
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceEphemeralProfiles
+  ### <a name="forceephemeralprofiles"></a>ForceEphemeralProfiles
 
-  #### Abilita l'uso di profili temporanei
+  #### <a name="enable-use-of-ephemeral-profiles"></a>Abilita l'uso di profili temporanei
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se i profili utente vengono convertiti in modalità temporanea. Un profilo temporaneo viene creato all'avvio di una sessione, viene eliminato al termine della sessione e viene associato al profilo originale dell'utente.
 
@@ -14462,19 +14526,19 @@ Se si disabilita o non si configura questo criterio, gli utenti ottengono i loro
 
 In modalità temporanea, i dati dei profili vengono salvati nel disco solo per la durata della sessione utente. Le funzionalità come la cronologia del browser, le estensioni e i relativi dati, i dati Web come i cookie e i database Web non vengono salvati dopo la chiusura del browser. Questo non impedisce a un utente di scaricare manualmente i dati nel disco, di salvare o stampare pagine. Se l'utente ha abilitato la sincronizzazione, tutti i dati vengono conservati nei loro account di sincronizzazione, esattamente come con i profili normali. Gli utenti possono anche usare l'esplorazione InPrivate in modalità temporanea, a meno che non venga disabilitata esplicitamente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceEphemeralProfiles
   - Nome Criteri di gruppo: Abilita l'uso di profili temporanei
@@ -14482,20 +14546,20 @@ In modalità temporanea, i dati dei profili vengono salvati nel disco solo per l
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceEphemeralProfiles
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceEphemeralProfiles
   - Valore di esempio
@@ -14506,17 +14570,17 @@ In modalità temporanea, i dati dei profili vengono salvati nel disco solo per l
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceGoogleSafeSearch
+  ### <a name="forcegooglesafesearch"></a>ForceGoogleSafeSearch
 
-  #### Applica Ricerca sicura di Google
+  #### <a name="enforce-google-safesearch"></a>Applica Ricerca sicura di Google
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impone l'esecuzione di query nella ricerca Web Google con Ricerca sicura attivata e impedisce agli utenti di modificare questa impostazione.
 
@@ -14524,19 +14588,19 @@ Se si abilita questo criterio, Ricerca sicura in Google Search sarà sempre atti
 
 Se si disabilita o non si configura questo criterio, Ricerca sicura in Google Search non viene applicata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceGoogleSafeSearch
   - Nome Criteri di gruppo: Applica Ricerca sicura di Google
@@ -14544,20 +14608,20 @@ Se si disabilita o non si configura questo criterio, Ricerca sicura in Google Se
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceGoogleSafeSearch
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceGoogleSafeSearch
   - Valore di esempio
@@ -14568,17 +14632,17 @@ Se si disabilita o non si configura questo criterio, Ricerca sicura in Google Se
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceLegacyDefaultReferrerPolicy
+  ### <a name="forcelegacydefaultreferrerpolicy"></a>ForceLegacyDefaultReferrerPolicy
 
-  #### Usa un criterio di referrer predefinito di no-referrer-when-downgrade (obsoleto)
+  #### <a name="use-a-default-referrer-policy-of-no-referrer-when-downgrade-obsolete"></a>Usa un criterio di referrer predefinito di no-referrer-when-downgrade (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 88.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 81 a 88
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se viene rilevata incompatibilità con il nuovo criterio di riferimento predefinito.
 
@@ -14588,19 +14652,19 @@ Quando questo criterio aziendale viene abilitato, il criterio di riferimento pre
 
 Questo criterio aziendale è disabilitato per impostazione predefinita.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceLegacyDefaultReferrerPolicy
   - Nome Criteri di gruppo: usa un criterio di referrer predefinito di no-referrer-when-downgrade (obsoleto)
@@ -14608,20 +14672,20 @@ Questo criterio aziendale è disabilitato per impostazione predefinita.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceLegacyDefaultReferrerPolicy
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceLegacyDefaultReferrerPolicy
   - Valore di esempio
@@ -14632,17 +14696,17 @@ Questo criterio aziendale è disabilitato per impostazione predefinita.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceNetworkInProcess
+  ### <a name="forcenetworkinprocess"></a>ForceNetworkInProcess
 
-  #### Forza l'esecuzione del codice di rete nel processo del browser (obsoleto)
+  #### <a name="force-networking-code-to-run-in-the-browser-process-obsolete"></a>Forza l'esecuzione del codice di rete nel processo del browser (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 83.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 a 83
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché era solo un meccanismo a breve termine che offre alle aziende più tempo per eseguire la migrazione a software di terze parti che non dipendono dalle API di rete collegate. Sono consigliati server proxy con LSP e patch dell'API Win32.
 
@@ -14650,19 +14714,19 @@ Questo criterio forza l'esecuzione del codice di rete nel processo del browser.
 
 Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli utenti sono esposti a problemi di sicurezza quando il processo di rete è in modalità sandbox.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceNetworkInProcess
   - Nome Criteri di gruppo: forza l'esecuzione del codice di rete nel processo del browser (obsoleto)
@@ -14670,14 +14734,14 @@ Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceNetworkInProcess
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -14687,17 +14751,17 @@ Questo criterio è disabilitato per impostazione predefinita. Se abilitato, gli 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceSync
+  ### <a name="forcesync"></a>ForceSync
 
-  #### Forza la sincronizzazione dei dati del browser e non visualizzare la richiesta di autorizzazione di sincronizzazione
+  #### <a name="force-synchronization-of-browser-data-and-do-not-show-the-sync-consent-prompt"></a>Forza la sincronizzazione dei dati del browser e non visualizzare la richiesta di autorizzazione di sincronizzazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Forza la sincronizzazione dei dati in Microsoft Edge. Questo criterio impedisce anche all'utente di disattivare la sincronizzazione.
 
@@ -14709,19 +14773,19 @@ Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#brows
 
 0 = non avviare automaticamente la sincronizzazione e visualizzare il consenso di sincronizzazione (impostazione predefinita) 1 = forza l'attivazione della sincronizzazione per il profilo utente di Azure AD/Azure AD - danneggiato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceSync
   - Nome Criteri di gruppo: forza la sincronizzazione dei dati del browser e non visualizzare la richiesta di autorizzazione di sincronizzazione
@@ -14729,20 +14793,20 @@ Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#brows
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceSync
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceSync
   - Valore di esempio
@@ -14753,17 +14817,17 @@ Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#brows
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ForceYouTubeRestrict
+  ### <a name="forceyoutuberestrict"></a>ForceYouTubeRestrict
 
-  #### Forza la modalità con restrizioni YouTube minima
+  #### <a name="force-minimum-youtube-restricted-mode"></a>Forza la modalità con restrizioni YouTube minima
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impone una modalità con restrizioni minime su YouTube e impedisce agli utenti di selezionare una modalità con restrizioni meno rigide.
 
@@ -14783,19 +14847,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ForceYouTubeRestrict
   - Nome Criteri di gruppo: Forza la modalità con restrizioni YouTube minima
@@ -14803,20 +14867,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ForceYouTubeRestrict
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ForceYouTubeRestrict
   - Valore di esempio
@@ -14827,17 +14891,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### FullscreenAllowed
+  ### <a name="fullscreenallowed"></a>FullscreenAllowed
 
-  #### Consente la modalità a schermo intero
+  #### <a name="allow-full-screen-mode"></a>Consente la modalità a schermo intero
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Imposta la disponibilità della modalità a schermo intero: tutta l'interfaccia utente di Microsoft Edge viene nascosta e sono visibili solo i contenuti Web.
 
@@ -14847,19 +14911,19 @@ Se si disabilita questo criterio, gli utenti, le app e le estensioni non potrann
 
 L'apertura di Microsoft Edge in modalità tutto schermo con la riga di comando non è disponibile quando la modalità a schermo intero è disabilitata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: FullscreenAllowed
   - Nome Criteri di gruppo: Consente la modalità a schermo intero
@@ -14867,14 +14931,14 @@ L'apertura di Microsoft Edge in modalità tutto schermo con la riga di comando n
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: FullscreenAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -14884,17 +14948,17 @@ L'apertura di Microsoft Edge in modalità tutto schermo con la riga di comando n
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### GloballyScopeHTTPAuthCacheEnabled
+  ### <a name="globallyscopehttpauthcacheenabled"></a>GloballyScopeHTTPAuthCacheEnabled
 
-  #### Abilita la cache di autenticazione HTTP con ambito globale
+  #### <a name="enable-globally-scoped-http-auth-cache"></a>Abilita la cache di autenticazione HTTP con ambito globale
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio configura una singola cache per profilo globale con le credenziali di autenticazione del server HTTP.
 
@@ -14906,19 +14970,19 @@ L'abilitazione di questo criterio lascia i siti esposti ad alcuni tipi di attacc
 
 Questo criterio ha lo scopo di offrire alle aziende, a seconda del comportamento legacy, la possibilità di aggiornare le procedure di accesso e verrà rimosso in futuro.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: GloballyScopeHTTPAuthCacheEnabled
   - Nome Criteri di gruppo: Abilita la cache di autenticazione HTTP con ambito globale
@@ -14926,20 +14990,20 @@ Questo criterio ha lo scopo di offrire alle aziende, a seconda del comportamento
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: GloballyScopeHTTPAuthCacheEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: GloballyScopeHTTPAuthCacheEnabled
   - Valore di esempio
@@ -14950,17 +15014,17 @@ Questo criterio ha lo scopo di offrire alle aziende, a seconda del comportamento
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### GoToIntranetSiteForSingleWordEntryInAddressBar
+  ### <a name="gotointranetsiteforsinglewordentryinaddressbar"></a>GoToIntranetSiteForSingleWordEntryInAddressBar
 
-  #### Forza l'esplorazione del sito Intranet diretta anziché tramite la ricerca di singole parole nella barra degli indirizzi
+  #### <a name="force-direct-intranet-site-navigation-instead-of-searching-on-single-word-entries-in-the-address-bar"></a>Forza l'esplorazione del sito Intranet diretta anziché tramite la ricerca di singole parole nella barra degli indirizzi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio, il risultato di suggerimento automatico principale nell'elenco di suggerimenti della barra degli indirizzi reindirizza ai siti Intranet se il testo inserito nella barra degli indirizzi è una singola parola senza punteggiatura.
 
@@ -14974,19 +15038,19 @@ Lo spostamento nei siti in risposta a query formate da una singola parola che in
 
 Per i termini di ricerca più diffusi formati da una singola parola, è necessario selezionare manualmente i suggerimenti per eseguire la ricerca correttamente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: GoToIntranetSiteForSingleWordEntryInAddressBar
   - Nome Criteri di gruppo: Forza l'esplorazione del sito Intranet diretta anziché tramite la ricerca di singole parole nella barra degli indirizzi
@@ -14994,20 +15058,20 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: GoToIntranetSiteForSingleWordEntryInAddressBar
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: GoToIntranetSiteForSingleWordEntryInAddressBar
   - Valore di esempio
@@ -15018,33 +15082,33 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HSTSPolicyBypassList
+  ### <a name="hstspolicybypasslist"></a>HSTSPolicyBypassList
 
-  #### Configura l'elenco di nomi che ignoreranno la verifica dei criteri HSTS
+  #### <a name="configure-the-list-of-names-that-will-bypass-the-hsts-policy-check"></a>Configura l'elenco di nomi che ignoreranno la verifica dei criteri HSTS
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I nomi host specificati in questo elenco saranno esclusi dalla verifica dei criteri HSTS che potrebbe aggiornare le richieste da "http://" a "https://". In questo criterio sono consentiti solo i nomi host con etichetta singola. I nomi host devono essere in forma canonica. Gli IDN devono essere convertiti nel formato con etichetta A e tutte le lettere devono essere minuscole. Questo criterio si applica solo ai nomi host specifici; non si applica ai sottodomini dei nomi nell'elenco.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: HSTSPolicyBypassList
   - Nome Criteri di gruppo: Configura l'elenco di nomi che ignoreranno la verifica dei criteri HSTS
@@ -15052,21 +15116,21 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\HSTSPolicyBypassList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HSTSPolicyBypassList
   - Valore di esempio
@@ -15079,35 +15143,35 @@ SOFTWARE\Policies\Microsoft\Edge\HSTSPolicyBypassList\1 = "meet"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HardwareAccelerationModeEnabled
+  ### <a name="hardwareaccelerationmodeenabled"></a>HardwareAccelerationModeEnabled
 
-  #### Usa l'accelerazione hardware se disponibile
+  #### <a name="use-hardware-acceleration-when-available"></a>Usa l'accelerazione hardware se disponibile
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica di usare l'accelerazione hardware, se disponibile. Se si abilita o non si configura questo criterio, l'accelerazione hardware è abilitata a meno che non venga esplicitamente bloccata una funzionalità della GPU.
 
 Se si disabilita questo criterio, l'accelerazione hardware è disabilitata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: HardwareAccelerationModeEnabled
   - Nome Criteri di gruppo: Usa l'accelerazione hardware se disponibile
@@ -15115,20 +15179,20 @@ Se si disabilita questo criterio, l'accelerazione hardware è disabilitata.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: HardwareAccelerationModeEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HardwareAccelerationModeEnabled
   - Valore di esempio
@@ -15139,17 +15203,17 @@ Se si disabilita questo criterio, l'accelerazione hardware è disabilitata.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HideFirstRunExperience
+  ### <a name="hidefirstrunexperience"></a>HideFirstRunExperience
 
-  #### Nasconde l'esperienza della first-run experience e la schermata iniziale
+  #### <a name="hide-the-first-run-experience-and-splash-screen"></a>Nasconde l'esperienza della first-run experience e la schermata iniziale
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio, la first-run experience e la schermata iniziale non verranno mostrate agli utenti quando eseguono Microsoft Edge per la prima volta.
 
@@ -15179,19 +15243,19 @@ Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-ru
 
 -[NonRemovableProfileEnabled](#nonremovableprofileenabled)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: HideFirstRunExperience
   - Nome Criteri di gruppo: Nasconde l'esperienza della prima esecuzione e la schermata iniziale
@@ -15199,20 +15263,20 @@ Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-ru
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: HideFirstRunExperience
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: HideFirstRunExperience
   - Valore di esempio
@@ -15223,17 +15287,17 @@ Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-ru
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
+  ### <a name="hideinternetexplorerredirectuxforincompatiblesitesenabled"></a>HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 
-  #### Nascondi la finestra di dialogo Reindirizzamento occasionale e il banner su Microsoft Edge
+  #### <a name="hide-the-one-time-redirection-dialog-and-the-banner-on-microsoft-edge"></a>Nascondi la finestra di dialogo Reindirizzamento occasionale e il banner su Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 87 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio offre un'opzione per disabilitare la finestra di dialogo di reindirizzamento occasionale e il banner. Quando questo criterio è abilitato, gli utenti non vedranno la finestra di dialogo di reindirizzamento occasionale e il banner.
 Gli utenti continueranno a essere reindirizzati a Microsoft Edge quando incontreranno un sito Web incompatibile in Internet Explorer, ma i dati di esplorazione non verranno importati.
@@ -15243,19 +15307,19 @@ Gli utenti continueranno a essere reindirizzati a Microsoft Edge quando incontre
 - Se il criterio è disabilitato o non viene configurato, verrà visualizzata la finestra di dialogo di reindirizzamento al primo tentativo di reindirizzamento e il banner di reindirizzamento permanente verrà visualizzato dagli utenti per le sessioni avviate con un reindirizzamento. I dati di esplorazione degli utenti verranno importati ogni volta che un utente accede a tale reindirizzamento (SOLO SE si vuole che l'utente lo consideri nella finestra di dialogo occasionale).
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
   - Nome GP: nascondi la finestra di dialogo Reindirizzamento occasionale e il banner su Microsoft Edge
@@ -15263,14 +15327,14 @@ Gli utenti continueranno a essere reindirizzati a Microsoft Edge quando incontre
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -15280,17 +15344,17 @@ Gli utenti continueranno a essere reindirizzati a Microsoft Edge quando incontre
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportAutofillFormData
+  ### <a name="importautofillformdata"></a>ImportAutofillFormData
 
-  #### Consente l'importazione dei dati di moduli con riempimento automatico
+  #### <a name="allow-importing-of-autofill-form-data"></a>Consente l'importazione dei dati di moduli con riempimento automatico
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare i dati di moduli con riempimento automatico da un altro browser in Microsoft Edge.
 
@@ -15304,19 +15368,19 @@ Se non si configura questo criterio, i dati di riempimento automatico vengono im
 
 **Nota**: al momento questo criterio gestisce l'importazione dai browser Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportAutofillFormData
   - Nome Criteri di gruppo: Consente l'importazione dei dati di moduli con riempimento automatico
@@ -15324,20 +15388,20 @@ Se non si configura questo criterio, i dati di riempimento automatico vengono im
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportAutofillFormData
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportAutofillFormData
   - Valore di esempio
@@ -15348,17 +15412,17 @@ Se non si configura questo criterio, i dati di riempimento automatico vengono im
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportBrowserSettings
+  ### <a name="importbrowsersettings"></a>ImportBrowserSettings
 
-  #### Consente l'importazione delle impostazioni del browser
+  #### <a name="allow-importing-of-browser-settings"></a>Consente l'importazione delle impostazioni del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le impostazioni del browser da un altro browser in Microsoft Edge.
 
@@ -15372,19 +15436,19 @@ Se non si configura questo criterio, le impostazioni del browser vengono importa
 
 **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportBrowserSettings
   - Nome Criteri di gruppo: Consente l'importazione delle impostazioni del browser
@@ -15392,20 +15456,20 @@ Se non si configura questo criterio, le impostazioni del browser vengono importa
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportBrowserSettings
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportBrowserSettings
   - Valore di esempio
@@ -15416,17 +15480,17 @@ Se non si configura questo criterio, le impostazioni del browser vengono importa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportCookies
+  ### <a name="importcookies"></a>ImportCookies
 
-  #### Consente l'importazione di cookie
+  #### <a name="allow-importing-of-cookies"></a>Consente l'importazione di cookie
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare i cookie da un altro browser in Microsoft Edge.
 
@@ -15438,19 +15502,19 @@ Se non si configura questo criterio, i cookie vengono importati alla prima esecu
 
 **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportCookies
   - Nome Criteri di gruppo: Consente l'importazione di cookie
@@ -15458,20 +15522,20 @@ Se non si configura questo criterio, i cookie vengono importati alla prima esecu
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportCookies
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportCookies
   - Valore di esempio
@@ -15482,17 +15546,17 @@ Se non si configura questo criterio, i cookie vengono importati alla prima esecu
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportExtensions
+  ### <a name="importextensions"></a>ImportExtensions
 
-  #### Consente l'importazione di estensioni
+  #### <a name="allow-importing-of-extensions"></a>Consente l'importazione di estensioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le estensioni da un altro browser in Microsoft Edge.
 
@@ -15506,19 +15570,19 @@ Se non si configura questo criterio, le estensioni vengono importate nella first
 
 **Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportExtensions
   - Nome Criteri di gruppo: Consente l'importazione di estensioni
@@ -15526,20 +15590,20 @@ Se non si configura questo criterio, le estensioni vengono importate nella first
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportExtensions
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportExtensions
   - Valore di esempio
@@ -15550,17 +15614,17 @@ Se non si configura questo criterio, le estensioni vengono importate nella first
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportFavorites
+  ### <a name="importfavorites"></a>ImportFavorites
 
-  #### Consente l'importazione di Preferiti
+  #### <a name="allow-importing-of-favorites"></a>Consente l'importazione di Preferiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare i preferiti da un altro browser in Microsoft Edge.
 
@@ -15574,19 +15638,19 @@ Se non si configura questo criterio, i preferiti vengono importati alla prima es
 
 **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportFavorites
   - Nome Criteri di gruppo: Consente l'importazione di Preferiti
@@ -15594,20 +15658,20 @@ Se non si configura questo criterio, i preferiti vengono importati alla prima es
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportFavorites
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportFavorites
   - Valore di esempio
@@ -15618,17 +15682,17 @@ Se non si configura questo criterio, i preferiti vengono importati alla prima es
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportHistory
+  ### <a name="importhistory"></a>ImportHistory
 
-  #### Consente l'importazione della cronologia esplorazioni
+  #### <a name="allow-importing-of-browsing-history"></a>Consente l'importazione della cronologia esplorazioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare la cronologia esplorazioni da un altro browser in Microsoft Edge.
 
@@ -15642,19 +15706,19 @@ Se non si configura questo criterio, i dati della cronologia esplorazioni vengon
 
 **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportHistory
   - Nome Criteri di gruppo: Consente l'importazione della cronologia esplorazioni
@@ -15662,20 +15726,20 @@ Se non si configura questo criterio, i dati della cronologia esplorazioni vengon
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportHistory
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportHistory
   - Valore di esempio
@@ -15686,17 +15750,17 @@ Se non si configura questo criterio, i dati della cronologia esplorazioni vengon
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportHomepage
+  ### <a name="importhomepage"></a>ImportHomepage
 
-  #### Consente l'importazione delle impostazioni della home page
+  #### <a name="allow-importing-of-home-page-settings"></a>Consente l'importazione delle impostazioni della home page
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare l'impostazione della home page da un altro browser in Microsoft Edge.
 
@@ -15710,19 +15774,19 @@ Se non si configura questo criterio, l'impostazione della home page viene import
 
 **Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportHomepage
   - Nome Criteri di gruppo: Consente l'importazione delle impostazioni della home page
@@ -15730,20 +15794,20 @@ Se non si configura questo criterio, l'impostazione della home page viene import
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ImportHomepage
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportHomepage
   - Valore di esempio
@@ -15754,17 +15818,17 @@ Se non si configura questo criterio, l'impostazione della home page viene import
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportOpenTabs
+  ### <a name="importopentabs"></a>ImportOpenTabs
 
-  #### Consente l'importazione di schede aperte
+  #### <a name="allow-importing-of-open-tabs"></a>Consente l'importazione di schede aperte
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le schede aperte e aggiunte da un altro browser in Microsoft Edge.
 
@@ -15778,19 +15842,19 @@ Se non si configura questo criterio, le schede aperte vengono importate nella fi
 
 **Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportOpenTabs
   - Nome Criteri di gruppo: Consente l'importazione di schede aperte
@@ -15798,20 +15862,20 @@ Se non si configura questo criterio, le schede aperte vengono importate nella fi
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportOpenTabs
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportOpenTabs
   - Valore di esempio
@@ -15822,17 +15886,17 @@ Se non si configura questo criterio, le schede aperte vengono importate nella fi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportPaymentInfo
+  ### <a name="importpaymentinfo"></a>ImportPaymentInfo
 
-  #### Consente l'importazione di informazioni di pagamento
+  #### <a name="allow-importing-of-payment-info"></a>Consente l'importazione di informazioni di pagamento
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le informazioni di pagamento da un altro browser in Microsoft Edge.
 
@@ -15846,19 +15910,19 @@ Se non si configura questo criterio, le informazioni di pagamento vengono import
 
 **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportPaymentInfo
   - Nome Criteri di gruppo: Consente l'importazione di informazioni di pagamento
@@ -15866,20 +15930,20 @@ Se non si configura questo criterio, le informazioni di pagamento vengono import
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportPaymentInfo
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportPaymentInfo
   - Valore di esempio
@@ -15890,17 +15954,17 @@ Se non si configura questo criterio, le informazioni di pagamento vengono import
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportSavedPasswords
+  ### <a name="importsavedpasswords"></a>ImportSavedPasswords
 
-  #### Consente l'importazione delle password salvate
+  #### <a name="allow-importing-of-saved-passwords"></a>Consente l'importazione delle password salvate
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le password salvate da un altro browser in Microsoft Edge.
 
@@ -15914,19 +15978,19 @@ Se non si configura questo criterio, le password salvate vengono importate nella
 
 **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportSavedPasswords
   - Nome Criteri di gruppo: Consente l'importazione delle password salvate
@@ -15934,20 +15998,20 @@ Se non si configura questo criterio, le password salvate vengono importate nella
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportSavedPasswords
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportSavedPasswords
   - Valore di esempio
@@ -15958,17 +16022,17 @@ Se non si configura questo criterio, le password salvate vengono importate nella
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportSearchEngine
+  ### <a name="importsearchengine"></a>ImportSearchEngine
 
-  #### Consente l'importazione delle impostazioni del motore di ricerca
+  #### <a name="allow-importing-of-search-engine-settings"></a>Consente l'importazione delle impostazioni del motore di ricerca
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare le impostazioni del motore di ricerca da un altro browser in Microsoft Edge.
 
@@ -15982,19 +16046,19 @@ Se non si configura questo criterio, le impostazioni del motore di ricerca vengo
 
 **Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportSearchEngine
   - Nome Criteri di gruppo: Consente l'importazione delle impostazioni del motore di ricerca
@@ -16002,20 +16066,20 @@ Se non si configura questo criterio, le impostazioni del motore di ricerca vengo
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportSearchEngine
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportSearchEngine
   - Valore di esempio
@@ -16026,17 +16090,17 @@ Se non si configura questo criterio, le impostazioni del motore di ricerca vengo
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ImportShortcuts
+  ### <a name="importshortcuts"></a>ImportShortcuts
 
-  #### Consente l'importazione di scelte rapide da tastiera
+  #### <a name="allow-importing-of-shortcuts"></a>Consente l'importazione di scelte rapide da tastiera
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente agli utenti di importare i tasti di scelta rapida da un altro browser in Microsoft Edge.
 
@@ -16048,19 +16112,19 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
 
 **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ImportShortcuts
   - Nome Criteri di gruppo: Consente l'importazione di scelte rapide da tastiera
@@ -16068,20 +16132,20 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ImportShortcuts
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ImportShortcuts
   - Valore di esempio
@@ -16092,17 +16156,17 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InPrivateModeAvailability
+  ### <a name="inprivatemodeavailability"></a>InPrivateModeAvailability
 
-  #### Configura la disponibilità della modalità InPrivate
+  #### <a name="configure-inprivate-mode-availability"></a>Configura la disponibilità della modalità InPrivate
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se l'utente può aprire le pagine in modalità InPrivate in Microsoft Edge.
 
@@ -16122,19 +16186,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InPrivateModeAvailability
   - Nome Criteri di gruppo: Configura la disponibilità della modalità InPrivate
@@ -16142,20 +16206,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InPrivateModeAvailability
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InPrivateModeAvailability
   - Valore di esempio
@@ -16166,35 +16230,35 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InsecureFormsWarningsEnabled
+  ### <a name="insecureformswarningsenabled"></a>InsecureFormsWarningsEnabled
 
-  #### Attiva gli avvisi per i moduli non sicuri
+  #### <a name="enable-warnings-for-insecure-forms"></a>Attiva gli avvisi per i moduli non sicuri
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio controlla la gestione di moduli non protetti (moduli inviati tramite HTTP) incorporati in siti di sicurezza (HTTPS) nel browser.
 Se si abilita questo criterio o non lo si imposta, viene visualizzato un avviso a pagina intera quando viene inviato un modulo non protetto. Inoltre, viene visualizzata una bolla di avviso accanto ai campi del modulo quando sono evidenziati e la funzione riempimento automatico viene disabilitata per tali moduli.
 Se si disabilitano i criteri, gli avvisi non verranno visualizzati per i moduli non sicuri e il riempimento automatico funzionerà normalmente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InsecureFormsWarningsEnabled
   - Nome Criteri di gruppo: attiva gli avvisi per i moduli non sicuri
@@ -16202,20 +16266,20 @@ Se si disabilitano i criteri, gli avvisi non verranno visualizzati per i moduli 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InsecureFormsWarningsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: InsecureFormsWarningsEnabled
   - Valore di esempio
@@ -16226,17 +16290,17 @@ Se si disabilitano i criteri, gli avvisi non verranno visualizzati per i moduli 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### IntensiveWakeUpThrottlingEnabled
+  ### <a name="intensivewakeupthrottlingenabled"></a>IntensiveWakeUpThrottlingEnabled
 
-  #### Controlla la funzionalità IntensiveWakeUpThrottling
+  #### <a name="control-the-intensivewakeupthrottling-feature"></a>Controlla la funzionalità IntensiveWakeUpThrottling
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Quando la funzionalità IntensiveWakeUpThrottling è abilitata, questa fa sì che i timer JavaScript nelle schede di sfondo vengano aggressivamente limitati e uniti, funzionando non più di una volta al minuto dopo che una pagina è stata fatta passare in background per 5 minuti o più.
 
@@ -16249,19 +16313,19 @@ Se non si configura questo criterio, la funzione sarà controllata dalla relativ
 Il criterio viene applicato per processo di rendering, con il valore più recente dell'impostazione del criterio in vigore all'avvio di un processo di rendering. Per garantire che tutte le schede caricate ricevano un'impostazione coerente dei criteri, è necessario riavviare il sistema. I processi in esecuzione con valori diversi da questo criterio non comportano alcun rischio.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: IntensiveWakeUpThrottlingEnabled
   - Nome Criteri di gruppo: controlla la funzionalità IntensiveWakeUpThrottling
@@ -16269,20 +16333,20 @@ Il criterio viene applicato per processo di rendering, con il valore più recent
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: IntensiveWakeUpThrottlingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: IntensiveWakeUpThrottlingEnabled
   - Valore di esempio
@@ -16293,17 +16357,17 @@ Il criterio viene applicato per processo di rendering, con il valore più recent
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationEnhancedHangDetection
+  ### <a name="internetexplorerintegrationenhancedhangdetection"></a>InternetExplorerIntegrationEnhancedHangDetection
 
-  #### Configura il rilevamento di blocchi avanzati per la modalità di Internet Explorer
+  #### <a name="configure-enhanced-hang-detection-for-internet-explorer-mode"></a>Configura il rilevamento di blocchi avanzati per la modalità di Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Il rilevamento di eventi di blocco avanzati offre un approccio più granulare per il rilevamento di pagine Web bloccate in modalità Internet Explorer, rispetto a quello che utilizza Internet Explorer in modo autonomo. Quando viene rilevata una pagina web bloccata, il browser applica un’azione di prevenzione per evitare che il resto del browser si blocchi a sua volta.
 
@@ -16325,19 +16389,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationEnhancedHangDetection
   - Nome Criteri di gruppo: configura il rilevamento di blocchi avanzati per la modalità Internet Explorer
@@ -16345,14 +16409,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationEnhancedHangDetection
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -16362,17 +16426,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationLevel
+  ### <a name="internetexplorerintegrationlevel"></a>InternetExplorerIntegrationLevel
 
-  #### Configurare l'integrazione Internet Explorer
+  #### <a name="configure-internet-explorer-integration"></a>Configurare l'integrazione Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -16386,19 +16450,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationLevel
   - Nome Criteri di gruppo: Configurare l'integrazione Internet Explorer
@@ -16406,14 +16470,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationLevel
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -16423,17 +16487,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationLocalFileAllowed
+  ### <a name="internetexplorerintegrationlocalfileallowed"></a>InternetExplorerIntegrationLocalFileAllowed
 
-  #### Consentire l'avvio di file locali in modalità Internet Explorer
+  #### <a name="allow-launching-of-local-files-in-internet-explorer-mode"></a>Consentire l'avvio di file locali in modalità Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio Controlla la disponibilità dell'argomento della riga di comando--IE-mode-file-URL usato per avviare Microsoft Edge con un file locale specificato nella riga di comando in modalità Internet Explorer.
 
@@ -16445,19 +16509,19 @@ Se si imposta questo criterio su false, l'utente non è autorizzato a usare l'ar
 
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: InternetExplorerIntegrationLocalFileAllowed
   - Nome GP: consentire l'avvio di file locali in modalità Internet Explorer
@@ -16465,14 +16529,14 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationLocalFileAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -16482,17 +16546,17 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationLocalFileExtensionAllowList
+  ### <a name="internetexplorerintegrationlocalfileextensionallowlist"></a>InternetExplorerIntegrationLocalFileExtensionAllowList
 
-  #### Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer
+  #### <a name="open-local-files-in-internet-explorer-mode-file-extension-allow-list"></a>Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio limita gli URL file://autorizzati a essere avviati in modalità Internet Explorer in base all'estensione di file.
 
@@ -16504,19 +16568,19 @@ Se si imposta questo criterio sul valore speciale "*" o non lo si configura, tut
 
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: InternetExplorerIntegrationLocalFileExtensionAllowList
   - Nome GP: aprire i file locali nell'elenco Consenti estensione file in modalità Internet Explorer
@@ -16524,14 +16588,14 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAllowList\1 = ".mht"
@@ -16544,17 +16608,17 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationLocalFileShowContextMenu
+  ### <a name="internetexplorerintegrationlocalfileshowcontextmenu"></a>InternetExplorerIntegrationLocalFileShowContextMenu
 
-  #### Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
+  #### <a name="show-context-menu-to-open-a-link-in-internet-explorer-mode"></a>Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio Controlla la visibilità dell'opzione "Apri collegamento in nuova modalità Internet Explorer" nel menu di scelta rapida per i collegamenti a file://.
 
@@ -16566,19 +16630,19 @@ Se si imposta questo criterio su false o non lo si configura, la voce di menu di
 
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: InternetExplorerIntegrationLocalFileShowContextMenu
   - GP Name: Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
@@ -16586,14 +16650,14 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationLocalFileShowContextMenu
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -16603,33 +16667,33 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationSiteList
+  ### <a name="internetexplorerintegrationsitelist"></a>InternetExplorerIntegrationSiteList
 
-  #### Configurare l'elenco siti modalità Enterprise
+  #### <a name="configure-the-enterprise-mode-site-list"></a>Configurare l'elenco siti modalità Enterprise
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationSiteList
   - Nome Criteri di gruppo: Configurare l'elenco siti modalità Enterprise
@@ -16637,14 +16701,14 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationSiteList
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://internal.contoso.com/sitelist.xml"
@@ -16654,17 +16718,17 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationSiteRedirect
+  ### <a name="internetexplorerintegrationsiteredirect"></a>InternetExplorerIntegrationSiteRedirect
 
-  #### Specifica il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer
+  #### <a name="specify-how-in-page-navigations-to-unconfigured-sites-behave-when-started-from-internet-explorer-mode-pages"></a>Specifica il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 81 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Lo spostamento nella pagina viene avviato da un collegamento, uno script o una maschera nella pagina corrente. Può essere anche avviato da un reindirizzamento lato server di un precedente tentativo di spostamento nella pagina. Al contrario un utente può avviare uno spostamento che non sia nella pagina, e indipendentemente dalla pagina corrente, in diversi modi usando i controlli del browser. Ad esempio, usando la barra degli indirizzi, il pulsante Indietro o un collegamento preferito.
 
@@ -16692,19 +16756,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationSiteRedirect
   - Nome Criteri di gruppo: Specifica il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer
@@ -16712,14 +16776,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationSiteRedirect
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -16729,17 +16793,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### InternetExplorerIntegrationTestingAllowed
+  ### <a name="internetexplorerintegrationtestingallowed"></a>InternetExplorerIntegrationTestingAllowed
 
-  #### Consenti il test della modalità di Internet Explorer
+  #### <a name="allow-internet-explorer-mode-testing"></a>Consenti il test della modalità di Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio consente agli utenti di testare le applicazioni in modalità Internet Explorer aprendo una scheda in modalità Internet Explorer in Microsoft Edge.
 
@@ -16753,19 +16817,19 @@ Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet
 
 Se si disabilitano o non si configurano i criteri, gli utenti non potranno vedere le opzioni "Apri in modalità Internet Explorer" e "Apri in modalità Edge" nel menu "Altri strumenti". Tuttavia, gli utenti possono configurare queste opzioni con il contrassegno --ie-mode-test.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationTestingAllowed
   - Nome Criteri di gruppo: consenti test della modalità Internet Explorer
@@ -16773,14 +16837,14 @@ Se si disabilitano o non si configurano i criteri, gli utenti non potranno veder
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationTestingAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -16790,17 +16854,17 @@ Se si disabilitano o non si configurano i criteri, gli utenti non potranno veder
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### IntranetRedirectBehavior
+  ### <a name="intranetredirectbehavior"></a>IntranetRedirectBehavior
 
-  #### Comportamento del reindirizzamento delle Intranet
+  #### <a name="intranet-redirection-behavior"></a>Comportamento del reindirizzamento delle Intranet
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio configura il comportamento per il reindirizzamento della Intranet tramite controlli di intercettazione DNS. I controlli provano a scoprire se il browser è dietro un proxy che reindirizza i nomi host sconosciuti.
 
@@ -16822,19 +16886,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: IntranetRedirectBehavior
   - Nome GP: comportamento di reindirizzamento Intranet
@@ -16842,20 +16906,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: IntranetRedirectBehavior
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: IntranetRedirectBehavior
   - Valore di esempio
@@ -16866,17 +16930,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### IsolateOrigins
+  ### <a name="isolateorigins"></a>IsolateOrigins
 
-  #### Abilita l'isolamento del sito per origini specifiche
+  #### <a name="enable-site-isolation-for-specific-origins"></a>Abilita l'isolamento del sito per origini specifiche
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica le origini da eseguire in isolamento, nel relativo processo.
 
@@ -16888,19 +16952,19 @@ Se si disabilita questo criterio, vengono disabilitate entrambe le funzionalità
 
 Se non si configura il criterio, l'utente può modificare tale impostazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: IsolateOrigins
   - Nome Criteri di gruppo: Abilita l'isolamento del sito per origini specifiche
@@ -16908,20 +16972,20 @@ Se non si configura il criterio, l'utente può modificare tale impostazione.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: IsolateOrigins
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "https://contoso.com/,https://fabrikam.com/"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: IsolateOrigins
   - Valore di esempio
@@ -16932,17 +16996,17 @@ Se non si configura il criterio, l'utente può modificare tale impostazione.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### LocalProvidersEnabled
+  ### <a name="localprovidersenabled"></a>LocalProvidersEnabled
 
-  #### Consente suggerimenti dai provider locali
+  #### <a name="allow-suggestions-from-local-providers"></a>Consente suggerimenti dai provider locali
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente i suggerimenti dai provider di suggerimenti nel dispositivo (provider locali), ad esempio, Preferiti e Cronologia esplorazioni, nell'elenco dei suggerimenti automatici e nella barra degli indirizzi di Microsoft Edge.
 
@@ -16956,19 +17020,19 @@ Alcune funzionalità potrebbero non essere disponibili se è stato applicato un 
 
 Questo criterio richiede il riavvio del browser per completare l'applicazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: LocalProvidersEnabled
   - Nome Criteri di gruppo: Consente suggerimenti dai provider locali
@@ -16976,20 +17040,20 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: LocalProvidersEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: LocalProvidersEnabled
   - Valore di esempio
@@ -17000,36 +17064,36 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ManagedConfigurationPerOrigin
+  ### <a name="managedconfigurationperorigin"></a>ManagedConfigurationPerOrigin
 
-  #### Imposta su origini specifiche i valori della configurazione gestita per i siti Web
+  #### <a name="sets-managed-configuration-values-for-websites-to-specific-origins"></a>Imposta su origini specifiche i valori della configurazione gestita per i siti Web
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 90 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione di questo criterio definisce il valore restituito dell'API di configurazione gestita per l'origine data.
 
  L'API di configurazione gestita è una configurazione chiave-valore a cui è possibile accedere tramite una chiamata javascript navigator.device.getManagedConfiguration(). Questa API è disponibile solo per le origini che corrispondono ad applicazioni Web con installazione forzata tramite [WebAppInstallForceList](#webappinstallforcelist).
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ManagedConfigurationPerOrigin
   - Nome Criteri di gruppo: imposta su origini specifiche i valori della configurazione gestita per i siti Web
@@ -17037,14 +17101,14 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ManagedConfigurationPerOrigin
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
@@ -17061,14 +17125,14 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [{"managed_configuration_hash": "asd891jedasd12ue9h", "managed_configuration_url": "https://static.contoso.com/configuration.json", "origin": "https://www.contoso.com"}, {"managed_configuration_hash": "djio12easd89u12aws", "managed_configuration_url": "https://static.contoso.com/configuration2.json", "origin": "https://www.example.com"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: ManagedConfigurationPerOrigin
   - Valore di esempio:
@@ -17097,17 +17161,17 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ManagedFavorites
+  ### <a name="managedfavorites"></a>ManagedFavorites
 
-  #### Configura i Preferiti
+  #### <a name="configure-favorites"></a>Configura i Preferiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura un elenco di preferiti gestiti.
 
@@ -17117,19 +17181,19 @@ Questi preferiti vengono inseriti in una cartella che non può essere modificata
 
 I preferiti gestiti non vengono sincronizzati con l'account utente e non possono essere modificati dalle estensioni.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ManagedFavorites
   - Nome Criteri di gruppo: Configura i Preferiti
@@ -17137,14 +17201,14 @@ I preferiti gestiti non vengono sincronizzati con l'account utente e non possono
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ManagedFavorites
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
@@ -17175,14 +17239,14 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [{"toplevel_name": "My managed favorites folder"}, {"name": "Microsoft", "url": "microsoft.com"}, {"name": "Bing", "url": "bing.com"}, {"children": [{"name": "Microsoft Edge Insiders", "url": "www.microsoftedgeinsider.com"}, {"name": "Microsoft Edge", "url": "www.microsoft.com/windows/microsoft-edge"}], "name": "Microsoft Edge links"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ManagedFavorites
   - Valore di esempio
@@ -17230,17 +17294,17 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ManagedSearchEngines
+  ### <a name="managedsearchengines"></a>ManagedSearchEngines
 
-  #### Gestisce i motori di ricerca
+  #### <a name="manage-search-engines"></a>Gestisce i motori di ricerca
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di configurare un elenco di massimo 10 motori di ricerca, uno dei quali deve essere contrassegnato come predefinito.
 Non è necessario specificare la codifica. A partire da Microsoft Edge 80, i parametri suggest_url e image_search_url sono facoltativi. Il parametro facoltativo image_search_post_params (costituito da coppie nome/valore separate da virgole) è disponibile a partire da Microsoft Edge 80.
@@ -17253,19 +17317,19 @@ Se si disabilita o non si configura questo criterio, gli utenti possono modifica
 
 Se il criterio [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl) è impostato, questo criterio (ManagedSearchEngines) viene ignorato. Per terminare l'applicazione del criterio, l'utente deve riavviare il browser.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ManagedSearchEngines
   - Nome Criteri di gruppo: Gestisce i motori di ricerca
@@ -17273,14 +17337,14 @@ Se il criterio [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ManagedSearchEngines
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
@@ -17318,14 +17382,14 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [{"allow_search_engine_discovery": true}, {"is_default": true, "keyword": "example1.com", "name": "Example1", "search_url": "https://www.example1.com/search?q={searchTerms}", "suggest_url": "https://www.example1.com/qbox?query={searchTerms}"}, {"image_search_post_params": "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}", "image_search_url": "https://www.example2.com/images/detail/search?iss=sbiupload", "keyword": "example2.com", "name": "Example2", "search_url": "https://www.example2.com/search?q={searchTerms}", "suggest_url": "https://www.example2.com/qbox?query={searchTerms}"}, {"encoding": "UTF-8", "image_search_url": "https://www.example3.com/images/detail/search?iss=sbiupload", "keyword": "example3.com", "name": "Example3", "search_url": "https://www.example3.com/search?q={searchTerms}", "suggest_url": "https://www.example3.com/qbox?query={searchTerms}"}, {"keyword": "example4.com", "name": "Example4", "search_url": "https://www.example4.com/search?q={searchTerms}"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ManagedSearchEngines
   - Valore di esempio
@@ -17390,17 +17454,17 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### MaxConnectionsPerProxy
+  ### <a name="maxconnectionsperproxy"></a>MaxConnectionsPerProxy
 
-  #### Numero massimo di connessioni simultanee al server proxy
+  #### <a name="maximum-number-of-concurrent-connections-to-the-proxy-server"></a>Numero massimo di connessioni simultanee al server proxy
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica il numero massimo di connessioni simultanee al server proxy.
 
@@ -17412,19 +17476,19 @@ Alcune app Web sono note per l'utilizzo di molte connessioni con GET: ridurre le
 
 Se non si configura questo criterio, viene utilizzato il valore predefinito (32).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: MaxConnectionsPerProxy
   - Nome Criteri di gruppo: Numero massimo di connessioni simultanee al server proxy
@@ -17432,20 +17496,20 @@ Se non si configura questo criterio, viene utilizzato il valore predefinito (32)
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: MaxConnectionsPerProxy
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000020
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MaxConnectionsPerProxy
   - Valore di esempio
@@ -17456,17 +17520,17 @@ Se non si configura questo criterio, viene utilizzato il valore predefinito (32)
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### MediaRouterCastAllowAllIPs
+  ### <a name="mediaroutercastallowallips"></a>MediaRouterCastAllowAllIPs
 
-  #### Consente a Google Cast di connettersi ai dispositivi Cast su tutti gli indirizzi IP
+  #### <a name="allow-google-cast-to-connect-to-cast-devices-on-all-ip-addresses"></a>Consente a Google Cast di connettersi ai dispositivi Cast su tutti gli indirizzi IP
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilitare questo criterio per consentire a Google Cast di connettersi a dispositivi Cast su tutti gli indirizzi IP, non solo sugli indirizzi privati RFC1918/RFC4193.
 
@@ -17476,19 +17540,19 @@ Se non si configura questo criterio, Google Cast si connette solo ai dispositivi
 
 Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo criterio non ha alcun effetto.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: MediaRouterCastAllowAllIPs
   - Nome Criteri di gruppo: Consente a Google Cast di connettersi ai dispositivi Cast su tutti gli indirizzi IP
@@ -17496,20 +17560,20 @@ Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo c
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: MediaRouterCastAllowAllIPs
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MediaRouterCastAllowAllIPs
   - Valore di esempio
@@ -17520,17 +17584,17 @@ Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo c
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### MetricsReportingEnabled
+  ### <a name="metricsreportingenabled"></a>MetricsReportingEnabled
 
-  #### Abilita l'utilizzo e la creazione di report sui dati correlati all'arresto anomalo (obsoleto)
+  #### <a name="enable-usage-and-crash-related-data-reporting-obsolete"></a>Abilita l'utilizzo e la creazione di report sui dati correlati all'arresto anomalo (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 88.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 88
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)).
 
@@ -17546,19 +17610,19 @@ Per abilitare questo criterio,[ SendSiteInfoToImproveServices](#sendsiteinfotoim
 
 Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio di Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi, o istanze macOS gestite via MDM o collegate a un dominio via MCX.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: MetricsReportingEnabled
   - Nome Criteri di gruppo: abilita l'invio di report sui dati sull'uso e gli arresti anomali
@@ -17566,20 +17630,20 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: MetricsReportingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: MetricsReportingEnabled
   - Valore di esempio
@@ -17590,17 +17654,17 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NativeWindowOcclusionEnabled
+  ### <a name="nativewindowocclusionenabled"></a>NativeWindowOcclusionEnabled
 
-  #### Abilita l'occlusione della finestra nativa (deprecato)
+  #### <a name="enable-native-window-occlusion-deprecated"></a>Abilita l'occlusione della finestra nativa (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato, usa invece il criterio '[WindowOcclusionEnabled'.](#windowocclusionenabled) Non funzionerà in Microsoft Edge versione 92.
 
@@ -17612,19 +17676,19 @@ Se si disabilita questa impostazione, Microsoft Edge non rileverà quando una fi
 
 Se non viene impostato questo criterio, il rilevamento dell'occlusione sarà abilitato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NativeWindowOcclusionEnabled
   - Nome criteri di gruppo: Abilita l'occlusione della finestra nativa (deprecato)
@@ -17632,14 +17696,14 @@ Se non viene impostato questo criterio, il rilevamento dell'occlusione sarà abi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NativeWindowOcclusionEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -17649,17 +17713,17 @@ Se non viene impostato questo criterio, il rilevamento dell'occlusione sarà abi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NavigationDelayForInitialSiteListDownloadTimeout
+  ### <a name="navigationdelayforinitialsitelistdownloadtimeout"></a>NavigationDelayForInitialSiteListDownloadTimeout
 
-  #### Imposta un timeout per i ritardi nello spostamento tramite schede per l'elenco siti in modalità Enterprise
+  #### <a name="set-a-timeout-for-delay-of-tab-navigation-for-the-enterprise-mode-site-list"></a>Imposta un timeout per i ritardi nello spostamento tramite schede per l'elenco siti in modalità Enterprise
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di impostare un timeout, in secondi, se le schede Microsoft Edge attendono lo spostamento finché il browser non avrà scaricato l'elenco iniziale dei siti in modalità Enterprise.
 
@@ -17671,19 +17735,19 @@ Se si imposta il timeout in questo criterio su un valore maggiore del valore pre
 
 Se non si configura questo criterio, viene usato il timeout predefinito di 2 secondi. Questa impostazione predefinita è soggetta a modifiche in futuro.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NavigationDelayForInitialSiteListDownloadTimeout
   - Nome Criteri di gruppo: imposta un timeout per i ritardi nello spostamento tramite schede per l'elenco siti in modalità Enterprise
@@ -17691,14 +17755,14 @@ Se non si configura questo criterio, viene usato il timeout predefinito di 2 sec
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NavigationDelayForInitialSiteListDownloadTimeout
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x0000000a
@@ -17708,17 +17772,17 @@ Se non si configura questo criterio, viene usato il timeout predefinito di 2 sec
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NetworkPredictionOptions
+  ### <a name="networkpredictionoptions"></a>NetworkPredictionOptions
 
-  #### Abilita la previsione di rete
+  #### <a name="enable-network-prediction"></a>Abilita la previsione di rete
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente la previsione di rete e impedisce agli utenti di modificare questa impostazione.
 
@@ -17736,19 +17800,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NetworkPredictionOptions
   - Nome Criteri di gruppo: Abilita la previsione di rete
@@ -17756,20 +17820,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: NetworkPredictionOptions
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: NetworkPredictionOptions
   - Valore di esempio
@@ -17780,17 +17844,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### NonRemovableProfileEnabled
+  ### <a name="nonremovableprofileenabled"></a>NonRemovableProfileEnabled
 
-  #### Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione
+  #### <a name="configure-whether-a-user-always-has-a-default-profile-automatically-signed-in-with-their-work-or-school-account"></a>Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio determina se un utente può rimuovere il profilo di Microsoft Edge con accesso automatico con un account aziendale o dell'istituto di istruzione di un utente.
 
@@ -17804,19 +17868,19 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
 Da Microsoft Edge 89, se è presente un profilo locale con sincronizzazione disabilitata e il computer è connesso in modalità ibrida, eseguirà automaticamente l'aggiornamento del profilo locale al profilo di Azure AD non rimovibile anziché creare un nuovo profilo di Azure AD non rimovibile.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NonRemovableProfileEnabled
   - Nome Criteri di gruppo: Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione
@@ -17824,14 +17888,14 @@ Da Microsoft Edge 89, se è presente un profilo locale con sincronizzazione disa
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: NonRemovableProfileEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -17841,17 +17905,17 @@ Da Microsoft Edge 89, se è presente un profilo locale con sincronizzazione disa
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### OverrideSecurityRestrictionsOnInsecureOrigin
+  ### <a name="overridesecurityrestrictionsoninsecureorigin"></a>OverrideSecurityRestrictionsOnInsecureOrigin
 
-  #### Controlla dove si applicano le restrizioni di sicurezza per origini non sicure
+  #### <a name="control-where-security-restrictions-on-insecure-origins-apply"></a>Controlla dove si applicano le restrizioni di sicurezza per origini non sicure
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica un elenco di origini (URL) o modelli di nomi host (come "*.contoso.com") per cui non si applicano restrizioni di sicurezza per le origini non sicure.
 
@@ -17861,19 +17925,19 @@ L'impostazione di un elenco di URL in questo criterio ha lo stesso effetto dell'
 
 Per altre informazioni sui contesti sicuri, vedere https://www.w3.org/TR/secure-contexts/.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: OverrideSecurityRestrictionsOnInsecureOrigin
   - Nome Criteri di gruppo: Controlla dove si applicano le restrizioni di sicurezza per origini non sicure
@@ -17881,14 +17945,14 @@ Per altre informazioni sui contesti sicuri, vedere https://www.w3.org/TR/secure-
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\1 = "http://testserver.contoso.com/"
@@ -17896,7 +17960,7 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: OverrideSecurityRestrictionsOnInsecureOrigin
   - Valore di esempio
@@ -17910,17 +17974,17 @@ SOFTWARE\Policies\Microsoft\Edge\OverrideSecurityRestrictionsOnInsecureOrigin\2 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PaymentMethodQueryEnabled
+  ### <a name="paymentmethodqueryenabled"></a>PaymentMethodQueryEnabled
 
-  #### Consente ai siti Web di eseguire query per i metodi di pagamento disponibili
+  #### <a name="allow-websites-to-query-for-available-payment-methods"></a>Consente ai siti Web di eseguire query per i metodi di pagamento disponibili
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare se i siti Web possono verificare che l'utente disponga di metodi di pagamento salvati.
 
@@ -17928,19 +17992,19 @@ Se si disabilita questo criterio, i siti Web che usano l'API PaymentRequest.canM
 
 Se si abilita o non si configura questo criterio, i siti Web possono verificare se l'utente ha metodi di pagamento salvati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PaymentMethodQueryEnabled
   - Nome Criteri di gruppo: Consente ai siti Web di eseguire query per i metodi di pagamento disponibili
@@ -17948,20 +18012,20 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PaymentMethodQueryEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PaymentMethodQueryEnabled
   - Valore di esempio
@@ -17972,17 +18036,17 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PersonalizationReportingEnabled
+  ### <a name="personalizationreportingenabled"></a>PersonalizationReportingEnabled
 
-  #### Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft
+  #### <a name="allow-personalization-of-ads-search-and-news-by-sending-browsing-history-to-microsoft"></a>Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio impedisce a Microsoft di raccogliere la cronologia esplorazioni di Microsoft Edge di un utente per personalizzare pubblicità, ricerca, notizie e altri servizi Microsoft.
 
@@ -17990,19 +18054,19 @@ Questa impostazione è disponibile solo per gli utenti con un account Microsoft.
 
 Se si disabilita questo criterio, gli utenti non possono modificare o sostituire l'impostazione. Se questo criterio è abilitato o non viene configurato, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PersonalizationReportingEnabled
   - Nome Criteri di gruppo: Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft
@@ -18010,20 +18074,20 @@ Se si disabilita questo criterio, gli utenti non possono modificare o sostituire
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PersonalizationReportingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PersonalizationReportingEnabled
   - Valore di esempio
@@ -18034,17 +18098,17 @@ Se si disabilita questo criterio, gli utenti non possono modificare o sostituire
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PinningWizardAllowed
+  ### <a name="pinningwizardallowed"></a>PinningWizardAllowed
 
-  #### Consente la procedura guidata per Aggiungi alla barra delle applicazioni
+  #### <a name="allow-pin-to-taskbar-wizard"></a>Consente la procedura guidata per Aggiungi alla barra delle applicazioni
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge usa la procedura guidata Aggiungi alla barra delle applicazioni per aiutare gli utenti ad aggiungere i siti suggeriti alla barra delle applicazioni. La funzionalità della procedura guidata Aggiungi alla barra delle applicazioni è abilitata per impostazione predefinita e gli utenti possono accedervi tramite Impostazioni e il menu Altro.
 
@@ -18054,19 +18118,19 @@ Se si disabilita questo criterio, la procedura guidata Aggiungi alla barra delle
 
 Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiungi alla barra delle applicazioni non sono disponibili.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PinningWizardAllowed
   - Nome Criteri di gruppo: Consente la procedura guidata per Aggiungi alla barra delle applicazioni
@@ -18074,14 +18138,14 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PinningWizardAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -18091,17 +18155,17 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ProactiveAuthEnabled
+  ### <a name="proactiveauthenabled"></a>ProactiveAuthEnabled
 
-  #### Abilitare l'autenticazione proattiva
+  #### <a name="enable-proactive-authentication-deprecated"></a>Abilitare l'autenticazione proattiva
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato perché non funziona indipendentemente dall'accesso del browser. Non funzionerà in Microsoft Edge versione 91. Se si desidera configurare l'accesso al browser, usare il criterio [BrowserSignin](#browsersignin).
 
@@ -18113,19 +18177,19 @@ Se si disabilita questo criterio, Microsoft Edge non tenta di eseguire l'autenti
 
 Se non si configura questo criterio, l'autenticazione proattiva è attivata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProactiveAuthEnabled
   - Nome Criteri di gruppo: abilita l'autenticazione proattiva (deprecata)
@@ -18133,20 +18197,20 @@ Se non si configura questo criterio, l'autenticazione proattiva è attivata.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ProactiveAuthEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ProactiveAuthEnabled
   - Valore di esempio
@@ -18157,17 +18221,17 @@ Se non si configura questo criterio, l'autenticazione proattiva è attivata.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PromotionalTabsEnabled
+  ### <a name="promotionaltabsenabled"></a>PromotionalTabsEnabled
 
-  #### Abilita il contenuto promozionale di una scheda completa
+  #### <a name="enable-full-tab-promotional-content"></a>Abilita il contenuto promozionale di una scheda completa
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla la presentazione di contenuti promozionali o didattici di schede complete. Questa impostazione controlla la presentazione di pagine di benvenuto che consentono agli utenti di accedere a Microsoft Edge, scegliere il browser predefinito o scoprire di più sulle funzionalità dei prodotti.
 
@@ -18175,19 +18239,19 @@ Se si abilita (impostato su true) o non si configura questo criterio, Microsoft 
 
 Se si disabilita (impostato su false) questo criterio, Microsoft Edge non può mostrare contenuti di schede complete agli utenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PromotionalTabsEnabled
   - Nome Criteri di gruppo: Abilita il contenuto promozionale di una scheda completa
@@ -18195,20 +18259,20 @@ Se si disabilita (impostato su false) questo criterio, Microsoft Edge non può m
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PromotionalTabsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PromotionalTabsEnabled
   - Valore di esempio
@@ -18219,17 +18283,17 @@ Se si disabilita (impostato su false) questo criterio, Microsoft Edge non può m
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### PromptForDownloadLocation
+  ### <a name="promptfordownloadlocation"></a>PromptForDownloadLocation
 
-  #### Chiede dove salvare i file scaricati
+  #### <a name="ask-where-to-save-downloaded-files"></a>Chiede dove salvare i file scaricati
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica se chiedere dove salvare un file prima di scaricarlo.
 
@@ -18237,19 +18301,19 @@ Se si abilita questo criterio, all'utente viene chiesto dove salvare ogni file p
 
 Se non si configura questo criterio, l'utente può modificare tale impostazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PromptForDownloadLocation
   - Nome Criteri di gruppo: Chiede dove salvare i file scaricati
@@ -18257,20 +18321,20 @@ Se non si configura questo criterio, l'utente può modificare tale impostazione.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: PromptForDownloadLocation
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: PromptForDownloadLocation
   - Valore di esempio
@@ -18281,17 +18345,17 @@ Se non si configura questo criterio, l'utente può modificare tale impostazione.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### QuicAllowed
+  ### <a name="quicallowed"></a>QuicAllowed
 
-  #### Consente il protocollo QUIC
+  #### <a name="allow-quic-protocol"></a>Consente il protocollo QUIC
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di utilizzare il protocollo QUIC in Microsoft Edge.
 
@@ -18301,19 +18365,19 @@ Se si disabilita questo criterio, il protocollo QUIC viene bloccato.
 
 QUIC è un protocollo di rete a livello trasporto che può migliorare le prestazioni delle applicazioni Web che attualmente usano TCP.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: QuicAllowed
   - Nome Criteri di gruppo: Consente il protocollo QUIC
@@ -18321,20 +18385,20 @@ QUIC è un protocollo di rete a livello trasporto che può migliorare le prestaz
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: QuicAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: QuicAllowed
   - Valore di esempio
@@ -18345,17 +18409,17 @@ QUIC è un protocollo di rete a livello trasporto che può migliorare le prestaz
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### QuickViewOfficeFilesEnabled
+  ### <a name="quickviewofficefilesenabled"></a>QuickViewOfficeFilesEnabled
 
-  #### Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge
+  #### <a name="manage-quickview-office-files-capability-in-microsoft-edge"></a>Gestisci la funzionalità QuickView dei file di Office su Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 90 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare se gli utenti possono visualizzare sul Web i file di Office non disponibili su OneDrive o SharePoint. (Ad esempio: documenti di Word, presentazioni di PowerPoint e fogli di calcolo di Excel)
 
@@ -18363,19 +18427,19 @@ Se si abilita o non si configura questo criterio, questi file possono essere vis
 
 Se si disabilita questo criterio, questi file verranno scaricati per la visualizzazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico dei Criteri di gruppo: QuickViewOfficeFilesEnabled
   - Nome dei Criteri di gruppo: Gestire la funzionalità QuickView dei file di Office su Microsoft Edge
@@ -18383,20 +18447,20 @@ Se si disabilita questo criterio, questi file verranno scaricati per la visualiz
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: QuickViewOfficeFilesEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: QuickViewOfficeFilesEnabled
   - Valore di esempio:
@@ -18407,17 +18471,17 @@ Se si disabilita questo criterio, questi file verranno scaricati per la visualiz
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RedirectSitesFromInternetExplorerPreventBHOInstall
+  ### <a name="redirectsitesfrominternetexplorerpreventbhoinstall"></a>RedirectSitesFromInternetExplorerPreventBHOInstall
 
-  #### Impedisci l’installazione di BHO per reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge.
+  #### <a name="prevent-install-of-the-bho-to-redirect-incompatible-sites-from-internet-explorer-to-microsoft-edge"></a>Impedisci l’installazione di BHO per reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 87 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa impostazione consente di specificare se bloccare l'installazione dell'oggetto browser helper (BHO), che consente di reindirizzare i siti incompatibili da Internet Explorer a Microsoft Edge per siti che richiedono un browser moderno.
 
@@ -18429,19 +18493,19 @@ Il BHO è necessario per il reindirizzamento del sito incompatibile, tuttavia il
 
 Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwlink/?linkid=2141715](https://go.microsoft.com/fwlink/?linkid=2141715)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: RedirectSitesFromInternetExplorerPreventBHOInstall
   - Nome GP: impedisci l’installazione di BHO per reindirizzare automaticamente i siti incompatibili da Internet Explorer a Microsoft Edge.
@@ -18449,14 +18513,14 @@ Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwli
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore; RedirectSitesFromInternetExplorerPreventBHOInstall
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -18466,17 +18530,17 @@ Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwli
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RedirectSitesFromInternetExplorerRedirectMode
+  ### <a name="redirectsitesfrominternetexplorerredirectmode"></a>RedirectSitesFromInternetExplorerRedirectMode
 
-  #### Reindirizzar i siti incompatibili da Internet Explorer a Microsoft Edge.
+  #### <a name="redirect-incompatible-sites-from-internet-explorer-to-microsoft-edge"></a>Reindirizzar i siti incompatibili da Internet Explorer a Microsoft Edge.
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 87 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa impostazione consente di specificare se Internet Explorer reindirizza le esplorazioni ai siti che richiedono un browser moderno a Microsoft Edge.
 
@@ -18498,19 +18562,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: RedirectSitesFromInternetExplorerRedirectMode
   - Nome GP: reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge.
@@ -18518,14 +18582,14 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: RedirectSitesFromInternetExplorerRedirectMode
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -18535,17 +18599,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RelaunchNotification
+  ### <a name="relaunchnotification"></a>RelaunchNotification
 
-  #### Inviare una notifica a un utente in merito al riavvio del browser consigliato o necessario per gli aggiornamenti in sospeso
+  #### <a name="notify-a-user-that-a-browser-restart-is-recommended-or-required-for-pending-updates"></a>Inviare una notifica a un utente in merito al riavvio del browser consigliato o necessario per gli aggiornamenti in sospeso
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Comunica agli utenti che è necessario riavviare Microsoft Edge per applicare un aggiornamento in sospeso.
 
@@ -18565,19 +18629,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RelaunchNotification
   - Nome Criteri di gruppo: Invia una notifica a un utente in merito al riavvio del browser consigliato o necessario per gli aggiornamenti in sospeso
@@ -18585,20 +18649,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RelaunchNotification
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RelaunchNotification
   - Valore di esempio
@@ -18609,17 +18673,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RelaunchNotificationPeriod
+  ### <a name="relaunchnotificationperiod"></a>RelaunchNotificationPeriod
 
-  #### Imposta il periodo di tempo per le notifiche sugli aggiornamenti
+  #### <a name="set-the-time-period-for-update-notifications"></a>Imposta il periodo di tempo per le notifiche sugli aggiornamenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di impostare il periodo di tempo, in millisecondi, in cui gli utenti vengono informati che Microsoft Edge deve essere riavviato per applicare un aggiornamento in sospeso.
 
@@ -18627,19 +18691,19 @@ Durante questo periodo di tempo, l'utente verrà ripetutamente informato della n
 
 Se non impostato, viene usato il periodo predefinito di 604800000 millisecondi (una settimana).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RelaunchNotificationPeriod
   - Nome Criteri di gruppo: Imposta il periodo di tempo per le notifiche sugli aggiornamenti
@@ -18647,20 +18711,20 @@ Se non impostato, viene usato il periodo predefinito di 604800000 millisecondi (
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RelaunchNotificationPeriod
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x240c8400
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RelaunchNotificationPeriod
   - Valore di esempio
@@ -18671,34 +18735,34 @@ Se non impostato, viene usato il periodo predefinito di 604800000 millisecondi (
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RendererCodeIntegrityEnabled
+  ### <a name="renderercodeintegrityenabled"></a>RendererCodeIntegrityEnabled
 
-  #### Abilita l'integrità del codice del renderer
+  #### <a name="enable-renderer-code-integrity"></a>Abilita l'integrità del codice del renderer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Impostando il criterio su Abilitato o lasciandolo disattivato si attiva l'integrità del codice del rendering.
 L'impostazione del criterio su Disattivatoha un effetto negativo sulla sicurezza e la stabilità di Microsoft Edge, poiché il codice sconosciuto e potenzialmente ostile può essere caricato all'interno dei processi di rendering di Microsoft Edge. Disattivare i criteri solo se sono presenti problemi di compatibilità con il software di terze parti che deve essere eseguito all'interno dei processi di rendering di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RendererCodeIntegrityEnabled
   - Nome Criteri di gruppo: Abilita l'integrità del codice del renderer
@@ -18706,14 +18770,14 @@ L'impostazione del criterio su Disattivatoha un effetto negativo sulla sicurezza
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RendererCodeIntegrityEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -18723,17 +18787,17 @@ L'impostazione del criterio su Disattivatoha un effetto negativo sulla sicurezza
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RequireOnlineRevocationChecksForLocalAnchors
+  ### <a name="requireonlinerevocationchecksforlocalanchors"></a>RequireOnlineRevocationChecksForLocalAnchors
 
-  #### Specifica se i controlli OCSP/CRL online sono necessari per i trust anchor locali
+  #### <a name="specify-if-online-ocspcrl-checks-are-required-for-local-trust-anchors"></a>Specifica se i controlli OCSP/CRL online sono necessari per i trust anchor locali
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se sono necessari controlli di revoca online (controlli OCSP/CRL). Se Microsoft Edge non è in grado di ottenere informazioni sullo stato di revoca, questi certificati vengono considerati come revocati ("hard-fail").
 
@@ -18741,19 +18805,19 @@ Se si abilita questo criterio, Microsoft Edge esegue sempre il controllo della r
 
 Se si disabilita o non si configura questo criterio, Microsoft Edge usa le impostazioni di controllo della revoca online esistenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RequireOnlineRevocationChecksForLocalAnchors
   - Nome Criteri di gruppo: Specifica se i controlli OCSP/CRL online sono necessari per i trust anchor locali
@@ -18761,14 +18825,14 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge usa le impos
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RequireOnlineRevocationChecksForLocalAnchors
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
@@ -18778,17 +18842,17 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge usa le impos
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ResolveNavigationErrorsUseWebService
+  ### <a name="resolvenavigationerrorsusewebservice"></a>ResolveNavigationErrorsUseWebService
 
-  #### Abilita la risoluzione degli errori di spostamento con un servizio Web
+  #### <a name="enable-resolution-of-navigation-errors-using-a-web-service"></a>Abilita la risoluzione degli errori di spostamento con un servizio Web
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente a Microsoft Edge di rilasciare una connessione senza dati per un servizio Web per testare le reti per la connettività in casi come i Wi-Fi di alberghi e aeroporti.
 
@@ -18801,19 +18865,19 @@ Se si disabilita questo criterio, Microsoft Edge usa le API native per provare a
 Se non si configura questo criterio, Microsoft Edge rispetta le preferenze degli utenti impostate in Servizi in edge://settings/privacy.
 In particolare, è presente un'opzione **Usare un servizio Web per consentire di risolvere errori di spostamento**, che può essere attivata o disattivata dall'utente. Tenere presente che se è stato abilitato questo criterio (ResolveNavigationErrorsUseWebService), l'impostazione **Usare un servizio Web per consentire di risolvere errori di spostamento** è attivata, ma l'utente non può modificare tale impostazione usando il relativo interruttore. Se questo criterio è stato disabilitato, l'impostazione **Usare un servizio Web per consentire di risolvere errori di spostamento** è disattivata e l'utente non può modificarla usando il relativo interruttore.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ResolveNavigationErrorsUseWebService
   - Nome Criteri di gruppo: Abilita la risoluzione degli errori di spostamento con un servizio Web
@@ -18821,20 +18885,20 @@ In particolare, è presente un'opzione **Usare un servizio Web per consentire di
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: ResolveNavigationErrorsUseWebService
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ResolveNavigationErrorsUseWebService
   - Valore di esempio
@@ -18845,17 +18909,17 @@ In particolare, è presente un'opzione **Usare un servizio Web per consentire di
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RestrictSigninToPattern
+  ### <a name="restrictsignintopattern"></a>RestrictSigninToPattern
 
-  #### Limita gli account che è possibile utilizzare come account principali di Microsoft Edge
+  #### <a name="restrict-which-accounts-can-be-used-as-microsoft-edge-primary-accounts"></a>Limita gli account che è possibile utilizzare come account principali di Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Determina quali account possono essere impostati come account principali del browser in Microsoft Edge (l'account che viene scelto durante la procedura di consenso esplicito per la sincronizzazione).
 
@@ -18863,19 +18927,19 @@ Se un utente prova a configurare un account principale del browser con un nome u
 
 Se non si configura o si lascia vuoto questo criterio, gli utenti possono impostare qualsiasi account come account principale del browser in Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RestrictSigninToPattern
   - Nome Criteri di gruppo: Limita gli account che è possibile utilizzare come account principali di Microsoft Edge
@@ -18883,20 +18947,20 @@ Se non si configura o si lascia vuoto questo criterio, gli utenti possono impost
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RestrictSigninToPattern
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 ".*@contoso.com"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RestrictSigninToPattern
   - Valore di esempio
@@ -18907,17 +18971,17 @@ Se non si configura o si lascia vuoto questo criterio, gli utenti possono impost
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RoamingProfileLocation
+  ### <a name="roamingprofilelocation"></a>RoamingProfileLocation
 
-  #### Imposta la directory del profilo mobile
+  #### <a name="set-the-roaming-profile-directory"></a>Imposta la directory del profilo mobile
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura la directory da usare per archiviare la copia dei profili mobile.
 
@@ -18927,19 +18991,19 @@ Per un elenco delle variabili che è possibile usare, vedere [https://go.microso
 
 Se non si configura questo criterio, verrà usato il percorso predefinito del profilo mobile.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RoamingProfileLocation
   - Nome Criteri di gruppo: imposta la directory del profilo mobile
@@ -18947,14 +19011,14 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RoamingProfileLocation
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "${roaming_app_data}\\edge-profile"
@@ -18964,17 +19028,17 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RoamingProfileSupportEnabled
+  ### <a name="roamingprofilesupportenabled"></a>RoamingProfileSupportEnabled
 
-  #### Abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge
+  #### <a name="enable-using-roaming-copies-for-microsoft-edge-profile-data"></a>Abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita questo criterio per usare i profili mobile in Windows. Le impostazioni archiviate nei profili Microsoft Edge (preferite e preferenze) vengono salvate anche in un file archiviato nella cartella del profilo utente mobile (o nel percorso specificato dall'amministratore tramite il criterio [RoamingProfileLocation](#roamingprofilelocation)).
 
@@ -18984,19 +19048,19 @@ Se si disabilita questo criterio o non lo si configura, verranno usati solo i no
 
 Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058) per altre informazioni sull'uso dei profili utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RoamingProfileSupportEnabled
   - Nome Criteri di gruppo: abilita l'uso di copie di roaming per i dati dei profili Microsoft Edge
@@ -19004,14 +19068,14 @@ Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.co
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RoamingProfileSupportEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -19021,17 +19085,17 @@ Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.co
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### RunAllFlashInAllowMode
+  ### <a name="runallflashinallowmode"></a>RunAllFlashInAllowMode
 
-  #### Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
+  #### <a name="extend-adobe-flash-content-setting-to-all-content-obsolete"></a>Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 87
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
 
@@ -19041,19 +19105,19 @@ Per controllare quali siti Web possono eseguire Adobe Flash, vedere le specifich
 
 Se si disabilita o non si configura questo criterio, i contenuti di Adobe Flash provenienti da altre origini (da siti che non sono specificati nei tre criteri sopra indicati) o i contenuti di piccole dimensioni potrebbero essere bloccati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: RunAllFlashInAllowMode
   - Nome GP: estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
@@ -19061,20 +19125,20 @@ Se si disabilita o non si configura questo criterio, i contenuti di Adobe Flash 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: RunAllFlashInAllowMode
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: RunAllFlashInAllowMode
   - Valore di esempio
@@ -19085,17 +19149,17 @@ Se si disabilita o non si configura questo criterio, i contenuti di Adobe Flash 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SSLErrorOverrideAllowed
+  ### <a name="sslerroroverrideallowed"></a>SSLErrorOverrideAllowed
 
-  #### Consente agli utenti di procedere nella pagina di avviso HTTPS
+  #### <a name="allow-users-to-proceed-from-the-https-warning-page"></a>Consente agli utenti di procedere nella pagina di avviso HTTPS
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge mostra una pagina di avviso quando gli utenti visitano siti con errori SSL.
 
@@ -19103,19 +19167,19 @@ Se si abilita o non si configura (impostazione predefinita) questo criterio, gli
 
 Se si disabilita questo criterio, gli utenti non potranno fare clic su una qualsiasi pagina di avviso.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SSLErrorOverrideAllowed
   - Nome Criteri di gruppo: Consente agli utenti di procedere nella pagina di avviso HTTPS
@@ -19123,20 +19187,20 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SSLErrorOverrideAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SSLErrorOverrideAllowed
   - Valore di esempio
@@ -19147,17 +19211,17 @@ Se si disabilita questo criterio, gli utenti non potranno fare clic su una quals
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SSLErrorOverrideAllowedForOrigins
+  ### <a name="sslerroroverrideallowedfororigins"></a>SSLErrorOverrideAllowedForOrigins
 
-  #### Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche
+  #### <a name="allow-users-to-proceed-from-the-https-warning-page-for-specific-origins"></a>Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 90 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge mostra una pagina di avviso quando gli utenti visitano siti con errori SSL.
 
@@ -19169,19 +19233,19 @@ Se non si configura questo criterio, il [criterio SSLErrorOverrideAllowed](#ssle
 
 Per informazioni dettagliate sui modelli di origine validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio. Questo criterio corrisponde solo in base all'origine, quindi qualsiasi percorso o query presente nel modello di URL viene ignorato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SSLErrorOverrideAllowedForOrigins
   - Nome criteri di gruppo: Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche
@@ -19189,14 +19253,14 @@ Per informazioni dettagliate sui modelli di origine validi, vedere [https://go.m
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\1 = "https://www.example.com"
@@ -19204,7 +19268,7 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SSLErrorOverrideAllowedForOrigins
   - Valore di esempio:
@@ -19218,17 +19282,17 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SSLVersionMin
+  ### <a name="sslversionmin"></a>SSLVersionMin
 
-  #### Versione TLS minima abilitata
+  #### <a name="minimum-tls-version-enabled"></a>Versione TLS minima abilitata
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Imposta la versione minima supportata di TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
 
@@ -19244,19 +19308,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SSLVersionMin
   - Nome Criteri di gruppo: Versione TLS minima abilitata
@@ -19264,20 +19328,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SSLVersionMin
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "tls1"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SSLVersionMin
   - Valore di esempio
@@ -19288,17 +19352,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SaveCookiesOnExit
+  ### <a name="savecookiesonexit"></a>SaveCookiesOnExit
 
-  #### Salva i cookie quando Microsoft Edge si chiude
+  #### <a name="save-cookies-when-microsoft-edge-closes"></a>Salva i cookie quando Microsoft Edge si chiude
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Quando questo criterio è abilitato, quando il browser viene chiuso, il set specificato di cookie è esente dall'eliminazione. Questo criterio è efficace solo quando:
 - L’interruttore "cookie e altri dati del sito" sono configurati in impostazioni/privacy e servizi/cancellazione dei dati per la navigazione in chiusura o
@@ -19313,19 +19377,19 @@ Se abiliti questo criterio, l'elenco dei cookie non sarà deselezionato quando i
 
 Se non disabiliti o configuri questo criterio, verrà usata la configurazione personale dell'utente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: SaveCookiesOnExit
   - Nome Criteri di gruppo: Salva i cookie quando Microsoft Edge viene chiude
@@ -19333,14 +19397,14 @@ Se non disabiliti o configuri questo criterio, verrà usata la configurazione pe
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SpellcheckLanguage
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\1 = "https://www.contoso.com"
@@ -19348,7 +19412,7 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: SaveCookiesOnExit
   - Valore di esempio
@@ -19362,17 +19426,17 @@ SOFTWARE\Policies\Microsoft\Edge\SaveCookiesOnExit\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SavingBrowserHistoryDisabled
+  ### <a name="savingbrowserhistorydisabled"></a>SavingBrowserHistoryDisabled
 
-  #### Disattiva il salvataggio della cronologia del browser
+  #### <a name="disable-saving-browser-history"></a>Disattiva il salvataggio della cronologia del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita il salvataggio della cronologia del browser e impedisce agli utenti di modificare questa impostazione.
 
@@ -19380,19 +19444,19 @@ Se si abilita questo criterio, la cronologia esplorazioni non viene salvata. Vie
 
 Se si disabilita o non si configura questo criterio, la cronologia esplorazioni viene salvata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SavingBrowserHistoryDisabled
   - Nome Criteri di gruppo: Disattiva il salvataggio della cronologia del browser
@@ -19400,20 +19464,20 @@ Se si disabilita o non si configura questo criterio, la cronologia esplorazioni 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SavingBrowserHistoryDisabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SavingBrowserHistoryDisabled
   - Valore di esempio
@@ -19424,34 +19488,34 @@ Se si disabilita o non si configura questo criterio, la cronologia esplorazioni 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ScreenCaptureAllowed
+  ### <a name="screencaptureallowed"></a>ScreenCaptureAllowed
 
-  #### Consente o rifiuta l'acquisizione dello schermo
+  #### <a name="allow-or-deny-screen-capture"></a>Consente o rifiuta l'acquisizione dello schermo
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita o non si configura questo criterio, una pagina Web può usare le API di condivisione dello schermo (ad esempio, getDisplayMedia() o l'API Desktop Capture extension) per acquisire lo schermo.
 Se si disabilita questo criterio, le chiamate alle API di condivisione dello schermo avranno esito negativo. Ad esempio, se si usa una riunione online basata sul Web, la condivisione di video o schermate non funzionerà.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ScreenCaptureAllowed
   - Nome Criteri di gruppo: Consente o rifiuta l'acquisizione dello schermo
@@ -19459,20 +19523,20 @@ Se si disabilita questo criterio, le chiamate alle API di condivisione dello sch
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ScreenCaptureAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ScreenCaptureAllowed
   - Valore di esempio
@@ -19483,17 +19547,17 @@ Se si disabilita questo criterio, le chiamate alle API di condivisione dello sch
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ScrollToTextFragmentEnabled
+  ### <a name="scrolltotextfragmentenabled"></a>ScrollToTextFragmentEnabled
 
-  #### Consente lo scorrimento al testo specificato nei frammenti di URL
+  #### <a name="enable-scrolling-to-text-specified-in-url-fragments"></a>Consente lo scorrimento al testo specificato nei frammenti di URL
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa funzionalità consente a collegamenti ipertestuali e URL della barra degli indirizzi di reindirizzare a testo specifico in una pagina Web, che verrà visualizzato al termine del caricamento della pagina Web.
 
@@ -19501,19 +19565,19 @@ Se si abilita o non si configura questo criterio, verranno visualizzati specific
 
 Se si disabilita questo criterio, non verranno visualizzati specifici frammenti di testo nella pagina Web tramite un URL.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ScrollToTextFragmentEnabled
   - Nome Criteri di gruppo: Consente lo scorrimento al testo specificato nei frammenti di URL
@@ -19521,20 +19585,20 @@ Se si disabilita questo criterio, non verranno visualizzati specifici frammenti 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ScrollToTextFragmentEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ScrollToTextFragmentEnabled
   - Valore di esempio
@@ -19545,17 +19609,17 @@ Se si disabilita questo criterio, non verranno visualizzati specifici frammenti 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SearchSuggestEnabled
+  ### <a name="searchsuggestenabled"></a>SearchSuggestEnabled
 
-  #### Abilita i suggerimenti per la ricerca
+  #### <a name="enable-search-suggestions"></a>Abilita i suggerimenti per la ricerca
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita i suggerimenti per la ricerca sul Web nell'elenco dei suggerimenti automatici e nella barra degli indirizzi di Microsoft Edge e impedisce agli utenti di modificare questo criterio.
 
@@ -19565,19 +19629,19 @@ Se si disabilita questo criterio, i suggerimenti per la ricerca sul Web non veng
 
 Se il criterio non è impostato, i suggerimenti per la ricerca sono abilitati, ma l'utente può modificare tale impostazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SearchSuggestEnabled
   - Nome Criteri di gruppo: Abilita i suggerimenti per la ricerca
@@ -19585,20 +19649,20 @@ Se il criterio non è impostato, i suggerimenti per la ricerca sono abilitati, m
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: SearchSuggestEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SearchSuggestEnabled
   - Valore di esempio
@@ -19609,35 +19673,35 @@ Se il criterio non è impostato, i suggerimenti per la ricerca sono abilitati, m
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SecurityKeyPermitAttestation
+  ### <a name="securitykeypermitattestation"></a>SecurityKeyPermitAttestation
 
-  #### Siti Web o domini che non necessitano dell'autorizzazione per usare l'attestazione della chiave di sicurezza diretta
+  #### <a name="websites-or-domains-that-dont-need-permission-to-use-direct-security-key-attestation"></a>Siti Web o domini che non necessitano dell'autorizzazione per usare l'attestazione della chiave di sicurezza diretta
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica i siti Web e i domini che non necessitano dell'autorizzazione esplicita dell'utente quando sono richiesti certificati di attestazione dalle chiavi di sicurezza. Inoltre, alla chiave di sicurezza viene inviato un segnale che indica che è possibile usare un'attestazione specifica. Se non si esegue questa operazione, gli utenti vengono informati ogni volta che un sito richiede l'attestazione di chiavi di sicurezza.
 
 I siti (come https://contoso.com/some/path)) corrispondono solo come U2F appIDs. I domini (come contoso.com) corrispondono solo come webauthn RP IDs. Per includere sia le API U2F sia le API webauthn per un determinato sito, è necessario elencare il dominio e l'URL dell'appID.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SecurityKeyPermitAttestation
   - Nome Criteri di gruppo: Siti Web o domini che non necessitano dell'autorizzazione per usare l'attestazione della chiave di sicurezza diretta
@@ -19645,21 +19709,21 @@ I siti (come https://contoso.com/some/path)) corrispondono solo come U2F appIDs.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SecurityKeyPermitAttestation
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://contoso.com"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SecurityKeyPermitAttestation
   - Valore di esempio
@@ -19672,33 +19736,33 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SendIntranetToInternetExplorer
+  ### <a name="sendintranettointernetexplorer"></a>SendIntranetToInternetExplorer
 
-  #### Invia tutti i siti Intranet a Internet Explorer
+  #### <a name="send-all-intranet-sites-to-internet-explorer"></a>Invia tutti i siti Intranet a Internet Explorer
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SendIntranetToInternetExplorer
   - Nome Criteri di gruppo: Invia tutti i siti Intranet a Internet Explorer
@@ -19706,14 +19770,14 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SendIntranetToInternetExplorer
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -19723,17 +19787,17 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SendSiteInfoToImproveServices
+  ### <a name="sendsiteinfotoimproveservices"></a>SendSiteInfoToImproveServices
 
-  #### Invia informazioni sul sito per migliorare i servizi Microsoft (obsoleto)
+  #### <a name="send-site-information-to-improve-microsoft-services-obsolete"></a>Invia informazioni sul sito per migliorare i servizi Microsoft (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 88.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 77 a 88
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)).
 
@@ -19747,19 +19811,19 @@ In Windows 7, Windows 8 e Mac, questo criterio controlla l'invio di informazioni
 
 Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenabled) deve essere impostato su Abilitato. Se [SendSiteInfoToImproveServices](#sendsiteinfotoimproveservices) o [MetricsReportingEnabled](#metricsreportingenabled) non è configurato o disabilitato, i dati non verranno inviati a Microsoft.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SendSiteInfoToImproveServices
   - Nome Criteri di gruppo: invia informazioni sul sito per migliorare i servizi Microsoft (obsoleto)
@@ -19767,20 +19831,20 @@ Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenable
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SendSiteInfoToImproveServices
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SendSiteInfoToImproveServices
   - Valore di esempio
@@ -19791,17 +19855,17 @@ Per abilitare questo criterio, [MetricsReportingEnabled](#metricsreportingenable
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SensorsAllowedForUrls
+  ### <a name="sensorsallowedforurls"></a>SensorsAllowedForUrls
 
-  #### Consenti l'accesso ai sensori in siti specifici
+  #### <a name="allow-access-to-sensors-on-specific-sites"></a>Consenti l'accesso ai sensori in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisci un elenco di siti in base ai modelli di URL, che possono accedere a e usare sensori come il sensore di movimento di luce.
 
@@ -19813,19 +19877,19 @@ I modelli di URL definiti in questo criterio non possono essere in conflitto con
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SensorsAllowedForUrls
   - Nome Criteri di gruppo: consenti l'accesso ai sensori in siti specifici
@@ -19833,14 +19897,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\1 = "https://www.contoso.com"
@@ -19848,7 +19912,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SensorsAllowedForUrls
   - Valore di esempio
@@ -19862,17 +19926,17 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsAllowedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SensorsBlockedForUrls
+  ### <a name="sensorsblockedforurls"></a>SensorsBlockedForUrls
 
-  #### Blocca l'accesso ai sensori in siti specifici
+  #### <a name="block-access-to-sensors-on-specific-sites"></a>Blocca l'accesso ai sensori in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisci un elenco di siti in base ai modelli di URL, che possono accedere a sensori come il sensore di movimento di luce.
 
@@ -19884,19 +19948,19 @@ I modelli di URL definiti in questo criterio non possono essere in conflitto con
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SensorsBlockedForUrls
   - Nome Criteri di gruppo: blocca l'accesso ai sensori in siti specifici
@@ -19904,14 +19968,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\1 = "https://www.contoso.com"
@@ -19919,7 +19983,7 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SensorsBlockedForUrls
   - Valore di esempio
@@ -19933,17 +19997,17 @@ SOFTWARE\Policies\Microsoft\Edge\SensorsBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SerialAskForUrls
+  ### <a name="serialaskforurls"></a>SerialAskForUrls
 
-  #### Consenti API Serial in siti specifici
+  #### <a name="allow-the-serial-api-on-specific-sites"></a>Consenti API Serial in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che possono chiedere all'utente di accedere a una porta seriale.
 
@@ -19955,19 +20019,19 @@ I modelli di URL definiti in questo criterio non possono essere in conflitto con
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SerialAskForUrls
   - Nome Criteri di gruppo: consenti Serial API in siti specifici
@@ -19975,14 +20039,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\1 = "https://www.contoso.com"
@@ -19990,7 +20054,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SerialAskForUrls
   - Valore di esempio
@@ -20004,17 +20068,17 @@ SOFTWARE\Policies\Microsoft\Edge\SerialAskForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SerialBlockedForUrls
+  ### <a name="serialblockedforurls"></a>SerialBlockedForUrls
 
-  #### Blocca Serial API in siti specifici
+  #### <a name="block-the-serial-api-on-specific-sites"></a>Blocca Serial API in siti specifici
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che non possono chiedere all'utente di autorizzarli ad accedere a una porta seriale.
 
@@ -20026,19 +20090,19 @@ I modelli di URL in questo criterio non possono essere in conflitto con quelli c
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SerialBlockedForUrls
   - Nome Criteri di gruppo: blocca Serial API in siti specifici
@@ -20046,14 +20110,14 @@ Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.micro
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\1 = "https://www.contoso.com"
@@ -20061,7 +20125,7 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SerialBlockedForUrls
   - Valore di esempio
@@ -20075,17 +20139,17 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ShowMicrosoftRewards
+  ### <a name="showmicrosoftrewards"></a>ShowMicrosoftRewards
 
-  #### Mostra le esperienze di Microsoft Rewards
+  #### <a name="show-microsoft-rewards-experiences"></a>Mostra le esperienze di Microsoft Rewards
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Mostra l'esperienza e le notifiche di Microsoft Rewards.
 Se il criterio viene abilitato:
@@ -20100,19 +20164,19 @@ Se non si configurano i criteri seguenti:
    - Gli utenti degli account Microsoft (esclusi gli account di Azure AD) in mercati con ricompense per ricerca vedranno l'esperienza Microsoft Rewards nel profilo utente Microsoft Edge.
    - L'impostazione per abilitare Microsoft Rewards nelle impostazioni Microsoft Edge verrà abilitata e attivata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -20120,20 +20184,20 @@ Se non si configurano i criteri seguenti:
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
   - Nome valore: ShowMicrosoftRewards
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowMicrosoftRewards
   - Valore di esempio:
@@ -20144,36 +20208,36 @@ Se non si configurano i criteri seguenti:
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### ShowOfficeShortcutInFavoritesBar
+  ### <a name="showofficeshortcutinfavoritesbar"></a>ShowOfficeShortcutInFavoritesBar
 
-  #### Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)
+  #### <a name="show-microsoft-office-shortcut-in-favorites-bar-deprecated"></a>Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa politica non ha funzionato come previsto a causa di cambiamenti nei requisiti operativi. Therefore it's deprecated and should not be used.
 
 Specifica se includere un collegamento a Office.com nella barra Preferiti. Per gli utenti che hanno eseguito l'accesso a Microsoft Edge, il collegamento reindirizza gli utenti alle app e ai documenti di Microsoft Office. Se si abilita o non si configura questo criterio, gli utenti possono scegliere se visualizzare o meno il collegamento modificando l'interruttore nel menu a comparsa della barra Preferiti.
 Se si disabilita questo criterio, il collegamento non viene mostrato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowOfficeShortcutInFavoritesBar
   - Nome Criteri di gruppo: mostra il collegamento a Microsoft Office nella barra dei Preferiti (deprecato)
@@ -20181,20 +20245,20 @@ Se si disabilita questo criterio, il collegamento non viene mostrato.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ShowOfficeShortcutInFavoritesBar
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowOfficeShortcutInFavoritesBar
   - Valore di esempio
@@ -20205,17 +20269,17 @@ Se si disabilita questo criterio, il collegamento non viene mostrato.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### MostraRaccomandazioniAbilitato
+  ### <a name="showrecommendationsenabled"></a>MostraRaccomandazioniAbilitato
 
-  #### Consenti suggerimenti e notifiche promozionali da Microsoft Edge
+  #### <a name="allow-recommendations-and-promotional-notifications-from-microsoft-edge"></a>Consenti suggerimenti e notifiche promozionali da Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questa impostazione dei criteri consente di decidere se i dipendenti devono ricevere suggerimenti e notifiche di assistenza all'interno del prodotto da Microsoft Edge.
 
@@ -20223,19 +20287,19 @@ Se si abilita o non si configura questa impostazione, i dipendenti ricevono sugg
 
 Se si disabilita questa impostazione, i dipendenti non riceveranno consigli e notifiche da Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico dei Criteri di gruppo: MostraRaccomandazioniAbilitato
   - Nome dei Criteri di gruppo: Consenti suggerimenti e notifiche promozionali da Microsoft Edge
@@ -20243,20 +20307,20 @@ Se si disabilita questa impostazione, i dipendenti non riceveranno consigli e no
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: ShowRecommendationsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: ShowRecommendationsEnabled
   - Valore di esempio:
@@ -20267,17 +20331,17 @@ Se si disabilita questa impostazione, i dipendenti non riceveranno consigli e no
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SignedHTTPExchangeEnabled
+  ### <a name="signedhttpexchangeenabled"></a>SignedHTTPExchangeEnabled
 
-  #### Abilita il supporto di Signed HTTP Exchange (SXG)
+  #### <a name="enable-signed-http-exchange-sxg-support"></a>Abilita il supporto di Signed HTTP Exchange (SXG)
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita il supporto per Signed HTTP Exchange (SXG).
 
@@ -20285,19 +20349,19 @@ Se questo criterio non è impostato o abilitato, Microsoft Edge accetta i conten
 
 Se questo criterio è disabilitato, non è possibile caricare Signed HTTP Exchange.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SignedHTTPExchangeEnabled
   - Nome Criteri di gruppo: Abilita il supporto di Signed HTTP Exchange (SXG)
@@ -20305,20 +20369,20 @@ Se questo criterio è disabilitato, non è possibile caricare Signed HTTP Exchan
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SignedHTTPExchangeEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SignedHTTPExchangeEnabled
   - Valore di esempio
@@ -20329,17 +20393,17 @@ Se questo criterio è disabilitato, non è possibile caricare Signed HTTP Exchan
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SitePerProcess
+  ### <a name="siteperprocess"></a>SitePerProcess
 
-  #### Abilita l'isolamento del sito per tutte le origini
+  #### <a name="enable-site-isolation-for-every-site"></a>Abilita l'isolamento del sito per tutte le origini
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Il criterio "SitePerProcess" può essere usato per impedire agli utenti di rifiutare esplicitamente il comportamento predefinito dell'isolamento di tutti i siti. È anche possibile usare il criterio [IsolateOrigins](#isolateorigins) per isolare altre origini più specifiche.
 
@@ -20348,19 +20412,19 @@ Se si abilita questo criterio, gli utenti non possono rifiutare esplicitamente i
 Se si disabilita o non si configura questo criterio, un utente può rifiutare esplicitamente l'isolamento del sito.  Ad esempio, usando la voce "Disabilitare l'isolamento del sito" entry in edge://flags. Se si disabilita o non si configura il criterio, l'isolamento del sito non viene disattivato.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SitePerProcess
   - Nome Criteri di gruppo: Abilita l'isolamento del sito per tutte le origini
@@ -20368,20 +20432,20 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SitePerProcess
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SitePerProcess
   - Valore di esempio
@@ -20392,17 +20456,17 @@ Se si disabilita o non si configura questo criterio, un utente può rifiutare es
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SmartActionsBlockList
+  ### <a name="smartactionsblocklist"></a>SmartActionsBlockList
 
-  #### Blocca le azioni intelligenti per un elenco di servizi
+  #### <a name="block-smart-actions-for-a-list-of-services"></a>Blocca le azioni intelligenti per un elenco di servizi
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Elenca servizi specifici, ad esempio i file PDF, che non mostrano azioni intelligenti. Le azioni intelligenti sono azioni come "Definisci" disponibili nei menu di scelta rapida completi e ridotti in Microsoft Edge.
 
@@ -20422,19 +20486,19 @@ Mappatura delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SmartActionsBlockList
   - Nome Criteri di gruppo: Blocca le azioni intelligenti per un elenco di servizi
@@ -20442,21 +20506,21 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SmartActionsBlockList
   - Percorso (scelta consigliata): SOFTWARE\Policies\Microsoft\Edge\Recommended\SmartActionsBlockList
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: SmartActionsBlockList
   - Valore di esempio:
@@ -20469,17 +20533,17 @@ SOFTWARE\Policies\Microsoft\Edge\SmartActionsBlockList\1 = "smart_actions_pdf"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SpeechRecognitionEnabled
+  ### <a name="speechrecognitionenabled"></a>SpeechRecognitionEnabled
 
-  #### Configure Speech Recognition
+  #### <a name="configure-speech-recognition"></a>Configure Speech Recognition
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 87 or later
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specificare se i siti Web possono usare l'API per la sintesi vocale W3C per riconoscere il discorso dall'utente. L'implementazione Microsoft Edge dell'API per la sintesi vocale usa i servizi conoscitivi di Azure, in modo che data Voice lascerà il computer.
 
@@ -20489,19 +20553,19 @@ Se si disabilita questa impostazione, il riconoscimento vocale non sarà disponi
 
 Read more about this feature here: SpeechRecognition API: [https://go.microsoft.com/fwlink/?linkid=2143388](https://go.microsoft.com/fwlink/?linkid=2143388) Cognitive Services: [https://go.microsoft.com/fwlink/?linkid=2143680](https://go.microsoft.com/fwlink/?linkid=2143680)
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - GP unique name: SpeechRecognitionEnabled
   - GP name: Configure Speech Recognition
@@ -20509,20 +20573,20 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Value Name: SpeechRecognitionEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Preference Key Name: SpeechRecognitionEnabled
   - Valore di esempio
@@ -20533,35 +20597,35 @@ Read more about this feature here: SpeechRecognition API: [https://go.microsoft.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SpellcheckEnabled
+  ### <a name="spellcheckenabled"></a>SpellcheckEnabled
 
-  #### Abilita il controllo ortografico
+  #### <a name="enable-spellcheck"></a>Abilita il controllo ortografico
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita o non si configura questo criterio, l'utente può usare il controllo ortografico.
 
 Se si disabilita questo criterio, l'utente non può usare il controllo ortografico e i criteri [SpellcheckLanguage](#spellchecklanguage) e [SpellcheckLanguageBlocklist](#spellchecklanguageblocklist) sono disabilitati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SpellcheckEnabled
   - Nome Criteri di gruppo: Abilita il controllo ortografico
@@ -20569,20 +20633,20 @@ Se si disabilita questo criterio, l'utente non può usare il controllo ortografi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SpellcheckEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SpellcheckEnabled
   - Valore di esempio
@@ -20593,17 +20657,17 @@ Se si disabilita questo criterio, l'utente non può usare il controllo ortografi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SpellcheckLanguage
+  ### <a name="spellchecklanguage"></a>SpellcheckLanguage
 
-  #### Abilita lingue specifiche del controllo ortografico
+  #### <a name="enable-specific-spellcheck-languages"></a>Abilita lingue specifiche del controllo ortografico
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita lingue diverse per il controllo ortografico. Tutte le lingue specificate dall'utente che non sono riconosciute verranno ignorate.
 
@@ -20617,19 +20681,19 @@ Se una lingua è inclusa nel criterio "SpellcheckLanguage" e nel criterio [Spell
 
 Le lingue supportate sono: af, bg, ca, cs, cy, da, de, el, en-AU, en-CA, en-GB, en-US, es, es-419, es-AR, es-ES, es-MX, es-US, et, fa, fo, fr, he, hi, hr, hu, id, it, ko, lt, lv, nb, nl, pl, pt-BR, pt-PT, ro, ru, sh, sk, sl, sq, sr, sv, ta, tg, tr, uk, vi.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SpellcheckLanguage
   - Nome Criteri di gruppo: Abilita lingue specifiche del controllo ortografico
@@ -20637,14 +20701,14 @@ Le lingue supportate sono: af, bg, ca, cs, cy, da, de, el, en-AU, en-CA, en-GB, 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SpellcheckLanguage
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\1 = "fr"
@@ -20656,17 +20720,17 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguage\2 = "es"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SpellcheckLanguageBlocklist
+  ### <a name="spellchecklanguageblocklist"></a>SpellcheckLanguageBlocklist
 
-  #### Forza la disabilitazione delle lingue del controllo ortografico
+  #### <a name="force-disable-spellcheck-languages"></a>Forza la disabilitazione delle lingue del controllo ortografico
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Forza la disabilitazione delle lingue del controllo ortografico. Le lingue non riconosciute nell'elenco verranno ignorate.
 
@@ -20680,19 +20744,19 @@ Se una lingua è inclusa nel criterio [SpellcheckLanguage](#spellchecklanguage) 
 
 Le lingue attualmente supportate sono: af, bg, ca, cs, da, de, el, en-AU, en-CA, en-GB, en-US, es, es-419, es-AR, es-ES, es-MX, es-US, et, fa, fo, fr, he, hi, hr, hu, id, it, ko, lt, lv, nb, nl, pl, pt-BR, pt-PT, ro, ru, sh, sk, sl, sq, sr, sv, ta, tg, tr, uk, vi.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SpellcheckLanguageBlocklist
   - Nome Criteri di gruppo: Forza la disabilitazione delle lingue del controllo ortografico
@@ -20700,14 +20764,14 @@ Le lingue attualmente supportate sono: af, bg, ca, cs, da, de, el, en-AU, en-CA,
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SpellcheckLanguageBlocklist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\1 = "fr"
@@ -20719,17 +20783,17 @@ SOFTWARE\Policies\Microsoft\Edge\SpellcheckLanguageBlocklist\2 = "es"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### StricterMixedContentTreatmentEnabled
+  ### <a name="strictermixedcontenttreatmentenabled"></a>StricterMixedContentTreatmentEnabled
 
-  #### Abilita un trattamento più rigoroso per contenuti misti (obsoleto)
+  #### <a name="enable-stricter-treatment-for-mixed-content-obsolete"></a>Abilita un trattamento più rigoroso per contenuti misti (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS da 81 a 84
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se viene rilevata incompatibilità con il trattamento più rigoroso per contenuti misti.
 
@@ -20741,19 +20805,19 @@ Se si imposta il criterio su false, gli aggiornamenti automatici verranno disabi
 
 Questo criterio non influisce su altri tipi di contenuti misti diversi da audio, video e immagini.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: StricterMixedContentTreatmentEnabled
   - Nome Criteri di gruppo: Abilita un trattamento più rigoroso per contenuti misti (obsoleto)
@@ -20761,20 +20825,20 @@ Questo criterio non influisce su altri tipi di contenuti misti diversi da audio,
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: StricterMixedContentTreatmentEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: StricterMixedContentTreatmentEnabled
   - Valore di esempio
@@ -20785,35 +20849,35 @@ Questo criterio non influisce su altri tipi di contenuti misti diversi da audio,
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SuppressUnsupportedOSWarning
+  ### <a name="suppressunsupportedoswarning"></a>SuppressUnsupportedOSWarning
 
-  #### Elimina l'avviso del sistema operativo non supportato
+  #### <a name="suppress-the-unsupported-os-warning"></a>Elimina l'avviso del sistema operativo non supportato
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disattiva l'avviso che viene visualizzato quando Microsoft Edge è in esecuzione in un computer o un sistema operativo non più supportato.
 
 Se il criterio è impostato su false o non è configurato, verranno visualizzati degli avvisi in tali computer o sistemi operativi non supportati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SuppressUnsupportedOSWarning
   - Nome Criteri di gruppo: Elimina l'avviso del sistema operativo non supportato
@@ -20821,20 +20885,20 @@ Se il criterio è impostato su false o non è configurato, verranno visualizzati
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: SuppressUnsupportedOSWarning
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SuppressUnsupportedOSWarning
   - Valore di esempio
@@ -20845,17 +20909,17 @@ Se il criterio è impostato su false o non è configurato, verranno visualizzati
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SyncDisabled
+  ### <a name="syncdisabled"></a>SyncDisabled
 
-  #### Disabilita la sincronizzazione dei dati con i servizi di sincronizzazione di Microsoft
+  #### <a name="disable-synchronization-of-data-using-microsoft-sync-services"></a>Disabilita la sincronizzazione dei dati con i servizi di sincronizzazione di Microsoft
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Disabilita la sincronizzazione dei dati in Microsoft Edge. Questo criterio impedisce anche la visualizzazione della richiesta di consenso per la sincronizzazione.
 
@@ -20863,19 +20927,19 @@ Questo criterio disabilita solo la sincronizzazione nel cloud e non ha alcun imp
 
 Se il criterio non viene impostato o lo si applica come consigliato, gli utenti potranno attivare o disattivare la sincronizzazione. Se si applica questo criterio come obbligatorio, gli utenti non potranno attivare la sincronizzazione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SyncDisabled
   - Nome Criteri di gruppo: Disabilita la sincronizzazione dei dati con i servizi di sincronizzazione di Microsoft
@@ -20883,20 +20947,20 @@ Se il criterio non viene impostato o lo si applica come consigliato, gli utenti 
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: SyncDisabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SyncDisabled
   - Valore di esempio
@@ -20907,17 +20971,17 @@ Se il criterio non viene impostato o lo si applica come consigliato, gli utenti 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### SyncTypesListDisabled
+  ### <a name="synctypeslistdisabled"></a>SyncTypesListDisabled
 
-  #### Configura l'elenco dei tipi esclusi dalla sincronizzazione
+  #### <a name="configure-the-list-of-types-that-are-excluded-from-synchronization"></a>Configura l'elenco dei tipi esclusi dalla sincronizzazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 83 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio, tutti i tipi di dati specificati verranno esclusi dalla sincronizzazione. Questo criterio può essere usato per limitare il tipo di dati caricati nel servizio di sincronizzazione di Microsoft Edge.
 
@@ -20925,19 +20989,19 @@ Se il criterio non viene impostato o lo si applica come consigliato, gli utenti 
 
 Gli utenti non potranno eseguire l'override dei tipi di dati disabilitati.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SyncTypesListDisabled
   - Nome Criteri di gruppo: Configura l'elenco dei tipi esclusi dalla sincronizzazione
@@ -20945,21 +21009,21 @@ Gli utenti non potranno eseguire l'override dei tipi di dati disabilitati.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\SyncTypesListDisabled
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: SyncTypesListDisabled
   - Valore di esempio
@@ -20972,17 +21036,17 @@ SOFTWARE\Policies\Microsoft\Edge\SyncTypesListDisabled\1 = "favorites"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TLS13HardeningForLocalAnchorsEnabled
+  ### <a name="tls13hardeningforlocalanchorsenabled"></a>TLS13HardeningForLocalAnchorsEnabled
 
-  #### Abilita una funzionalità di sicurezza TLS 1.3 per i trust anchor locali (obsoleto)
+  #### <a name="enable-a-tls-13-security-feature-for-local-trust-anchors-obsolete"></a>Abilita una funzionalità di sicurezza TLS 1.3 per i trust anchor locali (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 85.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 81, fino alla versione 85
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché doveva essere solo un meccanismo a breve termine per dare alle aziende più tempo per aggiornare i proxy interessati.
 
@@ -20994,19 +21058,19 @@ Se si disabilita questo criterio, Microsoft Edge disabiliterà queste protezioni
 
 Questo criterio può essere usato per testare l'eventuale presenza di proxy interessati e aggiornarli. I proxy interessati causeranno un esito negativo per le connessioni con un codice errore di ERR_TLS13_DOWNGRADE_DETECTED.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLS13HardeningForLocalAnchorsEnabled
   - Nome Criteri di gruppo: Abilita una funzionalità di sicurezza TLS 1.3 per i trust anchor locali
@@ -21014,20 +21078,20 @@ Questo criterio può essere usato per testare l'eventuale presenza di proxy inte
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TLS13HardeningForLocalAnchorsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TLS13HardeningForLocalAnchorsEnabled
   - Valore di esempio
@@ -21038,17 +21102,17 @@ Questo criterio può essere usato per testare l'eventuale presenza di proxy inte
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TLSCipherSuiteDenyList
+  ### <a name="tlsciphersuitedenylist"></a>TLSCipherSuiteDenyList
 
-  #### Specifica i pacchetti di crittografia TLS da disabilitare
+  #### <a name="specify-the-tls-cipher-suites-to-disable"></a>Specifica i pacchetti di crittografia TLS da disabilitare
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 85 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura l'elenco dei pacchetti di crittografia disabilitati per connessioni TLS.
 
@@ -21062,19 +21126,19 @@ Il pacchetto di crittografia 1.3 TLS TLS_AES_128_GCM_SHA256 (0x1301) è obbligat
 
 Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere disattivato tramite il criterio [QuicAllowed](#quicallowed).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -21082,14 +21146,14 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\TLSCipherSuiteDenyList
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\1 = "0x1303"
@@ -21098,7 +21162,7 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: TLSCipherSuiteDenyList
   - Valore di esempio
@@ -21113,17 +21177,17 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TabFreezingEnabled
+  ### <a name="tabfreezingenabled"></a>TabFreezingEnabled
 
-  #### Consente il blocco delle schede di sfondo
+  #### <a name="allow-freezing-of-background-tabs"></a>Consente il blocco delle schede di sfondo
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 79 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se Microsoft Edge può bloccare le schede in background per almeno 5 minuti.
 
@@ -21133,19 +21197,19 @@ Se si abilita o non si configura questo criterio, le schede che sono state in ba
 
 Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TabFreezingEnabled
   - Nome Criteri di gruppo: Consente il blocco delle schede di sfondo
@@ -21153,20 +21217,20 @@ Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TabFreezingEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TabFreezingEnabled
   - Valore di esempio
@@ -21177,17 +21241,17 @@ Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TargetBlankImpliesNoOpener
+  ### <a name="targetblankimpliesnoopener"></a>TargetBlankImpliesNoOpener
 
-  #### Non impostare window.opener per i collegamenti con destinazione _blank
+  #### <a name="do-not-set-windowopener-for-links-targeting-_blank"></a>Non impostare window.opener per i collegamenti con destinazione _blank
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se abiliti questo criterio o non lo configuri, la proprietà window.opener è impostata su NULL, a meno che l’ancora non specifichi rel="opener".
 
@@ -21195,19 +21259,19 @@ Se disabiliti i criteri, i popup con destinazione _blank sono autorizzati ad acc
 
 Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TargetBlankImpliesNoOpener
   - Nome Criteri di gruppo: non impostare window.opener per i collegamenti con destinazione _blank
@@ -21215,20 +21279,20 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TargetBlankImpliesNoOpener
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TargetBlankImpliesNoOpener
   - Valore di esempio
@@ -21239,33 +21303,33 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TaskManagerEndProcessEnabled
+  ### <a name="taskmanagerendprocessenabled"></a>TaskManagerEndProcessEnabled
 
-  #### Abilita i processi finali nel servizio di gestione attività del browser
+  #### <a name="enable-ending-processes-in-the-browser-task-manager"></a>Abilita i processi finali nel servizio di gestione attività del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita o non si configura questo criterio, gli utenti possono terminare i processi nella gestione attività del browser. Se viene disabilitato, gli utenti non possono terminare i processi e il pulsante Termina processo viene disabilitato nella gestione attività del browser.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TaskManagerEndProcessEnabled
   - Nome Criteri di gruppo: Abilita i processi finali nel servizio di gestione attività del browser
@@ -21273,20 +21337,20 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TaskManagerEndProcessEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TaskManagerEndProcessEnabled
   - Valore di esempio
@@ -21297,17 +21361,17 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TotalMemoryLimitMb
+  ### <a name="totalmemorylimitmb"></a>TotalMemoryLimitMb
 
-  #### Imposta un limite per i megabyte di memoria che possono essere usati in un'unica istanza di Microsoft Edge
+  #### <a name="set-limit-on-megabytes-of-memory-a-single-microsoft-edge-instance-can-use"></a>Imposta un limite per i megabyte di memoria che possono essere usati in un'unica istanza di Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura la quantità di memoria che una singola istanza di Microsoft Edge può usare prima che le schede vengano eliminate per risparmiare memoria. La memoria usata dalla scheda verrà liberata e sarà necessario ricaricare la scheda quando verrà aperta di nuovo.
 
@@ -21315,19 +21379,19 @@ Se si abilita questo criterio, il browser inizierà a rimuovere le schede per ri
 
 Se non si imposta questo criterio, il browser tenterà di risparmiare memoria solo dopo che viene rilevata una quantità di memoria fisica del computer in uso insufficiente.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TotalMemoryLimitMb
   - Nome Criteri di gruppo: Imposta un limite per i megabyte di memoria che possono essere usati in un'unica istanza di Microsoft Edge
@@ -21335,20 +21399,20 @@ Se non si imposta questo criterio, il browser tenterà di risparmiare memoria so
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TotalMemoryLimitMb
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000800
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TotalMemoryLimitMb
   - Valore di esempio
@@ -21359,17 +21423,17 @@ Se non si imposta questo criterio, il browser tenterà di risparmiare memoria so
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TrackingPrevention
+  ### <a name="trackingprevention"></a>TrackingPrevention
 
-  #### Blocca il monitoraggio dell'attività di esplorazione sul Web degli utenti
+  #### <a name="block-tracking-of-users-web-browsing-activity"></a>Blocca il monitoraggio dell'attività di esplorazione sul Web degli utenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 78 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di decidere se impedire ai siti Web di tenere traccia delle attività di esplorazione del Web degli utenti.
 
@@ -21387,19 +21451,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TrackingPrevention
   - Nome Criteri di gruppo: Blocca il monitoraggio dell'attività di esplorazione sul Web degli utenti
@@ -21407,20 +21471,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: TrackingPrevention
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000002
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TrackingPrevention
   - Valore di esempio
@@ -21431,17 +21495,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### TranslateEnabled
+  ### <a name="translateenabled"></a>TranslateEnabled
 
-  #### Abilita Traduci
+  #### <a name="enable-translate"></a>Abilita Traduci
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita il servizio di traduzione Microsoft integrato in Microsoft Edge.
 
@@ -21451,19 +21515,19 @@ Disabilitare questo criterio per disabilitare tutte le funzionalità di traduzio
 
 Se non si configura il criterio, gli utenti possono scegliere se usare o meno la funzionalità di traduzione.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TranslateEnabled
   - Nome Criteri di gruppo: Abilita Traduci
@@ -21471,20 +21535,20 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Recommended
   - Nome valore: TranslateEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: TranslateEnabled
   - Valore di esempio
@@ -21495,17 +21559,17 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### URLAllowlist
+  ### <a name="urlallowlist"></a>URLAllowlist
 
-  #### Definisce un elenco di URL consentiti
+  #### <a name="define-a-list-of-allowed-urls"></a>Definisce un elenco di URL consentiti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   L'impostazione dei criteri consente l'accesso agli URL elencati, come eccezioni a [di URLBlocklist](#urlblocklist).
 
@@ -21521,19 +21585,19 @@ Questo criterio consente anche al browser di richiamare automaticamente applicaz
 
 Se non si configura questo criterio, non sono presenti eccezioni rispetto all'elenco di indirizzi bloccati nel criterio [URLBlocklist](#urlblocklist).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: URLAllowlist
   - Nome Criteri di gruppo: Definisce un elenco di URL consentiti
@@ -21541,14 +21605,14 @@ Se non si configura questo criterio, non sono presenti eccezioni rispetto all'el
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\URLAllowlist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\1 = "contoso.com"
@@ -21559,7 +21623,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: URLAllowlist
   - Valore di esempio
@@ -21576,17 +21640,17 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### URLBlocklist
+  ### <a name="urlblocklist"></a>URLBlocklist
 
-  #### Blocca l'accesso a un elenco di URL
+  #### <a name="block-access-to-a-list-of-urls"></a>Blocca l'accesso a un elenco di URL
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Definisce un elenco di siti, in base ai modelli URL, che sono bloccati (gli utenti non possono caricarli).
 
@@ -21600,19 +21664,19 @@ Questo criterio non impedisce l'aggiornamento dinamico della pagina con JavaScri
 
 Se non si configura questo criterio, non viene bloccato nessun URL.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: URLBlocklist
   - Nome Criteri di gruppo: Blocca l'accesso a un elenco di URL
@@ -21620,14 +21684,14 @@ Se non si configura questo criterio, non viene bloccato nessun URL.
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\URLBlocklist
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\1 = "contoso.com"
@@ -21641,7 +21705,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: URLBlocklist
   - Valore di esempio
@@ -21661,17 +21725,17 @@ SOFTWARE\Policies\Microsoft\Edge\URLBlocklist\8 = "*"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UpdatePolicyOverride
+  ### <a name="updatepolicyoverride"></a>UpdatePolicyOverride
 
-  #### Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge
+  #### <a name="specifies-how-microsoft-edge-update-handles-available-updates-from-microsoft-edge"></a>Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In macOS da 89 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se abiliti questo criterio, Microsoft Edge Update gestisce gli aggiornamenti Microsoft Edge in base alla configurazione delle opzioni seguenti:
 
@@ -21692,19 +21756,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: sì
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UpdatePolicyOverride
   - Valore di esempio
@@ -21715,19 +21779,19 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UserAgentClientHintsEnabled
+  ### <a name="useragentclienthintsenabled"></a>UserAgentClientHintsEnabled
 
-  #### Abilita la funzionalità User-Agent Client Hints (deprecato)
+  #### <a name="enable-the-user-agent-client-hints-feature-deprecated"></a>Abilita la funzionalità User-Agent Client Hints (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
-  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la funzione suggerimenti client agente utente. Non funzionerà in Microsoft Edge versione 89.
+  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la funzione suggerimenti client agente utente. Non funzionerà in Microsoft Edge versione 93.
 
 Quando viene abilitata, la funzionalità User-Agent Client Hints invia intestazioni della richiesta granulari che forniscono informazioni sul browser utente (ad esempio, la versione dl browser) e sull’ambiente (ad esempio, l’architettura del sistema).
 
@@ -21735,19 +21799,19 @@ Si tratta di una funzionalità aggiuntiva, ma le nuove intestazioni potrebbero i
 
 Se si abilita o non si configura questo criterio, la funzionalità User-Agent Client Hints viene abilitata. Se si disabilita questo criterio, questa funzionalità non è disponibile.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: UserAgentClientHintsEnabled
   - Nome Criteri di gruppo: Abilita la funzionalità User-Agent Client Hints (deprecato)
@@ -21755,20 +21819,20 @@ Se si abilita o non si configura questo criterio, la funzionalità User-Agent Cl
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: UserAgentClientHintsEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserAgentClientHintsEnabled
   - Valore di esempio
@@ -21779,17 +21843,17 @@ Se si abilita o non si configura questo criterio, la funzionalità User-Agent Cl
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UserDataDir
+  ### <a name="userdatadir"></a>UserDataDir
 
-  #### Imposta la directory dei dati dell'utente
+  #### <a name="set-the-user-data-directory"></a>Imposta la directory dei dati dell'utente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Imposta la directory da usare per archiviare i dati degli utenti.
 
@@ -21801,19 +21865,19 @@ Per evitare perdite di dati o altri errori, non configurare questo criterio su u
 
 Per un elenco delle variabili che è possibile usare, vedere [https://go.microsoft.com/fwlink/?linkid=2095041](https://go.microsoft.com/fwlink/?linkid=2095041).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: UserDataDir
   - Nome Criteri di gruppo: Imposta la directory dei dati dell'utente
@@ -21821,20 +21885,20 @@ Per un elenco delle variabili che è possibile usare, vedere [https://go.microso
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: UserDataDir
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "${users}/${user_name}/Edge"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserDataDir
   - Valore di esempio
@@ -21845,17 +21909,17 @@ Per un elenco delle variabili che è possibile usare, vedere [https://go.microso
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UserDataSnapshotRetentionLimit
+  ### <a name="userdatasnapshotretentionlimit"></a>UserDataSnapshotRetentionLimit
 
-  #### Limita il numero di snapshot dei dati utente conservati per l'uso in caso di ripristino di emergenza
+  #### <a name="limits-the-number-of-user-data-snapshots-retained-for-use-in-case-of-emergency-rollback"></a>Limita il numero di snapshot dei dati utente conservati per l'uso in caso di ripristino di emergenza
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 86 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Dopo ogni aggiornamento della versione principale, Microsoft Edge creerà uno snapshot delle parti dei dati di esplorazione dell'utente da usare in caso di emergenza successiva che richieda un ripristino dello stato precedente temporaneo della versione. Se è stato eseguito un ripristino dello stato precedente temporaneo a una versione per cui un utente dispone di uno snapshot corrispondente, i dati dello snapshot vengono ripristinati. Questo consente agli utenti di mantenere impostazioni quali segnalibri e dati di riempimento automatico.
 
@@ -21863,19 +21927,19 @@ Se non si imposta questo criterio, verrà usato il valore predefinito di 3 snaps
 
 Se si imposta questo criterio, i vecchi snapshot vengono eliminati in base alle esigenze per rispettare il limite impostato. Se si imposta questo criterio su 0, non viene eseguita alcuno snapshot.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Numero intero
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: UserDataSnapshotRetentionLimit
   - Nome Criteri di gruppo: limita il numero di snapshot dei dati utente conservati per l'uso in caso di ripristino dello stato precedente
@@ -21883,14 +21947,14 @@ Se si imposta questo criterio, i vecchi snapshot vengono eliminati in base alle 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: UserDataSnapshotRetentionLimit
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000003
@@ -21900,17 +21964,17 @@ Se si imposta questo criterio, i vecchi snapshot vengono eliminati in base alle 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### UserFeedbackAllowed
+  ### <a name="userfeedbackallowed"></a>UserFeedbackAllowed
 
-  #### Consente il feedback degli utenti
+  #### <a name="allow-user-feedback"></a>Consente il feedback degli utenti
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Microsoft Edge usa la funzionalità di feedback (abilitata per impostazione predefinita) per consentire agli utenti di inviare feedback, suggerimenti o questionari dei clienti e di segnalare eventuali problemi riscontrati con il browser. Inoltre, per impostazione predefinita, gli utenti non possono disabilitare (disattivare) la funzionalità di feedback di Edge.
 
@@ -21918,19 +21982,19 @@ Se si abilita o non si configura questo criterio, gli utenti possono richiamare 
 
 Se si disabilita questo criterio, gli utenti non possono richiamare la funzionalità di feedback di Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: UserFeedbackAllowed
   - Nome Criteri di gruppo: Consente il feedback degli utenti
@@ -21938,20 +22002,20 @@ Se si disabilita questo criterio, gli utenti non possono richiamare la funzional
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: UserFeedbackAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: UserFeedbackAllowed
   - Valore di esempio
@@ -21962,17 +22026,17 @@ Se si disabilita questo criterio, gli utenti non possono richiamare la funzional
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### VerticalTabsAllowed
+  ### <a name="verticaltabsallowed"></a>VerticalTabsAllowed
 
-  #### Configura la disponibilità di un layout verticale per le schede sul lato del browser
+  #### <a name="configures-availability-of-a-vertical-layout-for-tabs-on-the-side-of-the-browser"></a>Configura la disponibilità di un layout verticale per le schede sul lato del browser
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configura se un utente può accedere a un layout alternativo in cui le schede sono allineate verticalmente sul lato del browser anziché nella parte superiore.
 Quando sono aperte diverse schede, questo layout offre una migliore visualizzazione e gestione della scheda. C'è una migliore visibilità dei titoli del sito, è più facile analizzare le icone allineate e c'è più spazio per gestire e chiudere le schede.
@@ -21982,19 +22046,19 @@ Se si disabilita questo criterio, il layout di tabulazione verticale non sarà d
 Se si abilita o non si configura questo criterio, il layout di tabulazione sarà ancora in alto, ma un utente ha la possibilità di attivare le schede verticali sul lato.
 
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: VerticalTabsAllowed
   - Nome GP: configura la disponibilità di un layout verticale per le schede sul lato del browser
@@ -22002,20 +22066,20 @@ Se si abilita o non si configura questo criterio, il layout di tabulazione sarà
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: VerticalTabsAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: VerticalTabsAllowed
   - Valore di esempio
@@ -22026,17 +22090,17 @@ Se si abilita o non si configura questo criterio, il layout di tabulazione sarà
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### VideoCaptureAllowed
+  ### <a name="videocaptureallowed"></a>VideoCaptureAllowed
 
-  #### Consente o blocca l'acquisizione video
+  #### <a name="allow-or-block-video-capture"></a>Consente o blocca l'acquisizione video
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Controlla se i siti possono acquisire video.
 
@@ -22046,19 +22110,19 @@ Se si disabilita questo criterio, all'utente non viene inviata alcuna richiesta 
 
 Questo criterio influisce su tutti i tipi di input video, non solo sulla fotocamera predefinita.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: VideoCaptureAllowed
   - Nome Criteri di gruppo: Consente o blocca l'acquisizione video
@@ -22066,20 +22130,20 @@ Questo criterio influisce su tutti i tipi di input video, non solo sulla fotocam
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: VideoCaptureAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: VideoCaptureAllowed
   - Valore di esempio
@@ -22090,33 +22154,33 @@ Questo criterio influisce su tutti i tipi di input video, non solo sulla fotocam
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### VideoCaptureAllowedUrls
+  ### <a name="videocaptureallowedurls"></a>VideoCaptureAllowedUrls
 
-  #### Siti che possono accedere ai dispositivi di acquisizione video senza richiedere l'autorizzazione
+  #### <a name="sites-that-can-access-video-capture-devices-without-requesting-permission"></a>Siti che possono accedere ai dispositivi di acquisizione video senza richiedere l'autorizzazione
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica i siti Web, in base ai modelli URL, che possono usare i dispositivi di acquisizione video senza chiedere l'autorizzazione all'utente. I modelli in questo elenco vengono confrontati con l'origine di sicurezza dell'URL di richiesta. In caso di corrispondenza, al sito viene automaticamente concesso l'accesso ai dispositivi di acquisizione video.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: VideoCaptureAllowedUrls
   - Nome Criteri di gruppo: Siti che possono accedere ai dispositivi di acquisizione video senza richiedere l'autorizzazione
@@ -22124,14 +22188,14 @@ Questo criterio influisce su tutti i tipi di input video, non solo sulla fotocam
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\VideoCaptureAllowedUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\1 = "https://www.contoso.com/"
@@ -22139,7 +22203,7 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: VideoCaptureAllowedUrls
   - Valore di esempio
@@ -22153,17 +22217,17 @@ SOFTWARE\Policies\Microsoft\Edge\VideoCaptureAllowedUrls\2 = "https://[*.]contos
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WPADQuickCheckEnabled
+  ### <a name="wpadquickcheckenabled"></a>WPADQuickCheckEnabled
 
-  #### Imposta l'ottimizzazione WPAD
+  #### <a name="set-wpad-optimization"></a>Imposta l'ottimizzazione WPAD
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di disattivare l'ottimizzazione WPAD (Web Proxy AutoDiscovery) in Microsoft Edge.
 
@@ -22173,19 +22237,19 @@ Se si abilita o non si configura il criterio, l'ottimizzazione WPAD è abilitata
 
 Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimizzazione WPAD non può essere modificata dagli utenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WPADQuickCheckEnabled
   - Nome Criteri di gruppo: Imposta l'ottimizzazione WPAD
@@ -22193,20 +22257,20 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WPADQuickCheckEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WPADQuickCheckEnabled
   - Valore di esempio
@@ -22217,17 +22281,17 @@ Indipendentemente dall'abilitazione di questo criterio, l'impostazione di ottimi
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebAppInstallForceList
+  ### <a name="webappinstallforcelist"></a>WebAppInstallForceList
 
-  #### Configura l'elenco delle app Web installate forzatamente
+  #### <a name="configure-list-of-force-installed-web-apps"></a>Configura l'elenco delle app Web installate forzatamente
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Configurare il criterio per specificare un elenco di app web che si installano silenziosamente, senza l'intervento dell'utente, e gli utenti che possono disinstallarle o disattivarle.
 
@@ -22240,19 +22304,19 @@ e 3 membri facoltativi:
 
 - fallback_app_name (a partire da Microsoft Edge 90, consente di eseguire l'override del nome dell'app se non si tratta di un'app Web progressiva (PWA) o del nome dell'app che viene installato temporaneamente se si tratta di una PWA, ma è necessaria l'autenticazione prima che l'installazione possa essere completata).
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Dictionary
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebAppInstallForceList
   - Nome Criteri di gruppo: Configura l'elenco delle app Web installate forzatamente
@@ -22260,14 +22324,14 @@ e 3 membri facoltativi:
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebAppInstallForceList
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
@@ -22288,14 +22352,14 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 ]
 ```
 
-  ##### Valore di esempio compatto:
+  ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
   SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [{"create_desktop_shortcut": true, "default_launch_container": "window", "url": "https://www.contoso.com/maps"}, {"default_launch_container": "tab", "url": "https://app.contoso.edu"}, {"default_launch_container": "window", "fallback_app_name": "Editor", "url": "https://app.contoso.com/editor"}]
   ```
   
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebAppInstallForceList
   - Valore di esempio
@@ -22330,35 +22394,35 @@ SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebCaptureEnabled
+  ### <a name="webcaptureenabled"></a>WebCaptureEnabled
 
-  #### Abilita la funzionalità di acquisizione web in Microsoft Edge
+  #### <a name="enable-web-capture-feature-in-microsoft-edge"></a>Abilita la funzionalità di acquisizione web in Microsoft Edge
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - On Windows and macOS since 87 or later
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita la caratteristica di acquisizione Web in Microsoft Edge, che consente agli utenti di acquisire contenuto Web e di annotare l'acquisizione con strumenti di input penna.
 Se questo criterio viene abilitato o non viene configurato, l'opzione di acquisizione Web viene visualizzata nel menu di scelta rapida, nel menu impostazioni e altro ancora e usando la scelta rapida da tastiera CTRL + MAIUSC + S.
 Se si disabilita questo criterio, gli utenti non possono accedere alla funzione Acquisizione Web in Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: WebCaptureEnabled
   - Nome GP: abilita la funzionalità di acquisizione web in Microsoft Edge
@@ -22366,20 +22430,20 @@ Se si disabilita questo criterio, gli utenti non possono accedere alla funzione 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebCaptureEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave preferenza: WebCaptureEnabled
   - Valore di esempio
@@ -22390,17 +22454,17 @@ Se si disabilita questo criterio, gli utenti non possono accedere alla funzione 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebComponentsV0Enabled
+  ### <a name="webcomponentsv0enabled"></a>WebComponentsV0Enabled
 
-  #### Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)
+  #### <a name="re-enable-web-components-v0-api-until-m84-obsolete"></a>Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)
 
   
   >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80, fino alla versione 84
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché queste funzionalità sono consentite per la riabilitazione selettiva di Microsoft Edge versione 85. Le API dei componenti Web v0 (Shadow DOM v0, Custom Elements v0 e HTML Imports) sono state deprecate nel 2018 e sono state disabilitate per impostazione predefinita a partire da Microsoft Edge versione 80.
 
@@ -22408,19 +22472,19 @@ Se si imposta questo criterio su True, le funzionalità dei componenti Web v0 ve
 
 Se si imposta questo criterio su False o non si imposta questo criterio, le funzionalità dei componenti Web v0 saranno disabilitate per impostazione predefinita, a partire da Microsoft Edge versione 80.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebComponentsV0Enabled
   - Nome Criteri di gruppo: Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)
@@ -22428,20 +22492,20 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebComponentsV0Enabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebComponentsV0Enabled
   - Valore di esempio
@@ -22452,17 +22516,17 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebDriverOverridesIncompatiblePolicies
+  ### <a name="webdriveroverridesincompatiblepolicies"></a>WebDriverOverridesIncompatiblePolicies
 
-  #### Consente a WebDriver di ignorare i criteri non compatibili (deprecato)
+  #### <a name="allow-webdriver-to-override-incompatible-policies-deprecated"></a>Consente a WebDriver di ignorare i criteri non compatibili (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77, fino alla versione 84
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio non funziona perché WebDriver ora è compatibile con tutti i criteri esistenti.
 
@@ -22473,19 +22537,19 @@ Al momento, questo criterio disabilita i criteri [SitePerProcess](#siteperproces
 Se il criteri è abilitato, WebDriver sarà in grado di ignorare i criteri non compatibili.
 Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado di ignorare i criteri non compatibili.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebDriverOverridesIncompatiblePolicies
   - Nome Criteri di gruppo: Consente a WebDriver di ignorare i criteri non compatibili (deprecato)
@@ -22493,20 +22557,20 @@ Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado d
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebDriverOverridesIncompatiblePolicies
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebDriverOverridesIncompatiblePolicies
   - Valore di esempio
@@ -22517,36 +22581,36 @@ Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado d
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebRtcAllowLegacyTLSProtocols
+  ### <a name="webrtcallowlegacytlsprotocols"></a>WebRtcAllowLegacyTLSProtocols
 
-  #### Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)
+  #### <a name="allow-legacy-tlsdtls-downgrade-in-webrtc-deprecated"></a>Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - su Windows e macOS da 88 o versioni successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Se si abilita questo criterio, le connessioni peer di WebRTC possono eseguire il downgrade alle versioni obsolete dei protocolli TLS/DTLS (DTLS 1,0, TLS 1,0 e TLS 1,1).
 Se si disabilita o non si imposta questo criterio, queste versioni di TLS/DTLS sono disabilitate.
 
 Questo criterio è temporaneo e verrà rimosso in una versione futura di Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: WebRtcAllowLegacyTLSProtocols
   - Nome GP: Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)
@@ -22554,20 +22618,20 @@ Questo criterio è temporaneo e verrà rimosso in una versione futura di Microso
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebRtcAllowLegacyTLSProtocols
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000000
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcAllowLegacyTLSProtocols
   - Valore di esempio
@@ -22578,17 +22642,17 @@ Questo criterio è temporaneo e verrà rimosso in una versione futura di Microso
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebRtcLocalIpsAllowedUrls
+  ### <a name="webrtclocalipsallowedurls"></a>WebRtcLocalIpsAllowedUrls
 
-  #### Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC
+  #### <a name="manage-exposure-of-local-ip-addressess-by-webrtc"></a>Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 80 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Specifica un elenco di origini (URL) o modelli di nomi host (come "*contoso.com*") per cui l'indirizzo IP locale deve essere esposto da WebRTC.
 
@@ -22600,19 +22664,19 @@ Se si abilita, si disabilita o non si configura questo criterio e edge://flags/#
 
 Tenere presente che questo criterio indebolisce la protezione degli indirizzi IP locali che potrebbero essere necessari agli amministratori.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Elenco di stringhe
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebRtcLocalIpsAllowedUrls
   - Nome Criteri di gruppo: Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC
@@ -22620,14 +22684,14 @@ Tenere presente che questo criterio indebolisce la protezione degli indirizzi IP
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\WebRtcLocalIpsAllowedUrls
   - Percorso (consigliato): N/D
   - Nome valore: 1, 2, 3, ...
   - Tipo valore: elenco di REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\1 = "https://www.contoso.com"
@@ -22635,7 +22699,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcLocalIpsAllowedUrls
   - Valore di esempio
@@ -22649,17 +22713,17 @@ SOFTWARE\Policies\Microsoft\Edge\WebRtcLocalIpsAllowedUrls\2 = "*contoso.com*"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebRtcLocalhostIpHandling
+  ### <a name="webrtclocalhostiphandling"></a>WebRtcLocalhostIpHandling
 
-  #### Limita l'esposizione dell'indirizzo IP locale tramite WebRTC
+  #### <a name="restrict-exposure-of-local-ip-address-by-webrtc"></a>Limita l'esposizione dell'indirizzo IP locale tramite WebRTC
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente di specificare se WebRTC espone o meno l'indirizzo IP locale dell'utente.
 
@@ -22681,19 +22745,19 @@ Mapping delle opzioni del criterio:
 
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebRtcLocalhostIpHandling
   - Nome Criteri di gruppo: Limita l'esposizione dell'indirizzo IP locale tramite WebRTC
@@ -22701,20 +22765,20 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebRtcLocalhostIpHandling
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "default"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcLocalhostIpHandling
   - Valore di esempio
@@ -22725,17 +22789,17 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebRtcUdpPortRange
+  ### <a name="webrtcudpportrange"></a>WebRtcUdpPortRange
 
-  #### Limita l'intervallo di porte UDP locali usate da WebRTC
+  #### <a name="restrict-the-range-of-local-udp-ports-used-by-webrtc"></a>Limita l'intervallo di porte UDP locali usate da WebRTC
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Restringe l'intervallo di porte UDP utilizzato da WebRTC a un intervallo di porte specifico (endpoint inclusi).
 
@@ -22743,19 +22807,19 @@ Configurando questo criterio, si specifica l'intervallo di porte UDP locali che 
 
 Se non si configura questo criterio o se lo si imposta su una stringa vuota o un intervallo di porte non valido, WebRTC potrà usare qualsiasi porta UDP locale disponibile.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Stringa
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebRtcUdpPortRange
   - Nome Criteri di gruppo: Limita l'intervallo di porte UDP locali usate da WebRTC
@@ -22763,20 +22827,20 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebRtcUdpPortRange
   - Tipo valore: REG_SZ
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 "10000-11999"
 ```
 
-  #### Informazioni e impostazioni Mac
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
   - Nome chiave di preferenza: WebRtcUdpPortRange
   - Valore di esempio
@@ -22787,17 +22851,17 @@ Se non si configura questo criterio o se lo si imposta su una stringa vuota o un
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebWidgetAllowed
+  ### <a name="webwidgetallowed"></a>WebWidgetAllowed
 
-  #### Abilita il widget Web
+  #### <a name="enable-the-web-widget"></a>Abilita il widget Web
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita il widget Web. Se abilitato, gli utenti possono utilizzare il widget per eseguire ricerche sul Web dal proprio desktop o da un'applicazione. Il widget fornisce una casella di ricerca che mostra i suggerimenti Web e apre tutte le ricerche Web in Microsoft Edge. La casella di ricerca fornisce suggerimenti di ricerca (forniti da Bing) e URL. Il widget include anche riquadri di feed su cui gli utenti possono fare clic per visualizzare ulteriori informazioni su msn.com in una nuova scheda o finestra del browser Microsoft Edge. I riquadri di feed possono includere annunci. Il widget può essere avviato dalle impostazioni Microsoft Edge o dal menu "Altri strumenti" in Microsoft Edge.
 
@@ -22814,19 +22878,19 @@ L'opzione per avviare il widget dalle impostazioni Microsoft Edge verrà disabil
 L'opzione per avviare l'avvio del widget all'avvio di Windows (avvio automatico) verrà disabilitata.
 L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge verrà disabilitata.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebWidgetAllowed
   - Nome Criteri di gruppo: abilita il widget Web
@@ -22834,14 +22898,14 @@ L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge ver
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebWidgetAllowed
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -22851,17 +22915,17 @@ L'opzione per avviare il widget dal menu "Altri strumenti" di Microsoft Edge ver
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WebWidgetIsEnabledOnStartup
+  ### <a name="webwidgetisenabledonstartup"></a>WebWidgetIsEnabledOnStartup
 
-  #### Consenti il widget Web all'avvio di Windows
+  #### <a name="allow-the-web-widget-at-windows-startup"></a>Consenti il widget Web all'avvio di Windows
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 88 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Consente l'esecuzione del widget Web all'avvio di Windows.
 
@@ -22874,19 +22938,19 @@ L'opzione per avviare il widget all'avvio di Windows verrà disabilitata e disat
 Se si configura il criterio: il widget Web non verrà avviato all'avvio di Windows per tutti i profili.
 L'opzione per avviare il widget all'avvio di Windows verrà disattivata nelle impostazioni Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebWidgetIsEnabledOnStartup
   - Nome Criteri di gruppo: consenti il widget Web all'avvio di Windows
@@ -22894,14 +22958,14 @@ L'opzione per avviare il widget all'avvio di Windows verrà disattivata nelle im
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WebWidgetIsEnabledOnStartup
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -22911,17 +22975,17 @@ L'opzione per avviare il widget all'avvio di Windows verrà disattivata nelle im
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WinHttpProxyResolverEnabled
+  ### <a name="winhttpproxyresolverenabled"></a>WinHttpProxyResolverEnabled
 
-  #### Usa il resolver proxy di Windows (deprecato)
+  #### <a name="use-windows-proxy-resolver-deprecated"></a>Usa il resolver proxy di Windows (deprecato)
 
   >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 84 o successive
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Questo criterio è deprecato perché verrà sostituito da una funzione simile in una versione futura, vedere https://crbug.com/1032820.
 
@@ -22933,19 +22997,19 @@ Se questo criterio viene abilitato, verrà usato il resolver proxy di Windows.
 
 Se si disabilitano o non si configura questo criterio, verrà usato il resolver proxy Microsoft Edge.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WinHttpProxyResolverEnabled
   - Nome Criteri di gruppo: usa il resolver proxy di Windows (deprecato)
@@ -22953,14 +23017,14 @@ Se si disabilitano o non si configura questo criterio, verrà usato il resolver 
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WinHttpProxyResolverEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -22970,17 +23034,17 @@ Se si disabilitano o non si configura questo criterio, verrà usato il resolver 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### WindowOcclusionEnabled
+  ### <a name="windowocclusionenabled"></a>WindowOcclusionEnabled
 
-  #### Abilita l'occlusione della finestra
+  #### <a name="enable-window-occlusion"></a>Abilita l'occlusione della finestra
 
   
   
-  #### Versioni supportate:
+  #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows dalla versione 89 o successiva
 
-  #### Descrizione
+  #### <a name="description"></a>Descrizione
 
   Abilita l'occlusione della finestra in Microsoft Edge.
 
@@ -22990,19 +23054,19 @@ Se si disabilita questa impostazione, Microsoft Edge non rileverà quando una fi
 
 Se non viene impostato questo criterio, il rilevamento delle finestre nascoste sarà abilitato.
 
-  #### Funzionalità supportate:
+  #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
   - Può essere consigliato: no
   - Aggiornamento dei criteri dinamici: sì
 
-  #### Tipo:
+  #### <a name="data-type"></a>Tipo:
 
   - Booleano
 
-  #### Informazioni e impostazioni di Windows
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WindowOcclusionEnabled
   - Nome Criteri di gruppo: Abilita occlusione finestra
@@ -23010,14 +23074,14 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
-  ##### Impostazioni del Registro di sistema di Windows
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: WindowOcclusionEnabled
   - Tipo valore: REG_DWORD
 
-  ##### Valore di esempio
+  ##### <a name="example-value"></a>Valore di esempio
 
 ```
 0x00000001
@@ -23028,7 +23092,7 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
   [Torna all'inizio](#microsoft-edge---policies)
 
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Configurazione di Microsoft Edge](configure-microsoft-edge.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

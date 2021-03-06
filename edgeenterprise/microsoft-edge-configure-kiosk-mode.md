@@ -1,30 +1,30 @@
 ---
-title: Configurare la modalità tutto schermo di Microsoft Edge
+title: Configurazione della modalità tutto schermo di Microsoft Edge
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Configurare la modalità tutto schermo di Microsoft Edge
-ms.openlocfilehash: 3f6e75b73d8c541bae4442263a5b415aeeb15eb1
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
+description: Informazioni sulle funzionalità della modalità tutto schermo e su come configurare le opzioni della modalità tutto schermo di Microsoft Edge.
+ms.openlocfilehash: 9f2ce26f2c505ba3fc9e2e05b057e5d5df8257fe
+ms.sourcegitcommit: 8da3a4de1a14514014b6d7b103ba79f2ace48044
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314619"
+ms.lasthandoff: 03/04/2021
+ms.locfileid: "11388545"
 ---
-# Configurare la modalità tutto schermo di Microsoft Edge
+# <a name="configure-microsoft-edge-kiosk-mode"></a>Configurazione della modalità tutto schermo di Microsoft Edge
 
 In questo articolo viene descritto come configurare le opzioni della modalità tutto schermo di Microsoft Edge che è possibile provare. Verrà anche descritta una roadmap di funzionalità che abbiamo come obiettivo.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 87 o successiva.
 
-## Panoramica
+## <a name="overview"></a>Panoramica
 
 La modalità tutto schermo di Microsoft Edge offre due esperienze di blocco del browser, in modo che le organizzazioni possano creare, gestire e fornire la migliore esperienza ai propri clienti. Sono disponibili le seguenti esperienze di blocco:  
 
@@ -33,11 +33,11 @@ La modalità tutto schermo di Microsoft Edge offre due esperienze di blocco del 
 
 Entrambe le esperienze eseguono una sessione di Microsoft Edge in modalità InPrivate, che protegge i dati dell'utente.
 
-## Configurare la modalità tutto schermo di Microsoft Edge
+## <a name="set-up-microsoft-edge-kiosk-mode"></a>Configurare la modalità tutto schermo di Microsoft Edge
 
 È disponibile un set iniziale di funzionalità della modalità tutto schermo da testare con il canale stabile Microsoft Edge, versione 87. Puoi scaricare l’ultima versione da [Microsoft Edge (canale stabile ufficiale)](https://www.microsoft.com/edge).
 
-### Funzionalità supportate dalla modalità tutto schermo
+### <a name="kiosk-mode-supported-features"></a>Funzionalità supportate dalla modalità tutto schermo
 
 La tabella seguente elenca le caratteristiche supportate dalla modalità tutto schermo di Microsoft Edge e della versione legacy di Microsoft Edge. Usare questa tabella come guida per la transizione a Microsoft Edge, confrontando il modo in cui tali caratteristiche sono supportate in entrambe le versioni di Microsoft Edge.
 
@@ -56,35 +56,35 @@ La tabella seguente elenca le caratteristiche supportate dalla modalità tutto s
 |[Gestione preferiti](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedfavorites) (criterio)|N|S|89|S|
 |[Abilita la stampante](https://docs.microsoft.com/deployedge/microsoft-edge-policies#printingenabled) (criterio)|S|S|89|S|
 |[Configura l'URL della pagina Nuova scheda](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagelocation) (criterio)|N|S||S|
-|Pulsante Termina sessione | N| S| 89|S|
+|Pulsante Termina sessione * | N| S| 89|S|
 |Tutti gli URL Microsoft Edge interni sono bloccati, ad eccezione di *edge://downloads* e *edge://print* |N|S|89|S|
-| CTRL+N bloccato (apri una nuova finestra) | S | S | 89 |S|
-| CTRL+T bloccato (apri una nuova scheda) |S | S | 89 |S|
+| CTRL+N bloccato (apri una nuova finestra) * | S | S | 89 |S|
+| CTRL+T bloccato (apri una nuova scheda) |S | N | 89 |S|
 |Impostazioni e altro (...) mostreranno solo le opzioni obbligatorie  |S |S |89 |S|
 |Limitazione del lancio di altre applicazioni dal browser|S|S|90/91|S|
 |Blocco delle impostazioni di stampa dell'interfaccia utente|S|S|90/91|S|
 |[Imposta la pagina Nuova scheda come home page](https://docs.microsoft.com/deployedge/microsoft-edge-policies#homepageisnewtabpage) (criterio)|-|-|TBD|S|
 
 > [!NOTE]
-> Man mano che la modalità tutto schermo si evolve, saranno disponibili più funzionalità.
+> Le funzionalità seguite da "*" sono abilitate solo in uno scenario con una singola app con accesso assegnato.
 
-## Usare le funzionalità della modalità tutto schermo
+## <a name="use-kiosk-mode-features"></a>Usare le funzionalità della modalità tutto schermo
 
 È possibile richiamare le funzionalità della modalità tutto schermo di Microsoft Edge con le seguenti opzioni della riga di comando per Windows 10 per Insegna digitale o schermo interattivo e per la navigazione pubblica.
 
-### Segnaletica digitale/interattiva in modalità tutto schermo
+### <a name="kiosk-mode-digitalinteractive-signage"></a>Segnaletica digitale/interattiva in modalità tutto schermo
  
 ```
 msedge.exe --kiosk www.contoso.com --edge-kiosk-type=fullscreen
 ```
 
-### Esplorazione pubblica in modalità tutto schermo
+### <a name="kiosk-mode-public-browsing"></a>Esplorazione pubblica in modalità tutto schermo
 
 ```
 msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
 ```
 
-### Opzioni aggiuntive della riga di comando
+### <a name="additional-command-line-options"></a>Opzioni aggiuntive della riga di comando
 
 - **--no-first-run**: disabilita la prima esperienza in esecuzione di Microsoft Edge.
 
@@ -119,7 +119,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
    msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --kiosk-idle-timeout-minutes=1
    ```
 
-## Criteri di supporto per la modalità tutto schermo
+## <a name="support-policies-for-kiosk-mode"></a>Criteri di supporto per la modalità tutto schermo
 
 Usa uno dei criteri di Microsoft Edge elencati nella tabella di seguito per ottimizzare l'esperienza del chiosco multimediale per il tipo di modalità tutto schermo di Microsoft Edge configurata. Per ulteriori informazioni su questi criteri, vedi [Microsoft Edge - Informazioni di riferimento sui criteri del browser](https://docs.microsoft.com/deployedge/microsoft-edge-policies).
 
@@ -141,9 +141,9 @@ Usa uno dei criteri di Microsoft Edge elencati nella tabella di seguito per otti
 |[Impostazioni SmartScreen](https://docs.microsoft.com/deployedge/microsoft-edge-policies#smartscreen-settings-policies) |S |S |
 |[EdgeCollectionsEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgecollectionsenabled)|S|S|
 
-## Microsoft Edge con accesso assegnato
+## <a name="microsoft-edge-with-assigned-access"></a>Microsoft Edge con accesso assegnato
 
-### Chiosco multimediale con app singola
+### <a name="single-app-kiosk"></a>Chiosco multimediale con app singola
 
 Attualmente, Microsoft Edge supporta un sottogruppo delle stesse modalità tutto schermo della Versione legacy di Microsoft Edge per accesso assegnato con app singola con le seguenti esperienze di blocco: segnaletica digitale/interattiva ed esplorazione pubblica.  
 
@@ -153,13 +153,13 @@ La modalità tutto schermo di Microsoft Edge con app singola con accesso assegna
 
 Per installare una build di Windows 10 Insider Preview su PC, seguire le istruzioni in  [Introduzione alle build di Windows 10 Insider Preview](https://docs.microsoft.com/windows-insider/get-started).
 
-### Chiosco con più app
+### <a name="multi-app-kiosk"></a>Chiosco con più app
 
 Microsoft Edge può essere eseguito con [accesso assegnato con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) su Windows 10, che è l'equivalente del tipo di modalità tutto schermo per l'esplorazione normale di Microsoft Edge Legacy. Per configurare Microsoft Edge con l'accesso assegnato con più app, segui le istruzioni su come [Configurare un chiosco multimediale con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps). (L'AUMID per il canale stabile Microsoft Edge è **MSEdge**.)
 
 Quando usi Microsoft Edge con accesso assegnato con più app, puoi configurare il chiosco multimediale di Microsoft Edge in modo da utilizzare i [criteri del browser Microsoft Edge](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies) per configurare l'esperienza di esplorazione per soddisfare i tuoi requisiti univoci.
 
-### Configurare usando le impostazioni di Windows
+### <a name="configure-using-windows-settings"></a>Configurare usando le impostazioni di Windows
 
 Il modo più semplice per configurare uno o due dispositivi in modalità tutto schermo con app singola è tramite le impostazioni di Windows. Usa i seguenti passaggi per configurare un computer in modalità tutto schermo con app singola.
 
@@ -207,7 +207,7 @@ Il modo più semplice per configurare uno o due dispositivi in modalità tutto s
 
 13. Disconnettiti dal chiosco multimediale ed esegui l'accesso con l'account chiosco locale per convalidare la configurazione.
 
-## Limitazioni funzionali
+## <a name="functional-limitations"></a>Limitazioni funzionali
 
 Con il rilascio della versione di anteprima della modalità tutto schermo stiamo continuando a migliorare il prodotto e aggiungere nuove funzionalità.
 
@@ -225,9 +225,9 @@ Con il rilascio della versione di anteprima della modalità tutto schermo stiamo
 - [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
 - [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
 
-## Roadmap
+## <a name="roadmap"></a>Roadmap
 
-### All'inizio del 2021
+### <a name="in-early-2021"></a>All'inizio del 2021
 
 Verranno aggiunte le funzionalità e il supporto seguenti:
 
@@ -237,7 +237,7 @@ Verranno aggiunte le funzionalità e il supporto seguenti:
 - Limitazione del lancio di altre applicazioni dal browser.
 - Blocco delle impostazioni di stampa dell'interfaccia utente.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Pianificare la distribuzione di Microsoft Edge](deploy-edge-plan-deployment.md)
