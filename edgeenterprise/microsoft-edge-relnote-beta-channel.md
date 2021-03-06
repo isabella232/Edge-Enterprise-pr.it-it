@@ -3,23 +3,26 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 03/04/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: e2a2933e7edf3456bcb33e70d6db7a36ab72aa07
-ms.sourcegitcommit: 6603dc23d8e7ff46df76bc6aa48b93a0b435fe7d
+ms.openlocfilehash: e5096d437f8b70ed94add8341db1cdb1d4b69b84
+ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11385626"
+ms.lasthandoff: 03/05/2021
+ms.locfileid: "11393630"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
 Queste note sulla versione contengono informazioni sulle nuove funzionalità e gli aggiornamenti non relativi alla sicurezza inclusi nel canale Microsoft Edge Beta. Le versioni precedenti di queste note sulla versione sono archiviate [qui](microsoft-edge-relnote-archive-beta-channel.md).
+
+> [!NOTE]
+> Abbiamo aggiornato la versione beta di Microsoft Edge [89.0.774.18:](#version-89077418-february-3) nota sulla versione del 3 febbraio per riflettere le funzionalità disponibili.
 
 ## <a name="version-89077445-march-3"></a>Versione 89.0.774.45: 3 marzo
 
@@ -58,18 +61,9 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 - **Miglioramenti all'esperienza di selezione del testo nei documenti in formato PDF**. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
 
-- **L'avviso "Disabilitare le estensioni per la modalità sviluppatore" può essere ignorato definitivamente**. A partire da Microsoft Edge versione 89, è possibile disattivare l'avviso "Disabilitare le estensioni per la modalità sviluppatore" selezionando l'opzione "Non visualizzare più questo messaggio".
+- **Il campo Data di nascita ora è supportato nel riempimento automatico.** Oggi Microsoft Edge permette di risparmiare tempo e fatica nella compilazione di moduli e nella creazione di account online compilando automaticamente i dati, come indirizzi, nomi, numeri di telefono e così via. A partire da Microsoft Edge versione 89, viene aggiunto il supporto per un altro campo che può essere salvato e compilato automaticamente: la data di nascita. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
 
-- **Gestione delle estensioni dalla barra degli strumenti**. Il menu delle nuove estensioni sulla barra degli strumenti consente di nascondere o bloccare facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
-
-- **Supporto per la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina di ricerca nella cronologia e nell'hub della cronologia**. A partire da Microsoft Edge versione 89, trovare un articolo/sito Web sarà più facile con la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina della cronologia e nell'hub della cronologia. Gli utenti possono cercare contenuti/descrizioni/intervalli di tempo (ad esempio"ricetta per torta della settimana scorsa") oltre a titoli/corrispondenze con parole chiave dell'URL.
-
-- **Produttività:**
-
-  - Il campo Data di nascita ora è supportato nel riempimento automatico. Oggi Microsoft Edge permette di risparmiare tempo e fatica nella compilazione di moduli e nella creazione di account online compilando automaticamente i dati, come indirizzi, nomi, numeri di telefono e così via. A partire da Microsoft Edge versione 89, viene aggiunto il supporto per un altro campo che può essere salvato e compilato automaticamente: la data di nascita. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
-  - Estendere i suggerimenti di riempimento automatico per includere il contenuto degli Appunti. Il contenuto degli Appunti viene analizzato quando si seleziona un campo di profilo/indirizzo (ad esempio telefono, posta elettronica, CAP, città, stato e così via), in modo da mostrare i suggerimenti per il riempimento automatico.
-
-- **Supporto per il blocco della riproduzione automatica dei video**. A partire da Microsoft Edge versione 89, gli utenti potranno impedire la riproduzione automatica degli elementi multimediali.
+- **Supporto per la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina di ricerca nella cronologia e nell'hub della cronologia**. A partire da Microsoft Edge versione 89, trovare un articolo/sito Web sarà più facile con la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina della cronologia e nell'hub della cronologia. Gli utenti possono cercare contenuti/descrizioni/intervalli di tempo (ad esempio"ricetta per torta della settimana scorsa") oltre a titoli/corrispondenze con parole chiave dell'URL. Questa funzionalità è limitata a un gruppo di utenti selezionati casualmente che hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
 
 ### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
