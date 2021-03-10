@@ -1,10 +1,8 @@
-# last revised 03/02/2021
+# last revised 03/08/2021
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
   href: 'https://docs.microsoft.com/microsoft-edge/'
-- name: Aggiornamenti del contenuto di Microsoft Edge
-  href: microsoft-edge-content-updates.md
 - name: Introduzione a Microsoft Edge
   items:
     - name: Informazioni sui canali di Microsoft Edge
@@ -93,12 +91,18 @@
       href: microsoft-edge-security-identity.md
     - name: Microsoft Edge ed Enterprise State Roaming
       href: microsoft-edge-enterprise-state-roaming.md
-    - name: Pianificazione della transizione nella modalità tutto schermo
+    - name: Pianificare la transizione in modalità tutto schermo
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: Configurazione della modalità tutto schermo di Microsoft Edge
       href: microsoft-edge-configure-kiosk-mode.md
-    - name: Sincronizzazione di Microsoft Edge
-      href: microsoft-edge-enterprise-sync.md
+    - name: Sincronizzazione aziendale di Microsoft Edge
+      items:
+        - name: Configurare Microsoft Edge Sync
+          href: microsoft-edge-enterprise-sync.md
+        - name: Diagnosticare e risolvere i problemi di sincronizzazione di Microsoft Edge
+          href: microsoft-edge-troubleshoot-enterprise-sync.md
+        - name: Domande frequenti sulla sincronizzazione
+          href: microsoft-edge-enterprise-sync-faq.md
     - name: Sincronizzazione locale per gli utenti di Active Directory
       href: microsoft-edge-on-premises-sync.md
     - name: Lettre PDF in Microsoft Edge
