@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/04/2021
+ms.date: 03/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 24fc6e567073f98cdadcfc3fa61c20c1ad5f1ab5
-ms.sourcegitcommit: f63a30c3e64e9e57fd76b6675ddff1fc2bbbeac8
+ms.openlocfilehash: 96525327c75231974e2e2976c1b811dee3a6b03e
+ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/05/2021
-ms.locfileid: "11393710"
+ms.lasthandoff: 03/09/2021
+ms.locfileid: "11400165"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
@@ -28,6 +28,10 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
+
+## <a name="version-89077448-march-8"></a>Versione 89.0.774.48: 8 marzo
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 <!-- begin major 89 -->
 ## <a name="version-89077445-march-4"></a>Versione 89.0.774.45: 4 marzo
@@ -52,9 +56,11 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
 
 - **Miglioramento delle prestazioni del browser con le schede di sospensione**. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare l’intervallo di tempo prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso di lavoro, sono anche disponibili sistemi [euristici](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) che evitano che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità può essere gestita tramite i criteri di gruppo.
 
-- **Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud**. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In questo modo i dati degli utenti vengano cancellati dai servizi Microsoft, oltre a risolvere alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
+- **Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud**. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In questo modo i dati degli utenti vengono cancellati dai servizi Microsoft, inoltre vengono risolti alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
 
-- **Miglioramenti all'esperienza di selezione del testo nei documenti in formato PDF**. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
+- **Abilitazione intelligente di Single Sign-On (SSO) per tutti gli account di Windows Azure Active Directory (Azure AD) per gli utenti con un singolo profilo Microsoft Edge non Azure AD**.  Attivare automaticamente questa impostazione per gli utenti che potrebbero trarre il massimo vantaggio da questa funzionalità. Se un utente ha un solo profilo Microsoft Edge (non Azure AD o Modalità Bambini), l'impostazione verrà automaticamente attivata all'avvio di Microsoft Edge. Questo interruttore automatico verrà disattivato automaticamente se un utente sceglie in un secondo momento di accedere a un altro profilo Microsoft Edge con un account Azure AD. Gli utenti possono aggiornare manualmente le proprie preferenze per questa funzionalità in **Impostazioni > Profili > Preferenze profilo > Consenti Single Sign-On per i siti aziendali o dell'istituto di istruzione che usano questo profilo**.
+
+- **Miglioramenti all'esperienza di selezione del testo nei documenti PDF**. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
 
 - **Il campo Data di nascita ora è supportato nel riempimento automatico.** Oggi Microsoft Edge permette di risparmiare tempo e fatica nella compilazione di moduli e nella creazione di account online compilando automaticamente i dati, come indirizzi, nomi, numeri di telefono e così via. A partire da Microsoft Edge versione 89, viene aggiunto il supporto per un altro campo che può essere salvato e compilato automaticamente: la data di nascita. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
 
