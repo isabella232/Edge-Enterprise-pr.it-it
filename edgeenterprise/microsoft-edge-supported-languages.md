@@ -1,28 +1,28 @@
 ---
-title: Supporto per le lingue in Microsoft Edge
+title: Supporto per la lingua di Microsoft Edge
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 03/01/2021
+ms.date: 03/10/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Supporto per le lingue in Microsoft Edge
-ms.openlocfilehash: ec2c61bc5a94f47769685a2764fa9cc2e58a9898
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+description: Supporto per la lingua di visualizzazione di Microsoft Edge per Windows e macOS.
+ms.openlocfilehash: af8d2a57d35411600237d09ad528c7b071228d21
+ms.sourcegitcommit: 2b902ecf31430f3fc75d3731f26255aea0bb937e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11384993"
+ms.lasthandoff: 03/10/2021
+ms.locfileid: "11406161"
 ---
-# <a name="microsoft-edge-language-support"></a>Supporto per le lingue in Microsoft Edge
+# <a name="microsoft-edge-language-support"></a>Supporto per la lingua di Microsoft Edge
 
-Questo articolo illustra come usare le impostazioni Microsoft Edge per aggiungere una lingua supportata al browser. Microsoft Edge supporta 96 lingue in Windows e 91 in macOS.
+Questo articolo illustra come usare le impostazioni di Microsoft Edge per aggiungere una lingua supportata al browser. Microsoft Edge supporta 84 lingue di visualizzazione in Windows e 81 lingue di visualizzazione in macOS.
 
 > [!NOTE]
-> Questo articolo si applica a Microsoft Edge versione 78 o successiva.
+> Questo articolo riguarda Microsoft Edge versione 78 o successive.
 
 ## <a name="add-a-supported-language-to-microsoft-edge"></a>Aggiungere una lingua supportata a Microsoft Edge
 
@@ -56,14 +56,14 @@ A seconda della lingua, vedrai una o più delle seguenti opzioni:
 Oltre a usare una lingua straniera nel browser, puoi usare l'estensione [Translator per Microsoft Edge](https://www.microsoft.com/p/translator-for-microsoft-edge/9nblggh4n4n3) per tradurre pagine Web e selezioni del testo in lingua straniera per oltre 60 lingue.
 
 > [!NOTE]
-> Se l'estensione Translator non funziona dopo l'installazione, riavvia Microsoft Edge. Se l'estensione continua a non funzionare, fornisci un feedback tramite Hub di Feedback.
+> Se l'estensione Translator non funziona dopo l'installazione, riavvia Microsoft Edge. Se il problema persiste, invia un feedback tramite Hub di Feedback.
 
-## <a name="supported-languages"></a>Lingue supportate
+## <a name="supported-display-languages"></a>Lingue di visualizzazione supportate
 
-Nella tabella seguente sono elencate le lingue supportate da Microsoft Edge.
+Nella tabella seguente sono elencate le lingue di visualizzazione supportate in Microsoft Edge.
 
 > [!NOTE]
-> Le lingue non supportate da Microsoft Edge su macOS sono indicate da un asterisco (*) dopo il paese/area geografica.  
+> Le lingue non supportate in Microsoft Edge su macOS sono indicate con un asterisco (*) dopo il paese/area geografica.  
 
 |                      Lingua                      |             Paese/area geografica              |      Codice      |
 |----------------------------------------------------|-----------------------------------------|----------------|

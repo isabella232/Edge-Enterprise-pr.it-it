@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/03/2021
+ms.date: 03/10/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 130ed008a190edb92649beb658084c157ebade50
-ms.sourcegitcommit: bd83f2fbc4d7943e8f19c24414b65ed9d9009f2d
+ms.openlocfilehash: 94ad135f23dae83391e873ef120e6c88b44d0e27
+ms.sourcegitcommit: e3762b1a204c143b4e2264100affae3d9ddaaffc
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11388726"
+ms.lasthandoff: 03/11/2021
+ms.locfileid: "11406377"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -29,29 +29,36 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## <a name="new-policies"></a>Nuovi criteri
+## <a name="new-and-deprecated-policies"></a>Criteri nuovi e deprecati
 
-Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
+Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
 
-| Nome | Didascalia |
+|Nome|Didascalia|
 |--|--|
-|[PrintRasterizationMode](#printrasterizationmode)|Modalità di rasterizzazione di stampa|
+|[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata (deprecato)|
 
 ## <a name="available-policies"></a>Criteri disponibili
 
 In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser disponibili in questa versione di Microsoft Edge. Usa i collegamenti nella tabella per ottenere altri dettagli su criteri specifici.
 
-|||
-|-|-|
-|[Impostazioni di Application Guard](#application-guard-settings)|[Cast](#cast)|
-|[Impostazioni contenuto](#content-settings)|[Provider di ricerca predefinito](#default-search-provider)|
-|[Extensions](#extensions)|[Autenticazione HTTP](#http-authentication)|
-|[Impostazioni modalità tutto schermo](#kiosk-mode-settings)|[Gestibilità](#manageability)|
-|[Messaggistica nativa](#native-messaging)|[Gestione e protezione delle password](#password-manager-and-protection)|
-|[Prestazioni](#performance)|[Stampa](#printing)|
-|[Server proxy](#proxy-server)|[Impostazioni schede di sospensione](#sleeping-tabs-settings)|
-|[Impostazioni SmartScreen](#smartscreen-settings)|[Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)|
-|[Ulteriori informazioni](#additional)|
+- [Impostazioni di Application Guard](#application-guard-settings)
+- [Cast](#cast)
+- [Impostazioni contenuto](#content-settings)
+- [Provider di ricerca predefinito](#default-search-provider)
+- [Extensions](#extensions)
+- [Autenticazione HTTP](#http-authentication)
+- [Impostazioni modalità tutto schermo](#kiosk-mode-settings)
+- [Gestibilità](#manageability)
+- [Messaggistica nativa](#native-messaging)
+- [Gestione e protezione delle password](#password-manager-and-protection)
+- [Prestazioni](#performance)
+- [Stampa](#printing)
+- [Server proxy](#proxy-server)
+- [Impostazioni schede di sospensione](#sleeping-tabs-settings)
+- [Impostazioni SmartScreen](#smartscreen-settings)
+- [Avvio, home page e pagina Nuova scheda](#startup-home-page-and-new-tab-page)
+- [Ulteriori informazioni](#additional)
+
 
 ### [*<a name="application-guard-settings"></a>Impostazioni di Application Guard*](#application-guard-settings-policies)
 
@@ -395,7 +402,7 @@ e suggerimenti per i servizi Microsoft|
 |[RunAllFlashInAllowMode](#runallflashinallowmode)|Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)|
 |[SSLErrorOverrideAllowed](#sslerroroverrideallowed)|Consente agli utenti di procedere nella pagina di avviso HTTPS|
 |[SSLErrorOverrideAllowedForOrigins](#sslerroroverrideallowedfororigins)|Consente agli utenti di procedere nella pagina di avviso HTTPS per origini specifiche|
-|[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata|
+|[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata (deprecato)|
 |[SaveCookiesOnExit](#savecookiesonexit)|Salva i cookie quando Microsoft Edge si chiude|
 |[SavingBrowserHistoryDisabled](#savingbrowserhistorydisabled)|Disattiva il salvataggio della cronologia del browser|
 |[ScreenCaptureAllowed](#screencaptureallowed)|Consente o rifiuta l'acquisizione dello schermo|
@@ -1895,7 +1902,7 @@ Se il criterio non viene disattivato, sta a significare che[DefaultFileSystemRea
 
 I modelli di URL non possono entrare in conflitto con [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -1964,7 +1971,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemReadGuardSetting](#def
 
 I modelli di URL non possono entrare in conflitto con [FileSystemReadAskForUrls](#filesystemreadaskforurls) Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2033,7 +2040,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#de
 
 I modelli di URL non possono entrare in conflitto con [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2102,7 +2109,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#de
 
 I modelli di URL non possono entrare in conflitto con [FileSystemWriteAskForUrls](#filesystemwriteaskforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere https://cloud.google.com/docs/chrome-enterprise/policies/url-patterns.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2169,6 +2176,8 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
 
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+
   #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
@@ -2233,6 +2242,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
   Definisce un elenco di siti, in base ai modelli URL, che non possono mostrare immagini.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2299,6 +2310,8 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
 
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+
   #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
@@ -2363,6 +2376,8 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
   Crea un elenco di modelli URL per specificare i siti che non possono mostrare contenuti misti (ovvero contenuti HTTP nei siti HTTPS) bloccabili (ossia attivi) e per quali contenuti misti eventualmente bloccabili verranno disabilitati gli aggiornamenti.
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -9129,7 +9144,7 @@ Se si abilita o non si configura questo criterio, gli utenti possono avviare il 
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la modifica per impedire le richieste XHR sincrone durante la chiusura della pagina. Non funzionerà in Microsoft Edge versione 88.
+  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la modifica per impedire le richieste XHR sincrone durante la chiusura della pagina. Non funzionerà in Microsoft Edge versione 93.
 
 Questo criterio consente di specificare che una pagina può inviare richieste XHR sincrone durante la chiusura della pagina.
 
@@ -11052,7 +11067,7 @@ Se si abilita questo criterio, viene usato il client DNS predefinito, se disponi
 
 Se si disabilita questo criterio, il client DNS incorporato viene usato solo quando è in uso DNS-over-HTTPS.
 
-Se non si configura questo criterio, il client DNS predefinito è abilitato per impostazione predefinita.
+Se non si configura questo criterio, il client DNS predefinito è abilitato per impostazione predefinita in macOS e Android (quando non sono abilitati né DNS privati né VPN).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -11112,7 +11127,7 @@ Se non si configura questo criterio, il client DNS predefinito è abilitato per 
 
   Questo criterio è deprecato perché serve solo come meccanismo a breve termine per offrire alle aziende più tempo per aggiornare i propri ambienti e segnalare problemi se risultano incompatibili con lo strumento di verifica predefinito.
 
-Non funzionerà in Microsoft Edge versione 87, quando è prevista la rimozione dello strumento di verifica del certificato legacy in Mac OS X.
+Non funzionerà in Microsoft Edge versione 92, quando è prevista la rimozione del supporto per la verifica dei certificati legacy in Mac OS X.
 
 
   #### <a name="supported-features"></a>Funzionalità supportate:
@@ -19284,9 +19299,9 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   ### <a name="sslversionmin"></a>SSLVersionMin
 
-  #### <a name="minimum-tls-version-enabled"></a>Versione TLS minima abilitata
+  #### <a name="minimum-tls-version-enabled-deprecated"></a>Versione TLS minima abilitata (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### <a name="supported-versions"></a>Versioni supportate:
 
@@ -19294,7 +19309,9 @@ SOFTWARE\Policies\Microsoft\Edge\SSLErrorOverrideAllowedForOrigins\2 = "[*.]exam
 
   #### <a name="description"></a>Descrizione
 
-  Imposta la versione minima supportata di TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
+  Il supporto per l'eliminazione dell'avviso TLS 1.0/1.1 verrà eliminato da Microsoft Edge a partire dalla versione 91 (intorno a maggio 2021) e il criterio non funzionerà più.
+
+Imposta la versione minima supportata di TLS. Se non si configura questo criterio, Microsoft Edge mostrerà un errore per TLS 1.0 e TLS 1.1, ma l'utente potrà ignorarlo.
 
 Se il criterio viene abilitato, Microsoft Edge non userà alcuna versione di SSL/TLS più vecchia di quella specificata. Qualsiasi valore non riconosciuto viene ignorato.
 
@@ -19323,8 +19340,8 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: SSLVersionMin
-  - Nome Criteri di gruppo: Versione TLS minima abilitata
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Versione TLS minima abilitata (deprecato)
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
