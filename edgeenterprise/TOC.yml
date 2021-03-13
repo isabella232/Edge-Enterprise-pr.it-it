@@ -1,4 +1,4 @@
-# last revised 03/08/2021
+# last revised 03/11/2021
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
@@ -29,11 +29,11 @@
       href: deploy-edge-ready-for-edge.md
     - name: Note sulla versione del Canale Stable
       href: microsoft-edge-relnote-stable-channel.md
-    - name: Note sulla versione archiviate del Canale Stable
+    - name: Note sulla versione archiviate di Stable Channel
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Note sulla versione del Canale Beta
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Note sulla versione archiviate del Canale Beta
+    - name: Note sulla versione archiviate del Canale beta
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: Pianificazione delle versioni
       href: microsoft-edge-release-schedule.md
@@ -191,8 +191,6 @@
           href: edge-learnmore-regex.md
         - name: Reimpostare i dati di Microsoft Edge
           href: edge-learnmore-reset-data-in-cloud.md
-        - name: Variabili della directory dati utente
-          href: edge-learnmore-create-user-directory-vars.md
         - name: Uso del rollback di Microsoft Edge per le aziende
           href: edge-learnmore-rollback.md
 - name: Video di Microsoft Edge
@@ -201,15 +199,15 @@
       href: microsoft-edge-videos.md
     - name: Video - Microsoft Edge - Stato del browser 2020
       href: microsoft-edge-video-state-of-browser.md
-    - name: Video - Isolamento del browser con Application Guard
+    - name: Video - Isolamento del browser tramite Application Guard
       href: microsoft-edge-video-security-application-guard.md
     - name: 'Video: Distribuire Microsoft Edge'
       href: microsoft-edge-video-deploy.md
-    - name: Video - Prevenzione della perdita di dati (DLP)
+    - name: Video - Prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-video-security-dlp.md
     - name: Video - Identità in Microsoft Edge
       href: microsoft-edge-video-identity.md
-    - name: Video - Ripristino dello stato precedente della versione di Microsoft Edge
+    - name: Video - Rollback della versione di Microsoft Edge
       href: microsoft-edge-video-version-rollback.md
     - name: Video - Lettore PDF in Microsoft Edge
       href: microsoft-edge-video-pdf-reader.md

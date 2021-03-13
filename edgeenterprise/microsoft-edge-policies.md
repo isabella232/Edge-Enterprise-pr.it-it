@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/10/2021
+ms.date: 03/12/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 94ad135f23dae83391e873ef120e6c88b44d0e27
-ms.sourcegitcommit: e3762b1a204c143b4e2264100affae3d9ddaaffc
+ms.openlocfilehash: cecadd38a07c6be0153744657c5bef037bd665c7
+ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/11/2021
-ms.locfileid: "11406377"
+ms.lasthandoff: 03/13/2021
+ms.locfileid: "11408648"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -26,16 +26,9 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 È possibile scaricare il [Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319) per le impostazioni di base relative alla configurazione consigliata per Microsoft Edge. Per altre informazioni, consultare il [Blog sulle basi di riferimento della sicurezza di Microsoft](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines).
 
+
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
-
-## <a name="new-and-deprecated-policies"></a>Criteri nuovi e deprecati
-
-Nella tabella seguente sono elencati i criteri nuovi e deprecati per questo aggiornamento.
-
-|Nome|Didascalia|
-|--|--|
-|[SSLVersionMin](#sslversionmin)|Versione TLS minima abilitata (deprecato)|
 
 ## <a name="available-policies"></a>Criteri disponibili
 
