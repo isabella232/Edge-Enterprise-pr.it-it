@@ -3,19 +3,19 @@ title: Configurazione della modalità tutto schermo di Microsoft Edge
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 03/03/2021
+ms.date: 03/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni sulle funzionalità della modalità tutto schermo e su come configurare le opzioni della modalità tutto schermo di Microsoft Edge.
-ms.openlocfilehash: 9f2ce26f2c505ba3fc9e2e05b057e5d5df8257fe
-ms.sourcegitcommit: 8da3a4de1a14514014b6d7b103ba79f2ace48044
+ms.openlocfilehash: 516bc004a516b243e52d4128ae47f3ab9d7498df
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/04/2021
-ms.locfileid: "11388545"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442486"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>Configurazione della modalità tutto schermo di Microsoft Edge
 
@@ -23,6 +23,9 @@ In questo articolo viene descritto come configurare le opzioni della modalità t
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 87 o successiva.
+
+> [!IMPORTANT]
+> Richiamare le funzionalità della modalità tutto schermo di Microsoft Edge in Windows 10 usando gli argomenti della riga di comando forniti in [Usare le funzionalità della modalità tutto schermo.](#use-kiosk-mode-features)
 
 ## <a name="overview"></a>Panoramica
 
@@ -211,7 +214,7 @@ Il modo più semplice per configurare uno o due dispositivi in modalità tutto s
 
 Con il rilascio della versione di anteprima della modalità tutto schermo stiamo continuando a migliorare il prodotto e aggiungere nuove funzionalità.
 
-È consigliabile disattivare:
+Attualmente non sono supportate le funzionalità seguenti e si consiglia di disattivare:
 
 - [InPrivateModeAvailability](https://docs.microsoft.com/deployedge/microsoft-edge-policies#inprivatemodeavailability)
 - [IsolateOrigins](https://docs.microsoft.com/deployedge/microsoft-edge-policies#isolateorigins)
@@ -224,6 +227,7 @@ Con il rilascio della versione di anteprima della modalità tutto schermo stiamo
 - [InternetExplorerIntegrationLevel](https://docs.microsoft.com/deployedge/microsoft-edge-policies#internetexplorerintegrationlevel)
 - [Extensions](https://docs.microsoft.com/deployedge/microsoft-edge-policies#extensions-policies)
 - [BackgroundModeEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#backgroundmodeenabled)
+- [UserFeedbackAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#userfeedbackallowed)
 
 ## <a name="roadmap"></a>Roadmap
 
