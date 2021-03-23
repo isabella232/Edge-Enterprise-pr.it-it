@@ -1,8 +1,10 @@
-# last revised 03/11/2021
+# last revised 03/22/2021
 - name: Documentazione di Microsoft Edge in modalità Enterprise
   href: index.yml
 - name: Documentazione di Microsoft Edge
   href: 'https://docs.microsoft.com/microsoft-edge/'
+- name: Aggiornamenti del contenuto di Microsoft Edge
+  href: microsoft-edge-content-updates.md
 - name: Introduzione a Microsoft Edge
   items:
     - name: Informazioni sui canali di Microsoft Edge
@@ -35,7 +37,7 @@
       href: microsoft-edge-relnote-beta-channel.md
     - name: Note sulla versione archiviate del Canale beta
       href: microsoft-edge-relnote-archive-beta-channel.md
-    - name: Pianificazione delle versioni
+    - name: Pianificazione dei rilasci
       href: microsoft-edge-release-schedule.md
     - name: Aggiornamenti della sicurezza
       href: microsoft-edge-relnotes-security.md
