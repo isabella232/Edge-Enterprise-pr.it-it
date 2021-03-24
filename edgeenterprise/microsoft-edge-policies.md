@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/12/2021
+ms.date: 03/18/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: cecadd38a07c6be0153744657c5bef037bd665c7
-ms.sourcegitcommit: 24e26d393e87acb59300bcca6529a9be57c530cf
+ms.openlocfilehash: 4935b927081ef1823ecf36b922948992926d4005
+ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/13/2021
-ms.locfileid: "11408648"
+ms.lasthandoff: 03/22/2021
+ms.locfileid: "11442476"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -29,6 +29,16 @@ Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per con
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
+
+## <a name="new-policies"></a>Nuovi criteri
+
+Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
+
+|Nome|Didascalia|
+|--|--|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|Consente i collegamenti rapidi nella nuova scheda|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|Recupera la durata di keepalive alla chiusura|
+
 
 ## <a name="available-policies"></a>Criteri disponibili
 
@@ -231,6 +241,7 @@ e suggerimenti per i servizi Microsoft|
 |[NewTabPageLocation](#newtabpagelocation)|Configura l'URL della pagina Nuova scheda|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|Imposta i collegamenti rapidi della pagina Nuova scheda|
 |[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|Attiva il precaricamento della nuova scheda per il rendering più rapido|
+|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|Consente i collegamenti rapidi nella nuova scheda|
 |[NewTabPageSetFeedType](#newtabpagesetfeedtype)|Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)|
 |[RestoreOnStartup](#restoreonstartup)|Azione da eseguire all'avvio|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|Siti da aprire all'avvio del browser|
@@ -322,6 +333,7 @@ e suggerimenti per i servizi Microsoft|
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|Consentire agli utenti di configurare Family safety e la modalità bambini|
 |[FavoritesBarEnabled](#favoritesbarenabled)|Abilita la barra Preferiti|
+|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|Recupera la durata di keepalive alla chiusura|
 |[ForceBingSafeSearch](#forcebingsafesearch)|Applica Ricerca sicura di Bing|
 |[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"|
 |[ForceEphemeralProfiles](#forceephemeralprofiles)|Abilita l'uso di profili temporanei|
@@ -8454,6 +8466,70 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="newtabpagequicklinksenabled"></a>NewTabPageQuickLinksEnabled
+
+  #### <a name="allow-quick-links-on-the-new-tab-page"></a>Consente i collegamenti rapidi nella nuova scheda
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Se si abilita o non si configura questo criterio, Microsoft Edge visualizza collegamenti rapidi nella nuova scheda e l'utente può interagire con il controllo, attivando e disattivando i collegamenti rapidi. L'abilitazione di questo criterio non forza la visualizzazione dei collegamenti rapidi: l'utente può continuare ad attivare e disattivare i collegamenti.
+
+Se si disabilita questo criterio, Microsoft Edge nasconde i collegamenti rapidi nella nuova scheda e disabilita il controllo collegamenti rapidi nel riquadro a comparsa impostazioni NTP.
+
+Questo criterio si applica solo ai profili utente locale di Microsoft Edge, ai profili a cui è stato eseguito l’accesso con un account Microsoft e ai profili a cui è stato eseguito l’accesso con Active Directory. Per configurare la nuova scheda in modalità Enterprise per i profili a cui è stato eseguito l’accesso con Azure Active Directory, usare il portale di amministrazione di M365.
+
+Criteri correlati: [NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: NewTabPageQuickLinksEnabled
+  - Nome Criteri di gruppo: Consenti collegamenti rapidi nella nuova scheda
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina Nuova scheda
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: NewTabPageQuickLinksEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: NewTabPageQuickLinksEnabled
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
   #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
@@ -14376,6 +14452,68 @@ Se non si configura questo criterio, l'utente può decidere di usare o meno la b
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="fetchkeepalivedurationonshutdown"></a>FetchKeepaliveDurationOnShutdown
+
+  #### <a name="fetch-keepalive-duration-on-shutdown"></a>Recupera la durata di keepalive alla chiusura
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 90 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Controlla la durata, in secondi, in cui le richieste keepalive sono consentite per impedire al browser di completare l'arresto.
+
+Se si configura questo criterio, il browser bloccherà il completamento dell'arresto durante l'elaborazione di eventuali richieste keepalive in sospeso (vedere https://fetch.spec.whatwg.org/#request-keepalive-flag) fino al periodo di tempo massimo specificato da questo criterio.
+
+Se si disabilita o non si configura questo criterio, viene utilizzato il valore predefinito di 0 secondi e le richieste keepalive in sospeso verranno immediatamente annullate durante l'arresto del browser.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Numero intero
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: FetchKeepaliveDurationOnShutdown
+  - Nome Criteri di gruppo: Recupera durata keepalive all'arresto
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: FetchKeepaliveDurationOnShutdown
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: FetchKeepaliveDurationOnShutdown
+  - Valore di esempio:
+``` xml
+<integer>1</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="forcebingsafesearch"></a>ForceBingSafeSearch
 
   #### <a name="enforce-bing-safesearch"></a>Applica Ricerca sicura di Bing
@@ -15102,7 +15240,11 @@ Per i termini di ricerca più diffusi formati da una singola parola, è necessar
 
   #### <a name="description"></a>Descrizione
 
-  I nomi host specificati in questo elenco saranno esclusi dalla verifica dei criteri HSTS che potrebbe aggiornare le richieste da "http://" a "https://". In questo criterio sono consentiti solo i nomi host con etichetta singola. I nomi host devono essere in forma canonica. Gli IDN devono essere convertiti nel formato con etichetta A e tutte le lettere devono essere minuscole. Questo criterio si applica solo ai nomi host specifici; non si applica ai sottodomini dei nomi nell'elenco.
+  L'impostazione del criterio specifica un elenco di nomi host che ignorano gli aggiornamenti HSTS precaricati da HTTP a HTTPS.
+
+In questo criterio sono consentiti solo nomi host con etichetta singola e si applica solo alle voci precaricate HSTS statiche, ad esempio, "app", "nuovo", "ricerca", "play". Questo criterio non impedisce gli aggiornamenti HSTS per i server che hanno richiesto in modo dinamico aggiornamenti HSTS tramite un'intestazione di risposta Strict-Transport-Security.
+
+I nomi host forniti devono essere canonici: tutti gli IDN devono essere convertiti nel formato A-label e tutte le lettere ASCII devono essere minuscole. Questo criterio si applica solo ai nomi host specifici con etichetta singola specificati, non ai sottodomini di tali nomi.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -16819,7 +16961,9 @@ Gli utenti possono farlo attraverso il menu "Altri strumenti" selezionando "Apri
 
 Inoltre, gli utenti possono testare le loro applicazioni in un browser moderno senza rimuoverle dall'elenco di siti tramite l'opzione "Apri siti in modalità Edge".
 
-Questa impostazione funziona in combinazione con i criteri: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su "IEMode e [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist), in cui l'elenco ha almeno una voce.
+Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su' IEMode '.
+   
+                                                                                                                         
 
 Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet Explorer sarà visibile in "Altri strumenti". Gli utenti possono visualizzare i propri siti in modalità Internet Explorer in questa scheda. Un'altra opzione per "Apri siti in modalità Edge" sarà visibile anche in "Altri strumenti" per consentire di testare i siti in un browser moderno senza rimuoverli dall'elenco dei siti.
 
