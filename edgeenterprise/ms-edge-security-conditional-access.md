@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge e Accesso condizionale
-ms.openlocfilehash: a81d39c15f418dab6565ee7acc45de17f66e3828
-ms.sourcegitcommit: 3478cfcf2b03944213a7c7c61f05490bc37aa7c4
+ms.openlocfilehash: 898a86c8c268a8c46e80dbd5ef3a435c300fb04e
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/03/2020
-ms.locfileid: "11094775"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447140"
 ---
-# Microsoft Edge e Accesso condizionale
+# <a name="microsoft-edge-and-conditional-access"></a>Microsoft Edge e Accesso condizionale
   
 Questo articolo descrive in che modo Microsoft Edge supporta l'accesso condizionale e come accedere alle risorse protette dall'accesso condizionale.
 
@@ -26,7 +26,7 @@ Questo articolo descrive in che modo Microsoft Edge supporta l'accesso condizion
 
 Un aspetto fondamentale della sicurezza del cloud è il controllo delle identità e dell'accesso in relazione alla gestione delle risorse cloud. In un ambiente orientato alla mobilità e al cloud, gli utenti possono accedere alle risorse dell'organizzazione usando un'ampia gamma di dispositivi e app praticamente ovunque. Di conseguenza, concentrarsi solo su chi può accedere a una risorsa non è sufficiente. Devi anche esaminare la modalità di accesso a una risorsa. L'accesso condizionale di Azure Active Directory (Azure AD) consente di bilanciare la sicurezza e la produttività.
 
-## Accesso alle risorse protette con accesso condizionale in Microsoft Edge
+## <a name="accessing-conditional-access-protected-resources-in-microsoft-edge"></a>Accesso alle risorse protette con accesso condizionale in Microsoft Edge
 
 Microsoft Edge supporta in modo nativo l'accesso condizionale di Azure AD. Non è necessario installare un'estensione separata. Quando si accede a un profilo Microsoft Edge con le credenziali Azure AD aziendali, Microsoft Edge consente di accedere in modo semplice alle risorse cloud aziendali protette con l'accesso condizionale.
 
@@ -44,11 +44,11 @@ Per accedere e usare il tuo profilo, fai clic sull'immagine dell'account nell'an
 
 Questo supporto è disponibile in tutte le piattaforme, incluse tutte le versioni supportate di Windows e macOS.
 
-### Come distribuire l'accesso condizionale in Azure Active Directory
+### <a name="how-to-deploy-conditional-access-in-azure-active-directory"></a>Come distribuire l'accesso condizionale in Azure Active Directory
 
-L'articolo [Distribuire l'accesso condizionale](https://docs.microsoft.com/azure/active-directory/conditional-access/plan-conditional-access) fornisce una guida dettagliata per distribuire l'accesso condizionale in Azure Active Directory.
+L'articolo [Distribuire l'accesso condizionale](/azure/active-directory/conditional-access/plan-conditional-access) fornisce una guida dettagliata per distribuire l'accesso condizionale in Azure Active Directory.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Video: sicurezza, compatibilità e gestibilità](/microsoft-edge-video-security-compatibility-manageability.md)

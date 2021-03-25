@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge e download di contenuto misto
-ms.openlocfilehash: 57da17a8684b97aad88e7837ff9d070f6862357b
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 13cc9d935dfe415039078b2ca794945b4fa2d1a3
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980211"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447270"
 ---
-# Informazioni su Microsoft Edge e i download di contenuto misto
+# <a name="learn-about-microsoft-edge-and-mixed-content-downloads"></a>Informazioni su Microsoft Edge e i download di contenuto misto
 
 Questo articolo illustra i download di contenuto misto e il modo in cui Microsoft Edge li gestisce.
 
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge versione 85 o successiva.
 
-## Cosa sono i download di contenuto misto?
+## <a name="what-are-mixed-content-downloads"></a>Cosa sono i download di contenuto misto?
 
 Un download di contenuto misto si verifica quando si avvia il download da una pagina HTML che è stata caricata tramite una connessione HTTPS sicura, ma si verifica una delle condizioni seguenti:
 
@@ -33,7 +33,7 @@ Un download di contenuto misto si verifica quando si avvia il download da una pa
 
 Entrambi gli scenari sono contenuti misti perché la richiesta è stata eseguita usando il protocollo HTTPS sicuro e sia il contenuto HTTP che quello HTTPS è coinvolto nel raggiungimento della destinazione finale per il download. I browser moderni visualizzano avvisi su questo tipo di contenuto per indicare agli utenti che questo download potrebbe essere trasferito in modo non sicuro, anche se la pagina originale a cui si ha avuto accesso è sicura.
 
-## Avvisi download e opzioni utente
+## <a name="download-warnings-and-user-options"></a>Avvisi download e opzioni utente
 
 L'avviso download garantisce che gli utenti sappiano che il file scaricato potrebbe essere letto da utenti malintenzionati nella rete. Questo avviso consente a un utente di prendere una decisione ponderata sull'eventuale download del file.
 
@@ -56,17 +56,17 @@ Se un utente decide di conservare il download, viene richiesto di confermare l'a
 
  ![Scegli Modalità Internet Explorer](./media/edge-learnmore-mixed-content-downloads/edge-mixed-content-download-override.png)
 
-## Criteri di supporto
+## <a name="supporting-policies"></a>Criteri di supporto
 
-Per le aziende che desiderano escludere il blocco del contenuto misto da siti Web specifici, è possibile usare il criterio [InsecureContentAllowedForUrls](https://docs.microsoft.com/deployedge/microsoft-edge-policies#insecurecontentallowedforurls).
+Per le aziende che desiderano escludere il blocco del contenuto misto da siti Web specifici, è possibile usare il criterio [InsecureContentAllowedForUrls](./microsoft-edge-policies.md#insecurecontentallowedforurls).
 
-## Licenza dei contenuti
+## <a name="content-license"></a>Licenza dei contenuti
 
 > [!NOTE]
 > Parti di questa pagina sono modifiche basate sul lavoro creato e condiviso da Chromium.org e usate in base ai termini descritti nella [licenza Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). La pagina originale è disponibile [qui](https://developers.google.com/web/fundamentals/security/prevent-mixed-content/what-is-mixed-content).
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Questo lavoro è concesso in licenza in base a una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licenza Creative Commons Attribution 4.0 International</a>.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

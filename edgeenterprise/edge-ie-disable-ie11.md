@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni su come disabilitare Internet Explorer 11 e usare la modalità Internet Explorer in Microsoft Edge.
-ms.openlocfilehash: a0486c2965b1868db67b6de1423f279905074410
-ms.sourcegitcommit: f34ff11499a2b96941e704103bdd959d19e3d7e7
+ms.openlocfilehash: 89fa6f81879be851f0036990a41e36e1eaee7fca
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400606"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447390"
 ---
 # <a name="disable-internet-explorer-11"></a>Disabilitare Internet Explorer 11
 
@@ -45,7 +45,7 @@ Per le organizzazioni che richiedono Internet Explorer 11 (IE11) per la compatib
 Dopo aver configurato la modalità IE, è possibile disabilitare IE11 come browser autonomo **senza influire sul funzionamento della modalità IE** nell'organizzazione tramite i Criteri di gruppo.
 
 > [!NOTE]
-> Se è necessaria l'app autonoma IE11 per siti specifici e si vuole reindirizzare tutto il traffico del browser a Microsoft Edge, è possibile configurare il criterio [Invia tutti i siti non inclusi nell'elenco di siti a Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge) per reindirizzare i siti da IE a Microsoft Edge.
+> Se è necessaria l'app autonoma IE11 per siti specifici e si vuole reindirizzare tutto il traffico del browser a Microsoft Edge, è possibile configurare il criterio [Invia tutti i siti non inclusi nell'elenco di siti a Microsoft Edge](./edge-ie-mode-policies.md#redirect-sites-from-ie-to-microsoft-edge) per reindirizzare i siti da IE a Microsoft Edge.
 
 ## <a name="user-experience-after-redirecting-traffic-to-microsoft-edge"></a>Esperienza utente dopo il reindirizzamento del traffico a Microsoft Edge
 
@@ -67,7 +67,7 @@ Se l'elenco dei siti per la modalità Enterprise contiene applicazioni configura
 
 Per disabilitare Internet Explorer 11 tramite i Criteri di gruppo, seguire la seguente procedura:
 
-1. Assicurarsi di disporre dei prerequisiti relativi agli aggiornamenti del sistema operativo. Questo passaggio aggiornerà direttamente i file ADMX nel computer (nello specifico, inetres.adml e inetres.admx). Tenere presente che, se si desidera aggiornare l'archivio centrale, sarà necessario copiare i file con estensione .adml e .admx da un computer con gli aggiornamenti dei prerequisiti. Per altre informazioni, vedere [Creare e gestire l'archivio centrale](https://docs.microsoft.com/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
+1. Assicurarsi di disporre dei prerequisiti relativi agli aggiornamenti del sistema operativo. Questo passaggio aggiornerà direttamente i file ADMX nel computer (nello specifico, inetres.adml e inetres.admx). Tenere presente che, se si desidera aggiornare l'archivio centrale, sarà necessario copiare i file con estensione .adml e .admx da un computer con gli aggiornamenti dei prerequisiti. Per altre informazioni, vedere [Creare e gestire l'archivio centrale](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. Aprire l'Editor Criteri di gruppo.
 3. Passare a ***Configurazione computer/Modelli amministrativi/Componenti di Windows/Internet Explorer***. 
 4. Fare doppio clic su ** Disabilitare Internet Explorer 11 come browser autonomo.**
@@ -83,5 +83,5 @@ Per disabilitare Internet Explorer 11 tramite i Criteri di gruppo, seguire la se
 ## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Informazioni sulla modalità IE](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [Informazioni aggiuntive sulla modalità Enterprise](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Informazioni sulla modalità IE](./edge-ie-mode.md)
+- [Informazioni aggiuntive sulla modalità Enterprise](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

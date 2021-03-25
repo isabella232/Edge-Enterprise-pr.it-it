@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto per la lingua di visualizzazione di Microsoft Edge per Windows e macOS.
-ms.openlocfilehash: af8d2a57d35411600237d09ad528c7b071228d21
-ms.sourcegitcommit: 2b902ecf31430f3fc75d3731f26255aea0bb937e
+ms.openlocfilehash: 37073213fcdacac6b8182dcbef93901c82110756
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/10/2021
-ms.locfileid: "11406161"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447100"
 ---
 # <a name="microsoft-edge-language-support"></a>Supporto per la lingua di Microsoft Edge
 
@@ -156,5 +156,5 @@ Nella tabella seguente sono elencate le lingue di visualizzazione supportate in 
 
 ## <a name="see-also"></a>Vedi anche
 
-- [Documentazione di Microsoft Edge](https://docs.microsoft.com/DeployEdge/)
+- [Documentazione di Microsoft Edge](./index.yml)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

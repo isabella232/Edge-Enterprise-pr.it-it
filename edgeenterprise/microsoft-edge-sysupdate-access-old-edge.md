@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Scopri come accedere alla versione legacy di Microsoft Edge.
-ms.openlocfilehash: 00f4a29c9a2bed137b339c8b5ef43eb213d33ee4
-ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
+ms.openlocfilehash: b521ab9ea093b62db7268e6bf2f4d656b3dc8d4b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11313896"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447090"
 ---
-# Accedere a Microsoft Edge Legacy dopo l'installazione della nuova versione di Microsoft Edge
+# <a name="access-microsoft-edge-legacy-after-installing-the-new-version-of-microsoft-edge"></a>Accedere a Microsoft Edge Legacy dopo l'installazione della nuova versione di Microsoft Edge
 
 Microsoft Edge Legacy smetterà di ricevere gli aggiornamenti per la sicurezza il 9 marzo 2021. È possibile accedere a Microsoft Edge legacy fino al 13 aprile. Per altre informazioni, Vedi [post di Blog](https://aka.ms/EdgeLegacyEOS)del team Microsoft Edge Product.
 
@@ -34,13 +34,13 @@ Anche se la maggior parte delle organizzazioni vorrà sostituire la versione leg
 >
 > Il supporto per l'app desktop della Versione legacy di Microsoft Edge terminerà il 9 marzo 2021 in favore del nuovo Microsoft Edge. Ciò significa che la Versione legacy di Microsoft Edge non riceverà gli aggiornamenti della sicurezza dopo tale data. Questa modifica è applicabile a tutte le esperienze eseguite nell'app desktop della Versione legacy di Microsoft Edge. [Ulteriori informazioni](https://techcommunity.microsoft.com/t5/microsoft-365-blog/microsoft-365-apps-say-farewell-to-internet-explorer-11-and/ba-p/1591666).
 
-## Prima di iniziare
+## <a name="before-you-begin"></a>Prima di iniziare
 > [!NOTE]
 > A partire da Windows 10 versione 20H2 la versione legacy di Microsoft Edge non è più disponibile. A partire da questa versione di Windows 10, l'esperienza affiancata non è supportata.
 
 Le procedure illustrate in questo articolo si applicano ai sistemi che sono stati aggiornati con gli ultimi aggiornamenti della sicurezza. Quando verrà installata la nuova versione di Microsoft Edge, la versione precedente (Microsoft Edge Legacy) verrà nascosta. Per impostazione predefinita, tutti i tentativi di avviare la versione precedente reindirizzeranno l'utente alla versione installata di recente di Microsoft Edge. Questo articolo descrive come si può continuare a usare la versione legacy di Microsoft Edge dopo l'installazione di Microsoft Edge.
 
-## Guida introduttiva: Esperienza affiancata con il canale beta di Microsoft Edge e la Versione legacy di Microsoft Edge
+## <a name="quickstart-side-by-side-experience-with-microsoft-edge-beta-channel-and-microsoft-edge-legacy"></a>Guida introduttiva: Esperienza affiancata con il canale beta di Microsoft Edge e la Versione legacy di Microsoft Edge
 
 Prima di usare le istruzioni dettagliate di questo articolo, tenere presente che i due passaggi seguenti consentono agli utenti di eseguire la Versione legacy di Microsoft Edge e il [canale beta](microsoft-edge-channels.md) di Microsoft Edge in modalità affiancata.
 
@@ -52,13 +52,13 @@ Prima di usare le istruzioni dettagliate di questo articolo, tenere presente che
 
 Questa soluzione affiancata è meno complessa e richiede meno gestione rispetto alla soluzione dettagliata descritta in questo articolo. Tuttavia, sarà necessario eseguire il canale beta al posto del canale stabile.
 
-## Esperienza affiancata con il canale stabile di Microsoft Edge e la Versione legacy di Microsoft Edge
+## <a name="side-by-side-experience-with-microsoft-edge-stable-channel-and-microsoft-edge-legacy"></a>Esperienza affiancata con il canale stabile di Microsoft Edge e la Versione legacy di Microsoft Edge
 
 Installando il canale Stable della versione successiva di Microsoft Edge a livello di sistema, la versione corrente (Microsoft Edge Legacy) verrà nascosta. Se si vuole permettere agli utenti di vedere entrambe le versioni di Microsoft Edge affiancate in Windows, è possibile abilitare questa esperienza impostando il criterio di gruppo **Consenti esperienza browser Microsoft Edge affiancata** su **Abilitato**.
 
-Questo criterio di gruppo è documentato [qui](https://docs.microsoft.com/deployedge/microsoft-edge-update-policies#allowsxs)
+Questo criterio di gruppo è documentato [qui](./microsoft-edge-update-policies.md#allowsxs)
 
-### Per configurare il criterio dell'esperienza browser affiancata:
+### <a name="to-set-up-the-side-by-side-browser-experience-policy"></a>Per configurare il criterio dell'esperienza browser affiancata:
 
 1. Installare le definizioni dei criteri da [Microsoft Edge for Business](https://www.microsoft.com/edge/business/download).
 
@@ -86,7 +86,7 @@ Abilitando questo criterio, la chiave del Registro di sistema seguente verrà im
 - Nome: `Allowsxs`
 - Tipo valore: `'REG_DWORD'`
 
-#### Indicazioni sulle procedure consigliate
+#### <a name="best-practice-guidance"></a>Indicazioni sulle procedure consigliate
 
 Per un'esperienza ottimale, il criterio **Consenti esperienza browser Microsoft Edge affiancata** dovrà essere abilitato prima che la nuova versione di Microsoft Edge sia distribuita nei dispositivi degli utenti.
 
@@ -100,7 +100,7 @@ Se i criteri di gruppo vengono abilitati dopo la distribuzione di Microsoft Edge
 2. Microsoft Edge Legacy dovrà essere aggiunto di nuovo a Start o alla Barra delle applicazioni perché la migrazione della scelta viene eseguita quando viene distribuita la nuova versione di Microsoft Edge.
 3. I siti aggiunti a Start o alla Barra delle applicazioni per Microsoft Edge Legacy verranno migrati alla nuova versione di Microsoft Edge.
 
-## Altre informazioni
+## <a name="additional-information"></a>Altre informazioni
 
 Dopo che i sistemi sono stati completamente aggiornati e viene installato il canale Stable della versione successiva di Microsoft Edge, viene impostata la seguente chiave del registro di sistema con relativo valore:
 
@@ -110,7 +110,7 @@ Dopo che i sistemi sono stati completamente aggiornati e viene installato il can
   > [!IMPORTANT]
   > Questa chiave è sovrascritta ogni volta che viene aggiornato il canale Microsoft Edge Stable. Come procedura consigliata, ti suggeriamo di NON eliminare questa chiave per consentire agli utenti di accedere a entrambe le versioni di Microsoft Edge.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Aggiornamenti di Windows per supportare Microsoft Edge](microsoft-edge-sysupdate-windows-updates.md)

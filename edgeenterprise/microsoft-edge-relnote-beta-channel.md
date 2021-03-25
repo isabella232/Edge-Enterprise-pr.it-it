@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: f2fde765cffcc546a2bd64d931c58e7a460d260c
-ms.sourcegitcommit: 50bf27680754f4cfde4112e5e618d862c2919ac3
+ms.openlocfilehash: 9d9bec56a3629f18f7a9f64553858558a2864100
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/23/2021
-ms.locfileid: "11445245"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447570"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -57,18 +57,18 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 Sono stati aggiunti 7 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti:
 
-- [ApplicationGuardFavoritesSyncEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#applicationguardfavoritessyncenabled): sincronizzazione dei preferiti di Application Guard abilitata
-- [ManagedConfigurationPerOrigin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#managedconfigurationperorigin): imposta i valori di configurazione gestita per i siti Web su origini specifiche
-- [PrintRasterizationMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printrasterizationmode): modalità rasterizzazione di stampa
-- [QuickViewOfficeFilesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#quickviewofficefilesenabled): gestire la funzionalità QuickView dei file di Office in Microsoft Edge
-- [SSLErrorOverrideAllowedForOrigins](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslerroroverrideallowedfororigins): consente agli utenti di procedere dalla pagina di avviso HTTPS per origini specifiche
-- [WindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowocclusionenabled): abilita l’occlusione della finestra
-- [WindowsHelloForHTTPAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#windowshelloforhttpauthenabled): autenticazione di Windows Hello per HTTP abilitata
+- [ApplicationGuardFavoritesSyncEnabled](./microsoft-edge-policies.md#applicationguardfavoritessyncenabled): sincronizzazione dei preferiti di Application Guard abilitata
+- [ManagedConfigurationPerOrigin](./microsoft-edge-policies.md#managedconfigurationperorigin): imposta i valori di configurazione gestita per i siti Web su origini specifiche
+- [PrintRasterizationMode](./microsoft-edge-policies.md#printrasterizationmode): modalità rasterizzazione di stampa
+- [QuickViewOfficeFilesEnabled](./microsoft-edge-policies.md#quickviewofficefilesenabled): gestire la funzionalità QuickView dei file di Office in Microsoft Edge
+- [SSLErrorOverrideAllowedForOrigins](./microsoft-edge-policies.md#sslerroroverrideallowedfororigins): consente agli utenti di procedere dalla pagina di avviso HTTPS per origini specifiche
+- [WindowOcclusionEnabled](./microsoft-edge-policies.md#windowocclusionenabled): abilita l’occlusione della finestra
+- [WindowsHelloForHTTPAuthEnabled](./microsoft-edge-policies.md#windowshelloforhttpauthenabled): autenticazione di Windows Hello per HTTP abilitata
 
 #### <a name="deprecated-policies"></a>Criteri deprecati
 
-- [NativeWindowOcclusionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#nativewindowocclusionenabled): abilita occlusione finestra nativa
-- [SSLVersionMin](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sslversionmin): versione TLS minima abilitata
+- [NativeWindowOcclusionEnabled](./microsoft-edge-policies.md#nativewindowocclusionenabled): abilita occlusione finestra nativa
+- [SSLVersionMin](./microsoft-edge-policies.md#sslversionmin): versione TLS minima abilitata
 <!-- end major 90 -->
 
 ## <a name="version-89077454-march-13"></a>Versione 89.0.774.54: 13 marzo
@@ -110,7 +110,7 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 - **La modalità tutto schermo offre altre funzionalità di blocco.** A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Altre informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
 
-- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager).
+- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](./edge-ie-mode-site-list-manager.md).
 
 - **Miglioramento delle prestazioni del browser con le schede di sospensione**. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare l’intervallo di tempo prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso di lavoro, sono anche disponibili sistemi [euristici](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) che evitano che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità può essere gestita tramite i criteri di gruppo.
 
@@ -129,19 +129,19 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 #### <a name="new-policies"></a>Nuovi criteri
 
-- [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime): impostazioni vita utile dati di esplorazione
-- [maMEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#mamenabled): gestione delle app per dispositivi mobili abilitata
-- [DefinePreferredLanguages](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#definepreferredlanguages): definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
-- [ShowRecommendationsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showrecommendationsenabled): consente suggerimenti e notifiche promozionali da Microsoft Edge
-- [StampaAllowedBackgroundGraphicsModes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingallowedbackgroundgraphicsmodes): limita la modalità di stampa grafica in background
-- [printingBackgroundGraphicsDefault](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingbackgroundgraphicsdefault): modalità di stampa grafica in background predefinita
-- [elenco SmartActionsBlockList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#smartactionsblocklist): blocca le azioni intelligenti per un elenco di servizi
+- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime): impostazioni vita utile dati di esplorazione
+- [maMEnabled](./microsoft-edge-policies.md#mamenabled): gestione delle app per dispositivi mobili abilitata
+- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages): definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
+- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled): consente suggerimenti e notifiche promozionali da Microsoft Edge
+- [StampaAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes): limita la modalità di stampa grafica in background
+- [printingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault): modalità di stampa grafica in background predefinita
+- [elenco SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist): blocca le azioni intelligenti per un elenco di servizi
 
 #### <a name="obsoleted-policies"></a>Criteri obsoleti
 
-- [ForceLegacyDefaultReferrerPolicy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcelegacydefaultreferrerpolicy): usa un criterio di referrer predefinito di no-referrer-when-downgrade
-- [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled): abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
-- [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices): invia informazioni sul sito per migliorare i servizi Microsoft
+- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy): usa un criterio di referrer predefinito di no-referrer-when-downgrade
+- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled): abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
+- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices): invia informazioni sul sito per migliorare i servizi Microsoft
 <!-- end major 89 -->
 
 ## <a name="version-88070556-january-29"></a>Versione 88.0.705.56: 29 gennaio
@@ -179,7 +179,7 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
   - Single Sign-on (SSO) ora disponibile per gli account di Azure Active Directory (Azure AD) e per l'account Microsoft (MSA) in macOS e Windows legacy. Un utente che ha eseguito l'accesso a Microsoft Edge su macOS o su Microsoft Windows (7, 8.1) eseguirà automaticamente l'accesso su siti Web configurati per consentire l'accesso Single Sign-On con gli account lavoro e Microsoft (ad esempio, bing.com, office.com, msn.com, outlook.com).<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
   - Passare automaticamente gli utenti di macOS al profilo di lavoro per i siti che eseguono l'autenticazione con l'account di lavoro. A partire da Microsoft Edge versione 88, su macOS offriamo la possibilità di passare ai siti che eseguono l'autenticazione con il profilo di lavoro di un utente.<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
 
-- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode).
+- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](./microsoft-edge-configure-kiosk-mode.md).
 
 - **Sicurezza e privacy:**
 
@@ -218,40 +218,40 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 
 Sono stati aggiunti sedici nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
-- [BlockExternalExtensions](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#blockexternalextensions): blocca l'installazione delle estensioni esterne.
-- [InternetExplorerIntegrationLocalFileAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileallowed): consente l'avvio di file locali in modalità Internet Explorer.
-- [InternetExplorerIntegrationLocalFileExtensionAllowList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileextensionallowlist):apre i file locali nell'elenco Consenti estensione file in modalità Internet Explorer.
-- [InternetExplorerIntegrationLocalFileShowContextMenu](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileshowcontextmenu): mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer.
-- [IntranetRedirectBehavior](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
-- [PrinterTypeDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
-- [ShowMicrosoftRewards](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
-- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsenabled): configura le schede di sospensione.
-- [SleepingTabsTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
-- [SleepingTabsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
-- [StartupBoostEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#startupboostenabled) attiva il potenziamento di avvio.
-- [UpdatePolicyOverride](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
-- [VerticalTabsAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
-- [WebRtcAllowLegacyTLSProtocols](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
+- [BlockExternalExtensions](./microsoft-edge-policies.md#blockexternalextensions): blocca l'installazione delle estensioni esterne.
+- [InternetExplorerIntegrationLocalFileAllowed](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileallowed): consente l'avvio di file locali in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileExtensionAllowList](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist):apre i file locali nell'elenco Consenti estensione file in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileShowContextMenu](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileshowcontextmenu): mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer.
+- [IntranetRedirectBehavior](./microsoft-edge-policies.md#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
+- [PrinterTypeDenyList](./microsoft-edge-policies.md#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
+- [ShowMicrosoftRewards](./microsoft-edge-policies.md#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
+- [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled): configura le schede di sospensione.
+- [SleepingTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
+- [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) attiva il potenziamento di avvio.
+- [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
+- [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
+- [WebRtcAllowLegacyTLSProtocols](./microsoft-edge-policies.md#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
 
 #### <a name="deprecated-policies"></a>Criteri deprecati
 
 I criteri seguenti sono deprecati.
 
-- [ProactiveAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proactiveauthenabled): abilita l'autenticazione proattiva.
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist): configura le regole di esclusione di proxy.
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode): configura le impostazioni del server proxy.
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl): imposta l'URL del file .pac del proxy.
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver): configura l'indirizzo o l'URL del server proxy.
-- [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
+- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled): abilita l'autenticazione proattiva.
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist): configura le regole di esclusione di proxy.
+- [ProxyMode](./microsoft-edge-policies.md#proxymode): configura le impostazioni del server proxy.
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl): imposta l'URL del file .pac del proxy.
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver): configura l'indirizzo o l'URL del server proxy.
+- [WebDriverOverridesIncompatiblePolicies](./microsoft-edge-policies.md#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
 
 #### <a name="obsoleted-policies"></a>Criteri obsoleti
 
 I criteri seguenti sono obsoleti.
 
-- [DefaultPluginsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultpluginssetting): impostazione predefinita di Adobe Flash.
-- [PluginsAllowedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsallowedforurls): consente il plug-in Adobe Flash in siti specifici.
-- [PluginsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
-- [RunAllFlashInAllowMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
+- [DefaultPluginsSetting](./microsoft-edge-policies.md#defaultpluginssetting): impostazione predefinita di Adobe Flash.
+- [PluginsAllowedForUrls](./microsoft-edge-policies.md#pluginsallowedforurls): consente il plug-in Adobe Flash in siti specifici.
+- [PluginsBlockedForUrls](./microsoft-edge-policies.md#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
+- [RunAllFlashInAllowMode](./microsoft-edge-policies.md#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
 
 <!-- end major 88 -->
 

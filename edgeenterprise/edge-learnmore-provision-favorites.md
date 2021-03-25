@@ -10,28 +10,28 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Effettuare il provisioning dei preferiti per Microsoft Edge
-ms.openlocfilehash: 94bd42573bdbc0fd1b971ded1c82e5fe152acc54
-ms.sourcegitcommit: 854dd73eb168960c0eb4b483f81a8efe88806a64
+ms.openlocfilehash: 67627fa10806435d76cecae00f79867bc5af03df
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/29/2020
-ms.locfileid: "11088704"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447600"
 ---
-# Effettuare il provisioning dei preferiti per Microsoft Edge
+# <a name="provision-favorites-for-microsoft-edge"></a>Effettuare il provisioning dei preferiti per Microsoft Edge
 
 Sulla base del feedback dei clienti, sono stati apportati miglioramenti al provisioning dei preferiti. A partire da Microsoft Edge versione 85, gli amministratori non devono più creare manualmente un file per eseguire il provisioning dei preferiti. Possono aggiungere preferiti e cartelle mediante l'interfaccia utente di Microsoft Edge per generare un file che può essere esportato in un criterio di gruppo.
 
-Questo articolo descrive come eseguire il provisioning di un set di preferiti e di cartelle per l'organizzazione. È possibile usare il criterio [Configura i Preferiti](https://docs.microsoft.com//DeployEdge/microsoft-edge-policies#configure-favorites) per effettuare il provisioning di preferiti e cartelle.
+Questo articolo descrive come eseguire il provisioning di un set di preferiti e di cartelle per l'organizzazione. È possibile usare il criterio [Configura i Preferiti](//DeployEdge/microsoft-edge-policies#configure-favorites) per effettuare il provisioning di preferiti e cartelle.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 85 o successiva.
 
-## Prerequisiti e consigli
+## <a name="prerequisites-and-recommendations"></a>Prerequisiti e consigli
 
 - Microsoft Edge versione 85 con il modello amministrativo appropriato installato per i criteri di gruppo.
 - È consigliabile usare un nuovo profilo in Microsoft Edge per effettuare il provisioning di questi preferiti. Tutti i preferiti salvati con il profilo verranno inclusi nell'esportazione.  
 
-## Provisioning di preferiti e cartelle
+## <a name="provision-favorites-and-folders"></a>Provisioning di preferiti e cartelle
 
 Seguire questa procedura per eseguire il provisioning di preferiti e cartelle per gli utenti.
 
@@ -66,6 +66,6 @@ Seguire questa procedura per eseguire il provisioning di preferiti e cartelle pe
 
 7. Fare clic su **OK** o su **Applica** per salvare queste impostazioni dei criteri.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

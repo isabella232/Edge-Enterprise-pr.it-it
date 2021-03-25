@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Linee guida e strumenti che un amministratore di Microsoft Edge può usare per risolvere i problemi comuni di sincronizzazione aziendale
-ms.openlocfilehash: 767b26c74e91213b407e8264a8ed185f38dfc2e9
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: 49fb0c5fc555e4f7ad4c728477387e931a5fbb5f
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400195"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447160"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>Diagnosticare e risolvere i problemi di sincronizzazione di Microsoft Edge
 
@@ -49,10 +49,10 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
 > [!NOTE]
 > Poiché l'origine di questo errore è in genere una modifica della configurazione in un tenant di Azure Active Directory, questa procedura di risoluzione dei problemi può essere eseguita solo da un amministratore del tenant e non dagli utenti finali.
 
-1. Verifica che il tenant aziendale abbia un abbonamento M365 supportato. L'elenco corrente dei tipi di abbonamento [disponibile qui](https://docs.microsoft.com/azure/information-protection/activate-office365). Se il tenant non ha un abbonamento supportato, può acquistare Azure Information Protection separatamente oppure eseguire l'aggiornamento a uno degli abbonamenti supportati.
-2. Se è disponibile un abbonamento supportato, verifica che nel tenant sia disponibile Azure Information Protection (AIP). Le istruzioni per controllare lo stato di AIP e, se necessario, attivare AIP sono disponibili [qui](https://docs.microsoft.com/azure/information-protection/activate-office365).
-3. Se il passaggio 2 indica che AIP è attivo ma la sincronizzazione non funziona comunque, attiva Enterprise State Roaming (ESR). Le istruzioni per l'abilitazione di ESR sono riportate [qui](https://docs.microsoft.com/azure/active-directory/devices/enterprise-state-roaming-enable). Tieni presente che ESR non deve rimanere in funzione. Puoi disattivare ESR se questo passaggio consente di risolvere il problema.
-4. Verifica che l'ambito di Azure Information Protection non sia in base a un criterio di onboarding. Puoi utilizzare l'applet di PowerShell [Get-AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) per verificare se l'ambito è abilitato. I due esempi seguenti mostrano una configurazione senza ambito e una configurazione che ha come ambito un gruppo di sicurezza specifico.
+1. Verifica che il tenant aziendale abbia un abbonamento M365 supportato. L'elenco corrente dei tipi di abbonamento [disponibile qui](/azure/information-protection/activate-office365). Se il tenant non ha un abbonamento supportato, può acquistare Azure Information Protection separatamente oppure eseguire l'aggiornamento a uno degli abbonamenti supportati.
+2. Se è disponibile un abbonamento supportato, verifica che nel tenant sia disponibile Azure Information Protection (AIP). Le istruzioni per controllare lo stato di AIP e, se necessario, attivare AIP sono disponibili [qui](/azure/information-protection/activate-office365).
+3. Se il passaggio 2 indica che AIP è attivo ma la sincronizzazione non funziona comunque, attiva Enterprise State Roaming (ESR). Le istruzioni per l'abilitazione di ESR sono riportate [qui](/azure/active-directory/devices/enterprise-state-roaming-enable). Tieni presente che ESR non deve rimanere in funzione. Puoi disattivare ESR se questo passaggio consente di risolvere il problema.
+4. Verifica che l'ambito di Azure Information Protection non sia in base a un criterio di onboarding. Puoi utilizzare l'applet di PowerShell [Get-AadrmOnboardingControlPolicy](/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) per verificare se l'ambito è abilitato. I due esempi seguenti mostrano una configurazione senza ambito e una configurazione che ha come ambito un gruppo di sicurezza specifico.
 
    ```powershell
     PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
@@ -71,9 +71,9 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
                 False f1488a05-8196-40a6-9483-524948b90282   All
    ```
 
-   Se l'ambito è abilitato, l'utente interessato deve essere aggiunto al gruppo di sicurezza per l'ambito oppure l'ambito deve essere rimosso. Nell'esempio seguente l'ambito del processo di onboarding è AIP nel gruppo di sicurezza indicato e l'ambito deve essere rimosso con l'applet PowerShell[Set-AadrmOnboardingControlPolicy](https://docs.microsoft.com/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps).
+   Se l'ambito è abilitato, l'utente interessato deve essere aggiunto al gruppo di sicurezza per l'ambito oppure l'ambito deve essere rimosso. Nell'esempio seguente l'ambito del processo di onboarding è AIP nel gruppo di sicurezza indicato e l'ambito deve essere rimosso con l'applet PowerShell[Set-AadrmOnboardingControlPolicy](/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps).
 
-5. Verifica che IPCv3Service sia attivato nel tenant. L’applet di Powersell[Get-AadrmConfiguration](https://docs.microsoft.com/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) mostra lo stato del servizio.
+5. Verifica che IPCv3Service sia attivato nel tenant. L’applet di Powersell[Get-AadrmConfiguration](/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) mostra lo stato del servizio.
 
    :::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-scoped-cfg-example.png" alt-text="Verificare se IPCv3Service è abilitato.":::
 
@@ -99,7 +99,7 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
       - [https://api.aadrm.com](https://api.aadrm.com) (per la maggior parte dei tenant)
       - [https://api.aadrm.de](https://api.aadrm.de) (per i tenant in Germania)
       - [https://api.aadrm.cn](https://api.aadrm.cn) (per i tenant in Cina)
-   - [Endpoint del servizio di notifica di Windows](https://docs.microsoft.com/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config).
+   - [Endpoint del servizio di notifica di Windows](/windows/uwp/design/shell/tiles-and-notifications/firewall-allowlist-config).
 
 5. Se il problema persiste, contatta il [supporto di Microsoft Edge](https://www.microsoftedgeinsider.com/support).
 
@@ -116,7 +116,7 @@ Questo errore è visibile in **Digita informazione** in *edge://sync-internals* 
 
 ### <a name="issue-sync-has-been-turned-off-by-your-administrator"></a>Problema: "La sincronizzazione è stata disattivata dall'amministratore".
 
-Assicurarsi che non sia impostato il [criterio SyncDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#syncdisabled).
+Assicurarsi che non sia impostato il [criterio SyncDisabled](./microsoft-edge-policies.md#syncdisabled).
 
 ## <a name="see-also"></a>Vedere anche
 

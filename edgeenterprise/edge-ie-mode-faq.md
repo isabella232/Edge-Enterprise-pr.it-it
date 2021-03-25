@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Domande frequenti e risoluzione dei problemi per Microsoft Edge in modalità IE
-ms.openlocfilehash: 565af265811e0e4814d82859f638ae9abcd0a014
-ms.sourcegitcommit: ef30fe37d0d115af0d4402c9005f5d0d1ba54b6c
+ms.openlocfilehash: f5279caddb5d3dfabaf04be6bd927f7095be1fc9
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/16/2021
-ms.locfileid: "11431813"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447730"
 ---
 # <a name="ie-mode-faq"></a>Domande frequenti sulla modalità IE
 
@@ -41,7 +41,7 @@ Utilizza le informazioni contenute in questa sezione per diagnosticare e risolve
 
 ### <a name="error-message-to-open-this-page-in-internet-explorer-mode-reinstall-microsoft-edge-with-administrator-privileges"></a>Messaggio di errore: "Per aprire questa pagina in modalità Internet Explorer, reinstallare Microsoft Edge con privilegi di amministratore".
 
-È possibile visualizzare questo errore se non si dispone di tutti i Windows Update richiesti. Vedere i prerequisiti elencati in [Informazioni sulla modalità IE](https://docs.microsoft.com/deployedge/edge-ie-mode) per le versioni richieste di Windows e Microsoft Edge.
+È possibile visualizzare questo errore se non si dispone di tutti i Windows Update richiesti. Vedere i prerequisiti elencati in [Informazioni sulla modalità IE](./edge-ie-mode.md) per le versioni richieste di Windows e Microsoft Edge.
 
 Se sono già stati installati tutti i Windows Update richiesti, è possibile visualizzare questo errore se:
 
@@ -66,7 +66,7 @@ Per verificare se Microsoft Edge è installato a livello di sistema, digitare "e
 
 ### <a name="error-message-error-could-not-retrieve-emie-site-list"></a>Messaggio di errore: "Errore: Impossibile recuperare l'elenco dei siti EMIE".
 
-Questo errore potrebbe essere visualizzato nella pagina del sito *edge://compat/enterprise*, indicando che il download dell'elenco dei siti non è riuscito. A partire da Microsoft Edge versione 87, quando i cookie vengono bloccati per le richieste di terze parti tramite il criterio [BlockThirdPartyCookies](https://docs.microsoft.com/deployedge/microsoft-edge-policies#blockthirdpartycookies), non è consentita nemmeno l'autenticazione HTTP. È possibile consentire i cookie per il dominio specifico che ospita l'elenco di siti in modalità Enterprise usando i criteri di [CookieAllowedForURLs](https://docs.microsoft.com/deployedge/microsoft-edge-policies#cookiesallowedforurls), per avere la garanzia che i download degli elenchi di siti siano eseguiti correttamente.
+Questo errore potrebbe essere visualizzato nella pagina del sito *edge://compat/enterprise*, indicando che il download dell'elenco dei siti non è riuscito. A partire da Microsoft Edge versione 87, quando i cookie vengono bloccati per le richieste di terze parti tramite il criterio [BlockThirdPartyCookies](./microsoft-edge-policies.md#blockthirdpartycookies), non è consentita nemmeno l'autenticazione HTTP. È possibile consentire i cookie per il dominio specifico che ospita l'elenco di siti in modalità Enterprise usando i criteri di [CookieAllowedForURLs](./microsoft-edge-policies.md#cookiesallowedforurls), per avere la garanzia che i download degli elenchi di siti siano eseguiti correttamente.
 
 ## <a name="frequently-asked-questions"></a>Domande frequenti
 
@@ -104,5 +104,5 @@ Tieni presente che questa funzionalità richiede gli aggiornamenti minimi del si
 ## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Informazioni sulla modalità IE](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [Informazioni aggiuntive sulla modalità Enterprise](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Informazioni sulla modalità IE](./edge-ie-mode.md)
+- [Informazioni aggiuntive sulla modalità Enterprise](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)

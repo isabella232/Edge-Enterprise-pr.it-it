@@ -10,19 +10,19 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
-ms.openlocfilehash: c9c64a55df3aeecaebaab3675296c5594612b94f
-ms.sourcegitcommit: fc0ac6bb6655d1f6e2de7c838f275779cd7a5de6
+ms.openlocfilehash: ffb295b5c844d15fee2b0fa23e78be9cd34ef03f
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "11175199"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447590"
 ---
-# Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
+# <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge Stable versione 87 o successiva.
 
-## Panoramica
+## <a name="overview"></a>Panoramica
 
 Molti siti Web moderni non sono compatibili con Internet Explorer. Quando un utente di Internet Explorer visita un sito Web pubblico non compatibile, viene visualizzato un messaggio che lo informa che il sito Web non è compatibile con il browser in uso e che è necessario passare manualmente a un altro browser.
 
@@ -31,9 +31,9 @@ La necessità di passare manualmente a un altro browser è richiesta a partire d
 Quando un utente accede a un sito Web non compatibile con Internet Explorer, verrà automaticamente reindirizzato a Microsoft Edge. Questo articolo descrive l'esperienza utente relativa al reindirizzamento e i criteri di gruppo utilizzati per configurare o disabilitare il reindirizzamento automatico.
 
 > [!NOTE]
-> Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer. Per altre informazioni, vedere [Richiedere aggiornamenti per l’elenco siti non compatibili](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+> Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer. Per altre informazioni, vedere [Richiedere aggiornamenti per l’elenco siti non compatibili](/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 
-## Esperienza di reindirizzamento
+## <a name="redirection-experience"></a>Esperienza di reindirizzamento
 
 Durante il reindirizzamento a Microsoft Edge, viene visualizzata la finestra di dialogo una tantum illustrata nello screenshot seguente. Questa finestra di dialogo indica il motivo del reindirizzamento e richiede all’utente il consenso per copiare i dati e le preferenze di esplorazione da Internet Explorer a Microsoft Edge. Verranno importati i dati di esplorazione seguenti: Preferiti, password, motori di ricerca, schede aperte, cronologia, impostazioni, cookie e Home page.
 
@@ -56,7 +56,7 @@ Quando un sito viene reindirizzato da Internet Explorer a Microsoft Edge, la sch
 > [!NOTE]
 > Dopo il reindirizzamento, l’utente può tornare a utilizzare Internet Explorer per i siti Web non presenti nell'elenco di incompatibilità di Internet Explorer.  
 
-## Criteri per configurare il reindirizzamento a Microsoft Edge
+## <a name="policies-to-configure-redirection-to-microsoft-edge"></a>Criteri per configurare il reindirizzamento a Microsoft Edge
 
 > [!NOTE]
 > Questi criteri saranno disponibili come aggiornamenti dei file ADMX entro il 26 ottobre 2020 e su Intune entro il 9 novembre 2020.
@@ -67,7 +67,7 @@ Quando un sito viene reindirizzato da Internet Explorer a Microsoft Edge, la sch
 - RedirectSitesFromInternetExplorerRedirectMode
 - HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 
-### Policy: RedirectSitesFromInternetExplorerPreventBHOInstall
+### <a name="policy-redirectsitesfrominternetexplorerpreventbhoinstall"></a>Policy: RedirectSitesFromInternetExplorerPreventBHOInstall
 
 Il reindirizzamento da Internet Explorer a Microsoft Edge richiede un oggetto browser helper (BHO) di Internet Explorer denominato "IEtoEdge BHO". Il criterio **RedirectSitesFromInternetExplorerPreventBHOInstall** verifica se il BHO è installato o meno.  
 
@@ -76,7 +76,7 @@ Il reindirizzamento da Internet Explorer a Microsoft Edge richiede un oggetto br
 
 Oltre alla necessità del BHO, esiste una dipendenza da **RedirectSitesFromInternetExplorerRedirectMode**, che deve essere impostata su "Reindirizza i siti in base all'elenco dei siti incompatibili" o su "Non configurato".
 
-### Policy: RedirectSitesFromInternetExplorerRedirectMode
+### <a name="policy-redirectsitesfrominternetexplorerredirectmode"></a>Policy: RedirectSitesFromInternetExplorerRedirectMode
 
  Questo criterio corrisponde all’impostazione**Browser predefinito** di Microsoft Edge "Consenti a Internet Explorer di aprire i siti Web in Microsoft Edge". Per accedere a questa impostazione, fare clic sull'URL seguente: *edge://settings/defaultbrowser*.  
 
@@ -88,9 +88,9 @@ Oltre alla necessità del BHO, esiste una dipendenza da **RedirectSitesFromInter
 >
 >Questa opzione non verrà visualizzata per i dispositivi associati a dominio o registrati tramite Gestione di dispositivi mobili (MDM).
 >
-> In alternativa, se si desidera consentire agli utenti di caricare i siti Web nella modalità di Internet Explorer, è possibile farlo configurando il criterio [Consenti il test della modalità di Internet Explorer](https://docs.microsoft.com/deployedge/microsoft-edge-policies#allow-internet-explorer-mode-testing).
+> In alternativa, se si desidera consentire agli utenti di caricare i siti Web nella modalità di Internet Explorer, è possibile farlo configurando il criterio [Consenti il test della modalità di Internet Explorer](./microsoft-edge-policies.md#allow-internet-explorer-mode-testing).
 
-### Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
+### <a name="policy-hideinternetexplorerredirectuxforincompatiblesitesenabled"></a>Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 
 Questo criterio configura l'esperienza utente per il reindirizzamento del sito Web non compatibile a Microsoft Edge.  
 
@@ -100,7 +100,7 @@ Questo criterio configura l'esperienza utente per il reindirizzamento del sito W
   > [!NOTE]
   > I dati di esplorazione dell’utente verranno importati a ogni nuovo reindirizzamento. Tuttavia, questo si verifica solo se l'utente ha acconsentito all'importazione nella finestra di dialogo una tantum di reindirizzamento.
 
-## Disabilitare il reindirizzamento a Microsoft Edge
+## <a name="disable-redirection-to-microsoft-edge"></a>Disabilitare il reindirizzamento a Microsoft Edge
 
 Se si desidera disabilitare il reindirizzamento PRIMA di eseguire l'aggiornamento a Microsoft Edge Stable versione 87, effettuare la procedura seguente:
 
@@ -111,8 +111,8 @@ Se si desidera disabilitare il reindirizzamento DOPO aver eseguito l'aggiornamen
 1. Impostare il criterio **RedirectSitesFromInternetExplorerRedirectMode** su **Abilitato** e quindi dall’elenco a discesa in Opzioni: Reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge, selezionare **Disabilita**. Questa impostazione interrompe il reindirizzamento non appena il criterio avrà effetto.
 2. Impostare il criterio **RedirectSitesFromInternetExplorerPreventBHOInstall** su **Abilitato**. Il BHO verrà disinstallato dopo il successivo aggiornamento di Microsoft Edge.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
-- [Richiedere aggiornamenti per l’elenco siti non compatibili](https://docs.microsoft.com/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+- [Richiedere aggiornamenti per l’elenco siti non compatibili](/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Criteri Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-policies)
+- [Criteri Microsoft Edge](./microsoft-edge-policies.md)

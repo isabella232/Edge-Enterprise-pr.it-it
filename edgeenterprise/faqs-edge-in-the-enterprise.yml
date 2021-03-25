@@ -11,37 +11,37 @@ metadata:
   ms.localizationpriority: high
   ms.collection: M365-modern-desktop
   description: Domande frequenti sulla distribuzione di Microsoft Edge nell'organizzazione
-  ms.openlocfilehash: d7098666c67d1b88fc6f7e0910c8793315e750cc
-  ms.sourcegitcommit: 0bd67aa982613f663e6840929a769fc88d5a6b4d
+  ms.openlocfilehash: 6a0a3c508f36318c080b6ccc62271b0d79bb9630
+  ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 03/05/2021
-  ms.locfileid: "11393779"
-title: Domande frequenti su Microsoft Edge nell'azienda
+  ms.lasthandoff: 03/24/2021
+  ms.locfileid: "11448150"
+title: Domande frequenti su Microsoft Edge nell'organizzazione
 summary: >
   > [!NOTE]
 
-  > Questo articolo si applica a Microsoft Edge, versione 77 o successiva.
+  > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 sections:
 - name: Ignorato
   questions:
   - question: Come posso sapere qual è la versione di Microsoft Edge in uso?
     answer: >
-      Nell'angolo superiore destro di Microsoft Edge seleziona l'icona con i puntini di sospensione (**...**) e quindi seleziona **Impostazioni.** Seleziona **informazioni su Microsoft Edge** per visualizzare la versione di Microsoft Edge in uso.
+      Nell'angolo superiore destro di Microsoft Edge seleziona l'icona con i puntini di sospensione (**...**) e quindi seleziona **Impostazioni**. Seleziona **informazioni su Microsoft Edge** per visualizzare la versione di Microsoft Edge in uso.
   - question: Internet Explorer 11 continuerà a ricevere gli aggiornamenti?
     answer: >
       Ci impegniamo a mantenere Internet Explorer un browser supportato, affidabile e sicuro. Internet Explorer è ancora un componente di Windows e segue il ciclo di vita del supporto del sistema operativo in cui è installato. Per altre informazioni, vedi [Domande frequenti sul ciclo di vita - Internet Explorer](https://support.microsoft.com/help/17454/). Mentre Microsoft continua a supportare e ad aggiornare Internet Explorer, gli aggiornamenti delle funzionalità e della piattaforma più recenti saranno disponibili solo in Microsoft Edge.
   - question: Posso eseguire la versione corrente di Microsoft Edge (Microsoft Edge Legacy) in modalità affiancata quando provo la nuova versione?
     answer: >
-      Sì. Dopo il 15 gennaio 2020 la nuova versione di Microsoft Edge (basata su Chromium) verrà distribuita nei dispositivi con edizioni Home e Pro in cui è in esecuzione Windows 10, versione 1803 o successiva. I dispositivi aggiunti al dominio sono esclusi da questo aggiornamento. Per altre informazioni, vedi [Panoramica degli aggiornamenti di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-blocker-toolkit#overview). È possibile eseguire un'installazione affiancata della versione legacy di Microsoft Edge durante la valutazione della versione successiva di Microsoft Edge. Per altre informazioni, vedi [Come accedere alla versione precedente di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-sysupdate-access-old-edge). Inoltre, ognuno dei nuovi canali di Microsoft Edge supporta anche installazioni affiancate. Per altre informazioni, vedi [Panoramica dei canali di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-channels).
+      Sì. Dopo il 15 gennaio 2020 la nuova versione di Microsoft Edge (basata su Chromium) verrà distribuita nei dispositivi con edizioni Home e Pro in cui è in esecuzione Windows 10, versione 1803 o successiva. I dispositivi aggiunti al dominio sono esclusi da questo aggiornamento. Per altre informazioni, vedi [Panoramica degli aggiornamenti di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-blocker-toolkit#overview). Puoi avere un'installazione affiancata di Microsoft Edge Legacy durante la valutazione della versione successiva di Microsoft Edge. Per altre informazioni, vedi [Come accedere alla versione precedente di Microsoft Edge](./microsoft-edge-sysupdate-access-old-edge.md). Inoltre, ognuno dei nuovi canali di Microsoft Edge supporta anche installazioni affiancate. Per altre informazioni, vedi [Panoramica dei canali di Microsoft Edge](./microsoft-edge-channels.md).
   - question: Microsoft Edge (basato su Chromium) supporta i controlli ActiveX o gli oggetti browser helper come Silverlight o Java?
     answer: >
-      No. Microsoft Edge non supporta i controlli ActiveX browser o gli oggetti browser Help Objects (BHO) come Silverlight o Java. Tuttavia, se si eseguono app Web che usano i controlli ActiveX, oggetti browser helper o le modalità documento legacy in Internet Explorer 11, è possibile configurarle in modo che vengano eseguite in modalità Internet Explorer nel nuovo Microsoft Edge. Per altre informazioni, consultare[Configurare la modalità Internet Explorer in Microsoft Edge](https://docs.microsoft.com/DeployEdge/edge-ie-mode).
+      No. Microsoft Edge non supporta i controlli ActiveX browser o gli oggetti Guida del browser (BHO, Browser Help Objects), ad esempio Silverlight o Java. Tuttavia, se si eseguono app Web che usano i controlli ActiveX, oggetti browser helper o le modalità documento legacy in Internet Explorer 11, è possibile configurarle in modo che vengano eseguite in modalità Internet Explorer nel nuovo Microsoft Edge. Per altre informazioni, consultare[Configurare la modalità Internet Explorer in Microsoft Edge](./edge-ie-mode.md).
   - question: I preferiti verranno esportati dalla versione corrente di Microsoft Edge o sarà necessario aggiungerli di nuovo?
     answer: "Attualmente, Microsoft Edge supporta l'importazione da installazioni esistenti di Microsoft Edge, Chrome, Internet Explorer e Firefox (in Windows 10). Per l'importazione sono supportate le impostazioni seguenti: Segnalibri, Cronologia, Password e Riempimento automatico (pagamenti, indirizzi e moduli generici). Puoi scegliere di eseguire l'importazione alla prima esperienza d'uso o dalle impostazioni del browser.  \n"
   - question: Qual è la differenza tra i canali/le build Stable, Beta e Dev?
     answer: >
-      Il canale Stable della versione successiva di Microsoft Edge è il canale di anteprima più stabile che offriamo, con le funzionalità orientate alle aziende pronte per essere [usate in una fase pilota e valutate](https://aka.ms/EdgeEnterprise) in tutta la tua organizzazione. Il canale Beta consente di convalidare la successiva versione Stable con un set di utenti rappresentativo. I canali Stable e Beta vengono aggiornati circa ogni sei settimane. I canali Dev e Canary continuano a essere aggiornati rispettivamente ogni settimana e ogni giorno. I programmi di installazione offline (file MSI e PKG) sono disponibili solo per i canali Stable, Beta e Dev. Per altre informazioni, vedi [Panoramica dei canali di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-channels).
+      Il canale Stable della versione successiva di Microsoft Edge è il canale di anteprima più stabile che offriamo, con le funzionalità orientate alle aziende pronte per essere [usate in una fase pilota e valutate](https://aka.ms/EdgeEnterprise) in tutta la tua organizzazione. Il canale Beta consente di convalidare la successiva versione Stable con un set di utenti rappresentativo. I canali Stable e Beta vengono aggiornati circa ogni sei settimane. I canali Dev e Canary continuano ad aggiornarsi rispettivamente ogni settimana e ogni giorno. I programmi di installazione offline (file MSI e PKG) sono disponibili solo per i canali Stable, Beta e Dev. Per altre informazioni, vedi [Panoramica dei canali di Microsoft Edge](./microsoft-edge-channels.md).
   - question: Quale tipo di supporto per le estensioni ho con la nuova versione di Microsoft Edge?
     answer: >
       Microsoft Edge supporta le estensioni da [Componenti aggiuntivi di Microsoft Edge Insider](https://go.microsoft.com/fwlink/?linkid=2081222) e [Chrome Web Store](https://go.microsoft.com/fwlink/?linkid=2072338).
@@ -53,12 +53,12 @@ sections:
       Sì. Sono disponibili pacchetti nel [Catalogo di Microsoft Update](https://www.catalog.update.microsoft.com/Search.aspx?q=the%20new%20microsoft%20edge%20for%20windows), che possono essere usati per la distribuzione iniziale del nuovo Microsoft Edge tramite WSUS. Dopo la distribuzione iniziale, gli aggiornamenti automatici sono configurati per impostazione predefinita. Per altre informazioni, vedere [Aggiornamento in WSUS per il nuovo Microsoft Edge per Windows 10, versione 1809, 1903, 1909 e 2004: 29 ottobre 2020](https://support.microsoft.com/help/4584642/update-in-wsus-for-the-new-microsoft-edge).
 
 
-      Gli aggiornamenti manuali possono essere eseguiti tramite uno strumento di gestione della configurazione, ad esempio [ConfigMgr](https://docs.microsoft.com/configmgr/apps/deploy-use/deploy-edge?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json).
+      Gli aggiornamenti manuali possono essere eseguiti tramite uno strumento di gestione della configurazione, ad esempio [ConfigMgr](/configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json).
   - question: Le preferenze master sono supportate?
     answer: "No, le preferenze master non sono supportate. \n"
 additionalContent: >-
   ## <a name="see-also"></a>Vedere anche
 
-  - [Pagina di destinazione della documentazione di Microsoft Edge](https://docs.microsoft.com/DeployEdge/)
+  - [Pagina di destinazione della documentazione di Microsoft Edge](./index.yml)
 
   - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

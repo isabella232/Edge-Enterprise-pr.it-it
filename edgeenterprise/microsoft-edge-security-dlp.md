@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Prevenzione della perdita di dati (DPL) in Microsoft Edge
-ms.openlocfilehash: f25e1fa7a610645f6ca0ca10cbcfc69ae8689b7a
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+ms.openlocfilehash: ac34386ed1b691d7b45f30c2b2ec295955d11104
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11384984"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447930"
 ---
 # <a name="data-loss-prevention-dlp-in-microsoft-edge"></a>Prevenzione della perdita di dati (DPL) in Microsoft Edge
 
@@ -37,8 +37,8 @@ Microsoft Endpoint DLP fa parte della nuova generazione di prevenzione della per
 Per altre informazioni sulla prevenzione della perdita dei dati degli endpoint, usare le risorse seguenti:
 
 - [Video: Microsoft Edge e prevenzione della perdita dei dati (DLP)](microsoft-edge-video-security-dlp.md)
-- [Informazioni sulla prevenzione della perdita dei dati di Microsoft 365 Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide&preserve-view=true)
-- [Introduzione sulla prevenzione della perdita dei dati di Endpoint](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-getting-started?view=o365-worldwide&preserve-view=true)
+- [Informazioni sulla prevenzione della perdita dei dati di Microsoft 365 Endpoint](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide)
+- [Introduzione sulla prevenzione della perdita dei dati di Endpoint](/microsoft-365/compliance/endpoint-dlp-getting-started?preserve-view=true&view=o365-worldwide)
 
 Microsoft Edge applica i criteri configurati dall'amministratore per i file sensibili e registra gli eventi di controllo per le attività non conformi.
 
@@ -49,19 +49,19 @@ Alcune delle attività utente che è possibile controllare e gestire nei disposi
 - Protezione stampa: proteggere il file riservato dalla stampa.
 - Salva su USB / rete: protegge i file sensibili dal salvataggio in un’unità di archiviazione USB rimovibile o in posizioni di rete non autorizzate.
 
-Per informazioni più dettagliate sulle attività degli utenti che è possibile controllare e gestire, vedi [Attività endpoint che è possibile monitorare e su cui si può intervenire](https://docs.microsoft.com/microsoft-365/compliance/endpoint-dlp-learn-about?view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on&preserve-view=true).
+Per informazioni più dettagliate sulle attività degli utenti che è possibile controllare e gestire, vedi [Attività endpoint che è possibile monitorare e su cui si può intervenire](/microsoft-365/compliance/endpoint-dlp-learn-about?preserve-view=true&view=o365-worldwide#endpoint-activities-you-can-monitor-and-take-action-on).
 
 ## <a name="windows-information-protection"></a>Windows Information Protection
 
-Per informazioni su come Microsoft Edge supporta Windows Information Protection (WIP), consulta [Supporto per Windows Information Protection](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection). Per saperne di più sui requisiti di sistema, i vantaggi e le funzionalità supportate visita le seguenti sezioni:
+Per informazioni su come Microsoft Edge supporta Windows Information Protection (WIP), consulta [Supporto per Windows Information Protection](./microsoft-edge-security-windows-information-protection.md). Per saperne di più sui requisiti di sistema, i vantaggi e le funzionalità supportate visita le seguenti sezioni:
 
-- [Requisiti di sistema](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#system-requirements)
-- [Vantaggi di Windows Information Protection](https://docs.microsoft.com/deployedge/microsoft-edge-security-windows-information-protection#windows-information-protection-benefits)
-- [Funzionalità di Windows Information Protection in Microsoft Edge](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-information-protection#wip-features-supported-in-microsoft-edge)
+- [Requisiti di sistema](./microsoft-edge-security-windows-information-protection.md#system-requirements)
+- [Vantaggi di Windows Information Protection](./microsoft-edge-security-windows-information-protection.md#windows-information-protection-benefits)
+- [Funzionalità di Windows Information Protection in Microsoft Edge](./microsoft-edge-security-windows-information-protection.md#wip-features-supported-in-microsoft-edge)
 
 ## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Video: Prevenzione della perdita di dati - Microsoft Edge](https://www.youtube.com/watch?v=dLD04U9eTqg)
-- [Panoramica della prevenzione della perdita di dati](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide&preserve-view=true)
-- [Proteggere i dati aziendali con Windows Information Protection](https://docs.microsoft.com/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)
+- [Panoramica della prevenzione della perdita di dati](/microsoft-365/compliance/data-loss-prevention-policies?preserve-view=true&view=o365-worldwide)
+- [Proteggere i dati aziendali con Windows Information Protection](/windows/security/information-protection/windows-information-protection/protect-enterprise-data-using-wip)

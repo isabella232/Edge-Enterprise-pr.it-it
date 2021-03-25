@@ -10,33 +10,33 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Scopri come distribuire Microsoft Edge con System Center Configuration Manager (SCCM)
-ms.openlocfilehash: be14f2db3b28b7585bfad1706b9f82209235df0a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 64b26412c4596a9514227d41d1a4e753a66ed057
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980187"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447830"
 ---
-# Distribuire Microsoft Edge tramite System Center Configuration Manager
+# <a name="deploy-microsoft-edge-using-system-center-configuration-manager"></a>Distribuire Microsoft Edge tramite System Center Configuration Manager
 
 In questo articolo viene illustrato come automatizzare una distribuzione di Microsoft Edge tramite System Center Configuration Manager (SCCM).
 
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Prima di iniziare
+## <a name="before-you-begin"></a>Prima di iniziare
 
-Leggere le informazioni in [Introduzione alla gestione delle applicazioni in Configuration Manager](https://docs.microsoft.com/sccm/apps/understand/introduction-to-application-management). Questo articolo sulla gestione delle applicazioni consente di comprendere la terminologia usata ed è una guida alla preparazione del sito per l'installazione delle applicazioni.
+Leggere le informazioni in [Introduzione alla gestione delle applicazioni in Configuration Manager](/sccm/apps/understand/introduction-to-application-management). Questo articolo sulla gestione delle applicazioni consente di comprendere la terminologia usata ed è una guida alla preparazione del sito per l'installazione delle applicazioni.
 
 Scarica il file di installazione di Microsoft Edge in modalità Enterprise (**MicrosoftEdgeDevEnterpriseX64.msi** e/o **MicrosoftEdgeDevEnterpriseX86.msi**) nella [pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise).
 
 Assicurati di archiviare i file di installazione di Microsoft Edge in un percorso di rete accessibile.
 
-## Creare l'applicazione
+## <a name="create-the-application"></a>Creare l'applicazione
 
 Creerai l'applicazione usando una procedura guidata di Gestione configurazione.
 
-### Avviare la Creazione guidata applicazione e creare l'applicazione  
+### <a name="start-the-create-application-wizard-and-create-the-application"></a>Avviare la Creazione guidata applicazione e creare l'applicazione  
 
 1. Nella console di Gestione configurazione fai clic su **Raccolta software** > **Gestione applicazioni** > **Applicazioni**.  
 
@@ -85,7 +85,7 @@ Nella schermata seguente viene illustrato l'esempio usato per questo articolo.
 
 ![Applicazioni](./media/edge-ent-deployment-sccm/edge-ent-create-app-8.png)
 
-## Modificare le proprietà dell'applicazione e le impostazioni di distribuzione
+## <a name="change-application-properties-and-deployment-settings"></a>Modificare le proprietà dell'applicazione e le impostazioni di distribuzione
 
 Dopo aver creato un'applicazione, puoi ottimizzare le impostazioni dell'applicazione, se necessario. Per visualizzare le proprietà dell'applicazione:
 
@@ -94,7 +94,7 @@ Dopo aver creato un'applicazione, puoi ottimizzare le impostazioni dell'applicaz
 
    ![Configurare le proprietà dell'applicazione](./media/edge-ent-deployment-sccm/edge-ent-create-app-req-1.png)
 
- Nella finestra di dialogo **<nome applicazione\> Proprietà applicazione** viene visualizzata una vista a schede degli elementi che puoi configurare per modificare il comportamento dell'applicazione. Per altre informazioni sulle impostazioni che puoi configurare, vedi [Creare applicazioni](https://docs.microsoft.com/sccm/apps/deploy-use/create-applications).
+ Nella finestra di dialogo **<nome applicazione\> Proprietà applicazione** viene visualizzata una vista a schede degli elementi che puoi configurare per modificare il comportamento dell'applicazione. Per altre informazioni sulle impostazioni che puoi configurare, vedi [Creare applicazioni](/sccm/apps/deploy-use/create-applications).
 
 Per questo esempio, modificherai alcune proprietà del tipo di distribuzione dell'applicazione. Per modificare le proprietà di distribuzione:
 
@@ -104,7 +104,7 @@ Per questo esempio, modificherai alcune proprietà del tipo di distribuzione del
 
    ![Modificare il tipo di distribuzione](./media/edge-ent-deployment-sccm/edge-ent-create-app-req-2.png)
 
-### Aggiungere un requisito al tipo di distribuzione
+### <a name="add-a-requirement-to-the-deployment-type"></a>Aggiungere un requisito al tipo di distribuzione
 
  I requisiti specificano le condizioni che devono essere soddisfatte prima che un'applicazione possa essere installata in un dispositivo. Puoi scegliere tra requisiti predefiniti oppure puoi creare requisiti personalizzati. Puoi ad esempio aggiungere un requisito in base al quale l'applicazione verrà installata solo in PC che eseguono Windows 10 **x86** o **x64**, a seconda dell'architettura del processore di destinazione del file di installazione. In questo esempio, devi specificare Windows 10 **x86**.
 
@@ -132,12 +132,12 @@ Per questo esempio, modificherai alcune proprietà del tipo di distribuzione del
 
 4. Fai clic su **OK** per chiudere la pagina delle proprietà aperta e tornare all'elenco **Applicazioni** nella console di Gestione configurazione.  
 
-## Aggiungere il contenuto dell'applicazione a un punto di distribuzione  
+## <a name="add-the-application-content-to-a-distribution-point"></a>Aggiungere il contenuto dell'applicazione a un punto di distribuzione  
 
 Per distribuire l'applicazione aggiornata ai PC, assicurati che il contenuto dell'applicazione venga copiato in un punto di distribuzione. I PC accedono al punto di distribuzione per installare l'applicazione.  
 
 >[!TIP]
->Per altre informazioni sui punti di distribuzione e la gestione dei contenuti in Gestione configurazione, vedi [Distribuire e gestire il contenuto per System Center Configuration Manager](https://docs.microsoft.com/sccm/core/servers/deploy/configure/deploy-and-manage-content).  
+>Per altre informazioni sui punti di distribuzione e la gestione dei contenuti in Gestione configurazione, vedi [Distribuire e gestire il contenuto per System Center Configuration Manager](/sccm/core/servers/deploy/configure/deploy-and-manage-content).  
 
 1. Nella console di Gestione configurazione fai clic su **Raccolta software**.  
 
@@ -155,7 +155,7 @@ Per distribuire l'applicazione aggiornata ai PC, assicurati che il contenuto del
 
 Puoi verificare che il contenuto dell'applicazione si stato copiato in modo corretto al punto di distribuzione nell'area di lavoro **Monitoraggio**, in **Stato distribuzione** > **Stato contenuto**.  
 
-## Distribuire l'applicazione  
+## <a name="deploy-the-application"></a>Distribuire l'applicazione  
 
 Distribuisci quindi l'applicazione in una raccolta dispositivi nella gerarchia. In questo esempio, l'applicazione viene distribuita nella raccolta di dispositivi **Tutti i sistemi**.  
 
@@ -199,11 +199,11 @@ Distribuisci quindi l'applicazione in una raccolta dispositivi nella gerarchia. 
 
 Usa le informazioni riportate nella sezione **Monitorare l'applicazione** seguente per visualizzare lo stato della distribuzione dell'applicazione.  
 
-## Monitorare l'applicazione
+## <a name="monitor-the-application"></a>Monitorare l'applicazione
 
  In questa sezione puoi esaminare rapidamente lo stato dell'applicazione distribuita.  
 
-### Per esaminare lo stato di distribuzione  
+### <a name="to-review-the-deployment-status"></a>Per esaminare lo stato di distribuzione  
 
 1. Nella console di Gestione configurazione fai clic su **Monitoraggio** > **Distribuzioni**.  
 
@@ -226,13 +226,13 @@ Usa le informazioni riportate nella sezione **Monitorare l'applicazione** seguen
     - **Sconosciuto**: Gestione configurazione non è riuscito a segnalare lo stato della distribuzione. Ricontrolla in seguito.  
 
     >[!TIP]
-    >Esistono diversi modi per monitorare le distribuzioni delle applicazioni. Per altre informazioni, vedi [Monitorare le applicazioni dalla console di System Center Configuration Manager](https://docs.microsoft.com/sccm/apps/deploy-use/monitor-applications-from-the-console).  
+    >Esistono diversi modi per monitorare le distribuzioni delle applicazioni. Per altre informazioni, vedi [Monitorare le applicazioni dalla console di System Center Configuration Manager](/sccm/apps/deploy-use/monitor-applications-from-the-console).  
 
-## Esperienza dell'utente finale  
+## <a name="end-user-experience"></a>Esperienza dell'utente finale  
 
 Gli utenti che dispongono di PC gestiti da Gestione configurazione e che eseguono Windows 10 con l'architettura del processore specificata, ricevono un messaggio che indica la necessità di installare l'applicazione Microsoft Edge Dev. Quando accettano questa opzione di installazione, l'applicazione viene installata.  
 
-## Vedi
+## <a name="see-also"></a>Vedi
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Per altre informazioni su come distribuire i pacchetti MSI, vedi Creare e distribuire un'applicazione con System Center Configuration Manager.](https://docs.microsoft.com/sccm/apps/get-started/create-and-deploy-an-application)
+- [Per altre informazioni su come distribuire i pacchetti MSI, vedi Creare e distribuire un'applicazione con System Center Configuration Manager.](/sccm/apps/get-started/create-and-deploy-an-application)

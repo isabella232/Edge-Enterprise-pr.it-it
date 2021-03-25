@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: a0f33300d39f5ecaf48de114697c593a391dc052
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: 94d8d621ecac3764ecf13194efb55cfbbf80b70b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442386"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447990"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
@@ -38,7 +38,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2021-21193](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21193), che è stato segnalato al team di Chromium come un exploit in condizioni normali. Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://msrc.microsoft.com/update-guide).
 
-Gli aggiornamenti della sicurezza del canale stabile sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-13-2021)
+Gli aggiornamenti della sicurezza del canale stabile sono [elencati qui.](./microsoft-edge-relnotes-security.md#march-13-2021)
 
 ## <a name="version-89077450-march-10"></a>Versione 89.0.774.50: 10 marzo
 
@@ -54,20 +54,20 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2021-21166](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21166) che è stato segnalato dal team di Chromium come un exploit in natura. Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://msrc.microsoft.com/update-guide).
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#march-4-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#march-4-2021)
 
 ### <a name="resolved-issues"></a>Problemi risolti
 
 - **Aggiornamenti e correzioni delle scelte rapide da tastiera del menu Start e della barra delle applicazioni:**
   - Quando fai clic sul collegamento di Microsoft Edge nel menu Start, ora viene mostrata correttamente l'opzione per rimuovere Microsoft Edge dalla barra quando è bloccato in alto.
-  - I layout di avvio che includono una [configurazione della barra delle applicazioni](https://docs.microsoft.com/windows/configuration/configure-windows-10-taskbar) per aggiungere Microsoft Edge alla barra delle applicazioni non causano più l'aggiunta di un secondo collegamento a Microsoft Edge alla barra delle applicazioni.
+  - I layout di avvio che includono una [configurazione della barra delle applicazioni](/windows/configuration/configure-windows-10-taskbar) per aggiungere Microsoft Edge alla barra delle applicazioni non causano più l'aggiunta di un secondo collegamento a Microsoft Edge alla barra delle applicazioni.
   - Le organizzazioni che usano i profili di roaming di Windows non vedranno più un'icona bianca vuota al posto dell'icona di Microsoft Edge sulla barra delle applicazioni quando gli utenti accedono a Windows.
 
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **La modalità tutto schermo offre altre funzionalità di blocco.** A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Altre informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
 
-- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](https://docs.microsoft.com/deployedge/edge-ie-mode-site-list-manager).
+- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](./edge-ie-mode-site-list-manager.md).
 
 - **Miglioramento delle prestazioni del browser con le schede di sospensione**. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare l’intervallo di tempo prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso di lavoro, sono anche disponibili sistemi [euristici](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) che evitano che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità può essere gestita tramite i criteri di gruppo.
 
@@ -85,21 +85,21 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
 
 Sono stati aggiunti 7 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
-- [BrowsingDataLifetime](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#browsingdatalifetime): impostazioni vita utile dati di esplorazione
-- [maMEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#mamenabled): gestione delle app per dispositivi mobili abilitata
-- [DefinePreferredLanguages](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#definepreferredlanguages): definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
-- [ShowRecommendationsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showrecommendationsenabled) - Consenti consigli e notifiche promozionali da Edge
-- [StampaAllowedBackgroundGraphicsModes](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingallowedbackgroundgraphicsmodes) - Limita la modalità di stampa grafica in background
-- [PrintingBackgroundGraphicsDefault](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printingbackgroundgraphicsdefault) - Modalità di stampa grafica di sfondo predefinita
-- [SmartActionsBlockList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#smartactionsblocklist) - Blocca le azioni intelligenti per un elenco di servizi
+- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime): impostazioni vita utile dati di esplorazione
+- [maMEnabled](./microsoft-edge-policies.md#mamenabled): gestione delle app per dispositivi mobili abilitata
+- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages): definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
+- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled) - Consenti consigli e notifiche promozionali da Edge
+- [StampaAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes) - Limita la modalità di stampa grafica in background
+- [PrintingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault) - Modalità di stampa grafica di sfondo predefinita
+- [SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist) - Blocca le azioni intelligenti per un elenco di servizi
 
 #### <a name="obsoleted-policies"></a>Criteri obsoleti
 
 I criteri seguenti sono obsoleti.
 
-- [ForceLegacyDefaultReferrerPolicy](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#forcelegacydefaultreferrerpolicy) - Usa un criterio di referrer predefinito di no-referrer-when-downgrade
-- [MetricsReportingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) - Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
-- [SendSiteInfoToImproveServices](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) - Invia informazioni sul sito per migliorare i servizi Microsoft
+- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy) - Usa un criterio di referrer predefinito di no-referrer-when-downgrade
+- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled) - Abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
+- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices) - Invia informazioni sul sito per migliorare i servizi Microsoft
 <!-- end major 89 -->
 ## <a name="version-88070581-february-25"></a>Versione 88.0.705.81: 25 febbraio
 
@@ -107,7 +107,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-88070574-february-17"></a>Versione 88.0.705.74: 17 febbraio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-17-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-17-2021)
 
 ## <a name="version-88070568-february-11"></a>Versione 88.0.705.68: 11 febbraio
 
@@ -118,11 +118,11 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148), che è stato segnalato al team di Chromium come un exploit in condizioni normali.
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-5-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-5-2021)
 
 ## <a name="version-88070562-february-4"></a>Versione 88.0.705.62: 4 febbraio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#February-4-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-4-2021)
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
@@ -136,7 +136,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-88070550-january-21"></a>Versione 88.0.705.50: 21 gennaio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-21-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#january-21-2021)
 
 <!--- begin major 88  --->
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
@@ -155,7 +155,7 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
     > [!NOTE]
     > "Single Sign-on (SSO) per tutti gli account di Windows che usano il profilo Microsoft Edge" è un aggiornamento delle note sulla versione del 21 gennaio.
 
-- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode).
+- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](./microsoft-edge-configure-kiosk-mode.md).
 
 - **Sicurezza e privacy:**
 
@@ -197,45 +197,45 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
 
 Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
-- [BasicAuthOverHttpEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#basicauthoverhttpenabled) - Consentire l'autenticazione di base per HTTP.
-- [BlockExternalExtensions](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#blockexternalextensions) - blocca l'installazione delle estensioni esterne.
-- [InternetExplorerIntegrationLocalFileAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileallowed): consente l'avvio di file locali in modalità Internet Explorer.
-- [InternetExplorerIntegrationLocalFileExtensionAllowList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileextensionallowlist):apre i file locali nell'elenco Consenti estensione file in modalità Internet Explorer.
-- [InternetExplorerIntegrationLocalFileShowContextMenu](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#internetexplorerintegrationlocalfileshowcontextmenu): mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer.
-- [IntranetRedirectBehavior](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
-- [PrinterTypeDenyList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
-- [ShowMicrosoftRewards](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
-- [SleepingTabsEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsenabled): configura le schede di sospensione.
-- [SleepingTabsTimeout](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
-- [SleepingTabsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
-- [StartupBoostEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#startupboostenabled) attiva il potenziamento di avvio.
-- [targetBlankImpliesNoOpener](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#targetblankimpliesnoopener) : non impostare window.opener per i collegamenti di destinazione _blank.
-- [UpdatePolicyOverride](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
-- [VerticalTabsAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
-- [WebRtcAllowLegacyTLSProtocols](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
-- [WebWidgetAllowed](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetallowed): abilita il widget Web.
-- [WebWidgetIsEnabledOnStartup](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webwidgetisenabledonstartup) : consente il widget Web all'avvio di Windows.
+- [BasicAuthOverHttpEnabled](./microsoft-edge-policies.md#basicauthoverhttpenabled) - Consentire l'autenticazione di base per HTTP.
+- [BlockExternalExtensions](./microsoft-edge-policies.md#blockexternalextensions) - blocca l'installazione delle estensioni esterne.
+- [InternetExplorerIntegrationLocalFileAllowed](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileallowed): consente l'avvio di file locali in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileExtensionAllowList](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist):apre i file locali nell'elenco Consenti estensione file in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileShowContextMenu](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileshowcontextmenu): mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer.
+- [IntranetRedirectBehavior](./microsoft-edge-policies.md#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
+- [PrinterTypeDenyList](./microsoft-edge-policies.md#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
+- [ShowMicrosoftRewards](./microsoft-edge-policies.md#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
+- [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled): configura le schede di sospensione.
+- [SleepingTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
+- [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) attiva il potenziamento di avvio.
+- [targetBlankImpliesNoOpener](./microsoft-edge-policies.md#targetblankimpliesnoopener) : non impostare window.opener per i collegamenti di destinazione _blank.
+- [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
+- [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
+- [WebRtcAllowLegacyTLSProtocols](./microsoft-edge-policies.md#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
+- [WebWidgetAllowed](./microsoft-edge-policies.md#webwidgetallowed): abilita il widget Web.
+- [WebWidgetIsEnabledOnStartup](./microsoft-edge-policies.md#webwidgetisenabledonstartup) : consente il widget Web all'avvio di Windows.
 
 #### <a name="deprecated-policies"></a>Criteri deprecati
 
-- [ProactiveAuthEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proactiveauthenabled): abilita l'autenticazione proattiva.
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist): configura le regole di esclusione di proxy.
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode): configura le impostazioni del server proxy.
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl): imposta l'URL del file .pac del proxy.
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver): configura l'indirizzo o l'URL del server proxy.
-- [WebDriverOverridesIncompatiblePolicies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
+- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled): abilita l'autenticazione proattiva.
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist): configura le regole di esclusione di proxy.
+- [ProxyMode](./microsoft-edge-policies.md#proxymode): configura le impostazioni del server proxy.
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl): imposta l'URL del file .pac del proxy.
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver): configura l'indirizzo o l'URL del server proxy.
+- [WebDriverOverridesIncompatiblePolicies](./microsoft-edge-policies.md#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
 
 ### <a name="obsoleted-policies"></a>Criteri obsoleti
 
-- [di spostamento a pagina](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#allowpopupsduringpageunload) A una pagina di mostrare i popup durante lo scaricamento.
-- [DefaultPluginsSetting](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#defaultpluginssetting): impostazione predefinita di Adobe Flash.
-- [PluginsAllowedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsallowedforurls): consente il plug-in Adobe Flash in siti specifici.
-- [PluginsBlockedForUrls](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
-- [RunAllFlashInAllowMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
+- [di spostamento a pagina](./microsoft-edge-policies.md#allowpopupsduringpageunload) A una pagina di mostrare i popup durante lo scaricamento.
+- [DefaultPluginsSetting](./microsoft-edge-policies.md#defaultpluginssetting): impostazione predefinita di Adobe Flash.
+- [PluginsAllowedForUrls](./microsoft-edge-policies.md#pluginsallowedforurls): consente il plug-in Adobe Flash in siti specifici.
+- [PluginsBlockedForUrls](./microsoft-edge-policies.md#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
+- [RunAllFlashInAllowMode](./microsoft-edge-policies.md#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
 <!--- end major 88  --->
 ## <a name="version-87066475-january-7"></a>Versione 87.0.664.75: 7 gennaio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#january-7-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#january-7-2021)
 
 ## <a name="version-87066466-december-17"></a>Versione 87.0.664.66: 17 dicembre
 
@@ -247,13 +247,13 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## <a name="version-87066457-december-7"></a>Versione 87.0.664.57: 7 dicembre
 
-Sono stati risolti diversi bug e problemi di prestazioni. Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#december-7-2020)
+Sono stati risolti diversi bug e problemi di prestazioni. Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#december-7-2020)
 
 ## <a name="version-87066455-december-3"></a>Versione 87.0.664.55: 3 dicembre
 
 Risolti diversi bug e problemi relativi alle prestazioni. La funzionalità seguente è stata aggiornata per questa versione.
 
-- **Shopping è abilitato per impostazione predefinita**. A partire da Microsoft Edge versione 87, gli utenti aziendali possono trarre vantaggio dallo shopping in Microsoft Edge. Grazie alla funzionalità Shopping, Microsoft Edge consente agli utenti di trovare buoni sconto e prezzi migliori durante lo shopping online. (L'esperienza dei buoni sconto è stata rilasciata con la versione stabile 87.0.664.41). L'esperienza di confronto dei prezzi è ora disponibile con questo aggiornamento. Questa funzionalità può essere configurata usando il criterio [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#edgeshoppingassistantenabled). Vedere il [Blog](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) e [Altre informazioni](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping) su Microsoft Shopping.
+- **Shopping è abilitato per impostazione predefinita**. A partire da Microsoft Edge versione 87, gli utenti aziendali possono trarre vantaggio dallo shopping in Microsoft Edge. Grazie alla funzionalità Shopping, Microsoft Edge consente agli utenti di trovare buoni sconto e prezzi migliori durante lo shopping online. (L'esperienza dei buoni sconto è stata rilasciata con la versione stabile 87.0.664.41). L'esperienza di confronto dei prezzi è ora disponibile con questo aggiornamento. Questa funzionalità può essere configurata usando il criterio [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled). Vedere il [Blog](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) e [Altre informazioni](/microsoft-edge/privacy-whitepaper#shopping) su Microsoft Shopping.
 
 ## <a name="version-87066452-november-30"></a>Versione 87.0.664.52: 30 novembre
 
@@ -266,15 +266,15 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 <!-- begin major 87 --->
 ## <a name="version-87066441-november-19"></a>Versione 87.0.664.41: 19 novembre
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-19-2020)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#november-19-2020)
 
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
-- **Reindirizzamento automatico per siti incompatibili da Internet Explorer a Microsoft Edge**. A partire dall’aggiornamento di Microsoft Edge 87 Stable, i siti Web pubblici che mostrano un messaggio di incompatibilità in Internet Explorer verranno reindirizzati automaticamente a Microsoft Edge. Per altre informazioni e per configurare questa esperienza, vedere [Reindirizzamento dei siti incompatibili](https://docs.microsoft.com/deployedge/edge-learnmore-neededge).
+- **Reindirizzamento automatico per siti incompatibili da Internet Explorer a Microsoft Edge**. A partire dall’aggiornamento di Microsoft Edge 87 Stable, i siti Web pubblici che mostrano un messaggio di incompatibilità in Internet Explorer verranno reindirizzati automaticamente a Microsoft Edge. Per altre informazioni e per configurare questa esperienza, vedere [Reindirizzamento dei siti incompatibili](./edge-learnmore-neededge.md).
 
-- **Funzionalità di privacy in modalità tutto schermo abilitate**. A partire da Microsoft Edge versione 87, saranno abilitate le funzionalità della modalità tutto schermo in grado di garantire la privacy dei dati degli utenti. Queste funzionalità consentiranno esperienze come la cancellazione dei dati utente all'uscita, l'eliminazione dei file scaricati e il ripristino dell'esperienza di avvio configurata dopo un periodo di inattività specificato. Altre informazioni su come [Configurare le opzioni della modalità tutto schermo di Microsoft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-configure-kiosk-mode)
+- **Funzionalità di privacy in modalità tutto schermo abilitate**. A partire da Microsoft Edge versione 87, saranno abilitate le funzionalità della modalità tutto schermo in grado di garantire la privacy dei dati degli utenti. Queste funzionalità consentiranno esperienze come la cancellazione dei dati utente all'uscita, l'eliminazione dei file scaricati e il ripristino dell'esperienza di avvio configurata dopo un periodo di inattività specificato. Altre informazioni su come [Configurare le opzioni della modalità tutto schermo di Microsoft Edge](./microsoft-edge-configure-kiosk-mode.md)
 
-- **Funzionalità per gli acquisti abilitate per impostazione predefinita**. A partire da Microsoft Edge versione 87, gli utenti enterprise possono trarre vantaggio dagli acquisti in Edge. Con le funzionalità di acquisto, Microsoft Edge aiuta gli utenti a trovare coupon e prezzi migliori durante gli acquisti online. L'esperienza dei coupon è disponibile con questo aggiornamento e il confronto dei prezzi verrà rilasciato nei prossimi aggiornamenti per Microsoft Edge 87. Questa funzionalità può essere configurata tramite il criterio [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled). Vedere il [Blog](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) e [altre informazioni](https://docs.microsoft.com/microsoft-edge/privacy-whitepaper#shopping) su Microsoft shopping.
+- **Funzionalità per gli acquisti abilitate per impostazione predefinita**. A partire da Microsoft Edge versione 87, gli utenti enterprise possono trarre vantaggio dagli acquisti in Edge. Con le funzionalità di acquisto, Microsoft Edge aiuta gli utenti a trovare coupon e prezzi migliori durante gli acquisti online. L'esperienza dei coupon è disponibile con questo aggiornamento e il confronto dei prezzi verrà rilasciato nei prossimi aggiornamenti per Microsoft Edge 87. Questa funzionalità può essere configurata tramite il criterio [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled). Vedere il [Blog](https://blogs.windows.com/windowsexperience/2020/11/19/finish-up-that-holiday-shopping-with-new-features-from-microsoft-edge-and-bing/) e [altre informazioni](/microsoft-edge/privacy-whitepaper#shopping) su Microsoft shopping.
 
 - **Distribuzione ClickOnce abilitata per impostazione predefinita**. ClickOnce è abilitata per impostazione predefinita in Microsoft Edge 87, il che riduce gli ostacoli per le aziende nella distribuzione del software e meglio si allinea con il comportamento del browser Versione legacy di Microsoft Edge. A partire da Microsoft Edge 87, lo stato "Non configurato" del criterio ClickOnceEnabled rifletterà il nuovo stato di ClickOnce per impostazione predefinita di Abilitato (rispetto al precedente stato per impostazione predefinita di Disabilitato).
 
@@ -282,7 +282,7 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
 
 - **Privacy e sicurezza:**
 
-  - Supportare l’associazione di token TLS per i siti configurati dai criteri. L'associazione di token TLS aiuta a prevenire gli attacchi per il furto di token per assicurare che i cookie non possano essere riutilizzati da un dispositivo diverso dal dispositivo in cui sono stati inizialmente impostati. L'uso dell'associazione di token TLS richiede l'impostazione del criterio [AllowTokenBindingForUrls](https://docs.microsoft.com/deployedge/microsoft-edge-policies#allowtokenbindingforurls) e richiede che i siti elencati supportino questa funzionalità.
+  - Supportare l’associazione di token TLS per i siti configurati dai criteri. L'associazione di token TLS aiuta a prevenire gli attacchi per il furto di token per assicurare che i cookie non possano essere riutilizzati da un dispositivo diverso dal dispositivo in cui sono stati inizialmente impostati. L'uso dell'associazione di token TLS richiede l'impostazione del criterio [AllowTokenBindingForUrls](./microsoft-edge-policies.md#allowtokenbindingforurls) e richiede che i siti elencati supportino questa funzionalità.
 
 - **Supporto per tastiera per evidenziatore nei file PDF**. Gli utenti possono usare i tasti della tastiera per evidenziare qualsiasi testo in un file PDF.
 
@@ -297,24 +297,24 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https:/
 
 Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
 
-- [ConfigureFriendlyURLFormat](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#configurefriendlyurlformat) - Configura il formato incolla predefinito degli URL copiati da Microsoft Edge e determina se saranno disponibili formati aggiuntivi per gli utenti.
-- [EdgeShoppingAssistantEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#edgeshoppingassistantenabled) - Shopping in Microsoft Edge abilitato.
-- [HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#hideinternetexplorerredirectuxforincompatiblesitesenabled) - Nasconde la finestra di dialogo di reindirizzamento una tantum e il banner su Microsoft Edge.
-- [KioskAddressBarEditingEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskaddressbareditingenabled) - Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.
-- [KioskDeleteDownloadsOnExit](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#kioskdeletedownloadsonexit) - Elimina i file scaricati durante le sessioni a tutto schermo quando Microsoft Edge si chiude.
-- [PasswordRevealEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#passwordrevealenabled) - Pulsante Abilita rivelazione password.
-- [RedirectSitesFromInternetExplorerPreventBHOInstall](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#redirectsitesfrominternetexplorerpreventbhoinstall) - Impedisce l'installazione dell’oggetto browser helper (BHO) per reindirizzare i siti incompatibili da Internet Explorer a Microsoft Edge.
-- [RedirectSitesFromInternetExplorerRedirectMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#redirectsitesfrominternetexplorerredirectmode) - Reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge.
-- [SpeechRecognitionEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#speechrecognitionenabled) - Configura il riconoscimento vocale.
-- [WebCaptureEnabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#webcaptureenabled) - Abilita la funzionalità di acquisizione web in Microsoft Edge.
+- [ConfigureFriendlyURLFormat](./microsoft-edge-policies.md#configurefriendlyurlformat) - Configura il formato incolla predefinito degli URL copiati da Microsoft Edge e determina se saranno disponibili formati aggiuntivi per gli utenti.
+- [EdgeShoppingAssistantEnabled](./microsoft-edge-policies.md#edgeshoppingassistantenabled) - Shopping in Microsoft Edge abilitato.
+- [HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](./microsoft-edge-policies.md#hideinternetexplorerredirectuxforincompatiblesitesenabled) - Nasconde la finestra di dialogo di reindirizzamento una tantum e il banner su Microsoft Edge.
+- [KioskAddressBarEditingEnabled](./microsoft-edge-policies.md#kioskaddressbareditingenabled) - Configura la modifica della barra degli indirizzi per l'esperienza di navigazione pubblica in modalità tutto schermo.
+- [KioskDeleteDownloadsOnExit](./microsoft-edge-policies.md#kioskdeletedownloadsonexit) - Elimina i file scaricati durante le sessioni a tutto schermo quando Microsoft Edge si chiude.
+- [PasswordRevealEnabled](./microsoft-edge-policies.md#passwordrevealenabled) - Pulsante Abilita rivelazione password.
+- [RedirectSitesFromInternetExplorerPreventBHOInstall](./microsoft-edge-policies.md#redirectsitesfrominternetexplorerpreventbhoinstall) - Impedisce l'installazione dell’oggetto browser helper (BHO) per reindirizzare i siti incompatibili da Internet Explorer a Microsoft Edge.
+- [RedirectSitesFromInternetExplorerRedirectMode](./microsoft-edge-policies.md#redirectsitesfrominternetexplorerredirectmode) - Reindirizza i siti incompatibili da Internet Explorer a Microsoft Edge.
+- [SpeechRecognitionEnabled](./microsoft-edge-policies.md#speechrecognitionenabled) - Configura il riconoscimento vocale.
+- [WebCaptureEnabled](./microsoft-edge-policies.md#webcaptureenabled) - Abilita la funzionalità di acquisizione web in Microsoft Edge.
 
 #### <a name="deprecated-policy"></a>Criteri deprecati
 
-[NewTabPageSetFeedType](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) - Configura l’esperienza della pagina Nuova scheda di Microsoft Edge.
+[NewTabPageSetFeedType](./microsoft-edge-policies.md#newtabpagesetfeedtype) - Configura l’esperienza della pagina Nuova scheda di Microsoft Edge.
 
 #### <a name="obsoleted-policy"></a>Criteri obsoleti
 
-[EnableDeprecatedWebPlatformFeatures](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#enabledeprecatedwebplatformfeatures) - Riabilita le funzionalità deprecate della piattaforma Web per un periodo di tempo limitato.
+[EnableDeprecatedWebPlatformFeatures](./microsoft-edge-policies.md#enabledeprecatedwebplatformfeatures) - Riabilita le funzionalità deprecate della piattaforma Web per un periodo di tempo limitato.
 
 <!-- end major 87 -->
 
@@ -323,18 +323,18 @@ Sono stati aggiunti dieci nuovi criteri. Scaricare i modelli amministrativi aggi
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2020-16013](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16013) e [CVE-2020-16017](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16017), che sono stati segnalati al team di Chromium come un exploit in condizioni normali.
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-13-2020)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#november-13-2020)
 
 ## <a name="version-86062268-november-11"></a>Versione 86.0.622.68: 11 novembre
 
-Gli aggiornamenti della sicurezza del canale Stable sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-11-2020)
+Gli aggiornamenti della sicurezza del canale Stable sono elencati [qui](./microsoft-edge-relnotes-security.md#november-11-2020)
 
 ## <a name="version-86062263-november-4"></a>Versione 86.0.622.63: 4 novembre
 
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2020-16009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-16009), che è stato segnalato al team di Chromium come un exploit in condizioni normali.
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#november-4-2020)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#november-4-2020)
 
 ## <a name="version-86062261-november-2"></a>Versione 86.0.622.61: 2 novembre
 
@@ -350,7 +350,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 
 ## <a name="version-86062251-october-22"></a>Versione 86.0.622.51: 22 ottobre
 
-Gli aggiornamenti della sicurezza del canale Stable sono elencati [qui](https://docs.microsoft.com/DeployEdge/microsoft-edge-relnotes-security#october-22-2020)
+Gli aggiornamenti della sicurezza del canale Stable sono elencati [qui](./microsoft-edge-relnotes-security.md#october-22-2020)
 
 ## <a name="version-86062248-october-20"></a>Versione 86.0.622.48: 20 ottobre
 

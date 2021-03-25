@@ -10,41 +10,41 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Monitoraggio password con abilitazione automatica per gli utenti
-ms.openlocfilehash: 2f796f0cd1bbb437f83d04a8bd59586ef7b6a982
-ms.sourcegitcommit: 187203e9eaa9c48c59095b7e7d625d3081a6ba19
+ms.openlocfilehash: d1995735ac7558c1608d427aac70081d4afed3a0
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 01/27/2021
-ms.locfileid: "11304536"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447280"
 ---
-# Monitoraggio password con abilitazione automatica per gli utenti
+# <a name="password-monitor-auto-enabled-for-users"></a>Monitoraggio password con abilitazione automatica per gli utenti
 
 Questo articolo descrive come verrà attivato Monitoraggio password in Microsoft Edge per gli utenti selezionati e fornisce agli amministratori le istruzioni per controllare come viene abilitato il monitoraggio.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 88 o successiva.
 
-## Introduzione, vantaggi e disponibilità
+## <a name="introduction-benefits-and-availability"></a>Introduzione, vantaggi e disponibilità
 
 Monitoraggio password consente agli utenti di Microsoft Edge di proteggere i propri account online informandoli se una delle loro password è stata trovata in una fuga di dati online. Le fughe di dati online o le violazioni dei dati si verificano quando gli utenti malintenzionati rubano dati da app o siti Web di terze parti. Per altre informazioni, vedere [Monitoraggio password: protezione delle password in Microsoft Edge](https://www.microsoft.com/research/blog/password-monitor-safeguarding-passwords-in-microsoft-edge/) nel blog di Microsoft Research.
 
-### Vantaggi
+### <a name="benefits"></a>Vantaggi
 
 Considerando la frequenza e l'ambito di questi attacchi online, è diventato necessario per tutti avere questo tipo di protezione. Microsoft Edge consente di controllare in modo sicuro le password salvate da un utente rispetto alle password segnalate come compromesse e di avvisarlo se viene trovata una corrispondenza.  
 
-### Disponibilità
+### <a name="availability"></a>Disponibilità
 
 Monitoraggio password è disponibile nel Canale Stabile, versione 88 a partire dal 21/1. L'implementazione sarà graduale e potrebbero essere necessarie alcune settimane prima che vengano visualizzati il messaggio e il controllo seguenti nella pagina **Impostazioni** > **Profilo** > **Password**.
 
 :::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="Opzione per abilitare Monitoraggio password":::
 
-## Configurare criteri di gruppo per Monitoraggio password
+## <a name="configure-group-policy-for-password-monitor"></a>Configurare criteri di gruppo per Monitoraggio password
 
-Questa funzione viene controllata tramite il criterio di gruppo [PasswordMonitorAllowed](https://docs.microsoft.com/deployedge/microsoft-edge-policies#passwordmonitorallowed).
+Questa funzione viene controllata tramite il criterio di gruppo [PasswordMonitorAllowed](./microsoft-edge-policies.md#passwordmonitorallowed).
 
 Dopo aver abilitato i criteri, gli utenti devono comunque fornire il consenso per attivare la funzione. Il consenso è necessario perché la funzione contiene dati personali e riservati dell'utente (password). Se la funzione viene disabilitata tramite i criteri di gruppo, gli utenti non possono sostituire questa impostazione.  
 
-## Abilitazione di Monitoraggio password per gli utenti
+## <a name="enabling-password-monitor-for-users"></a>Abilitazione di Monitoraggio password per gli utenti
 
 Una volta abilitati i criteri di monitoraggio password, questa funzione viene resa disponibile agli utenti in diversi modi.
 
@@ -63,7 +63,7 @@ Una volta abilitati i criteri di monitoraggio password, questa funzione viene re
    
 - Attivazione diretta. Gli utenti possono andare a **Impostazioni** > **Password** in qualsiasi momento per attivare o disattivare la funzione.
 
-## Scenari utente con abilitazione automatica di Monitoraggio password 
+## <a name="user-scenarios-with-password-monitor-auto-enabled"></a>Scenari utente con abilitazione automatica di Monitoraggio password 
 
 La tabella seguente illustra gli scenari in cui Monitoraggio password è abilitato automaticamente e il suo funzionamento nei dispositivi degli utenti.
 
@@ -80,9 +80,9 @@ Inoltre, se un utente ha eseguito l'accesso con un account aziendale con restriz
 - Sincronizzazione password è disabilitata
 - La condivisione di dati con i server Microsoft è disabilitata
 
-## Domande frequenti
+## <a name="frequently-asked-questions"></a>Domande frequenti
 
-### Come può essere disabilitato Monitoraggio password per l'organizzazione?
+### <a name="how-can-password-monitor-be-disabled-for-my-organization"></a>Come può essere disabilitato Monitoraggio password per l'organizzazione?
 
 È possibile disabilitare Monitoraggio password per l'organizzazione mediante:
 - L’uso dei criteri di gruppo PasswordMonitorAllowed.
@@ -91,10 +91,10 @@ Inoltre, se un utente ha eseguito l'accesso con un account aziendale con restriz
   > [!NOTE]
   > Monitoraggio password può funzionare anche se la Sincronizzazione password è disabilitata, a condizione che l'utente abbia fornito il consenso esplicito per attivare la funzione o l'abbia attivata autonomamente tramite Impostazioni.
 
-### Cosa succede se un utente per cui è stata abilitata automaticamente la funzione disattiva Monitoraggio password tramite Impostazioni?
+### <a name="what-happens-if-a-user-for-whom-the-feature-has-been-auto-enabled-turns-password-monitor-off-via-settings"></a>Cosa succede se un utente per cui è stata abilitata automaticamente la funzione disattiva Monitoraggio password tramite Impostazioni?
 
 L'impostazione scelta dall'utente viene rispettata e la funzione rimarrà disabilitata per quell'utente. Tuttavia, potrebbe essere visualizzata di nuovo una finestra di dialogo di consenso nel caso in cui l’utente non abbia mai risposto in precedenza alla richiesta di consenso.
 
-## Vedi anche
+## <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

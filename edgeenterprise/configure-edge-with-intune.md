@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare le impostazioni dei criteri di Microsoft Edge per Windows usando Microsoft Intune.
-ms.openlocfilehash: 6200b52e9061f37f85fe0bfe7cf59a2172db97df
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 0189a3fc2f9dc115563e7cf6dca1df960680bf22
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980158"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447560"
 ---
-# Configurare le impostazioni dei criteri di Microsoft Edge con Microsoft Intune.
+# <a name="configure-microsoft-edge-policy-settings-with-microsoft-intune"></a>Configurare le impostazioni dei criteri di Microsoft Edge con Microsoft Intune.
 
 Questo articolo descrive come configurare le impostazioni dei criteri di Microsoft Edge per Windows 10 usando Microsoft Intune.
 
@@ -26,16 +26,16 @@ Questo articolo descrive come configurare le impostazioni dei criteri di Microso
 
 Puoi configurare i criteri e le impostazioni di Microsoft Edge aggiungendo un profilo di configurazione del dispositivo a Microsoft Intune. L'uso di Intune per la gestione e l'applicazione dei criteri è equivalente all'uso di Criteri di gruppo di Active Directory o alla configurazione delle impostazioni di un oggetto Criteri di gruppo locale nei dispositivi utente.
 
-Per altre informazioni sulla gestione dei criteri di Microsoft Edge con Microsoft Intune, puoi leggere l'articolo [Gestire l'accesso Web usando Microsoft Edge con Microsoft Intune](https://docs.microsoft.com/intune/manage-microsoft-edge), ma tieni presente che tale articolo è specifico per Microsoft Edge versione 45 e versioni precedenti e pertanto può contenere informazioni e riferimenti che non si applicano a Microsoft Edge in modalità Enterprise versione 77 e successive.
+Per altre informazioni sulla gestione dei criteri di Microsoft Edge con Microsoft Intune, puoi leggere l'articolo [Gestire l'accesso Web usando Microsoft Edge con Microsoft Intune](/intune/manage-microsoft-edge), ma tieni presente che tale articolo è specifico per Microsoft Edge versione 45 e versioni precedenti e pertanto può contenere informazioni e riferimenti che non si applicano a Microsoft Edge in modalità Enterprise versione 77 e successive.
 
 > [!TIP]
 > Per informazioni su come configurare Microsoft Edge su macOS usando Microsoft Intune, vedi [Configurare per macOS](configure-microsoft-edge-on-mac.md).
 
-## Creare un profilo per gestire le impostazioni in Microsoft Edge per Windows 10
+## <a name="create-a-profile-to-manage-settings-in-microsoft-edge-for-windows-10"></a>Creare un profilo per gestire le impostazioni in Microsoft Edge per Windows 10
 
 Con i modelli amministrativi in Microsoft Intune, puoi gestire criteri di gruppo di Microsoft Edge nei dispositivi Windows 10 usando il cloud. Questa sezione consente di creare un modello per configurare le impostazioni dell'applicazione specifiche per Microsoft Edge. Quando crei il modello, viene creato un profilo di configurazione del dispositivo. Puoi quindi assegnare o distribuire questo profilo ai dispositivi Windows 10 nell'organizzazione.
 
-### Prerequisiti
+### <a name="prerequisites"></a>Prerequisiti
 
 - Windows 10, con i requisiti minimi di sistema seguenti:
   - Windows 10, versione 1909
@@ -44,7 +44,7 @@ Con i modelli amministrativi in Microsoft Intune, puoi gestire criteri di gruppo
   - Windows 10, versione 1803 con [KB4512509](https://support.microsoft.com/kb/4512509) installato
   - Windows 10, versione 1709 con [KB4516071](https://support.microsoft.com/kb/4516071) installato
 
-### Usare i modelli amministrativi per creare un criterio per Microsoft Edge
+### <a name="use-administrative-templates-to-create-a-policy-for-microsoft-edge"></a>Usare i modelli amministrativi per creare un criterio per Microsoft Edge
 
 Questa procedura consente di usare i modelli amministrativi (con cui si potrebbe avere familiarità grazie ai criteri di gruppo), integrati in Intune. È possibile usare questi modelli per creare un criterio per Microsoft Edge selezionando le impostazioni da un elenco già configurato.
 
@@ -73,7 +73,7 @@ Lo screenshot seguente mostra il modulo della scheda **Dati principali** e la ba
    ![Scheda Impostazioni di configurazione](./media/configure-edge-with-intune/create-profile-configuration-settings-tab.png)
 
    > [!NOTE]
-   > Vedi [Microsoft Edge-Policies](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies) e [Microsoft Edge-Update policy](https://docs.microsoft.com/DeployEdge/microsoft-edge-update-policies) per l'elenco più completo e aggiornato di tutte le impostazioni disponibili per Microsoft Edge.
+   > Vedi [Microsoft Edge-Policies](./microsoft-edge-policies.md) e [Microsoft Edge-Update policy](./microsoft-edge-update-policies.md) per l'elenco più completo e aggiornato di tutte le impostazioni disponibili per Microsoft Edge.
 
 10. Usare il campo di ricerca ("Cerca per filtrare gli elementi...") per trovare un'opzione specifica da configurare. In questo esempio la stringa di ricerca è "home page". Lo screenshot seguente mostra i risultati della ricerca.
 
@@ -93,7 +93,7 @@ Lo screenshot seguente mostra il modulo della scheda **Dati principali** e la ba
 
 15. Nella scheda **Tag di ambito**, aggiungere un tag di ambito, se del caso, altrimenti fare clic sul pulsante **Avanti**.
 
-16. Nella scheda **Assegnazioni**, fare clic su + Seleziona gruppi da includere per assegnare il criterio al gruppo di Azure Active Directory (Azure AD) che contiene i dispositivi o gli utenti che si desidera ricevano questa impostazione dei criteri. Vedere [Assegnare profili utente e profili di dispositivo in Microsoft Intune](https://docs.microsoft.com/intune/device-profile-assign) per informazioni su come assegnare il profilo ai gruppi di utenti o di dispositivi di Azure AD.
+16. Nella scheda **Assegnazioni**, fare clic su + Seleziona gruppi da includere per assegnare il criterio al gruppo di Azure Active Directory (Azure AD) che contiene i dispositivi o gli utenti che si desidera ricevano questa impostazione dei criteri. Vedere [Assegnare profili utente e profili di dispositivo in Microsoft Intune](/intune/device-profile-assign) per informazioni su come assegnare il profilo ai gruppi di utenti o di dispositivi di Azure AD.
 
     ![Selezionare i gruppi da includere](./media/configure-edge-with-intune/create-profile-assignments-tab.png)
 
@@ -105,11 +105,11 @@ Lo screenshot seguente mostra il modulo della scheda **Dati principali** e la ba
 
     ![Selezionare i gruppi da includere](./media/configure-edge-with-intune/create-profile-new-policy-finished.png)
 
-Per altre informazioni sui profili di Windows 10, vedi [Usare i modelli di Windows 10 per configurare le impostazioni di Criteri di gruppo in Microsoft Intune](https://docs.microsoft.com/intune/administrative-templates-windows).
+Per altre informazioni sui profili di Windows 10, vedi [Usare i modelli di Windows 10 per configurare le impostazioni di Criteri di gruppo in Microsoft Intune](/intune/administrative-templates-windows).
 
-## Vedi anche
+## <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Gestire l'accesso Web usando Microsoft Edge con Microsoft Intune](https://docs.microsoft.com/intune/manage-microsoft-edge)
-- [Usare i modelli di Windows 10 per configurare le impostazioni di Criteri di gruppo in Microsoft Intune](https://docs.microsoft.com/intune/administrative-templates-windows)
-- [Distribuire Microsoft Edge usando Microsoft Intune](https://docs.microsoft.com/intune/apps/apps-windows-edge/?toc=https://docs.microsoft.com/DeployEdge/toc.json&bc=https://docs.microsoft.com/DeployEdge/breadcrumb/toc.json)
+- [Gestire l'accesso Web usando Microsoft Edge con Microsoft Intune](/intune/manage-microsoft-edge)
+- [Usare i modelli di Windows 10 per configurare le impostazioni di Criteri di gruppo in Microsoft Intune](/intune/administrative-templates-windows)
+- [Distribuire Microsoft Edge usando Microsoft Intune](/intune/apps/apps-windows-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json)

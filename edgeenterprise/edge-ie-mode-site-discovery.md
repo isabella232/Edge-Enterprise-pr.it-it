@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Usare la funzionalità di individuazione siti aziendale per prepararsi alla modalità IE
-ms.openlocfilehash: 9ec748686b83466cd1c7d92fcc7fdc0f0d136977
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 2557544a93222b03aaa0961149aa0d3c5d7d8806
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980235"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447720"
 ---
-# Guida dettagliata alla funzionalità di individuazione siti aziendale
+# <a name="enterprise-site-discovery-step-by-step-guide"></a>Guida dettagliata alla funzionalità di individuazione siti aziendale
 
 Questo articolo contiene una guida dettagliata all'uso della funzionalità di individuazione siti aziendale con Microsoft Endpoint Configuration Manager.
 
@@ -29,7 +29,7 @@ La funzionalità di individuazione siti aziendale può aiutarti a configurare l'
 > [!NOTE]
 > Questo articolo si applica ai canali Microsoft Edge **Stable**, **Beta** e **Dev**, versione 77 o successiva.
 
-## Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti
 
 Questa guida presuppone un'esperienza nell'uso di Microsoft Endpoint Configuration Manager e che siano installati i servizi e i ruoli seguenti:
 
@@ -37,20 +37,20 @@ Questa guida presuppone un'esperienza nell'uso di Microsoft Endpoint Configurati
 2. Microsoft SQL Server Reporting Services
 3. (Facoltativo) Ruolo del punto di Reporting Services di Configuration Manager configurato.
 
-## Scaricare gli strumenti della funzionalità di individuazione siti aziendale
+## <a name="download-enterprise-site-discovery-tools"></a>Scaricare gli strumenti della funzionalità di individuazione siti aziendale
 
 Scarica gli strumenti seguenti:
 
 - [Pacchetto di installazione e configurazione della funzionalità di individuazione siti aziendale](https://go.microsoft.com/fwlink/p/?LinkId=517719)
 - [Generatore report Microsoft](https://www.microsoft.com/download/details.aspx?id=53613)
 
-## Abilitare la funzionalità di individuazione siti aziendale
+## <a name="enable-enterprise-site-discovery"></a>Abilitare la funzionalità di individuazione siti aziendale
 
 Per poterti connettere alla Strumentazione gestione Windows per recuperare i dati di individuazione del sito devi prima di tutto distribuire il provider della classe WMI nel dispositivo.
 
 Estrai il contenuto del **pacchetto di installazione e configurazione della funzionalità di individuazione siti aziendale** in una cartella della condivisione file nella raccolta software definitiva. Esempio: **\\\\DSL\\EnterpriseSiteDiscovery**.
 
-Quindi, crea un pacchetto in Microsoft Endpoint Configuration Manager, come descritto nella [documentazione](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs), selezionando le opzioni seguenti:
+Quindi, crea un pacchetto in Microsoft Endpoint Configuration Manager, come descritto nella [documentazione](/configmgr/apps/deploy-use/packages-and-programs), selezionando le opzioni seguenti:
 
 - Nella pagina **Pacchetto** seleziona **Nome** e specifica il nome **Abilita funzionalità di individuazione siti**
 - Nella pagina **Pacchetto** seleziona **Questo pacchetto contiene file di origine**.
@@ -68,11 +68,11 @@ Quindi, crea un pacchetto in Microsoft Endpoint Configuration Manager, come desc
 Dopo avere creato il pacchetto, fai doppio clic sul nome del pacchetto **Abilita funzionalità di individuazione siti** per visualizzarne le proprietà. Nella proprietà **Dopo l'esecuzione** seleziona **Configuration Manager riavvia il computer**. La raccolta di dati WMI inizierà dopo il riavvio del dispositivo.
 
 > [!NOTE]
-> Puoi configurare la quantità di tempo per cui un utente deve riavviare il dispositivo, come descritto nella [documentazione relativa alle impostazioni del client](https://docs.microsoft.com/configmgr/core/clients/deploy/about-client-settings#computer-restart).
+> Puoi configurare la quantità di tempo per cui un utente deve riavviare il dispositivo, come descritto nella [documentazione relativa alle impostazioni del client](/configmgr/core/clients/deploy/about-client-settings#computer-restart).
 
-## Configurare la funzionalità di individuazione siti aziendale usando Criteri di gruppo
+## <a name="configure-enterprise-site-discovery-via-group-policy"></a>Configurare la funzionalità di individuazione siti aziendale usando Criteri di gruppo
 
-Con la funzionalità di individuazione siti aziendale abilitata, puoi configurare i dati da raccogliere. Considera le leggi locali e i requisiti normativi come descritto [qui](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected).
+Con la funzionalità di individuazione siti aziendale abilitata, puoi configurare i dati da raccogliere. Considera le leggi locali e i requisiti normativi come descritto [qui](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery#what-data-is-collected).
 
 1. Apri Editor Criteri di gruppo
 2. Fai clic su **Configurazione computer** > **Modelli amministrativi** > **Componenti di Windows** > **Internet Explorer** 
@@ -103,7 +103,7 @@ Puoi limitare i domini per cui raccogliere i dati del sito:
 3. Immetti i domini in cui vuoi raccogliere i dati, un dominio per riga
 4. Fai clic su **OK** o su **Applica** per salvare questa impostazione
 
-## Raccogliere i dati di individuazione siti con Configuration Manager
+## <a name="collect-site-discovery-data-using-configuration-manager"></a>Raccogliere i dati di individuazione siti con Configuration Manager
 
 Ora che i dispositivi stanno generando i dati, è il momento di raccoglierli in Configuration Manager.
 
@@ -121,16 +121,16 @@ Ora che i dispositivi stanno generando i dati, è il momento di raccoglierli in 
 
 Dopo l'aggiornamento delle impostazioni del client dal punto di gestione, verrà generato il report relativo ai dati durante l'esecuzione del prossimo inventario hardware (per impostazione predefinita, ogni sette giorni).
 
-## Importare report di individuazione siti
+## <a name="import-site-discovery-reports"></a>Importare report di individuazione siti
 
 Il pacchetto della funzionalità di individuazione siti aziendale include due report di esempio. Un report mostra i siti che usano i controlli ActiveX e un altro mostra i siti che usano la modalità documento legacy.
 
-### Configurare il report di esempio della funzionalità di individuazione siti
+### <a name="configure-the-site-discovery-sample-report"></a>Configurare il report di esempio della funzionalità di individuazione siti
 
 Usa la procedura seguente per creare un report di esempio che usa tre origini dati: i siti visitati da un utente, le informazioni sul suo sistema e le modalità di documento usate dai siti. Questo report consente di identificare i siti che possono dipendere da modalità documento legacy.
 
 1. Copia il report **SCCM_Report-Site_Discovery.rdl** nel server di Configuration Manager.
-2. Installa [Generatore report Microsoft](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15).
+2. Installa [Generatore report Microsoft](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15).
 3. Fai doppio clic su **SCCM_Report-Site_Discovery.rdl** per aprire il report in Generatore report.
 4. La prima volta che lo apri, il report proverà a contattare il server in cui è stato creato. Quando viene chiesto **Connetti al server di report**, fai clic su **No**.
 5. Dopo l'apertura del report, espandi **Origini dati** e fai doppio clic su **DataSource1**.
@@ -147,12 +147,12 @@ Usa la procedura seguente per creare un report di esempio che usa tre origini da
 16. Chiudi il Generatore report Microsoft.
 17. Rinomina il file in **Individuazione siti.rdl**
 
-### Configura il report di esempio ActiveX
+### <a name="configure-the-activex-sample-report"></a>Configura il report di esempio ActiveX
 
 Usa la procedura seguente per creare un report di esempio che usa un'unica origine dati: i siti che usano i controlli ActiveX. Dal momento che Internet Explorer è l'unico browser che supporta i controlli ActiveX, questi siti potrebbero richiedere la modalità IE.
 
 1. Copia il report **SCCM Report Sample - ActiveX.rdl** nel server di Configuration Manager.
-2. Installa [Generatore report Microsoft](https://docs.microsoft.com/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15).
+2. Installa [Generatore report Microsoft](/sql/reporting-services/install-windows/install-report-builder?view=sql-server-ver15).
 3. Fai doppio clic su **SCCM Report Sample - ActiveX.rdl** per aprire il report in Generatore report.
 4. La prima volta che lo apri, il report proverà a contattare il server in cui è stato creato. Quando viene chiesto **Connetti al server di report**, fai clic su **No**.
 5. Dopo l'apertura del report, espandi **Origini dati** e fai doppio clic su **AutoGen__5C6358F2_4BB6_4a1b_A16E_8D96795D8602_**.
@@ -167,7 +167,7 @@ Usa la procedura seguente per creare un report di esempio che usa un'unica origi
 14. Chiudi il Generatore report Microsoft.
 15. Rinomina il file in **ActiveX**
 
-### Caricare i report configurati in Microsoft SQL Server Reporting Services
+### <a name="upload-configured-reports-to-microsoft-sql-server-reporting-services"></a>Caricare i report configurati in Microsoft SQL Server Reporting Services
 
 Dopo aver configurato i report per l'ambiente, caricali nel server dei report.
 
@@ -181,16 +181,16 @@ Dopo aver configurato i report per l'ambiente, caricali nel server dei report.
 8. Seleziona il report **Individuazione siti** e fai clic su **OK**.
 9. Ripeti i passaggi 7 e 8 per il report **ActiveX**.
 
-### Visualizzare i report in Configuration Manager
+### <a name="view-reports-in-configuration-manager"></a>Visualizzare i report in Configuration Manager
 
 Dopo aver personalizzato e caricato i report, puoi visualizzarli in Configuration Manager.
 
 1. Nella console di Configuration Manager scegli **Monitoraggio** > **Report** > **Report** > **Individuazione siti aziendale**
 2. Fai doppio clic su un report per visualizzarlo.
 
-## Disabilitare la funzionalità di individuazione siti aziendale
+## <a name="disable-enterprise-site-discovery"></a>Disabilitare la funzionalità di individuazione siti aziendale
 
-Una volta completata la raccolta dei dati, è consigliabile disabilitare l'individuazione siti aziendale. Crea un secondo pacchetto per disabilitare la funzionalità di individuazione siti aziendale in Microsoft Endpoint Configuration Manager, come descritto nella [documentazione](https://docs.microsoft.com/configmgr/apps/deploy-use/packages-and-programs), selezionando le opzioni seguenti:
+Una volta completata la raccolta dei dati, è consigliabile disabilitare l'individuazione siti aziendale. Crea un secondo pacchetto per disabilitare la funzionalità di individuazione siti aziendale in Microsoft Endpoint Configuration Manager, come descritto nella [documentazione](/configmgr/apps/deploy-use/packages-and-programs), selezionando le opzioni seguenti:
 
 - Nella pagina **Pacchetto** seleziona **Nome** e specifica il nome **Disabilita funzionalità di individuazione siti**
 - Nella pagina **Pacchetto** seleziona **Questo pacchetto contiene file di origine**.
@@ -203,9 +203,9 @@ Una volta completata la raccolta dei dati, è consigliabile disabilitare l'indiv
 - Nella pagina **Programma standard** seleziona l'opzione per eseguire **Nascosto**
 - Nella pagina **Programma standard**, in **Requisiti per esecuzione programma**, seleziona l'opzione **Indipendentemente dalla connessione degli utenti**
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Informazioni sulla modalità IE](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [Informazioni aggiuntive sulla modalità Enterprise](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
-- [Informazioni aggiuntive sulla funzionalità di individuazione siti aziendale](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)
+- [Informazioni sulla modalità IE](./edge-ie-mode.md)
+- [Informazioni aggiuntive sulla modalità Enterprise](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Informazioni aggiuntive sulla funzionalità di individuazione siti aziendale](/internet-explorer/ie11-deploy-guide/collect-data-using-enterprise-site-discovery)

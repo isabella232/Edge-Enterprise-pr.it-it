@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: 'Usare le opzioni della riga di comando per configurare le impostazioni proxy '
-ms.openlocfilehash: b5e2326e075ad89481560a6642944a8e88f4daa3
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: d0924f723aab6832e5b4eb70c60e1d329d3c7a9d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980270"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447640"
 ---
-# Come usare le opzioni della riga di comando di Microsoft Edge per configurare le impostazioni proxy
+# <a name="how-to-use-microsoft-edge-command-line-options-to-configure-proxy-settings"></a>Come usare le opzioni della riga di comando di Microsoft Edge per configurare le impostazioni proxy
 
 In questo articolo viene descritto come è possibile usare le opzioni della riga di comando per sostituire le impostazioni di rete del sistema predefinite.
 
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Impostazioni di rete del sistema
+## <a name="system-network-settings"></a>Impostazioni di rete del sistema
 
 Per impostazione predefinita, lo stack di rete di Microsoft Edge usa le impostazioni di rete del sistema. Sono incluse le *impostazioni proxy* e gli *archivi di certificai e chiavi private*.
 
@@ -32,13 +32,13 @@ Esistono scenari in cui gli utenti richiedono un'alternativa all'uso delle impos
 
 Queste opzioni della riga di comando corrispondono ai seguenti criteri nel gruppo **Server proxy**:
 
-- [ProxyBypassList](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxybypasslist)
-- [ProxyMode](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxymode)
-- [ProxyPacUrl](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxypacurl)
-- [ProxyServer](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxyserver)
-- [ProxySettings](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#proxysettings)
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist)
+- [ProxyMode](./microsoft-edge-policies.md#proxymode)
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl)
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver)
+- [ProxySettings](./microsoft-edge-policies.md#proxysettings)
 
-## Opzioni della riga di comando per le impostazioni proxy
+## <a name="command-line-options-for-proxy-settings"></a>Opzioni della riga di comando per le impostazioni proxy
 
 Microsoft Edge supporta le opzioni della riga di comando correlate al proxy seguenti.
 
@@ -72,14 +72,14 @@ Indica a Microsoft Edge di ignorare qualsiasi proxy specificato per l'elenco di 
 
 Indica a Microsoft Edge di usare il file PAC nell'URL specificato. Ad esempio, `--proxy-pac-url="https://wpad/proxy.pac"` indica a Microsoft Edge di risolvere le informazioni proxy per le richieste URL usando il file **proxy.pac**.
 
-## Licenza dei contenuti
+## <a name="content-license"></a>Licenza dei contenuti
 
 > [!NOTE]
 > Parti di questa pagina sono modifiche basate sul lavoro creato e condiviso da Chromium.org e usate in base ai termini descritti nella [licenza Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). La pagina originale è disponibile [qui](https://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett).
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Questo lavoro è concesso in licenza in base a una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licenza Creative Commons Attribution 4.0 International</a>.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - Per visualizzare le impostazioni di configurazione avanzate e le opzioni aggiuntive, vedi la [documentazione del proxy](https://chromium.googlesource.com/chromium/src/+/HEAD/net/docs/proxy.md) nel progetto open source Chromium.
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni sul lettore PDF in Microsoft Edge.
-ms.openlocfilehash: d84b838556ed10951d7a7a3c6e5085b7e32c286c
-ms.sourcegitcommit: f14286edec59ee9183bdf38c15fc890881efd64f
+ms.openlocfilehash: 342f6702ff0da3305c037112555549b0d5503d3c
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385034"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447840"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a>Lettre PDF in Microsoft Edge
 
@@ -109,16 +109,16 @@ Leggi ad alta voce per PDF consente agli utenti di ascoltare il contenuto del PD
 
 ### <a name="protected-pdfs"></a>PDF protetti
 
-[Microsoft Information Protection (MIP)](https://docs.microsoft.com/microsoft-365/compliance/protect-information?view=o365-worldwide&preserve-view=true) consente agli utenti di collaborare con altri in tutta sicurezza, rispettando al contempo i criteri di conformità dell'organizzazione. Una volta protetto un file, le azioni che gli utenti possono intraprendere sono determinate dalle autorizzazioni assegnate.
+[Microsoft Information Protection (MIP)](/microsoft-365/compliance/protect-information?preserve-view=true&view=o365-worldwide) consente agli utenti di collaborare con altri in tutta sicurezza, rispettando al contempo i criteri di conformità dell'organizzazione. Una volta protetto un file, le azioni che gli utenti possono intraprendere sono determinate dalle autorizzazioni assegnate.
 
 > [!IMPORTANT]
-> È necessaria una licenza per MIP. Per altre informazioni, vedere le [istruzioni per la gestione delle licenze di Microsoft 365](https://docs.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection).
+> È necessaria una licenza per MIP. Per altre informazioni, vedere le [istruzioni per la gestione delle licenze di Microsoft 365](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection).
 
 Questi file possono essere aperti direttamente nel browser, senza la necessità di scaricare altri software o installare alcun componente aggiuntivo. Questa funzionalità integra la sicurezza fornita da MIP direttamente nel browser, offrendo un flusso di lavoro senza soluzione di continuità.
 
 ![Documento PDF protetto.](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 
-Oltre ai file protetti MIP, è possibile aprire anche file PDF nelle raccolte SharePoint [Information Rights Management (IRM)](https://docs.microsoft.com/microsoft-365/compliance/set-up-irm-in-sp-admin-center?view=o365-worldwide&preserve-view=true) in modalità nativa nel browser.
+Oltre ai file protetti MIP, è possibile aprire anche file PDF nelle raccolte SharePoint [Information Rights Management (IRM)](/microsoft-365/compliance/set-up-irm-in-sp-admin-center?preserve-view=true&view=o365-worldwide) in modalità nativa nel browser.
 
 Microsoft Edge consente agli utenti di visualizzare i file protetti MIP salvati in locale o nel cloud. Se salvato localmente, il file può essere aperto direttamente nel browser. Se il file viene aperto da un servizio cloud come SharePoint, è possibile che l'utente debba usare l'opzione "Apri nel browser".
 
@@ -155,7 +155,7 @@ La sicurezza è alla base di qualsiasi organizzazione. La sicurezza dei lettori 
 - Isolamento del processo. I file PDF aperti da diversi siti Web vengono elaborati in modo completamente isolato. Il browser non deve comunicare con alcun sito Web o file PDF aperti da un'altra origine. La navigazione PDF è protetta da qualsiasi attacco che intenda usare i PDF compromessi come superficie d'attacco.
 
 - Application Guard: Con Application Guard, gli amministratori possono impostare un elenco dei siti attendibili per la propria organizzazione. Qualsiasi altro sito aperto dagli utenti verrà aperto in una finestra separata di Application Guard ed eseguito nel loro contenitore. Il contenitore protegge la rete aziendale e i dati del computer dell'utente da eventuali compromissioni.<br><br>
-Questa protezione si applica anche a tutti i file PDF online che vengono visualizzati. Inoltre, tutti i file PDF scaricati da una finestra di Application Guard vengono archiviati e, se necessario, riaperti nel contenitore. Ciò consente di proteggere l'ambiente non solo quando il file viene scaricato, ma durante tutto il suo ciclo di vita. Per altre informazioni, vedere [Application Guard](https://docs.microsoft.com/DeployEdge/microsoft-edge-security-windows-defender-application-guard).
+Questa protezione si applica anche a tutti i file PDF online che vengono visualizzati. Inoltre, tutti i file PDF scaricati da una finestra di Application Guard vengono archiviati e, se necessario, riaperti nel contenitore. Ciò consente di proteggere l'ambiente non solo quando il file viene scaricato, ma durante tutto il suo ciclo di vita. Per altre informazioni, vedere [Application Guard](./microsoft-edge-security-windows-defender-application-guard.md).
 
 ### <a name="reliability"></a>Affidabilità
 
@@ -163,10 +163,10 @@ Dato che Microsoft Edge si basa su Chromium, gli utenti possono aspettarsi lo st
 
 ## <a name="deploy-and-update-pdf-reader"></a>Distribuire e aggiornare il lettore PDF
 
-Il lettore PDF viene distribuito e aggiornato con il resto del browser Microsoft Edge. Per maggiori informazioni sulla distribuzione di Microsoft Edge, guarda il video [Distribuzione di Microsoft Edge sui dispositivi](microsoft-edge-video-deploy.md) . È inoltre possibile trovare maggiori informazioni sulla distribuzione nella pagina di destinazione di [Microsoft Edge](https://docs.microsoft.com/DeployEdge/).
+Il lettore PDF viene distribuito e aggiornato con il resto del browser Microsoft Edge. Per maggiori informazioni sulla distribuzione di Microsoft Edge, guarda il video [Distribuzione di Microsoft Edge sui dispositivi](microsoft-edge-video-deploy.md) . È inoltre possibile trovare maggiori informazioni sulla distribuzione nella pagina di destinazione di [Microsoft Edge](./index.yml).
 
 > [!TIP]
-> È possibile rendere Microsoft Edge il lettore PDF predefinito per l'organizzazione. A tale scopo, [seguire questi passaggi](https://docs.microsoft.com/deployedge/edge-default-browser).
+> È possibile rendere Microsoft Edge il lettore PDF predefinito per l'organizzazione. A tale scopo, [seguire questi passaggi](./edge-default-browser.md).
 
 ## <a name="roadmap-and-feedback"></a>Roadmap e feedback
 

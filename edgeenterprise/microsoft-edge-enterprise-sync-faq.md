@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Domande frequenti sulla sincronizzazione aziendale di Microsoft Edge.
-ms.openlocfilehash: 51f6dfc4cd8f308815ee111c30d5501ec0e44f59
-ms.sourcegitcommit: 86e0de9b27ad4297a6d5a57c866d7ef4fc7bb0cd
+ms.openlocfilehash: e25ee985f65ee61dda5cacece73d43be7f1e6d7d
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/09/2021
-ms.locfileid: "11400196"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447870"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Domande frequenti sulla sincronizzazione aziendale di Microsoft Edge
 
@@ -25,11 +25,11 @@ Questo articolo risponde alle domande frequenti sulla sincronizzazione aziendale
 
 ### <a name="is-the-synced-data-encrypted"></a>I dati sincronizzati sono crittografati?
 
-I dati vengono crittografati durante la trasmissione con TLS 1.2 o versione successiva. Inoltre, tutti tipi di dati inattivi vengono crittografati nel servizio Microsoft usando AES128. Tutti i tipi di dati, ad eccezione di quelli usati per la sincronizzazione delle schede aperte e della cronologia, vengono inoltre crittografati prima di lasciare il dispositivo dell'utente con chiavi gestite tramite le norme di [Azure Information Protection](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern).
+I dati vengono crittografati durante la trasmissione con TLS 1.2 o versione successiva. Inoltre, tutti tipi di dati inattivi vengono crittografati nel servizio Microsoft usando AES128. Tutti i tipi di dati, ad eccezione di quelli usati per la sincronizzazione delle schede aperte e della cronologia, vengono inoltre crittografati prima di lasciare il dispositivo dell'utente con chiavi gestite tramite le norme di [Azure Information Protection](./microsoft-edge-policies.md#restrictsignintopattern).
 
 ### <a name="why-dont-open-tab-and-history-data-have-more-client-side-encryption"></a>Perché per i dati delle schede aperte e della cronologia non viene applicata crittografia del lato del client?
 
-Per ridurre l'utilizzo delle risorse nei dispositivi degli utenti finali, i dati della cronologia vengono generati sul lato server in base ai dati di roaming delle schede aperte. Questo processo non sarebbe possibile con la crittografia lato client di questi dati. Per disabilitare la sincronizzazione delle schede aperte e della cronologia, applicare i criteri [SavingBrowserHistoryDisabled](https://docs.microsoft.com/deployedge/microsoft-edge-policies#savingbrowserhistorydisabled) o [SyncTypesListDisabled](https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#synctypeslistdisabled).
+Per ridurre l'utilizzo delle risorse nei dispositivi degli utenti finali, i dati della cronologia vengono generati sul lato server in base ai dati di roaming delle schede aperte. Questo processo non sarebbe possibile con la crittografia lato client di questi dati. Per disabilitare la sincronizzazione delle schede aperte e della cronologia, applicare i criteri [SavingBrowserHistoryDisabled](./microsoft-edge-policies.md#savingbrowserhistorydisabled) o [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled).
 
 ### <a name="can-tenant-admins-bring-their-own-key"></a>Gli amministratori del tenant possono usare le chiavi personali?
 
@@ -63,7 +63,7 @@ No. ESR può essere usato per abilitare la sincronizzazione, tuttavia la sincron
 
 ### <a name="will-microsoft-edge-ever-support-syncing-between-microsoft-edge-and-ie"></a>Microsoft Edge supporterà mai la sincronizzazione tra Microsoft Edge e Internet Explorer?
 
-Non è previsto il supporto di questa sincronizzazione. Se è ancora necessario Internet Explorer nel proprio ambiente per supportare le app legacy, considerare la [nuova modalità Internet Explorer](https://docs.microsoft.com/deployedge/edge-ie-mode).
+Non è previsto il supporto di questa sincronizzazione. Se è ancora necessario Internet Explorer nel proprio ambiente per supportare le app legacy, considerare la [nuova modalità Internet Explorer](./edge-ie-mode.md).
 
 ### <a name="will-microsoft-edge-sync-with-microsoft-edge-legacy"></a>Microsoft Edge verrà sincronizzato con la versione legacy di Microsoft Edge?
 
@@ -73,7 +73,7 @@ No. Crediamo che connettere questi due ecosistemi possa compromettere l'affidabi
 
 ### <a name="is-it-possible-to-stop-my-users-from-syncing-with-a-personal-tenant"></a>È possibile impedire agli utenti di eseguire la sincronizzazione con un tenant personale?
 
-Non direttamente, ma è possibile determinare quali profili possono accedere a Microsoft Edge usando i criteri [RestrictSigninToPattern](https://docs.microsoft.com/deployedge/microsoft-edge-policies#restrictsignintopattern).
+Non direttamente, ma è possibile determinare quali profili possono accedere a Microsoft Edge usando i criteri [RestrictSigninToPattern](./microsoft-edge-policies.md#restrictsignintopattern).
 
 ## <a name="see-also"></a>Vedere anche
 

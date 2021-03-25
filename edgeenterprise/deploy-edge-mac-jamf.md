@@ -10,28 +10,28 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Come automatizzare la distribuzione di Microsoft Edge per macOS con Jamf.
-ms.openlocfilehash: 8639c0b7bf78bb8e22370dba29b592af73d8cb40
-ms.sourcegitcommit: ed6a5afabf909df87bec48671c4c47bcdfaeb7bc
+ms.openlocfilehash: f02b9efde872082cf2301a4cf66b0a3f3782e39b
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "11194724"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447490"
 ---
-# Distribuire in macOS con Jamf
+# <a name="deploy-to-macos-with-jamf"></a>Distribuire in macOS con Jamf
 
 Questo articolo descrive come distribuire Microsoft Edge per macOS con Jamf.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti
 
 Prima di iniziare a distribuire Microsoft Edge, verifica che siano soddisfatti i seguenti prerequisiti:
 
 - Il file di installazione di Microsoft Edge, **MicrosoftEdgeDev-\<version\>pkg**, si trova in un percorso di rete accessibile. Puoi scaricare i file di installazione per Microsoft Edge in modalità Enterprise nella [pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise).
 - Devi disporre di un account Jamf Cloud con il livello di accesso e i privilegi necessari per creare e distribuire file di installazione nei computer.
 
-## Per distribuire Microsoft Edge tramite Jamf:
+## <a name="to-deploy-microsoft-edge-using-jamf"></a>Per distribuire Microsoft Edge tramite Jamf:
 
 1. Accedi a Jamf e vai a **Tutte le impostazioni**.
 
@@ -93,8 +93,8 @@ Prima di iniziare a distribuire Microsoft Edge, verifica che siano soddisfatti i
 
 Complimenti. Hai appena finito di configurare Jamf per distribuire Microsoft Edge per macOS. Quando la condizione di trigger definita è true, il pacchetto verrà distribuito ai computer specificati.
 
-## Vedi anche
+## <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Jamf.com](https://www.jamf.com/)
-- [Integrare Jamf con Microsoft Intune](https://docs.microsoft.com/intune/conditional-access-integrate-jamf)
+- [Integrare Jamf con Microsoft Intune](/intune/conditional-access-integrate-jamf)

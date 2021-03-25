@@ -10,18 +10,18 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge e Siti configurabili nella modalità IE
-ms.openlocfilehash: a846d71d63a4f837041acc9b601f704999bb826a
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 1bffdef8c88b7a83d999b29763fcca258102ed51
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980268"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447330"
 ---
-# Altre informazioni su Siti configurabili nella modalità IE
+# <a name="learn-about-configurable-sites-in-ie-mode"></a>Altre informazioni su Siti configurabili nella modalità IE
 
 Questo articolo descrive la funzionalità Siti configurabili nell'Elenco siti modalità Enterprise durante l'uso di Internet Explorer in Microsoft Edge.
 
-## Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti
 
 - Aggiornamenti di Windows
 
@@ -34,17 +34,17 @@ Questo articolo descrive la funzionalità Siti configurabili nell'Elenco siti mo
   - Windows 8.1 - KB4556798 o successive
 
 - Microsoft Edge version 83 o successive
-- [Modalità IE](https://aka.ms/iemodeonedge) configurata con l'Elenco siti modalità Enterprise
+- [Modalità IE](./edge-ie-mode.md) configurata con l'Elenco siti modalità Enterprise
 
-## Panoramica
+## <a name="overview"></a>Panoramica
 
 La configurazione dei siti che hanno bisogno della modalità IE nell'Elenco siti modalità Enterprise funziona bene per gran parte degli ambienti con applicazioni legacy. Tuttavia, in alcuni casi questo approccio non è il modo migliore di configurare un sottogruppi di siti da aprire nella modalità IE senza eseguire il rendering di un intero dominio nella modalità IE. Ad esempio, quando l'ambiente include sia applicazioni moderne che applicazioni che sono eseguite su singoli server, e si vuole avere la flessibilità di eseguire il rendering solo delle applicazioni legacy nella modalità IE, eseguendo il rendering delle altre applicazioni nella modalità Microsoft Edge.
 
 La soluzione è usare la funzionalità Siti configurabili nell'Elenco siti modalità Enterprise. Quando la funzionalità è abilitata, Microsoft Edge consente ai siti contrassegnati con il tag "configurabile" di essere inclusi nella determinazione del modulo della modalità IE.
 
-## Funzionamento di Siti configurabili
+## <a name="how-configurable-sites-works"></a>Funzionamento di Siti configurabili
 
-### Passare automaticamente dal motore di Microsoft Edge a quello di Internet Explorer
+### <a name="automatic-switching-from-the-microsoft-edge-engine-to-the-ie-mode-engine"></a>Passare automaticamente dal motore di Microsoft Edge a quello di Internet Explorer
 
 Per usare la funzionalità Siti configurabili, è necessario che uno o più siti dell'Elenco siti modalità enterprise abbiano l'opzione `<open-in>Configurable</open-in>`.
 
@@ -67,7 +67,7 @@ Quando la funzionalità Siti configurabili è abilitata, Edge si comporta in que
    > [!NOTE]
    > La risposta di reindirizzamento viene memorizzata nella cache in base al comportamento normale di memorizzazione nella cache dei reindirizzamenti di Microsoft Edge.
 
-### Tornare al Microsoft Edge dal motore Internet Explorer
+### <a name="switching-back-from-ie-mode-engine-to-microsoft-edge-engine"></a>Tornare al Microsoft Edge dal motore Internet Explorer
 
 L'abilitazione dei siti configurabili in Microsoft Edge determina l'abilitazione automatica dei seguenti comportamenti nella modalità IE:
 
@@ -81,8 +81,8 @@ L'abilitazione dei siti configurabili in Microsoft Edge determina l'abilitazione
 > [!TIP]
 > Entrambi i motori di ricerca inviano la stessa intestazione di richiesta "`X-InternetExplorerModeConfigurable: 1`" a Siti configurabili. Si consiglia di usare lestazione di richiesta Utente-Agente per distinguere le richieste della modalità Microsoft Edge da quelle della modalità IE, ed evitare il reindirizzamento quando il sito è già caricato dal motore corretto.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
-- [Informazioni sulla modalità IE](https://docs.microsoft.com/deployedge/edge-ie-mode)
-- [Informazioni aggiuntive sulla modalità Enterprise](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Informazioni sulla modalità IE](./edge-ie-mode.md)
+- [Informazioni aggiuntive sulla modalità Enterprise](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

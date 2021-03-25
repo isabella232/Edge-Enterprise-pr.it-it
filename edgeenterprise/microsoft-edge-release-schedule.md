@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Piano di rilascio di Microsoft Edge
-ms.openlocfilehash: 7c679918a52a251a53ed5aa5d36df587ba1c46ab
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: a78c56d4c20da711eb73679dbe1c974bfac3c869
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442412"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11448180"
 ---
 # <a name="microsoft-edge-release-schedule"></a>Piano di rilascio di Microsoft Edge
 
@@ -23,7 +23,7 @@ Questo articolo descrive la cadenza e la pianificazione anticipata dei rilasci d
 
 ## <a name="release-cadence"></a>Frequenza di rilascio
 
-Microsoft offre quattro opzioni, denominate canali, per controllare la frequenza con cui Microsoft Edge viene aggiornato con nuove funzionalità. Il team di Microsoft Edge pianifica di rilasciare aggiornamenti pubblici nei canali Beta e Stabile ogni sei settimane. Per altre informazioni sui canali, il ciclo di rilascio e i livelli di supporto, vedere la [Panoramica sui canali](https://docs.microsoft.com/DeployEdge/microsoft-edge-channels#channel-overview).
+Microsoft offre quattro opzioni, denominate canali, per controllare la frequenza con cui Microsoft Edge viene aggiornato con nuove funzionalità. Il team di Microsoft Edge pianifica di rilasciare aggiornamenti pubblici nei canali Beta e Stabile ogni sei settimane. Per altre informazioni sui canali, il ciclo di rilascio e i livelli di supporto, vedere la [Panoramica sui canali](./microsoft-edge-channels.md#channel-overview).
 
 > [!NOTE]
 > A partire dalla versione 94 del canale stabile, Microsoft Edge passerà a una cadenza del ciclo di rilascio principale di quattro settimane. Siamo tuttavia consapevoli del fatto che i clienti aziendali che gestiscono ambienti complessi hanno bisogno di più tempo per pianificare e testare gli aggiornamenti di Microsoft Edge. Per facilitare la gestione degli aggiornamenti per i clienti aziendali che hanno bisogno di più tempo, Microsoft Edge offrirà un'opzione **Extended Stable allineata a un ciclo di rilascio principale più lungo, pari a otto settimane**. Questa opzione sarà disponibile solo per i clienti con ambienti gestiti.
@@ -41,9 +41,9 @@ La tabella seguente visualizza solo le informazioni relative ai rilasci principa
 
 | Versione | Stato rilascio | Canale Beta<br>Settimana di rilascio | Canale Stable<br>Settimana di rilascio |
 |---------|-----|------|--------|
-| 88 | Data di rilascio<br>Versione | 09-dic-2020<br>[88.0.705.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-88070518-december-9) | 21-gen-2021<br>[88.0.705.50](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-88070550-january-21)|
-| **89** | Data di rilascio<br>Versione | 03 febbraio 2021<br>[89.0.774.18](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-89077418-february-3) | **04-mar-2021**<br>**[89.0.774.45](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-stable-channel#version-89077445-march-21)** |
-| **90** | Data di rilascio<br>Versione | **16-Mar-2021**<br>**[90.0.818.8](https://docs.microsoft.com/deployedge/microsoft-edge-relnote-beta-channel#version-9008188-march-16)** | Settimana del 15-apr-2021 |
+| 88 | Data di rilascio<br>Versione | 09-dic-2020<br>[88.0.705.18](./microsoft-edge-relnote-beta-channel.md#version-88070518-december-9) | 21-gen-2021<br>[88.0.705.50](./microsoft-edge-relnote-stable-channel.md#version-88070550-january-21)|
+| **89** | Data di rilascio<br>Versione | 03 febbraio 2021<br>[89.0.774.18](./microsoft-edge-relnote-beta-channel.md#version-89077418-february-3) | **04-mar-2021**<br>**[89.0.774.45](./microsoft-edge-relnote-stable-channel.md#version-89077445-march-21)** |
+| **90** | Data di rilascio<br>Versione | **16-Mar-2021**<br>**[90.0.818.8](./microsoft-edge-relnote-beta-channel.md#version-9008188-march-16)** | Settimana del 15-apr-2021 |
 | 91 | Data di riferimento per il rilascio | Settimana del 27-apr-2021 | Settimana del 27-mag-2021 |
 | 92 | Data di riferimento per il rilascio | Settimana del 08-gen-2021 | Settimana del 22-lug-2021 |
 | 93 | Data di riferimento per il rilascio | Settimana del 03-ago-2021 | Settimana del 02-set-2021 |
