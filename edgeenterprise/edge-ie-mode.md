@@ -10,21 +10,21 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Scopri come usare Microsoft Edge in modalità Internet Explorer.
-ms.openlocfilehash: bcb25e0f104d4a9b64ee8fd7bf29b12bb24b4724
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: ecb4bffc5afdde3a8891d1eaa6e28508205ab097
+ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980234"
+ms.lasthandoff: 03/24/2021
+ms.locfileid: "11447340"
 ---
-# Informazioni sulla modalità IE
+# <a name="about-ie-mode"></a>Informazioni sulla modalità IE
 
 Questo articolo include una panoramica e i prerequisiti per l'uso di Microsoft Edge con la modalità IE.
 
 > [!NOTE]
 > Questo articolo si applica ai canali Microsoft Edge **Stable**, **Beta** e **Dev**, versione 77 o successiva.
 
-## Che cos'è la modalità Internet Explorer?
+## <a name="what-is-ie-mode"></a>Che cos'è la modalità Internet Explorer?
 
 La modalità IE su Microsoft Edge semplifica l'utilizzo di tutti i siti necessari all'organizzazione in un singolo browser. Utilizza il motore Chromium integrato per i siti moderni e utilizza il motore Trident MSHTML di Internet Explorer 11 (IE11) per i siti legacy.
 
@@ -41,22 +41,22 @@ Solo i siti configurati specificatamente (tramite criteri) utilizzeranno la moda
   > Viene elaborato solo un elenco di siti in modalità Enterprise. I criteri dell'elenco dei siti di Microsoft Edge hanno la precedenza su criteri dell'elenco dei siti di Internet Explorer.
 - Tutti i siti Intranet quando i criteri di gruppo **Invia tutti i siti Intranet a Internet Explorer** sono abilitati (Microsoft Edge 77 o versione successiva).
 
-### La modalità Internet Explorer supporta le funzionalità di Internet Explorer seguenti
+### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer supporta le funzionalità di Internet Explorer seguenti
 
 - Tutte le modalità documento e le modalità Enterprise.
 - Controlli ActiveX, come Java o Silverlight
 - Oggetti browser helper 
 - Impostazioni e Criteri di gruppo di Internet Explorer che influiscono sulle impostazioni dell'area di sicurezza e sulla modalità protetta
-- Gli strumenti di sviluppo F12 per IE, all'avvio con [IEChooser](https://docs.microsoft.com/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10)
+- Gli strumenti di sviluppo F12 per IE, all'avvio con [IEChooser](/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10)
 - Le estensioni Microsoft Edge che interagiscono con i contenuti della pagina di Internet Explorer direttamente non sono supportate.
 
-### La modalità Internet Explorer non supporta le funzionalità di Internet Explorer seguenti
+### <a name="ie-mode-doesnt-support-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer non supporta le funzionalità di Internet Explorer seguenti
 
 - Barre degli strumenti di Internet Explorer
 - Impostazioni e Criteri di gruppo di Internet Explorer che interessano il menu di spostamento (ad esempio motori di ricerca e home page)
 - Strumenti di sviluppo di IE11 o Microsoft Edge F12
 
-## Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti
 
 I prerequisiti seguenti si applicano all'uso di Microsoft Edge con la modalità Internet Explorer.
 
@@ -87,10 +87,10 @@ I prerequisiti seguenti si applicano all'uso di Microsoft Edge con la modalità 
   > [!IMPORTANT]
   > * * Windows 7 and Windows Server 2008 R2 saranno supportati da Microsoft Edge anche dopo la fine del supporto per tali sistemi operativi. Per consentire il supporto della modalità Internet Explorer in questi sistemi operativi, i dispositivi dovranno disporre degli [aggiornamenti della sicurezza estesa per Windows 7](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7). È consigliabile eseguire l'aggiornamento a un sistema operativo supportato appena possibile per mantenere la protezione. Il supporto di Microsoft Edge con gli aggiornamenti della sicurezza estesa deve essere considerato un bridge temporaneo per passare a uno stato supportato del sistema operativo.
 
-2. Il modello amministrativo di Microsoft Edge. Per altre informazioni, vedi [Configurare Microsoft Edge](https://docs.microsoft.com/DeployEdge/configure-microsoft-edge).
+2. Il modello amministrativo di Microsoft Edge. Per altre informazioni, vedi [Configurare Microsoft Edge](./configure-microsoft-edge.md).
 3. Internet Explorer 11 abilitato nelle funzionalità di Windows.
 
-## Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
-- [Informazioni aggiuntive sulla modalità Enterprise](https://docs.microsoft.com/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
+- [Informazioni aggiuntive sulla modalità Enterprise](/internet-explorer/ie11-deploy-guide/enterprise-mode-overview-for-ie11)
