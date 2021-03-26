@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 03/18/2021
+ms.date: 03/24/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 4935b927081ef1823ecf36b922948992926d4005
-ms.sourcegitcommit: 6a3787dead062e4a0860adbc570229974dcaee07
+ms.openlocfilehash: 2204f1062699095e66707858646014daefc9322a
+ms.sourcegitcommit: e17de92b1fe9637cc7476e5c953bb8131ca2fbe1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/22/2021
-ms.locfileid: "11442476"
+ms.lasthandoff: 03/25/2021
+ms.locfileid: "11448433"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -25,7 +25,6 @@ La versione più recente di Microsoft Edge include i criteri riportati di seguit
 Sono disponibili informazioni su un set aggiuntivo di criteri utilizzati per controllare come e quando viene aggiornato Microsoft Edge nell'articolo dei [riferimenti sui criteri di aggiornamento di Microsoft Edge](microsoft-edge-update-policies.md).
 
 È possibile scaricare il [Microsoft Security Compliance Toolkit](https://www.microsoft.com/download/details.aspx?id=55319) per le impostazioni di base relative alla configurazione consigliata per Microsoft Edge. Per altre informazioni, consultare il [Blog sulle basi di riferimento della sicurezza di Microsoft](https://techcommunity.microsoft.com/t5/microsoft-security-baselines/bg-p/Microsoft-Security-Baselines).
-
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
@@ -36,9 +35,7 @@ Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 |Nome|Didascalia|
 |--|--|
-|[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|Consente i collegamenti rapidi nella nuova scheda|
-|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|Recupera la durata di keepalive alla chiusura|
-
+|[NewTabPageContentEnabled](#newtabpagecontentenabled)|Consentire il contenuto di Microsoft News nella nuova scheda|
 
 ## <a name="available-policies"></a>Criteri disponibili
 
@@ -236,7 +233,8 @@ e suggerimenti per i servizi Microsoft|
 |[HomepageIsNewTabPage](#homepageisnewtabpage)|Imposta la pagina Nuova scheda come home page|
 |[HomepageLocation](#homepagelocation)|Configura l'URL della home page|
 |[NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)|Configura i tipi di sfondo consentiti per il layout della pagina Nuova scheda|
-|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|Imposta il logo aziendale della pagina Nuova scheda|
+|[NewTabPageCompanyLogo](#newtabpagecompanylogo)|Imposta il logo aziendale della pagina nuova scheda (obsoleto)|
+|[NewTabPageContentEnabled](#newtabpagecontentenabled)|Consentire il contenuto di Microsoft News nella nuova scheda|
 |[NewTabPageHideDefaultTopSites](#newtabpagehidedefaulttopsites)|Nasconde i siti principali predefiniti dalla pagina Nuova scheda|
 |[NewTabPageLocation](#newtabpagelocation)|Configura l'URL della pagina Nuova scheda|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|Imposta i collegamenti rapidi della pagina Nuova scheda|
@@ -333,7 +331,7 @@ e suggerimenti per i servizi Microsoft|
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|Consentire agli utenti di configurare Family safety e la modalità bambini|
 |[FavoritesBarEnabled](#favoritesbarenabled)|Abilita la barra Preferiti|
-|[FetchKeepaliveDurationOnShutdown](#fetchkeepalivedurationonshutdown)|Recupera la durata di keepalive alla chiusura|
+|[FetchKeepaliveDurationSecondsOnShutdown](#fetchkeepalivedurationsecondsonshutdown)|Recupera la durata di keepalive alla chiusura|
 |[ForceBingSafeSearch](#forcebingsafesearch)|Applica Ricerca sicura di Bing|
 |[ForceCertificatePromptsOnMultipleMatches](#forcecertificatepromptsonmultiplematches)|Configura se Microsoft Edge deve selezionare automaticamente un certificato quando sono presenti più corrispondenze di certificato per un sito configurato con "AutoSelectCertificateForUrls"|
 |[ForceEphemeralProfiles](#forceephemeralprofiles)|Abilita l'uso di profili temporanei|
@@ -387,7 +385,7 @@ e suggerimenti per i servizi Microsoft|
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione|
 |[OverrideSecurityRestrictionsOnInsecureOrigin](#overridesecurityrestrictionsoninsecureorigin)|Controlla dove si applicano le restrizioni di sicurezza per origini non sicure|
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|Consente ai siti Web di eseguire query per i metodi di pagamento disponibili|
-|[PersonalizationReportingEnabled](#personalizationreportingenabled)|Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft|
+|[PersonalizationReportingEnabled](#personalizationreportingenabled)|Consentire la personalizzazione dei servizi Microsoft inviando a Microsoft dati relativi all'esplorazione e al browser|
 |[PinningWizardAllowed](#pinningwizardallowed)|Consente la procedura guidata per Aggiungi alla barra delle applicazioni|
 |[ProactiveAuthEnabled](#proactiveauthenabled)|Abilitare l'autenticazione proattiva|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|Abilita il contenuto promozionale di una scheda completa|
@@ -436,7 +434,7 @@ e suggerimenti per i servizi Microsoft|
 |[SyncTypesListDisabled](#synctypeslistdisabled)|Configura l'elenco dei tipi esclusi dalla sincronizzazione|
 |[TLS13HardeningForLocalAnchorsEnabled](#tls13hardeningforlocalanchorsenabled)|Abilita una funzionalità di sicurezza TLS 1.3 per i trust anchor locali (obsoleto)|
 |[TLSCipherSuiteDenyList](#tlsciphersuitedenylist)|Specifica i pacchetti di crittografia TLS da disabilitare|
-|[TabFreezingEnabled](#tabfreezingenabled)|Consente il blocco delle schede di sfondo|
+|[TabFreezingEnabled](#tabfreezingenabled)|Consenti blocco delle schede in background (obsoleto)|
 |[TargetBlankImpliesNoOpener](#targetblankimpliesnoopener)|Non impostare window.opener per i collegamenti con destinazione _blank|
 |[TaskManagerEndProcessEnabled](#taskmanagerendprocessenabled)|Abilita i processi finali nel servizio di gestione attività del browser|
 |[TotalMemoryLimitMb](#totalmemorylimitmb)|Imposta un limite per i megabyte di memoria che possono essere usati in un'unica istanza di Microsoft Edge|
@@ -506,7 +504,7 @@ Se si sceglie il valore "fixed_server" come "ProxyMode", viene usato il campo "P
 
 Se si sceglie il valore "pac_script" come "ProxyMode", viene usato il campo "ProxyPacUrl".
 
-Per altre informazioni su come identificare il traffico di Application Guard tramite proxy doppio, visitare [https://go.microsoft.com/fwlink/?linkid=2134653](https://go.microsoft.com/fwlink/?linkid=2134653).
+Per altre informazioni su come identificare il traffico di Application Guard tramite proxy doppio, visitare [https://go.microsoft.com/fwlink/?linkid=2134653](./microsoft-edge-security-windows-defender-application-guard.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -846,7 +844,7 @@ Nota: non è possibile impostare modelli URL in conflitto tra questi tre criteri
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
 Per non cancellare i cookie all'uscita, configura i criteri [SaveCookiesOnExit](#savecookiesonexit).
 
@@ -925,7 +923,7 @@ Nota: non è possibile impostare modelli URL in conflitto tra questi tre criteri
 
 - [CookiesSessionOnlyForUrls](#cookiessessiononlyforurls)
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format) * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -1004,7 +1002,7 @@ Nota: non è possibile impostare modelli URL in conflitto tra questi tre criteri
 
 - CookiesSessionOnlyForUrls
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format) * non è un valore accettato per questo criterio.
 
 Se si imposta il criterio [RestoreOnStartup](#restoreonstartup) per ripristinare gli URL di sessioni precedenti, questo criterio viene ignorato e i cookie vengono archiviati definitivamente per tali siti.
 
@@ -1907,7 +1905,7 @@ Se il criterio non viene disattivato, sta a significare che[DefaultFileSystemRea
 
 I modelli di URL non possono entrare in conflitto con [FileSystemReadBlockedForUrls](#filesystemreadblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -1976,7 +1974,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemReadGuardSetting](#def
 
 I modelli di URL non possono entrare in conflitto con [FileSystemReadAskForUrls](#filesystemreadaskforurls) Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2045,7 +2043,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#de
 
 I modelli di URL non possono entrare in conflitto con [FileSystemWriteBlockedForUrls](#filesystemwriteblockedforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2114,7 +2112,7 @@ Se non viene impostato questo criterio, [DefaultFileSystemWriteGuardSetting](#de
 
 I modelli di URL non possono entrare in conflitto con [FileSystemWriteAskForUrls](#filesystemwriteaskforurls). Nessuno dei criteri ha la precedenza se un URL corrisponde a entrambi.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2181,7 +2179,7 @@ SOFTWARE\Policies\Microsoft\Edge\FileSystemWriteBlockedForUrls\2 = "[*.]example.
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2248,7 +2246,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesAllowedForUrls\2 = "[*.]contoso.edu"
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultImagesSetting](#defaultimagessetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2315,7 +2313,7 @@ SOFTWARE\Policies\Microsoft\Edge\ImagesBlockedForUrls\2 = "[*.]contoso.edu"
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2382,7 +2380,7 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentAllowedForUrls\2 = "[*.]example.
 
 Se non si configura questo criterio, i contenuti misti bloccabili verranno bloccati e i contenuti misti eventualmente bloccabili potranno essere aggiornati. Tuttavia, gli utenti potranno impostare eccezioni per consentire i contenuti misti non sicuri per siti specifici.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2716,7 +2714,7 @@ SOFTWARE\Policies\Microsoft\Edge\LegacySameSiteCookieBehaviorEnabledForDomainLis
 
   Consente di creare un elenco di modelli di URL per specificare i siti autorizzati a visualizzare le notifiche.
 
-Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2781,7 +2779,7 @@ SOFTWARE\Policies\Microsoft\Edge\NotificationsAllowedForUrls\2 = "[*.]contoso.ed
 
   Consente di creare un elenco di modelli di URL per specificare i siti non autorizzati a visualizzare le notifiche.
 
-Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+Se non si imposta questo criterio, verrà usato il valore predefinito globale per tutti i siti. Il valore predefinito proviene dai criteri [DefaultNotificationsSetting](#defaultnotificationssetting), se impostato, oppure dalla configurazione personale dell'utente. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2850,7 +2848,7 @@ Definisce un elenco di siti, in base ai modelli URL, che possono eseguire il plu
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2919,7 +2917,7 @@ Definisce un elenco di siti, in base ai modelli URL, che non possono eseguire Ad
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultPluginsSetting](#defaultpluginssetting) (se impostato) o la configurazione personale dell'utente.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). Tuttavia, a partire da M85, i caratteri jolly "\ *" e "[\ *.]" nell'host non sono più supportati per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -3362,7 +3360,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultWebUsbGuardSetting](#defaultwebusbguardsetting) (se impostato) o la configurazione personale dell'utente.
 
-I modelli URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbBlockedForUrls](#webusbblockedforurls): non è possibile consentire e bloccare contemporaneamente un URL. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
+I modelli URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbBlockedForUrls](#webusbblockedforurls): non è possibile consentire e bloccare contemporaneamente un URL. Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -3429,7 +3427,7 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAskForUrls\2 = "[*.]contoso.edu"
 
 Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultWebUsbGuardSetting](#defaultwebusbguardsetting) (se impostato) o la configurazione personale dell'utente.
 
-I modelli URL in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbAskForUrls](#webusbaskforurls). Non è possibile consentire e bloccare contemporaneamente un URL.  Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+I modelli URL in questo criterio non possono essere in conflitto con quelli configurati nel criterio [WebUsbAskForUrls](#webusbaskforurls). Non è possibile consentire e bloccare contemporaneamente un URL.  Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -4414,7 +4412,7 @@ Nelle istanze macOS, le app e le estensioni esterne al sito Web dei componenti a
 
 Il codice sorgente di qualsiasi estensione può essere modificato dagli utenti con strumenti di sviluppo, rendendo potenzialmente non funzionale l'estensione. Se questo è un problema, configurare i criteri DeveloperToolsDisabled.
 
-Ogni elemento elenco del criterio è una stringa che contiene un ID di estensione e, facoltativamente, un URL di "aggiornamento" separato da un punto e virgola (;). L'ID dell'estensione è la stringa di 32 lettere che si trova, ad esempio, in edge://extensions in modalità sviluppatore. Se specificato, l'URL di "aggiornamento" dovrebbe indicare un documento XML di un manifesto di aggiornamento ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ). Per impostazione predefinita, viene utilizzato l'URL di aggiornamento del sito Web dei componenti aggiuntivi di Microsoft Edge. L'URL di "aggiornamento" impostato in questo criterio viene usato solo per l'installazione iniziale. Gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento nel manifesto dell'estensione.
+Ogni elemento elenco del criterio è una stringa che contiene un ID di estensione e, facoltativamente, un URL di "aggiornamento" separato da un punto e virgola (;). L'ID dell'estensione è la stringa di 32 lettere che si trova, ad esempio, in edge://extensions in modalità sviluppatore. Se specificato, l'URL di "aggiornamento" dovrebbe indicare un documento XML di un manifesto di aggiornamento ( [https://go.microsoft.com/fwlink/?linkid=2095043](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) ). Per impostazione predefinita, viene utilizzato l'URL di aggiornamento del sito Web dei componenti aggiuntivi di Microsoft Edge. L'URL di "aggiornamento" impostato in questo criterio viene usato solo per l'installazione iniziale. Gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento nel manifesto dell'estensione.
 
 Nota: questo criterio non si applica alla modalità InPrivate. Leggere informazioni sulle estensioni di hosting ( https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
 
@@ -4483,7 +4481,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallForcelist\2 = "abcdefghijklmnop
 
 Definisci gli URL che possono installare estensioni e temi direttamente senza dover trascinare i pacchetti nella pagina edge://extensions.
 
-Ogni voce di questo elenco è uno schema di corrispondenza per lo stile dell'estensione (vedere [https://go.microsoft.com/fwlink/?linkid=2095039](https://go.microsoft.com/fwlink/?linkid=2095039)). Gli utenti possono installare facilmente gli elementi da qualsiasi URL che corrisponda a una voce di questo elenco. Il percorso del file *.crx e la pagina da cui viene avviato il download (ossia, il referrer) devono essere autorizzati da questi schemi. Non ospitare i file in una posizione che richiede l'autenticazione.
+Ogni voce di questo elenco è uno schema di corrispondenza per lo stile dell'estensione (vedere [https://go.microsoft.com/fwlink/?linkid=2095039](/microsoft-edge/extensions-chromium/enterprise/match-patterns)). Gli utenti possono installare facilmente gli elementi da qualsiasi URL che corrisponda a una voce di questo elenco. Il percorso del file *.crx e la pagina da cui viene avviato il download (ossia, il referrer) devono essere autorizzati da questi schemi. Non ospitare i file in una posizione che richiede l'autenticazione.
 
 Il criterio [ExtensionInstallBlocklist](#extensioninstallblocklist) ha la precedenza rispetto a questo criterio. Le estensioni che si trovano nell'elenco di elementi bloccati non verranno installate, anche se provengono da un sito indicato in questo elenco.
 
@@ -4548,7 +4546,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   L'impostazione di questo criterio controlla le impostazioni di gestione delle estensioni per Microsoft Edge, incluse quelle controllate da criteri correlati all'estensione esistenti. Questo criterio sostituisce tutti i criteri legacy che potrebbero essere impostati.
 
-Questo criterio esegue il mapping di un ID di estensione o di un URL di aggiornamento solo alle impostazioni specifiche. È possibile impostare una configurazione predefinita per l'ID speciale "*", che si applica a tutte le estensioni senza una configurazione personalizzata in questo criterio. Con un URL di aggiornamento, la configurazione si applica alle estensioni con l'URL di aggiornamento esatto indicato nel manifesto dell'estensione ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ).
+Questo criterio esegue il mapping di un ID di estensione o di un URL di aggiornamento solo alle impostazioni specifiche. È possibile impostare una configurazione predefinita per l'ID speciale "*", che si applica a tutte le estensioni senza una configurazione personalizzata in questo criterio. Con un URL di aggiornamento, la configurazione si applica alle estensioni con l'URL di aggiornamento esatto indicato nel manifesto dell'estensione ( [https://go.microsoft.com/fwlink/?linkid=2095043](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating) ).
 
 Per bloccare le estensioni di un determinato Store di terze parti, è sufficiente bloccare update_url per tale Store. Se ad esempio vuoi bloccare le estensioni di Chrome Web Store, è possibile usare il JSON seguente.
 
@@ -5316,7 +5314,7 @@ Se la norma viene abilitata o non viene configurata, gli utenti possono cambiare
 
 Se il criterio viene disabilitato, gli utenti non potranno modificare l'URL nella barra degli indirizzi.
 
-Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
+Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](./microsoft-edge-configure-kiosk-mode.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -5380,7 +5378,7 @@ Se il criterio viene abilitato, i file scaricati durante le sessioni a tutto sch
 
 Se il criterio viene disabilitato o non viene configurato, i file scaricati durante le sessioni a tutto schermo non sono cancellati ogni volta che Microsoft Edge viene chiuso.
 
-Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](https://go.microsoft.com/fwlink/?linkid=2137578).
+Per i dettagli della configurazione della modalità tutto schermo, vedere [https://go.microsoft.com/fwlink/?linkid=2137578](./microsoft-edge-configure-kiosk-mode.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -6875,7 +6873,7 @@ Se si abilita questo criterio, è possibile creare un elenco di host per i quali
 
 Se non si configura questo criterio, non viene creato alcun elenco di host per i quali Microsoft Edge ignora un proxy. Se è stato specificato un altro metodo per l'impostazione dei criteri proxy, non configurare questo criterio.
 
-Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
+Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -6946,7 +6944,7 @@ Se si sceglie di usare:
   * fixed_servers = usare server proxy fissi È possibile specificare altre opzioni con [ProxyServer ](#proxyserver) e [ProxyBypassList](#proxybypasslist).
   * pac_script = uno script del proxy con estensione pac Per impostare l'URL di un file proxy .pac, usare [ProxyPacUrl](#proxypacurl).
 
-Per esempi dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
+Per esempi dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md).
 
 Se non si configura questo criterio, gli utenti possono scegliere impostazioni del proxy personalizzate.
 
@@ -7030,7 +7028,7 @@ Se si abilita questo criterio, è possibile specificare l'URL per un file PAC, c
 
 Se si disabilita o non si configura questo criterio, non viene specificato alcun file PAC. Se è stato specificato un altro metodo per l'impostazione dei criteri proxy, non configurare questo criterio.
 
-Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
+Per esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -7098,7 +7096,7 @@ Se si abilita questo criterio, il server proxy configurato con questo criterio v
 
 Se si disabilita o non si configura questo criterio, gli utenti possono scegliere impostazioni del proxy personalizzate in questa modalità di proxy. Se è stato specificato un altro metodo per l'impostazione dei criteri proxy, non configurare questo criterio.
 
-Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
+Per altre opzioni ed esempi dettagliati, vedere [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -7182,7 +7180,7 @@ Per ProxyMode, se si sceglie il valore:
   * fixed_servers, vengono usati i campi ProxyServer e ProxyBypassList.
   * pac_script, vengono usati i campi ProxyPacUrl e ProxyBypassList.
 
-Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
+Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](./edge-learnmore-cmdline-options-proxy-settings.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -8173,6 +8171,70 @@ SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="newtabpagecontentenabled"></a>NewTabPageContentEnabled
+
+  #### <a name="allow-microsoft-news-content-on-the-new-tab-page"></a>Consentire il contenuto di Microsoft News nella nuova scheda
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Se si abilita o non si configura questo criterio, Microsoft Edge visualizza il contenuto di Microsoft News nella nuova scheda. L'utente può scegliere diverse opzioni di visualizzazione per il contenuto, tra cui, ma non solo, Contenuto disattivato, Contenuto visibile durante lo scorrimento, Solo intestazioni e Contenuto visibile. L'abilitazione di questo criterio non forza la visualizzazione del contenuto: l'utente può continuare a impostare la propria posizione preferita per il contenuto.
+
+Se disabiliti questo criterio, Microsoft Edge non visualizza il contenuto di Microsoft News nella nuova scheda, il controllo Contenuto nel riquadro a comparsa Impostazioni NTP è disabilitato e impostato su "Contenuto disattivato".
+
+Questo criterio si applica solo ai profili utente locale di Microsoft Edge, ai profili a cui è stato eseguito l’accesso con un account Microsoft e ai profili a cui è stato eseguito l’accesso con Active Directory. Per configurare la nuova scheda in modalità Enterprise per i profili a cui è stato eseguito l’accesso con Azure Active Directory, usare il portale di amministrazione di M365.
+
+Criteri correlati: [NewTabPageAllowedBackgroundTypes,](#newtabpageallowedbackgroundtypes) [NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: NewTabPageContentEnabled
+  - Nome Criteri di gruppo: Consenti contenuto di Microsoft News nella nuova scheda
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina nuova scheda
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: NewTabPageContentEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: NewTabPageContentEnabled
+  - Valore di esempio:
+``` xml
+<false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="newtabpagehidedefaulttopsites"></a>NewTabPageHideDefaultTopSites
 
   #### <a name="hide-the-default-top-sites-from-the-new-tab-page"></a>Nasconde i siti principali predefiniti dalla pagina Nuova scheda
@@ -8484,7 +8546,7 @@ Se si disabilita questo criterio, Microsoft Edge nasconde i collegamenti rapidi 
 
 Questo criterio si applica solo ai profili utente locale di Microsoft Edge, ai profili a cui è stato eseguito l’accesso con un account Microsoft e ai profili a cui è stato eseguito l’accesso con Active Directory. Per configurare la nuova scheda in modalità Enterprise per i profili a cui è stato eseguito l’accesso con Azure Active Directory, usare il portale di amministrazione di M365.
 
-Criteri correlati: [NewTabPageAllowedBackgroundTypes](#newtabpageallowedbackgroundtypes)
+Criteri correlati: [NewTabPageAllowedBackgroundTypes,](#newtabpageallowedbackgroundtypes) [NewTabPageContentEnabled](#newtabpagecontentenabled)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -10053,7 +10115,7 @@ Se una delle due condizioni è falsa, il prompt di avvio del protocollo esterno 
 
 Se non si configura questo criterio, non è possibile avviare alcun protocollo senza un prompt. Gli utenti possono rifiutare esplicitamente i prompt in base al protocollo/sito a meno che il criterio [ ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox) sia impostato su disabilitato. Questo criterio non ha alcun impatto sulle esenzioni di prompt per protocollo/sito impostate dagli utenti.
 
-I modelli di corrispondenza di origine usano un formato simile a quelli per il criterio [URLBlocklist](#urlblocklist), documentati su [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+I modelli di corrispondenza di origine usano un formato simile a quelli per il criterio [URLBlocklist](#urlblocklist), documentati su [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
 Tuttavia, i modelli di corrispondenza di origine per questo criterio non possono contenere elementi come “/path” o “@query”. Qualsiasi modello che contiene un elemento “/path” o “@query” verrà ignorato.
 
@@ -10175,7 +10237,7 @@ Se si impostano gli URL in questo criterio, i file verranno aperti automaticamen
 
 Se non si impostano questo criterio, tutti i download in cui il tipo di file è presente in [AutoOpenFileTypes](#autoopenfiletypes) si aprirà automaticamente.
 
-Un modello di URL deve essere formattato in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+Un modello di URL deve essere formattato in base a [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -10637,7 +10699,7 @@ Se non si configura questo criterio, l'esperienza predefinita mostrerà pubblici
 
 Questo criterio è disponibile solo per le SKU K-12 identificate come tenant EDU da Microsoft.
 
-Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](https://go.microsoft.com/fwlink/?linkid=2119711) per altre informazioni su questo criterio o se si verificano gli scenari seguenti:
+Consultare [https://go.microsoft.com/fwlink/?linkid=2119711](/microsoft-365/education/deploy/install-microsoft-edge) per altre informazioni su questo criterio o se si verificano gli scenari seguenti:
 
 * Si dispone di un tenant EDU, ma il criterio non funziona.
 
@@ -11383,7 +11445,7 @@ SOFTWARE\Policies\Microsoft\Edge\CertificateTransparencyEnforcementDisabledForLe
 
 Questo criterio consente di non divulgare i certificati per i nomi host negli URL specificati tramite la trasparenza dei certificati. In questo modo, è possibile usare i certificati che altrimenti verrebbero considerati non attendibili, perché non sono stati divulgati in modo adeguato, ma è più difficile rilevare i certificati emessi in modo errato per tali host.
 
-Creare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). Poiché i certificati sono validi per un determinato nome host, indipendentemente dallo schema, dalla porta o dal percorso, solo la parte del nome host dell'URL viene considerata. Gli host con caratteri jolly non sono supportati.
+Creare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). Poiché i certificati sono validi per un determinato nome host, indipendentemente dallo schema, dalla porta o dal percorso, solo la parte del nome host dell'URL viene considerata. Gli host con caratteri jolly non sono supportati.
 
 Se non si configura questo criterio, i certificati che dovrebbero essere divulgati con la trasparenza dei certificati vengono considerati non attendibili se non vengono divulgati.
 
@@ -11590,7 +11652,7 @@ Se non si configura questo criterio, gli utenti con versioni di Microsoft Edge p
 
 La disabilitazione di ClickOnce potrebbe impedire l'avvio corretto delle applicazioni ClickOnce (file con estensione .application).
 
-Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) e [https://go.microsoft.com/fwlink/?linkid=2099880](https://go.microsoft.com/fwlink/?linkid=2099880).
+Per altre informazioni su ClickOnce, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](./edge-learn-more-co-di.md) e [https://go.microsoft.com/fwlink/?linkid=2099880](/visualstudio/deployment/clickonce-security-and-deployment).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -11989,7 +12051,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  Abilita l'uso degli account Active Directory per l'accesso automatico se i computer degli utenti sono aggiunti a un dominio e se l'ambiente non è aggiunto ad Azure AD ibrido. Se invece si desidera che gli utenti accedano automaticamente con l'account Azure Active Directory, aggiungere l'ambiente ad Azure AD (vedere [https://go.microsoft.com/fwlink/?linkid=2118197](https://go.microsoft.com/fwlink/?linkid=2118197) per altre informazioni) o ad Azure AD ibrido (vedere [https://go.microsoft.com/fwlink/?linkid=2118365](https://go.microsoft.com/fwlink/?linkid=2118365) per altre informazioni).
+  Abilita l'uso degli account Active Directory per l'accesso automatico se i computer degli utenti sono aggiunti a un dominio e se l'ambiente non è aggiunto ad Azure AD ibrido. Se invece si desidera che gli utenti accedano automaticamente con l'account Azure Active Directory, aggiungere l'ambiente ad Azure AD (vedere [https://go.microsoft.com/fwlink/?linkid=2118197](/azure/active-directory/devices/azureadjoin-plan) per altre informazioni) o ad Azure AD ibrido (vedere [https://go.microsoft.com/fwlink/?linkid=2118365](/azure/active-directory/devices/hybrid-azuread-join-plan) per altre informazioni).
 
 A ogni avvio, Microsoft Edge proverà a eseguire l'accesso tramite questo criterio, purché il primo profilo avviato non sia connesso o prima non sia stato eseguito l'accesso automatico.
 
@@ -12317,7 +12379,7 @@ Se si imposta questo criterio su falso, Microsoft Edge non controlla se si tratt
 
 Se non si imposta questo criterio, Microsoft Edge consente agli utenti di controllare se si tratta dell'impostazione predefinita e, in caso contrario, se devono essere visualizzate le notifiche degli utenti.
 
-Nota per gli amministratori di Windows: questo criterio funziona solo per i PC che eseguono Windows 7. Per le versioni più recenti di Windows, è necessario distribuire un file di "associazioni delle applicazioni predefinite" che rende Microsoft Edge il gestore per i protocolli HTTPS e HTTP (e, facoltativamente, il protocollo ftp e i formati di file come .html, .htm, .pdf, .svg, .webp). Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2094932](https://go.microsoft.com/fwlink/?linkid=2094932).
+Nota per gli amministratori di Windows: questo criterio funziona solo per i PC che eseguono Windows 7. Per le versioni più recenti di Windows, è necessario distribuire un file di "associazioni delle applicazioni predefinite" che rende Microsoft Edge il gestore per i protocolli HTTPS e HTTP (e, facoltativamente, il protocollo ftp e i formati di file come .html, .htm, .pdf, .svg, .webp). Per altre informazioni, vedere [https://go.microsoft.com/fwlink/?linkid=2094932](./edge-default-browser.md).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -12849,7 +12911,7 @@ I dati di diagnostica necessari raccolti fanno in modo che Microsoft Edge rimang
 
 I dati di diagnostica facoltativi includono i dati sull'uso del browser, i siti Web visitati e i report di arresto anomalo di Microsoft in modo da migliorare il prodotto e il servizio.
 
-Questo criterio non è supportato nei dispositivi Windows 10. Per controllare la raccolta di dati in Windows 10, gli amministratori IT devono usare i criteri di gruppo dati di diagnostica Windows. Questo criterio può essere sia "Consenti telemetria" o "Consenti dati di diagnostica", a seconda della versione di Windows in uso. Ulteriori informazioni sulla raccolta dei dati di diagnostica Windows 10: [https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
+Questo criterio non è supportato nei dispositivi Windows 10. Per controllare la raccolta di dati in Windows 10, gli amministratori IT devono usare i criteri di gruppo dati di diagnostica Windows. Questo criterio può essere sia "Consenti telemetria" o "Consenti dati di diagnostica", a seconda della versione di Windows in uso. Ulteriori informazioni sulla raccolta dei dati di diagnostica Windows 10: [https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
 
 Per configurare il criterio, usa una delle opzioni seguenti:
 
@@ -12937,7 +12999,7 @@ Se si disabilita questo criterio, gli utenti non possono aprire i file usando il
 
 Nota: la disabilitazione di DirectInvoke potrebbe impedire il corretto funzionamento di alcune funzionalità di Microsoft SharePoint Online.
 
-Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](https://go.microsoft.com/fwlink/?linkid=2103872) e [https://go.microsoft.com/fwlink/?linkid=2099871](https://go.microsoft.com/fwlink/?linkid=2099871).
+Per altre informazioni su DirectInvoke, vedere [https://go.microsoft.com/fwlink/?linkid=2103872](./edge-learn-more-co-di.md) e [https://go.microsoft.com/fwlink/?linkid=2099871](/previous-versions/windows/internet-explorer/ie-developer/dev-guides/jj215788(v=vs.85)).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -14114,7 +14176,7 @@ Se si disabilitano il criterio o non lo si configura, i tipi di file che generan
 
 Se il criterio viene abilitato:
 
-* Il modello di URL deve essere formattato in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+* Il modello di URL deve essere formattato in base a [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 * L'estensione del tipo di file immessa deve essere in formato ASCII in minuscolo. Quando si elenca il tipo di file, non è necessario includere il separatore iniziale, pertanto deve essere insertito “jnlp” invece di “.jnlp”.
 
 Esempio:
@@ -14452,7 +14514,7 @@ Se non si configura questo criterio, l'utente può decidere di usare o meno la b
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ### <a name="fetchkeepalivedurationonshutdown"></a>FetchKeepaliveDurationOnShutdown
+  ### <a name="fetchkeepalivedurationsecondsonshutdown"></a>FetchKeepaliveDurationSecondsOnShutdown
 
   #### <a name="fetch-keepalive-duration-on-shutdown"></a>Recupera la durata di keepalive alla chiusura
 
@@ -14484,7 +14546,7 @@ Se si disabilita o non si configura questo criterio, viene utilizzato il valore 
 
   ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
-  - Nome univoco Criteri di gruppo: FetchKeepaliveDurationOnShutdown
+  - Nome univoco Criteri di gruppo: FetchKeepaliveDurationSecondsOnShutdown
   - Nome Criteri di gruppo: Recupera durata keepalive all'arresto
   - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
@@ -14494,7 +14556,7 @@ Se si disabilita o non si configura questo criterio, viene utilizzato il valore 
 
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
-  - Nome valore: FetchKeepaliveDurationOnShutdown
+  - Nome valore: FetchKeepaliveDurationSecondsOnShutdown
   - Tipo valore: REG_DWORD
 
   ##### <a name="example-value"></a>Valore di esempio
@@ -14505,7 +14567,7 @@ Se si disabilita o non si configura questo criterio, viene utilizzato il valore 
 
   #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
   
-  - Nome chiave di preferenza: FetchKeepaliveDurationOnShutdown
+  - Nome chiave di preferenza: FetchKeepaliveDurationSecondsOnShutdown
   - Valore di esempio:
 ``` xml
 <integer>1</integer>
@@ -16529,7 +16591,7 @@ Se si imposta questo criterio su "Abilitato" o non lo si configura, i siti Web i
 
 Se si imposta questo criterio su "Disabilitato", il rilevamento di eventi di blocco avanzato viene disabilitato e per gli utenti sarà disponibile il rilevamento di eventi di blocco di base di Internet Explorer.
 
-Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
 Mapping delle opzioni del criterio:
 
@@ -16588,7 +16650,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
 Mapping delle opzioni del criterio:
 
@@ -16657,7 +16719,7 @@ Se si imposta questo criterio su true o non lo si configura, l'utente può usare
 
 Se si imposta questo criterio su false, l'utente non è autorizzato a usare l'argomento della riga di comando--IE-mode-file-URL per l'avvio di file locali in modalità Internet Explorer.
 
-Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -16716,7 +16778,7 @@ Quando si richiede l'avvio di un URL file://in modalità Internet Explorer, l'es
 
 Se si imposta questo criterio sul valore speciale "*" o non lo si configura, tutte le estensioni di file sono consentite.
 
-Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -16778,7 +16840,7 @@ Se si imposta questo criterio su true, la voce di menu di scelta rapida "Apri co
 
 Se si imposta questo criterio su false o non lo si configura, la voce di menu di scelta rapida non verrà aggiunta.
 
-Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -16829,7 +16891,7 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
 
   #### <a name="description"></a>Descrizione
 
-  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -16894,7 +16956,7 @@ Se si imposta questo criterio su “AutomaticNavigationsOnly”, si ottiene l'es
 
 Se si imposta questo criterio su “AllInPageNavigations”, tutti gli spostamenti dalle pagine caricate in modalità IE verso siti non configurati vengono mantenuti in modalità Internet Explorer (scelta meno consigliata).
 
-Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2105106](./edge-learnmore-inpage-nav.md)
 
 Mapping delle opzioni del criterio:
 
@@ -16962,8 +17024,6 @@ Gli utenti possono farlo attraverso il menu "Altri strumenti" selezionando "Apri
 Inoltre, gli utenti possono testare le loro applicazioni in un browser moderno senza rimuoverle dall'elenco di siti tramite l'opzione "Apri siti in modalità Edge".
 
 Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su' IEMode '.
-   
-                                                                                                                         
 
 Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet Explorer sarà visibile in "Altri strumenti". Gli utenti possono visualizzare i propri siti in modalità Internet Explorer in questa scheda. Un'altra opzione per "Apri siti in modalità Edge" sarà visibile anche in "Altri strumenti" per consentire di testare i siti in un browser moderno senza rimuoverli dall'elenco dei siti.
 
@@ -17748,13 +17808,13 @@ Se il criterio [EnableMediaRouter](#enablemediarouter) è disabilitato, questo c
 
   #### <a name="description"></a>Descrizione
 
-  I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)).
+  I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)).
 
 Questi criteri abilitano l'invio di report a Microsoft sui dati sull'uso e sull'arresto anomalo di Microsoft Edge.
 
 Abilita questo criterio per inviare a Microsoft report di dati sull'uso e sull'arresto anomalo. Disabilita questi criteri se non vuoi inviare questi dati a Microsoft. In entrambi i casi, gli utenti non possono modificare né sovrascrivere l'impostazione.
 
-In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazione predefinita userà i dati di diagnostica Windows. Se si abilita questo criterio, Microsoft Edge invierà solo i dati sull'utilizzo se l'impostazione dati di diagnostica Windows è impostata su Avanzato o Completo. Se si disabilita questo criterio, Microsoft Edge non invierà i dati sull'utilizzo. I dati relativi agli arresti anomali vengono inviati in base all'impostazione dei dati di diagnostica Windows. Per altre informazioni sulle impostazioni dei dati di diagnostica Windows, vedere [https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
+In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazione predefinita userà i dati di diagnostica Windows. Se si abilita questo criterio, Microsoft Edge invierà solo i dati sull'utilizzo se l'impostazione dati di diagnostica Windows è impostata su Avanzato o Completo. Se si disabilita questo criterio, Microsoft Edge non invierà i dati sull'utilizzo. I dati relativi agli arresti anomali vengono inviati in base all'impostazione dei dati di diagnostica Windows. Per altre informazioni sulle impostazioni dei dati di diagnostica Windows, vedere [https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
 
 In Windows 7, Windows 8 e macOS questo criterio controlla l'invio di dati relativi all'utilizzo e all'arresto anomalo. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
@@ -18190,7 +18250,7 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 
   ### <a name="personalizationreportingenabled"></a>PersonalizationReportingEnabled
 
-  #### <a name="allow-personalization-of-ads-search-and-news-by-sending-browsing-history-to-microsoft"></a>Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft
+  #### <a name="allow-personalization-of-microsoft-services-by-sending-browsing-and-browser-related-data-to-microsoft"></a>Consentire la personalizzazione dei servizi Microsoft inviando a Microsoft dati relativi all'esplorazione e al browser
 
   
   
@@ -18200,9 +18260,9 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio impedisce a Microsoft di raccogliere la cronologia esplorazioni di Microsoft Edge di un utente per personalizzare pubblicità, ricerca, notizie e altri servizi Microsoft.
+  Questo criterio impedisce a Microsoft di raccogliere la cronologia esplorazioni di Microsoft Edge di un utente, raccolte & preferiti, i dati di utilizzo del browser e la digitazione come ad esempio nella barra degli indirizzi, da usare per personalizzare la pubblicità, la ricerca, le notizie, Microsoft Edge e altri servizi Microsoft.
 
-Questa impostazione è disponibile solo per gli utenti con un account Microsoft. Questa impostazione non è disponibile per gli account per bambini o gli account aziendali.
+Questa impostazione non è disponibile per gli account per bambini o gli account aziendali.
 
 Se si disabilita questo criterio, gli utenti non possono modificare o sostituire l'impostazione. Se questo criterio è abilitato o non viene configurato, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
@@ -18221,8 +18281,8 @@ Se si disabilita questo criterio, gli utenti non possono modificare o sostituire
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PersonalizationReportingEnabled
-  - Nome Criteri di gruppo: Consente la personalizzazione degli annunci, della ricerca e delle notizie con l'invio della cronologia esplorazioni a Microsoft
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Consenti la personalizzazione dei servizi Microsoft inviando a Microsoft i dati relativi all'esplorazione e al browser
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -18643,7 +18703,7 @@ Se i criteri non sono configurati o sono disabilitati, il BHO verrà installato.
 
 Il BHO è necessario per il reindirizzamento del sito incompatibile, tuttavia il reindirizzamento o il non reindirizzamento viene controllato anche da [RedirectSitesFromInternetExplorerRedirectMode](#redirectsitesfrominternetexplorerredirectmode).
 
-Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwlink/?linkid=2141715](https://go.microsoft.com/fwlink/?linkid=2141715)
+Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwlink/?linkid=2141715](./edge-learnmore-neededge.md)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -18704,7 +18764,7 @@ Quando viene avviato Microsoft Edge per caricare un sito da IE, viene visualizza
 
 Se si imposta questo criterio su "Disabilita", Internet Explorer non reindirizza il traffico a Microsoft Edge.
 
-Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwlink/?linkid=2141715](https://go.microsoft.com/fwlink/?linkid=2141715)
+Per altre informazioni su questo criterio, vedere [https://go.microsoft.com/fwlink/?linkid=2141715](./edge-learnmore-neededge.md)
 
 Mapping delle opzioni del criterio:
 
@@ -19198,7 +19258,7 @@ Se si disabilita questo criterio o non lo si configura, verranno usati solo i no
 
 [SyncDisabled](#syncdisabled) disabilita solo la sincronizzazione nel cloud e non ha alcun impatto su questo criterio.
 
-Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058) per altre informazioni sull'uso dei profili utente.
+Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](./microsoft-edge-on-premises-sync.md) per altre informazioni sull'uso dei profili utente.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -19383,7 +19443,7 @@ Se si disabilita il [criterio SSLErrorOverrideAllowed,](#sslerroroverrideallowed
 
 Se non si configura questo criterio, il [criterio SSLErrorOverrideAllowed](#sslerroroverrideallowed) si applica a tutti i siti.
 
-Per informazioni dettagliate sui modelli di origine validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322). * non è un valore accettato per questo criterio. Questo criterio corrisponde solo in base all'origine, quindi qualsiasi percorso o query presente nel modello di URL viene ignorato.
+Per informazioni dettagliate sui modelli di origine validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format). * non è un valore accettato per questo criterio. Questo criterio corrisponde solo in base all'origine, quindi qualsiasi percorso o query presente nel modello di URL viene ignorato.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -19902,7 +19962,7 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   #### <a name="description"></a>Descrizione
 
-  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+  Per istruzioni sulla configurazione dell'esperienza ottimale per la modalità di Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](./edge-ie-mode-policies.md#configure-internet-explorer-integration)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -19953,13 +20013,13 @@ SOFTWARE\Policies\Microsoft\Edge\SecurityKeyPermitAttestation\1 = "https://conto
 
   #### <a name="description"></a>Descrizione
 
-  I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)).
+  I criteri non sono più supportati. Sono stati sostituiti da [DiagnosticData](#diagnosticdata) (per Windows 7, Windows 8 e macOS) e Consenti telemetria in Windows 10 ([https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)).
 
 Questo criterio consente di inviare informazioni sui siti Web visitati in Microsoft Edge a Microsoft per migliorare i servizi, ad esempio la ricerca.
 
 Abilitare questo criterio per inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge. Disabilitare questo criterio per non inviare a Microsoft le informazioni sui siti Web visitati in Microsoft Edge. In entrambi i casi, gli utenti non possono modificare né sovrascrivere l'impostazione.
 
-In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazione predefinita userà i dati di diagnostica Windows. Se questi criteri sono abilitati, Microsoft Edge invierà solo le informazioni sui siti Web visitati in MIcrosoft Edge se l'impostazione dei dati di diagnostica Windows è impostata su Completo. Se questi criteri sono disabilitati, Microsoft Edge non invierà le informazioni sui siti Web visitati. Per altre informazioni sulle impostazioni dei dati di diagnostica Windows, vedere [https://go.microsoft.com/fwlink/?linkid=2099569](https://go.microsoft.com/fwlink/?linkid=2099569)
+In Windows 10, se non si configura questo criterio, Microsoft Edge per impostazione predefinita userà i dati di diagnostica Windows. Se questi criteri sono abilitati, Microsoft Edge invierà solo le informazioni sui siti Web visitati in MIcrosoft Edge se l'impostazione dei dati di diagnostica Windows è impostata su Completo. Se questi criteri sono disabilitati, Microsoft Edge non invierà le informazioni sui siti Web visitati. Per altre informazioni sulle impostazioni dei dati di diagnostica Windows, vedere [https://go.microsoft.com/fwlink/?linkid=2099569](/windows/privacy/configure-windows-diagnostic-data-in-your-organization)
 
 In Windows 7, Windows 8 e Mac, questo criterio controlla l'invio di informazioni sui siti Web visitati. Se non si configura questo criterio, Microsoft Edge applicherà l'impostazione predefinita per le preferenze degli utenti.
 
@@ -20029,7 +20089,7 @@ Per i modelli di URL che non corrispondono a questo criterio, viene usato l'ordi
 
 I modelli di URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [SensorsBlockedForUrls](#sensorsblockedforurls). Non è possibile consentire e bloccare un URL.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -20100,7 +20160,7 @@ Per i modelli di URL che non corrispondono a questo criterio, viene usato l'ordi
 
 I modelli di URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [SensorsAllowedForUrls](#sensorsallowedforurls). Non è possibile consentire e bloccare un URL.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -20171,7 +20231,7 @@ Per i modelli di URL che non corrispondono a questo criterio, viene usato l'ordi
 
 I modelli di URL definiti in questo criterio non possono essere in conflitto con quelli configurati nel criterio [SerialBlockedForUrls](#serialblockedforurls). Non è possibile consentire e bloccare un URL.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -20242,7 +20302,7 @@ Per i modelli di URL che non corrispondono a questo criterio, viene usato l'ordi
 
 I modelli di URL in questo criterio non possono essere in conflitto con quelli configurati nel criterio [SerialAskForUrls](#serialaskforurls). Non è possibile consentire e bloccare un URL.
 
-Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322)
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -21333,17 +21393,19 @@ SOFTWARE\Policies\Microsoft\Edge\TLSCipherSuiteDenyList\3 = "0xcca9"
 
   ### <a name="tabfreezingenabled"></a>TabFreezingEnabled
 
-  #### <a name="allow-freezing-of-background-tabs"></a>Consente il blocco delle schede di sfondo
+  #### <a name="allow-freezing-of-background-tabs-obsolete"></a>Consenti blocco delle schede in background (obsoleto)
 
   
-  
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 86.
   #### <a name="supported-versions"></a>Versioni supportate:
 
-  - In Windows e macOS dalla versione 79 o successive
+  - In Windows e macOS da 79, fino a 86
 
   #### <a name="description"></a>Descrizione
 
-  Controlla se Microsoft Edge può bloccare le schede in background per almeno 5 minuti.
+  Questo criterio non funziona, usa invece [SleepingTabsEnabled](#sleepingtabsenabled).
+
+Controlla se Microsoft Edge può bloccare le schede in background per almeno 5 minuti.
 
 Il blocco delle schede riduce l'utilizzo della CPU, della batteria e della memoria. Microsoft Edge usa funzionalità euristiche per evitare il blocco delle schede utili in background, come la visualizzazione delle notifiche, la riproduzione di contenuti audio e lo streaming di contenuti video.
 
@@ -21366,8 +21428,8 @@ Se si disabilita questo criterio, non verrà bloccata nessuna scheda.
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TabFreezingEnabled
-  - Nome Criteri di gruppo: Consente il blocco delle schede di sfondo
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Consenti blocco delle schede in background (obsoleto)
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -21727,7 +21789,7 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
 
   L'impostazione dei criteri consente l'accesso agli URL elencati, come eccezioni a [di URLBlocklist](#urlblocklist).
 
-Formattare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+Formattare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
 È possibile usare questo criterio per aprire eccezioni degli elenchi di indirizzi bloccati restrittivi. Ad esempio, è possibile includere "\*" nell'elenco di indirizzi bloccati per bloccare tutte le richieste e quindi usare questo criterio per consentire l'accesso a un elenco limitato di URL. È possibile usare questo criterio per aprire eccezioni a determinati schemi, sottodomini di altri domini, porte o percorsi specifici.
 
@@ -21808,7 +21870,7 @@ SOFTWARE\Policies\Microsoft\Edge\URLAllowlist\5 = ".exact.hostname.com"
 
   Definisce un elenco di siti, in base ai modelli URL, che sono bloccati (gli utenti non possono caricarli).
 
-Formattare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322).
+Formattare il modello URL in base a [https://go.microsoft.com/fwlink/?linkid=2095322](/DeployEdge/edge-learnmmore-url-list-filter%20format).
 
 È possibile definire eccezioni nel criterio [URLAllowlist](#urlallowlist). Questi criteri sono limitati a 1.000 voci; le voci successive vengono ignorate.
 
