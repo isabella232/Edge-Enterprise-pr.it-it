@@ -1,21 +1,21 @@
 ---
 title: Configurare i criteri della modalità IE
-ms.author: cjacks
-author: cjacks
-manager: saudm
-ms.date: 03/25/2020
+ms.author: collw
+author: dan-wesley
+manager: srugh
+ms.date: 03/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare i criteri della modalità IE
-ms.openlocfilehash: e33aa57b7877d50fe6a5d9e9a888d05c366b0ef0
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: a2abf6f6ef71c1f30786031ef19b9633bfafc43f
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447360"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470164"
 ---
 # <a name="configure-ie-mode-policies"></a>Configurare i criteri della modalità IE
 
@@ -28,10 +28,13 @@ La configurazione della modalità IE richiede tre passaggi:
 
 1. [Configurare l'integrazione Internet Explorer](#configure-internet-explorer-integration)
 2. [Reindirizzare i siti da Microsoft Edge alla modalità IE](#redirect-sites-from-microsoft-edge-to-ie-mode)
-3. [Reindirizzare i siti da IE a Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge) (facoltativo)
+3. (Facoltativo) [Reindirizzare i siti da IE a Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge)
+
+    1. Se si desidera disabilitare l'app IE11, seguire i passaggi descritti in [Disabilitare Internet Explorer 11](https://docs.microsoft.com/deployedge/edge-ie-disable-ie11)
+    2. In caso contrario, seguire i passaggi rimanenti in [Reindirizzare i siti da IE a Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
 
 > [!NOTE]
-> I criteri per abilitare la modalità Internet Explorer possono essere configurati con Intune. Per altre informazioni, vedere [Aggiungere Microsoft Edge a Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json) e [Configurare i criteri Microsoft Edge con Microsoft Intune](./configure-edge-with-intune.md).
+> I criteri per abilitare la modalità Internet Explorer possono essere configurati tramite Intune. Per altre informazioni, vedere [Aggiungere Microsoft Edge a Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json) e [Configurare i criteri Microsoft Edge con Microsoft Intune](./configure-edge-with-intune.md).
 
 ## <a name="configure-internet-explorer-integration"></a>Configurare l'integrazione Internet Explorer
 

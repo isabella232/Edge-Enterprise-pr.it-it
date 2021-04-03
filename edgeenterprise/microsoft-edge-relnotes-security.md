@@ -3,23 +3,27 @@ title: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/15/2021
+ms.date: 04/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
-ms.openlocfilehash: cca93aa987f627aba8ad9e4cc94f5805c95778c9
-ms.sourcegitcommit: b1060a5c71174ba1d2eea91efb51232beeb97bf8
+ms.openlocfilehash: 4598f71f940e996bc8dca6cb51ee0ef43cad3cc1
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/15/2021
-ms.locfileid: "11409261"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470214"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 
 Queste note sulla versione forniscono informazioni sulle correzioni per la sicurezza incluse negli aggiornamenti del canale stabile Microsoft Edge.
+
+## <a name="april-1-2021"></a>1 aprile 2021
+
+Microsoft ha rilasciato l'ultimo di **canale stabile di Microsoft Edge (versione 89.0.774.68),** che incorpora gli aggiornamenti di sicurezza più recenti del progetto Chromium. Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://msrc.microsoft.com/update-guide).
 
 
 ## <a name="march-13-2021"></a>13 marzo 2021
