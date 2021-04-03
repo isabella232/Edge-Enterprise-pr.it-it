@@ -1,30 +1,30 @@
 ---
-title: Informazioni sulla modalità IE
+title: Che cos'è la modalità Internet Explorer?
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 03/25/2020
+ms.date: 02/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
-description: Scopri come usare Microsoft Edge in modalità Internet Explorer.
-ms.openlocfilehash: ecb4bffc5afdde3a8891d1eaa6e28508205ab097
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+description: Ulteriori informazioni su come la modalità Internet Explorer di Microsoft Edge consente di accedere ai siti che necessitano di Internet Explorer 11, oltre all'accesso ai siti moderni.
+ms.openlocfilehash: 5ca14c4d448b573dc7de6781ce86ee62281a48a4
+ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447340"
+ms.lasthandoff: 04/01/2021
+ms.locfileid: "11470224"
 ---
-# <a name="about-ie-mode"></a>Informazioni sulla modalità IE
+# <a name="what-is-internet-explorer-ie-mode"></a>Che cos'è la modalità Internet Explorer (IE)?
 
-Questo articolo include una panoramica e i prerequisiti per l'uso di Microsoft Edge con la modalità IE.
+Abbiamo creato la modalità Internet Explorer (IE) in Microsoft Edge per le organizzazioni che necessitano ancora di Internet Explorer 11 per garantire la compatibilità con i siti Web esistenti, ma a cui occorre anche un browser moderno. Questa funzionalità rende più semplice per le organizzazioni l'utilizzo di un browser per il Web e le app legacy o per il Web e le app moderni. Questo articolo fornisce un'introduzione all'uso di Microsoft Edge con la modalità IE.
 
 > [!NOTE]
-> Questo articolo si applica ai canali Microsoft Edge **Stable**, **Beta** e **Dev**, versione 77 o successiva.
+> Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 
-## <a name="what-is-ie-mode"></a>Che cos'è la modalità Internet Explorer?
+## <a name="what-is-ie-mode"></a>Che cos'è la modalità IE?
 
 La modalità IE su Microsoft Edge semplifica l'utilizzo di tutti i siti necessari all'organizzazione in un singolo browser. Utilizza il motore Chromium integrato per i siti moderni e utilizza il motore Trident MSHTML di Internet Explorer 11 (IE11) per i siti legacy.
 
