@@ -3,23 +3,25 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 03/18/2021
+ms.date: 04/01/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 94d8d621ecac3764ecf13194efb55cfbbf80b70b
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 31aaad801f4632985d7fc9d043155f2eb82ed046
+ms.sourcegitcommit: 21390f52f8605fe6cb0b73ca6dffacff562ada82
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447990"
+ms.lasthandoff: 04/02/2021
+ms.locfileid: "11470904"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
 Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugli aggiornamenti non di sicurezza inclusi nel canale Stabile Microsoft Edge.
+
+
 
 - Tutti gli aggiornamenti della sicurezza sono elencati [qui](microsoft-edge-relnotes-security.md).
 - Le note sulla versione del canale Stable di Microsoft Edge archiviate sono disponibili [qui](microsoft-edge-relnote-archive-stable-channel.md).
@@ -28,6 +30,14 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 
 > [!NOTE]
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
+
+## <a name="version-89077468-april-1"></a>Versione 89.0.774.68: 1 aprile
+
+Gli aggiornamenti della sicurezza del canale Stable sono elencati [qui](./microsoft-edge-relnotes-security.md#april-1-2021).
+
+## <a name="version-89077463-march-25"></a>Versione 89.0.774.63: 25 marzo
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-89077457-march-18"></a>Versione 89.0.774.57: 18 marzo
 
@@ -107,7 +117,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-88070574-february-17"></a>Versione 88.0.705.74: 17 febbraio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-17-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#february-17-2021)
 
 ## <a name="version-88070568-february-11"></a>Versione 88.0.705.68: 11 febbraio
 
@@ -118,11 +128,11 @@ Sono stati risolti diversi bug e problemi relativi alle prestazioni.
 > [!IMPORTANT]
 > Questo aggiornamento contiene [CVE-2021-21148](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-21148), che è stato segnalato al team di Chromium come un exploit in condizioni normali.
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-5-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#february-5-2021)
 
 ## <a name="version-88070562-february-4"></a>Versione 88.0.705.62: 4 febbraio
 
-Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#February-4-2021)
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./microsoft-edge-relnotes-security.md#february-4-2021)
 
 Sono stati risolti diversi bug e problemi di prestazioni.
 
