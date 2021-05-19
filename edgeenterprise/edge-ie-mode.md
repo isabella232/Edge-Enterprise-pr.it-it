@@ -67,17 +67,17 @@ I prerequisiti seguenti si applicano all'uso di Microsoft Edge con la modalità 
 
  | Sistema operativo | Versione       | Aggiornamenti |
  |------------------|---------------|---------|
- | Windows10       | 1909 o versione successiva |         |
- | Windows10       | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
+ | Windows 10       | 1909 o versione successiva |         |
+ | Windows 10       | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
  | Windows Server   | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
- | Windows10       | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
+ | Windows 10       | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
  | Windows Server   | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
  | Windows Server   | 2019          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
- | Windows10       | 1803          | [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) o versione successiva |
- | Windows10       | 1709          | [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) o versione successiva |
- | Windows10       | 1607          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
+ | Windows 10       | 1803          | [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) o versione successiva |
+ | Windows 10       | 1709          | [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) o versione successiva |
+ | Windows 10       | 1607          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
  | Windows Server   | 2016          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
- | Windows10       | versione iniziale, luglio 2015 | [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) o versione successiva |
+ | Windows 10       | versione iniziale, luglio 2015 | [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) o versione successiva |
  | Windows 8       | 8.1              | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
  | Windows Server   | 2012 R2       | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
  | Windows 8  | Incorporato            | Installare [KB4492872](https://support.microsoft.com/help/4492872/update-for-internet-explorer-april-16-2019) per eseguire l'aggiornamento a Internet Explorer 11, quindi installare [KB4507447](https://support.microsoft.com/help/4507447/windows-server-2012-update-kb4507447) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |

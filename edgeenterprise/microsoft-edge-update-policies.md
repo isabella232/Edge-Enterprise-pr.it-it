@@ -1,9 +1,9 @@
 ---
 title: Documentazione sui criteri di Microsoft Edge Update
 ms.author: stmoody
-author: dan-wesley
+author: brianalt-msft
 manager: tahills
-ms.date: 11/12/2020
+ms.date: 10/07/2020
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,15 +11,14 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione per tutti i criteri supportati da Microsoft Edge Update
-ms.openlocfilehash: 0cdcda984efff8d10a84431e44c49ffbf28ddf07
-ms.sourcegitcommit: c2ac4f889b625210b9365a60a447482fb5b4c9d4
+ms.openlocfilehash: feb7859f062ae39e2bbfe08d8e478386defb85cf
+ms.sourcegitcommit: 4e6188ade942ca6fd599a4ce1c8e0d90d3d03399
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "11167308"
+ms.lasthandoff: 10/09/2020
+ms.locfileid: "11105570"
 ---
 # Microsoft Edge - Criteri di aggiornamento
-
 La versione più recente di Microsoft Edge include i seguenti criteri che puoi usare per controllare come e quando Microsoft Edge viene aggiornato.
 
 Per informazioni su altri criteri disponibili in Microsoft Edge, vedi [Riferimento ai criteri del browser Microsoft Edge](microsoft-edge-policies.md)
@@ -240,7 +239,7 @@ Affinché questi criteri di gruppo abbiano effetto, è necessario configurarli p
 - Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- Nome valore:Allowsxs
+- Nome valore: Allowsxs
 - Tipo valore: REG_DWORD
 ##### Valore di esempio
 ```
