@@ -18,7 +18,7 @@ ms.contentlocale: it-IT
 ms.lasthandoff: 10/09/2020
 ms.locfileid: "11105570"
 ---
-# Microsoft Edge - Criteri di aggiornamento
+# <a name="microsoft-edge---update-policies"></a>Microsoft Edge - Criteri di aggiornamento
 La versione più recente di Microsoft Edge include i seguenti criteri che puoi usare per controllare come e quando Microsoft Edge viene aggiornato.
 
 Per informazioni su altri criteri disponibili in Microsoft Edge, vedi [Riferimento ai criteri del browser Microsoft Edge](microsoft-edge-policies.md)
