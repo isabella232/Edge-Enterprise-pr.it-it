@@ -32,7 +32,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[Applicazioni](#applications)|[Preferenze](#preferences)|
 |[Server proxy](#proxy-server)|[Microsoft Edge WebView](#microsoft-edge-webview)|
 
-### [Applicazioni](#applications-policies)
+### <a name="applications"></a>[Applicazioni](#applications-policies)
 |Nome criterio|Didascalia|
 |-|-|
 |[InstallDefault](#installdefault)|Consenti installazione predefinita|
@@ -45,20 +45,20 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[RollbackToTargetVersion](#rollbacktotargetversion)|Eseguire il ripristino dello stato precedente della versione di destinazione (per canale)|
 |[TargetVersionPrefix](#targetversionprefix)|Sostituzione della versione di destinazione (in base al canale)|
 
-### [Preferenze](#preferences-policies)
+### <a name="preferences"></a>[Preferenze](#preferences-policies)
 |Nome criterio|Didascalia|
 |-|-|
 |[AutoUpdateCheckPeriodMinutes](#autoupdatecheckperiodminutes)|Sostituzione del periodo di controllo dell'aggiornamento automatico|
 |[UpdatesSuppressed](#updatessuppressed)|Periodo di tempo in ogni giorno per eliminare il controllo dell'aggiornamento automatico|
 
-### [Server proxy](#proxy-server-policies)
+### <a name="proxy-server"></a>[Server proxy](#proxy-server-policies)
 |Nome criterio|Didascalia|
 |-|-|
 |[ProxyMode](#proxymode)|Scegliere come specificare le impostazioni del server proxy|
 |[ProxyPacUrl](#proxypacurl)|URL di un file PAC del proxy|
 |[ProxyServer](#proxyserver)|Indirizzo o URL del server proxy|
 
-### [Microsoft Edge WebView](#microsoft-edge-webview-policies)
+### <a name="install-webview"></a>[Microsoft Edge WebView](#microsoft-edge-webview-policies)
 |Nome criterio|Didascalia|
 |-|-|
 |[Installazione](#install-webview)|Consenti installazione|
