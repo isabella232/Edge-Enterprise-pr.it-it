@@ -29,7 +29,7 @@ Per informazioni sulla distribuzione iniziale, usare i mapping dei criteri segue
 > - [Informazioni di riferimento sui criteri del browser](microsoft-edge-policies.md)
 > - [Informazioni di riferimento sui criteri dell'aggiornamento](microsoft-edge-update-policies.md)
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 - [Configurazione di Microsoft Edge in Windows](configure-microsoft-edge.md)
 - [Configurazione di Microsoft Edge in macOS](configure-microsoft-edge-on-mac.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

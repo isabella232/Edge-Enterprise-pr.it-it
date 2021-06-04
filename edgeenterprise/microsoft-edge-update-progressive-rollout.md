@@ -24,15 +24,15 @@ A partire dalla versione 83 di Microsoft Edge, Microsoft effettuerà distribuzio
 > [!NOTE]
 > Questo si applica alla versione 83 di Microsoft Edge sul canale Stable, o successive.
 
-## Perché è necessaria la distribuzione progressiva?
+##  <a name="why-do-we-need-progressive-rollout"></a>Perché è necessaria la distribuzione progressiva?
 
 Monitorando l'attentamente integrità dei nostri aggiornamenti e distribuendo gli aggiornamenti nel corso di alcuni giorni, possiamo limitare l'impatto dei problemi che possono verificarsi con il nuovo aggiornamento. Con la versione 83 di Microsoft Edge, le distribuzioni progressive saranno abilitate per tutte le versioni di Microsoft Edge per Windows 7, Windows 8 e 8.1, e Windows 10. Microsoft Edge per Mac sarà supportato non appena possibile.
 
-## Come funzionano gli aggiornamenti?
+##  <a name="how-will-the-updates-work"></a>Come funzionano gli aggiornamenti?
 
 A ogni installazione di Microsoft Edge viene assegnato un valore di aggiornamento. Quando la distribuzione incrementale viene avviata, l'aggiornamento viene mostrato quando il valore del dispositivo rientra nell'intervallo di valori dell'aggiornamento. Durante il progresso della distribuzione (entro un paio di giorni), tutti gli utenti avranno eseguito l'aggiornamento. Gli aggiornamenti del browser che apportano correzioni critiche per la sicurezza avranno una cadenza di distribuzione più rapida di quelli che non le apportano. Ciò è fatto per garantire la tempestiva protezione delle vulnerabilità.
 
-## Come sono condizionate le imprese da tutto questo?
+##  <a name="how-does-this-affect-enterprises"></a>Come sono condizionate le imprese da tutto questo?
 
 Gli artefatti Microsoft Edge sono distribuiti alle organizzazioni tramite meccanismi multipli, come Microsoft Intune, Windows Server Update Services (WSUS) e Gestione configurazione. Questi strumenti di distribuzione si comportano in modo diverso rispetto alle distribuzioni progressive:
 
@@ -41,6 +41,6 @@ Gli artefatti Microsoft Edge sono distribuiti alle organizzazioni tramite meccan
 
 Si prega di condividere il proprio prezioso feedback usando l'utente, il pulsante del feedback nell'app, o sotto nei commenti in caso di domande o dubbi.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

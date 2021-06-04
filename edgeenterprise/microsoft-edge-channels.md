@@ -24,7 +24,7 @@ Uno dei vantaggi della versione successiva di Microsoft Edge è che Microsoft pu
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge, versione 77 o successiva.
 
-## Panoramica dei canali
+##  <a name="channel-overview"></a>Panoramica dei canali
 
 |Canale|Scopo principale|Frequenza di aggiornamento con le nuove funzionalità|Con supporto?|
 |:---:|---|:---:|:---:|
@@ -35,23 +35,23 @@ Uno dei vantaggi della versione successiva di Microsoft Edge è che Microsoft pu
 
 Il canale di aggiornamento che decidi di distribuire agli utenti dipende da diversi fattori, ad esempio il numero di applicazioni line-of-business sfruttate dall'utente e che devi testare ogni volta che gli utenti hanno una versione aggiornata di Microsoft Edge. Per prendere questa decisione, esamina le informazioni che seguono sui quattro canali di aggiornamento disponibili per Microsoft Edge.
 
-### Canale Stable
+###  <a name="stable-channel"></a>Canale Stable
 
 Il canale Stable è progettato per la distribuzione generale nell'organizzazione ed è il canale in cui la maggior parte degli utenti deve essere attiva. È il più stabile dei canali ed è il risultato della stabilizzazione del set disponibile di funzionalità nella versione precedente del canale Beta. Le nuove funzionalità vengono fornite ogni sei settimane. Gli aggiornamenti della sicurezza e della qualità vengono forniti in base alle esigenze. Una versione del canale Stable viene considerata supportata fino a quando non è disponibile la versione successiva del canale.
 
-### Canale Beta
+###  <a name="beta-channel"></a>Canale Beta
 
 Il canale Beta è destinato alla distribuzione della produzione dell'organizzazione a un campione rappresentativo di utenti. Si tratta di una versione con supporto e ogni versione Beta verrà supportata fino a quando non sarà disponibile la versione successiva di questo canale. Si tratta di una buona opportunità per verificare che le operazioni funzionino come previsto nell'ambiente in uso e se si verifica un problema, è necessario porvi rimedio prima di pubblicare la versione nel canale Stable. Le nuove funzionalità vengono fornite ogni sei settimane. Gli aggiornamenti della sicurezza e della qualità vengono forniti in base alle esigenze.
 
-### Canale Dev
+###  <a name="dev-channel"></a>Canale Dev
 
 Il canale Dev intende aiutarti a pianificare e sviluppare con le funzionalità più recenti di Microsoft Edge, ma con una qualità superiore a quella del canale Canary. Questa è la tua opportunità per dare un'occhiata in anteprima alle novità in arrivo e per prepararti per la prossima versione Beta.
 
-### Canale Canary
+###  <a name="canary-channel"></a>Canale Canary
 
 Il canale Canary viene distribuito ogni giorno ed è il più rischioso di tutti i canali. Se vuoi accedere agli investimenti più recenti, questi verranno prima di tutto visualizzati qui. A causa della natura di questa frequenza, nel tempo si verificheranno problemi, quindi potresti desiderare che un altro canale sia installato affiancato se usi le versioni Canary.
 
-## Vedi anche
+##  <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Download di canali](https://aka.ms/EdgeEnterprise)

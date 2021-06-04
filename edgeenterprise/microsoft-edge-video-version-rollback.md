@@ -23,11 +23,11 @@ Questo video mostra come Microsoft Edge supporta il ripristino della versione pr
 
 [![Ripristino della versione precedente di Microsoft Edge](media/microsoft-edge-video-version-rollback/0.png)](http://www.youtube.com/watch?v=pXhXHvKUa_c "Microsoft Edge version rollback")
 
-## Informazioni sul video
+##  <a name="about-the-video"></a>Informazioni sul video
 
 Il ripristino consente di reinstallare una versione precedente del browser Microsoft Edge. Scopri come il ripristino delle versioni precedenti di Microsoft Edge può fornire alla tua impresa una rete di sicurezza e ridurre il potenziale impatto durante la risoluzione dei problemi di Microsoft Edge.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Come eseguire il rollback di Microsoft Edge a una versione precedente](edge-learnmore-rollback.md)

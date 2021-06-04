@@ -21,7 +21,7 @@ ms.locfileid: "11030557"
 
 I video descritti in questo articolo coprono molti aspetti diversi della distribuzione, dell'uso e della gestione di Microsoft Edge nell'organizzazione.
 
-## Serie di video Microsoft Mechanics
+##  <a name="the-microsoft-mechanics-video-series"></a>Serie di video Microsoft Mechanics
 
 La serie di video di Microsoft Mechanics mostrata nella pagina seguente di "*Guida per la distribuzione di MSFT Microsoft Edge Enterprise - 2020*", fa parte della raccolta di video Microsoft Edge per eventi correlati e annunci, soluzioni e conferenze.
 
@@ -29,6 +29,6 @@ La serie di video di Microsoft Mechanics mostrata nella pagina seguente di "*Gui
 
 Possono essere visti nella [playlist Microsoft Edge di Mechanics](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy) oppure sul [canale YouTube di Microsoft Edge](https://www.youtube.com/channel/UCIGx7oT8p6-jUpOfg98yelA) insieme ad altri video.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

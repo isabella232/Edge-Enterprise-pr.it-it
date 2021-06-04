@@ -23,11 +23,11 @@ Questo video mostra il modo in cui Microsoft Edge consente e supporta l'identit�
 
 [![Identità in Microsoft Edge](media/microsoft-edge-video-identity/0.png)](http://www.youtube.com/watch?v=8lRUKhR7ipA "Identity in Microsoft Edge")
 
-## Informazioni sul video
+##  <a name="about-the-video"></a>Informazioni sul video
 
 Questo video descrive come configurare un'esperienza autenticata e personalizzata per gli utenti. Gli argomenti includono la configurazione dell'accesso, l'autenticazione unica (SSO) l'uso di più profili.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Supporto e configurazione delle identità in Microsoft Edge](microsoft-edge-security-identity.md)

@@ -24,7 +24,7 @@ Questo articolo descrive come configurare le impostazioni dei criteri in macOS u
 È possibile anche configurare le impostazioni dei criteri di Microsoft Edge su macOS usando un file di elenco delle proprietà (.plist). Per altre informazioni, consultare [Configurare macOS con un file plist](configure-microsoft-edge-on-mac.md)
 
 
-## Prerequisiti
+##  <a name="prerequisites"></a>Prerequisiti
 
 È necessario il software seguente:
 
@@ -32,7 +32,7 @@ Questo articolo descrive come configurare le impostazioni dei criteri in macOS u
 - File dei modelli di criteri, versione 81.0.416.3
 - Jamf Pro, versione 10.19
 
-## Informazioni sul menu Impostazioni dell'applicazione e personalizzate di Jamf Pro
+##  <a name="about-the-jamf-pro-application-&-custom-settings-menu"></a>Informazioni sul menu Impostazioni dell'applicazione e personalizzate di Jamf Pro
 
 Prima di Jamf Pro 10,18, era necessario creare manualmente un file plist per la gestione di Office 365. Si trattava di un flusso di lavoro che richiedeva molto tempo e una solida preparazione tecnica. Jamf Pro 10.18 ha superato tali ostacoli semplificando il processo di configurazione. Tuttavia, gli amministratori IT possono usare questa nuova interfaccia utente solo per determinate applicazioni e domini di preferenza specificati da Jamf.
 
@@ -40,7 +40,7 @@ In Jamf Pro 10.19 l'utente può caricare un manifesto JSON come "schema personal
 
 Per altre informazioni, consultare [Profili di configurazione del computer](https://jamf.it/computer-configuration-profiles) nel manuale dell'amministratore di Jamf Pro.
 
-## Ottenere il manifesto dei criteri per una versione specifica di Microsoft Edge
+##  <a name="get-the-policy-manifest-for-a-specific-version-of-microsoft-edge"></a>Ottenere il manifesto dei criteri per una versione specifica di Microsoft Edge
 
 Per ottenere il manifesto del criterio:
 
@@ -56,7 +56,7 @@ Decomprimere prima il file CAB poi il file ZIP e passare alla directory "Mac" di
 
 Questo manifesto verrà pubblicato in ogni pacchetto di criteri a partire dalla build 81.0.416.3. Se si vogliono testare i criteri nel canale Dev, è possibile usare il manifesto associato a ogni rilascio di Dev e testarlo in Jamf Pro.  
 
-## Usare il manifesto dei criteri in Jamf Pro
+##  <a name="use-the-policy-manifest-in-jamf-pro"></a>Usare il manifesto dei criteri in Jamf Pro
 
 Seguire la procedura seguente per caricare il manifesto dei criteri in Jamf Pro e poi creare un profilo dei criteri per macOS.
 
@@ -105,7 +105,7 @@ Seguire la procedura seguente per caricare il manifesto dei criteri in Jamf Pro 
 
 Dopo aver creato il nuovo profilo di configurazione, è necessario configurare l'**Ambito** per il profilo.
 
-### Per configurare l'ambito
+###  <a name="to-configure-the-scope"></a>Per configurare l'ambito
 
 1. Per **Destinazioni** specificare le impostazioni minime seguenti:
 
@@ -115,7 +115,7 @@ Dopo aver creato il nuovo profilo di configurazione, è necessario configurare l
 2. Per **Limitazioni** mantenere l'impostazione predefinita: Nessuna. Fare clic su **Annulla**.
 3. Per **Esclusioni** mantenere l'impostazione predefinita: Nessuna. Fare clic su **Annulla**.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Configurare per macOS con Intune](configure-microsoft-edge-on-mac.md)

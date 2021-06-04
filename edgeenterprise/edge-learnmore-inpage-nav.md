@@ -26,7 +26,7 @@ Lo spostamento nella pagina viene avviato da un collegamento, uno script o una m
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge, versione 81 o successiva.
 
-## Prerequisiti
+##  <a name="prerequisites"></a>Prerequisiti
 
 Per questo criterio sono necessari gli aggiornamenti di Windows seguenti:
 
@@ -36,13 +36,13 @@ Per questo criterio sono necessari gli aggiornamenti di Windows seguenti:
 - Windows 10, versione 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
 
 
-## Informazioni sul criterio
+##  <a name="about-this-policy"></a>Informazioni sul criterio
 
 Questo criterio consente di identificare e configurare tutti i server di autenticazione usati dai propri siti in modalità Internet Explorer. Tuttavia, il criterio può comportare un'esperienza di navigazione incoerente poiché alcuni siti effettuano il rendering in modalità Internet Explorer e altre volte in modalità Microsoft Edge. Questa esperienza varia a seconda che lo spostamento al sito abbia avuto inizio da una pagina in modalità Internet Explorer. I siti non configurati in modo esplicito per l'apertura in un motore di rendering specifico sono soggetti a questa incoerenza.
 
 Se si abilita questo criterio, è consigliabile disabilitarlo dopo aver identificato tutti i server di autenticazione e averli aggiunti all'elenco del sito come server neutri. In questo modo, i siti moderni non effettueranno mai inavvertitamente il rendering in modalità Internet Explorer.
 
-## Mantenere lo spostamento nella pagina in modalità IE
+##  <a name="keep-in-page-navigation-in-ie-mode"></a>Mantenere lo spostamento nella pagina in modalità IE
 
 Per mantenere lo spostamento automatico o tutto lo spostamento nella pagina in modalità Internet Explorer, seguire i passaggi seguenti:
 
@@ -64,6 +64,6 @@ Per mantenere lo spostamento automatico o tutto lo spostamento nella pagina in m
 
 6. Fare clic su **OK** o su **Applica** per salvare queste impostazioni dei criteri.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

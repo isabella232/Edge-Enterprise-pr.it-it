@@ -23,7 +23,7 @@ Questo articolo descrive come prepararsi a implementare Microsoft Edge quandola 
 
 Come da [post del blog](https://aka.ms/EdgeLegacyEOS) di Microsoft Edge Product Team, il supporto per l'applicazione desktop Microsoft Edge Legacy terminerà il 9 marzo 2021. Quando applichi la versione Update Tuesday (o "B") di aprile, si rimuoverà la versione legacy di Microsoft Edge dai dispositivi con Windows 10 RS4 attraverso 20H1 e lo sostituirà con Microsoft Edge.
 
-## Come prepararsi
+##  <a name="how-to-prepare"></a>Come prepararsi
 
 Per preparare l'installazione di Microsoft Edge nei dispositivi Windows 10 RS4-20H1 con la versione Update Tuesday di aprile, consigliamo leggere [Pianificare l’implementazione di Microsoft Edge](deploy-edge-plan-deployment.md).
 
@@ -33,7 +33,7 @@ Dopo aver pianificato la tua distribuzione, usa uno dei seguenti approcci per pr
 
 - **Rimuovere l'applicazione desktop della versione legacy di Microsoft Edge prima della sua data di fine servizio del 9 marzo 2021 e distribuire Microsoft Edge**. Per Windows 10 RS4 fino a 20H1, potete farlo usando Windows Updates. Per altre informazioni, consulta [Distribuire Microsoft Edge con gli aggiornamenti di Windows 10](deploy-edge-with-windows-10-updates.md).
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Pianificare la distribuzione di Microsoft Edge](deploy-edge-plan-deployment.md)

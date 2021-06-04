@@ -35,7 +35,7 @@ Questa pagina elenca la sintassi delle espressioni regolari accettate da RE2.
 
 Elenca anche alcune sintassi accettate da PCRE, PERL e VIM.
 
-## Tabelle della sintassi
+##  <a name="syntax-tables"></a>Tabelle della sintassi
 
 | Tipi di espressioni a caratteri singoli | Esempi |
 | --- | --- |
@@ -500,13 +500,13 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | (\*BSR\_ANYCRLF) | imposta convenzione \R (NON SUPPORTATO) PCRE |
 | (\*BSR\_UNICODE) | (NON SUPPORTATO) PCRE |
 
-## Licenza dei contenuti
+##  <a name="content-license"></a>Licenza dei contenuti
 
 > [!NOTE]
 > Parti di questa pagina sono modifiche basate sul lavoro creato e condiviso da Chromium.org e usate in base ai termini descritti nella [licenza Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). La pagina originale è disponibile [qui](https://github.com/google/re2/wiki/Syntax).
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Questo lavoro è concesso in licenza in base a una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licenza Creative Commons Attribution 4.0 International</a>.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

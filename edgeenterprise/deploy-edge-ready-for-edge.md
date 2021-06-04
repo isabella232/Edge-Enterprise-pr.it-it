@@ -21,11 +21,11 @@ ms.locfileid: "11157689"
 
 L'articolo fornisce informazioni per l'amministratore IT che sta pianificando una distribuzione di Microsoft Edge e richiede informazioni sulla compatibilità e il supporto delle applicazioni.
 
-## Compatibilità e supporto delle applicazioni Web
+##  <a name="web-application-compatibility-and-support"></a>Compatibilità e supporto delle applicazioni Web
 
 Per facilitare la pianificazione della distribuzione di Microsoft Edge è stato compilato un elenco di applicazioni Web che potrebbero essere in uso all'interno dell'organizzazione. Questo elenco consente di determinare se l'applicazione Web è pronta per Microsoft Edge, come documentato dall'istruzione di supporto pubblico del provider di applicazioni Web.
 
-### Aggiungere all'elenco delle applicazioni
+###  <a name="add-to-the-application-list"></a>Aggiungere all'elenco delle applicazioni
 
 L'elenco viene aggiornato regolarmente con l'identificazione delle istruzioni di supporto da feedback sull'impegno dei clienti.
 
@@ -36,7 +36,7 @@ Se si è un provider di app Web e si vuole includere l'istruzione di supporto pe
 - Nome provider
 - URL dell'istruzione di supporto pubblico
 
-### Elenco applicazioni
+###  <a name="application-list"></a>Elenco applicazioni
 
 Microsoft non prova né certifica queste applicazioni in Microsoft Edge. L'elenco è stato compilato in base alle risorse disponibili pubblicamente. Fare sempre riferimento all'istruzione di supporto corrente del provider. Alcune applicazioni possono richiedere l'uso della modalità di IE come indicato dall'istruzione di supporto.
 
@@ -143,7 +143,7 @@ La tabella seguente elenca le istruzioni per il supporto del provider per Micros
 | Zoom  | Zoom  | https://support.zoom.us/hc/en-us/articles/201362023-System-Requirements-for-PC-Mac-and-Linux#h_92957a85-2506-43a2-bd4a-5bb274778518  |
 | ZScaler  | Zscaler   | https://help.zscaler.com/zia/supported-browsers |
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Pianificare la distribuzione di Microsoft Edge](deploy-edge-plan-deployment.md)

@@ -25,11 +25,11 @@ Fare clic sulla schermata successiva per guardare il video di Colleen Williams, 
 
 [![Microsoft Edge: stato del browser](media/microsoft-edge-video-state-of-browser/0.png)](http://www.youtube.com/watch?v=ajdoE4wmzV0 "Microsoft Edge - State of the browser 2020")
 
-## Informazioni sul video
+##  <a name="about-the-video"></a>Informazioni sul video
 
 È stato un anno entusiasmante per Microsoft Edge. Abbiamo continuato la nostra missione per fare sì che Microsoft Edge diventi il miglior browser per le aziende. Scopri quali sono le nuove caratteristiche di sicurezza e produttività, e la nostra integrazione continua con M365. Stiamo ascoltando e imparando dagli utenti, e condivideremo in che modo tutti i feedback si incontrano in Microsoft Edge.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Playlist di YouTube su Microsoft Edge](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

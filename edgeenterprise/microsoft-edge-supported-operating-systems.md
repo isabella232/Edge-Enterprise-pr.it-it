@@ -24,14 +24,14 @@ Questo articolo descrive i sistemi operativi supportati che si applicano a Micro
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge per il desktop, versioni 77 e successive.
 
-## Sistemi operativi supportati per Microsoft Edge
+##  <a name="supported-operating-systems-for-microsoft-edge"></a>Sistemi operativi supportati per Microsoft Edge
 
 > [!NOTE]
 > La disponibilità e le funzionalità del prodotto possono variare nei sistemi operativi meno recenti. Per assicurarsi che Microsoft Edge venga installato correttamente, usare la versione più recente di qualsiasi sistema operativo specificato di seguito. Queste linee guida includono l'ultimo aggiornamento cumulativo come applicabile.
 
 Microsoft Edge segue criteri moderni relativi al ciclo di vita ed è supportato nei sistemi operativi seguenti.
 
-### Client Windows
+###  <a name="windows-client"></a>Client Windows
 
 - Windows 7 * *
 - Windows 8.1
@@ -43,7 +43,7 @@ Microsoft Edge segue criteri moderni relativi al ciclo di vita ed è supportato 
 - Windows 10 IoT Enterprise SAC ****
 - Windows 10 IoT Enterprise 2019 LTSC ****
 
-### Windows Server
+###  <a name="windows-server"></a>Windows Server
 
 - Windows Server 2008 R2 **
 - Windows Server 2012
@@ -59,32 +59,32 @@ Microsoft Edge segue criteri moderni relativi al ciclo di vita ed è supportato 
 >
 > **** Microsoft Edge OPK è disponibile in MOO per gli OEM di tutti gli utenti per la preinstallazione e la distribuzione nell'ambito della soluzione basata su Windows 10 IoT Enterprise.
 
-### macOS
+###  <a name="macos"></a>macOS
 
 - Sierra (10.12) e versioni successive
 
-### iOS
+###  <a name="ios"></a>iOS
 
 Microsoft Edge per iPad&reg; e iPhone&reg; richiede iOS 11.0 o versione successiva. Microsoft Edge per iPad Pro&trade; richiede iOS 11.0 o versione successiva. Microsoft Edge è supportato nelle due versioni più recenti di iOS. Quando viene rilasciata una nuova versione di iOS, i sistemi operativi supportati da Microsoft Edge diventano l'attuale versione corrente di iOS e la versione precedente.
 
-### Android
+###  <a name="android"></a>Android
 
 Microsoft Edge per Android può essere installato in tablet e telefoni che soddisfano i criteri seguenti: dispositivi che eseguono Android KitKat 4.4 o versione successiva con un processore basato su ARM.
 
-### Mac Apple Silicon
+###  <a name="apple-silicon-macs"></a>Mac Apple Silicon
 
 Supporto nativo di Microsoft Edge a partire dalla versione stabile 88 dei Mac Apple Silicon.
 
-### Chromebook
+###  <a name="chromebooks"></a>Chromebook
 
 Microsoft Edge non supporta i Chromebook.
 
-## Modifiche recenti
+##  <a name="recent-changes"></a>Modifiche recenti
 
 - **12/17/2020** - Il supporto di Microsoft Edge su Windows 7 e Windows Server 2008 R2 è stato esteso al 15 gennaio 2022.
 - **01/28/2021** - Supporto di Microsoft Edge per i Mac Apple Silicon.
 
-## Vedi anche
+##  <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Criteri relativi al ciclo di vita moderni Microsoft](https://support.microsoft.com/help/30881/modern-lifecycle-policy)

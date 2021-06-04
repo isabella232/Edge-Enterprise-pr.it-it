@@ -23,11 +23,11 @@ Questo video mostra la procedura per distribuire Microsoft Edge in tutti i dispo
 
 [![Distribuire Microsoft Edge su centinaia o migliaia di dispositivi](media/microsoft-edge-video-deploy/0.png)](http://www.youtube.com/watch?v=o90UsN6g6NE "Deploy Microsoft Edge to hundreds or thousands of devices")
 
-## Informazioni sul video
+##  <a name="about-the-video"></a>Informazioni sul video
 
 Guardare un tour pratico riguardante la distribuzione di Microsoft Edge sui dispositivi. Informazioni sulle opzioni del pacchetto Microsoft Edge per l'installazione automatizzata, su come distribuire Microsoft Edge su PC Windows utilizzando Microsoft Endpoint Configuration Manager e sui passaggi per garantire che tutti i dispositivi gestiti, inclusi telefoni e Mac, vengano forniti con Microsoft Edge.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Playlist di YouTube su Microsoft Edge](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

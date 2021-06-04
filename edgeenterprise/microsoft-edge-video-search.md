@@ -26,11 +26,11 @@ Questo video illustra in che modo Microsoft Edge porta l'esperienza di compatibi
 > [!NOTE]
 > Questo è stato filmato durante Microsoft Ignite 2019, sessione THR2279: Microsoft Edge e Microsoft Search: tour completo per amministratori IT e utenti.
 
-## Informazioni sul video
+##  <a name="about-the-video"></a>Informazioni sul video
 
 Microsoft Search offre risultati di ricerca sulla rete privata personalizzati e integrati per siti, persone, file e altro in Edge per PC, Mac e dispositivi mobili. Infine, vien mostrato come configurare Microsoft Search nell'ambito di Microsoft 365. e come distribuire Microsoft Edge da Gestione configurazione e Microsoft Intune su piattaforme diverse.
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Playlist di YouTube su Microsoft Edge](https://www.youtube.com/playlist?list=PLXtHYVsvn_b-uXh1tMeYpT-0iD8tD3tFy)

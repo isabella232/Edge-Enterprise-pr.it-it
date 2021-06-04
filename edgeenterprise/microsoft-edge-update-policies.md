@@ -24,7 +24,7 @@ La versione più recente di Microsoft Edge include i seguenti criteri che puoi u
 Per informazioni su altri criteri disponibili in Microsoft Edge, vedi [Riferimento ai criteri del browser Microsoft Edge](microsoft-edge-policies.md)
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
-## Criteri disponibili
+##  <a name="available-policies"></a>Criteri disponibili
 In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiornamenti disponibili in questa versione di Microsoft Edge. Usa i collegamenti nella tabella per ottenere altri dettagli su criteri specifici.
 
 |||
@@ -64,10 +64,10 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[Installazione](#install-webview)|Consenti installazione|
 |[Aggiornamenti](#update-webview)|Sostituzione dei criteri di aggiornamento|
 
-## Criteri delle applicazioni
+##  <a name="applications-policies"></a>Criteri delle applicazioni
 
 [Torna all'inizio](#microsoft-edge---update-policies)
-### InstallDefault
+###  <a name="installdefault"></a>InstallDefault
 #### Consenti installazione predefinita
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -98,7 +98,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### UpdateDefault
+###  <a name="updatedefault"></a>UpdateDefault
 #### Sostituzione dei criteri di aggiornamento predefinita
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -133,7 +133,7 @@ Consente di specificare il comportamento predefinito per tutti i canali in relaz
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### Install
+###  <a name="install"></a>Install
 #### Consenti installazione
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -172,7 +172,7 @@ Specifica se è possibile installare un canale Microsoft Edge sui dispositivi co
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### Update
+###  <a name="update"></a>Update
 #### Sostituzione dei criteri di aggiornamento
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -217,7 +217,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### Allowsxs
+###  <a name="allowsxs"></a>Allowsxs
 #### Consenti esperienza browser Microsoft Edge affiancata
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -248,7 +248,7 @@ Affinché questi criteri di gruppo abbiano effetto, è necessario configurarli p
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcutDefault
+###  <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione predefinita
 >Microsoft Edge Update 1.3.128.0 e versioni successive
 
@@ -276,7 +276,7 @@ Nel caso in cui Microsoft Edge fosse già installato, il criterio non avrà effe
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### CreateDesktopShortcut
+###  <a name="createdesktopshortcut"></a>CreateDesktopShortcut
 #### Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione
 >Microsoft Edge Update 1.3.128.0 e versioni successive
 
@@ -312,7 +312,7 @@ Nel caso in cui Microsoft Edge fosse già installato, il criterio non avrà effe
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### RollbackToTargetVersion
+###  <a name="rollbacktotargetversion"></a>RollbackToTargetVersion
 #### Esegui il ripristino dello stato precedente della versione di destinazione
 >Microsoft Edge Update 1.3.133.3 e versioni successive
 
@@ -361,7 +361,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### TargetVersionPrefix
+###  <a name="targetversionprefix"></a>TargetVersionPrefix
 #### Sostituzione della versione di destinazione
 >Microsoft Edge Update 1.3.119.43 e versioni successive
 
@@ -402,10 +402,10 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-## Criteri delle preferenze
+##  <a name="preferences-policies"></a>Criteri delle preferenze
 
 [Torna all'inizio](#microsoft-edge---update-policies)
-### AutoUpdateCheckPeriodMinutes
+###  <a name="autoupdatecheckperiodminutes"></a>AutoUpdateCheckPeriodMinutes
 #### Sostituzione del periodo di controllo dell'aggiornamento automatico
 >Microsoft Edge Update 1.2.145.5 e versioni successive
 
@@ -430,7 +430,7 @@ Se abilitata, questo criterio consente di impostare un valore per il numero mini
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### UpdatesSuppressed
+###  <a name="updatessuppressed"></a>UpdatesSuppressed
 #### Periodo di tempo in ogni giorno per eliminare il controllo dell'aggiornamento automatico
 >Microsoft Edge Update 1.3.33.5 e versioni successive
 
@@ -461,10 +461,10 @@ start min  : 0x00000002
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-## Criteri server proxy
+##  <a name="proxy-server-policies"></a>Criteri server proxy
 
 [Torna all'inizio](#microsoft-edge---update-policies)
-### ProxyMode
+###  <a name="proxymode"></a>ProxyMode
 #### Scegliere come specificare le impostazioni del server proxy
 >Microsoft Edge Update 1.3.21.81 e versioni successive
 
@@ -497,7 +497,7 @@ fixed_servers
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### ProxyPacUrl
+###  <a name="proxypacurl"></a>ProxyPacUrl
 #### URL di un file PAC del proxy
 >Microsoft Edge Update 1.3.21.81 e versioni successive
 
@@ -526,7 +526,7 @@ https://www.microsoft.com
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### ProxyServer
+###  <a name="proxyserver"></a>ProxyServer
 #### Indirizzo o URL del server proxy
 >Microsoft Edge Update 1.3.21.81 e versioni successive
 
@@ -555,10 +555,10 @@ https://www.microsoft.com
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-## Criteri di Microsoft Edge WebView
+##  <a name="microsoft-edge-webview-policies"></a>Criteri di Microsoft Edge WebView
 
 [Torna all'inizio](#microsoft-edge---update-policies)
-### Installa (WebView)
+###  <a name="install-(webview)"></a>Installa (WebView)
 #### Consenti installazione
 >Microsoft Edge Update 1.3.127.1 e versioni successive
 
@@ -586,7 +586,7 @@ Consente di specificare se è possibile installare Microsoft Edge WebView tramit
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-### Aggiornameto (WebView)
+###  <a name="update-(webview)"></a>Aggiornameto (WebView)
 #### Sostituzione dei criteri di aggiornamento
 >Microsoft Edge Update 1.3.127.1 e versioni successive
 
@@ -617,6 +617,6 @@ Gli aggiornamenti automatici sono abilitati per impostazione predefinita. Disabi
 [Torna all'inizio](#microsoft-edge---update-policies)
 
 
-## Vedere anche
+##  <a name="see-also"></a>Vedere anche
   - [Configurazione di Microsoft Edge](configure-microsoft-edge.md)
   - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
