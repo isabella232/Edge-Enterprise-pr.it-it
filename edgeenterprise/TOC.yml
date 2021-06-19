@@ -21,11 +21,11 @@
       href: 'https://blogs.windows.com/msedgedev/'
 - name: Pianificazione per Microsoft Edge
   items:
-    - name: Roadmap di Microsoft Edge in modalità Enterprise
+    - name: Roadmap di Microsoft Edge Enterprise
       href: microsoft-edge-roadmap.md
     - name: Supporto della piattaforma per le funzionalità di Microsoft Edge
       href: microsoft-edge-platform-feature-matrix.md
-    - name: Pianificare la distribuzione di Microsoft Edge
+    - name: Pianifica la distribuzione di Microsoft Edge
       href: deploy-edge-plan-deployment.md
     - name: Microsoft Edge nel tuo ambiente
       href: deploy-edge-prepare-to-deploy.md
@@ -35,11 +35,11 @@
       href: deploy-edge-ready-for-edge.md
     - name: Note sulla versione del Canale Stable
       href: microsoft-edge-relnote-stable-channel.md
-    - name: Note sulla versione archiviate di Stable Channel
+    - name: Note sulla versione archiviate del Canale Stable
       href: microsoft-edge-relnote-archive-stable-channel.md
     - name: Note sulla versione del Canale Beta
       href: microsoft-edge-relnote-beta-channel.md
-    - name: Note sulla versione archiviate del Canale beta
+    - name: Note sulla versione archiviate del Canale Beta
       href: microsoft-edge-relnote-archive-beta-channel.md
     - name: Pianificazione dei rilasci
       href: microsoft-edge-release-schedule.md
@@ -65,11 +65,11 @@
           href: microsoft-edge-sysupdate-access-old-edge.md
         - name: Aggiornamenti di Windows per supportare Microsoft Edge
           href: microsoft-edge-sysupdate-windows-updates.md
-- name: Distribuire Microsoft Edge
+- name: Distribuzione di Microsoft Edge
   items:
-    - name: Implementazione di Microsoft Edge con gli aggiornamenti di Windows 10
+    - name: Distribuzione di Microsoft Edge con gli aggiornamenti di Windows 10
       href: deploy-edge-with-windows-10-updates.md
-    - name: Distribuire su Windows con Gestione configurazione
+    - name: Distribuire su Windows con Configuration Manager
       href: /configmgr/apps/deploy-use/deploy-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
     - name: Distribuire su Windows con Intune
       href: /intune/apps/apps-windows-edge/?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json
@@ -97,13 +97,13 @@
       href: microsoft-edge-security-identity.md
     - name: Microsoft Edge ed Enterprise State Roaming
       href: microsoft-edge-enterprise-state-roaming.md
-    - name: Pianificare la transizione in modalità tutto schermo
+    - name: Pianificazione della transizione alla modalità tutto schermo
       href: microsoft-edge-kiosk-mode-transition-plan.md
     - name: Configurazione della modalità tutto schermo di Microsoft Edge
       href: microsoft-edge-configure-kiosk-mode.md
     - name: Sincronizzazione aziendale di Microsoft Edge
       items:
-        - name: Configurare Microsoft Edge Sync
+        - name: Configurare la sincronizzazione di Microsoft Edge
           href: microsoft-edge-enterprise-sync.md
         - name: Diagnosticare e risolvere i problemi di sincronizzazione di Microsoft Edge
           href: microsoft-edge-troubleshoot-enterprise-sync.md
@@ -113,13 +113,13 @@
       href: microsoft-edge-on-premises-sync.md
     - name: Lettre PDF in Microsoft Edge
       href: microsoft-edge-pdf.md
-    - name: Imposta Microsoft Edge come browser predefinito
+    - name: Impostare Microsoft Edge come browser predefinito
       href: edge-default-browser.md
     - name: Usare Microsoft Edge in modalità Internet Explorer
       items:
         - name: Che cos'è la modalità Internet Explorer (IE)?
           href: edge-ie-mode.md
-        - name: Strategia di configurazione dei siti aziendali
+        - name: Strategia di configurazione del sito Enterprise
           href: edge-ie-mode-sitelist.md
         - name: Configurare i criteri della modalità IE
           href: edge-ie-mode-policies.md
@@ -129,7 +129,7 @@
           items:
             - name: Guida dettagliata alla funzionalità di individuazione siti aziendale
               href: edge-ie-mode-site-discovery.md
-            - name: Gestione elenco siti dell’organizzazione in Microsoft Edge
+            - name: Gestione elenco siti aziendali in Microsoft Edge
               href: edge-ie-mode-site-list-manager.md
         - name: Mantenere lo spostamento nella pagina in modalità IE
           href: edge-learnmore-inpage-nav.md
@@ -145,7 +145,7 @@
   items:
     - name: Sicurezza per l'azienda
       href: ms-edge-security-for-business.md
-    - name: Elenco Consenti per gli endpoint Microsoft Edge
+    - name: Elenco Consentiti per gli endpoint di Microsoft Edge
       href: microsoft-edge-security-endpoints.md
     - name: Prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-security-dlp.md
@@ -177,7 +177,7 @@
       href: microsoft-edge-webview-policies.md
     - name: Altre informazioni di riferimento
       items:
-        - name: Compatibilità con le versioni precedenti per la scheda Nuova organizzazione
+        - name: Compatibilità con le versioni precedenti per la pagina Nuova scheda aziendale
           href: edge-learnmore-ntp-backward-compatibility.md
         - name: ClickOnce e DirectInvoke
           href: edge-learn-more-co-di.md
@@ -207,7 +207,7 @@
       href: microsoft-edge-video-state-of-browser.md
     - name: Video - Isolamento del browser tramite Application Guard
       href: microsoft-edge-video-security-application-guard.md
-    - name: 'Video: Distribuire Microsoft Edge'
+    - name: Video - Distribuire Microsoft Edge
       href: microsoft-edge-video-deploy.md
     - name: Video - Prevenzione della perdita dei dati (DLP)
       href: microsoft-edge-video-security-dlp.md
