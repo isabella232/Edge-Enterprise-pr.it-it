@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge e Microsoft Defender Application Guard
 ms.author: srugh
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 02/05/2021
+ms.date: 05/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto di Microsoft Edge per Microsoft Defender Application Guard
-ms.openlocfilehash: 2dc1c5b35003c7de4fa474764c46a792bf1e3439
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7374810eb19ada298963817844e52184c0271a8c
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447170"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617996"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Supporto di Microsoft Edge per Microsoft Defender Application Guard
 
@@ -50,6 +50,24 @@ Lo screenshot seguente mostra un esempio di messaggio di Application Guard che i
 ## <a name="whats-new"></a>Novità
 
 Il supporto per Application Guard nel nuovo browser Microsoft Edge ha pari funzionalità con la versione legacy di Microsoft Edge e include diversi miglioramenti.
+
+### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>Sincronizzazione dei Preferiti dall'host al contenitore
+
+Alcuni clienti hanno chiesto la sincronizzazione dei Preferiti tra il browser host e il contenitore in Application Guard. A partire da Microsoft Edge 91, gli utenti hanno ora la possibilità di configurare Application Guard in modo da sincronizzare i Preferiti dall'host al contenitore. Questo assicura che anche i nuovi Preferiti vengano visualizzati nel contenitore.
+
+Il supporto può essere controllato tramite criterio. È possibile aggiornare il criterio di Microsoft Edge [ApplicationGuardFavoritesSyncEnabled](/deployedge/microsoft-edge-policies#applicationguardfavoritessyncenabled) per abilitare o disabilitare la sincronizzazione dei Preferiti.
+
+> [!Note]
+> Per motivi di sicurezza, la sincronizzazione dei Preferiti è possibile solo dall'host al contenitore e non viceversa. Per garantire un elenco unificato dei Preferiti nell'host e nel contenitore, è stata disabilitata la gestione dei Preferiti all'interno del contenitore.
+
+### <a name="identify-network-traffic-originating-from-the-container"></a>Identificazione del traffico di rete proveniente dal contenitore
+
+Diversi clienti usano WDAG in una configurazione specifica in cui desiderano identificare il traffico di rete proveniente dal contenitore. Di seguito sono riportati alcuni degli scenari in cui questo può essere utile:
+
+- Per limitare l'accesso solo a pochi siti non attendibili
+- Per consentire l'accesso a Internet solo dal contenitore
+
+A partire da Microsoft Edge versione 91, è disponibile il supporto integrato per contrassegnare il traffico di rete proveniente dai contenitori Application Guard. Questo consente alle aziende di usare un proxy per filtrare il traffico e applicare criteri specifici. È possibile usare l'intestazione per identificare il traffico che proviene dal contenitore o dall'host usando [ApplicationGuardTrafficIdentificationEnabled](/deployedge/microsoft-edge-policies#applicationguardtrafficidentificationenabled).
 
 ### <a name="extension-support-inside-the-container"></a>Supporto dell'estensione all'interno del contenitore
 
@@ -111,7 +129,7 @@ Gli articoli seguenti forniscono le informazioni necessarie per installare, conf
 
 ### <a name="does-application-guard-work-in-ie-mode"></a>Application Guard funziona in modalità IE?
 
-La modalità IE supporta la funzionalità di Application Guard, ma non è previsto l'uso di questa caratteristica in modalità IE. Per un elenco di siti interni attendibili è consigliabile usare la modalità IE, mentre Application Guard può essere usato solo per i siti non attendibili. Assicurarsi che tutti i siti in modalità IE o gli indirizzi IP vengano aggiunti anche ai criteri di Isolamento della rete per essere considerati come risorsa attendibile da Application Guard.
+La modalità IE supporta la funzionalità Application Guard, ma non prevediamo un uso molto importante di questa funzionalità in modalità IE. È consigliabile distribuire la modalità IE per un elenco di siti interni attendibili e usare Application Guard solo per i siti non attendibili. Assicurarsi che tutti i siti in modalità IE o gli indirizzi IP vengano aggiunti anche ai criteri di Isolamento della rete per essere considerati come risorsa attendibile da Application Guard.
 
 ### <a name="do-i-need-to-install-the-application-guard-chrome-extension"></a>È necessario installare l'estensione Application Guard per Chrome?
 
