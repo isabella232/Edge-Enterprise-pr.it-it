@@ -3,7 +3,7 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 04/01/2021
+ms.date: 06/17/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 79996cdbee3099fbb3a3d17b982b84a05f5a5066
-ms.sourcegitcommit: 21390f52f8605fe6cb0b73ca6dffacff562ada82
+ms.openlocfilehash: 21933e81427b84d69f6d3ead4dfc911519e65bb3
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/02/2021
-ms.locfileid: "11470894"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617876"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -35,7 +35,34 @@ Nella tabella seguente sono elencati i nuovi criteri per questo aggiornamento.
 
 |Nome|Didascalia|
 |--|--|
-|[ApplicationGuardTrafficIdentificationEnabled](#applicationguardtrafficidentificationenabled)|Identificazione del traffico di Application Guard|
+|[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|Single Sign-On per siti aziendali o dell'istituto di istruzione con questo profilo abilitato|
+|[AutomaticHttpsDefault](#automatichttpsdefault)|Configura l'HTTPS automatico|
+|[CECPQ2Enabled](#cecpq2enabled)|CECPQ2 accordo chiave post-quantistico abilitato per TLS|
+|[InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed)|Specifica se consentire ai siti Web non sicuri di effettuare richieste agli endpoint di rete più privata|
+|[InsecurePrivateNetworkRequestsAllowedForUrls](#insecureprivatenetworkrequestsallowedforurls)|Consente ai siti elencati di effettuare richieste agli endpoint di rete più privata da contesti non sicuri|
+|[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|Specifica il numero di giorni in cui un sito rimane nell'elenco dei siti della modalità IE locale|
+|[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|Consente di ricaricare i siti non configurati in modalità Internet Explorer|
+|[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|Consente a Windows di cercare i dati di esplorazione locali di Microsoft Edge|
+|[TripleDESEnabled](#tripledesenabled)|Abilita le suite di crittografia 3DES in TLS|
+
+## <a name="deprecated-policies"></a>Criteri deprecati
+
+Nella tabella seguente sono elencati i criteri deprecati per questo aggiornamento.
+
+|Nome|Didascalia|
+|--|--|
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|Consente test in modalità Internet Explorer (deprecato)|
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|Abilita l'impostazione predefinita del comportamento legacy dei cookie SameSite (deprecato)|
+
+## <a name="obsolete-policies"></a>Criteri obsoleti
+
+Nella tabella seguente sono elencati i criteri obsoleti per questo aggiornamento.
+
+|Nome|Didascalia|
+|--|--|
+|[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (obsoleto)|
+|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (obsoleto)|
+|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)|
 
 ## <a name="available-policies"></a>Criteri disponibili
 
@@ -53,6 +80,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 - [Gestione e protezione delle password](#password-manager-and-protection)
 - [Prestazioni](#performance)
 - [Stampa](#printing)
+- [Impostazioni richieste di rete privata](#private-network-request-settings)
 - [Server proxy](#proxy-server)
 - [Impostazioni schede di sospensione](#sleeping-tabs-settings)
 - [Impostazioni SmartScreen](#smartscreen-settings)
@@ -103,7 +131,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[InsecureContentBlockedForUrls](#insecurecontentblockedforurls)|Blocca contenuti non sicuri in siti specifici|
 |[JavaScriptAllowedForUrls](#javascriptallowedforurls)|Consente JavaScript in siti specifici|
 |[JavaScriptBlockedForUrls](#javascriptblockedforurls)|Blocca JavaScript in siti specifici|
-|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita|
+|[LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled)|Abilita l'impostazione predefinita del comportamento legacy dei cookie SameSite (deprecato)|
 |[LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist)|Ripristina il comportamento SameSite legacy dei cookie in siti specifici|
 |[NotificationsAllowedForUrls](#notificationsallowedforurls)|Consente le notifiche in siti specifici|
 |[NotificationsBlockedForUrls](#notificationsblockedforurls)|Blocca le notifiche in siti specifici|
@@ -112,8 +140,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[PopupsAllowedForUrls](#popupsallowedforurls)|Consente le finestre popup in siti specifici|
 |[PopupsBlockedForUrls](#popupsblockedforurls)|Blocca le finestre popup in siti specifici|
 |[RegisteredProtocolHandlers](#registeredprotocolhandlers)|Registra i gestori di protocollo|
-|[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche,
-e suggerimenti per i servizi Microsoft|
+|[SpotlightExperiencesAndRecommendationsEnabled](#spotlightexperiencesandrecommendationsenabled)|Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche e consigli per i servizi Microsoft|
 |[WebUsbAllowDevicesForUrls](#webusballowdevicesforurls)|Concede l'accesso a siti specifici per connettersi a dispositivi USB specifici|
 |[WebUsbAskForUrls](#webusbaskforurls)|Consente WebUSB in siti specifici|
 |[WebUsbBlockedForUrls](#webusbblockedforurls)|Blocca WebUSB in siti specifici|
@@ -201,6 +228,12 @@ e suggerimenti per i servizi Microsoft|
 |[PrintingEnabled](#printingenabled)|Abilita la stampa|
 |[PrintingPaperSizeDefault](#printingpapersizedefault)|Dimensioni della pagina di stampa predefinite|
 |[UseSystemPrintDialog](#usesystemprintdialog)|Stampa usando la finestra di dialogo della stampante di sistema|
+### [*<a name="private-network-request-settings"></a>Impostazioni richieste di rete privata*](#private-network-request-settings-policies)
+
+|Nome criterio|Didascalia|
+|-|-|
+|[InsecurePrivateNetworkRequestsAllowed](#insecureprivatenetworkrequestsallowed)|Specifica se consentire ai siti Web non sicuri di effettuare richieste agli endpoint di rete più privata|
+|[InsecurePrivateNetworkRequestsAllowedForUrls](#insecureprivatenetworkrequestsallowedforurls)|Consente ai siti elencati di effettuare richieste agli endpoint di rete più privata da contesti non sicuri|
 ### [*<a name="proxy-server"></a>Server proxy*](#proxy-server-policies)
 
 |Nome criterio|Didascalia|
@@ -227,7 +260,7 @@ e suggerimenti per i servizi Microsoft|
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -241,7 +274,7 @@ e suggerimenti per i servizi Microsoft|
 |[NewTabPageManagedQuickLinks](#newtabpagemanagedquicklinks)|Imposta i collegamenti rapidi della pagina Nuova scheda|
 |[NewTabPagePrerenderEnabled](#newtabpageprerenderenabled)|Attiva il precaricamento della nuova scheda per il rendering più rapido|
 |[NewTabPageQuickLinksEnabled](#newtabpagequicklinksenabled)|Consente i collegamenti rapidi nella nuova scheda|
-|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)|
+|[NewTabPageSetFeedType](#newtabpagesetfeedtype)|Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (obsoleto)|
 |[RestoreOnStartup](#restoreonstartup)|Azione da eseguire all'avvio|
 |[RestoreOnStartupURLs](#restoreonstartupurls)|Siti da aprire all'avvio del browser|
 |[ShowHomeButton](#showhomebutton)|Mostra il pulsante Home nella barra degli strumenti|
@@ -249,6 +282,7 @@ e suggerimenti per i servizi Microsoft|
 
 |Nome criterio|Didascalia|
 |-|-|
+|[AADWebSiteSSOUsingThisProfileEnabled](#aadwebsitessousingthisprofileenabled)|Single Sign-On per siti aziendali o dell'istituto di istruzione con questo profilo abilitato|
 |[AddressBarMicrosoftSearchInBingProviderEnabled](#addressbarmicrosoftsearchinbingproviderenabled)|Abilita Microsoft Search nei suggerimenti di Bing nella barra degli indirizzi|
 |[AdsSettingForIntrusiveAdsSites](#adssettingforintrusiveadssites)|Impostazione degli annunci per i siti con annunci intrusivi|
 |[AllowDeletingBrowserHistory](#allowdeletingbrowserhistory)|Abilita l'eliminazione della cronologia di download e browser|
@@ -272,6 +306,7 @@ e suggerimenti per i servizi Microsoft|
 |[AutoOpenFileTypes](#autoopenfiletypes)|Elenco dei tipi di file che devono essere aperti automaticamente al download|
 |[AutofillAddressEnabled](#autofilladdressenabled)|Abilita il riempimento automatico per gli indirizzi|
 |[AutofillCreditCardEnabled](#autofillcreditcardenabled)|Abilita il riempimento automatico per le carte di credito|
+|[AutomaticHttpsDefault](#automatichttpsdefault)|Configura l'HTTPS automatico|
 |[AutoplayAllowed](#autoplayallowed)|Consente la riproduzione automatica dei contenuti multimediali per i siti Web|
 |[BackgroundModeEnabled](#backgroundmodeenabled)|App in esecuzione in background dopo la chiusura di Microsoft Edge|
 |[BackgroundTemplateListUpdatesEnabled](#backgroundtemplatelistupdatesenabled)|Abilita gli aggiornamenti in background all'elenco di modelli disponibili per Raccolte e altre funzionalità che sfruttano i modelli|
@@ -284,6 +319,7 @@ e suggerimenti per i servizi Microsoft|
 |[BrowsingDataLifetime](#browsingdatalifetime)|Impostazioni vita utile dati di esplorazione|
 |[BuiltInDnsClientEnabled](#builtindnsclientenabled)|Usa il client DNS predefinito|
 |[BuiltinCertificateVerifierEnabled](#builtincertificateverifierenabled)|Determina se lo strumento di verifica del certificato predefinito verrà usato per la verifica dei certificati server (deprecato)|
+|[CECPQ2Enabled](#cecpq2enabled)|CECPQ2 accordo chiave post-quantistico abilitato per TLS|
 |[CertificateTransparencyEnforcementDisabledForCas](#certificatetransparencyenforcementdisabledforcas)|Disabilita l'applicazione della trasparenza dei certificati per un elenco di hash subjectPublicKeyInfo|
 |[CertificateTransparencyEnforcementDisabledForLegacyCas](#certificatetransparencyenforcementdisabledforlegacycas)|Disabilita l'applicazione della trasparenza dei certificati per un elenco di autorità di certificazione legacy|
 |[CertificateTransparencyEnforcementDisabledForUrls](#certificatetransparencyenforcementdisabledforurls)|Disabilita l'applicazione della trasparenza dei certificati per URL specifici|
@@ -324,11 +360,12 @@ e suggerimenti per i servizi Microsoft|
 |[EnableDeprecatedWebPlatformFeatures](#enabledeprecatedwebplatformfeatures)|Nome Criteri di gruppo: Nome Criteri di gruppo: Riabilita le funzionalità della piattaforma Web deprecate per un periodo di tempo limitato (obsoleto)|
 |[EnableDomainActionsDownload](#enabledomainactionsdownload)|Abilita il download delle azioni di dominio da Microsoft (obsoleto)|
 |[EnableOnlineRevocationChecks](#enableonlinerevocationchecks)|Abilita i controlli OCSP/CRL online|
-|[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)|
+|[EnableSha1ForLocalAnchors](#enablesha1forlocalanchors)|Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (obsoleto)|
 |[EnterpriseHardwarePlatformAPIEnabled](#enterprisehardwareplatformapienabled)|Consente alle estensioni gestite di usare l'API Enterprise Hardware Platform|
 |[EnterpriseModeSiteListManagerAllowed](#enterprisemodesitelistmanagerallowed)|Consente l’accesso allo strumento Enterprise Mode Site List Manager|
 |[ExemptDomainFileTypePairsFromFileTypeDownloadWarnings](#exemptdomainfiletypepairsfromfiletypedownloadwarnings)|Disabilita gli avvisi di download basati sull'estensione del tipo di file per i tipi di file specificati nei domini|
 |[ExperimentationAndConfigurationServiceControl](#experimentationandconfigurationservicecontrol)|Controlla le comunicazioni con il servizio di sperimentazione e configurazione|
+|[ExplicitlyAllowedNetworkPorts](#explicitlyallowednetworkports)|Porte di rete esplicitamente consentite|
 |[ExternalProtocolDialogShowAlwaysOpenCheckbox](#externalprotocoldialogshowalwaysopencheckbox)|Mostra una casella di controllo "Sempre aperto" nella casella di controllo del protocollo esterno|
 |[FamilySafetySettingsEnabled](#familysafetysettingsenabled)|Consentire agli utenti di configurare Family safety e la modalità bambini|
 |[FavoritesBarEnabled](#favoritesbarenabled)|Abilita la barra Preferiti|
@@ -346,6 +383,7 @@ e suggerimenti per i servizi Microsoft|
 |[GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar)|Forza l'esplorazione del sito Intranet diretta anziché tramite la ricerca di singole parole nella barra degli indirizzi|
 |[HSTSPolicyBypassList](#hstspolicybypasslist)|Configura l'elenco di nomi che ignoreranno la verifica dei criteri HSTS|
 |[HardwareAccelerationModeEnabled](#hardwareaccelerationmodeenabled)|Usa l'accelerazione hardware se disponibile|
+|[HeadlessModeEnabled](#headlessmodeenabled)|Controlla l'uso della modalità Headless|
 |[HideFirstRunExperience](#hidefirstrunexperience)|Nasconde l'esperienza della first-run experience e la schermata iniziale|
 |[HideInternetExplorerRedirectUXForIncompatibleSitesEnabled](#hideinternetexplorerredirectuxforincompatiblesitesenabled)|Nascondi la finestra di dialogo Reindirizzamento occasionale e il banner su Microsoft Edge|
 |[ImportAutofillFormData](#importautofillformdata)|Consente l'importazione dei dati di moduli con riempimento automatico|
@@ -360,6 +398,7 @@ e suggerimenti per i servizi Microsoft|
 |[ImportSavedPasswords](#importsavedpasswords)|Consente l'importazione delle password salvate|
 |[ImportSearchEngine](#importsearchengine)|Consente l'importazione delle impostazioni del motore di ricerca|
 |[ImportShortcuts](#importshortcuts)|Consente l'importazione di scelte rapide da tastiera|
+|[ImportStartupPageSettings](#importstartuppagesettings)|Consente l'importazione delle impostazioni della home page|
 |[InPrivateModeAvailability](#inprivatemodeavailability)|Configura la disponibilità della modalità InPrivate|
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|Attiva gli avvisi per i moduli non sicuri|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|Controlla la funzionalità IntensiveWakeUpThrottling|
@@ -367,16 +406,20 @@ e suggerimenti per i servizi Microsoft|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|Configurare l'integrazione Internet Explorer|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|Consentire l'avvio di file locali in modalità Internet Explorer|
 |[InternetExplorerIntegrationLocalFileExtensionAllowList](#internetexplorerintegrationlocalfileextensionallowlist)|Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer|
-|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalFileShowContextMenu](#internetexplorerintegrationlocalfileshowcontextmenu)|Mostra il menu di scelta rapida per aprire un collegamento file:// in modalità Internet Explorer|
+|[InternetExplorerIntegrationLocalSiteListExpirationDays](#internetexplorerintegrationlocalsitelistexpirationdays)|Specifica il numero di giorni in cui un sito rimane nell'elenco dei siti della modalità IE locale|
+|[InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed)|Consente di ricaricare i siti non configurati in modalità Internet Explorer|
 |[InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist)|Configurare l'elenco siti modalità Enterprise|
 |[InternetExplorerIntegrationSiteRedirect](#internetexplorerintegrationsiteredirect)|Specifica il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer|
-|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|Consenti il test della modalità di Internet Explorer|
+|[InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed)|Consente test in modalità Internet Explorer (deprecato)|
 |[IntranetRedirectBehavior](#intranetredirectbehavior)|Comportamento del reindirizzamento delle Intranet|
 |[IsolateOrigins](#isolateorigins)|Abilita l'isolamento del sito per origini specifiche|
+|[LocalBrowserDataShareEnabled](#localbrowserdatashareenabled)|Consente a Windows di cercare i dati di esplorazione locali di Microsoft Edge|
 |[LocalProvidersEnabled](#localprovidersenabled)|Consente suggerimenti dai provider locali|
 |[ManagedConfigurationPerOrigin](#managedconfigurationperorigin)|Imposta su origini specifiche i valori della configurazione gestita per i siti Web|
 |[ManagedFavorites](#managedfavorites)|Configura i Preferiti|
 |[ManagedSearchEngines](#managedsearchengines)|Gestisce i motori di ricerca|
+|[MathSolverEnabled](#mathsolverenabled)|Consente agli utenti di catturare un problema di matematica e ottenere la soluzione con una spiegazione passo passo in Microsoft Edge|
 |[MaxConnectionsPerProxy](#maxconnectionsperproxy)|Numero massimo di connessioni simultanee al server proxy|
 |[MediaRouterCastAllowAllIPs](#mediaroutercastallowallips)|Consente a Google Cast di connettersi ai dispositivi Cast su tutti gli indirizzi IP|
 |[MetricsReportingEnabled](#metricsreportingenabled)|Abilita l'utilizzo e la creazione di report sui dati correlati all'arresto anomalo (obsoleto)|
@@ -386,9 +429,9 @@ e suggerimenti per i servizi Microsoft|
 |[NonRemovableProfileEnabled](#nonremovableprofileenabled)|Configura l'accesso automatico di un utente con un profilo predefinito al proprio account aziendale o dell'istituto di istruzione|
 |[OverrideSecurityRestrictionsOnInsecureOrigin](#overridesecurityrestrictionsoninsecureorigin)|Controlla dove si applicano le restrizioni di sicurezza per origini non sicure|
 |[PaymentMethodQueryEnabled](#paymentmethodqueryenabled)|Consente ai siti Web di eseguire query per i metodi di pagamento disponibili|
-|[PersonalizationReportingEnabled](#personalizationreportingenabled)|Consentire la personalizzazione dei servizi Microsoft inviando a Microsoft dati relativi all'esplorazione e al browser|
+|[PersonalizationReportingEnabled](#personalizationreportingenabled)|Consente la personalizzazione di annunci, Microsoft Edge, ricerca, notizie e altri servizi Microsoft inviando la cronologia di esplorazione, i preferiti, le raccolte, l'utilizzo e altri dati di navigazione a Microsoft|
 |[PinningWizardAllowed](#pinningwizardallowed)|Consente la procedura guidata per Aggiungi alla barra delle applicazioni|
-|[ProactiveAuthEnabled](#proactiveauthenabled)|Abilitare l'autenticazione proattiva|
+|[ProactiveAuthEnabled](#proactiveauthenabled)|Abilita l'autenticazione proattiva (obsoleto)|
 |[PromotionalTabsEnabled](#promotionaltabsenabled)|Abilita il contenuto promozionale di una scheda completa|
 |[PromptForDownloadLocation](#promptfordownloadlocation)|Chiede dove salvare i file scaricati|
 |[QuicAllowed](#quicallowed)|Consenti il protocollo QUIC|
@@ -419,6 +462,7 @@ e suggerimenti per i servizi Microsoft|
 |[SensorsBlockedForUrls](#sensorsblockedforurls)|Blocca l'accesso ai sensori in siti specifici|
 |[SerialAskForUrls](#serialaskforurls)|Consenti API Serial in siti specifici|
 |[SerialBlockedForUrls](#serialblockedforurls)|Blocca Serial API in siti specifici|
+|[SharedArrayBufferUnrestrictedAccessAllowed](#sharedarraybufferunrestrictedaccessallowed)|Specifica se SharedArrayBuffers può essere utilizzato in un contesto non isolato tra le origini|
 |[ShowMicrosoftRewards](#showmicrosoftrewards)|Mostra le esperienze di Microsoft Rewards|
 |[ShowOfficeShortcutInFavoritesBar](#showofficeshortcutinfavoritesbar)|Mostra la scelta rapida da tastiera di Microsoft Office nella barra dei Preferiti (deprecato)|
 |[MostraRaccomandazioniAbilitato](#showrecommendationsenabled)|Consenti suggerimenti e notifiche promozionali da Microsoft Edge|
@@ -441,6 +485,7 @@ e suggerimenti per i servizi Microsoft|
 |[TotalMemoryLimitMb](#totalmemorylimitmb)|Imposta un limite per i megabyte di memoria che possono essere usati in un'unica istanza di Microsoft Edge|
 |[TrackingPrevention](#trackingprevention)|Blocca il monitoraggio dell'attività di esplorazione sul Web degli utenti|
 |[TranslateEnabled](#translateenabled)|Abilita Traduci|
+|[TripleDESEnabled](#tripledesenabled)|Abilita le suite di crittografia 3DES in TLS|
 |[URLAllowlist](#urlallowlist)|Definisce un elenco di URL consentiti|
 |[URLBlocklist](#urlblocklist)|Blocca l'accesso a un elenco di URL|
 |[UpdatePolicyOverride](#updatepolicyoverride)|Specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge|
@@ -455,7 +500,7 @@ e suggerimenti per i servizi Microsoft|
 |[WebAppInstallForceList](#webappinstallforcelist)|Configura l'elenco delle app Web installate forzatamente|
 |[WebCaptureEnabled](#webcaptureenabled)|Abilita la funzionalità di acquisizione web in Microsoft Edge|
 |[WebComponentsV0Enabled](#webcomponentsv0enabled)|Riattiva l'API v0 dei componenti Web fino a M84 (obsoleto)|
-|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|Consente a WebDriver di ignorare i criteri non compatibili (deprecato)|
+|[WebDriverOverridesIncompatiblePolicies](#webdriveroverridesincompatiblepolicies)|Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)|
 |[WebRtcAllowLegacyTLSProtocols](#webrtcallowlegacytlsprotocols)|Consenti downgrade TLS/DTLS legacy in WebRTC (deprecato)|
 |[WebRtcLocalIpsAllowedUrls](#webrtclocalipsallowedurls)|Gestisce l'esposizione degli indirizzi IP locali tramite WebRTC|
 |[WebRtcLocalhostIpHandling](#webrtclocalhostiphandling)|Limita l'esposizione dell'indirizzo IP locale tramite WebRTC|
@@ -538,8 +583,8 @@ Per altre informazioni su come identificare il traffico di Application Guard tra
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ApplicationGuardContainerProxy = {
-  "ProxyMode": "direct", 
-  "ProxyPacUrl": "https://internal.site/example.pac", 
+  "ProxyMode": "direct",
+  "ProxyPacUrl": "https://internal.site/example.pac",
   "ProxyServer": "123.123.123.123:8080"
 }
 ```
@@ -1042,9 +1087,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesBlockedForUrls\2 = "[*.]contoso.edu"
 
   I cookie creati dai siti Web che corrispondono a un modello URL definito dall'utente vengono eliminati al termine della sessione (quando viene chiusa la finestra).
 
-I cookie creati dai siti Web che non corrispondono al modello vengono controllati dal criterio [DefaultCookiesSetting](#defaultcookiessetting) (se impostato) o dalla configurazione personale dell'utente. Questo è il comportamento predefinito anche se non si configura questo criterio.
-
-Se Microsoft Edge è in esecuzione in background, la sessione potrebbe non terminare quando viene chiusa l'ultima finestra, il che significa che i cookie non verranno eliminati quando viene chiusa la finestra. Per informazioni sulla configurazione di cosa accade quando Microsoft Edge è in esecuzione in background, vedere il criterio [BackgroundModeEnabled](#backgroundmodeenabled).
+I cookie creati dai siti Web che non corrispondono al modello vengono controllati dal criterio [DefaultCookiesSetting](#defaultcookiessetting) (se impostato) o dalla configurazione personale dell'utente. Questo è anche il comportamento predefinito se non si configura questo criterio.
 
 Per controllare quali siti Web possono creare cookie, è anche possibile utilizzare i criteri [CookiesAllowedForUrls](#cookiesallowedforurls) e [CookiesBlockedForUrls](#cookiesblockedforurls).
 
@@ -1123,7 +1166,7 @@ SOFTWARE\Policies\Microsoft\Edge\CookiesSessionOnlyForUrls\2 = "[*.]contoso.edu"
 
   Controlla se i siti Web possono creare cookie nel dispositivo dell'utente. Questo criterio è di tipo tutto o niente: consente di creare cookie a tutti i siti Web o a nessuno. Non è possibile utilizzare questo criterio per abilitare i cookie di siti Web specifici.
 
-Impostare il criterio su "SessionOnly" per eliminare i cookie al termine della sessione. Se Microsoft Edge è in esecuzione in background, la sessione potrebbe non terminare quando viene chiusa l'ultima finestra, il che significa che i cookie non verranno eliminati quando viene chiusa la finestra. Per informazioni sulla configurazione di cosa accade quando Microsoft Edge è in esecuzione in background, vedere il criterio [BackgroundModeEnabled](#backgroundmodeenabled).
+Impostare il criterio su "SessionOnly" per eliminare i cookie al termine della sessione.
 
 Se non si configura questo criterio, viene usato quello predefinito "AllowCookies" e gli utenti possono modificare questa impostazione in Impostazioni di Microsoft Edge. Per impedire agli utenti di modificare questa impostazione, impostare il criterio.
 
@@ -2499,7 +2542,9 @@ SOFTWARE\Policies\Microsoft\Edge\InsecureContentBlockedForUrls\2 = "[*.]example.
 
   Definisce un elenco di siti, in base ai modelli URL, che sono autorizzati a eseguire JavaScript.
 
-Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultJavaScriptSetting](#defaultjavascriptsetting) (se impostato) o la configurazione personale dell'utente.
+Se non si configura questo criterio, [DefaultJavaScriptSetting](#defaultjavascriptsetting) si applica a tutti i siti, se impostato. In caso contrario, viene applicata l'impostazione personale dell'utente.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2564,7 +2609,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptAllowedForUrls\2 = "[*.]contoso.edu"
 
   Definisce un elenco di siti, in base ai modelli URL, che non sono autorizzati a eseguire JavaScript.
 
-Se non si configura questo criterio, per tutti i siti si usa il valore predefinito globale del criterio [DefaultJavaScriptSetting](#defaultjavascriptsetting) (se impostato) o la configurazione personale dell'utente.
+Se non si configura questo criterio, [DefaultJavaScriptSetting](#defaultjavascriptsetting) si applica a tutti i siti, se impostato. In caso contrario, viene applicata l'impostazione personale dell'utente.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -2617,9 +2664,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   ### <a name="legacysamesitecookiebehaviorenabled"></a>LegacySameSiteCookieBehaviorEnabled
 
-  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting"></a>Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita
+  #### <a name="enable-default-legacy-samesite-cookie-behavior-setting-deprecated"></a>Abilita l'impostazione predefinita del comportamento legacy dei cookie SameSite (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### <a name="supported-versions"></a>Versioni supportate:
 
@@ -2627,7 +2674,11 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
   #### <a name="description"></a>Descrizione
 
-  Consente di ripristinare il comportamento SameSite legacy per tutti i cookie. Se il comportamento legacy viene ripristinato, i cookie che non specificano un attributo SameSite sono trattati come se fossero "SameSite=None", il requisito per i cookie "SameSite=None" di avere l'attributo "Secure" viene rimosso, e la valutazione dello schema viene saltata quando si verifica se due siti siano uguali.
+  "Questo criterio è deprecato perché ha lo scopo di fungere solo da meccanismo a breve termine per concedere alle aziende più tempo per aggiornare i propri ambienti se vengono trovate incompatibili con la modifica del comportamento SameSite.
+
+Non funziona in Microsoft Edge versione 95. Se è ancora necessario il comportamento dei cookie legacy, utilizzare [LegacySameSiteCookieBehaviorEnabledForDomainList](#legacysamesitecookiebehaviorenabledfordomainlist) per configurare il comportamento in base al dominio.
+
+Consente di ripristinare il comportamento SameSite legacy per tutti i cookie. Se il comportamento legacy viene ripristinato, i cookie che non specificano un attributo SameSite sono trattati come se fossero "SameSite=None", il requisito per i cookie "SameSite=None" di avere l'attributo "Secure" viene rimosso, e la valutazione dello schema viene saltata quando si verifica se due siti siano uguali.
 
 Se il criterio non viene configurato, il comportamento SameSite predefinito dipenderà da altre origini di configurazione per la funzionalità SameSite-by-default feature, la funzionalità Cookies-without-SameSite-must-be-secure e la funzionalità Schemeful Same-Site. Queste funzionalità possono anche essere configurate con un campo di prova o con il flag same-site-by-default-cookies, il flag cookies-without-same-site-must-be-secure, o il flag cookies-without-same-site-must-be-secure in edge://flags.
 
@@ -2654,7 +2705,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: LegacySameSiteCookieBehaviorEnabled
-  - Nome Criteri di gruppo: Abilita l'impostazione di comportamento dei cookie SameSite legacy predefinita
+  - Nome Criteri di gruppo: abilita l'impostazione predefinita del comportamento legacy dei cookie SameSite (deprecato)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni contenuto
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -2701,7 +2752,7 @@ Se il comportamento legacy viene ripristinato, i cookie che non specificano un a
 
 Se non si imposta questo criterio, verrà usato il valore predefinito globale. L'impostazione predefinita globale verrà usata anche per i cookie di domini non coperti dai modelli specificati dall'utente.
 
-Il valore predefinito globale può essere configurato usando il criterio [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled). Se [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) non è impostato, il valore predefinito globale si basa su altre origini di configurazione.
+Il valore predefinito globale può essere configurato fino alla versione 95 di Microsoft Edge utilizzando il criterio [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) deprecato. Se [LegacySameSiteCookieBehaviorEnabled](#legacysamesitecookiebehaviorenabled) non è impostato, il valore predefinito globale si basa su altre origini di configurazione.
 
 I modelli elencati in questo criterio vengono trattati come domini, non URL, quindi non è necessario specificare uno schema o una porta.
 
@@ -3205,8 +3256,8 @@ Gli utenti non possono rimuovere un gestore di protocollo registrato tramite que
 ```
 SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
   {
-    "default": true, 
-    "protocol": "mailto", 
+    "default": true,
+    "protocol": "mailto",
     "url": "https://mail.contoso.com/mail/?extsrc=mailto&url=%s"
   }
 ]
@@ -3242,8 +3293,7 @@ SOFTWARE\Policies\Microsoft\Edge\RegisteredProtocolHandlers = [
 
   ### <a name="spotlightexperiencesandrecommendationsenabled"></a>SpotlightExperiencesAndRecommendationsEnabled
 
-  #### <a name="choose-whether-users-can-receive-customized-background-images-and-text-suggestions-notifications"></a>Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche,
-e suggerimenti per i servizi Microsoft
+  #### <a name="choose-whether-users-can-receive-customized-background-images-and-text-suggestions-notifications-and-tips-for-microsoft-services"></a>Scegli se consentire agli utenti di ricevere immagini di sfondo personalizzate, testo, suggerimenti, notifiche e consigli per i servizi Microsoft
 
   
   
@@ -3350,12 +3400,12 @@ SOFTWARE\Policies\Microsoft\Edge\WebUsbAllowDevicesForUrls = [
   {
     "devices": [
       {
-        "product_id": 5678, 
+        "product_id": 5678,
         "vendor_id": 1234
       }
-    ], 
+    ],
     "urls": [
-      "https://contoso.com", 
+      "https://contoso.com",
       "https://fabrikam.com"
     ]
   }
@@ -4184,7 +4234,7 @@ Se si abilita questa impostazione, le estensioni esterne vengono bloccate dall'i
 
 Se si disattiva questa impostazione o non la si annulla, le estensioni esterne possono essere installate.
 
-Le estensioni esterne e la relativa installazione vengono documentate in https://docs.microsoft.com/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options.
+Le estensioni esterne e la relativa installazione sono documentate in ./microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options.
 
 
   #### <a name="supported-features"></a>Funzionalità supportate:
@@ -4468,7 +4518,7 @@ Il codice sorgente di qualsiasi estensione può essere modificato dagli utenti c
 
 Ogni elemento elenco del criterio è una stringa che contiene un ID di estensione e, facoltativamente, un URL di "aggiornamento" separato da un punto e virgola (;). L'ID dell'estensione è la stringa di 32 lettere che si trova, ad esempio, in edge://extensions in modalità sviluppatore. Se specificato, l'URL di "aggiornamento" dovrebbe indicare un documento XML di un manifesto di aggiornamento ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ). Per impostazione predefinita, viene utilizzato l'URL di aggiornamento del sito Web dei componenti aggiuntivi di Microsoft Edge. L'URL di "aggiornamento" impostato in questo criterio viene usato solo per l'installazione iniziale. Gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento nel manifesto dell'estensione.
 
-Nota: questo criterio non si applica alla modalità InPrivate. Leggere informazioni sulle estensioni di hosting ( https://docs.microsoft.com/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
+Nota: questo criterio non si applica alla modalità InPrivate. Informazioni sulle estensioni di hosting (./microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -4600,7 +4650,7 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionInstallSources\1 = "https://corp.conto
 
   L'impostazione di questo criterio controlla le impostazioni di gestione delle estensioni per Microsoft Edge, incluse quelle controllate da criteri correlati all'estensione esistenti. Questo criterio sostituisce tutti i criteri legacy che potrebbero essere impostati.
 
-Questo criterio esegue il mapping di un ID di estensione o di un URL di aggiornamento solo alle impostazioni specifiche. È possibile impostare una configurazione predefinita per l'ID speciale "*", che si applica a tutte le estensioni senza una configurazione personalizzata in questo criterio. Con un URL di aggiornamento, la configurazione si applica alle estensioni con l'URL di aggiornamento esatto indicato nel manifesto dell'estensione ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ).
+Questo criterio esegue il mapping di un ID di estensione o di un URL di aggiornamento solo alle impostazioni specifiche. È possibile impostare una configurazione predefinita per l'ID speciale "*", che si applica a tutte le estensioni senza una configurazione personalizzata in questo criterio. Con un URL di aggiornamento, la configurazione si applica alle estensioni con l'URL di aggiornamento esatto indicato nel manifesto dell'estensione. Per altri dettagli, vedere la guida dettagliata sul criterio ExtensionSettings disponibile all'indirizzo [https://go.microsoft.com/fwlink/?linkid=2161555](https://go.microsoft.com/fwlink/?linkid=2161555).
 
 Per bloccare le estensioni di un determinato Store di terze parti, è sufficiente bloccare update_url per tale Store. Se ad esempio vuoi bloccare le estensioni di Chrome Web Store, è possibile usare il JSON seguente.
 
@@ -4645,62 +4695,62 @@ SOFTWARE\Policies\Microsoft\Edge\ExtensionSettings = {
   "*": {
     "allowed_types": [
       "hosted_app"
-    ], 
-    "blocked_install_message": "Custom error message.", 
+    ],
+    "blocked_install_message": "Custom error message.",
     "blocked_permissions": [
-      "downloads", 
+      "downloads",
       "bookmarks"
-    ], 
+    ],
     "install_sources": [
       "https://company-intranet/apps"
-    ], 
-    "installation_mode": "blocked", 
+    ],
+    "installation_mode": "blocked",
     "runtime_allowed_hosts": [
       "*://good.contoso.com"
-    ], 
+    ],
     "runtime_blocked_hosts": [
       "*://*.contoso.com"
     ]
-  }, 
+  },
   "abcdefghijklmnopabcdefghijklmnop": {
     "blocked_permissions": [
       "history"
-    ], 
-    "installation_mode": "allowed", 
+    ],
+    "installation_mode": "allowed",
     "minimum_version_required": "1.0.1"
-  }, 
+  },
   "bcdefghijklmnopabcdefghijklmnopa": {
     "allowed_permissions": [
       "downloads"
-    ], 
-    "installation_mode": "force_installed", 
+    ],
+    "installation_mode": "force_installed",
     "runtime_allowed_hosts": [
       "*://good.contoso.com"
-    ], 
+    ],
     "runtime_blocked_hosts": [
       "*://*.contoso.com"
-    ], 
+    ],
     "update_url": "https://contoso.com/update_url"
-  }, 
+  },
   "cdefghijklmnopabcdefghijklmnopab": {
-    "blocked_install_message": "Custom error message.", 
+    "blocked_install_message": "Custom error message.",
     "installation_mode": "blocked"
-  }, 
+  },
   "defghijklmnopabcdefghijklmnopabc,efghijklmnopabcdefghijklmnopabcd": {
-    "blocked_install_message": "Custom error message.", 
+    "blocked_install_message": "Custom error message.",
     "installation_mode": "blocked"
-  }, 
+  },
   "fghijklmnopabcdefghijklmnopabcde": {
-    "blocked_install_message": "Custom removal message.", 
+    "blocked_install_message": "Custom removal message.",
     "installation_mode": "removed"
-  }, 
+  },
   "update_url:https://www.contoso.com/update.xml": {
     "allowed_permissions": [
       "downloads"
-    ], 
+    ],
     "blocked_permissions": [
       "wallpaper"
-    ], 
+    ],
     "installation_mode": "allowed"
   }
 }
@@ -5083,6 +5133,8 @@ Se non si configura questo criterio, Microsoft Edge prova a rilevare se un serve
   Se abiliti questo criterio o non lo configuri, saranno consentite le richieste di autenticazione di base per HTTP non protetto.
 
 Se disabiliti i criteri, le richieste HTTP non protette dallo schema di autenticazione di base vengono bloccate e sono consentite solo le richieste HTTPS protette.
+
+Questa impostazione dei criteri viene ignorata (e Di base è sempre proibito) se il criterio [AuthSchemes](#authschemes) è impostato e non include Di base.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -5505,7 +5557,7 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome unico di Criteri di gruppo: MAMEnabled
   - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
@@ -6803,9 +6855,9 @@ Se le dimensioni della pagina non sono disponibili nella stampante scelta dall'u
 ```
 SOFTWARE\Policies\Microsoft\Edge\PrintingPaperSizeDefault = {
   "custom_size": {
-    "height": 297000, 
+    "height": 297000,
     "width": 210000
-  }, 
+  },
   "name": "custom"
 }
 ```
@@ -6901,6 +6953,152 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ## <a name="private-network-request-settings-policies"></a>Criteri di richiesta di impostazioni rete privata
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="insecureprivatenetworkrequestsallowed"></a>InsecurePrivateNetworkRequestsAllowed
+
+  #### <a name="specifies-whether-to-allow-insecure-websites-to-make-requests-to-more-private-network-endpoints"></a>Specifica se consentire ai siti Web non sicuri di effettuare richieste agli endpoint di rete più privata
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 92 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Controlla se i siti Web non sicuri sono autorizzati a effettuare richieste agli endpoint di rete più privati.
+
+Questo criterio è correlato alla specifica CORS-RFC1918. Per ulteriori informazioni, vedere https://wicg.github.io/cors-rfc1918.
+
+Un endpoint di rete è più privato di un altro se:
+1) Il suo indirizzo IP è localhost e l'altro no.
+2) Il suo indirizzo IP è privato e l'altro è pubblico.
+In futuro, a seconda dell'evoluzione delle specifiche, questo criterio potrebbe applicarsi a tutte le richieste tra le origini dirette a IP privati o localhost.
+
+Un sito Web è considerato sicuro se soddisfa la definizione di un contesto sicuro in https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts. In caso contrario, verrà considerato come un contesto non sicuro.
+
+Quando questo criterio non è impostato o impostato su false, il comportamento predefinito per le richieste da contesti non sicuri a endpoint di rete più privati dipenderà dalla configurazione personale dell'utente per la funzionalità BlockInsecurePrivateNetworkRequests, che può essere impostata da una versione di valutazione sul campo o dalla riga di comando.
+
+Quando questo criterio è impostato su true, i siti Web non sicuri possono effettuare richieste a qualsiasi endpoint di rete, soggetti ad altri controlli tra le origini.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: InsecurePrivateNetworkRequestsAllowed
+  - Nome Criteri di gruppo: specifica se consentire ai siti Web non sicuri di effettuare richieste a endpoint di rete più privata
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni richiesta di rete privata
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: InsecurePrivateNetworkRequestsAllowed
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: InsecurePrivateNetworkRequestsAllowed
+  - Valore di esempio:
+``` xml
+<false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="insecureprivatenetworkrequestsallowedforurls"></a>InsecurePrivateNetworkRequestsAllowedForUrls
+
+  #### <a name="allow-the-listed-sites-to-make-requests-to-more-private-network-endpoints-from-insecure-contexts"></a>Consente ai siti elencati di effettuare richieste agli endpoint di rete più privata da contesti non sicuri
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 92 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Elenco di modelli URL. Sono consentite richieste di rete privata avviate da siti Web non sicuri serviti da origini corrispondenti.
+
+Se questo criterio non è impostato, questo si comporta come se fosse impostato nell'elenco vuoto.
+
+Per le origini non coperte dai modelli specificati qui, il valore predefinito globale verrà utilizzato dal criterio [InsecurePrivateNetworkRequestsAllowed,](#insecureprivatenetworkrequestsallowed) se impostato, oppure dalla configurazione personale dell'utente in caso contrario.
+
+Tenere presente che questo crtierio riguarda solo le origini non sicure, quindi le origini sicure (ad esempio https://example.com) incluse in questo elenco verranno ignorate.
+
+Per informazioni dettagliate sui modelli di URL validi, vedere [qui](/DeployEdge/edge-learnmmore-url-list-filter%20format).
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Elenco di stringhe
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: InsecurePrivateNetworkRequestsAllowedForUrls
+  - Nome Criteri di gruppo: consente ai siti elencati di effettuare richieste a endpoint di rete più privati da contesti non sicuri
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Impostazioni richiesta di rete privata
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\1 = "http://www.example.com:8080"
+SOFTWARE\Policies\Microsoft\Edge\InsecurePrivateNetworkRequestsAllowedForUrls\2 = "[*.]example.edu"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: InsecurePrivateNetworkRequestsAllowedForUrls
+  - Valore di esempio:
+``` xml
+<array>
+  <string>http://www.example.com:8080</string>
+  <string>[*.]example.edu</string>
+</array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ## <a name="proxy-server-policies"></a>Criteri dei server proxy
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -6921,7 +7119,7 @@ Se si disabilita o non si configura questo criterio, i comandi di stampa attivan
 
 Definisce un elenco di host per i quali Microsoft Edge ignora qualsiasi proxy.
 
-Questo criterio viene applicato solo se non è stato specificato il criterio [ProxySettings](#proxysettings) ed è stato selezionato fixed_servers nel criterio [ProxyMode](#proxymode). Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
+Questo criterio viene applicato solo se il criterio [ProxySettings](#proxysettings) non è specificato ed è stato selezionato fixed_servers o pac_script nel criterio [ProxyMode.](#proxymode) Se è stata selezionata un'altra modalità di configurazione dei criteri proxy, non abilitare o configurare questo criterio.
 
 Se si abilita questo criterio, è possibile creare un elenco di host per i quali Microsoft Edge non usa un proxy.
 
@@ -7267,9 +7465,9 @@ Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=
 
 ```
 SOFTWARE\Policies\Microsoft\Edge\ProxySettings = {
-  "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/", 
-  "ProxyMode": "pac_script", 
-  "ProxyPacUrl": "https://internal.site/example.pac", 
+  "ProxyBypassList": "https://www.example1.com,https://www.example2.com,https://internalsite/",
+  "ProxyMode": "pac_script",
+  "ProxyPacUrl": "https://internal.site/example.pac",
   "ProxyServer": "123.123.123.123:8080"
 }
 ```
@@ -7913,7 +8111,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -8147,7 +8345,7 @@ Se si abilita questo criterio, Microsoft Edge scarica e mostra il logo specifica
 
 Se si disabilita o non si configura questo criterio, Microsoft Edge non mostrerà alcun logo aziendale né un logo Microsoft nella pagina Nuova scheda.
 
-Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/get-filehash.
+Per informazioni sulla determinazione dell'hash SHA-256, vedere ./powershell/module/microsoft.powershell.utility/get-filehash.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -8181,11 +8379,11 @@ Per informazioni sulla determinazione dell'hash SHA-256, vedere https://docs.mic
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageCompanyLogo = {
   "default_logo": {
-    "hash": "cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29", 
+    "hash": "cd0aa9856147b6c5b4ff2b7dfee5da20aa38253099ef1b4a64aced233c9afe29",
     "url": "https://www.contoso.com/logo.png"
-  }, 
+  },
   "light_logo": {
-    "hash": "517d286edb416bb2625ccfcba9de78296e90da8e32330d4c9c8275c4c1c33737", 
+    "hash": "517d286edb416bb2625ccfcba9de78296e90da8e32330d4c9c8275c4c1c33737",
     "url": "https://www.contoso.com/light_logo.png"
   }
 }
@@ -8479,12 +8677,12 @@ Se il criterio è impostato come consigliato, i riquadri aggiunti rimarranno nel
 ```
 SOFTWARE\Policies\Microsoft\Edge\NewTabPageManagedQuickLinks = [
   {
-    "pinned": true, 
-    "title": "Contoso Portal", 
+    "pinned": true,
+    "title": "Contoso Portal",
     "url": "https://contoso.com"
-  }, 
+  },
   {
-    "title": "Fabrikam", 
+    "title": "Fabrikam",
     "url": "https://fabrikam.com"
   }
 ]
@@ -8648,17 +8846,17 @@ Criteri correlati: [NewTabPageAllowedBackgroundTypes,](#newtabpageallowedbackgro
 
   ### <a name="newtabpagesetfeedtype"></a>NewTabPageSetFeedType
 
-  #### <a name="configure-the-microsoft-edge-new-tab-page-experience-deprecated"></a>Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
+  #### <a name="configure-the-microsoft-edge-new-tab-page-experience-obsolete"></a>Configura l'esperienza della pagina Nuova scheda di Microsoft Edge (obsoleto)
 
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 92.
   #### <a name="supported-versions"></a>Versioni supportate:
 
-  - In Windows e macOS dalla versione 79 o successive
+  - In Windows e macOS da 79, fino a 92
 
   #### <a name="description"></a>Descrizione
 
-  Il criterio è deprecato perché la nuova versione della pagina Nuova scheda Enterprise non richiede più la scelta tra diversi tipi di contenuto. Al contrario, il contenuto presentato all'utente può essere controllato tramite l'interfaccia di amministrazione di Microsoft 365. Per accedere all'interfaccia di amministrazione di Microsoft 365, esegui l'accesso a https://admin.microsoft.com con l'account di amministratore. Questo criterio diventerà obsoleto dopo la versione 90 di Microsoft Edge.
+  Questo criterio è obsoleto perché la nuova versione della pagina Nuova scheda Enterprise non richiede più la scelta tra diversi tipi di contenuto. Al contrario, il contenuto presentato all'utente può essere controllato tramite l'interfaccia di amministrazione di Microsoft 365. Per accedere all'interfaccia di amministrazione di Microsoft 365, esegui l'accesso a https://admin.microsoft.com con l'account di amministratore.
 
 Consente di scegliere l'esperienza del feed di Microsoft News o Office 365 per la pagina Nuova scheda.
 
@@ -8699,8 +8897,8 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: NewTabPageSetFeedType
-  - Nome GP: configura l'esperienza della pagina Nuova scheda di Microsoft Edge (deprecato)
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina Nuova scheda
+  - Nome Criteri di gruppo: configura l'esperienza della pagina Nuova scheda di Microsoft Edge (obsoleto)
+  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Avvio, home page e pagina nuova scheda
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Avvio, home page e pagina Nuova scheda
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -8939,6 +9137,68 @@ Se non si configura il criterio, gli utenti possono scegliere se mostrare il pul
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="aadwebsitessousingthisprofileenabled"></a>AADWebSiteSSOUsingThisProfileEnabled
+
+  #### <a name="single-sign-on-for-work-or-school-sites-using-this-profile-enabled"></a>Single Sign-On per siti aziendali o dell'istituto di istruzione con questo profilo abilitato
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 92 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  L'opzione "Consenti Single Sign-On per i siti aziendali o dell'istituto di istruzione con questo profilo" consente ai profili non AAD di poter utilizzare il Single Sign-On per i siti aziendali o dell'istituto di istruzione utilizzando le credenziali presenti nella macchina. Questa opzione viene visualizzata per gli utenti finali come interruttore in Impostazioni -> Profili -> Preferenze profilo solo per i profili non AAD.
+
+Se si disabilita questo criterio, i profili non AAD non potranno utilizzare SSO con altre credenziali presenti sul computer. Questo garantisce che "Abilitazione intelligente di Single Sign-On (SSO) per tutti gli account di Windows Azure Active Directory (Azure AD) per gli utenti con un singolo profilo Microsoft Edge non Azure AD" sia disattivata.
+
+Se si abilita questo criterio o non viene configurato, i profili non AAD potranno usare il Single Sign-On con altre credenziali presenti sulla macchina e "Abilitazione intelligente di Single Sign-On (SSO) per tutti gli account di Windows Azure Active Directory (Azure AD) per gli utenti con un singolo profilo Microsoft Edge non Azure AD" continuerà a funzionare.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: AADWebSiteSSOUsingThisProfileEnabled
+  - Nome Criteri di gruppo: Single Sign-On per siti aziendali o dell'istituto di istruzione con questo profilo abilitato
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: AADWebSiteSSOUsingThisProfileEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: AADWebSiteSSOUsingThisProfileEnabled
+  - Valore di esempio:
+``` xml
+<false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="addressbarmicrosoftsearchinbingproviderenabled"></a>AddressBarMicrosoftSearchInBingProviderEnabled
 
   #### <a name="enable-microsoft-search-in-bing-suggestions-in-the-address-bar"></a>Abilita Microsoft Search nei suggerimenti di Bing nella barra degli indirizzi
@@ -9083,7 +9343,7 @@ Anche con questo criterio disabilitato, non è garantita la conservazione della 
 
 Se si abilita o non si configura questo criterio, gli utenti possono eliminare la cronologia di esplorazione e dei download.
 
-Se si disabilita questo criterio, gli utenti non possono eliminare la cronologia di esplorazione e dei download e la sincronizzazione della cronologia verrà disabilitata
+Se si disabilita questo criterio, gli utenti non possono eliminare la cronologia di esplorazione e dei download. La disabilitazione di questo criterio disabiliterà la sincronizzazione della cronologia e delle schede aperte.
 
 Se si abilita questo criterio, non abilitare il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) poiché entrambi sono associati all'eliminazione dei dati. Se si abilitano entrambi, il criterio [ClearBrowsingDataOnExit](#clearbrowsingdataonexit) ha la precedenza ed elimina tutti i dati quando si chiude Microsoft Edge, indipendentemente da come è configurato tale criterio.
 
@@ -10206,23 +10466,23 @@ Tuttavia, i modelli di corrispondenza di origine per questo criterio non possono
 SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
   {
     "allowed_origins": [
-      "example.com", 
+      "example.com",
       "http://www.example.com:8080"
-    ], 
+    ],
     "protocol": "spotify"
-  }, 
+  },
   {
     "allowed_origins": [
-      "https://example.com", 
+      "https://example.com",
       "https://.mail.example.com"
     ], 
-    "protocol": "teams"
+    "protocol": "msteams"
   }, 
   {
     "allowed_origins": [
       "*"
     ], 
-    "protocol": "outlook"
+    "protocol": "msoutlook"
   }
 ]
 ```
@@ -10230,7 +10490,7 @@ SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [
   ##### <a name="compact-example-value"></a>Valore di esempio compatto:
 
   ```
-  SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [{"allowed_origins": ["example.com", "http://www.example.com:8080"], "protocol": "spotify"}, {"allowed_origins": ["https://example.com", "https://.mail.example.com"], "protocol": "teams"}, {"allowed_origins": ["*"], "protocol": "outlook"}]
+  SOFTWARE\Policies\Microsoft\Edge\AutoLaunchProtocolsFromOrigins = [{"allowed_origins": ["example.com", "http://www.example.com:8080"], "protocol": "spotify"}, {"allowed_origins": ["https://example.com", "https://.mail.example.com"], "protocol": "msteams"}, {"allowed_origins": ["*"], "protocol": "msoutlook"}]
   ```
   
 
@@ -10542,6 +10802,80 @@ Se si abilita o non si configura questo criterio, gli utenti possono controllare
   - Valore di esempio
 ``` xml
 <false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="automatichttpsdefault"></a>AutomaticHttpsDefault
+
+  #### <a name="configure-automatic-https"></a>Configura l'HTTPS automatico
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 92 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Questo criterio consente di gestire le impostazioni per [AutomaticHttpsDefault](#automatichttpsdefault), che consente di passare le connessioni da HTTP a HTTPS.
+
+Questa funzionalità consente di proteggersi da attacchi man-in-the-middle applicando connessioni più sicure, ma gli utenti potrebbero riscontrare più errori di connessione.
+
+Nota: la configurazione di "UpgradeCapableDomains" richiede un elenco di componenti e non aggiorna queste connessioni se [ComponentUpdatesEnabled](#componentupdatesenabled) è impostato su "Disattivato".
+
+Se non si configura questo criterio, verrà abilitato [AutomaticHttpsDefault](#automatichttpsdefault) e verranno aggiornate solo le connessioni nei domini che potrebbero supportare HTTPS.
+
+Mappatura delle opzioni del criterio:
+
+* DisableAutomaticHttps (0) = La funzionalità HTTPS automatica è disabilitata.
+
+* UpgradeCapableDomains (1) = Gli spostamenti recapitati tramite HTTP vengono commutati a HTTPS, solo nei domini che potrebbero supportare HTTPS.
+
+* AlwaysUpgrade (2) = Tutti gli spostamenti recapitati su HTTP vengono commutati a HTTPS. Potrebbero verificarsi errori di connessione più spesso.
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Numero intero
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: AutomaticHttpsDefault
+  - Nome Criteri di gruppo: Configura HTTPS automatico
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: AutomaticHttpsDefault
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000002
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: AutomaticHttpsDefault
+  - Valore di esempio:
+``` xml
+<integer>2</integer>
 ```
   
 
@@ -11098,7 +11432,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -11145,7 +11479,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   Configura le impostazioni della vita utile dei dati di esplorazione per Microsoft Edge.
 Questo criterio Controlla la vita utile dei dati di esplorazione selezionati. Questo criterio non ha alcun effetto se la sincronizzazione è abilitata.
 I tipi di dati disponibili sono "browsing_history", "download_history", "cookies_and_other_site_data", "cached_images_and_files", "password_signin", "riempimento automatico", "site_settings" e "hosted_app_data".
-Microsoft Edge rimuoverà periodicamente i dati dei tipi selezionati meno recenti di "time_to_live_in_hours". Dato che l'eliminazione dei dati avviene solo a determinati intervalli, alcuni dati potrebbero essere mantenuti leggermente più a lungo, ma mai più del doppio del tempo "time_to_live_in_hours" previsto.
+Microsoft Edge rimuoverà periodicamente i dati dei tipi selezionati meno recenti di "time_to_live_in_hours". L'eliminazione dei dati scaduti avverrà 15 secondi dopo l'avvio del browser, e in seguito ogni ora mentre il browser è in esecuzione.
 
 
   #### <a name="supported-features"></a>Funzionalità supportate:
@@ -11182,14 +11516,14 @@ SOFTWARE\Policies\Microsoft\Edge\BrowsingDataLifetime = [
   {
     "data_types": [
       "browsing_history"
-    ], 
+    ],
     "time_to_live_in_hours": 24
-  }, 
+  },
   {
     "data_types": [
-      "password_signin", 
+      "password_signin",
       "autofill"
-    ], 
+    ],
     "time_to_live_in_hours": 12
   }
 ]
@@ -11333,6 +11667,68 @@ Non funzionerà in Microsoft Edge versione 92, quando è prevista la rimozione d
   - Valore di esempio
 ``` xml
 <false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="cecpq2enabled"></a>CECPQ2Enabled
+
+  #### <a name="cecpq2-post-quantum-key-agreement-enabled-for-tls"></a>CECPQ2 accordo chiave post-quantistico abilitato per TLS
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 93 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Se questo criterio non è configurato o è impostato su abilitato, Microsoft Edge seguirà il processo di implementazione predefinito per CECPQ2, un algoritmo di accordo chiave post-quantum in TLS.
+
+CeCPQ2 genera messaggi TLS più grandi che, in rari casi, possono attivare bug in alcuni hardware di rete. Questo criterio può essere impostato su False per disabilitare CECPQ2 durante la risoluzione dei problemi di rete.
+
+Questo criterio è una misura temporanea e verrà rimosso nelle versioni future di Microsoft Edge.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: CECPQ2Enabled
+  - Nome Criteri di gruppo: CECPQ2 post-quantum key-agreement abilitato per TLS
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: CECPQ2Enabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: CECPQ2Enabled
+  - Valore di esempio:
+``` xml
+<true/>
 ```
   
 
@@ -11769,6 +12165,16 @@ Mapping delle opzioni del criterio:
 
 * collections_share (collections_share) = condivisione di raccolte
 
+* local_pdf (local_pdf) = Salva i FILE PDF locali nelle raccolte per OneDrive
+
+* send_word (send_word) = Invia una raccolta a Microsoft Word
+
+* send_excel (send_excel) = Invia una raccolta a Microsoft Excel
+
+* send_onenote (send_onenote) = Invia una raccolta a Microsoft OneNote
+
+* send_pinterest (send_pinterest) = Invia una raccolta a Pinterest
+
 Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
@@ -11803,6 +12209,11 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 ```
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\1 = "pinterest_suggestions"
 SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "collections_share"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\3 = "local_pdf"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\4 = "send_word"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\5 = "send_excel"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\6 = "send_onenote"
+SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\7 = "send_pinterest"
 
 ```
 
@@ -11814,6 +12225,11 @@ SOFTWARE\Policies\Microsoft\Edge\CollectionsServicesAndExportsBlockList\2 = "col
 <array>
   <string>pinterest_suggestions</string>
   <string>collections_share</string>
+  <string>local_pdf</string>
+  <string>send_word</string>
+  <string>send_excel</string>
+  <string>send_onenote</string>
+  <string>send_pinterest</string>
 </array>
 ```
   
@@ -12115,7 +12531,7 @@ Se si abilita questo criterio e lo si imposta su "SignInAndMakeDomainAccountNonR
 
 Se si imposta questo criterio su “Disabilitato” o non lo si imposta, Microsoft Edge non eseguirà automaticamente l’accesso degli utenti che usano computer aggiunti al dominio con account Active Directory.
 
-Da Microsoft Edge 89 in poi, se è presente un profilo locale esistente con sincronizzazione disabilitata e il computer è connesso in modalità ibrida, ossia dispone di un account di Azure Active Directory, questo eseguirà l'aggiornamento automatico del profilo locale al profilo di Azure AD per ottenere funzionalità complete di sincronizzazione di Azure Active Directory.
+Da Microsoft Edge 89 in poi, se è presente un profilo locale esistente con il criterio [RoamingProfileSupportEnabled](#roamingprofilesupportenabled) disabilitato e la macchina è ora unita ibridamente, ad esempio dispone di un account di Azure Active Directory, questo eseguirà l'aggiornamento automatico del profilo locale al profilo di Azure AD per ottenere funzionalità complete di sincronizzazione di Azure Active Directory.
 
 Mapping delle opzioni del criterio:
 
@@ -13712,11 +14128,13 @@ Se si disabilita questo criterio, gli utenti non possono accedere a Raccolte in 
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio consente agli utenti di confrontare i prezzi di un prodotto che stanno esaminando, ottenere tagliandi o buoni sconto dal sito in cui si trovano, oppure riscattare automaticamente i tagliandi durante l'estrazione.
+  Questo criterio consente agli utenti di confrontare i prezzi di un prodotto che stanno esaminando, ottenere coupon o sconti dal sito Web, applicare automaticamente i coupon e velocizzare il checkout usando i dati di riempimento automatico.
 
-Se il criterio non viene abilitato o configurato le caratteristiche di shopping, come il confronto dei prezzi, i tagliandi e i buoni sconto, saranno applicati automaticamente ai domini commerciali. I coupon per il rivenditore corrente e i prezzi di altri rivenditori verranno recuperati da un server.
+Se si abilita o non si configura questo criterio, le funzionalità di acquisto come il confronto dei prezzi, i coupon, gli sconti e il checkout rapido verranno applicate automaticamente ai domini di vendita al dettaglio. I coupon per il rivenditore corrente e i prezzi di altri rivenditori verranno recuperati da un server.
 
-Se questo criterio viene disabilitato le funzionalità di shopping, come il confronto dei prezzi, i tagliandi e i buoni sconto, non saranno disponibili automaticamente per i domini di rivendita. 
+Se questo criterio viene disabilitato le funzionalità di acquisto, come il confronto dei prezzi, i coupon e gli sconti e il checkout rapido non saranno disponibili automaticamente per i domini di rivendita. 
+
+A partire dalla versione 90.0.818.56, il comportamento della messaggistica che informa gli utenti che è disponibile un coupon, uno sconto, un confronto prezzi o una cronologia dei prezzi sui domini di acquisto viene eseguito anche tramite un banner orizzontale sotto la barra degli indirizzi. In precedenza questo messaggio era eseguito sulla barra degli indirizzi.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -14033,13 +14451,13 @@ Se si disabilita o non si configura il criterio, Microsoft Edge non eseguirà i 
 
   ### <a name="enablesha1forlocalanchors"></a>EnableSha1ForLocalAnchors
 
-  #### <a name="allow-certificates-signed-using-sha-1-when-issued-by-local-trust-anchors-deprecated"></a>Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato)
+  #### <a name="allow-certificates-signed-using-sha-1-when-issued-by-local-trust-anchors-obsolete"></a>Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (obsoleto)
 
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 91.
   #### <a name="supported-versions"></a>Versioni supportate:
 
-  - In Windows e macOS dalla versione 85 o successive
+  - In Windows e macOS da 85, fino a 91
 
   #### <a name="description"></a>Descrizione
 
@@ -14066,8 +14484,8 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: EnableSha1ForLocalAnchors
-  - Nome Criteri di gruppo: Consente certificati firmati SHA-1 quando sono emessi da trust anchor locali (deprecato) 
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Consenti certificati firmati con SHA-1 quando emessi da trust anchor locali (obsoleto)
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -14271,8 +14689,8 @@ Si noti che mentre nell'esempio precedente viene mostrata la soppressione degli 
   ##### <a name="example-value"></a>Valore di esempio
 
 ```
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"domains": ["https://contoso.com", "contoso2.com"], "file_extension": "jnlp"}
-SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"domains": ["*"], "file_extension": "swf"}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\1 = {"file_extension": "jnlp", "domains": ["https://contoso.com", "contoso2.com"]}
+SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWarnings\2 = {"file_extension": "swf", "domains": ["*"]}
 
 ```
 
@@ -14282,8 +14700,8 @@ SOFTWARE\Policies\Microsoft\Edge\ExemptDomainFileTypePairsFromFileTypeDownloadWa
   - Valore di esempio
 ``` xml
 <array>
-  <string>{'domains': ['https://contoso.com', 'contoso2.com'], 'file_extension': 'jnlp'}</string>
-  <string>{'domains': ['*'], 'file_extension': 'swf'}</string>
+  <string>{'file_extension': 'jnlp', 'domains': ['https://contoso.com', 'contoso2.com']}</string>
+  <string>{'file_extension': 'swf', 'domains': ['*']}</string>
 </array>
 ```
   
@@ -14369,6 +14787,85 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   - Valore di esempio
 ``` xml
 <integer>2</integer>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="explicitlyallowednetworkports"></a>ExplicitlyAllowedNetworkPorts
+
+  #### <a name="explicitly-allowed-network-ports"></a>Porte di rete esplicitamente consentite
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Questo criterio consente di ignorare l'elenco delle porte con restrizioni integrato in Microsoft Edge. Il set di porte è definito come un elenco separato da virgole su cui devono essere consentite le connessioni in uscita.
+
+Le porte sono limitate per impedire che Microsoft Edge venga utilizzato come vettore per sfruttare varie vulnerabilità di rete. L'impostazione di questo criterio può esporre la rete ad attacchi. Questo criterio è inteso come soluzione temporanea per il codice di errore "ERR_UNSAFE_PORT" durante la migrazione di un servizio in esecuzione su una porta bloccata a una porta standard, ad esempio la porta 80 o 443.
+
+I siti Web dannosi possono facilmente rilevare che questa criterio è impostato e per quali porte, e utilizzare tali informazioni per indirizzare gli attacchi.
+
+Se si lascia il valore vuoto o non impostato, tutte le porte con restrizioni verranno bloccate. I valori di porta non validi impostati tramite questo criterio verranno ignorati, mentre quelli validi verranno comunque applicati.
+
+Questo criterio sostituisce l'opzione della riga di comando "--explicitly-allowed-ports".
+
+Mappatura delle opzioni del criterio:
+
+* 554 (554) = porta 554 (scadenza 15/10/2021)
+
+* 10080 (10080) = porta 10080 (scadenza 01/04/2022)
+
+* 6566 (6566) = porta 6566 (scadenza 15/10/2021)
+
+Durante la configurazione di questo criterio, utilizzare le informazioni precedenti.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Elenco di stringhe
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: ExplicitlyAllowedNetworkPorts
+  - Nome Criteri di gruppo: Porte di rete esplicitamente consentite
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge\ExplicitlyAllowedNetworkPorts
+  - Percorso (consigliato): N/D
+  - Nome valore: 1, 2, 3, ...
+  - Tipo valore: elenco di REG_SZ
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+SOFTWARE\Policies\Microsoft\Edge\ExplicitlyAllowedNetworkPorts\1 = "10080"
+
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: ExplicitlyAllowedNetworkPorts
+  - Valore di esempio:
+``` xml
+<array>
+  <string>10080</string>
+</array>
 ```
   
 
@@ -15469,6 +15966,68 @@ Se si disabilita questo criterio, l'accelerazione hardware è disabilitata.
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="headlessmodeenabled"></a>HeadlessModeEnabled
+
+  #### <a name="control-use-of-the-headless-mode"></a>Controlla l'uso della modalità Headless
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 92 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Questa impostazione di criteri consente di decidere se gli utenti possono avviare Microsoft Edge in modalità headless.
+
+Se si abilita o non si configura questo criterio, Microsoft Edge consente l'uso della modalità headless.
+
+Se si disabilita questo criterio, Microsoft Edge nega l'uso della modalità headless.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: HeadlessModeEnabled
+  - Nome Criteri di gruppo: Controlla l'uso della modalità Headless
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: HeadlessModeEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: HeadlessModeEnabled
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="hidefirstrunexperience"></a>HideFirstRunExperience
 
   #### <a name="hide-the-first-run-experience-and-splash-screen"></a>Nasconde l'esperienza della first-run experience e la schermata iniziale
@@ -16422,6 +16981,67 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="importstartuppagesettings"></a>ImportStartupPageSettings
+
+  #### <a name="allow-importing-of-startup-page-settings"></a>Consente l'importazione delle impostazioni della home page
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Consente agli utenti di importare le impostazioni di avvio da un altro browser in Microsoft Edge.
+
+Se si abilita questo criterio, le impostazioni di avvio vengono sempre importate.
+
+Se si disabilita questo criterio, le impostazioni di avvio non vengono importate alla prima esecuzione o durante l'importazione manuale.
+
+Se non si configura questo criterio, le impostazioni di avvio vengono importate alla prima esecuzione e gli utenti possono scegliere se importare manualmente questi dati selezionando l'opzione impostazioni del browser durante le sessioni di esplorazione successive.
+
+È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le impostazioni di avvio nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **impostazioni del browser** durante l'importazione manuale.
+
+**Nota**: al momento questo criterio gestisce l'importazione dai browser Versione legacy di Microsoft Edge e Google Chrome (in Windows 7, 8 e 10).
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: ImportStartupPageSettings
+  - Nome Criteri di gruppo: Consente l'importazione delle impostazioni della home page
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: ImportStartupPageSettings
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="inprivatemodeavailability"></a>InPrivateModeAvailability
 
   #### <a name="configure-inprivate-mode-availability"></a>Configura la disponibilità della modalità InPrivate
@@ -16876,7 +17496,7 @@ SOFTWARE\Policies\Microsoft\Edge\InternetExplorerIntegrationLocalFileExtensionAl
 
   ### <a name="internetexplorerintegrationlocalfileshowcontextmenu"></a>InternetExplorerIntegrationLocalFileShowContextMenu
 
-  #### <a name="show-context-menu-to-open-a-link-in-internet-explorer-mode"></a>Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
+  #### <a name="show-context-menu-to-open-a-file-link-in-internet-explorer-mode"></a>Mostra il menu di scelta rapida per aprire un collegamento file:// in modalità Internet Explorer
 
   
   
@@ -16893,6 +17513,8 @@ Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLe
 Se si imposta questo criterio su true, la voce di menu di scelta rapida "Apri collegamento nella nuova modalità Internet Explorer" sarà disponibile per i collegamenti a file://.
 
 Se si imposta questo criterio su false o non lo si configura, la voce di menu di scelta rapida non verrà aggiunta.
+
+Se il criterio [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) consente agli utenti di ricaricare i siti in modalità Internet Explorer, la voce del menu di scelta rapida "Apri collegamento in una nuova scheda in modalità Internet Explorer" sarà disponibile per tutti i collegamenti, ad eccezione dei collegamenti ai siti configurati in modo esplicito dall'elenco dei siti in modalità Microsoft Edge. In questo caso, se si imposta questo criterio su true, la voce del menu di scelta rapida sarà disponibile per i collegamenti file:// e per i siti configurati per l'utilizzo in modalità Microsoft Edge. Se si imposta questo criterio su false o non lo si configura, questo non ha alcun effetto.
 
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
 
@@ -16911,8 +17533,8 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco GP: InternetExplorerIntegrationLocalFileShowContextMenu
-  - GP Name: Mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Mostra il menu di scelta rapida per aprire un collegamento file:// in modalità Internet Explorer
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -16921,6 +17543,132 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
   - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
   - Percorso (consigliato): N/D
   - Nome valore: InternetExplorerIntegrationLocalFileShowContextMenu
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationlocalsitelistexpirationdays"></a>InternetExplorerIntegrationLocalSiteListExpirationDays
+
+  #### <a name="specify-the-number-of-days-that-a-site-remains-on-the-local-ie-mode-site-list"></a>Specifica il numero di giorni in cui un sito rimane nell'elenco dei siti della modalità IE locale
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows da 92 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Se il criterio [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) è abilitato o non configurato, gli utenti potranno indicare a Microsoft Edge di caricare pagine specifiche in modalità Internet Explorer per un numero limitato di giorni.
+
+È possibile utilizzare questa impostazione per determinare il numero di giorni in cui la configurazione viene memorizzata nel browser. Al termine di questo periodo, la singola pagina non verrà più caricata automaticamente in modalità IE.
+
+Se si disabilita il criterio [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed), questo non ha alcun effetto.
+
+Se si disabilita o non si configura questo criterio, viene usato il valore predefinito di 30 giorni.
+
+Se si abilita questo criterio, è necessario immettere il numero di giorni per i quali i siti vengono conservati nell'elenco dei siti locali dell'utente in Microsoft Edge. Il valore può essere compreso tra 0 e 90 giorni.
+
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Numero intero
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: InternetExplorerIntegrationLocalSiteListExpirationDays
+  - Nome Criteri di gruppo: Specifica il numero di giorni in cui un sito rimane nell'elenco dei siti della modalità IE locale
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: InternetExplorerIntegrationLocalSiteListExpirationDays
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x0000001e
+```
+
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="internetexplorerintegrationreloadiniemodeallowed"></a>InternetExplorerIntegrationReloadInIEModeAllowed
+
+  #### <a name="allow-unconfigured-sites-to-be-reloaded-in-internet-explorer-mode"></a>Consente di ricaricare i siti non configurati in modalità Internet Explorer
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows da 92 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Questo criterio consente agli utenti di ricaricare i siti non configurati (non configurati nell'elenco siti in modalità Enterprise) in modalità Internet Explorer durante l'esplorazione in Microsoft Edge e un sito richiede Internet Explorer per la compatibilità.
+
+Dopo che un sito è stato ricaricato in modalità Internet Explorer, gli spostamenti "nella pagina" rimarranno in modalità Internet Explorer (ad esempio, un collegamento, uno script o un modulo nella pagina o un reindirizzamento sul lato server da un altro spostamento "nella pagina"). Gli utenti possono scegliere di uscire dalla modalità Internet Explorer, oppure Microsoft Edge esce automaticamente dalla modalità Internet Explorer quando si verifica uno spostamento che non è "nella pagina", ad esempio utilizzando la barra degli indirizzi, il pulsante Indietro o un collegamento preferito.
+
+Gli utenti possono anche facoltativamente indicare a Microsoft Edge di utilizzare la modalità Internet Explorer per il sito in futuro. Questa scelta verrà memorizzata per un periodo di tempo gestito dal criterio [InternetExplorerIntegrationLocalSiteListExpirationDays.](#internetexplorerintegrationlocalsitelistexpirationdays)
+
+Se il criterio [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) è impostato su "IEMode", i siti configurati esplicitamente dall'elenco siti del criterio [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) per l'utilizzo di Microsoft Edge non possono essere ricaricati in modalità Internet Explorer e i siti configurati dall'elenco dei siti o dal criterio [SendIntranetToInternetExplorer](#sendintranettointernetexplorer) per l'utilizzo della modalità Internet Explorer non possono uscire dalla modalità Internet Explorer.
+
+Se si abilita questo criterio, gli utenti possono ricaricare i siti non configurati in modalità Internet Explorer.
+
+Se si disabilita questo criterio, agli utenti non è consentito ricaricare i siti non configurati in modalità Internet Explorer.
+
+Se si abilita questo criterio, questo ha la precedenza su come è stato configurato il criterio [InternetExplorerIntegrationTestingAllowed](#internetexplorerintegrationtestingallowed) e tale criterio verrà disabilitato.
+
+Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2094210](https://go.microsoft.com/fwlink/?linkid=2094210)
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: InternetExplorerIntegrationReloadInIEModeAllowed
+  - Nome Criteri di gruppo: Consente di ricaricare i siti non configurati in modalità Internet Explorer
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: InternetExplorerIntegrationReloadInIEModeAllowed
   - Tipo valore: REG_DWORD
 
   ##### <a name="example-value"></a>Valore di esempio
@@ -17010,6 +17758,8 @@ Se si imposta questo criterio su “AutomaticNavigationsOnly”, si ottiene l'es
 
 Se si imposta questo criterio su “AllInPageNavigations”, tutti gli spostamenti dalle pagine caricate in modalità IE verso siti non configurati vengono mantenuti in modalità Internet Explorer (scelta meno consigliata).
 
+Se il criterio [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) consente agli utenti di ricaricare i siti in modalità Internet Explorer, tutti gli spostamenti nella pagina da siti non configurati che gli utenti hanno scelto di ricaricare in modalità Internet Explorer verranno mantenuti in modalità Internet Explorer, indipendentemente dalla configurazione di questo criterio.
+
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2105106](https://go.microsoft.com/fwlink/?linkid=2105106)
 
 Mapping delle opzioni del criterio:
@@ -17061,9 +17811,9 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   ### <a name="internetexplorerintegrationtestingallowed"></a>InternetExplorerIntegrationTestingAllowed
 
-  #### <a name="allow-internet-explorer-mode-testing"></a>Consenti il test della modalità di Internet Explorer
+  #### <a name="allow-internet-explorer-mode-testing-deprecated"></a>Consente test in modalità Internet Explorer (deprecato)
 
-  
+  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
   #### <a name="supported-versions"></a>Versioni supportate:
 
@@ -17071,7 +17821,9 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio consente agli utenti di testare le applicazioni in modalità Internet Explorer aprendo una scheda in modalità Internet Explorer in Microsoft Edge.
+  Questo criterio è deprecato, usare invece il criterio [InternetExplorerIntegrationReloadInIEModeAllowed.](#internetexplorerintegrationreloadiniemodeallowed) Non funziona in Microsoft Edge versione 95.
+
+Questo criterio consente agli utenti di testare le applicazioni in modalità Internet Explorer aprendo una scheda in modalità Internet Explorer in Microsoft Edge.
 
 Gli utenti possono farlo attraverso il menu "Altri strumenti" selezionando "Apri siti in modalità Internet Explorer".
 
@@ -17079,7 +17831,7 @@ Inoltre, gli utenti possono testare le loro applicazioni in un browser moderno s
 
 Questa impostazione funziona in combinazione con: [InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel) impostato su' IEMode '.
 
-Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet Explorer sarà visibile in "Altri strumenti". Gli utenti possono visualizzare i propri siti in modalità Internet Explorer in questa scheda. Un'altra opzione per "Apri siti in modalità Edge" sarà visibile anche in "Altri strumenti" per consentire di testare i siti in un browser moderno senza rimuoverli dall'elenco dei siti.
+Se si abilita questo criterio, l'opzione per aprire i siti in modalità Internet Explorer sarà visibile in "Altri strumenti". Gli utenti possono visualizzare i propri siti in modalità Internet Explorer in questa scheda. Un'altra opzione per "Apri siti in modalità Edge" sarà visibile anche in "Altri strumenti" per consentire di testare i siti in un browser moderno senza rimuoverli dall'elenco dei siti. Se il criterio [InternetExplorerIntegrationReloadInIEModeAllowed](#internetexplorerintegrationreloadiniemodeallowed) è abilitato ha la precedenza, e queste opzioni non saranno visibili in "Altri strumenti".
 
 Se si disabilitano o non si configurano i criteri, gli utenti non potranno vedere le opzioni "Apri in modalità Internet Explorer" e "Apri in modalità Edge" nel menu "Altri strumenti". Tuttavia, gli utenti possono configurare queste opzioni con il contrassegno --ie-mode-test.
 
@@ -17098,8 +17850,8 @@ Se si disabilitano o non si configurano i criteri, gli utenti non potranno veder
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationTestingAllowed
-  - Nome Criteri di gruppo: consenti test della modalità Internet Explorer
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Consente test in modalità Internet Explorer (deprecato)
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -17208,15 +17960,13 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  Specifica le origini da eseguire in isolamento, nel relativo processo.
+  Specificare le origini da eseguire in un processo isolato.
 
-Inoltre, questo processo isola le origini denominate dai sottodomini (ad esempio, specificando https://contoso.com/, https://foo.contoso.com/ verrà isolato come parte del sito https://contoso.com/.
+Per impostazione predefinita, Microsoft Edge isola le pagine da ogni sito nel proprio processo. Questo criterio consente un isolamento più granulare in base all'origine anziché al sito. Ad esempio, se si specifica https://subdomain.contoso.com/, le pagine di https://subdomain.contoso.com/ verranno isolate in un processo diverso rispetto alle pagine di altre origini all'interno del sito https://contoso.com/.
 
-Se il criterio è abilitato, ognuna delle origini denominate in un elenco con valori separati da virgole verrà eseguita in un processo specifico.
+Se si abilita questo criterio, ognuna delle origini denominate in un elenco con valori separati da virgole verrà eseguita in un processo specifico.
 
-Se si disabilita questo criterio, vengono disabilitate entrambe le funzionalità "IsolateOrigins" e "SitePerProcess". Gli utenti possono comunque abilitare il criterio "IsolateOrigins" manualmente, tramite i contrassegni della riga di comando.
-
-Se non si configura il criterio, l'utente può modificare tale impostazione.
+Se si disabilita o non si configura questo criterio, le pagine verranno isolate in base al sito.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17258,6 +18008,63 @@ Se non si configura il criterio, l'utente può modificare tale impostazione.
 ``` xml
 <string>https://contoso.com/,https://fabrikam.com/</string>
 ```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="localbrowserdatashareenabled"></a>LocalBrowserDataShareEnabled
+
+  #### <a name="enable-windows-to-search-local-microsoft-edge-browsing-data"></a>Consente a Windows di cercare i dati di esplorazione locali di Microsoft Edge
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows da 93 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Consente a Windows di indicizzare i dati di esplorazione di Microsoft Edge archiviati localmente nel dispositivo dell'utente e consente agli utenti di trovare e avviare i dati di esplorazione archiviati in precedenza direttamente dalle funzionalità di Windows come la casella di ricerca sulla barra delle applicazioni in Windows.
+
+Se si abilita o non si configura questo criterio, Microsoft Edge pubblicherà i dati di esplorazione locali nell'indicizzatore di Windows.
+
+Se si disabilita questo criterio, Microsoft Edge non condividerà i dati con l'indicizzatore di Windows.
+
+Disabilitando questo criterio, Microsoft Edge rimuoverà i dati condivisi con Windows nel dispositivo e interromperà la condivisione dei nuovi dati di esplorazione.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: sì
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: LocalBrowserDataShareEnabled
+  - Nome Criteri di gruppo: Consente a Windows di cercare i dati di esplorazione locali di Microsoft Edge
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): SOFTWARE\Criteri\Microsoft\Edge\Consigliati
+  - Nome valore: LocalBrowserDataShareEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000000
+```
+
   
 
   [Torna all'inizio](#microsoft-edge---policies)
@@ -17379,13 +18186,13 @@ Questo criterio richiede il riavvio del browser per completare l'applicazione.
 ```
 SOFTWARE\Policies\Microsoft\Edge\ManagedConfigurationPerOrigin = [
   {
-    "managed_configuration_hash": "asd891jedasd12ue9h", 
-    "managed_configuration_url": "https://static.contoso.com/configuration.json", 
+    "managed_configuration_hash": "asd891jedasd12ue9h",
+    "managed_configuration_url": "https://static.contoso.com/configuration.json",
     "origin": "https://www.contoso.com"
-  }, 
+  },
   {
-    "managed_configuration_hash": "djio12easd89u12aws", 
-    "managed_configuration_url": "https://static.contoso.com/configuration2.json", 
+    "managed_configuration_hash": "djio12easd89u12aws",
+    "managed_configuration_url": "https://static.contoso.com/configuration2.json",
     "origin": "https://www.example.com"
   }
 ]
@@ -17480,26 +18287,26 @@ I preferiti gestiti non vengono sincronizzati con l'account utente e non possono
 SOFTWARE\Policies\Microsoft\Edge\ManagedFavorites = [
   {
     "toplevel_name": "My managed favorites folder"
-  }, 
+  },
   {
-    "name": "Microsoft", 
+    "name": "Microsoft",
     "url": "microsoft.com"
-  }, 
+  },
   {
-    "name": "Bing", 
+    "name": "Bing",
     "url": "bing.com"
-  }, 
+  },
   {
     "children": [
       {
-        "name": "Microsoft Edge Insiders", 
+        "name": "Microsoft Edge Insiders",
         "url": "www.microsoftedgeinsider.com"
-      }, 
+      },
       {
-        "name": "Microsoft Edge", 
+        "name": "Microsoft Edge",
         "url": "www.microsoft.com/windows/microsoft-edge"
       }
-    ], 
+    ],
     "name": "Microsoft Edge links"
   }
 ]
@@ -17616,33 +18423,33 @@ Se il criterio [DefaultSearchProviderSearchURL](#defaultsearchprovidersearchurl)
 SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
   {
     "allow_search_engine_discovery": true
-  }, 
+  },
   {
-    "is_default": true, 
-    "keyword": "example1.com", 
-    "name": "Example1", 
-    "search_url": "https://www.example1.com/search?q={searchTerms}", 
+    "is_default": true,
+    "keyword": "example1.com",
+    "name": "Example1",
+    "search_url": "https://www.example1.com/search?q={searchTerms}",
     "suggest_url": "https://www.example1.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "image_search_post_params": "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}", 
-    "image_search_url": "https://www.example2.com/images/detail/search?iss=sbiupload", 
-    "keyword": "example2.com", 
-    "name": "Example2", 
-    "search_url": "https://www.example2.com/search?q={searchTerms}", 
+    "image_search_post_params": "content={imageThumbnail},url={imageURL},sbisrc={SearchSource}",
+    "image_search_url": "https://www.example2.com/images/detail/search?iss=sbiupload",
+    "keyword": "example2.com",
+    "name": "Example2",
+    "search_url": "https://www.example2.com/search?q={searchTerms}",
     "suggest_url": "https://www.example2.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "encoding": "UTF-8", 
-    "image_search_url": "https://www.example3.com/images/detail/search?iss=sbiupload", 
-    "keyword": "example3.com", 
-    "name": "Example3", 
-    "search_url": "https://www.example3.com/search?q={searchTerms}", 
+    "encoding": "UTF-8",
+    "image_search_url": "https://www.example3.com/images/detail/search?iss=sbiupload",
+    "keyword": "example3.com",
+    "name": "Example3",
+    "search_url": "https://www.example3.com/search?q={searchTerms}",
     "suggest_url": "https://www.example3.com/qbox?query={searchTerms}"
-  }, 
+  },
   {
-    "keyword": "example4.com", 
-    "name": "Example4", 
+    "keyword": "example4.com",
+    "name": "Example4",
     "search_url": "https://www.example4.com/search?q={searchTerms}"
   }
 ]
@@ -17715,6 +18522,70 @@ SOFTWARE\Policies\Microsoft\Edge\ManagedSearchEngines = [
     <string>https://www.example4.com/search?q={searchTerms}</string>
   </dict>
 </array>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
+  ### <a name="mathsolverenabled"></a>MathSolverEnabled
+
+  #### <a name="let-users-snip-a-math-problem-and-get-the-solution-with-a-step-by-step-explanation-in-microsoft-edge"></a>Consente agli utenti di catturare un problema di matematica e ottenere la soluzione con una spiegazione passo passo in Microsoft Edge
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Questo criterio consente di gestire se gli utenti possono utilizzare o meno lo strumento Math Solver in Microsoft Edge.
+
+Se si abilita o non si configura il criterio, un utente può eseguire una cattura del problema matematico e ottenere la soluzione, inclusa una spiegazione dettagliata della soluzione in un riquadro laterale di Microsoft Edge.
+
+Se si disabilita il criterio, lo strumento Math Solver sarà disabilitato e gli utenti non potranno utilizzarlo.
+
+Nota: Disattivando il criterio[](#componentupdatesenabled)ComponentUpdatesEnabled[ disabiliterà anche il componente Math Solver.](#componentupdatesenabled)
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: MathSolverEnabled
+  - Nome Criteri di gruppo: Consente agli utenti di catturare un problema di matematica e ottenere la soluzione con una spiegazione passo passo in Microsoft Edge
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: MathSolverEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: MathSolverEnabled
+  - Valore di esempio:
+``` xml
+<true/>
 ```
   
 
@@ -18304,7 +19175,7 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 
   ### <a name="personalizationreportingenabled"></a>PersonalizationReportingEnabled
 
-  #### <a name="allow-personalization-of-microsoft-services-by-sending-browsing-and-browser-related-data-to-microsoft"></a>Consentire la personalizzazione dei servizi Microsoft inviando a Microsoft dati relativi all'esplorazione e al browser
+  #### <a name="allow-personalization-of-ads-microsoft-edge-search-news-and-other-microsoft-services-by-sending-browsing-history-favorites-and-collections-usage-and-other-browsing-data-to-microsoft"></a>Consente la personalizzazione di annunci, Microsoft Edge, ricerca, notizie e altri servizi Microsoft inviando la cronologia di esplorazione, i preferiti, le raccolte, l'utilizzo e altri dati di navigazione a Microsoft
 
   
   
@@ -18314,7 +19185,7 @@ Se si abilita o non si configura questo criterio, i siti Web possono verificare 
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio impedisce a Microsoft di raccogliere la cronologia esplorazioni di Microsoft Edge di un utente, raccolte & preferiti, i dati di utilizzo del browser e la digitazione come ad esempio nella barra degli indirizzi, da usare per personalizzare la pubblicità, la ricerca, le notizie, Microsoft Edge e altri servizi Microsoft.
+  Questo criterio impedisce a Microsoft di raccogliere la cronologia di esplorazione di Microsoft Edge, i preferiti e le raccolte, l'utilizzo e altri dati di esplorazione da usare per personalizzare pubblicità, ricerca, notizie, Microsoft Edge e altri servizi Microsoft.
 
 Questa impostazione non è disponibile per gli account per bambini o gli account aziendali.
 
@@ -18335,7 +19206,7 @@ Se si disabilita questo criterio, gli utenti non possono modificare o sostituire
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: PersonalizationReportingEnabled
-  - Nome Criteri di gruppo: Consenti la personalizzazione dei servizi Microsoft inviando a Microsoft i dati relativi all'esplorazione e al browser
+  - Nome Criteri di gruppo: Consente la personalizzazione di annunci, Microsoft Edge, ricerca, notizie e altri servizi Microsoft inviando la cronologia di esplorazione, i preferiti, le raccolte, l'utilizzo e altri dati di navigazione a Microsoft
   - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -18423,17 +19294,17 @@ Le impostazioni utente per abilitare o disabilitare la procedura guidata Aggiung
 
   ### <a name="proactiveauthenabled"></a>ProactiveAuthEnabled
 
-  #### <a name="enable-proactive-authentication-deprecated"></a>Abilitare l'autenticazione proattiva
+  #### <a name="enable-proactive-authentication-obsolete"></a>Abilita l'autenticazione proattiva (obsoleto)
 
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
   
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 90.
   #### <a name="supported-versions"></a>Versioni supportate:
 
-  - In Windows e macOS dalla versione 77 o successive
+  - In Windows e macOS da 77, fino a 90
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio è deprecato perché non funziona indipendentemente dall'accesso del browser. Non funzionerà in Microsoft Edge versione 91. Se si desidera configurare l'accesso al browser, usare il criterio [BrowserSignin](#browsersignin).
+  Questo criterio è obsoleto perché non funziona indipendentemente dall'accesso del browser. Non funziona in Microsoft Edge dopo la versione 90. Se si desidera configurare l'accesso al browser, usare il criterio [BrowserSignin](#browsersignin).
 
 Consente di configurare se attivare l'autenticazione proattiva in Microsoft Edge.
 
@@ -18458,8 +19329,8 @@ Se non si configura questo criterio, l'autenticazione proattiva è attivata.
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ProactiveAuthEnabled
-  - Nome Criteri di gruppo: abilita l'autenticazione proattiva (deprecata)
-  - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
+  - Nome Criteri di gruppo: Abilita autenticazione proattiva (obsoleto)
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
 
@@ -19356,10 +20227,10 @@ Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.co
   #### <a name="extend-adobe-flash-content-setting-to-all-content-obsolete"></a>Estendere l'impostazione del contenuto Adobe Flash a tutto il contenuto (obsoleto)
 
   
-  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 87.
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 88.
   #### <a name="supported-versions"></a>Versioni supportate:
 
-  - In Windows e macOS da 77 a 87
+  - In Windows e macOS da 77 a 88
 
   #### <a name="description"></a>Descrizione
 
@@ -20407,6 +21278,70 @@ SOFTWARE\Policies\Microsoft\Edge\SerialBlockedForUrls\2 = "[*.]contoso.edu"
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="sharedarraybufferunrestrictedaccessallowed"></a>SharedArrayBufferUnrestrictedAccessAllowed
+
+  #### <a name="specifies-whether-sharedarraybuffers-can-be-used-in-a-non-cross-origin-isolated-context"></a>Specifica se SharedArrayBuffers può essere utilizzato in un contesto non isolato tra le origini
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS da 91 o versioni successive
+
+  #### <a name="description"></a>Descrizione
+
+  Specifica se SharedArrayBuffers può essere utilizzato in un contesto non isolato tra le origini.  SharedArrayBuffer è un buffer di dati binari che può essere usato per creare visualizzazioni nella memoria condivisa.  SharedArrayBuffers ha una vulnerabilità di accesso alla memoria in diverse CPU popolari.
+
+Se si abilita questo criterio, i siti possono usare SharedArrayBuffers.
+
+Se si disabilita o non si configura questo criterio, ai siti viene impedito l'utilizzo di SharedArrayBuffers.
+
+Microsoft Edge richiederà l'isolamento tra le origini quando si usa SharedArrayBuffers a partire da Microsoft Edge 91 per motivi di compatibilità Web.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: no - Richiede il riavvio del browser
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: SharedArrayBufferUnrestrictedAccessAllowed
+  - Nome Criteri di gruppo: Specifica se SharedArrayBuffers può essere utilizzato in un contesto non isolato tra le origini
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: SharedArrayBufferUnrestrictedAccessAllowed
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000001
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: SharedArrayBufferUnrestrictedAccessAllowed
+  - Valore di esempio:
+``` xml
+<true/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="showmicrosoftrewards"></a>ShowMicrosoftRewards
 
   #### <a name="show-microsoft-rewards-experiences"></a>Mostra le esperienze di Microsoft Rewards
@@ -20444,7 +21379,7 @@ Se non si configurano i criteri seguenti:
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -20947,8 +21882,6 @@ Se il criterio [SpellcheckEnabled](#spellcheckenabled) è disabilitato, questo c
 
 Se una lingua è inclusa nel criterio "SpellcheckLanguage" e nel criterio [SpellcheckLanguageBlocklist](#spellchecklanguageblocklist), la lingua del controllo ortografico è abilitata.
 
-Le lingue supportate sono: af, bg, ca, cs, cy, da, de, el, en-AU, en-CA, en-GB, en-US, es, es-419, es-AR, es-ES, es-MX, es-US, et, fa, fo, fr, he, hi, hr, hu, id, it, ko, lt, lv, nb, nl, pl, pt-BR, pt-PT, ro, ru, sh, sk, sl, sq, sr, sv, ta, tg, tr, uk, vi.
-
   #### <a name="supported-features"></a>Funzionalità supportate:
 
   - Può essere obbligatorio: sì
@@ -21009,8 +21942,6 @@ Se si disabilita o non si configura questo criterio, non viene apportata alcuna 
 Se il criterio [SpellcheckEnabled](#spellcheckenabled) è disabilitato, questo criterio non avrà alcun effetto.
 
 Se una lingua è inclusa nel criterio [SpellcheckLanguage](#spellchecklanguage) e nel criterio "SpellcheckLanguageBlocklist", la lingua del controllo ortografico è abilitata.
-
-Le lingue attualmente supportate sono: af, bg, ca, cs, da, de, el, en-AU, en-CA, en-GB, en-US, es, es-419, es-AR, es-ES, es-MX, es-US, et, fa, fo, fr, he, hi, hr, hu, id, it, ko, lt, lv, nb, nl, pl, pt-BR, pt-PT, ro, ru, sh, sk, sl, sq, sr, sv, ta, tg, tr, uk, vi.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -21406,7 +22337,7 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -21541,7 +22472,7 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TargetBlankImpliesNoOpener
   - Nome Criteri di gruppo: non impostare window.opener per i collegamenti con destinazione _blank
@@ -21829,6 +22760,66 @@ Se non si configura il criterio, gli utenti possono scegliere se usare o meno la
 
   [Torna all'inizio](#microsoft-edge---policies)
 
+  ### <a name="tripledesenabled"></a>TripleDESEnabled
+
+  #### <a name="enable-3des-cipher-suites-in-tls"></a>Abilita le suite di crittografia 3DES in TLS
+
+  
+  
+  #### <a name="supported-versions"></a>Versioni supportate:
+
+  - In Windows e macOS dalla versione 93 o successiva
+
+  #### <a name="description"></a>Descrizione
+
+  Avviso: 3DES verrà completamente rimosso da Microsoft Edge nella versione 95 (approssimativamente ad ottobre 2021) e questo criterio smetterà di funzionare.
+
+Se il criterio è impostato su true, le suite di crittografia 3DES in TLS verranno abilitate. Se è impostato su false, verranno disabilitate. Se il criterio non è impostato, le suite di crittografia 3DES sono disabilitate per impostazione predefinita. Questo criterio può essere utilizzato per mantenere temporaneamente la compatibilità con un server obsoleto. Si tratta di una misura stopgap e il server deve essere riconfigurato.
+
+  #### <a name="supported-features"></a>Funzionalità supportate:
+
+  - Può essere obbligatorio: sì
+  - Può essere consigliato: no
+  - Aggiornamento dei criteri dinamici: sì
+
+  #### <a name="data-type"></a>Tipo:
+
+  - Booleano
+
+  #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+
+  - Nome univoco Criteri di gruppo: TripleDESEnabled
+  - Nome Criteri di gruppo: Abilita suite di crittografia 3DES in TLS
+  - Percorso Criteri di gruppo (obbligatorio): modelli amministrativi/Microsoft Edge/
+  - Percorso Criteri di gruppo (consigliato): N/D
+  - Nome file ADMX Criteri di gruppo: MSEdge.admx
+
+  ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+
+  - Percorso (obbligatorio): SOFTWARE\Criteri\Microsoft\Edge
+  - Percorso (consigliato): N/D
+  - Nome valore: TripleDESEnabled
+  - Tipo valore: REG_DWORD
+
+  ##### <a name="example-value"></a>Valore di esempio
+
+```
+0x00000000
+```
+
+  #### <a name="mac-information-and-settings"></a>Informazioni e impostazioni Mac
+  
+  - Nome chiave di preferenza: TripleDESEnabled
+  - Valore di esempio:
+``` xml
+<false/>
+```
+  
+
+  [Torna all'inizio](#microsoft-edge---policies)
+
   ### <a name="urlallowlist"></a>URLAllowlist
 
   #### <a name="define-a-list-of-allowed-urls"></a>Definisce un elenco di URL consentiti
@@ -22061,7 +23052,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la funzione suggerimenti client agente utente. Non funzionerà in Microsoft Edge versione 93.
+  Questo criterio è deprecato perché è solo un meccanismo a breve termine che offre alle aziende più tempo per aggiornare i contenuti Web se e quando viene rilevata incompatibilità con la funzione suggerimenti client agente utente. Non funzionerà nella versione Microsoft Edge 94.
 
 Quando viene abilitata, la funzionalità User-Agent Client Hints invia intestazioni della richiesta granulari che forniscono informazioni sul browser utente (ad esempio, la versione dl browser) e sull’ambiente (ad esempio, l’architettura del sistema).
 
@@ -22606,17 +23597,17 @@ e 3 membri facoltativi:
 ```
 SOFTWARE\Policies\Microsoft\Edge\WebAppInstallForceList = [
   {
-    "create_desktop_shortcut": true, 
-    "default_launch_container": "window", 
+    "create_desktop_shortcut": true,
+    "default_launch_container": "window",
     "url": "https://www.contoso.com/maps"
-  }, 
+  },
   {
-    "default_launch_container": "tab", 
+    "default_launch_container": "tab",
     "url": "https://app.contoso.edu"
-  }, 
+  },
   {
-    "default_launch_container": "window", 
-    "fallback_app_name": "Editor", 
+    "default_launch_container": "window",
+    "fallback_app_name": "Editor",
     "url": "https://app.contoso.com/editor"
   }
 ]
@@ -22788,10 +23779,10 @@ Se si imposta questo criterio su False o non si imposta questo criterio, le funz
 
   ### <a name="webdriveroverridesincompatiblepolicies"></a>WebDriverOverridesIncompatiblePolicies
 
-  #### <a name="allow-webdriver-to-override-incompatible-policies-deprecated"></a>Consente a WebDriver di ignorare i criteri non compatibili (deprecato)
+  #### <a name="allow-webdriver-to-override-incompatible-policies-obsolete"></a>Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)
 
-  >DEPRECATO: questo criterio è deprecato. È attualmente supportato, ma diventerà obsoleto in una versione futura.
-  
+  >DEPRECATO: questo criterio è deprecato. Al momento è supportato, ma diventerà obsoleto in una versione futura.
+  >OBSOLETO: questo criterio è obsoleto e non funziona dopo Microsoft Edge 84.
   #### <a name="supported-versions"></a>Versioni supportate:
 
   - In Windows e macOS dalla versione 77, fino alla versione 84
@@ -22822,7 +23813,7 @@ Se il criterio è disabilitato o non configurato, WebDriver non sarà in grado d
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: WebDriverOverridesIncompatiblePolicies
-  - Nome Criteri di gruppo: Consente a WebDriver di ignorare i criteri non compatibili (deprecato)
+  - Nome Criteri di gruppo: Consente a WebDriver di eseguire l'override dei criteri non compatibili (obsoleto)
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -23362,7 +24353,7 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
   [Torna all'inizio](#microsoft-edge---policies)
 
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - [Configurazione di Microsoft Edge](configure-microsoft-edge.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
