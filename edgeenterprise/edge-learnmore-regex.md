@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Sintassi delle espressioni regolari 2
-ms.openlocfilehash: 9654a25d2c0474601fb719b145ebb1f59241a6d9
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
+ms.openlocfilehash: 5d7026a034300e098497c63911f7516f72877c5d
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980208"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617316"
 ---
-# Sintassi delle espressioni regolari 2 (RE2.h)
+# <a name="regular-expression-2-re2h-syntax"></a>Sintassi delle espressioni regolari 2 (RE2.h)
 
 Le espressioni regolari sono una notazione per la descrizione dei set di stringhe di caratteri. Quando una stringa si trova nel set descritto da una espressione regolare, spesso diciamo che l'espressione regolare corrisponda alla stringa.
 
@@ -35,7 +35,7 @@ Questa pagina elenca la sintassi delle espressioni regolari accettate da RE2.
 
 Elenca anche alcune sintassi accettate da PCRE, PERL e VIM.
 
-##  <a name="syntax-tables"></a>Tabelle della sintassi
+## <a name="syntax-tables"></a>Tabelle della sintassi
 
 | Tipi di espressioni a caratteri singoli | Esempi |
 | --- | --- |
@@ -51,12 +51,12 @@ Elenca anche alcune sintassi accettate da PCRE, PERL e VIM.
 | classe di caratteri Unicode negati (nome di una lettera) | \PN |
 | classe di caratteri Unicode negati  | \P{Greek} |
 
-| | Costrutti |
+|&nbsp;| Costrutti |
 | --- | --- |
 | xy | x seguito da y |
 | x\|y | x o y (x preferibile) |
 
-| | Ripetizioni |
+|&nbsp;| Ripetizioni |
 | --- | --- |
 | x\* | zero o più x, più è preferibile |
 | x+ | una o più x, più è preferibile |
@@ -77,7 +77,7 @@ Elenca anche alcune sintassi accettate da PCRE, PERL e VIM.
 
 Limitazione dell'implementazione: le forme di conteggio x{n,m}, x{n,} e x{n} rifiutano le forme che creano un conteggio minimo o massimo di ripetizioni superiore a 1000. Le ripetizioni illimitate non sono soggete a questa limitazione.
 
-| | Ripetizioni possessive |
+|&nbsp;| Ripetizioni possessive |
 | --- | --- |
 | x\*+ | zero o più x, possessiva (NON SUPPORTATO) |
 | x++ | una o più x, possessiva (NON SUPPORTATO) |
@@ -86,7 +86,7 @@ Limitazione dell'implementazione: le forme di conteggio x{n,m}, x{n,} e x{n} rif
 | x{n,}+ | n o più x, possessiva (NON SUPPORTATO) |
 | x{n}+ | esattamente n x, possessiva (NON SUPPORTATO) |
 
-| | Raggruppamento |
+|&nbsp;| Raggruppamento |
 | --- | --- |
 | (re) | gruppo di cattura numerato (sottocorrispondenza) |
 | (?P&lt;nome&gt;re) | gruppo di cattura numerato nominato &amp; (sottocorrispondenza) |
@@ -101,7 +101,7 @@ Limitazione dell'implementazione: le forme di conteggio x{n,m}, x{n,} e x{n} rif
 | re@&gt; | corrispondenza possessiva di re (NON SUPPORTATO) VIM |
 | %(re) | gruppo non di cattura (NON SUPPORTATO) VIM |
 
-| | Flag |
+|&nbsp;| Flag |
 | --- | --- |
 | i | non sensibile alle maiuscole (false è predefinito) |
 | m | modalità multiriga: ^ e $ corrispondono alla riga di inizio/fine oltre al testo di inizio/fine (false è predefinito) |
@@ -110,7 +110,7 @@ Limitazione dell'implementazione: le forme di conteggio x{n,m}, x{n,} e x{n} rif
 
 La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-z (configura xy, elimina z).
 
-|  | Stringhe vuote |
+|&nbsp;| Stringhe vuote |
 | --- | --- |
 | ^ | all'inizio del testo o della riga (m=true) |
 | $ | alla fine del testo (come \z non \Z) o della riga (m=true) |
@@ -141,7 +141,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | \%23c | nella colonna 23 (NON SUPPORTATO) VIM |
 | \%23v | nella colonna virtuale 23 (NON SUPPORTATO) VIM |
 
-|  | Sequenze di escape |
+|&nbsp;| Sequenze di escape |
 | --- | --- |
 | \a | campanello (≡ \007) |
 | \f | feed modulo (≡ \014) |
@@ -182,7 +182,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | \%u1234 | carattere Unicode 0x1234 (NON SUPPORTATO) VIM |
 | \%U12345678 | carattere Unicode 0x12345678 (NON SUPPORTATO) VIM |
 
-|  | Elementi delle classi di caratteri |
+|&nbsp;| Elementi delle classi di caratteri |
 | --- | --- |
 | x | carattere singolo |
 | A-Z | intervallo di caratteri (inclusivo) |
@@ -191,7 +191,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | \p{Foo} | foo classe di caratteri Unicode |
 | \pF | classe di caratteri Unicode F (nome di una lettera) |
 
-|  | Classi di caratteri nominati come elementi di classi di caratteri |
+|&nbsp;| Classi di caratteri nominati come elementi di classi di caratteri |
 | --- | --- |
 | [\d] | cifre (≡ \d) |
 | [^\d] | non cifre (≡ \D) |
@@ -232,7 +232,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | [[:word:]] | caratteri di parola (≡ [0-9A-Za-z\_]) |
 | [[:xdigit:]] | cifre esadecimali (≡ [0-9A-Fa-f]) |
 
-| | Nomi di classi di caratteri di Unicode - categoria generale |
+|&nbsp;| Nomi di classi di caratteri di Unicode - categoria generale |
 | --- | --- |
 | C | altro |
 | Cc | control |
@@ -433,7 +433,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | Yi |
 | Zanabazar / quadrato |
 
-|  | Classi di caratteri di VIM |
+|&nbsp;| Classi di caratteri di VIM |
 | --- | --- |
 | \i | carattere identificatore (NON SUPPORTATO) VIM |
 | \I | \i tranne i numeri (NON SUPPORTATO) VIM |
@@ -470,7 +470,7 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | \V | very no magic (NON SUPPORTATO) VIM |
 | \Z | ignora differenze nei caratteri di combinazione di Unicode (NON SUPPORTATO) VIM |
 
-|  | Magic |
+| &nbsp; | Magic |
 | --- | --- |
 | (?{code}) | codice Perl arbitrario (NON SUPPORTATO) PERL |
 | (??{code}) | codice Perl arbitrario posticipato (NON SUPPORTATO) PERL |
@@ -500,13 +500,13 @@ La sintassi del contrassegno è xyz (configurazione) o -xyz (eliminazione) o xy-
 | (\*BSR\_ANYCRLF) | imposta convenzione \R (NON SUPPORTATO) PCRE |
 | (\*BSR\_UNICODE) | (NON SUPPORTATO) PCRE |
 
-##  <a name="content-license"></a>Licenza dei contenuti
+## <a name="content-license"></a>Licenza dei contenuti
 
 > [!NOTE]
 > Parti di questa pagina sono modifiche basate sul lavoro creato e condiviso da Chromium.org e usate in base ai termini descritti nella [licenza Creative Commons Attribution 4.0 International](http://creativecommons.org/licenses/by/4.0/). La pagina originale è disponibile [qui](https://github.com/google/re2/wiki/Syntax).
   
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />Questo lavoro è concesso in licenza in base a una <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">licenza Creative Commons Attribution 4.0 International</a>.
 
-##  <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

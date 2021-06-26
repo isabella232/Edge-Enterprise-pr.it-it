@@ -1,6 +1,6 @@
 ---
 title: Domande frequenti sulla sincronizzazione aziendale di Microsoft Edge
-ms.author: scottbo
+ms.author: collw
 author: dan-wesley
 manager: silvanam
 ms.date: 03/08/2021
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Domande frequenti sulla sincronizzazione aziendale di Microsoft Edge.
-ms.openlocfilehash: e25ee985f65ee61dda5cacece73d43be7f1e6d7d
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 4bb41c8d7ded64fcc0b4fd4843ef2b7ec0adec23
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447870"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617766"
 ---
 # <a name="microsoft-edge-enterprise-sync-faq"></a>Domande frequenti sulla sincronizzazione aziendale di Microsoft Edge
 
@@ -59,7 +59,7 @@ La sincronizzazione aziendale dipende dalla [Azure Information Protection](https
 
 ### <a name="is-microsoft-edge-sync-based-on-enterprise-state-roaming"></a>La sincronizzazione di Microsoft Edge si basa sul servizio Enterprise State Roaming?
 
-No. ESR può essere usato per abilitare la sincronizzazione, tuttavia la sincronizzazione di Microsoft Edge non fa parte del servizio ESR. Per ulteriori informazioni, vedere [Sincronizzazione di Microsoft Edge](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-enterprise-sync) e [Microsoft Edge e Enterprise State Roaming](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-enterprise-state-roaming).
+No. ESR può essere usato per abilitare la sincronizzazione, tuttavia la sincronizzazione di Microsoft Edge non fa parte del servizio ESR. Per ulteriori informazioni, vedere [Sincronizzazione di Microsoft Edge](/DeployEdge/microsoft-edge-enterprise-sync) e [Microsoft Edge e Enterprise State Roaming](/DeployEdge/microsoft-edge-enterprise-state-roaming).
 
 ### <a name="will-microsoft-edge-ever-support-syncing-between-microsoft-edge-and-ie"></a>Microsoft Edge supporterà mai la sincronizzazione tra Microsoft Edge e Internet Explorer?
 

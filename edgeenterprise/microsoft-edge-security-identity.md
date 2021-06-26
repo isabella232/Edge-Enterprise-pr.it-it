@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Supporto e configurazione delle identità in Microsoft Edge
-ms.openlocfilehash: 8b4fe3c46e0c8dd76d0e22051fb63465e34202f2
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 34a5a4aa958873a012d0a2da4184cb508af27a8a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447540"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617916"
 ---
 # <a name="microsoft-edge-identity-support-and-configuration"></a>Supporto e configurazione delle identità in Microsoft Edge
 
@@ -91,7 +91,7 @@ Per i servizi che richiedono la delega delle credenziali di negoziazione, Micros
 
 ### <a name="proactive-authentication"></a>Autenticazione proattiva
 
-L'autenticazione proattiva è un'ottimizzazione tramite il browser dell'accesso SSO al sito Web che carica l'autenticazione frontale in determinati siti Web dei proprietari. Questa operazione migliora le prestazioni della barra degli indirizzi se l'utente usa Bing come motore di ricerca. In questo modo gli utenti avranno i risultati della ricerca personalizzati e di Microsoft Search for Business (MSB). Inoltre, consente di abilitare l'autenticazione per i servizi principali, ad esempio la pagina Nuova scheda di Office. È possibile gestire la funzionalità tramite i [Criteri ProactiveAuthEnabled]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#proactiveauthenabled).
+L'autenticazione proattiva è un'ottimizzazione tramite il browser dell'accesso SSO al sito Web che carica l'autenticazione frontale in determinati siti Web dei proprietari. Questa operazione migliora le prestazioni della barra degli indirizzi se l'utente usa Bing come motore di ricerca. In questo modo gli utenti avranno i risultati della ricerca personalizzati e di Microsoft Search for Business (MSB). Inoltre, consente di abilitare l'autenticazione per i servizi principali, ad esempio la pagina Nuova scheda di Office. È possibile gestire la funzionalità tramite i [Criteri ProactiveAuthEnabled]( /deployedge/microsoft-edge-policies#proactiveauthenabled).
 
 ### <a name="windows-hello-credui-for-ntlm-authentication"></a>Windows Hello CredUI per l'autenticazione NTLM
 

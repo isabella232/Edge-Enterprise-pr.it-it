@@ -1,21 +1,21 @@
 ---
 title: Microsoft Edge e download di contenuto misto
-ms.author: kele
+ms.author: collw
 author: dan-wesley
 manager: srugh
 ms.date: 04/30/2020
 audience: ITPro
-ms.topic: procedural
+ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Microsoft Edge e download di contenuto misto
-ms.openlocfilehash: 13cc9d935dfe415039078b2ca794945b4fa2d1a3
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: a81c44754865b2303320bfe87346c7f7533e6133
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447270"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617306"
 ---
 # <a name="learn-about-microsoft-edge-and-mixed-content-downloads"></a>Informazioni su Microsoft Edge e i download di contenuto misto
 
