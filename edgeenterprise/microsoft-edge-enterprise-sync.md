@@ -1,6 +1,6 @@
 ---
 title: Configurare la sincronizzazione aziendale di Microsoft Edge
-ms.author: scottbo
+ms.author: collw
 author: dan-wesley
 manager: silvanam
 ms.date: 03/08/2021
@@ -10,16 +10,16 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Opzioni di amministratore e utente per la configurazione di Microsoft Edge per la sincronizzazione di preferiti, password e altri dati del browser.
-ms.openlocfilehash: 93af96bd864f08bb17bb1d6f0669f602a56fd8ca
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 99edc97bd5f4bab7bf421e0d15e512c5f6f76cc0
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448120"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617756"
 ---
 # <a name="configure-microsoft-edge-enterprise-sync"></a>Configurare la sincronizzazione aziendale di Microsoft Edge
 
-Questo articolo spiega come gli amministratori possono configurare Microsoft Edge per sincronizzare i preferiti, le password e altri dati del browser degli utenti in tutti i dispositivi connessi.
+Questo articolo illustra il modo in cui gli amministratori possono configurare Microsoft Edge per sincronizzare i Preferiti, le password e altri dati del browser degli utenti in tutti i dispositivi connessi. Se non si è amministratori, consultare l'articolo per informazioni su come accedere e sincronizzare Microsoft Edge nei dispositivi. [Accedere per sincronizzare Microsoft Edge nei dispositivi](https://support.microsoft.com/microsoft-edge/sign-in-to-sync-microsoft-edge-across-devices-e6ffa79b-ed52-aa32-47e2-5d5597fe4674).
 
 > [!NOTE]
 > Si applica a Microsoft Edge versione 77 o successiva, se non diversamente specificato.
@@ -61,7 +61,7 @@ Gli amministratori possono usare i seguenti criteri di gruppo per configurare e 
 - [AllowDeletingBrowserHistory](./microsoft-edge-policies.md#allowdeletingbrowserhistory): quando questo criterio è disabilitato, verrà disabilitata anche la sincronizzazione della cronologia.
 - [SyncTypesListDisabled](./microsoft-edge-policies.md#synctypeslistdisabled): consente di configurare l'elenco dei tipi esclusi dalla sincronizzazione.
 - [RoamingProfileSupportEnabled](./microsoft-edge-policies.md#roamingprofilesupportenabled): consente ai profili di Active Directory (AD) di usare lo spazio di archiviazione locale. Per altre informazioni, vedere [Sincronizzazione locale per gli utenti di Active Directory (AD)](./microsoft-edge-on-premises-sync.md).
-- [ForceSync]( https://docs.microsoft.com/deployedge/microsoft-edge-policies#forcesync): attivare la sincronizzazione per default e non richiedere il consenso dell'utente per la sincronizzazione.  
+- [ForceSync](/deployedge/microsoft-edge-policies#forcesync): attivare la sincronizzazione per default e non richiedere il consenso dell'utente per la sincronizzazione.  
 
 ## <a name="configure-microsoft-edge-sync"></a>Configurare Microsoft Edge Sync
 
