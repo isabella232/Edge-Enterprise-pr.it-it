@@ -1,21 +1,21 @@
 ---
 title: Materiali di adozione del cliente per Microsoft Edge
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlynd
-ms.date: 03/01/2021
+ms.date: 06/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Materiali di adozione del cliente per Microsoft Edge
-ms.openlocfilehash: 4752b0b5221d0134c68a50153679979449d893ca
-ms.sourcegitcommit: 81383d92dba379d5e6073066c4cdcc2761390f8f
+ms.openlocfilehash: f8a37bceeee9b55587a14a97a5b64b73ec27d23f
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/03/2021
-ms.locfileid: "11385369"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617841"
 ---
 # <a name="customer-adoption-materials-for-microsoft-edge"></a>Materiali di adozione del cliente per Microsoft Edge
 
@@ -26,17 +26,28 @@ Controllare di nuovo se sono disponibili altri materiali.
 ## <a name="customer-adoption-kit"></a>Kit di adozione del cliente
 
 Il kit di adozione del cliente include quanto segue:
-
-- Guida alla distribuzione IT
-- Guida utente Come iniziare
-- Modelli di posta elettronica per l'adozione
-- Banner
-- Insegna digitale
-- One-Pager
-- Video dimostrativi e GIF
-- Collegamenti alle risorse Web
+- Kit di ritiro di Internet Explorer **(disponibile in inglese, tedesco, spagnolo, francese, giapponese, coreano, cinese (semplificato))**
+    - Email di adozione
+    - Flyer
+    - Infografica
+    - Modulo raccolta siti
+- Kit di adozione generale
+    - Guida alla distribuzione IT
+    - Guida utente Come iniziare
+    - Modelli di posta elettronica per l'adozione
+    - Banner
+    - Insegna digitale
+    - One-Pager
+    - Video dimostrativi e GIF
+    - Collegamenti alle risorse Web
 
 Il kit di adozione è disponibile in inglese e in diverse altre lingue, tra cui francese, tedesco e giapponese. Selezionare la lingua preferita nell'[Area download del kit di adozione del cliente di Microsoft Edge](https://www.microsoft.com/download/details.aspx?id=102119).
+
+### <a name="internet-explorer-ie-retirement-resources"></a>Risorse di ritiro di Internet Explorer (IE)
+
+Risorse utili e indicazioni esperte per aiutare l'organizzazione a passare rapidamente da IE a Microsoft Edge.
+
+:::image type="content" source="media/customer-adoption-not-md/Internet Explorer Retirement Screenshot.png" alt-text="Ritiro di Internet Explorer":::
 
 ### <a name="it-deployment-guide"></a>Guida alla distribuzione IT
 

@@ -3,19 +3,19 @@ title: Pianificare la transizione in modalità tutto schermo
 ms.author: aguta
 author: aguta
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 02/26/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Pianificare la transizione in modalità tutto schermo
-ms.openlocfilehash: 2a82852f10f2a842f28029738e72f72de4c53c41
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: b563f7ac773fb295d42e2b27b1259af321ce5f70
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447850"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617741"
 ---
 # <a name="plan-your-kiosk-mode-transition"></a>Pianificare la transizione in modalità tutto schermo
 
@@ -47,23 +47,29 @@ Usare la procedura seguente come guida per configurare la modalità tutto scherm
 |[Mostra il pulsante Home](./microsoft-edge-policies.md#showhomebutton) (criterio)|N|S|89|S|
 |[Gestione preferiti](./microsoft-edge-policies.md#managedfavorites) (criterio)|N|S|89|S|
 |[Abilita la stampante](./microsoft-edge-policies.md#printingenabled) (criterio)|S|S|89|S|
-|[Configura l'URL della pagina Nuova scheda](./microsoft-edge-policies.md#newtabpagelocation) (criterio)|N|S||S|
+|[Configura l'URL della pagina Nuova scheda](./microsoft-edge-policies.md#newtabpagelocation) (criterio)|N|S|89|S|
 |Pulsante Termina sessione | N| S| 89|S|
 |Tutti gli URL Microsoft Edge interni sono bloccati, ad eccezione di *edge://downloads* e *edge://print* |N|S|89|S|
 | CTRL+N bloccato (apri una nuova finestra) | S | S | 89 |S|
 | CTRL+T bloccato (apri una nuova scheda) |S | S | 89 |S|
 |Impostazioni e altro (...) mostreranno solo le opzioni obbligatorie  |S |S |89 |S|
-|Limitazione del lancio di altre applicazioni dal browser|S|S|90/91|S|
-|Blocco delle impostazioni di stampa dell'interfaccia utente|S|S|90/91|S|
-|[Imposta la pagina Nuova scheda come home page](./microsoft-edge-policies.md#homepageisnewtabpage) (criterio)|-|-|TBD|S|
+|Limitazione del lancio di altre applicazioni dal browser|S|S|90|S|
+|Blocco delle impostazioni di stampa dell'interfaccia utente|S|S|90|S|
+|[Impostare la pagina Nuova scheda come home page](./microsoft-edge-policies.md#homepageisnewtabpage) (criterio)|N|S|90|S|
 
 > [!NOTE]
 > Per informazioni sulla pianificazione dei rilasci di Microsoft Edge, consultare [il piano di rilascio di Microsoft Edge](microsoft-edge-release-schedule.md).
 
-**Passaggio 2: testare la nuova modalità tutto schermo in Microsoft Edge.** È consigliabile testare la configurazione della modalità tutto schermo in Microsoft Edge. Un modo rapido e semplice per testare la modalità tutto schermo sta nel configurare una singola app di accesso assegnata usando le impostazioni di Windows, come descritto di seguito.
+**Passaggio 2: testare la nuova modalità tutto schermo in Microsoft Edge.** È consigliabile testare la configurazione della modalità tutto schermo in Microsoft Edge. Un modo rapido e semplice per testare la modalità tutto schermo consiste nel configurare una singola app di accesso assegnata usando le impostazioni di Windows, come descritto di seguito.
 
-1. Installa l'ultima versione di Windows 10 Insider Preview, versione 20215 o successiva. Segui le istruzioni in [Introduzione alle build di Windows 10 Insider Preview](/windows-insider/get-started).
-2. Installa l’ultima versione del [canale stabile Microsoft Edge](https://www.microsoft.com/edge), versione 87 o successiva.  Per testare le caratteristiche più recenti, puoi scaricare l’ultima versione del [canale Microsoft Edge Beta](https://www.microsoftedgeinsider.com/download), versione 89 o successiva.
+1. Gli aggiornamenti minimi del sistema per i sistemi operativi sono elencati nella tabella seguente.
+
+|Sistema operativo|Versione|Aggiornamenti|
+|--|--|--|
+|Windows 10 | 2004 o versione successiva|[KB4601382 o versione successiva](https://support.microsoft.com/topic/february-24-2021-kb4601382-os-builds-19041-844-and-19042-844-preview-1a7ed2b4-017d-2644-a1e8-dd6bf14cba76) |
+|Windows 10| 1909| [KB4601380 o versione successiva](https://support.microsoft.com/topic/february-16-2021-kb4601380-os-build-18363-1411-preview-2e3c38e1-a947-1033-8006-a30f3806da18)|
+
+2. Per testare le funzionalità più recenti, è possibile scaricare l'ultima versione del [Canale stabile di Microsoft Edge](https://www.microsoftedgeinsider.com/download), versione 89 o successiva.
 
    > [!IMPORTANT]
    > Poiché è richiesta un'installazione a livello di dispositivo, è supportato solo un canale non Canary.
@@ -82,13 +88,13 @@ Usare la procedura seguente come guida per configurare la modalità tutto scherm
 
 6. Nella pagina **Scegli un'app chiosco multimediale** , seleziona **Microsoft Edge** e quindi fai clic su  **Avanti**.
 
-   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-4-pick-app.png" alt-text="Modalità tutto schermo: scegli un’app":::
+   :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5c-choose-a-kiosk-app.png" alt-text="Scegliere un chiosco multimediale - firma digitale a schermo intero":::
 
 7. Scegliere una delle seguenti opzioni per la modalità di visualizzazione di Microsoft Edge durante l'esecuzione in modalità tutto schermo:
 
    - Segnaletica digitale/interattiva - Visualizza un sito specifico in modalità a schermo intero, con Microsoft Edge.
    - Browser pubblico - Esegue una versione multi-scheda limitata di Microsoft Edge.
-
+ 
     :::image type="content" source="media/microsoft-edge-configure-kiosk-mode/ms-kiosk-mode-5a-digital-sign.png" alt-text="Visualizzazione in modalità tutto schermo: segno digitale in modalità a schermo intero":::
 
 8. Seleziona **Avanti**.

@@ -3,21 +3,24 @@ title: Disabilitare Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 03/09/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni su come disabilitare Internet Explorer 11 e usare la modalità Internet Explorer in Microsoft Edge.
-ms.openlocfilehash: 89fa6f81879be851f0036990a41e36e1eaee7fca
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: ae4d936df7e432eee250e1c7327acfd206d86410
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447390"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617486"
 ---
 # <a name="disable-internet-explorer-11"></a>Disabilitare Internet Explorer 11
+
+>[!Note]
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Questo articolo descrive come disabilitare Internet Explorer 11 come browser autonomo.
 
@@ -61,7 +64,7 @@ Nell’ambito dell'impostazione dei criteri per questa esperienza, è possibile 
 
 Se l'elenco dei siti per la modalità Enterprise contiene applicazioni configurate per l'apertura nell'app IE11 e IE11 viene disabilitato con questo criterio, tali applicazioni verranno aperte in modalità IE su Microsoft Edge.
 > [!NOTE]
-> Si verifica un problema con il flusso dell’utente quando un sito è configurato per l'apertura in IE11 ed è impostato il criterio Disabilitare IE11. Il problema è attualmente in corso di analisi.
+> Si è verificato un problema noto con il flusso utente quando un sito è configurato per l'apertura nell'applicazione IE11 e il criterio di disabilitazione di IE11 è impostato. Il problema è stato risolto in Microsoft Edge, versione 91.0.840.0 o successive.
 
 ## <a name="disable-internet-explorer-11-as-a-standalone-browser"></a>Disabilitare Internet Explorer 11 come browser autonomo
 
