@@ -1,25 +1,28 @@
 ---
 title: Guida dettagliata alla funzionalità di individuazione siti aziendale
-ms.author: cjacks
+ms.author: collw
 author: appcompatguy
 manager: saudm
-ms.date: 04/07/2020
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Usare la funzionalità di individuazione siti aziendale per prepararsi alla modalità IE
-ms.openlocfilehash: 2557544a93222b03aaa0961149aa0d3c5d7d8806
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: f6298b801cceeb96d9285f3597de2a6abe8ee36e
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447720"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617476"
 ---
 # <a name="enterprise-site-discovery-step-by-step-guide"></a>Guida dettagliata alla funzionalità di individuazione siti aziendale
 
-Questo articolo contiene una guida dettagliata all'uso della funzionalità di individuazione siti aziendale con Microsoft Endpoint Configuration Manager.
+>[!Note]
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+
+Questo articolo contiene una guida dettagliata sull'uso della funzionalità di individuazione dei siti aziendali con Microsoft Endpoint Configuration Manager.
 
 La funzionalità di individuazione siti aziendale può aiutarti a configurare l'elenco dei siti in modalità Enterprise. La funzionalità di individuazione siti aziendale ti aiuterà a:
 

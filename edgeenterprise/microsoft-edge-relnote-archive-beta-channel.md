@@ -1,25 +1,205 @@
 ---
 title: Note sulla versione archiviate del canale Microsoft Edge Beta
 ms.author: aguta
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/17/2021
+ms.date: 06/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione archiviate del canale Microsoft Edge Beta
-ms.openlocfilehash: 3670d7225095a3f33c26e96e886e975d4bb703e0
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: c74a2a9f670a781d94738b6db00f84716a429a58
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448020"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617974"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione archiviate del canale Microsoft Edge Beta
 
 Queste note sulla versione contengono informazioni sulle nuove funzionalità e gli aggiornamenti non relativi alla sicurezza inclusi nel canale Microsoft Edge Beta. Per informazioni sui canali Microsoft Edge, vedere la [Panoramica dei canali Microsoft Edge](microsoft-edge-channels.md). Tutti gli aggiornamenti della sicurezza sono elencati [qui](microsoft-edge-relnotes-security.md).
+## <a name="version-89077418-february-3"></a>Versione 89.0.774.18: 3 febbraio
+
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **La modalità tutto schermo offre altre funzionalità di blocco.** A partire da Microsoft Edge versione 89, abbiamo aggiunto altre funzionalità di blocco all'interno della modalità tutto schermo per consentire ai clienti di lavorare in modo produttivo e sicuro. [Altre informazioni](microsoft-edge-configure-kiosk-mode.md#kiosk-mode-supported-features).
+
+- **Lo strumento Enterprise Mode Site List Manager sarà disponibile nel browser tramite la pagina *edge://compat***. È possibile usare questo strumento per creare, modificare ed esportare il file XML con l’elenco dei siti per la modalità Internet Explorer di Microsoft Edge. Se necessario, è possibile abilitare l'accesso a questo strumento tramite Criteri di gruppo. [Altre informazioni](./edge-ie-mode-site-list-manager.md).
+
+- **Miglioramento delle prestazioni del browser con le schede di sospensione**. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare l’intervallo di tempo prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso di lavoro, sono anche disponibili sistemi [euristici](https://techcommunity.microsoft.com/t5/articles/sleeping-tabs-faq/m-p/1705434) che evitano che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità può essere gestita tramite i criteri di gruppo.
+
+  > [!NOTE]
+  > "Miglioramento delle prestazioni del browser con le schede di sospensione" è un aggiornamento delle note sulla versione del 3 febbraio per la versione principale 89.0.774.18.
+
+- **Reimpostare manualmente i dati di sincronizzazione di Microsoft Edge nel cloud**. Introduzione alla modalità di reimpostazione dei dati di sincronizzazione di Microsoft Edge dall'interno del prodotto. In questo modo i dati degli utenti vengano cancellati dai servizi Microsoft, oltre a risolvere alcuni problemi del prodotto che in precedenza richiedevano un ticket di supporto.
+
+- **Miglioramenti all'esperienza di selezione del testo nei documenti in formato PDF**. Gli utenti inizieranno a ricevere un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge, a partire dalla versione 89.
+
+- **Il campo Data di nascita ora è supportato nel riempimento automatico.** Oggi Microsoft Edge permette di risparmiare tempo e fatica nella compilazione di moduli e nella creazione di account online compilando automaticamente i dati, come indirizzi, nomi, numeri di telefono e così via. A partire da Microsoft Edge versione 89, viene aggiunto il supporto per un altro campo che può essere salvato e compilato automaticamente: la data di nascita. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
+
+- **Supporto per la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina di ricerca nella cronologia e nell'hub della cronologia**. A partire da Microsoft Edge versione 89, trovare un articolo/sito Web sarà più facile con la ricerca in linguaggio naturale sulla barra degli indirizzi, nella pagina della cronologia e nell'hub della cronologia. Gli utenti possono cercare contenuti/descrizioni/intervalli di tempo (ad esempio"ricetta per torta della settimana scorsa") oltre a titoli/corrispondenze con parole chiave dell'URL. Questa funzionalità è limitata a un gruppo di utenti selezionati casualmente che hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
+
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
+
+#### <a name="new-policies"></a>Nuovi criteri
+
+- [BrowsingDataLifetime](./microsoft-edge-policies.md#browsingdatalifetime): impostazioni vita utile dati di esplorazione
+- [maMEnabled](./microsoft-edge-policies.md#mamenabled): gestione delle app per dispositivi mobili abilitata
+- [DefinePreferredLanguages](./microsoft-edge-policies.md#definepreferredlanguages): definisce un elenco ordinato di lingue preferite in cui i siti internet dovrebbero essere visualizzati, se sono supportate
+- [ShowRecommendationsEnabled](./microsoft-edge-policies.md#showrecommendationsenabled): consente suggerimenti e notifiche promozionali da Microsoft Edge
+- [StampaAllowedBackgroundGraphicsModes](./microsoft-edge-policies.md#printingallowedbackgroundgraphicsmodes): limita la modalità di stampa grafica in background
+- [printingBackgroundGraphicsDefault](./microsoft-edge-policies.md#printingbackgroundgraphicsdefault): modalità di stampa grafica in background predefinita
+- [elenco SmartActionsBlockList](./microsoft-edge-policies.md#smartactionsblocklist): blocca le azioni intelligenti per un elenco di servizi
+
+#### <a name="obsoleted-policies"></a>Criteri obsoleti
+
+- [ForceLegacyDefaultReferrerPolicy](./microsoft-edge-policies.md#forcelegacydefaultreferrerpolicy): usa un criterio di referrer predefinito di no-referrer-when-downgrade
+- [MetricsReportingEnabled](./microsoft-edge-policies.md#metricsreportingenabled): abilita la segnalazione dei dati correlati all'uso e agli arresti anomali
+- [SendSiteInfoToImproveServices](./microsoft-edge-policies.md#sendsiteinfotoimproveservices): invia informazioni sul sito per migliorare i servizi Microsoft
+<!-- end major 89 -->
+
+## <a name="version-88070556-january-29"></a>Versione 88.0.705.56: 29 gennaio
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-88070549-january-20"></a>Versione 88.0.705.49: 20 gennaio
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-88070545-january-15"></a>Versione 88.0.705.45: 15 gennaio
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-88070541-january-11"></a>Versione 88.0.705.41: 11 gennaio
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-88070529-december-21"></a>Versione 88.0.705.29: 21 dicembre
+
+Sono stati risolti diversi bug e problemi relativi alle prestazioni.
+
+<!-- begin major 88 -->
+## <a name="version-88070518-december-9"></a>Versione 88.0.705.18: 9 dicembre
+
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **Elementi deprecati:**
+
+  - È stato deprecato il supporto per il protocollo FTP. Il supporto per il protocollo FTP legacy è stato rimosso da Microsoft Edge. Se si tenta di navigare verso un collegamento FTP, il browser indirizzerà il sistema operativo ad aprire un'applicazione esterna per gestire tale collegamento. In alternativa, gli amministratori IT possono configurare Microsoft Edge per l'utilizzo della modalità IE per i siti che si basano sul protocollo FTP.
+  - Il supporto di Adobe Flash sarà rimosso. A partire da Microsoft Edge Beta versione 88, la funzionalità e il supporto di Adobe Flash saranno rimossi. Altre informazioni: [aggiornamento sulla fine del supporto di Adobe Flash Player - Blog di Microsoft Edge (Windows.com)](https://blogs.windows.com/msedgedev/2020/09/04/update-adobe-flash-end-support/)
+
+- **Autenticazione:**
+
+  - Single Sign-on (SSO) ora disponibile per gli account di Azure Active Directory (Azure AD) e per l'account Microsoft (MSA) in macOS e Windows legacy. Un utente che ha eseguito l'accesso a Microsoft Edge su macOS o su Microsoft Windows (7, 8.1) eseguirà automaticamente l'accesso su siti Web configurati per consentire l'accesso Single Sign-On con gli account lavoro e Microsoft (ad esempio, bing.com, office.com, msn.com, outlook.com).<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
+  - Passare automaticamente gli utenti di macOS al profilo di lavoro per i siti che eseguono l'autenticazione con l'account di lavoro. A partire da Microsoft Edge versione 88, su macOS offriamo la possibilità di passare ai siti che eseguono l'autenticazione con il profilo di lavoro di un utente.<br>Nota: se l'utente ha eseguito l'accesso a Microsoft Edge con una versione precedente a Microsoft Edge 88 per sfruttare questa funzionalità, potrebbe essere necessario disconnettersi e quindi accedere di nuovo.
+
+- **Opzione modalità tutto schermo per terminare la sessione**. Il pulsante "Termina sessione" è ora disponibile in un'esperienza di navigazione pubblica in modalità tutto schermo. Questa funzionalità assicura che i dati e le impostazioni del browser vengano eliminati alla chiusura di Microsoft Edge. Ulteriori informazioni sulle funzionalità della modalità tutto schermo e sulla roadmap sono disponibili in [Configura la modalità tutto schermo di Microsoft Edge](./microsoft-edge-configure-kiosk-mode.md).
+
+- **Sicurezza e privacy:**
+
+  - Gli avvisi vengono generati se la password di un utente viene trovata in una fuga di notizie online. Le password degli utenti vengono confrontate con un repository di credenziali violate note ed invia all'utente un avviso se viene trovata una corrispondenza. Per garantire la sicurezza e la privacy, le password degli utenti vengono sottoposte ad hash e crittografate quando vengono confrontate col il database delle credenziali trapelate.
+  - Aggiornare automaticamente il contenuto misto. Le pagine sicure inviate tramite HTTPS possono contenere immagini di riferimento inviate attraverso HTTP non protetto. Per migliorare la privacy e la sicurezza in Microsoft Edge 88, le immagini verranno recuperate tramite HTTPS. Se l'immagine non è disponibile tramite HTTPS, non verrà caricata.
+  - Visualizzare le autorizzazioni del sito per sito e per attività recenti. A partire da Microsoft Edge 88, gli utenti potranno gestire più facilmente le autorizzazioni del sito. Saranno in grado di visualizzare le autorizzazioni per sito Web anziché solo per il tipo di autorizzazione. Inoltre, è stata aggiunta una sezione delle attività recenti che mostrerà a un utente tutte le ultime modifiche alle autorizzazioni del sito.
+  - Maggior controlli per i cookie del browser. A partire da Microsoft Edge 88, gli utenti possono eliminare i cookie di terze parti senza influire sui cookie di prima parte. Gli utenti potranno anche filtrare i cookie di prima o terze parte in base al nome, al numero di cookie e alla quantità di dati archiviati e all'ultima modifica.
+
+- **Prestazioni:**
+
+  - Migliorare le prestazioni del browser con le schede di sospensione. Le schede di sospensione migliorano le prestazioni del browser mettendo in sospensione le schede inattive per liberare risorse di sistema come la memoria e la CPU, che potranno essere utilizzate dalle schede attive o da altre applicazioni. Gli utenti possono impedire che i siti attivino la modalità sospensione e configurare il periodo di tempo che intercorre prima che una scheda inattiva entri in sospensione. Per mantenere gli utenti nel flusso, esistono anche sistemi euristici per evitare che determinati siti entrino in modalità sospensione, ad esempio i siti Intranet. Questa funzionalità è limitata a un gruppo di utenti selezionati casualmente che hanno abilitato la sperimentazione. Stiamo programmando di implementare per impostazione predefinita la funzionalità delle schede di sospensione con Microsoft Edge versione 89. Questa funzionalità può essere gestita tramite i criteri di gruppo.
+  - Migliorare la velocità di avvio di Microsoft Edge con il potenziamento di avvio. Per migliorare la velocità di avvio di Microsoft Edge, abbiamo sviluppato una caratteristica denominata potenziamento di avvio. Il potenziamento di avvio rende Microsoft Edge più veloce, poiché ne permette l'esecuzione in background. Nota: questa funzionalità è limitata a un gruppo di utenti selezionato in modo casuale, i quali hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
+
+- **Produttività:**
+
+  - Migliorare la produttività e il multitasking con le schede verticali. Con l'aumento graduale del numero di schede orizzontali, i titoli dei siti iniziano a essere tagliati e i controlli struttura a schede vengono persi con il restringimento di ogni scheda. Tale operazione interrompe il flusso di lavoro degli utenti, che si trovano a dover dedicare più tempo alla ricerca, al cambio e alla gestione delle schede e meno tempo sull'attività del momento. Le schede verticali consentono agli utenti di spostare le schede sul lato, dove le icone allineate verticalmente e i titoli dei siti più lunghi semplificano la ricerca, l'individuazione e il passaggio rapidi alla scheda che vogliono aprire.
+  - Riempimento automatico del campo data di nascita. Microsoft Edge consente già di risparmiare tempo e fatica durante la compilazione di moduli e la creazione di account online tramite il riempimento automatico di dati utente quali indirizzi, nomi, numeri di telefono e così via. Microsoft Edge ora supporta il campo data di nascita, che gli utenti possono salvare e riempire automaticamente. Un utente può visualizzare, modificare ed eliminare queste informazioni in qualsiasi momento dalle impostazioni del profilo.
+  - Miglioramenti alla sezione Chiuse di recente della cronologia. La sezione Chiuse di recente ora conserva le ultime 25 schede e finestre di qualsiasi sessione di esplorazione passata, piuttosto che limitarsi alla sessione precedente. Gli utenti possono selezionare Chiuse di recente dalla nuova esperienza di Cronologia, in modo da visualizzare tutte le schede aperte.
+  - La funzionalità “La tua giornata in breve” è stata abilitata per impostazione predefinita. A partire dalla versione 88 di Microsoft Edge, gli operatori dell’informazione possono trarre vantaggio dalle funzionalità di produttività intelligenti nella pagina Nuova scheda (NTP). Offriamo agli utenti che effettuano l’accesso con il loro account di lavoro o dell'istituto di istruzione contenuto personalizzato e pertinente con tecnologia M365 Graph. Gli utenti possono analizzare rapidamente i moduli di "La tua giornata in breve", in modo da tenere facilmente traccia delle riunioni e del lavoro recente, nonché per avviare rapidamente le applicazioni che desiderano usare.
+
+- **PDF:**
+
+  - Visualizzazione del documento PDF nella vista libro (due pagine). A partire da Microsoft Edge versione 88, gli utenti possono visualizzare i documenti PDF in una singola pagina o nella visualizzazione libro a due pagine. Per modificare la visualizzazione, fare clic sul pulsante **Visualizzazione pagina** sulla barra degli strumenti.
+  - Supporto di note di testo ancorate per i file PDF. A partire da Microsoft Edge versione 87, gli utenti possono aggiungere note a qualsiasi testo nei file PDF.
+  - Esperienza più agevole di selezione del testo nei documenti PDF. Gli utenti riceveranno un'esperienza più fluida e coerente di selezione del testo nei documenti PDF aperti in Microsoft Edge.
+  - Visualizzare le pagine Web salvate come file PDF nella barra dei download. Gli utenti possono ora visualizzare i file PDF generati impostando "Salva come PDF" come destinazione della stampante per le pagine Web nella barra di download.
+
+- **Tipi di carattere:**
+
+  - Le icone del browser vengono aggiornate nel sistema di progettazione Office Fluent. Come parte del nostro lavoro continuo relativo a Fluent Design nel browser, abbiamo apportato modifiche alle icone di allineamento più ravvicinate nel nuovo sistema di icone Microsoft. Queste modifiche avranno un impatto su diverse delle nostre interfacce utente high touch, incluse le schede, la barra degli indirizzi, nonché le icone di spostamento e di interazione presenti nei vari menu.
+  - Rendering migliorato del tipo di carattere. Il rendering del testo è migliorato per aumentare la chiarezza e ridurre la sfocatura.
+
+### <a name="policy-updates"></a>Aggiornamenti dei criteri
+
+#### <a name="new-policies"></a>Nuovi criteri
+
+Sono stati aggiunti sedici nuovi criteri. Scaricare i modelli amministrativi aggiornati dalla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://www.microsoft.com/edge/business/download). Sono stati aggiunti i nuovi criteri seguenti.
+
+- [BlockExternalExtensions](./microsoft-edge-policies.md#blockexternalextensions): blocca l'installazione delle estensioni esterne.
+- [InternetExplorerIntegrationLocalFileAllowed](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileallowed): consente l'avvio di file locali in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileExtensionAllowList](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist):apre i file locali nell'elenco Consenti estensione file in modalità Internet Explorer.
+- [InternetExplorerIntegrationLocalFileShowContextMenu](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileshowcontextmenu): mostra il menu di scelta rapida per aprire un collegamento in modalità Internet Explorer.
+- [IntranetRedirectBehavior](./microsoft-edge-policies.md#intranetredirectbehavior): comportamento del reindirizzamento delle Intranet.
+- [PrinterTypeDenyList](./microsoft-edge-policies.md#printertypedenylist): disabilita i tipi di stampante nell'elenco degli indirizzi non consentiti.
+- [ShowMicrosoftRewards](./microsoft-edge-policies.md#showmicrosoftrewards): mostra le esperienze di Microsoft Rewards.
+- [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled): configura le schede di sospensione.
+- [SleepingTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
+- [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) attiva il potenziamento di avvio.
+- [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
+- [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.
+- [WebRtcAllowLegacyTLSProtocols](./microsoft-edge-policies.md#webrtcallowlegacytlsprotocols): consenti downgrade TLS/DTLS legacy in WebRTC.
+
+#### <a name="deprecated-policies"></a>Criteri deprecati
+
+I criteri seguenti sono deprecati.
+
+- [ProactiveAuthEnabled](./microsoft-edge-policies.md#proactiveauthenabled): abilita l'autenticazione proattiva.
+- [ProxyBypassList](./microsoft-edge-policies.md#proxybypasslist): configura le regole di esclusione di proxy.
+- [ProxyMode](./microsoft-edge-policies.md#proxymode): configura le impostazioni del server proxy.
+- [ProxyPacUrl](./microsoft-edge-policies.md#proxypacurl): imposta l'URL del file .pac del proxy.
+- [ProxyServer](./microsoft-edge-policies.md#proxyserver): configura l'indirizzo o l'URL del server proxy.
+- [WebDriverOverridesIncompatiblePolicies](./microsoft-edge-policies.md#webdriveroverridesincompatiblepolicies): consente a WebDriver di eseguire la sostituzione dei criteri non compatibili.
+
+#### <a name="obsoleted-policies"></a>Criteri obsoleti
+
+I criteri seguenti sono obsoleti.
+
+- [DefaultPluginsSetting](./microsoft-edge-policies.md#defaultpluginssetting): impostazione predefinita di Adobe Flash.
+- [PluginsAllowedForUrls](./microsoft-edge-policies.md#pluginsallowedforurls): consente il plug-in Adobe Flash in siti specifici.
+- [PluginsBlockedForUrls](./microsoft-edge-policies.md#pluginsblockedforurls): blocca il plug-in Adobe Flash in siti specifici.
+- [RunAllFlashInAllowMode](./microsoft-edge-policies.md#runallflashinallowmode) estende l'impostazione del contenuto Adobe Flash a tutto il contenuto.
+
+<!-- end major 88 -->
+
+## <a name="version-87066455-december-3"></a>Versione 87.0.664.55: 3 dicembre
+
+Risolti diversi bug e problemi relativi alle prestazioni. La seguente nuova funzionalità è supportata in questa versione.
+
+- **Vengono generati degli avvisi se la password di un utente viene trovata in una falla online**. Le password degli utenti vengono confrontate con un repository di credenziali violate note ed invia all'utente un avviso se viene trovata una corrispondenza. Per garantire la sicurezza e la privacy, le password degli utenti vengono sottoposte ad hash e crittografate quando vengono confrontate col il database delle credenziali trapelate.
+
+## <a name="version-87066452-november-30"></a>Versione 87.0.664.52: 30 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-87066440-november-18"></a>Versione 87.0.664.40:18 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-87066436-november-16"></a>Versione 87.0.664.36:16 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-87066430-november-9"></a>Versione 87.0.664.30: 9 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-87066424-november-2"></a>Versione 87.0.664.24: 2 novembre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
+
+## <a name="version-87066418-october-26"></a>Versione 87.0.664.18: 26 ottobre
+
+Risolti diversi bug e problemi relativi alle prestazioni.
 
 <!-- begin major 87 -->
 ## <a name="version-87066412-october-20"></a>Versione 87.0.664.12: 20 ottobre
@@ -125,7 +305,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 
 * **Abbinare i tasti di scelta rapida personalizzati al VS Code.** Microsoft Edge DevTools ora supporta la personalizzazione dei tasti di scelta rapida in DevTools da abbinare con l'editor/IDE. (Microsoft Edge 84 ha introdotto la possibilità di abbinare i tasti di scelta rapida di DevTools con VS Code).
 
-* **Sostituire i criteri [MetricsReportingEnabled]( https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#metricsreportingenabled) e [SendSiteInformationToImproveServices]( https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) per le versione di livello inferiore di Windows e macOS.** Questi criteri sono deprecati nella versione 86 di Microsoft Edge e diventeranno obsoleti nella versione 89 di Microsoft Edge.<br>
+* **Sostituire i criteri [MetricsReportingEnabled]( /DeployEdge/microsoft-edge-policies#metricsreportingenabled) e [SendSiteInformationToImproveServices]( /DeployEdge/microsoft-edge-policies#sendsiteinfotoimproveservices) per le versione di livello inferiore di Windows e macOS.** Questi criteri sono deprecati nella versione 86 di Microsoft Edge e diventeranno obsoleti nella versione 89 di Microsoft Edge.<br>
 Tali criteri sono sostituiti da [Consenti telemetria](/windows/privacy/configure-windows-diagnostic-data-in-your-organization) su Windows 10, e dal nuovo criterio [DiagnosticData](./microsoft-edge-policies.md#diagnosticdata) per tutte le altre piattaforme. Questo consente agli utenti di gestire i dati di diagnostica che vengono inviati a Microsoft per Windows 7, 8, 8.1 e macOS.
 
 * **SameSite=Lax Cookies per impostazione predefinita**. Per migliorare la sicurezza web e la privacy, i cookie ora verranno sempre impostati su [SameSite=Lax](https://developer.mozilla.org/docs/Web/HTTP/Headers/Set-Cookie/SameSite) handling per impostazione predefinita. Ciò significa che i cookie verranno inviati solo in un contesto di prime parti e verranno omessi per le richieste inviate a terze parti. Questa modifica può causare un impatto sulla compatibilità dei siti Web che richiedono cookie per il corretto funzionamento delle risorse di terze parti. Per consentire tali cookie, gli sviluppatori Web possono contrassegnare i cookie che devono essere impostati e inviati a contesti di terze parti aggiungendo espliciti `SameSite=none` e `Secure` attributi quando il cookie è impostato. Le aziende che desiderano esentare determinati siti da questa modifica possono farlo utilizzando il criterio [ LegacySameSiteCookieBehaviorEnabledForDomainList](./microsoft-edge-policies.md#legacysamesitecookiebehaviorenabledfordomainlist) oppure possono disattivare la modifica su tutti i siti utilizzando il criterio [LegacySameSiteCookieBehaviorEnabled](./microsoft-edge-policies.md#legacysamesitecookiebehaviorenabled).
@@ -444,7 +624,7 @@ Risolti diversi bug e problemi relativi alle prestazioni.
 - Link doctor include una correzione host e una query di ricerca per gli utenti quando digitano in modo errato un URL. Ad esempio: <br>
 Un utente digita in modo errato "powerbbi" invece di "powerbi".com. Link doctor suggerirà "powerbi".com come correzione e creerà un collegamento per cercare "powerbbi" nel caso in cui l'utente cerchi qualcosa di diverso.
 
-- Consentire agli utenti di salvare la propria decisione di avviare un protocollo esterno per un sito specifico. Gli utenti possono configurare il criterio [ExternalProtocolDialogShowAlwaysOpenCheckbox]( https://docs.microsoft.com/DeployEdge/microsoft-edge-policies#externalprotocoldialogshowalwaysopencheckbox) per abilitare o disabilitare questa funzione.
+- Consentire agli utenti di salvare la propria decisione di avviare un protocollo esterno per un sito specifico. Gli utenti possono configurare il criterio [ExternalProtocolDialogShowAlwaysOpenCheckbox](/DeployEdge/microsoft-edge-policies#externalprotocoldialogshowalwaysopencheckbox) per abilitare o disabilitare questa funzione.
 
 - Gli utenti possono impostare Microsoft Edge come browser predefinito direttamente da Microsoft Edge **Impostazioni**. Questo consente agli utenti di cambiare il proprio browser predefinito nel contesto del browser stesso, invece di cercare tra le impostazioni del sistema operativo. Per utilizzare questa funzionalità, passare a *edge://settings/defaultBrowser* e fare clic su **Rendi predefinito**.
 
@@ -572,7 +752,7 @@ Sono stati aggiunti 12 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [ImportCookies](./microsoft-edge-policies.md#importcookies): consentire l'importazione di cookie.
 - [ImportShortcuts](./microsoft-edge-policies.md#importshortcuts): consentire l'importazione di collegamenti.
 - [InternetExplorerIntegrationSiteRedirect](./microsoft-edge-policies.md#internetexplorerintegrationsiteredirect): specificare il comportamento degli spostamenti "nella pagina" verso i siti non configurati all'avvio dalle pagine in modalità Internet Explorer.
-- [OmniboxMSBProviderEnabled](./microsoft-edge-policies.md#omniboxmsbproviderenabled): abilitare il provider Microsoft Search in omnibox. 
+- [OmniboxMSBProviderEnabled](./microsoft-edge-policies.md): abilitare il provider Microsoft Search in omnibox.
 - [StricterMixedContentTreatmentEnabled](./microsoft-edge-policies.md#strictermixedcontenttreatmentenabled): abilitare un trattamento più rigido per i contenuti misti.
 - [TLS13HardeningForLocalAnchorsEnabled](./microsoft-edge-policies.md#tls13hardeningforlocalanchorsenabled): abilitare una funzionalità di sicurezza TLS 1.3 per trust anchor locali.
 - [ConfigureOnPremisesAccountAutoSignIn](./microsoft-edge-policies.md#configureonpremisesaccountautosignin): configurare l'accesso automatico con un account di dominio Active Directory quando non esiste un account di dominio Azure AD.
