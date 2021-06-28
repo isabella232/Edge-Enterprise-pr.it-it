@@ -3,23 +3,26 @@ title: Associare le estensioni file alla modalità Internet Explorer
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 12/21/2020
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Associare le estensioni file alla modalità Internet Explorer
-ms.openlocfilehash: 6c651499401757d9a58e697d1d019a7294bb5fa7
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: c027b11e426cd665cb9e6cc25b4c9f66a0c6762a
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447370"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617456"
 ---
 # <a name="associate-file-extensions-with-internet-explorer-mode"></a>Associare le estensioni file alla modalità Internet Explorer
 
-Questo articolo spiega come associare Microsoft Edge alla modalità Internet Explorer con estensioni di file per applicazioni desktop.
+>[!Note]
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto dal 15 giugno 2022, per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Altre informazioni sono disponibili qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+
+Questo articolo spiega come associare Microsoft Edge alla modalità Internet Explorer con estensioni file per le applicazioni desktop.
 
 > [!NOTE]
 > Questo articolo si applica a Microsoft Edge versione 86 o successiva.
@@ -91,9 +94,10 @@ Windows Registry Editor Version 5.00
 @="\"C:\\<edge_installation_dir>\\msedge.exe\" -ie-mode-file-url -- \"%1\""
 
 ```
+
 ## <a name="configuring-file-types-to-open-in-internet-explorer-mode"></a>Configurazione di tipi di file da aprire in modalità Internet Explorer
 
-Avviando Edge 88, è possibile configurare collegamenti specifici per il tipo di file da aprire in modalità Internet Explorer con il [Mostra menu di scelta rapida per aprire i collegamenti in modalità Internet Explorer](./microsoft-edge-policies.md#show-context-menu-to-open-a-link-in-internet-explorer-mode). 
+Avviando Edge 88, è possibile configurare collegamenti specifici per il tipo di file da aprire in modalità Internet Explorer con il [Mostra menu di scelta rapida per aprire i collegamenti in modalità Internet Explorer](./microsoft-edge-policies.md#internetexplorerintegrationreloadiniemodeallowed).
 
 È possibile definire i tipi di file a cui dovrebbe essere applicata questa opzione, specificando le estensioni di file in questo criterio [Aprire file locali nell'elenco Consenti estensione file in modalità Internet Explorer](./microsoft-edge-policies.md#internetexplorerintegrationlocalfileextensionallowlist). 
 

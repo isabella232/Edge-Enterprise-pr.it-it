@@ -1,23 +1,26 @@
 ---
 title: Configurare i criteri della modalità IE
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 03/29/2021
+ms.date: 05/19/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Configurare i criteri della modalità IE
-ms.openlocfilehash: a2abf6f6ef71c1f30786031ef19b9633bfafc43f
-ms.sourcegitcommit: 93851b83dc11422924646a04a9e0f60ff2554af7
+ms.openlocfilehash: d73a9649619a746fd1ef382f0911ad7e45255f06
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 04/01/2021
-ms.locfileid: "11470164"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617436"
 ---
 # <a name="configure-ie-mode-policies"></a>Configurare i criteri della modalità IE
+
+>[!Note]
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto dal 15 giugno 2022, per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Altre informazioni sono disponibili qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Questo articolo spiega come configurare i criteri della modalità IE.
 
@@ -30,8 +33,8 @@ La configurazione della modalità IE richiede tre passaggi:
 2. [Reindirizzare i siti da Microsoft Edge alla modalità IE](#redirect-sites-from-microsoft-edge-to-ie-mode)
 3. (Facoltativo) [Reindirizzare i siti da IE a Microsoft Edge](#redirect-sites-from-ie-to-microsoft-edge)
 
-    1. Se si desidera disabilitare l'app IE11, seguire i passaggi descritti in [Disabilitare Internet Explorer 11](https://docs.microsoft.com/deployedge/edge-ie-disable-ie11)
-    2. In caso contrario, seguire i passaggi rimanenti in [Reindirizzare i siti da IE a Microsoft Edge](https://docs.microsoft.com/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
+    1. Se si desidera disabilitare l'app IE11, seguire i passaggi descritti in [Disabilitare Internet Explorer 11](/deployedge/edge-ie-disable-ie11)
+    2. In caso contrario, seguire i passaggi rimanenti in [Reindirizzare i siti da IE a Microsoft Edge](/deployedge/edge-ie-mode-policies#redirect-sites-from-ie-to-microsoft-edge)
 
 > [!NOTE]
 > I criteri per abilitare la modalità Internet Explorer possono essere configurati tramite Intune. Per altre informazioni, vedere [Aggiungere Microsoft Edge a Microsoft Intune](/intune/apps/apps-windows-edge?bc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2fbreadcrumb%2ftoc.json&toc=https%3a%2f%2fdocs.microsoft.com%2fDeployEdge%2ftoc.json) e [Configurare i criteri Microsoft Edge con Microsoft Intune](./configure-edge-with-intune.md).
@@ -44,7 +47,7 @@ La configurazione della modalità IE richiede tre passaggi:
 
 1. Scarica e usa il [modello di criteri di Microsoft Edge](https://www.microsoft.com/en-us/edge/business/download) più recente.
 2. Apri Editor Criteri di gruppo.
-3. Fai clic su **Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
+3. Fai clic su **Configurazione utente/Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
 4. Fai doppio clic su **Configura integrazione Internet Explorer**.
 5. Seleziona **Attivata**.
 6. In **Opzioni** impostare il valore del menu a discesa su 
@@ -84,7 +87,7 @@ La modalità IE può usare il criterio esistente configurando l'elenco di siti i
 1. Creare o usare nuovamente un file XML dell'elenco di siti
     1. Tutti i siti che contengono l'elemento _\<open-in\>IE11\</open-in\>_ ora si apriranno in modalità di Internet Explorer.
 2. Apri Editor Criteri di gruppo.
-3. Fai clic su **Configurazione computer** > **Modelli amministrativi** > **Componenti di Windows** > **Internet Explorer**.
+3. Fai clic su **Configurazione utente/Configurazione computer** > **Modelli amministrativi** > **Componenti di Windows** > **Internet Explorer**.
 4. Fai doppio clic su **Usa elenco siti Web di Internet Explorer modalità Enterprise**.
 5. Seleziona **Attivata**.
 6. In **Opzioni**, digita il percorso dell'elenco di siti Web. Puoi usare uno dei percorsi seguenti:
@@ -100,7 +103,7 @@ La modalità IE può usare il criterio esistente configurando l'elenco di siti i
 1. Creare o usare nuovamente un file XML dell'elenco di siti
     1. Tutti i siti che contengono l'elemento _\<open-in\>IE11\</open-in\>_ ora si apriranno in modalità di Internet Explorer.
 2. Apri Editor Criteri di gruppo.
-3. Fai clic su **Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
+3. Fai clic su **Configurazione utente/Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
 4. Fai doppio clic su **Configura elenco siti modalità Enterprise**.
 5. Seleziona **Attivata**.
 6. In **Opzioni**, digita il percorso dell'elenco di siti Web. Puoi usare uno dei percorsi seguenti:
@@ -118,7 +121,7 @@ La modalità IE può essere configurata come tutti i siti nella zona dell'area I
 > L'area Intranet locale contiene siti aggiunti esplicitamente, ma è anche possibile assegnare i siti a questa area usando l'euristica. Possono essere inclusi nomi host senza punto (ad esempio, **https**:**//payroll**) e i siti che lo script di configurazione del proxy configura per ignorare il proxy. Se una parte esterna controlla il DNS o il proxy, potrebbe forzare i siti Web in modalità IE.
 
 1. Aprire l'Editor Criteri di gruppo locali.
-2. Fai clic su **Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
+2. Fai clic su **Configurazione utente/Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
 3. Fai doppio clic su **Invia tutti i siti Intranet a Internet Explorer**.
 4. Seleziona **Abilitato** e quindi fai clic su **OK** o su **Applica** per salvare le impostazioni.
 
@@ -127,8 +130,8 @@ La modalità IE può essere configurata come tutti i siti nella zona dell'area I
 È possibile impedire agli utenti di usare Internet Explorer per i siti che non lo richiedono. Internet Explorer può reindirizzare automaticamente i siti a Microsoft Edge se non si trovano nell'elenco di siti.
 
 1. Apri Editor Criteri di gruppo.
-2. Fare clic su **Configurazione computer** > **Strumenti di amministrazione** > **Componenti di Windows** > **Internet Explorer**.
-3. Fare doppio clic su **Invia a Microsoft Edge tutti i siti non inclusi nell'elenco siti modalità Enterprise**.
+2. Fai clic su **Configurazione utente/Configurazione computer** > **Strumenti di amministrazione** > **Componenti di Windows** > **Internet Explorer**.
+3. Fai doppio clic su **Invia a Microsoft Edge tutti i siti non inclusi nell'elenco siti modalità Enterprise**.
 4. Selezionare **Attivato**.
 5. Fai clic su **OK** o su **Applica** per salvare queste impostazioni.
 6. Fare doppio clic su **Configura quale canale di Microsoft Edge usare per aprire i siti reindirizzati**.

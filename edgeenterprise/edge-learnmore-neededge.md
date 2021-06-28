@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
-ms.openlocfilehash: ffb295b5c844d15fee2b0fa23e78be9cd34ef03f
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 7cd74eda6d8ada7647862ea69f77a982713f0c14
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447590"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617296"
 ---
 # <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
 
@@ -24,7 +24,10 @@ ms.locfileid: "11447590"
 
 ## <a name="overview"></a>Panoramica
 
-Molti siti Web moderni non sono compatibili con Internet Explorer. Quando un utente di Internet Explorer visita un sito Web pubblico non compatibile, viene visualizzato un messaggio che lo informa che il sito Web non è compatibile con il browser in uso e che è necessario passare manualmente a un altro browser.
+>[!Note]
+> L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Per altre informazioni, vedere](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+
+Molti siti Web moderni per come sono progettati non sono compatibili con Internet Explorer. Quando un utente di Internet Explorer visita un sito Web pubblico non compatibile, viene visualizzato un messaggio che lo informa che il sito Web non è compatibile con il browser in uso e che è necessario passare manualmente a un altro browser.
 
 La necessità di passare manualmente a un altro browser è richiesta a partire da Microsoft Edge Stable versione 87.
 
@@ -32,6 +35,15 @@ Quando un utente accede a un sito Web non compatibile con Internet Explorer, ver
 
 > [!NOTE]
 > Microsoft mantiene un elenco di tutti i siti Web non compatibili con Internet Explorer. Per altre informazioni, vedere [Richiedere aggiornamenti per l’elenco siti non compatibili](/microsoft-edge/web-platform/ie-to-microsoft-edge-redirection#request-an-update-to-the-ie-compatibility-list)
+
+## <a name="prerequisites"></a>Prerequisiti
+- Microsoft Edge Versione stabile 87 o successiva
+- Versioni di Windows
+    - Windows 10 versione 1709 o successiva
+    - Windows 8.1
+    - Windows 7
+
+
 
 ## <a name="redirection-experience"></a>Esperienza di reindirizzamento
 
@@ -88,7 +100,7 @@ Oltre alla necessità del BHO, esiste una dipendenza da **RedirectSitesFromInter
 >
 >Questa opzione non verrà visualizzata per i dispositivi associati a dominio o registrati tramite Gestione di dispositivi mobili (MDM).
 >
-> In alternativa, se si desidera consentire agli utenti di caricare i siti Web nella modalità di Internet Explorer, è possibile farlo configurando il criterio [Consenti il test della modalità di Internet Explorer](./microsoft-edge-policies.md#allow-internet-explorer-mode-testing).
+> In alternativa, se si desidera consentire agli utenti di caricare i siti Web nella modalità di Internet Explorer, è possibile farlo configurando il criterio [Consenti il test della modalità di Internet Explorer](./microsoft-edge-policies.md#intranetredirectbehavior).
 
 ### <a name="policy-hideinternetexplorerredirectuxforincompatiblesitesenabled"></a>Policy: HideInternetExplorerRedirectUXForIncompatibleSitesEnabled
 
