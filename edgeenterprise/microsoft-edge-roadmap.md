@@ -3,19 +3,19 @@ title: Roadmap di Microsoft Edge in modalità Enterprise
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 06/29/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Roadmap di Microsoft Edge in modalità Enterprise
-ms.openlocfilehash: c21077324d0c5161e1cc7d4ff521b3f205466f39
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
-ms.translationtype: HT
+ms.openlocfilehash: 0286b1d23e1645cc87abbdef241a1bdd1ddb5a5b
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447810"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643152"
 ---
 # <a name="microsoft-edge-enterprise-roadmap"></a>Roadmap di Microsoft Edge in modalità Enterprise
 

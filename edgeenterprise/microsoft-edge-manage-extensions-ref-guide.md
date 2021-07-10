@@ -3,19 +3,19 @@ title: Guida dettagliata al criterio ExtensionSettings
 ms.author: aspoddar
 author: dan-wesley
 manager: balajek
-ms.date: 03/31/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Guida di riferimento dettagliata per la configurazione delle estensioni di Microsoft Edge tramite il criterio ExtensionSettings.
-ms.openlocfilehash: 89ff329d6e209a4e658907385ec24fd0d2f1d1c2
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 3acd798be6b2b56761991d8adaf014ae614a3fd4
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618159"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641322"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>Guida dettagliata al criterio ExtensionSettings
 
@@ -161,4 +161,4 @@ Impostazioni diverse richiederanno formati diversi, a seconda che si tratti di u
 - [Gestire le estensioni di Microsoft Edge nell'organizzazione](microsoft-edge-manage-extensions.md)
 - [Usare i criteri di gruppo per gestire le impostazioni di Microsoft Edge](microsoft-edge-manage-extensions-policies.md)
 - [Domande frequenti sulle estensioni di Microsoft Edge](microsoft-edge-manage-extensions-faq.md)
-- [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
+- [Pagina di destinazione di Microsoft Edge per le aziende](https://aka.ms/EdgeEnterprise)

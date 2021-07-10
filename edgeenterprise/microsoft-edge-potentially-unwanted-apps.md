@@ -3,19 +3,19 @@ title: Usare Microsoft Edge per la protezione da applicazioni potenzialmente ind
 ms.author: kvice
 author: dan-wesley
 manager: srugh
-ms.date: 03/04/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Usare Microsoft Edge per la protezione da applicazioni potenzialmente indesiderate
-ms.openlocfilehash: 4e9d513c4d1144d4109064d7aa42e4ef31a59b88
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
-ms.translationtype: HT
+ms.openlocfilehash: 68cd87e85408933212c4b25baa01a9ff8d994089
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11448030"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643102"
 ---
 # <a name="protect-against-potentially-unwanted-applications-puas"></a>Proteggersi da applicazioni potenzialmente indesiderate
 

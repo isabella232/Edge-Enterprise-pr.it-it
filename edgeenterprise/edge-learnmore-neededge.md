@@ -3,19 +3,19 @@ title: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibili
 ms.author: laannade
 author: dan-wesley
 manager: ratetali
-ms.date: 11/16/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
-ms.openlocfilehash: 7cd74eda6d8ada7647862ea69f77a982713f0c14
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: ec59380b82dc975ba3075d6e008bc0da05136f72
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617296"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642112"
 ---
 # <a name="redirection-from-internet-explorer-to-microsoft-edge-for-compatibility-with-modern-web-sites"></a>Reindirizzamento da Internet Explorer a Microsoft Edge per la compatibilità con i siti Web moderni
 
@@ -25,7 +25,7 @@ ms.locfileid: "11617296"
 ## <a name="overview"></a>Panoramica
 
 >[!Note]
-> L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Per altre informazioni, vedere](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+> L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Per altre informazioni, vedere](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Molti siti Web moderni per come sono progettati non sono compatibili con Internet Explorer. Quando un utente di Internet Explorer visita un sito Web pubblico non compatibile, viene visualizzato un messaggio che lo informa che il sito Web non è compatibile con il browser in uso e che è necessario passare manualmente a un altro browser.
 

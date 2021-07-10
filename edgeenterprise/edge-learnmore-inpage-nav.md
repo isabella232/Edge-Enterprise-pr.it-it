@@ -3,21 +3,21 @@ title: Mantenere lo spostamento nella pagina in modalità Internet Explorer
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 05/01/2020
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Mantenere lo spostamento nella pagina in modalità Internet Explorer
-ms.openlocfilehash: 0acca9e05a0d09b02fa61d5ddd7de3f7c6cabb92
-ms.sourcegitcommit: 4edbe2fc2fc9a013e6a0245aba485fcc5905539b
-ms.translationtype: HT
+ms.openlocfilehash: 20b18d121c3babfaacffd4a08316b25be714d95e
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/31/2020
-ms.locfileid: "10980222"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641362"
 ---
-# Mantenere lo spostamento nella pagina in modalità Internet Explorer
+# <a name="keep-in-page-navigation-in-internet-explorer-mode"></a>Mantenere lo spostamento nella pagina in modalità Internet Explorer
 
 È possibile usare questo criterio come soluzione temporanea per forzare lo spostamento nella pagina dei siti in modalità Internet Explorer (modalità IE) a rimanere in modalità Internet Explorer.
 
@@ -26,7 +26,7 @@ Lo spostamento nella pagina viene avviato da un collegamento, uno script o una m
 >[!NOTE]
 >Questo articolo si applica a Microsoft Edge, versione 81 o successiva.
 
-##  <a name="prerequisites"></a>Prerequisiti
+## <a name="prerequisites"></a>Prerequisiti
 
 Per questo criterio sono necessari gli aggiornamenti di Windows seguenti:
 
@@ -36,13 +36,13 @@ Per questo criterio sono necessari gli aggiornamenti di Windows seguenti:
 - Windows 10, versione 1709 ([KB4534318](https://support.microsoft.com/help/4534318))
 
 
-##  <a name="about-this-policy"></a>Informazioni sul criterio
+## <a name="about-this-policy"></a>Informazioni sul criterio
 
 Questo criterio consente di identificare e configurare tutti i server di autenticazione usati dai propri siti in modalità Internet Explorer. Tuttavia, il criterio può comportare un'esperienza di navigazione incoerente poiché alcuni siti effettuano il rendering in modalità Internet Explorer e altre volte in modalità Microsoft Edge. Questa esperienza varia a seconda che lo spostamento al sito abbia avuto inizio da una pagina in modalità Internet Explorer. I siti non configurati in modo esplicito per l'apertura in un motore di rendering specifico sono soggetti a questa incoerenza.
 
 Se si abilita questo criterio, è consigliabile disabilitarlo dopo aver identificato tutti i server di autenticazione e averli aggiunti all'elenco del sito come server neutri. In questo modo, i siti moderni non effettueranno mai inavvertitamente il rendering in modalità Internet Explorer.
 
-##  <a name="keep-in-page-navigation-in-ie-mode"></a>Mantenere lo spostamento nella pagina in modalità IE
+## <a name="keep-in-page-navigation-in-ie-mode"></a>Mantenere lo spostamento nella pagina in modalità IE
 
 Per mantenere lo spostamento automatico o tutto lo spostamento nella pagina in modalità Internet Explorer, seguire i passaggi seguenti:
 
@@ -60,10 +60,10 @@ Per mantenere lo spostamento automatico o tutto lo spostamento nella pagina in m
 
    - **Impostazione predefinita**: solo i siti configurati per l'apertura in modalità Internet Explorer verranno aperti in questa modalità. I siti non configurati per l'apertura in modalità Internet Explorer verranno reindirizzati a Microsoft Edge.
    - **Mantenere solo lo spostamento automatico in modalità Internet Explorer**: usare questa opzione se si vuole mantenere l'esperienza predefinita tranne gli spostamenti automatici (ad esempio 302 reindirizzamenti) ai siti non configurati in modalità Internet Explorer.
-   - **Mantenere tutto lo spostamento nella pagina in modalità Internet Explorer** ***(meno consigliata)***: tutti gli spostamenti dalle pagine caricate in modalità IE verso siti non configurati vengono mantenuti in modalità Internet Explorer.
+   - **Mantenere tutto lo spostamento nella pagina in modalità Internet Explorer**  * *_(Scelta minima consigliata)_*_ Tutti gli spostamenti dalle pagine caricate in modalità Internet Explorer ai siti non configurati vengono mantenuti in modalità Internet Explorer.
 
-6. Fare clic su **OK** o su **Applica** per salvare queste impostazioni dei criteri.
+6. Fare clic su _*OK** **o su Applica** per salvare le impostazioni dei criteri.
 
-##  <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

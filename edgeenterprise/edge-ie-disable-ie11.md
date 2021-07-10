@@ -3,24 +3,24 @@ title: Disabilitare Internet Explorer 11
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 05/19/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su come disabilitare Internet Explorer 11 e usare la modalità Internet Explorer in Microsoft Edge.
-ms.openlocfilehash: ae4d936df7e432eee250e1c7327acfd206d86410
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 9ea99c794dc06a0eb5167e56e72b6e7b6ee70212
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617486"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641512"
 ---
 # <a name="disable-internet-explorer-11"></a>Disabilitare Internet Explorer 11
 
 >[!Note]
-> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Questo articolo descrive come disabilitare Internet Explorer 11 come browser autonomo.
 
@@ -72,8 +72,8 @@ Per disabilitare Internet Explorer 11 tramite i Criteri di gruppo, seguire la se
 
 1. Assicurarsi di disporre dei prerequisiti relativi agli aggiornamenti del sistema operativo. Questo passaggio aggiornerà direttamente i file ADMX nel computer (nello specifico, inetres.adml e inetres.admx). Tenere presente che, se si desidera aggiornare l'archivio centrale, sarà necessario copiare i file con estensione .adml e .admx da un computer con gli aggiornamenti dei prerequisiti. Per altre informazioni, vedere [Creare e gestire l'archivio centrale](/troubleshoot/windows-client/group-policy/create-and-manage-central-store)
 2. Aprire l'Editor Criteri di gruppo.
-3. Passare a ***Configurazione computer/Modelli amministrativi/Componenti di Windows/Internet Explorer***. 
-4. Fare doppio clic su ** Disabilitare Internet Explorer 11 come browser autonomo.**
+3. Vai a **_Configurazione computer/Modelli amministrativi/Windows componenti/Internet Explorer_*_. 
+4. Fai doppio clic su _*Disable Internet Explorer 11 as a standalone browser**.
 5. Selezionare **Abilitato.**
 6. In **Opzioni**, selezionare uno dei valori seguenti:
 

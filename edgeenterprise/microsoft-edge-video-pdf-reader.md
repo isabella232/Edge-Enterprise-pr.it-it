@@ -3,31 +3,31 @@ title: Lettore PDF professionale di Microsoft Edge
 ms.author: collw
 author: dan-wesley
 manager: seanlynd
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Lettore PDF professionale di Microsoft Edge
-ms.openlocfilehash: fcbe33a87f5557e3d1fd917401b34bb6a6aaa90c
-ms.sourcegitcommit: c290b0b0fa6b7d7f94dcdfdda91302da733326ec
-ms.translationtype: HT
+ms.openlocfilehash: 5e2f70e9ab488be9ad392f0480d937cabcb45533
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/06/2021
-ms.locfileid: "11314739"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642742"
 ---
-# Video: Lettore PDF professionale di Microsoft Edge
+# <a name="video-microsoft-edge-enterprise-grade-pdf-reader"></a>Video: Lettore PDF professionale di Microsoft Edge
 
 Questo video mostra il lettore PDF professionale di Microsoft Edge Fare clic sulla schermata successiva per guardare il video di Aditi Gangwar, Program Manager.
 
 [![Lettore PDF professionale](media/microsoft-edge-video-pdf-reader/0.png)](http://www.youtube.com/watch?v=XWAqNQ0xAcE "Enterprise grade PDF reader")
 
-##  <a name="about-the-video"></a>Informazioni sul video
+## <a name="about-the-video"></a>Informazioni sul video
 
 Questo video evidenzia le caratteristiche del lettore PDF integrato in Microsoft Edge. Scopri come usare l'input penna ed evidenziare i PDF, aprire documenti protetti e visualizzare e convalidare le firme digitali basate su certificati.
 
-##  <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
 - [Lettore PDF in Microsoft Edge](microsoft-edge-pdf.md)

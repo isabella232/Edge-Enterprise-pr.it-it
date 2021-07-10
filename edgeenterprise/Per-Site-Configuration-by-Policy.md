@@ -3,19 +3,19 @@ title: 'Configurazione per sito in base ai criteri '
 ms.author: collw
 author: AndreaLBarr
 manager: laurawi
-ms.date: 05/03/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 'Configurazione per sito in base ai criteri '
-ms.openlocfilehash: 6bba2c9b1d691c338a3146ef246de9f94e262a03
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 4f1bf9a421f0098ba8105e78f77ac4af62530239
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618151"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641692"
 ---
 # <a name="persite-configuration-by-policy"></a>Configurazione per sito in base ai criteri
 
@@ -73,7 +73,7 @@ Se l'utente ha una prospettiva orientata verso il futuro, è possibile costruire
 
 - <div style="display: inline">`https://sharepoint.contoso-intranet.com`</div>
 
-Congratulazioni, è stata implementata una procedura consigliata. È possibile configurare ogni criterio desiderato con una voce ***.contoso-intranet.com**  e l'intera rete Intranet verrà attivata.
+Congratulazioni, è stata implementata una procedura consigliata. È possibile configurare ogni criterio desiderato con una voce **_.contoso-intranet.com_* e verrà acconsentito esplicitamente l'intera   Intranet.
 
 ## <a name="use-of-security-zones-inthe-microsoft-edge"></a>Utilizzo delle aree di sicurezza in Microsoft Edge
 

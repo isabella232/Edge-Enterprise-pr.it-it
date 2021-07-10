@@ -3,24 +3,24 @@ title: 'Gestione elenco siti dell’organizzazione in Microsoft Edge '
 ms.author: shisub
 author: dan-wesley
 manager: srugh
-ms.date: 05/19/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 'Abilitare e usare Enterprise Site List Manager in Microsoft Edge '
-ms.openlocfilehash: aa468888a05753fb5b033a8b99c2f6045f4e1b12
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: add635a17d05cb4be94e710fd99ab480b992a579
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617406"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641422"
 ---
 # <a name="enterprise-site-list-manager-in-microsoft-edge"></a>Gestione elenco siti dell'organizzazione in Microsoft Edge
 
 >[!Note]
-> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+> L'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi interessati, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Altre informazioni qui](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Questo articolo spiega come abilitare l'accesso e usare Enterprise Site List Manager in Microsoft Edge per creare, modificare ed esportare il tuo l'elenco siti modalità Enterprise per la modalità Internet Explorer.
 

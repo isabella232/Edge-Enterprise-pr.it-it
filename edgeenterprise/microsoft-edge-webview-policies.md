@@ -3,20 +3,20 @@ title: Documentazione sui criteri di Microsoft Edge WebView2
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 06/17/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 78d4a610fd4d5ba5549ea1e2e4833acc9e686016
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: cec4ab92257322b93072b694ceddc7ab6351b287
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617982"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642942"
 ---
 # <a name="microsoft-edge-webview2---policies"></a>Criteri: Microsoft Edge WebView2
 

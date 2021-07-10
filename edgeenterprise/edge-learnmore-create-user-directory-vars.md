@@ -3,19 +3,19 @@ title: Creare variabili di directory dei dati utente di Microsoft Edge
 ms.author: brianalt
 author: AndreaLBarr
 manager: srugh
-ms.date: 04/21/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Scopri come creare variabili di directory dei dati utente di Microsoft Edge
-ms.openlocfilehash: 5ec78f16c7e5cd43f01845f35b8473494cd0c4bf
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 2e85e8eebac4a636d90fd0b5da7520c9a86a2de0
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11618146"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641452"
 ---
 # <a name="create-microsoft-edge-user-data-directory-variables"></a>Creare variabili di directory dei dati utente di Microsoft Edge
 
@@ -62,7 +62,7 @@ Microsoft Edge supporta le variabili di percorso seguenti.
 | **${global_app_data}** | Cartella Dati applicazioni a livello di sistema. Esempio: *C:\AppData* |
 | **${program_files}** | Cartella Programmi per il processo corrente. Questa cartella varia a seconda che si tratti di un processo a 32 bit o a 64 bit. Risoluzione di esempio: *C:\Programmi (x86)* |
 | **${windows}** | Cartella di Windows. Esempio: *C:\Windows* |
-| **${client_name)** | Nome del PC client connesso a una sessione RDP o Citrix. Questa variabile è vuota se viene usata da una sessione locale. Se viene usata in un percorso, aggiungi un prefisso con un elemento non vuoto. Esempio: *C:\edge_profiles\session_${client_name}* viene risolto in *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* e *C:\edge_profiles\session_&lt;SomePCname&gt;* per le sessioni remote. |
+| **${client_name}** | Nome del PC client connesso a una sessione RDP o Citrix. Questa variabile è vuota se viene usata da una sessione locale. Se viene usata in un percorso, aggiungi un prefisso con un elemento non vuoto. Esempio: *C:\edge_profiles\session_${client_name}* viene risolto in *C:\edge_profiles\session_&lt;ForlocalSessions&gt;* e *C:\edge_profiles\session_&lt;SomePCname&gt;* per le sessioni remote. |
 | **${session_name}** | Nome della sessione attiva. Usare tale nome per distinguere più sessioni remote connesse contemporaneamente che usano un singolo profilo utente. Esempio: *WinSta0 per sessioni desktop locali* |
 
 #### <a name="macos-only"></a>Solo macOS

@@ -3,20 +3,20 @@ title: Documentazione sui criteri del browser Microsoft Edge
 ms.author: stmoody
 author: dan-wesley
 manager: tahills
-ms.date: 06/17/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 21933e81427b84d69f6d3ead4dfc911519e65bb3
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: eba448024e86cd0c0ceb733b6363317d7c6ca5fb
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617876"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11642832"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -260,7 +260,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -4234,7 +4234,7 @@ Se si abilita questa impostazione, le estensioni esterne vengono bloccate dall'i
 
 Se si disattiva questa impostazione o non la si annulla, le estensioni esterne possono essere installate.
 
-Le estensioni esterne e la relativa installazione sono documentate in ./microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options.
+Le estensioni esterne e la relativa installazione sono [documentate qui.](/microsoft-edge/extensions-chromium/developer-guide/alternate-distribution-options)
 
 
   #### <a name="supported-features"></a>Funzionalità supportate:
@@ -4518,7 +4518,7 @@ Il codice sorgente di qualsiasi estensione può essere modificato dagli utenti c
 
 Ogni elemento elenco del criterio è una stringa che contiene un ID di estensione e, facoltativamente, un URL di "aggiornamento" separato da un punto e virgola (;). L'ID dell'estensione è la stringa di 32 lettere che si trova, ad esempio, in edge://extensions in modalità sviluppatore. Se specificato, l'URL di "aggiornamento" dovrebbe indicare un documento XML di un manifesto di aggiornamento ( [https://go.microsoft.com/fwlink/?linkid=2095043](https://go.microsoft.com/fwlink/?linkid=2095043) ). Per impostazione predefinita, viene utilizzato l'URL di aggiornamento del sito Web dei componenti aggiuntivi di Microsoft Edge. L'URL di "aggiornamento" impostato in questo criterio viene usato solo per l'installazione iniziale. Gli aggiornamenti successivi dell'estensione usano l'URL di aggiornamento nel manifesto dell'estensione.
 
-Nota: questo criterio non si applica alla modalità InPrivate. Informazioni sulle estensioni di hosting (./microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
+Nota: questo criterio non si applica alla modalità InPrivate. Per informazioni sulle estensioni di [hosting, vedere](/microsoft-edge/extensions-chromium/enterprise/hosting-and-updating).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -5557,7 +5557,7 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico di Criteri di gruppo: MAMEnabled
   - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
@@ -8111,7 +8111,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -8345,7 +8345,7 @@ Se si abilita questo criterio, Microsoft Edge scarica e mostra il logo specifica
 
 Se si disabilita o non si configura questo criterio, Microsoft Edge non mostrerà alcun logo aziendale né un logo Microsoft nella pagina Nuova scheda.
 
-Per informazioni sulla determinazione dell'hash SHA-256, vedere ./powershell/module/microsoft.powershell.utility/get-filehash.
+Per informazioni su come determinare l'hash SHA-256, vedere [qui](/powershell/module/microsoft.powershell.utility/get-filehash).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -11432,7 +11432,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -21379,7 +21379,7 @@ Se non si configurano i criteri seguenti:
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -22337,7 +22337,7 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -22472,7 +22472,7 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TargetBlankImpliesNoOpener
   - Nome Criteri di gruppo: non impostare window.opener per i collegamenti con destinazione _blank
