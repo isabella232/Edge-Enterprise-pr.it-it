@@ -3,19 +3,19 @@ title: Supporto della piattaforma per le funzionalità di Microsoft Edge
 ms.author: collw
 author: dan-wesley
 manager: srugh
-ms.date: 03/25/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Riepilogo del supporto della piattaforma per le funzionalità di Microsoft Edge
-ms.openlocfilehash: 3fb4fc0bc2671bdee5055fa650f191c5d3821963
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: c34249e126a1fb27c84a2f025c826654bb9df358
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617726"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643122"
 ---
 # <a name="platform-support-for-microsoft-edge-features"></a><span data-ttu-id="712c3-103">Supporto della piattaforma per le funzionalità di Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="712c3-103">Platform support for Microsoft Edge features</span></span>
 

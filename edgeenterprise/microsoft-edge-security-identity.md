@@ -3,19 +3,19 @@ title: Supporto e configurazione delle identità in Microsoft Edge
 ms.author: avvaid
 author: dan-wesley
 manager: srugh
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Supporto e configurazione delle identità in Microsoft Edge
-ms.openlocfilehash: 34a5a4aa958873a012d0a2da4184cb508af27a8a
-ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
-ms.translationtype: HT
+ms.openlocfilehash: 18b82c3f0c4af0e383dd50266c3d9184c76b23af
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 06/25/2021
-ms.locfileid: "11617916"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641382"
 ---
 # <a name="microsoft-edge-identity-support-and-configuration"></a><span data-ttu-id="b4ec0-103">Supporto e configurazione delle identità in Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="b4ec0-103">Microsoft Edge identity support and configuration</span></span>
 

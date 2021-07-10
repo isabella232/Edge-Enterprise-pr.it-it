@@ -3,19 +3,19 @@ title: Lettre PDF in Microsoft Edge
 ms.author: adigan
 author: dan-wesley
 manager: balajek
-ms.date: 03/01/2021
+ms.date: 06/28/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni sul lettore PDF in Microsoft Edge.
-ms.openlocfilehash: 342f6702ff0da3305c037112555549b0d5503d3c
-ms.sourcegitcommit: f363ceb6c42054fabc95ce8d7bca3c52d80e6a9f
+ms.openlocfilehash: 0b1cffceb63c1829c39bdd3fa658df2e5f776584
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 03/24/2021
-ms.locfileid: "11447840"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11643182"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a><span data-ttu-id="12315-103">Lettre PDF in Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="12315-103">PDF reader in Microsoft Edge</span></span>
 

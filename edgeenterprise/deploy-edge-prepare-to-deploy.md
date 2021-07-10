@@ -3,27 +3,27 @@ title: Microsoft Edge nel tuo ambiente
 ms.author: ryhecht
 author: RyanHechtMSFT
 manager: tinad
-ms.date: 02/05/2021
+ms.date: 06/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: high
+ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Microsoft Edge nel tuo ambiente
-ms.openlocfilehash: e1418d21ff9e541d83d5b86baf5ff25c50d2299d
-ms.sourcegitcommit: 16a92a51560fdba6f6480e4533453348f026c7ef
-ms.translationtype: HT
+ms.openlocfilehash: 2381380cb399f6a1fbb5efa9378ffeba20fa774f
+ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 02/05/2021
-ms.locfileid: "11313942"
+ms.lasthandoff: 07/09/2021
+ms.locfileid: "11641602"
 ---
-# <span data-ttu-id="03c37-103">Microsoft Edge nel tuo ambiente</span><span class="sxs-lookup"><span data-stu-id="03c37-103">Microsoft Edge in your environment</span></span>
+# <a name="microsoft-edge-in-your-environment"></a><span data-ttu-id="03c37-103">Microsoft Edge nel tuo ambiente</span><span class="sxs-lookup"><span data-stu-id="03c37-103">Microsoft Edge in your environment</span></span>
 
 <span data-ttu-id="03c37-104">Questo articolo descrive come prepararsi a implementare Microsoft Edge quandola versione legacy di Microsoft Edge raggiunge la fine del suo servizio.</span><span class="sxs-lookup"><span data-stu-id="03c37-104">This article describes how to prepare to deploy Microsoft Edge when Microsoft Edge Legacy reaches its end of service.</span></span>
 
 <span data-ttu-id="03c37-105">Come da [post del blog](https://aka.ms/EdgeLegacyEOS) di Microsoft Edge Product Team, il supporto per l'applicazione desktop Microsoft Edge Legacy terminerà il 9 marzo 2021.</span><span class="sxs-lookup"><span data-stu-id="03c37-105">As per the Microsoft Edge Product Team’s [blog post](https://aka.ms/EdgeLegacyEOS), support for the Microsoft Edge Legacy desktop application will end on March 9, 2021.</span></span> <span data-ttu-id="03c37-106">Quando applichi la versione Update Tuesday (o "B") di aprile, si rimuoverà la versione legacy di Microsoft Edge dai dispositivi con Windows 10 RS4 attraverso 20H1 e lo sostituirà con Microsoft Edge.</span><span class="sxs-lookup"><span data-stu-id="03c37-106">When you apply the Update Tuesday (or "B") release in April, it will remove Microsoft Edge Legacy from devices running Windows 10 RS4 through 20H1 and replace it with Microsoft Edge.</span></span>
 
-## <span data-ttu-id="03c37-107">Come prepararsi</span><span class="sxs-lookup"><span data-stu-id="03c37-107">How to Prepare</span></span>
+## <a name="how-to-prepare"></a><span data-ttu-id="03c37-107">Come prepararsi</span><span class="sxs-lookup"><span data-stu-id="03c37-107">How to Prepare</span></span>
 
 <span data-ttu-id="03c37-108">Per preparare l'installazione di Microsoft Edge nei dispositivi Windows 10 RS4-20H1 con la versione Update Tuesday di aprile, consigliamo leggere [Pianificare l’implementazione di Microsoft Edge](deploy-edge-plan-deployment.md).</span><span class="sxs-lookup"><span data-stu-id="03c37-108">To prepare for Microsoft Edge being installed on Windows 10 RS4 through 20H1 devices with the Update Tuesday release in April, we recommend reading [Plan your deployment of Microsoft Edge](deploy-edge-plan-deployment.md).</span></span>
 
@@ -33,7 +33,7 @@ ms.locfileid: "11313942"
 
 - <span data-ttu-id="03c37-114">**Rimuovere l'applicazione desktop della versione legacy di Microsoft Edge prima della sua data di fine servizio del 9 marzo 2021 e distribuire Microsoft Edge**.</span><span class="sxs-lookup"><span data-stu-id="03c37-114">**Remove the Microsoft Edge Legacy desktop application before its end of service date of March 9, 2021 and deploy Microsoft Edge**.</span></span> <span data-ttu-id="03c37-115">Per Windows 10 RS4 fino a 20H1, potete farlo usando Windows Updates.</span><span class="sxs-lookup"><span data-stu-id="03c37-115">For Windows 10 RS4 through 20H1, you can do this by using Windows Updates.</span></span> <span data-ttu-id="03c37-116">Per altre informazioni, consulta [Distribuire Microsoft Edge con gli aggiornamenti di Windows 10](deploy-edge-with-windows-10-updates.md).</span><span class="sxs-lookup"><span data-stu-id="03c37-116">For more information, see [Deploy Microsoft Edge with Windows 10 updates](deploy-edge-with-windows-10-updates.md).</span></span>
 
-## <span data-ttu-id="03c37-117">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="03c37-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="03c37-117">Vedere anche</span><span class="sxs-lookup"><span data-stu-id="03c37-117">See also</span></span>
 
 - [<span data-ttu-id="03c37-118">Pagina di destinazione di Microsoft Edge in modalità Enterprise</span><span class="sxs-lookup"><span data-stu-id="03c37-118">Microsoft Edge Enterprise landing page</span></span>](https://aka.ms/EdgeEnterprise)
 - [<span data-ttu-id="03c37-119">Pianificare la distribuzione di Microsoft Edge</span><span class="sxs-lookup"><span data-stu-id="03c37-119">Plan your deployment of Microsoft Edge</span></span>](deploy-edge-plan-deployment.md)
