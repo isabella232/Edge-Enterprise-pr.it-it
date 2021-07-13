@@ -3,30 +3,41 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 1115c8d7822fef7e3784a465d5d4ddfd7b6bd6b1
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: d5e4a4807a12cfd50cd0efaeab672361c68a1508
+ms.sourcegitcommit: e3a30351b02226aa042153f17636d64a12c4518b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643162"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643942"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
 Queste note sulla versione contengono informazioni sulle nuove funzionalità e gli aggiornamenti non relativi alla sicurezza inclusi nel canale Microsoft Edge Beta. Le versioni precedenti di queste note sulla versione sono disponibili [qui](microsoft-edge-relnote-archive-beta-channel.md).
 
 > [!NOTE]
-> La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche con ripercussioni sulla compatibilità dei siti in Microsoft Edge](/microsoft-edge/web-platform/site-impacting-changes).
+> La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per ulteriori informazioni, vedere [Modifiche in arrivo su Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-92090245-july-12"></a>Versione 92.0.902.45: 12 luglio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
+## <a name="version-92090240-july-6"></a>Versione 92.0.902.40: 6 luglio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-92090222-june-21"></a>Versione 92.0.902.22: 21 giugno
 
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **Ricerca in linguaggio naturale della cronologia del browser sulla barra degli indirizzi.** Trovare l'articolo/sito Web che si sta cercando è ora più semplice grazie alla ricerca in linguaggio naturale direttamente dalla barra degli indirizzi. Puoi trovare i risultati della ricerca in base al contenuto/descrizione/intervallo della pagina (ad esempio "ricetta torta della settimana scorsa") oltre alle sole corrispondenze di parole chiave di titoli/URL.
+Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **Gli utenti possono passare facilmente alla modalità Internet Explorer in Microsoft Edge**. A partire da Microsoft Edge versione 92, gli utenti possono ricaricare un sito in modalità Internet Explorer in Microsoft Edge anziché basarsi sull'applicazione Internet Explorer 11autonoma in attesa della configurazione di un sito nell'elenco dei siti in modalità Enterprise. Agli utenti verrà richiesto di aggiungere il sito all'elenco dei siti locali in modo che il rendering della stessa pagina in Microsoft Edge venga eseguito automaticamente in Internet Explorer per i 30 giorni successivi. È possibile usare il criterio *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* per configurare questa esperienza e consentire l'accesso ai punti di ingresso in modalità Internet Explorer, nonché la possibilità di aggiungere siti all'elenco di siti locale. È possibile usare il criterio *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* per modificare il numero di giorni di conservazione dei siti nell'elenco dei siti locali.
 Si noti che è necessario KB5003698 o versione successiva per Windows 10 versione 1909 oppure KB5003690 o versione successiva per Windows 10 versione 2004, Windows 10 versione 20H2 o Windows 10 versione 21H1 per l'esperienza end-to-end.
@@ -34,19 +45,19 @@ Si noti che è necessario KB5003698 o versione successiva per Windows 10 version
 - **I file MHTML verranno aperti per impostazione predefinita in modalità Internet Explorer.** A partire da Microsoft Edge versione 92 del canale stabile, i tipi di file MHTML verranno aperti automaticamente in modalità Internet Explorer in Microsoft Edge anziché nell'applicazione Internet Explorer (IE11). Questo si verifica più comunemente durante il tentativo di visualizzare i messaggi di posta elettronica di Outlook in un browser. La modifica avrà effetto solo se Internet Explorer 11 è il gestore predefinito per questo tipo di file. Se si preferisce modificare questa impostazione, è possibile farlo prima di installare l'aggiornamento alla versione 92 del canale stabile usando [questa guida.](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)
 
 - **Gli strumenti di pagamento sono ora sincronizzati tra i dispositivi**. A partire da Microsoft Edge versione 92, è possibile sincronizzare le informazioni di pagamento tra i dispositivi connessi.
-Nota: si tratta di un'implementazione controllata delle funzionalità e attualmente siamo al 50%. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **L'avviso "Disabilitare le estensioni per la modalità sviluppatore" può essere ignorato definitivamente**. A partire da Microsoft Edge versione 92, è possibile disattivare l'avviso "Disabilitare le estensioni per la modalità sviluppatore" facendo clic sull'opzione "Non visualizzare più questo messaggio".
-Nota: si tratta di un'implementazione controllata delle funzionalità e attualmente siamo al 25%. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **Gestione delle estensioni direttamente dalla barra degli strumenti**. Il nuovo menu delle estensioni sulla barra degli strumenti consente di nascondere/aggiungere facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
-Nota: si tratta di un'implementazione controllata delle funzionalità e attualmente siamo al 25%. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **HTTPS automatico**. Gli utenti avranno la possibilità di aggiornare la navigazione da HTTP a HTTPS nei domini che probabilmente supporteranno questo protocollo più sicuro. Questo supporto può essere configurato anche per tentare il recapito tramite HTTPS per tutti i domini.
 Nota: la funzionalità è sperimentale e questo comportamento non verrà mostrato se hai rifiutato esplicitamente gli esperimenti.
 
 - **Miglioramenti al rendering dei tipi di carattere**. Sono stati apportati miglioramenti al rendering del testo per migliorare la chiarezza e aumentare la nitidezza.
-Nota: si tratta di un'implementazione controllata delle funzionalità e attualmente siamo al 25%. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 ### <a name="policy-updates"></a>Aggiornamenti dei criteri
 
@@ -66,7 +77,6 @@ Sono stati aggiunti otto nuovi criteri. Scaricare i modelli amministrativi aggio
 #### <a name="obsoleted-policy"></a>Criteri obsoleti
 
 - [EnableSha1ForLocalAnchors](/DeployEdge/microsoft-edge-policies#enablesha1forlocalanchors) Consenti certificati firmati con SHA-1 quando vengono emessi da Trust Anchor locali.
-
 
 ## <a name="version-9209029-june-8"></a>Versione 92.0.902.9: 8 giugno
 

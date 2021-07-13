@@ -1,21 +1,21 @@
 ---
 title: Monitoraggio password con abilitazione automatica per gli utenti
 ms.author: supalsul
-author: dan-wesley
+author: AndreLBarr
 manager: tulasim
-ms.date: 06/29/2021
+ms.date: 07/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Monitoraggio password con abilitazione automatica per gli utenti
-ms.openlocfilehash: 76fc4f0c0ce4bb59ba6b2d4d8a82b61592585918
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: bd1fe390b972c66cd9b4c20ab3a9fabde76c7e03
+ms.sourcegitcommit: 65530c0bad3097a510f507503eae9c5c67db47a0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643092"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643883"
 ---
 # <a name="password-monitor-auto-enabled-for-users"></a>Monitoraggio password con abilitazione automatica per gli utenti
 
@@ -31,12 +31,6 @@ Monitoraggio password consente agli utenti di Microsoft Edge di proteggere i pro
 ### <a name="benefits"></a>Vantaggi
 
 Considerando la frequenza e l'ambito di questi attacchi online, è diventato necessario per tutti avere questo tipo di protezione. Microsoft Edge consente di controllare in modo sicuro le password salvate da un utente rispetto alle password segnalate come compromesse e di avvisarlo se viene trovata una corrispondenza.  
-
-### <a name="availability"></a>Disponibilità
-
-Monitoraggio password è disponibile nel Canale Stabile, versione 88 a partire dal 21/1. L'implementazione sarà graduale e potrebbero essere necessarie alcune settimane prima che vengano visualizzati il messaggio e il controllo seguenti nella pagina **Impostazioni** > **Profilo** > **Password**.
-
-:::image type="content" source="media/microsoft-edge-security-password-monitor/monitor-enable-option.png" alt-text="Opzione per abilitare Monitoraggio password":::
 
 ## <a name="configure-group-policy-for-password-monitor"></a>Configurare criteri di gruppo per Monitoraggio password
 

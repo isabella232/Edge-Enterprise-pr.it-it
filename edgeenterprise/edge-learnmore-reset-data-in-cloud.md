@@ -3,19 +3,19 @@ title: Reimpostare i dati Microsoft Edge
 ms.author: collw
 author: dan-wesley
 manager: silvanam
-ms.date: 06/28/2021
+ms.date: 07/09/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Come reimpostare i dati Microsoft Edge nel cloud
-ms.openlocfilehash: 19ee60926e36371bd710937fcafc43de7ea035f4
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: dc6c0ae1b1bc31228e9b9b1de315a19e99149134
+ms.sourcegitcommit: 2a00571483e1d169b2b3b59f4fce43262f460a9a
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642042"
+ms.lasthandoff: 07/12/2021
+ms.locfileid: "11643741"
 ---
 # <a name="reset-microsoft-edge-data-in-the-cloud"></a>Reimpostare i dati Microsoft Edge nel cloud
 
@@ -35,8 +35,8 @@ Ci sono situazioni in cui vuoi reimpostare i dati Microsoft Edge nel cloud. Ad e
 
 Prima di eseguire un ripristino, è consigliabile eseguire il backup dei preferiti. Usare la procedura seguente per eseguire il backup dei preferiti.
 
-1. In Microsoft Edge seleziona **Impostazioni e altro ancora > Preferiti > Altre opzioni > Esporta Preferiti**.
-2. Scegli il file nel punto in cui vuoi salvare i tuoi preferiti. È possibile digitare il proprio nome di file o usare quello che Microsoft Edge offre per impostazione predefinita, "favorites_month_day_year.html" come nome file. Ad esempio, "favorites_12_17_20.html". Se è necessario ripristinare i preferiti in un secondo momento, è possibile farlo da tale file.
+1. Nell'angolo in alto a destra di Microsoft Edge selezionare **Impostazioni e altro > Preferiti > Altre opzioni > Esporta Preferiti**.
+2. Scegliere il file nel punto in cui salvare i preferiti. È possibile digitare il proprio nome di file o usare quello che Microsoft Edge offre per impostazione predefinita, "favorites_month_day_year.html" come nome file. Ad esempio, "favorites_12_17_20.html". Se è necessario ripristinare i preferiti in un secondo momento, è possibile farlo da tale file.
 3. Fai clic su **Salva**.
 
 ## <a name="perform-a-reset-to-fix-a-synchronization-problem"></a>Esegui un ripristino per risolvere un problema di sincronizzazione
@@ -45,15 +45,15 @@ Se Microsoft Edge segnala che non riesce a sincronizzare i dati e suggerisce di 
 
 Usa la procedura seguente per eseguire un ripristino.
 
-1. Prima di tutto, assicurati di aver eseguito l'accesso a Microsoft Edge in tutti i tuoi dispositivi, inclusi i tuoi dispositivi mobili, eccetto il dispositivo in cui stai eseguendo il ripristino. Per disconnettersi da Microsoft Edge, seleziona **Impostazioni e altre > impostazioni > Esci**. Quando si esegue la disconnessione, non selezionare l'opzione per cancellare i Preferiti, le impostazioni e così via dal dispositivo locale.
-2. Dopo aver eseguito l'accesso a tutti gli altri dispositivi, apri Microsoft Edge sul desktop. **Seleziona impostazioni e altro > Sincronizza > Reimposta sincronizzazione**. Nella finestra di dialogo risultante scegli di riprendere la sincronizzazione dopo la reimpostazione dei dati e quindi seleziona **Reimposta**.
+1. Prima di tutto, assicurati di aver eseguito l'accesso a Microsoft Edge in tutti i tuoi dispositivi, inclusi i tuoi dispositivi mobili, eccetto il dispositivo in cui stai eseguendo il ripristino. Per disconnettersi da Microsoft Edge, nell'angolo in alto a destra di Microsoft Edge, selezionare Impostazioni e altro > Impostazioni > **Disconnetti**. Al momento della disconnessione, non selezionare l'opzione per cancellare preferiti, impostazioni, ecc. dal dispositivo locale.
+2. Dopo aver disconnesso tutti gli altri dispositivi, aprire Microsoft Edge sul desktop. Nell'angolo in alto a destra di Microsoft Edge, **selezionare Impostazioni e altro > Sincronizzazione > Reimposta sincronizzazione**. Nella finestra di dialogo risultante, scegliere di riprendere la sincronizzazione dopo la reimpostazione dei dati, quindi selezionare **Reimposta**.
 
-## <a name="perform-a-reset-to-remove-your-data-from-microsofts-cloud"></a>Esegui un ripristino per rimuovere i dati dal cloud di Microsoft
+## <a name="perform-a-reset-to-remove-your-data-from-microsofts-cloud"></a>Eseguire un ripristino per rimuovere i dati dal cloud di Microsoft
 
 Se vuoi rimuovere i dati dal cloud Microsoft, esegui la procedura seguente per effettuare il ripristino.
 
-1. Interrompi la sincronizzazione nei dispositivi tranne il dispositivo in cui stai eseguendo il ripristino.  In Microsoft Edge seleziona **Impostazioni e altro > impostazioni > Sincronizzazione > Disattiva sincronizzazione**.  
-2. Dopo aver smesso di eseguire la sincronizzazione, seleziona **Impostazioni e altro > Sincronizza > Reimposta sincronizzazione**. Nella finestra di dialogo risultante **non** scegliere di riprendere la sincronizzazione dopo la reimpostazione dei dati. Seleziona **Reimposta**.
+1. Interrompere la sincronizzazione nei dispositivi, tranne per il dispositivo di cui si sta eseguendo il ripristino.  Nell'angolo in alto a destra di Microsoft Edge, selezionare **Impostazioni e altro > Impostazioni > Sincronizzazione > Disattiva sincronizzazione**.  
+2. Dopo aver interrotto la sincronizzazione, nell'angolo in alto a destra di Microsoft Edge, selezionare **Impostazioni e altro > Sincronizzazione > Reimposta sincronizzazione**. Nella finestra di dialogo risultante non **scegliere di riprendere** la sincronizzazione in seguito al ripristino dei dati. Selezionare **Ripristina**.
 
 ## <a name="what-to-expect-during-and-after-a-data-reset"></a>Cosa aspettarsi durante e dopo un reset dei dati
 
