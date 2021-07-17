@@ -12,7 +12,7 @@ ms.collection: M365-modern-desktop
 description: Note sulla versione archiviate del canale Microsoft Edge Stable
 ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
 ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: it-IT
 ms.lasthandoff: 07/09/2021
 ms.locfileid: "11642392"
