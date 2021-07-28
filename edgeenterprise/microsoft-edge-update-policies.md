@@ -1,9 +1,9 @@
 ---
 title: Documentazione sui criteri di Microsoft Edge Update
 ms.author: stmoody
-author: dan-wesley
+author: AndreaLBarr
 manager: tahills
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione per tutti i criteri supportati da Microsoft Edge Update
-ms.openlocfilehash: a9808981acad544042c6e0ccb59ff755a670c848
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642322"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675943"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - Criteri di aggiornamento
 
@@ -41,7 +41,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[CreateDesktopShortcut](#createdesktopshortcut)|Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione (per canale)|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|Eseguire il ripristino dello stato precedente della versione di destinazione (per canale)|
 |[TargetVersionPrefix](#targetversionprefix)|Sostituzione della versione di destinazione (in base al canale)|
-
+|[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| Recuperare configurazioni ed esperimenti|
 ### [<a name="preferences"></a>Preferenze](#preferences-policies)
 |Nome criterio|Didascalia|
 |-|-|
@@ -201,7 +201,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 - Nome file ADMX Criteri di gruppo: msedgeupdate.admx
 ##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
 - Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
-- Nome: 
+- Nome:
   - (Stabile): Update{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
   - (Beta): Update{2CD8A007-E189-409D-A2C8-9AF4EF3C72AA}
   - (Canary): Update{65C35B14-6C1D-4122-AC46-7148CC9D6497}
@@ -246,7 +246,6 @@ Affinché questi criteri di gruppo abbiano effetto, è necessario configurarli p
 0x00000001
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
-
 
 ### <a name="createdesktopshortcutdefault"></a>CreateDesktopShortcutDefault
 #### <a name="prevent-desktop-shortcut-creation-upon-install-default"></a>Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione predefinita
@@ -401,6 +400,38 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
 
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+#### <a name="retrieve-configurations-and-experiments"></a>Recuperare configurazioni ed esperimenti
+>Microsoft Edge Update 1.3.145.1 e versioni successive
+
+#### <a name="description"></a>Descrizione
+In Microsoft Edge Update, il servizio di sperimentazione e configurazione viene usato per distribuire il payload di sperimentazione.
+
+Il payload di sperimentazione è costituito da un elenco delle funzionalità di sviluppo iniziali che Microsoft sta abilitando per testare il feedback.
+
+Se abiliti questo criterio, il payload di sperimentazione viene scaricato dal servizio di sperimentazione e configurazione.
+
+Se disabiliti questo criterio, la comunicazione con il servizio di sperimentazione e configurazione viene interrotta completamente.
+
+Se non si configura questo criterio, in un dispositivo gestito il comportamento corrisponde al criterio "disabilitato".
+
+Se non si configura questo criterio, in un dispositivo non gestito il comportamento corrisponde al criterio "abilitato".
+
+#### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+- Nome univoco Criteri di gruppo: UpdateExperimentationAndConfigureationServiceControl
+- Nome Criteri di gruppo: Controlla la comunicazione del programma di aggiornamento con il servizio di sperimentazione e configurazione
+- Percorso Criteri di gruppo: Modelli amministrativi/Microsoftt Edge Update/Microsoft Edge Update
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+- Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Nome valore: UpdaterExperimentationAndConfigurationServiceControl
+- Tipo valore: REG_DWORD
+##### <a name="example-value"></a>Valore di esempio
+```
+0x00000001
+```
+[Torna all'inizio](#microsoft-edge---update-policies)
 
 ## <a name="preferences-policies"></a>Criteri delle preferenze
 
@@ -459,7 +490,6 @@ start hour : 0x00000001
 start min  : 0x00000002
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
-
 
 ## <a name="proxy-server-policies"></a>Criteri server proxy
 

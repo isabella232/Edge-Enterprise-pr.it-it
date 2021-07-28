@@ -3,19 +3,19 @@ title: Configurare i criteri della modalità IE
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Configurare i criteri della modalità IE
-ms.openlocfilehash: 57d0db97a96baf361f88ca8ec90812373440c3d8
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 98d05af8769e25cfe2782a1e273f3b487afcead0
+ms.sourcegitcommit: c6452a458f825dab5638db9ff31268c2dc27f8db
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641472"
+ms.lasthandoff: 07/24/2021
+ms.locfileid: "11677123"
 ---
 # <a name="configure-ie-mode-policies"></a>Configurare i criteri della modalità IE
 
@@ -50,9 +50,9 @@ La configurazione della modalità IE richiede tre passaggi:
 3. Fai clic su **Configurazione utente/Configurazione computer** > **Modelli amministrativi** > **Microsoft Edge**.
 4. Fai doppio clic su **Configura integrazione Internet Explorer**.
 5. Seleziona **Attivata**.
-6. In **Opzioni** impostare il valore del menu a discesa su 
+6. In **Opzioni** impostare il valore del menu a discesa su
    -  **Modalità Internet Explorer** se si vuole che i siti vengano aperti in modalità IE su Microsoft Edge
-   -  **Internet Explorer 11** se si vuole che i siti vengano aperti in una finestra di Internet Explorer 11 autonoma
+   -  **Internet Explorer 11** se vuoi che i siti siano aperti in una finestra autonoma di Internet Explorer 11 (questa opzione non sarà supportata dopo il 15 giugno 2022 quando l'applicazione desktop di Internet Explorer 11 verrà ritirata e non sarà più supportata.  Dopo il 15 giugno 2022 quando Internet Explorer 11 non sarà più disponibile, questa opzione avrà lo stesso comportamento dell'opzione modalità **Internet Explorer.**  
    -  **Nessuno** se si desidera impedire agli utenti di configurare la modalità Internet Explorer tramite edge://flags o la riga di comando
 
    > [!NOTE]

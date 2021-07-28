@@ -3,19 +3,19 @@ title: Note sulla versione archiviate del canale Microsoft Edge Stable
 ms.author: aguta
 author: dan-wesley
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 03/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
-ms.localizationpriority: medium
+ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione archiviate del canale Microsoft Edge Stable
-ms.openlocfilehash: d50da924c3c78e38eb55b30cf219145d19fe9816
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: d8574e7b77babbf45a062ed9cadd4b60b616d972
+ms.sourcegitcommit: 4192328ee585bc32a9be528766b8a5a98e046c8e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642392"
+ms.lasthandoff: 06/25/2021
+ms.locfileid: "11617956"
 ---
 # <a name="archived-release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione archiviate del canale Microsoft Edge Stable
 
@@ -90,7 +90,7 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](./micro
   - Monitoraggio password. Quando una delle password salvate nel browser corrisponde a quelle visualizzate nell'elenco di credenziali perse, Microsoft Edge invierà una notifica e chiederà di aggiornare la password. Password Monitor cerca le corrispondenze per vostro conto ed è attivo per impostazione predefinita.
   - Modifica password. Ora è possibile modificare le password salvate direttamente nelle Impostazioni di Microsoft Edge. Ogni volta che una password viene aggiornata all'esterno di Microsoft Edge, è facile sostituire la password salvata in precedenza con quella nuova modificando la voce salvata in Impostazioni. 
 
-- **Miglioramento della velocità di avvio di Microsoft Edge con il potenziamento di avvio**. Per migliorare la velocità di avvio di Microsoft Edge, abbiamo sviluppato una funzionalità denominata potenziamento di avvio. Il potenziamento di avvio rende Microsoft Edge più veloce, poiché ne permette l'esecuzione in background. Nota: questa funzionalità è limitata a un gruppo di utenti selezionato in modo casuale, i quali hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
+- **Miglioramento della velocità di avvio di Microsoft Edge con il avvio rapido**. Per migliorare la velocità di avvio di Microsoft Edge, abbiamo sviluppato una funzionalità denominata avvio rapido. Il avvio rapido rende Microsoft Edge più veloce, poiché ne permette l'esecuzione in background. Nota: questa funzionalità è limitata a un gruppo di utenti selezionato in modo casuale, i quali hanno abilitato la sperimentazione. Questi utenti stanno fornendo un feedback al team responsabile della caratteristica.
 
 - **Produttività:**
 
@@ -128,7 +128,7 @@ Sono stati aggiunti 18 nuovi criteri. Scaricare i modelli amministrativi aggiorn
 - [SleepingTabsEnabled](./microsoft-edge-policies.md#sleepingtabsenabled): configura le schede di sospensione.
 - [SleepingTabsTimeout](./microsoft-edge-policies.md#sleepingtabstimeout): imposta il timeout di inattività della scheda in background per le schede di sospensione.
 - [SleepingTabsBlockedForUrls](./microsoft-edge-policies.md#sleepingtabsblockedforurls): blocca le schede di sospensione in siti specifici.
-- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) attiva il potenziamento di avvio.
+- [StartupBoostEnabled](./microsoft-edge-policies.md#startupboostenabled) attiva il avvio rapido.
 - [targetBlankImpliesNoOpener](./microsoft-edge-policies.md#targetblankimpliesnoopener) : non impostare window.opener per i collegamenti di destinazione _blank.
 - [UpdatePolicyOverride](./microsoft-edge-policies.md#updatepolicyoverride): specifica in che modo Microsoft Edge Update gestisce gli aggiornamenti disponibili da Microsoft Edge.
 - [VerticalTabsAllowed](./microsoft-edge-policies.md#verticaltabsallowed): configura la disponibilità di un layout verticale per le schede sul lato del browser.

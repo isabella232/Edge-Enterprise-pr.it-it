@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni sulle funzionalità della modalità tutto schermo e su come configurare le opzioni della modalità tutto schermo di Microsoft Edge.
-ms.openlocfilehash: 38d94a5dfac15f810a463e43ad2fe44d51ee66c7
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642192"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676123"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>Configurazione della modalità tutto schermo di Microsoft Edge
 
@@ -99,7 +99,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--no-first-run**: modifica il tempo (in minuti) trascorso dall'ultima attività dell’utente prima che la modalità tutto schermo di Microsoft Edge reimposti la sessione dell'utente. Sostituire "Valore" nell'esempio successivo con il numero di minuti.
+- **--kiosk-idle-timeout-minutes=**: Modifica l'intervallo di tempo (in minuti) dall'ultima attività utente prima che Microsoft Edge la modalità tutto schermo reimposta la sessione dell'utente chiudendo il browser. Nota: questo flag non verrà riavviato Microsoft Edge dopo la chiusura. Una tecnologia separata, ad esempio Accesso assegnato o Avvio shell, è necessaria per riavviare automaticamente Edge dopo il timeout di inattività. Sostituire "Valore" nell'esempio successivo con il numero di minuti.
 
    ```
    --kiosk-idle-timeout-minutes=value
@@ -160,9 +160,11 @@ Con gli aggiornamenti di Windows seguenti è possibile configurare Microsoft Edg
 
 ### <a name="multi-app-kiosk"></a>Chiosco con più app
 
-Microsoft Edge può essere eseguito con [accesso assegnato con più app](/windows/configuration/lock-down-windows-10-to-specific-apps) su Windows 10, che è l'equivalente del tipo di modalità tutto schermo per l'esplorazione normale di Microsoft Edge Legacy. Per configurare Microsoft Edge con l'accesso assegnato con più app, segui le istruzioni su come [Configurare un chiosco multimediale con più app](/windows/configuration/lock-down-windows-10-to-specific-apps). L'AUMID per il canale stabile Microsoft Edge è **MSEdge**.
+Microsoft Edge può essere eseguito con [accesso assegnato con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps) su Windows 10, che è l'equivalente del tipo di modalità tutto schermo per l'esplorazione normale di Microsoft Edge Legacy. Per configurare Microsoft Edge con l'accesso assegnato con più app, segui le istruzioni su come [Configurare un chiosco multimediale con più app](https://docs.microsoft.com/windows/configuration/lock-down-windows-10-to-specific-apps). (L'AUMID per il canale Microsoft Edge Stable è **Microsoft.MicrosoftEdge.Stable_8wekyb3d8bbwe! MSEDGE**).
 
-### <a name="configure-using-windows-settings"></a>Configurare tramite le impostazioni di Windows
+Quando usi Microsoft Edge con accesso assegnato con più app, puoi configurare il chiosco multimediale di Microsoft Edge in modo da utilizzare i [criteri del browser Microsoft Edge](https://review.docs.microsoft.com/DeployEdge/microsoft-edge-policies) per configurare l'esperienza di esplorazione per soddisfare i tuoi requisiti univoci.
+
+### <a name="configure-using-windows-settings"></a>Configurare usando le impostazioni di Windows
 
 Il modo più semplice per configurare uno o due dispositivi in modalità tutto schermo con app singola è tramite le impostazioni di Windows. Usare i seguenti passaggi per configurare un computer in modalità chiosco multimediale con app singola.
 

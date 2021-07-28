@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su come creare pacchetti e estensioni di Microsoft Edge per test interno nell'organizzazione.
-ms.openlocfilehash: aef4438212829006e39572fa938462f13721c580
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 8b0e9ed346848f7ee9330c51f6a1c9274df89371
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642872"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676113"
 ---
 # <a name="self-host-microsoft-edge-extensions"></a>Estensioni Microsoft Edge per test interno
 
@@ -82,7 +82,7 @@ Dopo aver modificato e testato l'estensione aggiornata, ė possibile pubblicarla
    > [!IMPORTANT]
    > Utilizzare lo stesso file PEM generato e salvato la prima volta che è stato creato il file CRX. Se non si usa lo stesso file PEM, l'ID app dell'estensione verrà modificato e l'aggiornamento verrà considerato come una nuova estensione.
 
-5. Trascinare il file CRX nella finestra delle estensioni e verificare che sia caricato.
+5. Trascinare il file CRX nella finestra delle estensioni e verificare che sia caricato. L'estensione verrà disabilitata dopo questa operazione. Per abilitarlo, aggiungi l'ID CRX dell'estensione al criterio ExtensionInstallAllowList. 
 6. Testare l'estensione aggiornata.
 7. Sostituire il vecchio file CRX e il file XML con i nuovi file per l'estensione aggiornata.
 
@@ -90,7 +90,7 @@ Le modifiche dell'estensione verranno ritirate durante il successivo ciclo di si
 
 ## <a name="distribute-a-privately-hosted-extension"></a>Distribuire un'estensione ospitata privatamente
 
-Puoi condividere il collegamento del percorso in cui è ospitato il file CRX e non appena gli utenti immettono l'URL nel browser, l'estensione verrà scaricata e installata. Gli utenti possono abilitare l'estensione dalla pagina edge://extensions. Per consentire agli utenti di installare estensioni ospitate privatamente, devi aggiungere gli ID CRX di estensione al criterio [ExtensionInstallAllowList.](/deployedge/microsoft-edge-policies#extensioninstallallowlist)
+Puoi condividere il collegamento del percorso in cui è ospitato il file CRX e non appena gli utenti immettono l'URL nel browser, l'estensione verrà scaricata e installata. Gli utenti possono abilitare l'estensione dalla pagina edge://extensions. Per consentire agli utenti di installare estensioni self-hosted, devi aggiungere gli ID CRX di estensione al criterio [ExtensionInstallAllowList](/deployedge/microsoft-edge-policies#extensioninstallallowlist) e aggiungere l'URL del percorso in cui è ospitato il file CRX al criterio [ExtensionInstallSources.](/deployedge/microsoft-edge-policies#extensioninstallsources)
 
 In alternativa, puoi usare i criteri di gruppo [ExtensionInstallForceList](/deployedge/microsoft-edge-manage-extensions-policies#force-install-an-extension) per forzare l'installazione di un'estensione nei dispositivi degli utenti.
 
@@ -102,4 +102,4 @@ Puoi applicare questi criteri agli utenti selezionati, ai dispositivi o a entram
 - [Usare i criteri di gruppo per gestire le estensioni di Microsoft Edge](microsoft-edge-manage-extensions-policies.md)
 - [Guida dettagliata al criterio ExtensionSettings](microsoft-edge-manage-extensions-ref-guide.md)
 - [Domande frequenti sulle estensioni di Microsoft Edge](microsoft-edge-manage-extensions-faq.md)
-- [Pagina di destinazione di Microsoft Edge per le aziende](https://aka.ms/EdgeEnterprise)
+- [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

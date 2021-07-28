@@ -1,25 +1,25 @@
 ---
 title: ClickOnce e DirectInvoke in Microsoft Edge
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: srugh
-ms.date: 06/29/2021
+ms.date: 07/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su ClickOnce e DirectInvoke in Microsoft Edge.
-ms.openlocfilehash: 3d124f141e9212ba5ab25d4b725d32add62077a3
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642052"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675973"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>Informazioni sulle funzionalità ClickOnce e DirectInvoke in Microsoft Edge
 
-ClickOnce e DirectInvoke sono funzionalità disponibili in Internet Explorer e Microsoft Edge (versione 45 e precedenti) che supportano l'uso di un gestore di file per scaricare i file da un sito Web. Anche se servono a scopi diversi, entrambe le funzionalità consentono ai siti Web di specificare che un file richiesto per il download viene passato a un gestore di file nel dispositivo dell'utente. Le richieste ClickOnce vengono gestite dal gestore di file nativo in Windows. Le richieste DirectInvoke vengono gestite da un gestore di file registrato specificato dal sito Web che ospita il file.
+ClickOnce e DirectInvoke sono funzionalità disponibili in IE e Microsoft Edge che supportano l'uso di un gestore di file per scaricare file da un sito Web. Anche se servono a scopi diversi, entrambe le funzionalità consentono ai siti Web di specificare che un file richiesto per il download viene passato a un gestore di file nel dispositivo dell'utente. Le richieste ClickOnce vengono gestite dal gestore di file nativo in Windows. Le richieste DirectInvoke vengono gestite da un gestore di file registrato specificato dal sito Web che ospita il file.
 
 Per altre informazioni su queste funzionalità, vedi:
 

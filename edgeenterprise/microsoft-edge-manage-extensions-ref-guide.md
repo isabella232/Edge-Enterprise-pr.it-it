@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Guida di riferimento dettagliata per la configurazione delle estensioni di Microsoft Edge tramite il criterio ExtensionSettings.
-ms.openlocfilehash: 3acd798be6b2b56761991d8adaf014ae614a3fd4
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641322"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11676103"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>Guida dettagliata al criterio ExtensionSettings
 
@@ -51,6 +51,7 @@ Questo criterio può controllare le impostazioni, ad esempio l'URL di aggiorname
 | **update_url** | Si applica solo a force_installed e normal_installed. Specifica la posizione da cui Microsoft Edge deve scaricare un'estensione. Se l'estensione è ospitata nel sito Web Componenti aggiuntivi di Microsoft Edge, utilizzare la posizione seguente: `https://edge.microsoft.com/extensionwebstorebase/v1/crx`.<br>Microsoft Edge usa l'URL specificato per l'installazione iniziale dell'estensione. Per i successivi aggiornamenti delle estensioni, Microsoft Edge l'URL nel manifesto dell'estensione.   |
 | **runtime_allowed_hosts**| Consente alle estensioni di interagire con siti Web specificati, anche se sono definiti in runtime_blocked_hosts. Puoi specificare fino a 100 voci. Le voci aggiuntive vengono ignorate.<br>Il formato del modello host è simile ai  [modelli di corrispondenza,](/microsoft-edge/extensions-chromium/enterprise/match-patterns)  ad eccezione del fatto che non è possibile definire il percorso. Ad esempio:<br>- *://*.example.com<br>- *://example.*: sono supportati i caratteri jolly eTLD     |
 | **runtime_blocked_hosts**| Impedisce alle estensioni di interagire con i siti Web specificati o di modificarli. Le modifiche includono il blocco dell'inserimento di JavaScript, l'accesso ai cookie e le modifiche alle richieste Web.<br>Puoi specificare fino a 100 voci. Le voci aggiuntive vengono ignorate.<br>Il formato del modello host è simile ai modelli di corrispondenza, ad eccezione del fatto che non è possibile definire il percorso. Ad esempio:<br>- *://*.example.com<br>- *://example.*: sono supportati i caratteri jolly eTLD   |
+| **override_update_url**| Disponibile da Edge 93<br>Se è impostato su , Edge usa l'URL di aggiornamento specificato nel criterio ExtensionSettings o nel criterio `true` ExtensionInstallForcelist per gli aggiornamenti delle estensioni successivi.<br>Se non è impostato o è impostato su `false` , Edge usa l'URL specificato nel manifesto dell'estensione per gli aggiornamenti.|
 
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>Configurazione con una stringa JSON nell'Editor dei Criteri di gruppo di Windows
@@ -161,4 +162,4 @@ Impostazioni diverse richiederanno formati diversi, a seconda che si tratti di u
 - [Gestire le estensioni di Microsoft Edge nell'organizzazione](microsoft-edge-manage-extensions.md)
 - [Usare i criteri di gruppo per gestire le impostazioni di Microsoft Edge](microsoft-edge-manage-extensions-policies.md)
 - [Domande frequenti sulle estensioni di Microsoft Edge](microsoft-edge-manage-extensions-faq.md)
-- [Pagina di destinazione di Microsoft Edge per le aziende](https://aka.ms/EdgeEnterprise)
+- [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

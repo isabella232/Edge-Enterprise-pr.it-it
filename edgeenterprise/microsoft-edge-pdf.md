@@ -1,21 +1,21 @@
 ---
 title: Lettre PDF in Microsoft Edge
 ms.author: adigan
-author: dan-wesley
+author: AndreaLBarr
 manager: balajek
-ms.date: 06/28/2021
+ms.date: 07/08/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Informazioni sul lettore PDF in Microsoft Edge.
-ms.openlocfilehash: 0b1cffceb63c1829c39bdd3fa658df2e5f776584
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: e8cf690f818e0fa103aa4f17154d9f95431287b5
+ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11643182"
+ms.lasthandoff: 07/23/2021
+ms.locfileid: "11675983"
 ---
 # <a name="pdf-reader-in-microsoft-edge"></a>Lettre PDF in Microsoft Edge
 
@@ -35,16 +35,17 @@ Nella tabella che segue vengono indicati i canali e le versioni di Microsoft Edg
 | Visualizzare e stampare file PDF locali, online e incorporati | 79.0.309.71                |
 | Compilazione moduli base<br>(I moduli JavaScript non sono supportati) | 79.0.309.71           |
 |Sommario| 86.0.622.38 |
-| Visualizzazione pagina |Promozione in corso ai canali [Microsoft Edge Insider](https://www.microsoftedgeinsider.com/) |
+| Visualizzazione pagina | 88.0.705.50 |
 | Modalità navigazione con cursore |87.0.664.41 |
 | Input penna  | 80.0.361.48            |
 | Personalizzazione input penna | 83.0.478.54  |
 | Highlight  | 81.0.416.53         |
-| Note di testo | Promozione in corso ai canali [Microsoft Edge Insider](https://www.microsoftedgeinsider.com/) |
+| Note di testo | 88.0.705.50 |
 | Leggi ad alta voce | 84.0.522.63  |
-| Visualizzare i file protetti di Microsoft Information Protection (MIP) | Supporto Windows in 80.0.361.48<br>Supporto Mac in 81.0.416.53 |
+| Visualizzare i file protetti di Microsoft Information Protection (MIP) nello stesso tenant aziendale | Supporto Windows in 80.0.361.48<br>Supporto Mac in 81.0.416.53 |
+| Visualizzare i file protetti di Microsoft Information Protection (MIP) in vari tenant aziendali | 91.0.864.37  |
 |  Visualizzare i file protetti con Information Rights Management (IRM)  | 83.0.478.37            |
-| Visualizzare e convalidare firme digitali | Disponibile nei canali Canary e Dev. Ci stiamo lavorando attivamente. |
+
 
 ### <a name="constraints"></a>Vincoli
 
@@ -115,6 +116,7 @@ Leggi ad alta voce per PDF consente agli utenti di ascoltare il contenuto del PD
 > È necessaria una licenza per MIP. Per altre informazioni, vedere le [istruzioni per la gestione delle licenze di Microsoft 365](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance#information-protection).
 
 Questi file possono essere aperti direttamente nel browser, senza la necessità di scaricare altri software o installare alcun componente aggiuntivo. Questa funzionalità integra la sicurezza fornita da MIP direttamente nel browser, offrendo un flusso di lavoro senza soluzione di continuità.
+È possibile visualizzare i file protetti da MIP tra tenant aziendali. La visualizzazione di file con identità utente non è attualmente supportata.
 
 ![Documento PDF protetto.](media/microsoft-edge-pdf/pdf-reader-protected-pdf2.png)
 

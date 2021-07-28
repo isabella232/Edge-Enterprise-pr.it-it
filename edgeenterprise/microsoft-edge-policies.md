@@ -213,7 +213,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 
 |Nome criterio|Didascalia|
 |-|-|
-|[StartupBoostEnabled](#startupboostenabled)|Abilita il potenziamento di avvio|
+|[StartupBoostEnabled](#startupboostenabled)|Abilita il avvio rapido|
 ### [*<a name="printing"></a>Stampa*](#printing-policies)
 
 |Nome criterio|Didascalia|
@@ -260,7 +260,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -6205,7 +6205,7 @@ Questo criterio influisce solo sul pulsante per rivelare la password del browser
 
   ### <a name="startupboostenabled"></a>StartupBoostEnabled
 
-  #### <a name="enable-startup-boost"></a>Abilita il potenziamento di avvio
+  #### <a name="enable-startup-boost"></a>Abilita il avvio rapido
 
   
   
@@ -6219,13 +6219,13 @@ Questo criterio influisce solo sul pulsante per rivelare la password del browser
 
 Se Microsoft Edge è in esecuzione in background, il browser potrebbe non terminare quando viene chiusa l'ultima finestra e quindi il browser non verrà riavviato in background quando viene chiusa la finestra. Per informazioni su cosa accade dopo aver configurato il comportamento della modalità in background di Microsoft Edge, vedere il criterio [BackgroundModeEnabled](#backgroundmodeenabled).
 
-Se si abilita questo criterio, la modalità potenziamento di avvio viene attivata.
+Se si abilita questo criterio, la modalità avvio rapido viene attivata.
 
-Se si disabilita questo criterio, la modalità potenziamento di avvio viene attivata.
+Se si disabilita questo criterio, la modalità avvio rapido viene attivata.
 
-Se non si configura questo criterio, è possibile che il potenziamento di avvio potrebbe essere inizialmente disattivato o attivato. L'utente può configurare il suo comportamento in  edge://settings/system.
+Se non si configura questo criterio, è possibile che il avvio rapido potrebbe essere inizialmente disattivato o attivato. L'utente può configurare il suo comportamento in  edge://settings/system.
 
-Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
+Ulteriori informazioni sul avvio rapido: [https://go.microsoft.com/fwlink/?linkid=2147018](https://go.microsoft.com/fwlink/?linkid=2147018)
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -6242,7 +6242,7 @@ Ulteriori informazioni sul potenziamento di avvio: [https://go.microsoft.com/fwl
   ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: StartupBoostEnabled
-  - Nome Criteri di gruppo: abilita il potenziamento di avvio
+  - Nome Criteri di gruppo: abilita il avvio rapido
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/Prestazioni
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/Prestazioni
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -8111,7 +8111,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
