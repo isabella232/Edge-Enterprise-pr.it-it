@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/21/2021
+ms.date: 07/29/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 4bedc609fd150b77b72590f0e16c97f6fb74ed7e
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 6816d420668673cdfefb303cc6765f9a22afce0f
+ms.sourcegitcommit: c74caed21e18d5d211a7fa6cb4f0cb3a14446f42
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11675953"
+ms.lasthandoff: 07/30/2021
+ms.locfileid: "11710364"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -23,6 +23,10 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 > [!NOTE]
 > La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per ulteriori informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-92090262-july-29"></a>Versione 92.0.902.62: 29 luglio
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-92090255-july-21"></a>Versione 92.0.902.55: 21 luglio
 
@@ -41,7 +45,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
 - **Ricerca in linguaggio naturale della cronologia del browser sulla barra degli indirizzi.** Trovare l'articolo/sito Web che si sta cercando è ora più semplice grazie alla ricerca in linguaggio naturale direttamente dalla barra degli indirizzi. Puoi trovare i risultati della ricerca in base al contenuto/descrizione/intervallo della pagina (ad esempio "ricetta torta della settimana scorsa") oltre alle sole corrispondenze di parole chiave di titoli/URL.
-Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **Gli utenti possono passare facilmente alla modalità Internet Explorer in Microsoft Edge**. A partire da Microsoft Edge versione 92, gli utenti possono ricaricare un sito in modalità Internet Explorer in Microsoft Edge anziché basarsi sull'applicazione Internet Explorer 11autonoma in attesa della configurazione di un sito nell'elenco dei siti in modalità Enterprise. Agli utenti verrà richiesto di aggiungere il sito all'elenco dei siti locali in modo che il rendering della stessa pagina in Microsoft Edge venga eseguito automaticamente in Internet Explorer per i 30 giorni successivi. È possibile usare il criterio *[InternetExplorerIntegrationReloadInIEModeAllowed](/deployedge/microsoft-edge-policies#internetexplorerintegrationreloadiniemodeallowed)* per configurare questa esperienza e consentire l'accesso ai punti di ingresso in modalità Internet Explorer, nonché la possibilità di aggiungere siti all'elenco di siti locale. È possibile usare il criterio *[InternetExplorerIntegrationLocalSiteListExpirationDays](/deployedge/microsoft-edge-policies#internetexplorerintegrationlocalsitelistexpirationdays)* per modificare il numero di giorni di conservazione dei siti nell'elenco dei siti locali.
 Si noti che è necessario KB5003698 o versione successiva per Windows 10 versione 1909 oppure KB5003690 o versione successiva per Windows 10 versione 2004, Windows 10 versione 20H2 o Windows 10 versione 21H1 per l'esperienza end-to-end.
@@ -49,19 +53,19 @@ Si noti che è necessario KB5003698 o versione successiva per Windows 10 version
 - **I file MHTML verranno aperti per impostazione predefinita in modalità Internet Explorer.** A partire da Microsoft Edge versione 92 del canale stabile, i tipi di file MHTML verranno aperti automaticamente in modalità Internet Explorer in Microsoft Edge anziché nell'applicazione Internet Explorer (IE11). Questo si verifica più comunemente durante il tentativo di visualizzare i messaggi di posta elettronica di Outlook in un browser. La modifica avrà effetto solo se Internet Explorer 11 è il gestore predefinito per questo tipo di file. Se si preferisce modificare questa impostazione, è possibile farlo prima di installare l'aggiornamento alla versione 92 del canale stabile usando [questa guida.](/windows/client-management/mdm/policy-csp-applicationdefaults#applicationdefaults-defaultassociationsconfiguration)
 
 - **Gli strumenti di pagamento sono ora sincronizzati tra i dispositivi**. A partire da Microsoft Edge versione 92, è possibile sincronizzare le informazioni di pagamento tra i dispositivi connessi.
-Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **L'avviso "Disabilitare le estensioni per la modalità sviluppatore" può essere ignorato definitivamente**. A partire da Microsoft Edge versione 92, è possibile disattivare l'avviso "Disabilitare le estensioni per la modalità sviluppatore" facendo clic sull'opzione "Non visualizzare più questo messaggio".
-Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **Gestione delle estensioni direttamente dalla barra degli strumenti**. Il nuovo menu delle estensioni sulla barra degli strumenti consente di nascondere/aggiungere facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
-Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 - **HTTPS automatico**. Gli utenti avranno la possibilità di aggiornare la navigazione da HTTP a HTTPS nei domini che probabilmente supporteranno questo protocollo più sicuro. Questo supporto può essere configurato anche per tentare il recapito tramite HTTPS per tutti i domini.
 Nota: la funzionalità è sperimentale e questo comportamento non verrà mostrato se hai rifiutato esplicitamente gli esperimenti.
 
 - **Miglioramenti al rendering dei tipi di carattere**. Sono stati apportati miglioramenti al rendering del testo per migliorare la chiarezza e aumentare la nitidezza.
-Nota: questa è un'implementazione di funzionalità controllata. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
+Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 
 ### <a name="policy-updates"></a>Aggiornamenti dei criteri
 

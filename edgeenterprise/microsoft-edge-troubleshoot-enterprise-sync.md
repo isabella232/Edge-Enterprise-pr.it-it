@@ -1,21 +1,21 @@
 ---
 title: Diagnosticare e risolvere i problemi di sincronizzazione di Microsoft Edge
 ms.author: collw
-author: dan-wesley
+author: AndreaLBarr
 manager: silvanam
-ms.date: 06/29/2021
+ms.date: 07/27/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Linee guida e strumenti che un amministratore di Microsoft Edge può usare per risolvere i problemi comuni di sincronizzazione aziendale
-ms.openlocfilehash: 0aca8c98492aead0673b5738aa5dba85c3a34314
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: c46fc716424faf361ea0a3bfab68737b64725473
+ms.sourcegitcommit: cb264068ccad14eb8ca8393ea04dd3dc8682527a
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11642232"
+ms.lasthandoff: 07/29/2021
+ms.locfileid: "11708655"
 ---
 # <a name="diagnose-and-fix-microsoft-edge-sync-issues"></a>Diagnosticare e risolvere i problemi di sincronizzazione di Microsoft Edge
 
@@ -52,10 +52,10 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
 1. Verifica che il tenant aziendale abbia un abbonamento M365 supportato. L'elenco corrente dei tipi di abbonamento [disponibile qui](/azure/information-protection/activate-office365). Se il tenant non ha un abbonamento supportato, può acquistare Azure Information Protection separatamente oppure eseguire l'aggiornamento a uno degli abbonamenti supportati.
 2. Se è disponibile un abbonamento supportato, verifica che nel tenant sia disponibile Azure Information Protection (AIP). Le istruzioni per controllare lo stato di AIP e, se necessario, attivare AIP sono disponibili [qui](/azure/information-protection/activate-office365).
 3. Se il passaggio 2 indica che AIP è attivo ma la sincronizzazione non funziona comunque, attiva Enterprise State Roaming (ESR). Le istruzioni per l'abilitazione di ESR sono riportate [qui](/azure/active-directory/devices/enterprise-state-roaming-enable). Tieni presente che ESR non deve rimanere in funzione. Puoi disattivare ESR se questo passaggio consente di risolvere il problema.
-4. Verifica che l'ambito di Azure Information Protection non sia in base a un criterio di onboarding. Puoi utilizzare l'applet di PowerShell [Get-AadrmOnboardingControlPolicy](/powershell/module/aadrm/get-aadrmonboardingcontrolpolicy?view=azureipps) per verificare se l'ambito è abilitato. I due esempi seguenti mostrano una configurazione senza ambito e una configurazione che ha come ambito un gruppo di sicurezza specifico.
+4. Verifica che l'ambito di Azure Information Protection non sia in base a un criterio di onboarding. È possibile utilizzare il cmdlet [Di PowerShell Get-AIPServiceOnboardingControlPolicy](/powershell/module/aipservice/get-aipserviceonboardingcontrolpolicy?view=azureipps) per verificare se l'ambito è abilitato. Assicurati che il monitor powershell aIPService sia installato. È possibile ottenerlo qui: [Installare il modulo AIPService PowerShell per Azure Information Protection.](/azure/information-protection/install-powershell) I due esempi seguenti mostrano una configurazione senza ambito e una configurazione che ha come ambito un gruppo di sicurezza specifico.
 
    ```powershell
-    PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
+    PS C:\Work\scripts\PowerShell> Get-AIPServiceOnboardingControlPolicy
  
     UseRmsUserLicense SecurityGroupObjectId                Scope
     ----------------- ---------------------                -----
@@ -64,16 +64,16 @@ Se si verifica questo errore per un account di Azure Active Directory o se DISAB
 
    ```powershell
 
-    PS C:\Work\scripts\PowerShell> Get-AadrmOnboardingControlPolicy
+    PS C:\Work\scripts\PowerShell> Get-AIPServiceOnboardingControlPolicy
  
     UseRmsUserLicense SecurityGroupObjectId                Scope
     ----------------- ---------------------                -----
                 False f1488a05-8196-40a6-9483-524948b90282   All
    ```
 
-   Se l'ambito è abilitato, l'utente interessato deve essere aggiunto al gruppo di sicurezza per l'ambito oppure l'ambito deve essere rimosso. Nell'esempio seguente l'ambito del processo di onboarding è AIP nel gruppo di sicurezza indicato e l'ambito deve essere rimosso con l'applet PowerShell[Set-AadrmOnboardingControlPolicy](/powershell/module/aadrm/set-aadrmonboardingcontrolpolicy?view=azureipps).
+   Se l'ambito è abilitato, l'utente interessato deve essere aggiunto al gruppo di sicurezza per l'ambito oppure l'ambito deve essere rimosso. Nell'esempio seguente, l'onboarding ha ambito AIP al gruppo di sicurezza indicato e l'ambito deve essere rimosso con l'applet di PowerShell [Set-AIPServiceOnboardingControlPolicy.](/powershell/module/aipservice/set-aipserviceonboardingcontrolpolicy?view=azureipps)
 
-5. Verifica che IPCv3Service sia attivato nel tenant. L’applet di Powersell[Get-AadrmConfiguration](/powershell/module/aadrm/get-aadrmconfiguration?view=azureipps) mostra lo stato del servizio.
+5. Verifica che IPCv3Service sia attivato nel tenant. Il cmdlet [Di PowerShell Get-AIPServiceConfiguration ](/powershell/module/aipservice/get-aipserviceconfiguration?view=azureipps)  mostra lo stato del servizio.
 
    :::image type="content" source="media/microsoft-edge-enterprise-sync-configure-and-troubleshoot/sync-scoped-cfg-example.png" alt-text="Verificare se IPCv3Service è abilitato.":::
 
