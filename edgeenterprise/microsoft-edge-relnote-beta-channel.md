@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/29/2021
+ms.date: 08/03/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 6816d420668673cdfefb303cc6765f9a22afce0f
-ms.sourcegitcommit: c74caed21e18d5d211a7fa6cb4f0cb3a14446f42
+ms.openlocfilehash: 8b76fc92fc5db3433990435e78ee14dcbe306b4096a6c1a6ba919faebc074768
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/30/2021
-ms.locfileid: "11710364"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725759"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -23,6 +23,59 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 > [!NOTE]
 > La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per ulteriori informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-93096111-august-3"></a>Versione 93.0.961.11: 3 agosto
+
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **Preferenze iniziali in Microsoft Edge.**  La distribuzione Microsoft Edge nell'organizzazione sarà più semplice a partire dalla versione 93, con l'aggiunta di Preferenze iniziali.
+
+- **La modalità IE Microsoft Edge supporterà il comportamento "nomerge".**  A partire da Edge 93, la modalità IE Microsoft Edge supporterà nomerge. Per un utente finale, quando una nuova finestra del browser viene avviata da un'applicazione in modalità IE, si trova in una sessione separata, in modo analogo al comportamento della nomerge in IE11. Sarà necessario modificare l'elenco dei siti per configurare i siti che devono impedire la condivisione della sessione come "nomerge". Dietro le quinte, per ogni finestra di Microsoft Edge, la prima volta che viene visitata una scheda della modalità IE all'interno di tale finestra, se si tratta di uno dei siti designati "nomerge", tale finestra viene bloccata in una sessione "nomerge" diversa da tutte le altre finestre di Microsoft Edge almeno fino alla chiusura dell'ultima scheda della modalità IE in tale finestra. Questo comportamento segue il comportamento precedente in cui gli utenti potevano avviare Internet Web App con nomerge e potrebbero anche avviare Microsoft Edge senza nomerge tramite altri meccanismi.
+
+- **Gruppi di schede.**  La possibilità di categorizzare le schede in gruppi definiti dall'utente consente di trovare, cambiare e gestire in modo più efficace le schede in più workstream. A tale scopo, viene attivato il raggruppamento delle schede a partire Microsoft Edge versione 93.
+
+- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Scheda verticale.
+
+- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire dalla versione 93 di Edge, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti in macOS.  Si prega di controllare di nuovo a breve mentre continuiamo l'implementazione per Windows utenti.
+
+- **Rimozione di 3DES in TLS.**  A partire da Edge v93, verrà rimosso il TLS_RSA_WITH_3DES_EDE_CBC_SHA di crittografia. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per ulteriori informazioni, passare alla voce [Stato piattaforma Chrome.](https://chromestatus.com/feature/6678134168485888) Inoltre, in Edge v93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questo criterio di compatibilità diventerà obsoleto e smetterà di funzionare in Edge v95. Assicurarsi di aggiornare i server interessati prima di allora.
+
+### <a name="new-policies"></a>Nuovi criteri
+
+- [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) Consentire la riproduzione automatica di elementi multimediali in siti specifici
+- [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) CeCPQ2 post-quantum key-agreement abilitato per TLS
+- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer) Configurare la funzionalità Visualizza in Esplora file per SharePoint pagine in Microsoft Edge
+- [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) Controllare l'utilizzo di JavaScript JIT
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled) Consenti alle notifiche di impostare Microsoft Edge lettore PDF predefinito
+- [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) Configurare la possibilità per gli utenti di ignorare i flag di funzionalità
+- [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) Abilitare l'accesso implicito
+- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist) Configurare l'elenco Enterprise siti cloud in modalità avanzata
+- [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) Configurare la frequenza di aggiornamento dell'Enterprise siti in modalità utente
+- [JavaScriptJitAllowedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitallowedforsites) Consenti a JavaScript di usare JIT in questi siti
+- [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) Impedire a JavaScript di usare JIT in questi siti
+- [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled) Abilitare Windows ricerca nei dati di esplorazione Microsoft Edge locale
+- [MAUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled) Usa sempre Microsoft AutoUpdate come programma di aggiornamento per Microsoft Edge
+- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) Consentire l'accesso Single #A0 per i siti Microsoft che usano questo profilo
+- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced) Autenticazione OneAuth Flow applicata per l'accesso
+- [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) Consentire agli utenti di ottenere un suggerimento per password complessa ogni volta che creano un account online
+- [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) Configura un'impostazione che richiede agli utenti di immettere la password del dispositivo durante l'uso del riempimento automatico della password
+- [PrintingWebpageLayout](/DeployEdge/microsoft-edge-policies#printingwebpagelayout) Imposta il layout per la stampa
+- [RemoteDebuggingAllowed](/DeployEdge/microsoft-edge-policies#remotedebuggingallowed) Consenti debug remoto
+- [RelaunchWindow](/DeployEdge/microsoft-edge-policies#relaunchwindow) Impostare l'intervallo di tempo per il riavvio
+- [TravelAssistanceEnabled](/DeployEdge/microsoft-edge-policies#travelassistanceenabled) Abilitare l'assistenza di viaggio
+- [TripleDESEnabled](/DeployEdge/microsoft-edge-policies#tripledesenabled) Abilitare le suite di crittografia 3DES in TLS
+
+#### <a name="deprecated-policy"></a>Criteri deprecati
+
+- [LegacySameSiteCookieBehaviorEnabled](/DeployEdge/microsoft-edge-policies#legacysamesitecookiebehaviorenabled) Abilita l'impostazione predefinita del comportamento dei cookie SameSite legacy
+
+#### <a name="obsoleted-policy"></a>Criteri obsoleti
+
+- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) Configurare la nuova Microsoft Edge pagina nuova scheda
+
+#### <a name="additional-change"></a>Modifica aggiuntiva
+
+- [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) Aggiungere il supporto della piattaforma Mac
 
 ## <a name="version-92090262-july-29"></a>Versione 92.0.902.62: 29 luglio
 

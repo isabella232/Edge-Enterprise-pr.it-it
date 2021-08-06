@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su come abilitare gli elenchi di siti locali e accedere facilmente alla modalità IE
-ms.openlocfilehash: 0c79622a1f96cad83a2436f5e79e69914f4a2c40
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: db9246fc719648d34b5f54c7d123461b26f1c29f8268c08a1731ef8e6b516331
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11676170"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724639"
 ---
 ## <a name="local-site-list-for-ie-mode"></a>Elenco siti locali per la modalità IE
 
@@ -116,7 +116,7 @@ Questo criterio non ha alcun effetto se è stato disabilitato il *criterio Inter
 
 L'elenco dei siti locali non è attualmente sincronizzato tra dispositivi. Questo miglioramento si trova attualmente nel backlog e verrà aggiornato quando questo sarà disponibile.
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 Disabilitare Internet Explorer 11 - [Disabilitare Internet Explorer 11 | Documenti Microsoft](/deployedge/edge-ie-disable-ie11)
 

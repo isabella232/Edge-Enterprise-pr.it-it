@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Configurare le impostazioni dei criteri di Microsoft Edge nei dispositivi Mac con Jamf
-ms.openlocfilehash: 8556a5b1d0fc01feb67fc86cb016a9ed47061b55
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: be706795d093b9dcecf33ee1bf7071286082fad1fea98a98b34145e87a9b7393
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641632"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725319"
 ---
 # <a name="configure-microsoft-edge-policy-settings-on-macos-with-jamf"></a>Configurare le impostazioni dei criteri di Microsoft Edge in macOS con Jamf
 
@@ -45,8 +45,8 @@ Per altre informazioni, consultare [Profili di configurazione del computer](http
 Per ottenere il manifesto del criterio:
 
 - Passare alla [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise).
-- Nell'elenco a discesa Canale/versione selezionare **un canale qualsiasi con la versione 81 o successiva.**_.
-- Nell'elenco a discesa Build, selezionare qualsiasi _ *build 81 o successiva.**_
+- Nell'elenco a discesa Canale/Versione, selezionare **qualsiasi canale con la versione 81 o successiva.***.
+- Nell'elenco a discesa Build selezionare qualsiasi **Build 81 o versione successiva.***.
 - Fare clic su OTTIENI FILE DEI CRITERI per scaricare il pacchetto dei modelli di criteri.
 
   > [!NOTE]
@@ -61,7 +61,7 @@ Questo manifesto verrà pubblicato in ogni pacchetto di criteri a partire dalla 
 Seguire la procedura seguente per caricare il manifesto dei criteri in Jamf Pro e poi creare un profilo dei criteri per macOS.
 
 1. Accedere a Jamf.
-2. Selezionare la scheda _*Computer**.
+2. Selezionare la scheda **Computer**.
 3. In **Gestione dei contenuti** selezionare **Profili di configurazione**.
 4. Nella pagina **Profili di configurazione** fare clic su **+ Nuovo**.
 

@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione per tutti i criteri supportati da Microsoft Edge Update
-ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
-ms.sourcegitcommit: 9088e839e82d80c72460586e9af0610c6ca71b83
+ms.openlocfilehash: 7b6043ecb96cb30ee9b51fc9966f925b223e72f29ac325ad06208d743f60e18f
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/23/2021
-ms.locfileid: "11675943"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724869"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - Criteri di aggiornamento
 
@@ -400,7 +400,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
 
-### <a name="UpdaterExperimentationAndConfigurationServiceControl"></a>UpdaterExperimentationAndConfigurationServiceControl
+### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
 #### <a name="retrieve-configurations-and-experiments"></a>Recuperare configurazioni ed esperimenti
 >Microsoft Edge Update 1.3.145.1 e versioni successive
 

@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Usare i criteri di gruppo per gestire le impostazioni di Microsoft Edge all’interno della grande impresa
-ms.openlocfilehash: dad239a448ec1f0ebef60c7072bfaad5c3baed57
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: 9aa727bc199966bc70b5a52b7dbcdd16f2aed705f253bfef366f4faa9c2085d9
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641372"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11726219"
 ---
 # <a name="use-group-policies-to-manage-microsoft-edge-extensions"></a>Usare i criteri di gruppo per gestire le impostazioni di Microsoft Edge
 
@@ -140,7 +140,7 @@ Questo esempio mostra la stringa JSON e quella JSON compressa per bloccare l'ese
 2. Seleziona **Abilitato**.
 3. Fai clic su **Mostra**.
 4. Immettere l'ID app delle estensioni che si desidera bloccare. Per aggiungere più ID app, utilizzare una riga separata per ogni ID.
-5. Per bloccare tutte le estensioni, digitare * _ nel criterio per impedire *\** l'installazione di eventuali estensioni. È possibile utilizzare quest’ultimo insieme al criterio "Consenti l'installazione di estensioni specifiche" per consentire solo l'installazione di determinate estensioni. La schermata successiva mostra un'estensione che verrà bloccata in base all'ID app fornito.
+5. Per bloccare tutte le estensioni, digitare **\*** nel criterio per impedire l'installazione di eventuali estensioni. È possibile utilizzare quest’ultimo insieme al criterio "Consenti l'installazione di estensioni specifiche" per consentire solo l'installazione di determinate estensioni. La schermata successiva mostra un'estensione che verrà bloccata in base all'ID app fornito.
 
    :::image type="content" source="media/microsoft-edge-manage-extensions-policies/manage-extensions-gp-block-2.png" alt-text="Usare l'ID app per bloccare un'estensione.":::
 
@@ -154,7 +154,7 @@ Questo esempio mostra la stringa JSON e quella JSON compressa per bloccare l'ese
 
 Usare il criterio [ExtensionInstallForcelist](/DeployEdge/microsoft-edge-policies#extensioninstallforcelist) per controllare le estensioni bloccate o consentite. Utilizzare i passaggi seguenti come riferimento per forzare l’installazione di un’estensione.
 
-1. Nell'Editor Criteri di gruppo, andare a _ Modelli amministrativi *> Microsoft Edge > estensioni >** e quindi selezionare Controlla quali estensioni vengono installate in modo **invisibile all'utente.**
+1. Nell'editor Criteri di gruppo, passare a **Modelli amministrativi > Microsoft Edge > Estensioni**, quindi selezionare **Controlla le estensioni installate automaticamente**.
 2. Seleziona **Abilitato**.  
 3. Fai clic su **Mostra**.
 4. Immettere l'app ID o gli ID dell’estensione o delle estensioni per cui forzare l'installazione.  
@@ -198,4 +198,4 @@ L'esempio seguente mostra la stringa JSON e quella JSON compressa per il blocco 
 - [Creare un archivio Web per ospitare le estensioni di Microsoft Edge](microsoft-edge-manage-extensions-webstore.md)
 - [Guida di riferimento per i criteri ExtensionSettings](microsoft-edge-manage-extensions-ref-guide.md)
 - [Domande frequenti sulle estensioni di Microsoft Edge](microsoft-edge-manage-extensions-faq.md)
-- [Pagina di destinazione di Microsoft Edge per le aziende](https://aka.ms/EdgeEnterprise)
+- [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

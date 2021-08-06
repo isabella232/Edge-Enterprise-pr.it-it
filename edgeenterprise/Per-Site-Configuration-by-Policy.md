@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: 'Configurazione per sito in base ai criteri '
-ms.openlocfilehash: 4f1bf9a421f0098ba8105e78f77ac4af62530239
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: d7cc68264c9fca9e667908ff4988f512c152bfc4857fd14166519fb3eb337a5a
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641692"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11725589"
 ---
 # <a name="persite-configuration-by-policy"></a>Configurazione per sito in base ai criteri
 
@@ -73,7 +73,7 @@ Se l'utente ha una prospettiva orientata verso il futuro, è possibile costruire
 
 - <div style="display: inline">`https://sharepoint.contoso-intranet.com`</div>
 
-Congratulazioni, è stata implementata una procedura consigliata. È possibile configurare ogni criterio desiderato con una voce **_.contoso-intranet.com_* e verrà acconsentito esplicitamente l'intera   Intranet.
+Congratulazioni, è stata implementata una procedura consigliata. È possibile configurare ogni criterio desiderato con una voce ***.contoso-intranet.com**  e l'intera rete Intranet verrà attivata.
 
 ## <a name="use-of-security-zones-inthe-microsoft-edge"></a>Utilizzo delle aree di sicurezza in Microsoft Edge
 

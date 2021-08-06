@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Mantenere lo spostamento nella pagina in modalità Internet Explorer
-ms.openlocfilehash: 20b18d121c3babfaacffd4a08316b25be714d95e
-ms.sourcegitcommit: bce02a5ce2617bb37ee5d743365d50b5fc8e4aa1
+ms.openlocfilehash: f1c40977ba07f0a85bc64aab8e609163f9a68dd2eb7487adff6b6a1fcbd110f2
+ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 07/09/2021
-ms.locfileid: "11641362"
+ms.lasthandoff: 08/05/2021
+ms.locfileid: "11724289"
 ---
 # <a name="keep-in-page-navigation-in-internet-explorer-mode"></a>Mantenere lo spostamento nella pagina in modalità Internet Explorer
 
@@ -60,10 +60,10 @@ Per mantenere lo spostamento automatico o tutto lo spostamento nella pagina in m
 
    - **Impostazione predefinita**: solo i siti configurati per l'apertura in modalità Internet Explorer verranno aperti in questa modalità. I siti non configurati per l'apertura in modalità Internet Explorer verranno reindirizzati a Microsoft Edge.
    - **Mantenere solo lo spostamento automatico in modalità Internet Explorer**: usare questa opzione se si vuole mantenere l'esperienza predefinita tranne gli spostamenti automatici (ad esempio 302 reindirizzamenti) ai siti non configurati in modalità Internet Explorer.
-   - **Mantenere tutto lo spostamento nella pagina in modalità Internet Explorer**  * *_(Scelta minima consigliata)_*_ Tutti gli spostamenti dalle pagine caricate in modalità Internet Explorer ai siti non configurati vengono mantenuti in modalità Internet Explorer.
+   - **Mantenere tutti gli** spostamenti nella pagina in modalità Internet Explorer (scelta consigliata **_minima):_** tutti gli spostamenti dalle pagine caricate in modalità Internet Explorer ai siti non configurati vengono mantenuti in modalità Internet Explorer.
 
-6. Fare clic su _*OK** **o su Applica** per salvare le impostazioni dei criteri.
+6. Fare clic su **OK** o su **Applica** per salvare queste impostazioni dei criteri.
 
-## <a name="see-also"></a>Vedi anche
+## <a name="see-also"></a>Vedere anche
 
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)
