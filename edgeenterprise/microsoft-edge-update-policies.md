@@ -400,7 +400,7 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
 
-### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
+### <a name="UpdaterExperimentationAndConfigurationServiceControl"></a>UpdaterExperimentationAndConfigurationServiceControl
 #### <a name="retrieve-configurations-and-experiments"></a>Recuperare configurazioni ed esperimenti
 >Microsoft Edge Update 1.3.145.1 e versioni successive
 
