@@ -3,19 +3,19 @@ title: Che cos'è la modalità Internet Explorer?
 ms.author: kvice
 author: dan-wesley
 manager: laurawi
-ms.date: 06/28/2021
+ms.date: 08/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Ulteriori informazioni su come la modalità Internet Explorer di Microsoft Edge consente di accedere ai siti che necessitano di Internet Explorer 11, oltre all'accesso ai siti moderni.
-ms.openlocfilehash: 7d1d9d201abee9cd9f0d648f2757e3276945d2f4dcf635ea0cd17a64e684aec4
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: cc88c6745d40bfd33a345d76e2b2090f0f33243271350e4449d698d4a0fab71e
+ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726064"
+ms.lasthandoff: 08/06/2021
+ms.locfileid: "11810196"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>Che cos'è la modalità Internet Explorer (IE)?
 
@@ -47,16 +47,16 @@ Solo i siti configurati specificatamente (tramite criteri) utilizzeranno la moda
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer supporta le funzionalità di Internet Explorer seguenti
 
 - Tutte le modalità documento e le modalità Enterprise.
-- Controlli ActiveX, come Java o Silverlight
+- Controlli ActiveX (ad esempio Java o Silverlight). **Nota:** Silverlight raggiungerà [la fine del supporto](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) il 12 ottobre 2021. 
 - Oggetti browser helper 
-- Impostazioni e Criteri di gruppo di Internet Explorer che influiscono sulle impostazioni dell'area di sicurezza e sulla modalità protetta
-- Gli strumenti di sviluppo F12 per IE, all'avvio con [IEChooser](/office/dev/add-ins/testing/debug-add-ins-using-f12-developer-tools-on-windows-10)
-- Le estensioni Microsoft Edge che interagiscono con i contenuti della pagina di Internet Explorer direttamente non sono supportate.
+- Impostazioni di Internet Explorer e criteri di gruppo che influiscono sulle impostazioni dell'area di sicurezza e sulla modalità protetta
+- Strumenti di sviluppo F12 per IE, quando vengono avviati con [IEChooser](/deployedge/edge-ie-mode-faq#how-can-i-debug-my-legacy-application-while-using-ie-mode-on-microsoft-edge-)
+- Le estensioni Microsoft Edge che interagiscono direttamente con i contenuti della pagina di Internet Explorer non sono supportate.
 
 ### <a name="ie-mode-doesnt-support-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer non supporta le funzionalità di Internet Explorer seguenti
 
 - Barre degli strumenti di Internet Explorer
-- Impostazioni e Criteri di gruppo di Internet Explorer che interessano il menu di spostamento (ad esempio motori di ricerca e home page)
+- Impostazioni e criteri di gruppo di Internet Explorer che controllano il menu di spostamento.
 - Strumenti di sviluppo di IE11 o Microsoft Edge F12
 
 ## <a name="prerequisites"></a>Prerequisiti
