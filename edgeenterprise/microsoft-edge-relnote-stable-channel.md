@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/05/2021
+ms.date: 08/06/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 02841bd8574a71be63181d474d076dab9c48642e208e7a9c016f330bb1d68e08
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: ab373397b49405ec608e27e8f51309489715d940
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810216"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882122"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
@@ -57,7 +57,7 @@ Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](/deploy
 
 **Gestione delle estensioni direttamente dalla barra degli strumenti**. Il nuovo menu delle estensioni sulla barra degli strumenti consente di nascondere/aggiungere facilmente le estensioni. I collegamenti rapidi per gestire le estensioni e trovarne di nuove semplificano la ricerca di nuove estensioni e la gestione di quelle esistenti.
 
-**L'impostazione predefinita per la riproduzione automatica verrà impostata su Limitata.**  Per garantire la concentrazione dell'utente online, l'impostazione predefinita per la riproduzione automatica dei contenuti multimediali è stata modificata da Limita a Consenti, a partire da Microsoft Edge versione 92.
+**Il valore predefinito per la riproduzione automatica verrà impostato su Limita**.  Per garantire la concentrazione dell'utente online, l'impostazione predefinita per la riproduzione automatica dei contenuti multimediali è stata modificata da Limita a Consenti, a partire da Microsoft Edge versione 92.
 
 **Gli strumenti di pagamento sono ora sincronizzati tra i dispositivi**. A partire da Microsoft Edge versione 92, è possibile sincronizzare le informazioni di pagamento tra i dispositivi connessi. Nota: questa è un'implementazione controllata delle funzionalità. Se questa funzionalità non è disponibile, controllare di nuovo a breve mentre l'implementazione prosegue.
 Attualmente questa funzionalità è disponibile solo negli Stati Uniti e solo per gli utenti MSA (non AAD)

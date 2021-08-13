@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Ulteriori informazioni su come la modalità Internet Explorer di Microsoft Edge consente di accedere ai siti che necessitano di Internet Explorer 11, oltre all'accesso ai siti moderni.
-ms.openlocfilehash: cc88c6745d40bfd33a345d76e2b2090f0f33243271350e4449d698d4a0fab71e
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810196"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882282"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>Che cos'è la modalità Internet Explorer (IE)?
 
