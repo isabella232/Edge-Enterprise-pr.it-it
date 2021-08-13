@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Configurare i criteri della modalità IE
-ms.openlocfilehash: a4b5e029935aed7e5d3cf23cc681448464b2f4e4a96d9d380d9cfb60ced88b2b
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 7ca8dffb0bc20acf954cf0f272f3894b39355846
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726109"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882132"
 ---
 # <a name="configure-ie-mode-policies"></a>Configurare i criteri della modalità IE
 
@@ -75,10 +75,8 @@ Puoi usare i seguenti criteri di gruppo per configurare siti specifici da aprire
     > [!NOTE]
     > Non è obbligatorio configurare il criterio di Microsoft Edge. Molte organizzazioni usano questo criterio come override per indirizzare l'elenco di siti corrente a tutti gli utenti con il criterio di IE e per inoltrare più facilmente una versione aggiornata agli utenti pilota con il criterio di Microsoft Edge.
 
-Per altre informazioni sull'elenco di siti per la modalità Enterprise, vedi:
+Per ulteriori informazioni sugli elenchi Enterprise, vedere [Use the Enterprise Site List Manager](/deployedge/edge-ie-mode-site-list-manager).
 
-- [Usare Enterprise Mode Site List Manager](/internet-explorer/ie11-deploy-guide/use-the-enterprise-mode-site-list-manager)
-- [Aggiungere più siti all'elenco dei siti per la modalità Enterprise tramite un file ed Enterprise Mode Site List Manager (schema v.2)](/internet-explorer/ie11-deploy-guide/add-multiple-sites-to-enterprise-mode-site-list-using-the-version-2-schema-and-enterprise-mode-tool).
 
 ### <a name="configure-using-the-use-the-enterprise-mode-ie-website-list-policy"></a>Configurare tramite il criterio Usa elenco siti Web di Internet Explorer modalità Enterprise
 

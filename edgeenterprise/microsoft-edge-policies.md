@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: 61ea386b4a0762f6b95a0f2c1944ca35d0749ea9d75f85330f85472414988200
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 9693195b466da999c7ada8f6a4453401e684326f
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724169"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882252"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -245,7 +245,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -389,7 +389,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[InPrivateModeAvailability](#inprivatemodeavailability)|Configura la disponibilità della modalità InPrivate|
 |[InsecureFormsWarningsEnabled](#insecureformswarningsenabled)|Attiva gli avvisi per i moduli non sicuri|
 |[IntensiveWakeUpThrottlingEnabled](#intensivewakeupthrottlingenabled)|Controlla la funzionalità IntensiveWakeUpThrottling|
-|[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|Configurare l'elenco Enterprise siti cloud in modalità avanzata|
+|[InternetExplorerIntegrationCloudSiteList](#internetexplorerintegrationcloudsitelist)|Configurare l'elenco Enterprise siti cloud in modalità Enterprise|
 |[InternetExplorerIntegrationEnhancedHangDetection](#internetexplorerintegrationenhancedhangdetection)|Configura il rilevamento di blocchi avanzati per la modalità di Internet Explorer|
 |[InternetExplorerIntegrationLevel](#internetexplorerintegrationlevel)|Configurare l'integrazione Internet Explorer|
 |[InternetExplorerIntegrationLocalFileAllowed](#internetexplorerintegrationlocalfileallowed)|Consentire l'avvio di file locali in modalità Internet Explorer|
@@ -2744,9 +2744,9 @@ SOFTWARE\Policies\Microsoft\Edge\JavaScriptBlockedForUrls\2 = "[*.]contoso.edu"
 
 Per informazioni dettagliate sui modelli di URL di sito validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) . * non è un valore accettato per questo criterio.
 
-Le eccezioni dei criteri JIT JavaScript verranno applicate solo a una granularità del sito (eTLD+1). Un criterio impostato solo per subdomain.contoso.com non verrà applicato correttamente a contoso.com o subdomain.contoso.com poiché entrambi si risolvono nello stesso eTLD+1 (contoso.com) per il quale non è presente alcun criterio. In questo caso, i criteri devono essere impostati su contoso.com per essere applicati correttamente sia contoso.com che subdomain.contoso.com.
+Le eccezioni ai criteri JIT JavaScript verranno applicate solo a granularità del sito (eTLD+1). Un criterio impostato solo per subdomain.contoso.com non verrà applicato correttamente a contoso.com o subdomain.contoso.com poiché entrambi si risolvono nello stesso eTLD+1 (contoso.com) per il quale non è presente alcun criterio. In questo caso, i criteri devono essere impostati su contoso.com per essere applicati correttamente sia contoso.com che subdomain.contoso.com.
 
-Questo criterio si applica fotogramma per fotogramma e non solo in base all'URL di origine di primo livello, ad esempio se contoso.com è elencato nel criterio JavaScriptJitAllowedForSites ma contoso.com carica un frame contenente fabrikam.com quindi contoso.com avrà javaScript JIT abilitato, ma fabrikam.com utilizzerà il criterio da [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting), se impostato, o predefinito su JavaScript JIT abilitato.
+Questo criterio si applica fotogramma per fotogramma e non solo in base all'URL di origine di primo livello, ad esempio se contoso.com è elencato nel criterio JavaScriptJitAllowedForSites ma contoso.com carica un frame contenente fabrikam.com quindi contoso.com avrà javaScript JIT abilitato, ma fabrikam.com utilizzerà il criterio da [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting), se impostato, o il valore predefinito è JavaScript JIT abilitato.
 
 Se non si configura questo criterio per un sito, il criterio di [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) si applica al sito, se impostato, altrimenti javascript JIT è abilitato per il sito.
 
@@ -2815,9 +2815,9 @@ La disabilitazione di JavaScript JIT significa che Microsoft Edge il rendering d
 
 Per informazioni dettagliate sui modelli di URL validi, vedere [https://go.microsoft.com/fwlink/?linkid=2095322](https://go.microsoft.com/fwlink/?linkid=2095322) * non è un valore accettato per questo criterio.
 
-Le eccezioni dei criteri JIT JavaScript verranno applicate solo a una granularità del sito (eTLD+1). Un criterio impostato solo per subdomain.contoso.com non verrà applicato correttamente a contoso.com o subdomain.contoso.com poiché entrambi si risolvono nello stesso eTLD+1 (contoso.com) per il quale non è presente alcun criterio. In questo caso, i criteri devono essere impostati su contoso.com per essere applicati correttamente sia contoso.com che subdomain.contoso.com.
+Le eccezioni ai criteri JIT JavaScript verranno applicate solo a granularità del sito (eTLD+1). Un criterio impostato solo per subdomain.contoso.com non verrà applicato correttamente a contoso.com o subdomain.contoso.com poiché entrambi si risolvono nello stesso eTLD+1 (contoso.com) per il quale non è presente alcun criterio. In questo caso, i criteri devono essere impostati su contoso.com per essere applicati correttamente sia contoso.com che subdomain.contoso.com.
 
-Questo criterio si applica fotogramma per fotogramma e non solo in base all'URL di origine di primo livello, ad esempio se contoso.com è elencato nel criterio JavaScriptJitBlockedForSites ma contoso.com carica un frame contenente fabrikam.com quindi contoso.com avrà JavaScript JIT disabilitato, ma fabrikam.com utilizzerà il criterio da [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting), se impostato, o predefinito su JavaScript JIT abilitato.
+Questo criterio si applica fotogramma per fotogramma e non solo in base all'URL di origine di primo livello, ad esempio se contoso.com è elencato nel criterio JavaScriptJitBlockedForSites ma contoso.com carica un frame contenente fabrikam.com quindi contoso.com avrà javaScript JIT disabilitato, ma fabrikam.com utilizzerà il criterio da [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting), se impostato, o predefinito per JavaScript JIT abilitato.
 
 Se non si configura questo criterio per un sito, il criterio di [DefaultJavaScriptJitSetting](#defaultjavascriptjitsetting) si applica al sito, se impostato, altrimenti javascript JIT è abilitato per il sito.
 
@@ -4499,7 +4499,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
   Configura la possibilità per gli utenti di ignorare lo stato dei flag di funzionalità.
 Se si imposta questo criterio su "CommandLineOverridesEnabled", gli utenti possono ignorare lo stato dei flag di funzionalità utilizzando argomenti della riga di comando ma non edge://flags pagina.
 
-Se si imposta questo criterio su "OverridesEnabled", gli utenti possono ignorare lo stato dei flag delle funzionalità usando argomenti della riga di comando o edge://flags pagina.
+Se si imposta questo criterio su "OverridesEnabled", gli utenti possono ignorare lo stato dei flag di funzionalità usando argomenti della riga di comando o edge://flags pagina.
 
 Se si imposta questo criterio su "OverridesDisabled", gli utenti non possono ignorare lo stato dei flag di funzionalità utilizzando argomenti della riga di comando o edge://flags pagina.
 
@@ -5823,7 +5823,7 @@ Se disabiliti questa impostazione, l'accesso implicito verrà disabilitato.
 
   Questo criterio consente agli utenti di decidere se usare la libreria OneAuth per l'accesso e il recupero di token Microsoft Edge in Windows 10 RS3 e successive.
 
-Se disabiliti o non configurerai questo criterio, il processo di accesso userà Windows Account Manager. Microsoft Edge possibile utilizzare gli account connessi a Windows, Microsoft Office o altre applicazioni Microsoft per l'accesso, senza la necessità di password. In caso contrario, puoi fornire un account e una password validi per l'accesso, che verranno archiviati in Windows Account Manager per l'utilizzo futuro. Sarà possibile analizzare tutti gli account archiviati in Windows Account Manager tramite la pagina Windows Impostazioni -> Account -> e-mail e account.
+Se disabiliti o non configurerai questo criterio, il processo di accesso userà Windows Account Manager. Microsoft Edge possibile utilizzare gli account connessi a Windows, Microsoft Office o altre applicazioni Microsoft per l'accesso, senza la necessità di password. In caso contrario, puoi fornire un account e una password validi per l'accesso, che verranno archiviati in Windows Account Manager per l'utilizzo futuro. Sarà possibile analizzare tutti gli account archiviati in Windows Account Manager tramite la pagina Windows Impostazioni -> Accounts -> Email and accounts.
 
 Se abiliti questo criterio, il flusso di autenticazione OneAuth verrà usato per l'accesso all'account. Il flusso di autenticazione OneAuth ha meno dipendenze e può funzionare senza Windows shell. L'account utilizzato non verrà archiviato nella pagina E-mail e account.
 
@@ -6266,7 +6266,7 @@ Se si imposta questo criterio su disattivato, Microsoft Edge può usare questi h
 
   #### <a name="description"></a>Descrizione
 
-  Configura l'interruttore generatore di Impostazioni che abilita/disabilita la funzionalità per gli utenti.
+  Configura il generatore di password Impostazioni'interruttore che abilita/disabilita la funzionalità per gli utenti.
 
 Se abiliti o non configurerai questo criterio, Generatore di password offrirà agli utenti un suggerimento di password forte e univoco (tramite un elenco a discesa) nelle pagine Iscrizione e Modifica password.
 
@@ -6739,7 +6739,7 @@ Questo criterio di gruppo configura il selettore del pulsante di opzione che abi
 
 Se si imposta questo criterio su "Automaticamente, disabilita questo criterio o non configura questo criterio, il riempimento automatico non avrà alcun flusso di autenticazione".
 
-Se si imposta questo criterio su "Con password del dispositivo", gli utenti dovranno immettere la password del dispositivo (o la modalità di autenticazione preferita in Windows Hello se in Windows - PIN, riconoscimento del volto o impronta digitale e opzioni equivalenti su Mac) per dimostrare la propria identità e solo allora la password verrà compilata automaticamente. Inoltre, la frequenza del prompt di autenticazione viene impostata su "Sempre" per impostazione predefinita, tuttavia gli utenti possono modificarla con l'altra opzione, che è "Una volta ogni sessione di esplorazione".
+Se si imposta questo criterio su "Con password del dispositivo", gli utenti dovranno immettere la password del dispositivo (o la modalità di autenticazione preferita in Windows Hello se in Windows - PIN, riconoscimento del volto o impronta digitale e opzioni equivalenti su Mac) per dimostrare la propria identità e solo allora la password verrà compilata automaticamente. Inoltre, la frequenza del prompt di autenticazione sarebbe impostata su "Sempre" per impostazione predefinita, tuttavia gli utenti possono modificarla con l'altra opzione, che è "Una volta ogni sessione di esplorazione".
 
 Mapping delle opzioni del criterio:
 
@@ -8090,7 +8090,7 @@ Per ProxyMode, se si sceglie il valore:
   * direct, viene usato un proxy di sistema e tutti gli altri campi vengono ignorati.
   * auto_detect, tutti gli altri campi vengono ignorati.
   * fixed_servers, vengono usati i campi ProxyServer e ProxyBypassList.
-  * pac_script vengono utilizzati i campi ProxyPacUrl, ProxyPacMandatory e ProxyBypassList.
+  * pac_script, vengono utilizzati i campi ProxyPacUrl, ProxyPacMandatory e ProxyBypassList.
 
 Per esempi più dettagliati, passare a [https://go.microsoft.com/fwlink/?linkid=2094936](https://go.microsoft.com/fwlink/?linkid=2094936).
 
@@ -8771,7 +8771,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -11559,7 +11559,7 @@ L'impostazione predefinita, "Non configurato", rispetta le impostazioni di ripro
 
 Se si abilita questo criterio, la riproduzione automatica di contenuti multimediali è consentita.  Tutti i siti Web possono riprodurre contenuti multimediali. Gli utenti non possono eseguire l'override del criterio.
 
-L'impostazione su "Disabilitato" imposta la riproduzione automatica multimediale su "Limite".  Ciò limita i siti Web a cui è consentito l'esecuzione automatica di contenuti multimediali a pagine Web con un elevato coinvolgimento multimediale e flussi WebRTC attivi. Prima della Microsoft Edge versione 92, la riproduzione automatica multimediale era impostata su "Blocca". Gli utenti non possono eseguire l'override del criterio.
+L'impostazione su "Disabilitato" imposta la riproduzione automatica multimediale su "Limite".  Ciò limita i siti Web a cui è consentito l'esecuzione automatica di contenuti multimediali alle pagine Web con un elevato coinvolgimento multimediale e flussi WebRTC attivi. Prima della Microsoft Edge versione 92, la riproduzione automatica multimediale era impostata su "Block". Gli utenti non possono eseguire l'override del criterio.
 
 Per applicare il criterio, è necessario chiudere e riaprire una scheda.
 
@@ -13456,11 +13456,11 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   Questa impostazione consente di configurare la funzionalità Visualizza in Esplora file per la gestione dei file in SharePoint Online durante l'Microsoft Edge.
 
-Dovrai elencare i domini specifici in cui sono consentiti e elencare i cookie necessari per l'autenticazione SharePoint (rtFa e FedAuth).
+Dovrai elencare i domini specifici in cui sono consentiti ed elencare i cookie necessari per l'autenticazione SharePoint (rtFa e FedAuth).
 
 Dietro le quinte, il criterio consente agli URL con lo schema viewinfileexplorer: di aprire gli URL WebDAV in Esplora file di Windows nelle pagine corrispondenti all'elenco dei domini e utilizza i cookie specificati per l'autenticazione WebDAV.
 
-Se si abilita questo criterio, è possibile utilizzare la funzionalità "Visualizza in Esplora file" nell'elenco SharePoint raccolte documenti. Dovrai specificare il dominio e i cookie SharePoint autenticazione. Vedi il valore di esempio seguente.
+Se si abilita questo criterio, è possibile utilizzare la funzionalità "Visualizza in Esplora file" SharePoint raccolte documenti elencate. Dovrai specificare il dominio e i cookie SharePoint autenticazione. Vedi il valore di esempio seguente.
 
 Se si disabilita o non si configura questo criterio, non è possibile utilizzare la funzionalità "Visualizza in Esplora file" nelle raccolte SharePoint documenti.
 
@@ -15620,7 +15620,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="description"></a>Descrizione
 
-  È disponibile un elenco di porte con restrizioni incorporate Microsoft Edge. Le connessioni a queste porte avranno esito negativo. Questo criterio consente di ignorare l'elenco. Il set di porte è definito come un elenco separato da virgole su cui devono essere consentite le connessioni in uscita.
+  È disponibile un elenco di porte con restrizioni incorporate in Microsoft Edge. Le connessioni a queste porte avranno esito negativo. Questo criterio consente di ignorare l'elenco. Il set di porte è definito come un elenco separato da virgole su cui devono essere consentite le connessioni in uscita.
 
 Le porte sono limitate per impedire che Microsoft Edge venga utilizzato come vettore per sfruttare varie vulnerabilità di rete. L'impostazione di questo criterio può esporre la rete ad attacchi. Questo criterio è inteso come soluzione temporanea per il codice di errore "ERR_UNSAFE_PORT" durante la migrazione di un servizio in esecuzione su una porta bloccata a una porta standard, ad esempio la porta 80 o 443.
 
@@ -18067,7 +18067,7 @@ Il criterio viene applicato per processo di rendering, con il valore più recent
 
   ### <a name="internetexplorerintegrationcloudsitelist"></a>InternetExplorerIntegrationCloudSiteList
 
-  #### <a name="configure-the-enterprise-mode-cloud-site-list"></a>Configurare l'elenco Enterprise siti cloud in modalità avanzata
+  #### <a name="configure-the-enterprise-mode-cloud-site-list"></a>Configurare l'elenco Enterprise siti cloud in modalità Enterprise
 
   
   
@@ -18077,13 +18077,13 @@ Il criterio viene applicato per processo di rendering, con il valore più recent
 
   #### <a name="description"></a>Descrizione
 
-  L'impostazione Elenchi siti di Microsoft Edge nell'interfaccia di amministrazione di M365 consente di ospitare gli elenchi di siti in una posizione cloud conforme e di gestire il contenuto degli elenchi di siti tramite l'esperienza predefinita. Questa impostazione consente di specificare l'elenco di siti all'interno dell'interfaccia di amministrazione di M365 da distribuire agli utenti. L'utente deve essere connesso Microsoft Edge con un account aziendale o dell'istituto di istruzione valido. In caso contrario, Microsoft Edge l'elenco dei siti non verrà scaricato dal percorso cloud.
+  L'impostazione Elenchi siti di Microsoft Edge nell'interfaccia di amministrazione di M365 consente di ospitare gli elenchi di siti in una posizione cloud conforme e di gestire il contenuto degli elenchi di siti tramite l'esperienza predefinita. Questa impostazione consente di specificare l'elenco di siti all'interno dell'interfaccia di amministrazione di M365 da distribuire agli utenti. L'utente deve avere eseguito l'Microsoft Edge con un account aziendale o dell'istituto di istruzione valido. In caso contrario, Microsoft Edge'elenco dei siti non verrà scaricato dal percorso cloud.
 
 Questa impostazione è applicabile solo quando è configurata l'impostazione [InternetExplorerIntegrationLevel.](#internetexplorerintegrationlevel)
 
 Se si configura questo criterio, Microsoft Edge verrà utilizzato l'elenco di siti specificato. Se abilitata, è possibile immettere l'identificatore dell'elenco di siti creato e pubblicato nel cloud nell'interfaccia di amministrazione di M365.
 
-Questa impostazione ha la precedenza sul criterio [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) di Microsoft Edge e sull'impostazione dell'elenco dei siti di Internet Explorer (Usare l'elenco dei siti Web di Internet Explorer in modalità Enterprise). Se si disabilita o non si configura questo criterio, Microsoft Edge verrà utilizzato il criterio [InternetExplorerIntegrationSiteList.](#internetexplorerintegrationsitelist)
+Questa impostazione ha la precedenza sul criterio [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) di Microsoft Edge e sull'impostazione dell'elenco dei siti di Internet Explorer (Usa l'elenco dei siti Web di Internet Explorer in modalità Enterprise). Se si disabilita o non si configura questo criterio, Microsoft Edge verrà utilizzato il criterio [InternetExplorerIntegrationSiteList.](#internetexplorerintegrationsitelist)
 
 Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.microsoft.com/fwlink/?linkid=2165707](https://go.microsoft.com/fwlink/?linkid=2165707)
 
@@ -18625,7 +18625,7 @@ Per altre informazioni sulla modalità Internet Explorer, vedere [https://go.mic
 
   #### <a name="description"></a>Descrizione
 
-  Questa impostazione consente di specificare un intervallo di aggiornamento personalizzato per l'elenco Enterprise siti in modalità avanzata. L'intervallo di aggiornamento è specificato in minuti.
+  Questa impostazione consente di specificare un intervallo di aggiornamento personalizzato per l'Enterprise siti in modalità utente. L'intervallo di aggiornamento è specificato in minuti.
 
 Questa impostazione è applicabile solo quando è configurata l'impostazione [InternetExplorerIntegrationSiteList](#internetexplorerintegrationsitelist) o [InternetExplorerIntegrationCloudSiteList.](#internetexplorerintegrationcloudsitelist)
 
@@ -18648,7 +18648,7 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge verrà utili
   ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: InternetExplorerIntegrationSiteListRefreshInterval
-  - Nome Criteri di gruppo: configurare la frequenza di aggiornamento dell'elenco siti Enterprise modalità utente
+  - Nome Criteri di gruppo: Configurare la frequenza di aggiornamento dell'elenco siti Enterprise modalità utente
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): N/D
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -19129,9 +19129,9 @@ Se si disabilita o non si configura questo criterio, Microsoft Edge verrà aggio
 
   #### <a name="description"></a>Descrizione
 
-  L'opzione "Consenti l'accesso Single #A0 per i siti Microsoft che utilizzano questo profilo" consente ai profili non MSA di essere in grado di utilizzare l'accesso Single #A1 per i siti Microsoft utilizzando le credenziali MSA presenti nel computer. Questa opzione viene visualizzata per gli utenti finali come interruttore in Impostazioni -> Profili -> Preferenze profilo solo per i profili non MSA.
+  L'opzione "Consenti single sign-on per i siti Microsoft che usano questo profilo" consente ai profili non MSA di poter utilizzare l'accesso Single #A0 per i siti Microsoft utilizzando le credenziali MSA presenti nel computer. Questa opzione viene visualizzata per gli utenti finali come interruttore in Impostazioni -> Profili -> Preferenze profilo solo per i profili non MSA.
 
-Se si disabilita questo criterio, i profili non MSA non potranno utilizzare l'accesso Single #A0 per i siti Microsoft utilizzando le credenziali MSA presenti nel computer.
+Se si disabilita questo criterio, i profili non MSA non saranno in grado di utilizzare l'accesso Single #A0 per i siti Microsoft utilizzando le credenziali MSA presenti nel computer.
 
 Se si abilita o non si configura questo criterio, gli utenti potranno utilizzare l'opzione Impostazioni per garantire che i profili non MSA siano in grado di utilizzare single sign-on per i siti Microsoft utilizzando le credenziali MSA presenti nel computer purché nel computer sia presente un solo account MSA.
 
@@ -19150,7 +19150,7 @@ Se si abilita o non si configura questo criterio, gli utenti potranno utilizzare
   ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: MSAWebSiteSSOUsingThisProfileAllowed
-  - Nome Criteri di gruppo: Consenti accesso Single #A0 per i siti Microsoft che usano questo profilo
+  - Nome Criteri di gruppo: Consenti l'accesso Single #A0 per i siti Microsoft che usano questo profilo
   - Percorso Criteri di gruppo (obbligatorio): Modelli amministrativi/Microsoft Edge/
   - Percorso Criteri di gruppo (consigliato): Modelli amministrativi/Microsoft Edge - Impostazioni predefinite (gli utenti possono eseguire l'override)/
   - Nome file ADMX Criteri di gruppo: MSEdge.admx
@@ -25621,7 +25621,7 @@ Se non viene impostato questo criterio, il rilevamento delle finestre nascoste s
   [Torna all'inizio](#microsoft-edge---policies)
 
 
-## <a name="see-also"></a>Vedi anche
+## <a name="see-also"></a>Vedere anche
 
 - [Configurazione di Microsoft Edge](configure-microsoft-edge.md)
 - [Pagina di destinazione di Microsoft Edge in modalità Enterprise](https://aka.ms/EdgeEnterprise)

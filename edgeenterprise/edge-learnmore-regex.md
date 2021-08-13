@@ -1,33 +1,33 @@
 ---
 title: Sintassi delle espressioni regolari 2
 ms.author: comanea
-author: dan-wesley
+author: AndreaLBarr
 manager: seanlyn
-ms.date: 06/29/2021
+ms.date: 08/12/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Sintassi delle espressioni regolari 2
-ms.openlocfilehash: 48c19aaf039d239c05ef1b7e35faa8cfd6cb37349e53066b45d8183f6c64638d
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 78f21846c142d67470cd421a34baafa9d0021bd0
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725999"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882142"
 ---
 # <a name="regular-expression-2-re2h-syntax"></a>Sintassi delle espressioni regolari 2 (RE2.h)
 
 Le espressioni regolari sono una notazione per la descrizione dei set di stringhe di caratteri. Quando una stringa si trova nel set descritto da una espressione regolare, spesso diciamo che l'espressione regolare corrisponda alla stringa.
 
-L'espressione regolare più semplice è un carattere letterale singolo. Fatta eccezione per i metacaratteri, come *\*+?()|*, i caratteri corrispondono a se stessi. Per trovare la corrispondenza di un metacarattere, usare la barra rovesciata come carattere di escape: \+ corrisponde a un carattere “più” alfabetico.
+L'espressione regolare più semplice è un carattere letterale singolo. Fatta eccezione per i metacaratteri, come `\*+?()|`, i caratteri corrispondono a se stessi. Per trovare una corrispondenza con un metacarattere, eseguire l'escape con una barra `\+` rovesciata: corrisponde a un carattere più letterale.
 
 Due espressioni regolari possono essere alterate o concatenate per formare una nuova espressione regolare: se *e<sub>1</sub>* corrisponde a _s_ ed *e<sub>2</sub>* corrisponde a _t_, allora *e<sub>1</sub>* | *e<sub>2</sub>* corrisponde a _s_ o a _t_, ed *e<sub>1</sub>* *e<sub>2</sub>*  corrisponde a _st_.
 
-I metacaratteri _\*_ , _+_ , e _?_ sono operatori di ripetizione: *e<sub>1</sub>* _\*_ corrisponde a una sequenza di zero o più stringe (possibilmente differenti), ciascuna delle quali corrisponde ad *e<sub>1</sub>*; *e<sub>1</sub>* _+_ corrisponde a una o più; *e<sub>1</sub>* _?_ corrisponde a zero o una.
+I metacaratteri _`\`_ , _+_ , e _?_ sono operatori di ripetizione: *e<sub>1</sub>* _`\`_ corrisponde a una sequenza di zero o più stringe (possibilmente differenti), ciascuna delle quali corrisponde ad *e<sub>1</sub>*; *e<sub>1</sub>* _+_ corrisponde a una o più; *e<sub>1</sub>* _?_ corrisponde a zero o una.
 
-La precedenza degli operatori, dal legame più debole al più forte, è il seguente: alternanza, concatenazione, e infine ripetizione. Le parentesi esplicite possono essere usate per trasmettere significati differenti, come nelle espressioni aritmetiche. Alcuni esempi: _ab|cd_ equivale ad _(ab)|(cd)_ ; _ab\*_ è equivalente ad _a(b\*)_ .
+La precedenza degli operatori, dal legame più debole al più forte, è il seguente: alternanza, concatenazione, e infine ripetizione. Le parentesi esplicite possono essere usate per trasmettere significati differenti, come nelle espressioni aritmetiche. Alcuni esempi: _ab|cd_ equivale a _(ab)|( cd)_ ; _`ab\`_ equivale a _`a(b\)`_ .
 
 La sintassi descritta finora è in gran parte presa dalla tradizionale sintassi delle espressioni regolari _egrep_ di Unix. Questo sottogruppo è sufficiente per descrivere tutti i linguaggio regolari: in parole povere, un linguaggio regolare è un set di stringhe che possono essere verificate in un testo con un solo passaggio, usando solo una quantità finita di memoria. Linguaggi più recenti per le espressione regolari (come Perl e quelli che l'hanno copiato) hanno aggiunto numerosi nuovi operatori e sequenze di escape, che rendono le espressioni regolari più concise e a volte più criptiche, ma di norma non più potenti.
 

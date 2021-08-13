@@ -10,14 +10,14 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Supporto delle preferenze iniziali Microsoft Edge browser.
-ms.openlocfilehash: 4ac5e69ad1efa61752097348324f917d9155d4f823d520895296c8ab01d7065c
-ms.sourcegitcommit: 6e9ce486955bd90db09744307b72245dd4890d01
+ms.openlocfilehash: 39af88d21107ad548166c749c3ba765754270b48
+ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/06/2021
-ms.locfileid: "11810231"
+ms.lasthandoff: 08/13/2021
+ms.locfileid: "11882262"
 ---
-# <a name="configure-microsoft-edge-using-initial-preferences-settings-for-the-first-run"></a>Configurare Microsoft Edge impostazioni delle preferenze iniziali per la prima esecuzione
+# <a name="configure-microsoft-edge-using-initial-preferences-settings-for-the-first-run"></a>Configurare Microsoft Edge scegliendo le impostazioni delle Preferenze iniziali per la prima esecuzione
 
 Usa le informazioni seguenti per configurare Microsoft Edge preferenze iniziali nei dispositivi Windows dispositivi.
 
@@ -26,13 +26,13 @@ Usa le informazioni seguenti per configurare Microsoft Edge preferenze iniziali 
 
 ## <a name="configure-policy-settings-on-windows"></a>Configurare le impostazioni dei criteri in Windows
 
-A partire Microsoft Edge versione 93, Microsoft supporta un numero limitato di preferenze iniziali, in precedenza denominate "Preferenze principali", per aiutare gli amministratori a configurare i browser per la prima esecuzione; vedi l'elenco delle impostazioni supportate di seguito.  
+A Microsoft Edge versione 93, Microsoft supporta un numero limitato di preferenze iniziali, in precedenza denominate "Preferenze principali", per aiutare gli amministratori a configurare i browser per la prima esecuzione; vedi l'elenco delle impostazioni supportate di seguito.  
 
-Quando viene distribuito, le preferenze iniziali fungono da impostazioni predefinite del browser nei dispositivi gestiti. si tratta delle impostazioni preferite dagli amministratori per essere usate come predefinite, ma che possono essere modificate dagli utenti o non sono disponibili per alcuni dispositivi in quanto non sono aggiunti a un dominio di Active Directory®.
+Quando viene distribuito, le preferenze iniziali fungono da impostazioni predefinite del browser nei dispositivi gestiti. queste sono le impostazioni preferite dagli amministratori per essere usate come predefinite, ma che possono essere modificate dagli utenti o non sono disponibili per alcuni dispositivi in quanto non sono aggiunti a un dominio di Active Directory®.
 
 Alcuni esempi di impostazioni delle preferenze iniziali includono la configurazione iniziale di una home page predefinita o di schede con URL specifici.
 
-Le preferenze vengono copiate initial_preferences file una sola volta e le modifiche apportate a questo file dopo la configurazione non verranno rispettate. Se un'impostazione viene gestita da un criterio [Microsoft Edge](/deployedge/microsoft-edge-policies) e configurata nel file initial_preferences, il criterio ha sempre la precedenza.
+Le preferenze vengono copiate initial_preferences file una sola volta e qualsiasi modifica apportata a questo file dopo la configurazione non verrà rispettata. Se un'impostazione viene gestita da un criterio [Microsoft Edge](/deployedge/microsoft-edge-policies) e configurata nel file initial_preferences, il criterio ha sempre la precedenza.
 
 Di seguito è riportato l'elenco delle impostazioni delle preferenze attualmente supportate da Microsoft Edge:
 
@@ -56,11 +56,11 @@ To get started, download the example *initial_preferences* file form this locati
 
 ## <a name="2-customize-and-validate-the-initial_preferences-file"></a>2: personalizzare e convalidare il file initial_preferences file
 
-Personalizza le impostazioni delle preferenze nel file *initial_preferences* scaricato e convalida le modifiche per assicurarti che non siano presenti errori nel codice JSON. Se vengono rilevati errori, controllare la sintassi e la struttura del file *initial_preferences,* apportare correzioni e convalidarlo di nuovo. Pochi strumenti di esempio per convalidare JSON, Strumenti [JSON](https://jsonformatter.org/) online o [modifica JSON in Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
+Personalizza le impostazioni delle preferenze nel file *initial_preferences* scaricato e convalida le modifiche per assicurarti che non ci siano errori nel codice JSON. Se vengono rilevati errori, controllare la sintassi e la struttura del file *initial_preferences,* apportare correzioni e convalidarlo di nuovo. Pochi strumenti di esempio per convalidare JSON, Strumenti [JSON](https://jsonformatter.org/) online o [modifica JSON in Visual Studio Code](https://code.visualstudio.com/docs/languages/json).
 
 ## <a name="3-deploy-preferences-to-users-computer"></a>3: Distribuire le preferenze nel computer degli utenti
 
-Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporaneamente Microsoft Edge Browser viene distribuito e posiziona il file nel percorso seguente nel dispositivo.
+Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporaneamente alla distribuzione di Microsoft Edge Browser e posiziona il file nel percorso seguente nel dispositivo.
 
 ### <a name="windows-amd64-and-arm64"></a>Windows (AMD64 e ARM64)
 
@@ -86,6 +86,6 @@ Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporan
 
 Le preferenze iniziali avranno effetto solo quando il file initial_preferences viene distribuito prima della prima esecuzione del browser da parte degli utenti finali.  
 
-## <a name="see-also"></a>Vedi anche
+## <a name="see-also"></a>Vedere anche
 
-- [File *modello initial_prefrences* esempio](https://www.microsoft.com/edge/business/download)
+- [File *modello initial_prefrences* di esempio](https://www.microsoft.com/edge/business/download)
