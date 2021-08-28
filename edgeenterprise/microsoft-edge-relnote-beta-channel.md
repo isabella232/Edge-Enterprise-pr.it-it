@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: d6912d275ca74bdd46b4d5997e34d62502562986
-ms.sourcegitcommit: 43e123dcb1a871e3fb9e0fdab096b8ea3d372bc7
+ms.openlocfilehash: dc2eebb2faabd4c04e0db4a5be4ffaaaff8aebcf
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/25/2021
-ms.locfileid: "11925323"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11926002"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -23,6 +23,10 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 > [!NOTE]
 > La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-93096133-august-27"></a>Versione 93.0.961.33: 27 agosto
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-93096127-august-20"></a>Versione 93.0.961.27: 20 agosto
 
@@ -38,20 +42,20 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 - **Preferenze iniziali in Microsoft Edge.**  A partire Microsoft Edge versione 93, la distribuzione di Microsoft Edge nell'organizzazione sarà più semplice con l'aggiunta di Preferenze iniziali.
 
-- **La modalità IE Microsoft Edge supporterà il comportamento "nomerge".**  A partire Microsoft Edge versione 93, la modalità IE Microsoft Edge supporterà _nomerge_. Per un utente finale, quando una nuova finestra del browser viene avviata da un'applicazione in modalità IE, si trova in una sessione separata, in modo analogo al comportamento in Internet Directory Online. Sarà necessario modificare l'elenco dei siti per configurare i siti che devono impedire la condivisione delle sessioni. Dietro le quinte, per ogni finestra di Microsoft Edge, la prima volta che viene visitata una scheda della modalità IE all'interno di tale finestra, se si tratta di uno dei siti designati "nomerge", tale finestra viene bloccata in una sessione "nomerge" diversa da tutte le altre finestre di Microsoft Edge almeno fino alla chiusura dell'ultima scheda della modalità IE in tale finestra. Altre informazioni sono disponibili [qui](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-).
+- **La modalità IE Microsoft Edge supporterà il comportamento "nomerge".**  A partire da Microsoft Edge versione 93, la modalità IE Microsoft Edge supporterà _nomerge_. Per un utente finale, quando una nuova finestra del browser viene avviata da un'applicazione in modalità IE, si trova in una sessione separata, in modo analogo al comportamento in Internet Directory Online. Sarà necessario modificare l'elenco dei siti per configurare i siti che devono impedire la condivisione delle sessioni. Dietro le quinte, per ogni finestra di Microsoft Edge, la prima volta che viene visitata una scheda della modalità IE all'interno di tale finestra, se si tratta di uno dei siti "nomerge" designati, tale finestra viene bloccata in una sessione di Internet Microsoft Edge diversa da tutte le altre finestre di Microsoft Edge almeno fino alla chiusura dell'ultima scheda della modalità IE in quella finestra. Altre informazioni sono disponibili [qui](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-).
 
 - **Gruppi di schede.**  La possibilità di categorizzare le schede in gruppi definiti dall'utente consente di trovare, cambiare e gestire le schede in modo più efficace in più workstream. A tale scopo, viene attivato il raggruppamento delle schede a partire Microsoft Edge versione 93.
 
-- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
+- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel aggiuntivi nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
 
-- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti in macOS.  Controllare di nuovo a breve mentre continuiamo l'implementazione per Windows utenti.
+- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa funzionalità è attualmente disponibile per Microsoft Edge utenti in macOS.  Controllare di nuovo a breve mentre si continua l'implementazione Windows utenti.
 
-- **Rimozione di 3DES in TLS.**  A partire Microsoft Edge versione 93, il supporto per la famiglia TLS_RSA_WITH_3DES_EDE_CBC_SHA di crittografia verrà rimosso. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per ulteriori informazioni, passare alla voce [Stato piattaforma Chrome.](https://chromestatus.com/feature/6678134168485888) Inoltre, nella Microsoft Edge 93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questo criterio di compatibilità diventerà obsoleto e smetterà di funzionare Microsoft Edge versione 95. Assicurarsi di aggiornare i server interessati prima di allora.
+- **Rimozione di 3DES in TLS.**  A partire Microsoft Edge versione 93, il supporto per la famiglia TLS_RSA_WITH_3DES_EDE_CBC_SHA di crittografia verrà rimosso. Questa modifica si verifica nel progetto Chromium, su cui si basa Microsoft Edge progetto. Per ulteriori informazioni, passare alla voce [Stato piattaforma Chrome.](https://chromestatus.com/feature/6678134168485888) Inoltre, nella Microsoft Edge 93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questo criterio di compatibilità diventerà obsoleto e smetterà di funzionare Microsoft Edge versione 95. Assicurarsi di aggiornare i server interessati prima di allora.
 
 - **Criteri per ignorare i ClickOnce e DirectInvoke.**  I criteri sono stati aggiornati per abilitare il bypass dei prompt di ClickOnce e dell'app di DirectInvoke per i tipi di file specificati, dai domini specificati. A tale scopo, è necessario:
 
   - Abilitare [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) o [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
-  - Abilitare [il criterio AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) e impostare l'elenco di tipi di file specifici per cui ClickOnce e DirectInvoke devono essere disabilitati
+  - Abilitare [il criterio AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) e impostare l'elenco di tipi di file specifici per i quali ClickOnce e DirectInvoke devono essere disabilitati
   - Abilitare il [criterio AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) e impostare l'elenco di domini specifici per i ClickOnce e DirectInvoke per
 
   Nota: AutoOpenAllowedForURLs è un criterio di supporto per AutoOpenFileTypes. Se AutoOpenAllowedForURLs non è impostato e AutoOpenFileTypes è impostato, i tipi di file elencati verranno aperti automaticamente da tutti gli URL.
@@ -62,10 +66,10 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 - [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) CeCPQ2 post-quantum key-agreement abilitato per TLS
 - [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer) Configurare la funzionalità Visualizza in Esplora file per SharePoint pagine in Microsoft Edge
 - [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) Controllare l'utilizzo di JavaScript JIT
-- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled) Consenti alle notifiche di impostare Microsoft Edge lettore PDF predefinito
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled) Consenti alle notifiche di impostare Microsoft Edge come lettore PDF predefinito
 - [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) Configurare la possibilità per gli utenti di ignorare i flag di funzionalità
 - [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) Abilitare l'accesso implicito
-- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist) Configurare l'elenco Enterprise siti cloud in modalità avanzata
+- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist) Configurare l'elenco Enterprise siti cloud in modalità Enterprise
 - [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) Configurare la frequenza di aggiornamento dell'elenco siti Enterprise modalità utente
 - [JavaScriptJitAllowedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitallowedforsites) Consenti a JavaScript di usare JIT in questi siti
 - [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) Impedire a JavaScript di usare JIT in questi siti
@@ -87,7 +91,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 #### <a name="obsoleted-policy"></a>Criteri obsoleti
 
-- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) Configurare la nuova Microsoft Edge pagina nuova scheda
+- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) Configurare la pagina Microsoft Edge nuova scheda
 
 #### <a name="additional-change"></a>Modifica aggiuntiva
 

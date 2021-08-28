@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Supporto di Microsoft Edge per Microsoft Defender Application Guard
-ms.openlocfilehash: 4bb8f48bd5ccdfd555d44cecc8cfe9253a6ba17e42f60e2b8a0086411c10e9fb
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
+ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727024"
+ms.lasthandoff: 08/27/2021
+ms.locfileid: "11925992"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Supporto di Microsoft Edge per Microsoft Defender Application Guard
 
@@ -50,6 +50,13 @@ Lo screenshot seguente mostra un esempio di messaggio di Application Guard che i
 ## <a name="whats-new"></a>Novità
 
 Il supporto per Application Guard nel nuovo browser Microsoft Edge ha pari funzionalità con la versione legacy di Microsoft Edge e include diversi miglioramenti.
+
+### <a name="enable-application-guard-in-passive-mode-and-browse-edge-normally"></a>Abilitare Application Guard in modalità passiva ed esplorare Edge normalmente
+
+A partire da Microsoft Edge 94, gli utenti hanno ora la possibilità di configurare la modalità passiva, il che significa che Application Guard ignora la configurazione dell'elenco dei siti e gli utenti possono esplorare Edge normalmente. Il supporto può essere controllato tramite criterio. È possibile aggiornare il criterio Edge [ApplicationGuardPassiveModeEnabled](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) per abilitare o disabilitare la modalità passiva.
+
+> [!Note]
+> Questo criterio influisce SOLO su Edge, quindi gli spostamenti da altri browser potrebbero essere reindirizzati al contenitore di Application Guard se sono abilitate le estensioni corrispondenti.
 
 ### <a name="favorites-synchronizing-from-the-host-to-the-container"></a>Sincronizzazione dei Preferiti dall'host al contenitore
 
@@ -137,9 +144,9 @@ No, la funzionalità Application Guard è supportata in modo nativo in Microsoft
 
 ### <a name="can-employees-download-documents-from-the-application-guard-edge-session-onto-host-devices"></a>I dipendenti possono scaricare documenti dalla sessione Edge di Application Guard nei dispositivi host?
 
-In Windows 10 Enterprise edition, versione 1803, gli utenti sono in grado di scaricare documenti dal contenitore application guard isolato al PC host. Questa funzionalità è gestita dai criteri.
+Nella Windows 10 Enterprise, versione 1803, gli utenti sono in grado di scaricare documenti dal contenitore application guard isolato nel PC host. Questa funzionalità è gestita dai criteri.
 
-In Windows 10 Enterprise Edition, versione 1709 o Windows 10 Professional edition, versione 1803, non è possibile scaricare file dal contenitore Application Guard isolato nel computer host. Tuttavia, i dipendenti possono usare le opzioni Stampa su PDF o Stampa su XPS e salvare i file nel dispositivo host.
+In Windows 10 Enterprise Edition, versione 1709 o Windows 10 Professional edition, versione 1803, non è possibile scaricare file dal contenitore application guard isolato nel computer host. Tuttavia, i dipendenti possono usare le opzioni Stampa su PDF o Stampa su XPS e salvare i file nel dispositivo host.
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>I dipendenti possono copiare e incollare tra il dispositivo host e la sessione Edge di Application Guard?
 
@@ -159,7 +166,7 @@ Se il criterio delle estensioni è abilitato per MDAG nella configurazione, veri
 
 ### <a name="im-trying-to-watch-playback-video-with-hdr-why-is-the-hdr-option-missing"></a>Sto cercando di guardare il video di riproduzione con HDR, perché manca l'opzione HDR?
 
-Perché la riproduzione video HDR funzioni nel contenitore, l'accelerazione hardware vGPU deve essere abilitata in Application Guard.
+Perché la riproduzione video HDR funzioni nel contenitore, è necessario che l'accelerazione hardware vGPU sia abilitata in Application Guard.
 
 ### <a name="are-there-any-other-platform-related-faqs"></a>Ci sono altre domande frequenti relative alla piattaforma?
 
