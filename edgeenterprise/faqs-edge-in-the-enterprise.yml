@@ -11,30 +11,30 @@ metadata:
   ms.localizationpriority: medium
   ms.collection: M365-modern-desktop
   description: Domande frequenti sulla distribuzione di Microsoft Edge nell'organizzazione
-  ms.openlocfilehash: edf0ec730ece83126619519cdd45d20f3271dd99845f4786f29dde32befec2b6
-  ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+  ms.openlocfilehash: d4d707533c8733059e8fadc8fe8de9a85b8dc64d
+  ms.sourcegitcommit: 0b23434b719dbeb302edf200a47550ee7b62a86a
   ms.translationtype: MT
   ms.contentlocale: it-IT
-  ms.lasthandoff: 08/05/2021
-  ms.locfileid: "11725959"
+  ms.lasthandoff: 09/03/2021
+  ms.locfileid: "11938833"
 title: Domande frequenti sulle Microsoft Edge nell'organizzazione
 summary: >
   > [!NOTE]
 
-  > Questo articolo si applica a Microsoft Edge, versione 77 o successiva.
+  > Questo articolo si applica a Microsoft Edge versione 77 o successiva.
 sections:
 - name: Ignorato
   questions:
   - question: Come posso sapere qual è la versione di Microsoft Edge in uso?
     answer: >
-      Nell'angolo superiore destro del Microsoft Edge, selezionare l'icona con i puntini di sospensione (**...**) e quindi selezionare **Impostazioni**. Seleziona **informazioni su Microsoft Edge** per visualizzare la versione di Microsoft Edge in uso.
-  - question: Che dire di Internet Explore 11?
+      Nell'angolo superiore destro di Microsoft Edge, selezionare l'icona con i puntini di sospensione (**...**) e quindi selezionare **Impostazioni**. Seleziona **informazioni su Microsoft Edge** per visualizzare la versione di Microsoft Edge in uso.
+  - question: Informazioni su Internet Explorer 11
     answer: >
       L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, vedere le domande [frequenti).](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/) Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. Altre informazioni sono disponibili [qui](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549).
   - question: Microsoft Edge (basato su Chromium) supporta i controlli ActiveX o gli oggetti browser helper come Silverlight o Java?
     answer: >
       No. Microsoft Edge non supporta i controlli ActiveX browser o gli oggetti Browser Help (BHO) come Silverlight o Java. Tuttavia, se si eseguono app Web che usano i controlli ActiveX, oggetti browser helper o le modalità documento legacy in Internet Explorer 11, è possibile configurarle in modo che vengano eseguite in modalità Internet Explorer nel nuovo Microsoft Edge. Per altre informazioni, consultare[Configurare la modalità Internet Explorer in Microsoft Edge](./edge-ie-mode.md).
-  - question: I preferiti verranno riconseniti dalla versione corrente di Microsoft Edge o sarà necessario aggiungerli di nuovo?
+  - question: I preferiti verranno esportati dalla versione corrente di Microsoft Edge o sarà necessario aggiungerli di nuovo?
     answer: "Attualmente, Microsoft Edge supporta l'importazione da installazioni esistenti di Microsoft Edge, Chrome, Internet Explorer e Firefox (in Windows 10). Per l'importazione sono supportate le impostazioni seguenti: Segnalibri, Cronologia, Password e Riempimento automatico (pagamenti, indirizzi e moduli generici). Puoi scegliere di eseguire l'importazione alla prima esperienza d'uso o dalle impostazioni del browser.  \n"
   - question: Qual è la differenza tra i canali/le build Stable, Beta e Dev?
     answer: >
@@ -54,7 +54,7 @@ sections:
   - question: Le preferenze master sono supportate?
     answer: "No, le preferenze master non sono supportate. \n"
 additionalContent: >-
-  ## <a name="see-also"></a>Vedi anche
+  ## <a name="see-also"></a>Vedere anche
 
   - [Pagina di destinazione della documentazione di Microsoft Edge](./index.yml)
 
