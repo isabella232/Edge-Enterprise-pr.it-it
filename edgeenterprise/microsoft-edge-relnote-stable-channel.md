@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 08/19/2021
+ms.date: 09/02/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: 3c21b06358d4aa563b67027d65a1aa5fec5f5dfc
-ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
+ms.openlocfilehash: e759a78587c594460b49d6858f127bcac90ff8d3
+ms.sourcegitcommit: a74b88408fcf820706c1ca2fd19d7ef83a1ddd76
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2021
-ms.locfileid: "11926012"
+ms.lasthandoff: 09/02/2021
+ms.locfileid: "11938208"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
@@ -30,6 +30,34 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
 >
 > La piattaforma Microsoft Edge Web si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-93096138-september-02"></a>Versione 93.0.961.38: 02 settembre
+
+Gli aggiornamenti della sicurezza del canale stabile sono elencati [qui](/deployedge/microsoft-edge-relnotes-security#september-02-2021).
+
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **Preferenze iniziali in Microsoft Edge.**  Microsoft Edge ora supporta un numero limitato di preferenze iniziali (in precedenza Preferenze master). Gli amministratori IT possono distribuire queste impostazioni come predefinite prima che il browser venga eseguito per la prima volta dagli utenti. Ulteriori informazioni qui: [Configurare Microsoft Edge utilizzando le impostazioni delle preferenze iniziali per la prima esecuzione.](/deployedge/initial-preferences-support-on-microsoft-edge-browser)
+
+- **La modalità IE Microsoft Edge supporterà il comportamento di "no-merge".**  Per un utente finale, quando una nuova finestra del browser viene avviata da un'applicazione in modalità IE, si trova in una sessione separata, in modo analogo al comportamento di no-merge in IE11. Sarà necessario modificare l'elenco dei siti per configurare i siti che devono impedire la condivisione della sessione come "no-merge". Dietro le quinte, per ogni finestra di Microsoft Edge, la prima volta che viene visitata una scheda della modalità IE all'interno di tale finestra, se si tratta di uno dei siti di "no-merge" designati, tale finestra viene bloccata in una sessione di IE diversa da tutte le altre finestre di Microsoft Edge almeno fino alla chiusura dell'ultima scheda della modalità IE in quella finestra. Questo comportamento segue il comportamento precedente in cui gli utenti potevano avviare IE con no merge e possono anche avviare Microsoft Edge senza no-merge tramite altri meccanismi.  Altre informazioni qui: [Risoluzione dei problemi in modalità IE e domande frequenti | Microsoft Docs](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--nomerge--option-that-was-supported-in-internet-explorer-11-)
+
+- **Nuovo criterio per interrompere l'accesso implicito.**  Il [criterio ImplicitSignInEnabled](/deployedge/microsoft-edge-policies#implicitsigninenabled) consente agli amministratori di sistema di disabilitare l'accesso implicito sul browser Microsoft Edge.
+
+- **Criteri per ignorare i prompt ClickOnce e DirectInvoke.** I criteri sono stati aggiornati per abilitare il bypass dei prompt di ClickOnce e dell'app di DirectInvoke per tipi di file specificati, dai domini specificati. A tale scopo, è necessario:
+
+  - Abilitare [ClickOnceEnabled](/deployedge/microsoft-edge-policies#clickonceenabled) o [DirectInvokeEnabled](/deployedge/microsoft-edge-policies#directinvokeenabled)
+  - Abilitare [il criterio AutoOpenFileTypes](/deployedge/microsoft-edge-policies#autoopenfiletypes) e impostare l'elenco di tipi di file specifici per cui ClickOnce e DirectInvoke devono essere disabilitati
+  - Abilitare il [criterio AutoOpenAllowedForURLs](/deployedge/microsoft-edge-policies#autoopenallowedforurls) e impostare l'elenco di domini specifici per cui ClickOnce e DirectInvoke verranno disabilitati.
+
+  Nota: AutoOpenAllowedForURLs è un criterio di supporto per AutoOpenFileTypes. Se AutoOpenAllowedForURLs non è impostato e AutoOpenFileTypes è impostato, i tipi di file elencati verranno aperti automaticamente da tutti gli URL.
+
+- **Gruppi di schede.**  Stiamo attivando il raggruppamento delle schede che consente di categorizzare le schede in gruppi definiti dall'utente e consente di trovare, cambiare e gestire le schede in modo più efficace in più workstream.  
+
+- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A questo punto si può andare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
+
+- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti su macOS.  
+
+- **Rimozione di 3DES in TLS. Il supporto per i pacchetti di crittografia TLS_RSA_WITH_3DES_EDE_CBC_SHA verrà rimosso.** Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per altre informazioni, passare alla voce [Chrome Platform Status](https://chromestatus.com/feature/6678134168485888). Inoltre, nella Microsoft Edge versione 93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questi criteri di compatibilità diventeranno obsoleti e smetteranno di funzionare in Microsoft Edge versione 95. Assicurarsi di aggiornare i server interessati prima di tale aggiornamento.
 
 ## <a name="version-92090284-august-26"></a>Versione 92.0.902.84: 26 agosto
 
