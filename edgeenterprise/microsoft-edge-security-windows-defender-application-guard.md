@@ -11,11 +11,11 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Supporto di Microsoft Edge per Microsoft Defender Application Guard
 ms.openlocfilehash: 4d9f5b0590199a9938b19e60fdd38e7c0098ac76
-ms.sourcegitcommit: 51a858ee4b1f837df85dbcca335f4abebae7771b
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/27/2021
-ms.locfileid: "11925992"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11980148"
 ---
 # <a name="microsoft-edge-support-for-microsoft-defender-application-guard"></a>Supporto di Microsoft Edge per Microsoft Defender Application Guard
 
@@ -53,7 +53,7 @@ Il supporto per Application Guard nel nuovo browser Microsoft Edge ha pari funzi
 
 ### <a name="enable-application-guard-in-passive-mode-and-browse-edge-normally"></a>Abilitare Application Guard in modalità passiva ed esplorare Edge normalmente
 
-A partire da Microsoft Edge 94, gli utenti hanno ora la possibilità di configurare la modalità passiva, il che significa che Application Guard ignora la configurazione dell'elenco dei siti e gli utenti possono esplorare Edge normalmente. Il supporto può essere controllato tramite criterio. È possibile aggiornare il criterio Edge [ApplicationGuardPassiveModeEnabled](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) per abilitare o disabilitare la modalità passiva.
+A partire da Microsoft Edge 94, gli utenti hanno ora la possibilità di configurare la modalità passiva, ovvero Application Guard ignora la configurazione dell'elenco dei siti e gli utenti possono esplorare Edge normalmente. Il supporto può essere controllato tramite criterio. È possibile aggiornare il criterio Edge [ApplicationGuardPassiveModeEnabled](/deployedge/microsoft-edge-policies#applicationguardpassivemodeenabled) per abilitare o disabilitare la modalità passiva.
 
 > [!Note]
 > Questo criterio influisce SOLO su Edge, quindi gli spostamenti da altri browser potrebbero essere reindirizzati al contenitore di Application Guard se sono abilitate le estensioni corrispondenti.
@@ -146,7 +146,7 @@ No, la funzionalità Application Guard è supportata in modo nativo in Microsoft
 
 Nella Windows 10 Enterprise, versione 1803, gli utenti sono in grado di scaricare documenti dal contenitore application guard isolato nel PC host. Questa funzionalità è gestita dai criteri.
 
-In Windows 10 Enterprise Edition, versione 1709 o Windows 10 Professional edition, versione 1803, non è possibile scaricare file dal contenitore application guard isolato nel computer host. Tuttavia, i dipendenti possono usare le opzioni Stampa su PDF o Stampa su XPS e salvare i file nel dispositivo host.
+In Windows 10 Enterprise Edition, versione 1709 o Windows 10 Professional edition, versione 1803, non è possibile scaricare file dal contenitore Application Guard isolato nel computer host. Tuttavia, i dipendenti possono usare le opzioni Stampa su PDF o Stampa su XPS e salvare i file nel dispositivo host.
 
 ### <a name="can-employees-copy-and-paste-between-the-host-device-and-the-application-guard-edge-session"></a>I dipendenti possono copiare e incollare tra il dispositivo host e la sessione Edge di Application Guard?
 

@@ -11,16 +11,17 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Ulteriori informazioni su come la modalità Internet Explorer di Microsoft Edge consente di accedere ai siti che necessitano di Internet Explorer 11, oltre all'accesso ai siti moderni.
 ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882282"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979828"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>Che cos'è la modalità Internet Explorer (IE)?
 
 >[!Note]
-> L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. [Per altre informazioni, vedere](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
+> L'applicazione desktop Internet Explorer 11 verrà ritirata e non sarà più disponibile per il supporto il 15 giugno 2022 (per un elenco degli elementi nell'ambito, [vedere le domande frequenti](https://techcommunity.microsoft.com/t5/windows-it-pro-blog/internet-explorer-11-desktop-app-retirement-faq/ba-p/2366549)). Le stesse app e gli stessi siti di Internet Explorer 11 in uso oggi potranno essere aperti in Microsoft Edge in modalità Internet Explorer. 
+            [Per altre informazioni, vedere](https://blogs.windows.com/windowsexperience/2021/05/19/the-future-of-internet-explorer-on-windows-10-is-in-microsoft-edge/).
 
 Abbiamo creato la modalità Internet Explorer (IE) in Microsoft Edge per le organizzazioni che necessitano ancora di Internet Explorer 11 per garantire la compatibilità con i siti Web esistenti, ma a cui occorre anche un browser moderno. Questa funzionalità rende più semplice per le organizzazioni l'utilizzo di un browser per il Web e le app legacy o per il Web e le app moderni. Questo articolo fornisce un'introduzione all'uso di Microsoft Edge con la modalità IE.
 
@@ -47,7 +48,8 @@ Solo i siti configurati specificatamente (tramite criteri) utilizzeranno la moda
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer supporta le funzionalità di Internet Explorer seguenti
 
 - Tutte le modalità documento e le modalità Enterprise.
-- Controlli ActiveX (ad esempio Java o Silverlight). **Nota:** Silverlight raggiungerà [la fine del supporto](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) il 12 ottobre 2021. 
+- Controlli ActiveX (ad esempio Java o Silverlight). 
+            **Nota:** Silverlight raggiungerà [la fine del supporto](https://support.microsoft.com/windows/silverlight-end-of-support-0a3be3c7-bead-e203-2dfd-74f0a64f1788) il 12 ottobre 2021. 
 - Oggetti browser helper 
 - Impostazioni di Internet Explorer e criteri di gruppo che influiscono sulle impostazioni dell'area di sicurezza e sulla modalità protetta
 - Strumenti di sviluppo F12 per IE, quando vengono avviati con [IEChooser](/deployedge/edge-ie-mode-faq#how-can-i-debug-my-legacy-application-while-using-ie-mode-on-microsoft-edge-)
@@ -71,22 +73,36 @@ I prerequisiti seguenti si applicano all'uso di Microsoft Edge con la modalità 
  | Sistema operativo | Versione       | Aggiornamenti |
  |------------------|---------------|---------|
  | Windows 10       | 1909 o versione successiva |         |
- | Windows 10       | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
- | Windows Server   | 1903          | [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
- | Windows 10       | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
- | Windows Server   | 1809          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
- | Windows Server   | 2019          | [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
- | Windows 10       | 1803          | [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) o versione successiva |
- | Windows 10       | 1709          | [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) o versione successiva |
- | Windows 10       | 1607          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
- | Windows Server   | 2016          | [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
- | Windows 10       | versione iniziale, luglio 2015 | [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) o versione successiva |
- | Windows 8       | 8.1              | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
- | Windows Server   | 2012 R2       | [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
+ | Windows 10       | 1903          | 
+            [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
+ | Windows Server   | 1903          | 
+            [KB4501375](https://support.microsoft.com/help/4501375/windows-10-update-kb4501375) o versione successiva |
+ | Windows 10       | 1809          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
+ | Windows Server   | 1809          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
+ | Windows Server   | 2019          | 
+            [KB4501371](https://support.microsoft.com/help/4501371/windows-10-update-kb4501371) o versione successiva |
+ | Windows 10       | 1803          | 
+            [KB4512509](https://support.microsoft.com/help/4512509/windows-10-update-kb4512509) o versione successiva |
+ | Windows 10       | 1709          | 
+            [KB4512494](https://support.microsoft.com/help/4512494/windows-10-update-kb4512494) o versione successiva |
+ | Windows 10       | 1607          | 
+            [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
+ | Windows Server   | 2016          | 
+            [KB4516061](https://support.microsoft.com/help/4516061/windows-10-update-kb4516061) o versione successiva |
+ | Windows 10       | versione iniziale, luglio 2015 | 
+            [KB4520011](https://support.microsoft.com/help/4520011/windows-10-update-kb4520011) o versione successiva |
+ | Windows 8       | 8.1              | 
+            [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
+ | Windows Server   | 2012 R2       | 
+            [KB4507463](https://support.microsoft.com/help/4507463/july-16-2019-kb4507463-os-build-preview-of-monthly-rollup) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
  | Windows 8  | Incorporato            | Installare [KB4492872](https://support.microsoft.com/help/4492872/update-for-internet-explorer-april-16-2019) per eseguire l'aggiornamento a Internet Explorer 11, quindi installare [KB4507447](https://support.microsoft.com/help/4507447/windows-server-2012-update-kb4507447) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
  | Windows Server   | 2012           | Installare [KB4492872](https://support.microsoft.com/help/4492872/update-for-internet-explorer-april-16-2019) per eseguire l'aggiornamento a Internet Explorer 11, quindi installare [KB4507447](https://support.microsoft.com/help/4507447/windows-server-2012-update-kb4507447) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
- | Windows 7        |  SP1**        | [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
- | Windows Server   |  2008 R2**    | [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
+ | Windows 7        |  SP1**        | 
+            [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
+ | Windows Server   |  2008 R2**    | 
+            [KB4507437](https://support.microsoft.com/help/4507437/windows-7-update-kb4507437) o versione successiva oppure [KB4511872](https://support.microsoft.com/help/4511872/cumulative-security-update-for-internet-explorer) o versione successiva |
   > [!IMPORTANT]
   > * * Windows 7 and Windows Server 2008 R2 saranno supportati da Microsoft Edge anche dopo la fine del supporto per tali sistemi operativi. Per consentire il supporto della modalità Internet Explorer in questi sistemi operativi, i dispositivi dovranno disporre degli [aggiornamenti della sicurezza estesa per Windows 7](https://support.microsoft.com/help/4527878/faq-about-extended-security-updates-for-windows-7). È consigliabile eseguire l'aggiornamento a un sistema operativo supportato appena possibile per mantenere la protezione. Il supporto di Microsoft Edge con gli aggiornamenti della sicurezza estesa deve essere considerato un bridge temporaneo per passare a uno stato supportato del sistema operativo.
 

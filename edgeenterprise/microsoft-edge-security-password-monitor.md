@@ -1,7 +1,7 @@
 ---
 title: Monitoraggio password con abilitazione automatica per gli utenti
 ms.author: supalsul
-author:
+author: AndreLBarr
 manager: tulasim
 ms.date: 07/12/2021
 audience: ITPro
@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Monitoraggio password con abilitazione automatica per gli utenti
-ms.openlocfilehash: 19008283cb687cb903da63d74277cc0b326b91ad14e48d1e14861d765d61479a
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: bd1fe390b972c66cd9b4c20ab3a9fabde76c7e03
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11727094"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11980338"
 ---
 # <a name="password-monitor-auto-enabled-for-users"></a>Monitoraggio password con abilitazione automatica per gli utenti
 
