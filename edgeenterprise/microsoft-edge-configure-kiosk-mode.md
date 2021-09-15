@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni sulle funzionalità della modalità tutto schermo e su come configurare le opzioni della modalità tutto schermo di Microsoft Edge.
-ms.openlocfilehash: 6b08453c04250a3c8373f68bae85a76e8d3c437c555429df2f74dd3719a3dad5
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 3483c402d9cd7e0d4a7542bcda98672523c0dfb6
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11725089"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11980265"
 ---
 # <a name="configure-microsoft-edge-kiosk-mode"></a>Configurazione della modalità tutto schermo di Microsoft Edge
 
@@ -99,7 +99,7 @@ msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing
   msedge.exe --kiosk www.contoso.com --edge-kiosk-type=public-browsing --no-first-run
   ```
 
-- **--kiosk-idle-timeout-minutes=**: Modifica l'intervallo di tempo (in minuti) dall'ultima attività utente prima che Microsoft Edge la modalità tutto schermo reimposta la sessione dell'utente chiudendo il browser. Nota: questo flag non verrà riavviato Microsoft Edge dopo la chiusura. Una tecnologia separata, ad esempio Accesso assegnato o Avvio shell, è necessaria per riavviare automaticamente Edge dopo il timeout di inattività. Sostituire "Valore" nell'esempio successivo con il numero di minuti.
+- **--kiosk-idle-timeout-minutes=**: Modifica l'ora (in minuti) rispetto all'ultima attività utente prima che Microsoft Edge modalità tutto schermo reimposta la sessione dell'utente chiudendo il browser. Nota: questo flag non verrà riavviato Microsoft Edge dopo la chiusura. Una tecnologia separata, ad esempio Accesso assegnato o Avvio shell, è necessaria per riavviare automaticamente Edge dopo il timeout di inattività. Sostituire "Valore" nell'esempio successivo con il numero di minuti.
 
    ```
    --kiosk-idle-timeout-minutes=value

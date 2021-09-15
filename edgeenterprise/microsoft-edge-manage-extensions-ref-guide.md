@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Guida di riferimento dettagliata per la configurazione delle estensioni di Microsoft Edge tramite il criterio ExtensionSettings.
-ms.openlocfilehash: 8634d16c9519ccc5fbdb61baf7f3c4282ff44d995311c6eab2931683bca58309
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11726729"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979965"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>Guida dettagliata al criterio ExtensionSettings
 
