@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su come abilitare gli elenchi di siti locali e accedere facilmente alla modalità IE
-ms.openlocfilehash: db9246fc719648d34b5f54c7d123461b26f1c29f8268c08a1731ef8e6b516331
-ms.sourcegitcommit: d44c0997ffe40d67421312ed96e7766da947eaa0
+ms.openlocfilehash: 0c79622a1f96cad83a2436f5e79e69914f4a2c40
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/05/2021
-ms.locfileid: "11724639"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979758"
 ---
 ## <a name="local-site-list-for-ie-mode"></a>Elenco siti locali per la modalità IE
 
@@ -33,7 +33,7 @@ Questo articolo spiega come configurare l'accesso semplice alla modalità Intern
 
 - Windows 10 versione 1909 - [KB5003698](https://support.microsoft.com/topic/june-15-2021-kb5003698-os-build-18363-1645-preview-1ecf117e-1f89-40f9-a0a5-ed5766737620) o versione successiva  
 
-- Windows 10, versione 2004; Windows 10, versione 20H2 e Windows 10, versione 21H1 – [KB5003690](https://support.microsoft.com/topic/june-21-2021-kb5003690-os-builds-19041-1081-19042-1081-and-19043-1081-preview-11a7581f-2a01-47d5-ba12-431709ee2248) o versione successiva
+- Windows 10, versione 2004; Windows 10, versione 20H2 e Windows 10, versione 21H1 – [KB5003690](https://support.microsoft.com/topic/june-21-2021-kb5003690-os-builds-19041-1081-19042-1081-and-19043-1081-preview-11a7581f-2a01-47d5-ba12-431709ee2248) o successiva
 
 2. Microsoft Edge versione 92 (92.0.925.0 o successiva)
 
@@ -45,7 +45,7 @@ A partire da Microsoft Edge versione 92, l'accesso ripetuto ai siti in modalità
 
 È possibile configurare questa esperienza tramite criteri di gruppo per l'organizzazione.
 
-Nota: un sito non *configurato* richiede la modalità IE ma non è configurato per l'apertura in modalità IE nell'elenco siti Enterprise modalità utente.
+Nota: un sito non configurato è un sito che richiede la modalità IE ma non è configurato per l'apertura in modalità IE nell'elenco dei siti in modalità Enterprise.Note: An *unconfigured* site is one that requires IE mode but is not configured to open in IE mode in the Enterprise Mode Site List.
 
 ## <a name="local-site-list-experience"></a>Esperienza elenco siti locali
 
@@ -62,7 +62,7 @@ Quando questa impostazione è abilitata, gli utenti possono ricaricare un sito i
 
 :::image type="content" source="media/Edge-hybrid-IE-mode/reload-in-internet-exploror-mode-screenshot.png" alt-text="Ricarica in modalità Internet Explorer":::
 
-**L'icona Ricarica in modalità Internet Explorer** può essere aggiunta alla barra degli strumenti. Il pulsante della barra degli strumenti consente agli utenti di entrare ed uscire facilmente dalla modalità Internet Online e può essere gestito tramite l edge://settings/appearance *URL.*
+**L'icona Ricarica in modalità Internet Explorer** può essere aggiunta alla barra degli strumenti. Il pulsante della barra degli strumenti consente agli utenti di entrare e uscire facilmente dalla modalità Internet Online e può essere gestito tramite l'URL *edge://settings/appearance* internet.
 
 :::image type="content" source="media/Edge-hybrid-IE-mode/reload-in-internet-exploror-mode-icon-screenshot.png" alt-text="Icona Ricarica in modalità Internet Explorer":::
 
@@ -94,7 +94,7 @@ Sono disponibili due criteri di gruppo per configurare l'esperienza dell'elenco 
 Questo criterio corrisponde all'impostazione Microsoft Edge "Consenti il ricaricare i siti in modalità Internet Explorer". Per accedere a questa impostazione, fare clic sull'URL seguente: *edge://settings/defaultbrowser*.
 
 - Se abiliti questo criterio, gli utenti possono ricaricare un sito in modalità Internet Explorer selezionando Impostazioni e altro **ancora (icona**con i puntini di sospensione ... > Ricarica in modalità Internet Explorer . Gli utenti possono anche selezionare Ricarica scheda in modalità **Internet Explorer** quando fanno clic con il pulsante destro del mouse su una scheda oppure scegliere Apri collegamento nella nuova scheda modalità Internet **Explorer** quando fanno clic con il pulsante destro del mouse su un collegamento.
-Gli utenti possono facoltativamente indicare Microsoft Edge usare la modalità IE per il sito in futuro. Questa scelta verrà memorizzata per un valore predefinito di 30 giorni e può essere gestita utilizzando il criterio *InternetExplorerIntegrationLocalSiteListExpirationDays.*
+Gli utenti possono facoltativamente Microsoft Edge di usare la modalità Internet Online per il sito in futuro. Questa scelta verrà memorizzata per un valore predefinito di 30 giorni e può essere gestita utilizzando il criterio *InternetExplorerIntegrationLocalSiteListExpirationDays.*
 
 - Se disabiliti questo criterio, gli utenti non potranno ricaricare un sito non configurato in modalità Internet Directory.
 

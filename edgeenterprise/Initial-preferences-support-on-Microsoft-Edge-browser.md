@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Supporto delle preferenze iniziali Microsoft Edge browser.
-ms.openlocfilehash: 39af88d21107ad548166c749c3ba765754270b48
-ms.sourcegitcommit: 715cb8c8101a6daed48563f33d2bc40ee7109e0e
+ms.openlocfilehash: 7a497fd2f3305b0c027a396936ef86bacbcb5b20
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 08/13/2021
-ms.locfileid: "11882262"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979818"
 ---
 # <a name="configure-microsoft-edge-using-initial-preferences-settings-for-the-first-run"></a>Configurare Microsoft Edge scegliendo le impostazioni delle Preferenze iniziali per la prima esecuzione
 
@@ -26,13 +26,13 @@ Usa le informazioni seguenti per configurare Microsoft Edge preferenze iniziali 
 
 ## <a name="configure-policy-settings-on-windows"></a>Configurare le impostazioni dei criteri in Windows
 
-A Microsoft Edge versione 93, Microsoft supporta un numero limitato di preferenze iniziali, in precedenza denominate "Preferenze principali", per aiutare gli amministratori a configurare i browser per la prima esecuzione; vedi l'elenco delle impostazioni supportate di seguito.  
+A partire Microsoft Edge versione 93, Microsoft supporta un numero limitato di preferenze iniziali, in precedenza denominate "Preferenze principali", per aiutare gli amministratori a configurare i browser per la prima esecuzione; vedi l'elenco delle impostazioni supportate di seguito.  
 
 Quando viene distribuito, le preferenze iniziali fungono da impostazioni predefinite del browser nei dispositivi gestiti. queste sono le impostazioni preferite dagli amministratori per essere usate come predefinite, ma che possono essere modificate dagli utenti o non sono disponibili per alcuni dispositivi in quanto non sono aggiunti a un dominio di Active Directory®.
 
 Alcuni esempi di impostazioni delle preferenze iniziali includono la configurazione iniziale di una home page predefinita o di schede con URL specifici.
 
-Le preferenze vengono copiate initial_preferences file una sola volta e qualsiasi modifica apportata a questo file dopo la configurazione non verrà rispettata. Se un'impostazione viene gestita da un criterio [Microsoft Edge](/deployedge/microsoft-edge-policies) e configurata nel file initial_preferences, il criterio ha sempre la precedenza.
+Le preferenze vengono copiate dal file initial_preferences una sola volta e qualsiasi modifica apportata a questo file dopo la configurazione non verrà rispettata. Se un'impostazione viene gestita da un criterio [Microsoft Edge](/deployedge/microsoft-edge-policies) e configurata nel file initial_preferences, il criterio ha sempre la precedenza.
 
 Di seguito è riportato l'elenco delle impostazioni delle preferenze attualmente supportate da Microsoft Edge:
 
@@ -52,7 +52,7 @@ Di seguito è riportato l'elenco delle impostazioni delle preferenze attualmente
 
 ## <a name="1-download-an-example-initial_preferences-file"></a>1: Scaricare un file di initial_preferences di esempio
 
-To get started, download the example *initial_preferences* file form this location the [Microsoft Edge Enterprise landing page](https://www.microsoft.com/edge/business/download) **and** follow the steps below.
+To get started, download the "Policy" file from the [Microsoft Edge Enterprise landing page](https://www.microsoft.com/edge/business/download). Estrarre i file e aprirli `initial_preferences` all'interno della `examples` cartella.
 
 ## <a name="2-customize-and-validate-the-initial_preferences-file"></a>2: personalizzare e convalidare il file initial_preferences file
 
@@ -64,7 +64,7 @@ Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporan
 
 ### <a name="windows-amd64-and-arm64"></a>Windows (AMD64 e ARM64)
 
-| Canale | Location |
+| Canale | Percorso |
 | - | - |
 | Stable | `"C:\Program Files (x86)\Microsoft\Edge\Application"` |
 | Beta | `"C:\Program Files (x86)\Microsoft\Edge Beta\Application"` |
@@ -75,7 +75,7 @@ Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporan
 
 ### <a name="macos"></a>macOS
 
-| Canale | Location |
+| Canale | Percorso |
 | - | - |
 | Stable | `"~/Library/Application Support/Microsoft Edge/Microsoft Edge Initial Preferences"` |
 | Beta | `“~/Library/Application Support/Microsoft Edge Beta/Microsoft Edge Initial Preferences"` |
@@ -86,6 +86,6 @@ Distribuisci *initial_preferences* file nei dispositivi degli utenti contemporan
 
 Le preferenze iniziali avranno effetto solo quando il file initial_preferences viene distribuito prima della prima esecuzione del browser da parte degli utenti finali.  
 
-## <a name="see-also"></a>Vedere anche
+## <a name="see-also"></a>Vedi anche
 
 - [File *modello initial_prefrences* di esempio](https://www.microsoft.com/edge/business/download)
