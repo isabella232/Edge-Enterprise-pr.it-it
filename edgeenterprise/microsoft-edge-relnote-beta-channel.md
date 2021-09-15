@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/09/2021
+ms.date: 09/13/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: d455b2ccab734ba8792754b81994ac381b974f73
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 93fbb135befd1691220a1d9b4499d0713b1740f3
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11980228"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016465"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -23,6 +23,10 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 > [!NOTE]
 > La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-94099219-september-13"></a>Versione 94.0.992.19: 13 settembre
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-94099214-september-7"></a>Versione 94.0.992.14: 7 settembre
 
@@ -34,7 +38,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 - **Microsoft Edge passaggio a una cadenza di 4 settimane per gli aggiornamenti nei canali Beta e Stable.**  Verrà adottato un nuovo ciclo di rilascio di 4 settimane per le versioni principali. Per altre informazioni sulla decisione, fare clic qui: https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
 
-- **Nuova opzione stabile estesa offerta.**  Microsoft offre una nuova opzione Extended Stable ai clienti Enterprise gestiti. L'opzione Extended Stable rimarrà attiva per le revisioni pari e verrà aggiornato ogni 8 settimane. Sarà disponibile un aggiornamento della sicurezza bisettimanale.  Ulteriori informazioni qui: https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
+- **Nuova opzione stabile estesa offerta.**  Stiamo offrendo una nuova opzione Extended Stable ai nostri clienti Enterprise gestiti. L'opzione Extended Stable rimarrà attiva per le revisioni pari e verrà aggiornato ogni 8 settimane. Sarà disponibile un aggiornamento della sicurezza bisettimanale.  Ulteriori informazioni qui: https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
 
 - **Miglioramenti al comportamento predefinito dell'apertura di file MHTML.**  I file MHTML continueranno ad aprirsi in modalità IE se è abilitata la modalità IE, a meno che il file MHTML non sia stato salvato da Microsoft Edge (utilizzando le opzioni Salva con nome o Salva pagina con nome in Microsoft Edge). Se il file è stato salvato da Microsoft Edge, verrà aperto in Microsoft Edge.  Questa modifica consente di risolvere un problema di rendering rilevato quando si apre un file MHTML in modalità IE quando viene salvato da Microsoft Edge.
 

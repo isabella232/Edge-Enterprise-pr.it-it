@@ -12,11 +12,11 @@ ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
 ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
-ms.sourcegitcommit: e83b355a9d95f2c8ec858b05e5b7cf8837f8a82b
+ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/02/2021
-ms.locfileid: "11936564"
+ms.lasthandoff: 09/12/2021
+ms.locfileid: "11979945"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -254,7 +254,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -6272,7 +6272,7 @@ Se disabiliti questo criterio, Microsoft Edge non comunicherà con Intune per ri
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome unico di Criteri di gruppo: MAMEnabled
   - Nome Criteri di gruppo: Gestione app per dispositivi mobili abilitata
@@ -9041,7 +9041,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -12431,7 +12431,7 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: BrowserSignin
   - Nome Criteri di gruppo: Impostazioni di accesso al browser
@@ -22836,7 +22836,7 @@ Se non si configurano i criteri seguenti:
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: ShowMicrosoftRewards
   - Nome Criteri di gruppo: Mostra le esperienze di Microsoft Rewards
@@ -23794,7 +23794,7 @@ Questo criterio non influisce sulle connessioni basate su QUIC. QUIC può essere
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TLSCipherSuiteDenyList
   - Nome Criteri di gruppo: Specifica i pacchetti di crittografia TLS da disabilitare
@@ -23929,7 +23929,7 @@ Questo criterio diventerà obsoleto nella versione 95 di Microsoft Edge.
 
   #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
 
-  ##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+  ##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
 
   - Nome univoco Criteri di gruppo: TargetBlankImpliesNoOpener
   - Nome Criteri di gruppo: non impostare window.opener per i collegamenti con destinazione _blank

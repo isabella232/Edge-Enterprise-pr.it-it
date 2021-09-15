@@ -3,19 +3,19 @@ title: Elenco siti locali per la modalità IE
 ms.author: shisub
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/20/2021
+ms.date: 09/13/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su come abilitare gli elenchi di siti locali e accedere facilmente alla modalità IE
-ms.openlocfilehash: 0c79622a1f96cad83a2436f5e79e69914f4a2c40
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 8130a835cd803f5cdeb50f825ccee895f35f62e3
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979758"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016565"
 ---
 ## <a name="local-site-list-for-ie-mode"></a>Elenco siti locali per la modalità IE
 
@@ -33,7 +33,7 @@ Questo articolo spiega come configurare l'accesso semplice alla modalità Intern
 
 - Windows 10 versione 1909 - [KB5003698](https://support.microsoft.com/topic/june-15-2021-kb5003698-os-build-18363-1645-preview-1ecf117e-1f89-40f9-a0a5-ed5766737620) o versione successiva  
 
-- Windows 10, versione 2004; Windows 10, versione 20H2 e Windows 10, versione 21H1 – [KB5003690](https://support.microsoft.com/topic/june-21-2021-kb5003690-os-builds-19041-1081-19042-1081-and-19043-1081-preview-11a7581f-2a01-47d5-ba12-431709ee2248) o successiva
+- Windows 10, versione 2004; Windows 10, versione 20H2 e Windows 10, versione 21H1 – [KB5003690](https://support.microsoft.com/topic/june-21-2021-kb5003690-os-builds-19041-1081-19042-1081-and-19043-1081-preview-11a7581f-2a01-47d5-ba12-431709ee2248) o versione successiva
 
 2. Microsoft Edge versione 92 (92.0.925.0 o successiva)
 
@@ -53,9 +53,10 @@ Per abilitare l'esperienza dell'elenco di siti locali, gli utenti possono accede
 
 :::image type="content" source="media/Edge-hybrid-IE-mode/internet-explorer-compatibilitiy.png" alt-text="Compatibilità di Internet Explorer":::
 
->[! Nota:]  
-
->1. Se è stato abilitato il test della modalità Internet Internet Tramite il criterio *InternetExplorerIntegrationTestingAllowed,* questa impostazione verrà visualizzata, ma verrà disattivata a meno che non si abiliti esplicitamente il criterio *InternetExplorerIntegrationReloadInIEModeAllowed.*  
+>[!Note]  
+>
+>1. Se è stato abilitato il test della modalità Internet Internet Tramite il criterio *InternetExplorerIntegrationTestingAllowed,* questa impostazione verrà visualizzata, ma verrà disattivata a meno che non si abiliti esplicitamente il criterio *InternetExplorerIntegrationReloadInIEModeAllowed.*
+>
 >2. Se **l'opzione** Consenti il ricaricamento dei siti in modalità Internet Explorer è impostata su **Predefinito,** gli utenti potrebbero essere in grado di ricaricare i siti in modalità Internet Explorer se dispongono di un utilizzo esistente di Internet Explorer 11.  
 
 Quando questa impostazione è abilitata, gli utenti possono ricaricare un sito in modalità Internet Explorer selezionando Impostazioni e altro (icona con i puntini di sospensione ...) > Ricarica in modalità **Internet Explorer.** Gli utenti possono anche selezionare Ricarica scheda in modalità **Internet Explorer** quando fanno clic con il pulsante destro del mouse su una scheda o scelgono Apri collegamento nella nuova scheda modalità Internet **Explorer** quando fanno clic con il pulsante destro del mouse su un collegamento.
@@ -67,7 +68,7 @@ Quando questa impostazione è abilitata, gli utenti possono ricaricare un sito i
 :::image type="content" source="media/Edge-hybrid-IE-mode/reload-in-internet-exploror-mode-icon-screenshot.png" alt-text="Icona Ricarica in modalità Internet Explorer":::
 
 >[!Note]
->Se l'utente si trova in un sito già in elenco siti in modalità Enterprise dell'organizzazione, le opzioni per ricaricare (o uscire) la modalità Internet Explorer saranno visibili ma disattivate.
+>Se l'utente si trova in un sito già presente nell'elenco dei siti in modalità Enterprise dell'organizzazione, le opzioni per ricaricare (o uscire) la modalità Internet Explorer saranno visibili ma disattivate.
 
 Quando l'opzione è selezionata, il sito viene ricaricato in modalità IE. L'icona dell'indicatore della modalità Internet Explorer è visibile a sinistra della barra degli indirizzi e il riquadro a comparsa mostra un'opzione che gli utenti possono passare ad Aprire la pagina in modalità Internet Explorer la volta successiva. In questo modo viene aggiunta la pagina specifica in cui si trova l'utente all'elenco dei siti locali e verrà aperta automaticamente in modalità IE per i prossimi 30 giorni.
 
@@ -79,7 +80,7 @@ Durante la modalità IE, gli utenti vedranno un banner che indica che sono in mo
 
 :::image type="content" source="media/Edge-hybrid-IE-mode/ie-mode-banner-screenshot.png" alt-text="Banner modalità IE":::
 
-Gli utenti possono scegliere di uscire dalla modalità Internet Explorer usando il pulsante Esci nel banner, l'icona della modalità IE aggiunta o Impostazioni e altro ancora (l'icona dei puntini di sospensione ...) > Esci dalla modalità **Internet Explorer,** altrimenti Microsoft Edge esce automaticamente dalla modalità Internet Explorer quando si verifica uno spostamento che non è "nella pagina" (ad esempio, utilizzando la barra degli indirizzi, il pulsante Indietro o un collegamento preferito).
+Gli utenti possono scegliere di uscire dalla modalità Internet Explorer usando il pulsante Esci nel banner, l'icona della modalità IE aggiunta o Impostazioni e altro ancora (l'icona dei puntini di sospensione ...) > Esci dalla modalità **Internet Explorer,** altrimenti Microsoft Edge verrà automaticamente chiuso dalla modalità Internet Explorer quando si verifica uno spostamento che non è "nella pagina" (ad esempio, utilizzando la barra degli indirizzi, il pulsante Indietro o un collegamento preferito).
 
 Le voci rimangono nell'elenco dei siti locali per un periodo predefinito di 30 giorni. È consigliabile configurare i siti legacy per l'organizzazione nell'elenco Enterprise siti in modalità avanzata. L'elenco dei siti locali garantisce che gli utenti possano continuare il flusso di lavoro senza essere interrotti durante l'aggiornamento dell'elenco dei siti dell'organizzazione. Il giorno 31, quando gli utenti passano al sito, vedranno un banner che spiega che il sito non verrà più caricato in modalità IE. Se lo desiderano, gli utenti possono aggiungerlo di nuovo all'elenco dei siti locali.
 
@@ -93,8 +94,8 @@ Sono disponibili due criteri di gruppo per configurare l'esperienza dell'elenco 
 
 Questo criterio corrisponde all'impostazione Microsoft Edge "Consenti il ricaricare i siti in modalità Internet Explorer". Per accedere a questa impostazione, fare clic sull'URL seguente: *edge://settings/defaultbrowser*.
 
-- Se abiliti questo criterio, gli utenti possono ricaricare un sito in modalità Internet Explorer selezionando Impostazioni e altro **ancora (icona**con i puntini di sospensione ... > Ricarica in modalità Internet Explorer . Gli utenti possono anche selezionare Ricarica scheda in modalità **Internet Explorer** quando fanno clic con il pulsante destro del mouse su una scheda oppure scegliere Apri collegamento nella nuova scheda modalità Internet **Explorer** quando fanno clic con il pulsante destro del mouse su un collegamento.
-Gli utenti possono facoltativamente Microsoft Edge di usare la modalità Internet Online per il sito in futuro. Questa scelta verrà memorizzata per un valore predefinito di 30 giorni e può essere gestita utilizzando il criterio *InternetExplorerIntegrationLocalSiteListExpirationDays.*
+- Se abiliti questo criterio, gli utenti possono ricaricare un sito in modalità Internet Explorer selezionando Impostazioni e altro **(icona**con i puntini di sospensione ... > Ricarica in modalità Internet Explorer . Gli utenti possono anche selezionare Ricarica scheda in modalità **Internet Explorer** quando fanno clic con il pulsante destro del mouse su una scheda oppure scegliere Apri collegamento nella nuova scheda modalità Internet **Explorer** quando fanno clic con il pulsante destro del mouse su un collegamento.
+Gli utenti possono facoltativamente indicare Microsoft Edge usare la modalità IE per il sito in futuro. Questa scelta verrà memorizzata per un valore predefinito di 30 giorni e può essere gestita utilizzando il criterio *InternetExplorerIntegrationLocalSiteListExpirationDays.*
 
 - Se disabiliti questo criterio, gli utenti non potranno ricaricare un sito non configurato in modalità Internet Directory.
 
