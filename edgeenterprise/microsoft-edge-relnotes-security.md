@@ -10,16 +10,20 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
-ms.openlocfilehash: 04efca8825edd3764954dbf1455321bd1b4475ef
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 16d5bde6800bae3bb48b8698c332fdc4201c223a
+ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11980215"
+ms.lasthandoff: 09/15/2021
+ms.locfileid: "12016545"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 
 Queste note sulla versione forniscono informazioni sulle correzioni per la sicurezza incluse negli aggiornamenti del canale stabile Microsoft Edge.
+
+## <a name="september-11-2021"></a>11, 2021 settembre
+
+Microsoft ha rilasciato l'ultimo **Microsoft Edge Stable Channel (versione 93.0.961.47),** che incorpora gli aggiornamenti della sicurezza più recenti del progetto Chromium. Questo aggiornamento contiene [CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632) che è stato segnalato dal team di Chromium come un exploit in natura.  Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://msrc.microsoft.com/update-guide).
 
 ## <a name="september-9-2021"></a>9 settembre 2021
 
