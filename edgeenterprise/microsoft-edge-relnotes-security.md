@@ -3,25 +3,29 @@ title: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/09/2021
+ms.date: 09/16/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
-ms.openlocfilehash: 16d5bde6800bae3bb48b8698c332fdc4201c223a
-ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
+ms.openlocfilehash: 10b309537a5ae2632bb5fb668b449a3c80c55631
+ms.sourcegitcommit: dbe3fb9932022554c118ac02d4e9ab5f09c53709
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "12016545"
+ms.lasthandoff: 09/17/2021
+ms.locfileid: "12018976"
 ---
 # <a name="release-notes-for-microsoft-edge-security-updates"></a>Note sulla versione per gli aggiornamenti di sicurezza di Microsoft Edge
 
-Queste note sulla versione forniscono informazioni sulle correzioni per la sicurezza incluse negli aggiornamenti del canale stabile Microsoft Edge.
+Queste note sulla versione forniscono informazioni sulle correzioni di sicurezza incluse negli aggiornamenti al canale Stable di Microsoft Edge.
 
-## <a name="september-11-2021"></a>11, 2021 settembre
+## <a name="september-16-2021"></a>16 settembre 2021
+
+Microsoft ha rilasciato l'ultimo **canale Stable di Microsoft Edge (versione 93.0.961.52)**,che incorpora gli aggiornamenti della sicurezza più recenti del progetto Chromium. Questo aggiornamento contiene [CVE-2021-30633](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632) che è stato segnalato dal team di Chromium come un exploit in natura. Per altre informazioni, vedere la [Guida agli aggiornamenti della sicurezza](https://msrc.microsoft.com/update-guide).
+
+## <a name="september-11-2021"></a>11 settembre 2021
 
 Microsoft ha rilasciato l'ultimo **Microsoft Edge Stable Channel (versione 93.0.961.47),** che incorpora gli aggiornamenti della sicurezza più recenti del progetto Chromium. Questo aggiornamento contiene [CVE-2021-30632](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-30632) che è stato segnalato dal team di Chromium come un exploit in natura.  Per altre informazioni, vedere la [Guida all'aggiornamento della sicurezza](https://msrc.microsoft.com/update-guide).
 
