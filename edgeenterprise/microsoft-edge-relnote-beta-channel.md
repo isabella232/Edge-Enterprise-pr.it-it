@@ -3,26 +3,30 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/13/2021
+ms.date: 09/17/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: 93fbb135befd1691220a1d9b4499d0713b1740f3
-ms.sourcegitcommit: c3d63d913eb15e7dbeb9f45b5f28fc841b46bce1
+ms.openlocfilehash: 95f3f02401d00e59eed1df20688d0069db1e8b06
+ms.sourcegitcommit: 93e141b725a08727b030332ea82f983d35c2a745
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/15/2021
-ms.locfileid: "12016465"
+ms.lasthandoff: 09/19/2021
+ms.locfileid: "12019175"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
 Queste note sulla versione contengono informazioni sulle nuove funzionalità e gli aggiornamenti non relativi alla sicurezza inclusi nel canale Microsoft Edge Beta. Le versioni precedenti di queste note sulla versione sono disponibili [qui](microsoft-edge-relnote-archive-beta-channel.md).
 
 > [!NOTE]
-> La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche in arrivo in Microsoft Edge che influiscono sulla compatibilità dei siti](/microsoft-edge/web-platform/site-impacting-changes).
+> La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche che incidono sulla compatibilità del sito in arrivo su Microsoft Edge](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-94099223-september-17"></a>Versione 94.0.992.23: 17 settembre
+
+Sono stati risolti diversi bug e problemi di prestazioni.
 
 ## <a name="version-94099219-september-13"></a>Versione 94.0.992.19: 13 settembre
 
@@ -38,7 +42,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 - **Microsoft Edge passaggio a una cadenza di 4 settimane per gli aggiornamenti nei canali Beta e Stable.**  Verrà adottato un nuovo ciclo di rilascio di 4 settimane per le versioni principali. Per altre informazioni sulla decisione, fare clic qui: https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
 
-- **Nuova opzione stabile estesa offerta.**  Stiamo offrendo una nuova opzione Extended Stable ai nostri clienti Enterprise gestiti. L'opzione Extended Stable rimarrà attiva per le revisioni pari e verrà aggiornato ogni 8 settimane. Sarà disponibile un aggiornamento della sicurezza bisettimanale.  Ulteriori informazioni qui: https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
+- **Nuova opzione stabile estesa offerta.**  Microsoft offre una nuova opzione Extended Stable ai clienti Enterprise gestiti. L'opzione Extended Stable rimarrà attiva per le revisioni pari e verrà aggiornato ogni 8 settimane. Sarà disponibile un aggiornamento della sicurezza bisettimanale.  Ulteriori informazioni qui: https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
 
 - **Miglioramenti al comportamento predefinito dell'apertura di file MHTML.**  I file MHTML continueranno ad aprirsi in modalità IE se è abilitata la modalità IE, a meno che il file MHTML non sia stato salvato da Microsoft Edge (utilizzando le opzioni Salva con nome o Salva pagina con nome in Microsoft Edge). Se il file è stato salvato da Microsoft Edge, verrà aperto in Microsoft Edge.  Questa modifica consente di risolvere un problema di rendering rilevato quando si apre un file MHTML in modalità IE quando viene salvato da Microsoft Edge.
 
@@ -62,7 +66,7 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ***Criteri obsoleti***
 
-- [UserAgentClientHintsEnabled](/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) Abilitare la User-Agent suggerimenti client
+- [UserAgentClientHintsEnabled](/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) Abilitare la funzionalità User-Agent suggerimenti client
 
 ## <a name="version-93096133-august-27"></a>Versione 93.0.961.33: 27 agosto
 
@@ -86,9 +90,9 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 - **Gruppi di schede.**  La possibilità di categorizzare le schede in gruppi definiti dall'utente consente di trovare, cambiare e gestire le schede in modo più efficace in più workstream. A tale scopo, viene attivato il raggruppamento delle schede a partire Microsoft Edge versione 93.
 
-- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Scheda verticale.
+- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire da Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
 
-- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti in macOS.  Controllare di nuovo a breve mentre continuiamo l'implementazione per Windows utenti.
+- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti su macOS.  Controllare di nuovo a breve mentre si continua l'implementazione Windows utenti.
 
 - **Rimozione di 3DES in TLS.**  A partire Microsoft Edge versione 93, il supporto per la famiglia TLS_RSA_WITH_3DES_EDE_CBC_SHA di crittografia verrà rimosso. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per altre informazioni, passare alla voce [Chrome Platform Status](https://chromestatus.com/feature/6678134168485888). Inoltre, nella Microsoft Edge versione 93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questi criteri di compatibilità diventeranno obsoleti e smetteranno di funzionare in Microsoft Edge versione 95. Assicurarsi di aggiornare i server interessati prima di tale aggiornamento.
 
@@ -102,28 +106,28 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ### <a name="new-policies"></a>Nuovi criteri
 
-- [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) Consentire la riproduzione automatica di elementi multimediali in siti specifici
-- [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) CeCPQ2 post-quantum key-agreement abilitato per TLS
-- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer) Configurare la funzionalità Visualizza in Esplora file per SharePoint pagine in Microsoft Edge
-- [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) Controllare l'utilizzo di JavaScript JIT
-- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled) Consenti alle notifiche di impostare Microsoft Edge lettore PDF predefinito
-- [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) Configurare la possibilità per gli utenti di ignorare i flag di funzionalità
-- [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) Abilitare l'accesso implicito
-- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist) Configurare l'elenco Enterprise siti cloud in modalità avanzata
-- [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) Configurare la frequenza Enterprise'aggiornamento dell'elenco siti in modalità Enterprise utente
+- [AutoplayAllowlist](/DeployEdge/microsoft-edge-policies#autoplayallowlist) Consenti la riproduzione automatica di file multimediali in siti specifici
+- [CECPQ2Enabled](/DeployEdge/microsoft-edge-policies#cecpq2enabled) Accordo chiave post-quantistico CECPQ2 abilitato per TLS
+- [ConfigureViewInFileExplorer](/DeployEdge/microsoft-edge-policies#configureviewinfileexplorer) Configura la funzionalità Visualizza in Esplora file per le pagine di SharePoint in Microsoft Edge
+- [DefaultJavaScriptJitSetting](/DeployEdge/microsoft-edge-policies#defaultjavascriptjitsetting) Controlla l'uso di JavaScript JIT
+- [ShowPDFDefaultRecommendationsEnabled](/DeployEdge/microsoft-edge-policies#showpdfdefaultrecommendationsenabled) Consenti alle notifiche di impostare Microsoft Edge come lettore PDF predefinito
+- [FeatureFlagOverridesControl](/DeployEdge/microsoft-edge-policies#featureflagoverridescontrol) Configura la possibilità per gli utenti di ignorare i flag delle funzionalità
+- [ImplicitSignInEnabled](/DeployEdge/microsoft-edge-policies#implicitsigninenabled) Abilita l'accesso implicito
+- [InternetExplorerIntegrationCloudSiteList](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationcloudsitelist) Configura l'elenco dei siti cloud in modalità Enterprise
+- [InternetExplorerIntegrationSiteListRefreshInterval](/DeployEdge/microsoft-edge-policies#internetexplorerintegrationsitelistrefreshinterval) Configura la frequenza di aggiornamento dell'elenco siti in modalità Enterprise
 - [JavaScriptJitAllowedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitallowedforsites) Consenti a JavaScript di usare JIT in questi siti
-- [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) Impedire a JavaScript di usare JIT in questi siti
-- [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled) Abilitare Windows ricerca nei dati di esplorazione Microsoft Edge locale
-- [MAUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled) Usa sempre Microsoft AutoUpdate come programma di aggiornamento per Microsoft Edge
-- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) Consentire l'accesso Single #A0 per i siti Microsoft che usano questo profilo
-- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced) Autenticazione OneAuth Flow applicata per l'accesso
-- [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) Consentire agli utenti di ottenere un suggerimento per password complessa ogni volta che creano un account online
-- [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) Configura un'impostazione che richiede agli utenti di immettere la password del dispositivo durante l'uso del riempimento automatico della password
+- [JavaScriptJitBlockedForSites](/DeployEdge/microsoft-edge-policies#javascriptjitblockedforsites) Impedisci a JavaScript di usare JIT in questi siti
+- [LocalBrowserDataShareEnabled](/DeployEdge/microsoft-edge-policies#localbrowserdatashareenabled) Consenti a Windows di cercare i dati di esplorazione locali di Microsoft Edge
+- [MaUEnabled](/DeployEdge/microsoft-edge-policies#mauenabled) Usa sempre Microsoft AutoUpdate come programma di aggiornamento per Microsoft Edge
+- [MSAWebSiteSSOUsingThisProfileAllowed](/DeployEdge/microsoft-edge-policies#msawebsitessousingthisprofileallowed) Consenti l'accesso Single Sign-On per i siti Microsoft che usano questo profilo
+- [OneAuthAuthenticationEnforced](/DeployEdge/microsoft-edge-policies#oneauthauthenticationenforced) Flusso di autenticazione OneAuth applicato per l'accesso
+- [PasswordGeneratorEnabled](/DeployEdge/microsoft-edge-policies#passwordgeneratorenabled) Consenti agli utenti di ottenere un suggerimento per password complessa ogni volta che creano un account online
+- [PrimaryPasswordSetting](/DeployEdge/microsoft-edge-policies#primarypasswordsetting) Configura un'impostazione che richieda agli utenti di immettere la password del dispositivo durante l'uso del riempimento automatico della password
 - [PrintingWebpageLayout](/DeployEdge/microsoft-edge-policies#printingwebpagelayout) Imposta il layout per la stampa
 - [RemoteDebuggingAllowed](/DeployEdge/microsoft-edge-policies#remotedebuggingallowed) Consenti debug remoto
-- [RelaunchWindow](/DeployEdge/microsoft-edge-policies#relaunchwindow) Impostare l'intervallo di tempo per il riavvio
-- [TravelAssistanceEnabled](/DeployEdge/microsoft-edge-policies#travelassistanceenabled) Abilitare l'assistenza di viaggio
-- [TripleDESEnabled](/DeployEdge/microsoft-edge-policies#tripledesenabled) Abilitare le suite di crittografia 3DES in TLS
+- [RelaunchWindow](/DeployEdge/microsoft-edge-policies#relaunchwindow) Imposta l'intervallo di tempo per il riavvio
+- [TravelAssistanceEnabled](/DeployEdge/microsoft-edge-policies#travelassistanceenabled) Abilita assistenza di viaggio
+- [TripleDESEnabled](/DeployEdge/microsoft-edge-policies#tripledesenabled) Abilita suite di crittografia 3DES in TLS
 
 #### <a name="deprecated-policy"></a>Criteri deprecati
 
@@ -131,11 +135,11 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 #### <a name="obsoleted-policy"></a>Criteri obsoleti
 
-- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) Configurare la nuova Microsoft Edge pagina nuova scheda
+- [NewTabPageSetFeedType](/DeployEdge/microsoft-edge-policies#newtabpagesetfeedtype) Configura l’esperienza della pagina Nuova scheda di Microsoft Edge
 
 #### <a name="additional-change"></a>Modifica aggiuntiva
 
-- [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) Aggiungere il supporto della piattaforma Mac
+- [ConfigureShare](/DeployEdge/microsoft-edge-policies#configureshare) Aggiungi il supporto della piattaforma Mac
 
 ## <a name="version-93096118-august-10"></a>Versione 93.0.961.18: 10 agosto
 
