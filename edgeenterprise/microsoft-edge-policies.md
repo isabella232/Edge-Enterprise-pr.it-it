@@ -11,12 +11,12 @@ ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione di Windows e Mac per tutti i criteri supportati dal browser Microsoft Edge
-ms.openlocfilehash: cd59eca6d07284c61a0c61537f45d36771d133f3
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 44dac3dd6bb489ac43e50433319b0a7908495df5
+ms.sourcegitcommit: 6eefb7cb134f25a1e2d1f515a3a8600524a4b6e3
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979945"
+ms.lasthandoff: 09/16/2021
+ms.locfileid: "12017990"
 ---
 # <a name="microsoft-edge---policies"></a>Microsoft Edge - Criteri
 
@@ -254,7 +254,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati al browser d
 |[SmartScreenEnabled](#smartscreenenabled)|Configura Microsoft Defender SmartScreen|
 |[SmartScreenForTrustedDownloadsEnabled](#smartscreenfortrusteddownloadsenabled)|Forza i controlli di Microsoft Defender SmartScreen sui download da origini attendibili|
 |[SmartScreenPuaEnabled](#smartscreenpuaenabled)|Configura Microsoft Defender SmartScreen per bloccare le applicazioni potenzialmente indesiderate|
-### [*<a name="startup-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
+### [*<a name="startupcomma-home-page-and-new-tab-page"></a>Avvio&comma; home page e pagina Nuova scheda*](#startup-home-page-and-new-tab-page-policies)
 
 |Nome criterio|Didascalia|
 |-|-|
@@ -1914,7 +1914,8 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   Questo criterio non funziona perché Flash non è più supportato da Microsoft Edge.
 
-[PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
+
+            [PluginsAllowedForUrls](#pluginsallowedforurls) e [PluginsBlockedForUrls](#pluginsblockedforurls) vengono verificati per primi, quindi questo criterio. Le opzioni sono "ClickToPlay" e "BlockPlugins". Se si imposta questo criterio su "BlockPlugins", il plug-in viene negato per tutti i siti Web. "ClickToPlay" consente di eseguire il plug-in di Flash, ma gli utenti fanno clic sul segnaposto per avviarlo.
 
 Se non si configura questo criterio, l'utente può modificare tale impostazione manualmente.
 
@@ -8343,10 +8344,18 @@ Se non si configura questo criterio, gli utenti possono scegliere impostazioni d
 
 Questo criterio sostituisce i singoli criteri seguenti:
 
-[ProxyMode](#proxymode)
-[ProxyPacUrl](#proxypacurl)
-[ProxyServer](#proxyserver)
-[ProxyBypassList](#proxybypasslist)
+
+            [ProxyMode](#proxymode)
+            
+
+            [ProxyPacUrl](#proxypacurl)
+            
+
+            [ProxyServer](#proxyserver)
+            
+
+            [ProxyBypassList](#proxybypasslist)
+          
 
 L'impostazione del criterio [ProxySettings](#proxysettings) accetta i seguenti campi:
   * ProxyMode, che consente di specificare il server proxy utilizzato da Microsoft Edge e impedisce agli utenti di modificare le impostazioni proxy
@@ -9041,7 +9050,7 @@ Questo criterio è disponibile solo nelle istanze Windows aggiunte a un dominio 
 
   [Torna all'inizio](#microsoft-edge---policies)
 
-  ## <a name="startup-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
+  ## <a name="startupcomma-home-page-and-new-tab-page-policies"></a>Criteri per avvio&comma; home page e pagina Nuova scheda
 
   [Torna all'inizio](#microsoft-edge---policies)
 
@@ -13723,7 +13732,9 @@ Durante la configurazione di questo criterio, utilizzare le informazioni precede
 
   #### <a name="configure-the-view-in-file-explorer-feature-for-sharepoint-pages-in-microsoft-edge"></a>Configura la funzionalità Visualizza in Esplora file per le pagine di SharePoint in Microsoft Edge
 
-  
+> [!NOTE]
+> Al momento, il criterio ConfigureViewInFileExplorer può essere applicato alle istanze di Windows aggiunte a un dominio Active Directory di Microsoft o alle istanze di Windows 10 Pro o Enterprise registrate per la gestione dei dispositivi.
+
   
   #### <a name="supported-versions"></a>Versioni supportate:
 
@@ -16662,7 +16673,8 @@ Se non si configura questo criterio, gli utenti potranno attivare o disattivare 
 
 Affinché il criterio funzioni come previsto, il criterio [BrowserSignin](#browsersignin) non deve essere configurato o deve essere impostati su abilitato. Se [BrowserSignin](#browsersignin) è disabilitato, [ForceSync](#forcesync) non avrà effetto.
 
-[SyncDisabled](#syncdisabled) non deve essere configurato o deve essere impostato su False. Se è impostato su True, [ForceSync](#forcesync) non avrà effetto.
+
+            [SyncDisabled](#syncdisabled) non deve essere configurato o deve essere impostato su False. Se è impostato su True, [ForceSync](#forcesync) non avrà effetto.
 
 0 = non avviare automaticamente la sincronizzazione e visualizzare il consenso di sincronizzazione (impostazione predefinita) 1 = forza l'attivazione della sincronizzazione per il profilo utente di Azure AD/Azure AD - danneggiato.
 
@@ -17188,19 +17200,40 @@ Se si disabilita o non si configura questo criterio, la first-run experience e l
 
 Nota: le opzioni di configurazione specifiche mostrate all'utente nella first-run experience possono essere gestite anche usando altri criteri specifici. È possibile usare il criterio HideFirstRunExperience in combinazione con questi criteri per configurare un'esperienza di browser specifica nei dispositivi gestiti. Ecco alcuni di questi altri criteri:
 
--[AutoImportAtFirstRun](#autoimportatfirstrun)
 
--[NewTabPageLocation](#newtabpagelocation)
+            -
+            [AutoImportAtFirstRun](#autoimportatfirstrun)
+          
 
--[NewTabPageSetFeedType](#newtabpagesetfeedtype)
 
--[ForceSync](#forcesync)
+            -
+            [NewTabPageLocation](#newtabpagelocation)
+          
 
--[SyncDisabled](#syncdisabled)
 
--[BrowserSignin](#browsersignin)
+            -
+            [NewTabPageSetFeedType](#newtabpagesetfeedtype)
+          
 
--[NonRemovableProfileEnabled](#nonremovableprofileenabled)
+
+            -
+            [ForceSync](#forcesync)
+          
+
+
+            -
+            [SyncDisabled](#syncdisabled)
+          
+
+
+            -
+            [BrowserSignin](#browsersignin)
+          
+
+
+            -
+            [NonRemovableProfileEnabled](#nonremovableprofileenabled)
+          
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17325,7 +17358,8 @@ Se non si configura questo criterio, i dati di riempimento automatico vengono im
 
 È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà i dati di riempimento automatico nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa ai **dati di riempimento automatico** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione dai browser Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione dai browser Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17393,7 +17427,8 @@ Se non si configura questo criterio, le impostazioni del browser vengono importa
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le impostazioni nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **impostazioni del browser** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17459,7 +17494,8 @@ Se non si configura questo criterio, i cookie vengono importati alla prima esecu
 
 È anche possibile impostare questo criterio come suggerimento. Ciò significa che Microsoft Edge importa i cookie nella first-run experience.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17527,7 +17563,8 @@ Se non si configura questo criterio, le estensioni vengono importate nella first
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le estensioni nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa ai **preferiti** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17595,7 +17632,8 @@ Se non si configura questo criterio, i preferiti vengono importati alla prima es
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà i preferiti nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa ai **preferiti** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17663,7 +17701,8 @@ Se non si configura questo criterio, i dati della cronologia esplorazioni vengon
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà la cronologia esplorazioni nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alla **cronologia** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS), Mozilla Firefox (in Windows 7, 8 e 10 e in macOS) e Apple Safari (macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17731,7 +17770,8 @@ Se non si configura questo criterio, l'impostazione della home page viene import
 
 È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà l'impostazione della home page nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alla **home page** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17799,7 +17839,8 @@ Se non si configura questo criterio, le schede aperte vengono importate nella fi
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le schede aperte nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **schede aperte** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio supporta solo l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17867,7 +17908,8 @@ Se non si configura questo criterio, le informazioni di pagamento vengono import
 
 È anche possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le informazioni di pagamento nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **informazioni di pagamento** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -17935,7 +17977,8 @@ Se non si configura questo criterio, le password salvate vengono importate nella
 
 È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le password salvate nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **password** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione dai browser Internet Explorer (in Windows 7, 8 e 10), Google Chrome (in Windows 7, 8 e 10 e in macOS) e Mozilla Firefox (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -18003,7 +18046,8 @@ Se non si configura questo criterio, le impostazioni del motore di ricerca vengo
 
 È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le impostazioni del motore di ricerca nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa al **motore di ricerca** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Internet Explorer (in Windows 7, 8 e 10).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -18069,7 +18113,8 @@ Se non si configura questo criterio, i tasti di scelta rapida vengono importate 
 
 È anche possibile impostare questo criterio come suggerimento. Ciò significa che Microsoft Edge importa le scelte rapide da tastiera nella first-run experience.
 
-**Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
+
+            **Nota**: al momento questo criterio gestisce l'importazione da Google Chrome (in Windows 7, 8 e 10 e in macOS).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -18137,7 +18182,8 @@ Se non si configura questo criterio, le impostazioni di avvio vengono importate 
 
 È possibile impostare questo criterio come suggerimento. Questo significa che Microsoft Edge importerà le impostazioni di avvio nella first-run experience, ma gli utenti possono selezionare o deselezionare l'opzione relativa alle **impostazioni del browser** durante l'importazione manuale.
 
-**Nota**: al momento questo criterio gestisce l'importazione dai browser Versione legacy di Microsoft Edge e Google Chrome (in Windows 7, 8 e 10).
+
+            **Nota**: al momento questo criterio gestisce l'importazione dai browser Versione legacy di Microsoft Edge e Google Chrome (in Windows 7, 8 e 10).
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -19138,7 +19184,8 @@ Se si disabilitano o non si configurano i criteri, gli utenti non potranno veder
 
 Se questo criterio non è configurato, il browser utilizzerà il comportamento predefinito dei controlli di intercettazione DNS e suggerimenti per il reindirizzamento dell'Intranet. In M88 sono abilitati per impostazione predefinita, ma verranno disabilitati per impostazione predefinita nella versione futura.
 
-[DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) è un criterio correlato che potrebbe anche disabilitare i controlli di intercettazione DNS. Tuttavia, questo criterio è una versione più flessibile che potrebbe controllare separatamente il reindirizzamento infobars della rete Intranet e potrebbe essere espansa in futuro.
+
+            [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) è un criterio correlato che potrebbe anche disabilitare i controlli di intercettazione DNS. Tuttavia, questo criterio è una versione più flessibile che potrebbe controllare separatamente il reindirizzamento infobars della rete Intranet e potrebbe essere espansa in futuro.
 Se [DNSInterceptionChecksEnabled](#dnsinterceptionchecksenabled) o questo criterio effettuano una richiesta di disabilitazione dei controlli di intercettazione, i controlli verranno disabilitati.
 Se i controlli di intercettazione DNS sono disabilitati da questo criterio, ma [GoToIntranetSiteForSingleWordEntryInAddressBar](#gotointranetsiteforsinglewordentryinaddressbar) è abilitato, le singole query di Word continueranno a essere eseguite per gli spostamenti Intranet.
 
@@ -19899,7 +19946,7 @@ Se si abilita o non si configura il criterio, un utente può eseguire una cattur
 
 Se si disabilita il criterio, lo strumento Math Solver sarà disabilitato e gli utenti non potranno utilizzarlo.
 
-Nota: Disattivando il criterio[](#componentupdatesenabled)ComponentUpdatesEnabled[ disabiliterà anche il componente Math Solver.](#componentupdatesenabled)
+Nota: Disattivando il criterio[](#componentupdatesenabled)ComponentUpdatesEnabled disabiliterà anche il componente Math Solver.
 
   #### <a name="supported-features"></a>Funzionalità supportate:
 
@@ -21513,7 +21560,8 @@ Se si abilita questo criterio, viene usato un servizio Web per i test di connett
 
 Se si disabilita questo criterio, Microsoft Edge usa le API native per provare a risolvere i problemi di connettività di rete e di spostamento.
 
-**Nota**: ad eccezione di Windows 8 e versioni successive di Windows, Microsoft Edge usa *sempre* API native per risolvere i problemi di connettività.
+
+            **Nota**: ad eccezione di Windows 8 e versioni successive di Windows, Microsoft Edge usa *sempre* API native per risolvere i problemi di connettività.
 
 Se non si configura questo criterio, Microsoft Edge rispetta le preferenze degli utenti impostate in Servizi in edge://settings/privacy.
 In particolare, è presente un'opzione **Usare un servizio Web per consentire di risolvere errori di spostamento**, che può essere attivata o disattivata dall'utente. Tenere presente che se è stato abilitato questo criterio (ResolveNavigationErrorsUseWebService), l'impostazione **Usare un servizio Web per consentire di risolvere errori di spostamento** è attivata, ma l'utente non può modificare tale impostazione usando il relativo interruttore. Se questo criterio è stato disabilitato, l'impostazione **Usare un servizio Web per consentire di risolvere errori di spostamento** è disattivata e l'utente non può modificarla usando il relativo interruttore.
@@ -21697,7 +21745,8 @@ Se non si configura questo criterio, verrà usato il percorso predefinito del pr
 
 Se si disabilita questo criterio o non lo si configura, verranno usati solo i normali profili locali.
 
-[SyncDisabled](#syncdisabled) disabilita solo la sincronizzazione nel cloud e non ha alcun impatto su questo criterio.
+
+            [SyncDisabled](#syncdisabled) disabilita solo la sincronizzazione nel cloud e non ha alcun impatto su questo criterio.
 
 Vedere [https://go.microsoft.com/fwlink/?linkid=2150058](https://go.microsoft.com/fwlink/?linkid=2150058) per altre informazioni sull'uso dei profili utente.
 
