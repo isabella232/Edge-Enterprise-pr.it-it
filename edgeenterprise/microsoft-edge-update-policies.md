@@ -1,9 +1,9 @@
 ---
 title: Documentazione sui criteri di Microsoft Edge Update
 ms.author: stmoody
-author: AndreaLBarr
+author: RyanHechtMSFT
 manager: tahills
-ms.date: 07/23/2021
+ms.date: 09/23/2021
 audience: ITPro
 ms.topic: reference
 ms.prod: microsoft-edge
@@ -11,12 +11,12 @@ ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 ms.custom: ''
 description: Documentazione per tutti i criteri supportati da Microsoft Edge Update
-ms.openlocfilehash: 9c7eca4d5bdd7c87bea141a422dce3b17f22067c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: b96fc0e44434b5ab36a16b1bc14f0aebe0deacf4
+ms.sourcegitcommit: 8e5294e82cf62abc916cfd24692f55925330d42b
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11980078"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12037216"
 ---
 # <a name="microsoft-edge---update-policies"></a>Microsoft Edge - Criteri di aggiornamento
 
@@ -41,6 +41,7 @@ In queste tabelle sono elencati tutti i criteri di gruppo correlati agli aggiorn
 |[CreateDesktopShortcut](#createdesktopshortcut)|Impedisce la creazione di un collegamento sul desktop a seguito dell'installazione (per canale)|
 |[RollbackToTargetVersion](#rollbacktotargetversion)|Eseguire il ripristino dello stato precedente della versione di destinazione (per canale)|
 |[TargetVersionPrefix](#targetversionprefix)|Sostituzione della versione di destinazione (in base al canale)|
+|[TargetChannelOverride](#targetchanneloverride)|Override del canale di destinazione (solo Stable)|
 |[UpdaterExperimentationAndConfigurationServiceControl](#UpdaterExperimentationAndConfigurationServiceControl)| Recuperare configurazioni ed esperimenti|
 ### [<a name="preferences"></a>Preferenze](#preferences-policies)
 |Nome criterio|Didascalia|
@@ -400,6 +401,42 @@ Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di 
 ```
 [Torna all'inizio](#microsoft-edge---update-policies)
 
+### <a name="targetchanneloverride"></a>TargetChannelOverride
+>Microsoft Edge Update 1.3.147.1 e versioni successive
+
+#### <a name="description"></a>Descrizione
+Specifica a quale Microsoft Edge deve essere aggiornato il canale. 
+
+Se abiliti questa funzionalità, il Microsoft Edge verrà aggiornato al Canale in base alla modalità di configurazione delle opzioni seguenti:
+
+  - Stable: Microsoft Edge verrà aggiornato alla versione stabile più recente.
+  - Beta: Microsoft Edge verrà aggiornato alla versione beta più recente.
+  - Dev: Microsoft Edge verrà aggiornato alla versione di sviluppo più recente.
+  - Extended Stable: Microsoft Edge verrà aggiornato all'ultima versione stabile estesa, che segue una cadenza di rilascio più lunga rispetto a stable. Per ulteriori informazioni, visitare https://go.microsoft.com/fwlink/?linkid=2163508 .
+
+Se non si configura questo criterio, Microsoft Edge verrà aggiornata alla versione più recente disponibile per il Canale stabile.
+
+Questo criterio è disponibile solo in Microsoft Edge Stable.
+
+Questo criterio è disponibile solo nelle istanze di Windows che fanno parte di un dominio Microsoft® Active Directory®.
+#### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
+##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
+- Nome univoco Criteri di gruppo: TargetChannelOverride
+- Nome Criteri di gruppo: Override canale di destinazione
+- Percorso Criteri di gruppo: 
+  - Modelli amministrativi/Microsoft Edge Update/Applicazioni/Microsoft Edge
+- Nome file ADMX Criteri di gruppo: msedgeupdate.admx
+##### <a name="windows-registry-settings"></a>Impostazioni del Registro di sistema di Windows
+- Percorso: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\EdgeUpdate
+- Nome: 
+  - (Stabile): TargetChannel{56EB18F8-B008-4CBD-B6D2-8C97FE7E9062}
+- Tipo valore: REG_SZ
+##### <a name="example-value"></a>Valore di esempio
+```
+extended
+```
+[Torna all'inizio](#microsoft-edge---update-policies)
+
 ### <a name="updaterexperimentationandconfigurationservicecontrol"></a>UpdaterExperimentationAndConfigurationServiceControl
 #### <a name="retrieve-configurations-and-experiments"></a>Recuperare configurazioni ed esperimenti
 >Microsoft Edge Update 1.3.145.1 e versioni successive
@@ -418,7 +455,7 @@ Se non si configura questo criterio, in un dispositivo gestito il comportamento 
 Se non si configura questo criterio, in un dispositivo non gestito il comportamento corrisponde al criterio "abilitato".
 
 #### <a name="windows-information-and-settings"></a>Informazioni e impostazioni di Windows
-##### <a name="group-policy-admx-info"></a>Informazioni sui Criteri di gruppo (ADMX)
+##### <a name="group-policy-admx-info"></a>Info su Criteri di gruppo (ADMX)
 - Nome univoco Criteri di gruppo: UpdateExperimentationAndConfigureationServiceControl
 - Nome Criteri di gruppo: Controlla la comunicazione del programma di aggiornamento con il servizio di sperimentazione e configurazione
 - Percorso Criteri di gruppo: Modelli amministrativi/Microsoftt Edge Update/Microsoft Edge Update
