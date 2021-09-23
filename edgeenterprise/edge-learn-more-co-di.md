@@ -3,23 +3,25 @@ title: ClickOnce e DirectInvoke in Microsoft Edge
 ms.author: collw
 author: AndreaLBarr
 manager: srugh
-ms.date: 07/16/2021
+ms.date: 09/21/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Informazioni su ClickOnce e DirectInvoke in Microsoft Edge.
-ms.openlocfilehash: 2da2892a958946ad73d362e6ea929bcfbc2af6a8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 48702082dc3c352519c8003e226bf99c63765150
+ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979067"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12034435"
 ---
 # <a name="understand-the-clickonce-and-directinvoke-features-in-microsoft-edge"></a>Informazioni sulle funzionalità ClickOnce e DirectInvoke in Microsoft Edge
 
 ClickOnce e DirectInvoke sono funzionalità disponibili in IE e Microsoft Edge che supportano l'uso di un gestore di file per scaricare file da un sito Web. Anche se servono a scopi diversi, entrambe le funzionalità consentono ai siti Web di specificare che un file richiesto per il download viene passato a un gestore di file nel dispositivo dell'utente. Le richieste ClickOnce vengono gestite dal gestore di file nativo in Windows. Le richieste DirectInvoke vengono gestite da un gestore di file registrato specificato dal sito Web che ospita il file.
+
+Dopo aver impostato ClickOnce o DirectInvoke, i prompt di ClickOnce o DirectInvoke possono essere ignorati configurando criteri aziendali aggiuntivi. Questi criteri possono supportare l'esclusione delle richieste ClickOnce o DirectInvoke per i tipi di file specificati per tutti i domini o per i tipi di file specificati da domini specificati.
 
 Per altre informazioni su queste funzionalità, vedi:
 
@@ -88,6 +90,10 @@ La seconda finestra popup viene visualizzata solo se:
 ## <a name="clickonce-and-directinvoke-policies"></a>Criteri di ClickOnce e DirectInvoke
 
 Esistono due criteri di gruppo che è possibile usare per abilitare o disabilitare ClickOnce e DirectInvoke per gli utenti aziendali. I due criteri sono [ClickOnceEnabled](./microsoft-edge-policies.md#clickonceenabled) e [DirectInvokeEnabled](./microsoft-edge-policies.md#directinvokeenabled). Questi due criteri sono contrassegnati nell'Editor Criteri di gruppo come "Consenti agli utenti di aprire file con il protocollo ClickOnce" e "Consenti agli utenti di aprire i file usando il protocollo DirectInvoke".
+
+Per specificare i tipi di file per cui ignorare i prompt di ClickOnce o DirectInvoke, usa il criterio etichettato nell'Editor Criteri di gruppo come "Elenco dei tipi di file che devono essere aperti automaticamente al download". In questo modo i tipi di file specificati verranno aperti automaticamente dopo il download per tutti i domini.  
+
+Per ignorare i prompt di ClickOnce o DirectInvoke per tipi di file specifici per domini specifici, configurando due criteri aggiuntivi etichettati nell'Editor Criteri di gruppo come "Elenco dei tipi di file che devono essere aperti automaticamente al download" e "URL in cui è possibile applicare AutoOpen-FileTypes". Tieni presente che il criterio "URL in cui è possibile applicare AutoOpen- FileTypes" è un criterio di supporto per "Elenco di tipi di file che devono essere aperti automaticamente al download" e non esegue alcuna operazione da sola.  
 
 ## <a name="clickonce-and-directinvoke-behavior"></a>Comportamento di ClickOnce e DirectInvoke
 
