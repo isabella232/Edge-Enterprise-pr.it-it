@@ -1,21 +1,21 @@
 ---
 title: Aggiornamenti di Windows per Microsoft Edge
 ms.author: jtkim
-author: dan-wesley
+author: RyanHechtMSFT
 manager: srugh
-ms.date: 06/28/2021
+ms.date: 09/23/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Aggiornamenti di Windows per Microsoft Edge.
-ms.openlocfilehash: b99d3d7ed048cb829fd2328be9e4e7376334652c
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 0232e269861430df9a152006d2a8476c353eae46
+ms.sourcegitcommit: 8e5294e82cf62abc916cfd24692f55925330d42b
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979109"
+ms.lasthandoff: 09/23/2021
+ms.locfileid: "12037206"
 ---
 # <a name="windows-updates-to-support-the-next-version-of-microsoft-edge"></a>Aggiornamenti di Windows per supportare la prossima versione di Microsoft Edge
 
@@ -29,7 +29,7 @@ In questo articolo viene descritto in che modo Windows verrà aggiornato per sup
 
 ## <a name="microsoft-edge-and-the-windows-release-cycle"></a>Microsoft Edge e il ciclo di rilascio di Windows
 
-Nella prossima versione di Microsoft Edge sono disponibili funzionalità di aggiornamento più frequenti e più flessibili. Poiché le versioni del browser non sono associate alle versioni principali di Windows, le modifiche verranno apportate al sistema operativo per assicurarsi che la prossima versione di Microsoft Edge si adatti perfettamente a Windows. Di conseguenza, gli aggiornamenti delle funzionalità verranno rilasciati in un ciclo di 6 settimane (approssimativamente). Gli aggiornamenti per la sicurezza e la compatibilità verranno forniti in base alle esigenze.
+Nella prossima versione di Microsoft Edge sono disponibili funzionalità di aggiornamento più frequenti e più flessibili. Poiché le versioni del browser non sono associate alle versioni principali di Windows, le modifiche verranno apportate al sistema operativo per assicurarsi che la prossima versione di Microsoft Edge si adatti perfettamente a Windows. Di conseguenza, gli aggiornamenti delle funzionalità verranno rilasciati in un ciclo di 4 settimane (approssimativamente). Gli aggiornamenti per la sicurezza e la compatibilità verranno forniti in base alle esigenze.
 
 ## <a name="updates-and-the-user-experience"></a>Aggiornamenti ed esperienza utente
 
