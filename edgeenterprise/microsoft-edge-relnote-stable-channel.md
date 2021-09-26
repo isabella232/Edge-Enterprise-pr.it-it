@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Stabile
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/22/2021
+ms.date: 09/24/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Stabile
-ms.openlocfilehash: ffd0beb7533edf88fdab9402cb2486e71b1773e6
-ms.sourcegitcommit: 85818deae134b48d7f2766e53b4400a1b4d4277d
+ms.openlocfilehash: 491debce74949c9e146acdcf825c99edf2f7f81e
+ms.sourcegitcommit: 6ef4b2e1dee45f33edb7fa8f83c93b4d169adca9
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/23/2021
-ms.locfileid: "12034445"
+ms.lasthandoff: 09/25/2021
+ms.locfileid: "12044838"
 ---
 # <a name="release-notes-for-microsoft-edge-stable-channel"></a>Note sulla versione del canale Stabile Microsoft Edge
 
@@ -30,6 +30,43 @@ Queste note sulla versione offrono informazioni sulle nuove funzionalità e sugl
 > Per il canale Stable, gli aggiornamenti verranno implementati gradualmente su uno o più giorni. Per altre informazioni, vedere [Implementazioni progressive degli aggiornamenti di Microsoft Edge](microsoft-edge-update-progressive-rollout.md).
 >
 > La piattaforma Microsoft Edge Web si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche che incidono sulla compatibilità del sito in arrivo su Microsoft Edge](/microsoft-edge/web-platform/site-impacting-changes).
+
+## <a name="version-94099231-september-24"></a>Versione 94.0.992.31: 24 settembre
+
+> [!Important]
+> Questo aggiornamento contiene una correzione per [CVE-2021-37973](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-37973) che è stata segnalata dal team di Chromium come un exploit in natura. Per altre informazioni, vedere [Guida agli aggiornamenti della sicurezza](https://msrc.microsoft.com/update-guide).
+
+Gli aggiornamenti della sicurezza del canale Stable sono [elencati qui.](/deployedge/microsoft-edge-relnotes-security#september-24-2021)
+
+### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
+
+- **Microsoft Edge ha completato il passaggio a una cadenza di 4 settimane per gli aggiornamenti.**  Abbiamo adottato un nuovo ciclo di rilascio di 4 settimane per le versioni principali. Per saperne di più, vedere: https://blogs.windows.com/msedgedev/2021/03/12/new-release-cycles-microsoft-edge-extended-stable/
+
+- **Offerta una nuova opzione Stabile estesa.**  Stiamo offrendo una nuova opzione Stabile estesa ai nostri clienti aziendali gestiti. L'opzione Stabile estesa rimarrà attiva per le revisioni pari e verrà aggiornata ogni 8 settimane. Sarà disponibile un aggiornamento della sicurezza bisettimanale.  Altre informazioni qui: https://blogs.windows.com/msedgedev/2021/07/15/opt-in-extended-stable-release-cycle/
+
+- **Miglioramenti al comportamento predefinito dell'apertura di file MHTML.**  I file MHTML continueranno ad aprirsi in modalità IE se è abilitata la modalità IE, a meno che il file MHTML non sia stato salvato da Microsoft Edge (usando le opzioni Salva con nome o Salva pagina con nome in Microsoft Edge). Se il file è stato salvato da Microsoft Edge, verrà ora aperto in Microsoft Edge.  Questa modifica consente di risolvere un problema di rendering rilevato quando si apre un file MHTML in modalità IE se salvato da Microsoft Edge.
+
+- **Limitare le richieste di rete privata ai contesti sicuri.** L'accesso alle risorse nelle reti locali (Intranet) dalle pagine su Internet richiede che tali pagine siano recapitate tramite HTTPS. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per altre informazioni, passare alla voce [Chrome Platform Status](https://chromestatus.com/feature/5436853517811712). Sono disponibili due criteri di compatibilità per supportare scenari che devono mantenere la compatibilità con le pagine non protette: [InsecurePrivateNetworkRequestAllowed](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowed) e [InsecurePrivateNetworkRequestAllowedForUrls](/deployedge/microsoft-edge-policies#insecureprivatenetworkrequestsallowedforurls).
+
+- **Bloccare i download di contenuto misto.** Le pagine protette scaricano solo i file ospitati in altre pagine protette e i download ospitati in pagine non protette (non HTTPS) verranno bloccati se avviati da una pagina protetta. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per altre informazioni, passare alla [voce del blog sulla sicurezza di Google](https://security.googleblog.com/2020/02/protecting-users-from-insecure_6.html).
+
+- **Abilitare l'accesso implicito per gli account locali.** Abilitando il criterio [OnlyOnPremisesImplicitSigninEnabled](/deployedge/microsoft-edge-policies#onlyonpremisesimplicitsigninenabled), solo gli account locali verranno abilitati per l'accesso implicito.  Microsoft Edge non tenterà di accedere in modo implicito agli account MSA o AAD. Verrà arrestato anche l'aggiornamento dagli account locali agli account AAD.
+
+- **Nuova pagina delle impostazioni di accessibilità.**  Abbiamo riunito le impostazioni relative all'accessibilità in una singola pagina. Puoi trovare la nuova pagina edge://settings/accessibility nell'elenco delle impostazioni principale. Qui puoi trovare le impostazioni per ingrandire la pagina Web, mostrare un contorno ad alta visibilità intorno all'area di stato attivo e altre impostazioni che possono contribuire a migliorare l'esperienza di esplorazione del Web. Continueremo ad aggiungere nuove impostazioni qui nelle versioni future di Microsoft Edge.
+
+***Nuovi criteri***
+
+- 
+            [ApplicationGuardPassiveModeEnabled](/DeployEdge/microsoft-edge-policies#applicationguardpassivemodeenabled) Ignora la configurazione dell'elenco di siti di Application Guard ed esplora Edge normalmente
+- 
+            [OnlyOnPremisesImplicitSigninEnabled](/DeployEdge/microsoft-edge-policies#onlyonpremisesimplicitsigninenabled) Solo gli account locali verranno abilitati per l'accesso implicito
+- 
+            [WebRtcRespectOsRoutingTableEnabled](/DeployEdge/microsoft-edge-policies#webrtcrespectosroutingtableenabled) Abilita il supporto per le regole della tabella di routing del sistema operativo Windows quando si effettuano connessioni peer-to-peer tramite WebRTC
+
+***Criteri obsoleti***
+
+- 
+            [UserAgentClientHintsEnabled](/DeployEdge/microsoft-edge-policies#useragentclienthintsenabled) Abilita la funzionalità User-Agent Client Hints
 
 ## <a name="version-93096152-september-16"></a>Versione 93.0.961.52: 16 settembre
 
