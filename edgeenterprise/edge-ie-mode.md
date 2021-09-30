@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: high
 ms.collection: M365-modern-desktop
 description: Ulteriori informazioni su come la modalità Internet Explorer di Microsoft Edge consente di accedere ai siti che necessitano di Internet Explorer 11, oltre all'accesso ai siti moderni.
-ms.openlocfilehash: cf2271f8b95c97a63695abf471ae67e693798ff2
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: a426d9bd9d2ac3d81682e9fc2304e9e90d3461f8
+ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
 ms.translationtype: HT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979828"
+ms.lasthandoff: 09/28/2021
+ms.locfileid: "12053325"
 ---
 # <a name="what-is-internet-explorer-ie-mode"></a>Che cos'è la modalità Internet Explorer (IE)?
 
@@ -38,12 +38,12 @@ Quando un sito viene caricato in modalità Internet Explorer, l'indicatore del l
 
 Solo i siti configurati specificatamente (tramite criteri) utilizzeranno la modalità IE, tutti gli altri siti verranno visualizzati come siti Web moderni. Per utilizzare la modalità IE per un sito, è necessario:
 
-- Elencare il sito nell'XML dell'elenco dei siti in modalità Enterprise definito in uno di questi criteri:
+- elencare il sito nell'XML dell'elenco dei siti in modalità Enterprise definito in uno di questi criteri:
   - Microsoft Edge 78 o versione successiva, "Configura elenco siti modalità Enterprise"
   - Internet Explorer, "Usa elenco siti Web di Internet Explorer modalità Enterprise"
   > [!NOTE]
   > Viene elaborato solo un elenco di siti in modalità Enterprise. I criteri dell'elenco dei siti di Microsoft Edge hanno la precedenza su criteri dell'elenco dei siti di Internet Explorer.
-- Tutti i siti Intranet quando i criteri di gruppo **Invia tutti i siti Intranet a Internet Explorer** sono abilitati (Microsoft Edge 77 o versione successiva).
+- Configura i Criteri di gruppo **Invia tutti i siti Intranet a Internet Explorer** e impostali su **Abilitati** (Microsoft Edge 77 o versione successiva)
 
 ### <a name="ie-mode-supports-the-following-internet-explorer-functionality"></a>La modalità Internet Explorer supporta le funzionalità di Internet Explorer seguenti
 
