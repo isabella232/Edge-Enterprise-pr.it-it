@@ -3,19 +3,19 @@ title: 'Sicurezza dello strumento per la gestione delle password di Microsoft Ed
 ms.author: v-andreabarr
 author: AndreaLBarr
 manager: collw
-ms.date: 06/29/2021
+ms.date: 09/30/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Sicurezza dello strumento per la gestione delle password di Microsoft Edge
-ms.openlocfilehash: 816bbd2c18fcae0a20a19fb0feab199454aa67b6
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 6f9dadab36c755113ad647e7e78a0bbbb2f8c965
+ms.sourcegitcommit: 2bf511511f131b8497b3e162c44286c217508885
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11980455"
+ms.lasthandoff: 10/01/2021
+ms.locfileid: "12057351"
 ---
 # <a name="microsoft-edge-password-manager-security"></a>Sicurezza dello strumento per la gestione delle password di Microsoft Edge 
 
@@ -141,7 +141,7 @@ Quando le password del browser vengono crittografate su disco, la chiave di crit
 Una funzionalità master password (che autentica l'utente prima di compilare automaticamente i dati) offre un compromesso in termini di praticità per una più ampia mitigazione delle minacce. In particolare, aiuta a ridurre la finestra di esposizione dei dati contro malware latenti o utenti malintenzionati locali. Tuttavia, una password master non è una panacea, e gli utenti malintenzionati locali e il malware dedicato hanno diverse strategie per aggirare la protezione di una password master.
 
 > [!Note]
-> Microsoft riconosce il valore nell'autenticazione degli utenti prima del riempimento automatico e questa funzionalità verrà aggiunta in Microsoft Edge in una versione futura.
+> Microsoft Edge ora offre la possibilità di abilitare l'autenticazione prima della funzionalità di riempimento automatico; ciò offre agli utenti un ulteriore livello di privacy e impedisce che le password archiviate vengano utilizzate da chiunque, ad esempio. Per ulteriori dettagli, vedere [Privacy aggiuntiva per le password salvate.](https://support.microsoft.com/topic/additional-privacy-for-your-saved-passwords-31dbd670-e314-4901-a546-6f302548502e)  
 
 ## <a name="can-using-a-password-manager-impact-my-privacy"></a>L'uso di uno strumento per la gestione delle password può influire sulla privacy?
 
