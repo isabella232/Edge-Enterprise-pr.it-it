@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Guida di riferimento dettagliata per la configurazione delle estensioni di Microsoft Edge tramite il criterio ExtensionSettings.
-ms.openlocfilehash: 67e3cffaa842f591a3d4c3035104addd19e34fd8
-ms.sourcegitcommit: 8968f3107291935ed9adc84bba348d5f187eadae
+ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
+ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/12/2021
-ms.locfileid: "11979965"
+ms.lasthandoff: 10/04/2021
+ms.locfileid: "12061105"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>Guida dettagliata al criterio ExtensionSettings
 
@@ -52,7 +52,35 @@ Questo criterio può controllare le impostazioni, ad esempio l'URL di aggiorname
 | **runtime_allowed_hosts**| Consente alle estensioni di interagire con siti Web specificati, anche se sono definiti in runtime_blocked_hosts. Puoi specificare fino a 100 voci. Le voci aggiuntive vengono ignorate.<br>Il formato del modello host è simile ai  [modelli di corrispondenza,](/microsoft-edge/extensions-chromium/enterprise/match-patterns)  ad eccezione del fatto che non è possibile definire il percorso. Ad esempio:<br>- *://*.example.com<br>- *://example.*: sono supportati i caratteri jolly eTLD     |
 | **runtime_blocked_hosts**| Impedisce alle estensioni di interagire con i siti Web specificati o di modificarli. Le modifiche includono il blocco dell'inserimento di JavaScript, l'accesso ai cookie e le modifiche alle richieste Web.<br>Puoi specificare fino a 100 voci. Le voci aggiuntive vengono ignorate.<br>Il formato del modello host è simile ai modelli di corrispondenza, ad eccezione del fatto che non è possibile definire il percorso. Ad esempio:<br>- *://*.example.com<br>- *://example.*: sono supportati i caratteri jolly eTLD   |
 | **override_update_url**| Disponibile da Edge 93<br>Se è impostato su , Edge usa l'URL di aggiornamento specificato nel criterio ExtensionSettings o nel criterio `true` ExtensionInstallForcelist per gli aggiornamenti delle estensioni successivi.<br>Se non è impostato o è impostato su `false` , Edge usa l'URL specificato nel manifesto dell'estensione per gli aggiornamenti.|
+| **toolbar_state**| Disponibile da Edge 94<br>Questa impostazione di criteri consente di forzare la visualizzazione di un'estensione installata sulla barra degli strumenti. Lo stato predefinito è `default_shown` per tutte le estensioni. Per questa impostazione sono possibili gli stati seguenti<br>-`force_shown`: è possibile scegliere di forzare la visualizzazione di un'estensione installata sulla barra degli strumenti. Gli utenti non potranno nascondere l'icona specifica dell'estensione dalla barra degli strumenti.<br>-`default_hidden`: in questo stato, le estensioni sono nascoste dalla barra degli strumenti durante l'installazione. Gli utenti possono mostrarli sulla barra degli strumenti, se necessario.<br>-`default_shown`: si tratta dell'impostazione deafult di tutte le estensioni installate nel browser.
 
+Queste sono le chiavi consentite nell'ambito globale (*): 
+
+- blocked_permissions
+- installation_mode - Solo i valori validi in questo ambito sono "bloccati", "consentiti" o "rimossi".
+- runtime_blocked_hosts
+- blocked_install_message
+- allowed_types
+- runtime_allowed_hosts
+- install_sources
+
+Queste sono le chiavi consentite in un singolo ambito di estensione: 
+
+- blocked_permissions
+- minimum_version_required
+- blocked_install_message
+- toolbar_state (disponibile da Edge 94)
+- installation_mode - `"blocked"` , `"allowed"` , , e sono i `"removed"` `"force_installed"` valori `"normal_installed"` possibili.
+- runtime_allowed_hosts
+- update_url
+- override_update_url
+- runtime_blocked_hosts
+- toolbar_state
+
+Queste sono le chiavi consentite in un ambito URL di aggiornamento: 
+
+- blocked_permissions
+- installation_mode - solo `"blocked"` , o sono i valori validi in questo `"allowed"` `"removed"` ambito.
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>Configurazione con una stringa JSON nell'Editor dei Criteri di gruppo di Windows
 
