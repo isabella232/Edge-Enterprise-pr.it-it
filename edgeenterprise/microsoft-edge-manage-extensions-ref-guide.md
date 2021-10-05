@@ -10,12 +10,12 @@ ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Guida di riferimento dettagliata per la configurazione delle estensioni di Microsoft Edge tramite il criterio ExtensionSettings.
-ms.openlocfilehash: 3660910a252377efe8dff47dec8f811ecdd2018e
-ms.sourcegitcommit: b67ebf9a68205407f5eaec343cb0722cfdd17396
+ms.openlocfilehash: 7dceff78172626d70863883e0762be2f4cb7e51c
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 10/04/2021
-ms.locfileid: "12061105"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12069012"
 ---
 # <a name="detailed-guide-to-the-extensionsettings-policy"></a>Guida dettagliata al criterio ExtensionSettings
 
@@ -57,7 +57,7 @@ Questo criterio può controllare le impostazioni, ad esempio l'URL di aggiorname
 Queste sono le chiavi consentite nell'ambito globale (*): 
 
 - blocked_permissions
-- installation_mode - Solo i valori validi in questo ambito sono "bloccati", "consentiti" o "rimossi".
+- installation_mode - solo `"blocked"` , o sono i valori validi in questo `"allowed"` `"removed"` ambito.
 - runtime_blocked_hosts
 - blocked_install_message
 - allowed_types
@@ -69,7 +69,6 @@ Queste sono le chiavi consentite in un singolo ambito di estensione:
 - blocked_permissions
 - minimum_version_required
 - blocked_install_message
-- toolbar_state (disponibile da Edge 94)
 - installation_mode - `"blocked"` , `"allowed"` , , e sono i `"removed"` `"force_installed"` valori `"normal_installed"` possibili.
 - runtime_allowed_hosts
 - update_url
@@ -80,7 +79,7 @@ Queste sono le chiavi consentite in un singolo ambito di estensione:
 Queste sono le chiavi consentite in un ambito URL di aggiornamento: 
 
 - blocked_permissions
-- installation_mode - solo `"blocked"` , o sono i valori validi in questo `"allowed"` `"removed"` ambito.
+- installation_mode - solo `"blocked"` , `"allowed"` o sono i valori validi in questo `"removed"` ambito.
 
 ## <a name="configure-using-a-json-string-in-windows-group-policy-editor"></a>Configurazione con una stringa JSON nell'Editor dei Criteri di gruppo di Windows
 

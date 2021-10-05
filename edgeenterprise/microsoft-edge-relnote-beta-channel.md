@@ -3,19 +3,19 @@ title: Note sulla versione di Microsoft Edge per il canale Beta
 ms.author: aguta
 author: AndreaLBarr
 manager: srugh
-ms.date: 09/28/2021
+ms.date: 10/05/2021
 audience: ITPro
 ms.topic: conceptual
 ms.prod: microsoft-edge
 ms.localizationpriority: medium
 ms.collection: M365-modern-desktop
 description: Note sulla versione di Microsoft Edge per il canale Beta
-ms.openlocfilehash: c62d540b014a47f1240d542c68ee52822719239f
-ms.sourcegitcommit: 4442aa94d4ff2fef8dd6f389ec0c6823b150d04f
+ms.openlocfilehash: a2957d3c52d18fe75cb52719896438e6becf6dbd
+ms.sourcegitcommit: e825c6a1b0e63004288e13f6bb672743b0ecfafb
 ms.translationtype: MT
 ms.contentlocale: it-IT
-ms.lasthandoff: 09/28/2021
-ms.locfileid: "12053315"
+ms.lasthandoff: 10/05/2021
+ms.locfileid: "12069002"
 ---
 # <a name="release-notes-for-microsoft-edge-beta-channel"></a>Note sulla versione per il canale Microsoft Edge Beta
 
@@ -24,11 +24,15 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 > [!NOTE]
 > La piattaforma Web Microsoft Edge si evolve costantemente per migliorare l'esperienza utente, la sicurezza e la privacy. Per altre informazioni, vedere [Modifiche che incidono sulla compatibilità del sito in arrivo su Microsoft Edge](/microsoft-edge/web-platform/site-impacting-changes).
 
+## <a name="version-950102014-october-5"></a>Versione 95.0.1020.14: 5 ottobre
+
+Sono stati risolti diversi bug e problemi di prestazioni.
+
 ## <a name="version-95010209-september-28"></a>Versione 95.0.1020.9: 28 settembre
 
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
-- **Visualizza in Esplora file il supporto per SharePoint online in Microsoft Edge.**  A questo punto è possibile abilitare la funzionalità Visualizza in Esplora file SharePoint raccolte documenti moderne online. Perché questa esperienza sia visibile e funzioni per gli utenti, è necessario abilitare il criterio Microsoft Edge "Configurare la funzionalità Visualizza in Esplora file per le pagine di [SharePoint in Microsoft Edge"](/deployedge/microsoft-edge-policies#configureviewinfileexplorer) e aggiornare la configurazione del tenant di SharePoint Online. Altre informazioni: [Visualizzare SharePoint file con Esplora file in Microsoft Edge - SharePoint in Microsoft 365 | Documenti Microsoft](/SharePoint/sharepoint-view-in-edge).
+- **Visualizzare in Esplora file il supporto per SharePoint raccolte online in Microsoft Edge.**  A questo punto è possibile abilitare la funzionalità Visualizza in Esplora file SharePoint raccolte documenti moderne online. Perché questa esperienza sia visibile e funzioni per gli utenti, è necessario abilitare il criterio Microsoft Edge "Configurare la funzionalità Visualizza in Esplora file per le pagine di [SharePoint in Microsoft Edge"](/deployedge/microsoft-edge-policies#configureviewinfileexplorer) e aggiornare la configurazione del tenant di SharePoint Online. Altre informazioni: [Visualizzare SharePoint file con Esplora file in Microsoft Edge - SharePoint in Microsoft 365 | Documenti Microsoft](/SharePoint/sharepoint-view-in-edge).
 
 - **I collegamenti URL dei file dell'area Intranet verranno aperti Windows File Explorer.**  È possibile consentire ai collegamenti URL dei file ai file dell'area Intranet provenienti dai siti Web HTTPS dell'area Intranet di aprire Windows File Explorer per tale file o directory. Puoi abilitare questa esperienza usando il [criterio IntranetFileLinksEnabled.](/deployedge/microsoft-edge-policies#intranetfilelinksenabled)
 
@@ -36,7 +40,7 @@ Queste note sulla versione contengono informazioni sulle nuove funzionalità e g
 
 - **Riprendere il punto in cui è stato lasciato nei documenti PDF.**  A questo punto sarà possibile riprendere la lettura dall'ultimo punto in cui è stato chiuso il documento PDF.
 
-- **La modalità efficienza estende la durata della batteria quando il portatile entra in modalità risparmio batteria.**  La modalità efficienza diventerà attiva quando il portatile entra in modalità risparmio batteria per consentire al browser di gestire l'utilizzo delle risorse per estendere la durata della batteria del computer. Saranno disponibili quattro opzioni per quando la modalità di efficienza diventa attiva, Batteria scollegata e scarica, Scollegata, Sempre e Mai. Nota: questa è un'implementazione controllata delle funzionalità. I dispositivi con batteria dovrebbero avere la funzionalità attivata.
+- **La modalità efficienza estende la durata della batteria quando il portatile entra in modalità risparmio batteria.**  La modalità efficienza diventerà attiva quando il portatile entra in modalità risparmio batteria per consentire al browser di gestire l'utilizzo delle risorse per estendere la durata della batteria del computer. Saranno disponibili quattro opzioni per quando la modalità di efficienza diventa attiva, Batteria scollegata e scarica, Scollegato, Sempre e Mai. Nota: questa è un'implementazione controllata delle funzionalità. I dispositivi con batteria dovrebbero avere la funzionalità attivata.
 
 ***Nuovi criteri***
 
@@ -114,15 +118,15 @@ Sono stati risolti diversi bug e problemi di prestazioni.
 
 ### <a name="feature-updates"></a>Aggiornamenti delle funzionalità
 
-- **Preferenze iniziali in Microsoft Edge.**  A partire Microsoft Edge versione 93, la distribuzione di Microsoft Edge nell'organizzazione sarà più semplice con l'aggiunta [di Preferenze iniziali.](/deployedge/initial-preferences-support-on-microsoft-edge-browser)
+- **Preferenze iniziali in Microsoft Edge.**  A partire Microsoft Edge versione 93, la distribuzione di Microsoft Edge nell'organizzazione diventerà più semplice con l'aggiunta [di Preferenze iniziali.](/deployedge/initial-preferences-support-on-microsoft-edge-browser)
 
 - **La modalità IE Microsoft Edge supporterà il comportamento di "no-merge".**  A partire Microsoft Edge versione 93, la modalità IE Microsoft Edge supporterà "no-merge". Per un utente finale, quando una nuova finestra del browser viene avviata da un'applicazione in modalità IE, si trova in una sessione separata, in modo analogo al comportamento in Internet Directory Online. Sarà necessario modificare l'elenco dei siti per configurare i siti che devono impedire la condivisione delle sessioni. Dietro le quinte, per ogni finestra di Microsoft Edge, la prima volta che viene visitata una scheda della modalità IE all'interno di tale finestra, se si tratta di uno dei siti di "no-merge" designati, tale finestra viene bloccata in una sessione di IE diversa da tutte le altre finestre di Microsoft Edge almeno fino alla chiusura dell'ultima scheda della modalità IE in quella finestra. Altre informazioni sono disponibili [qui](/deployedge/edge-ie-mode-faq#does-ie-mode-on-microsoft-edge-support-the--no-merge--option-that-was-supported-in-internet-explorer-11-).
 
 - **Gruppi di schede.**  La possibilità di categorizzare le schede in gruppi definiti dall'utente consente di trovare, cambiare e gestire le schede in modo più efficace in più workstream. A tale scopo, viene attivato il raggruppamento delle schede a partire Microsoft Edge versione 93.
 
-- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire da Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
+- **Nascondere la barra del titolo quando si utilizzano le schede verticali.**  Recuperare i pochi pixel in più nascondendo la barra del titolo del browser, mentre è in Schede verticali. A partire Microsoft Edge versione 93, è possibile passare a edge://settings/appearance e nella sezione Personalizza barra degli strumenti selezionare l'opzione per nascondere la barra del titolo in modalità Tabulazione verticale.
 
-- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere a Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti in macOS.  Controllare di nuovo a breve mentre si continua l'implementazione Windows utenti.
+- **Immagine video in immagine (PiP) dalla barra degli strumenti al passaggio del mouse.**  A partire Microsoft Edge versione 93, sarà ancora più facile accedere alla modalità Immagine in modalità Immagine (PiP). Quando si passa il mouse su un video supportato, viene visualizzata una barra degli strumenti che consente di visualizzare il video in una finestra di PiP.  Nota: questa opzione è attualmente disponibile per Microsoft Edge utenti in macOS.  Controllare di nuovo a breve mentre continuiamo l'implementazione per Windows utenti.
 
 - **Rimozione di 3DES in TLS.**  A partire Microsoft Edge versione 93, il supporto per la famiglia TLS_RSA_WITH_3DES_EDE_CBC_SHA di crittografia verrà rimosso. Questa modifica si verifica nel progetto Chromium, su cui Microsoft Edge è basato. Per altre informazioni, passare alla voce [Chrome Platform Status](https://chromestatus.com/feature/6678134168485888). Inoltre, nella Microsoft Edge versione 93, il criterio [TripleDESEnabled](/deployedge/microsoft-edge-policies#tripledesenabled) sarà disponibile per supportare gli scenari che devono mantenere la compatibilità con i server obsoleti. Questi criteri di compatibilità diventeranno obsoleti e smetteranno di funzionare in Microsoft Edge versione 95. Assicurarsi di aggiornare i server interessati prima di tale aggiornamento.
 
